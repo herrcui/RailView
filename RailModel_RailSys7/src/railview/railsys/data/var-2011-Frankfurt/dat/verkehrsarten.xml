@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<railsys>
+	<version major="1" minor="0" patchlevel="0" comment="Erzeugt von RailSys\Simu/7.6.12 am Fr 18. Jan 10:18:22 2013"/>
+	<traffictypes>
+		<traffictype name="SPFV" color="#ff0000" trainclasses="FRz"/>
+		<traffictype name="SPNV" color="#00ff00" trainclasses="NRz S Rz"/>
+		<traffictype name="SGV" color="#0000ff" trainclasses="FGz NGz Gz"/>
+		<traffictype name="Sonstige" color="#00ffff" trainclasses="Lz Unbekannt"/>
+	</traffictypes>
+</railsys>

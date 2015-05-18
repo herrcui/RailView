@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<railsys>
+	<version major="1" minor="2" patchlevel="0" comment="Erzeugt von RailSys\Simu/7.6.12 am Fr 18. Jan 10:18:20 2013"/>
+	<timetable>
+		<train number="24590" class="NRz" pattern="/NRz/DLr/für 83828/FF-FFBS/rück" name="DLr/24590/0/ks" description="24590/1+" comment="für 83828" typeNumber="1002" line="für 83828" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-1" bstfahrweg="FVL-1-FFGI" departure="18:05:37" regularRunningTime="49" requestedDeparture="18:05:37" requestedTrackID="G-1" requestedBstFahrweg="FVL-1-FFGI" type="begin" lineID="3900" timingPoint="true" departureFix="true" zuggattung="DLr 32.2"/>
+				<entry stationID="FFW A" trackID="G-5" bstfahrweg="FFGI-6-FFW" departure="18:08:40" regularRunningTime="132" requestedDeparture="18:08:40" requestedTrackID="G-5" requestedBstFahrweg="FFGI-6-FFW" type="pass" trainTypeNumber="1002" lineID="3634" timingPoint="true" zuggattung="DLr 32.2"/>
+				<entry stationID="FFW" trackID="A-6" bstfahrweg="FFGI-6-FFGA" departure="18:20:52" minStopTime="600" stopTime="600" regularRunningTime="97" requestedArrival="18:10:52" requestedDeparture="18:20:52" requestedTrackID="A-6" requestedBstFahrweg="FFGI-6-FFGA" type="stop" trainTypeNumber="1002" timingPoint="true" departureFix="true" zuggattung="DLr 32.2"/>
+				<entry stationID="FF" stationName="Frankfurt(M) Hbf" trackID="A-15" bstfahrweg="FFGA-15-FF(3900)" departure="18:37:25" minStopTime="120" stopTime="600" RTMargin2="0" requestedArrival="18:27:25" requestedDeparture="18:37:25" requestedTrackID="A-15" requestedBstFahrweg="FFGA-15-FF(3900)" type="end" lineID="3900" timingPoint="true" departureFix="true" zuggattung="DLr 32.2"/>
+			</timetableentries>
+		</train>
+		<train number="36324" class="S" pattern="/Bedarfszuege/S/Lr/FFAU a/FFAU-FFBS/hin" name="Lr/36324/98/hr" description="36324/1+++" comment="FFAU (a. Abst.) - FFG (f. Abst.)&#13;&#10;Li-Nr. 289 064&#13;&#10;Fahrzeugtausch" typeNumber="2003" line="FFAU a" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFAU" stationName="Ffm Hbf Außenbf" trackID="B-732" bstfahrweg="FNI-732-FFAU" departure="03:18:24" minStopTime="120" stopTime="300" regularRunningTime="68" requestedArrival="03:13:24" requestedDeparture="03:18:24" requestedTrackID="B-732" requestedBstFahrweg="FNI-732-FFAU" type="begin" lineID="3631" timingPoint="true" departureFix="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FFW" trackID="B-6" bstfahrweg="FFGA-6-FFGI-GR" departure="03:36:32" minStopTime="822" stopTime="822" regularRunningTime="49" requestedArrival="03:22:50" requestedDeparture="03:36:32" requestedTrackID="B-6" requestedBstFahrweg="FFGA-6-FFGI-GR" type="stop" trainTypeNumber="2003" lineID="3634" timingPoint="true" departureFix="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FFW A" trackID="G-4" bstfahrweg="FFW-6-FFGI" departure="03:37:21" regularRunningTime="79" requestedDeparture="03:37:21" requestedTrackID="G-4" requestedBstFahrweg="FFW-6-FFGI" type="pass" trainTypeNumber="2003" timingPoint="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-3" bstfahrweg="FFGI-3-FVL" departure="03:41:17" RTMargin2="0" requestedDeparture="03:41:17" requestedTrackID="G-3" requestedBstFahrweg="FFGI-3-FVL" type="end" lineID="3900" timingPoint="true" zuggattung="Lr 47.2"/>
+			</timetableentries>
+		</train>
+		<train number="40009" class="FGz" pattern="/FGz/TEC/XDTA -/F836A-FFBS/rück" name="TEC/40009/222/js + TEC/40009/223/su" description="40009/4++" comment="XDTA - XIGA&#13;&#10;P/C 50, P/C 380 + XDTA - XIGA&#13;&#10;PC50PC380" typeNumber="4228" line="XDTA -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-1" bstfahrweg="FVL-1-FFGI" departure="13:05:50" regularRunningTime="83" requestedDeparture="13:05:50" requestedTrackID="G-1" requestedBstFahrweg="FVL-1-FFGI" type="begin" lineID="3900" timingPoint="true" departureFix="true" zuggattung="TEC 52.9"/>
+				<entry stationID="FFW A" trackID="G-5" bstfahrweg="FFGI-6-FFW" departure="13:11:03" regularRunningTime="124" requestedDeparture="13:11:03" requestedTrackID="G-5" requestedBstFahrweg="FFGI-6-FFW" type="pass" trainTypeNumber="4228" lineID="3634" timingPoint="true" zuggattung="TEC 52.9"/>
+				<entry stationID="FFW" trackID="A-6" bstfahrweg="FFGI-6-FFGA" dwegName="1-1000" departure="13:29:08" minStopTime="180" stopTime="961" regularRunningTime="183" requestedArrival="13:13:07" requestedDeparture="13:29:08" requestedTrackID="A-6" requestedBstFahrweg="FFGI-6-FFGA" type="stop" trainTypeNumber="4228" timingPoint="true" departureFix="true" zuggattung="TEC 52.9"/>
+				<entry stationID="F836A" stationName="Sbk 836 (3601)" trackID="G-836" bstfahrweg="FEZ-FDA" departure="13:54:04" RTMargin2="0" requestedDeparture="13:54:04" requestedTrackID="G-836" requestedBstFahrweg="FEZ-FDA" type="end" lineID="3601" timingPoint="true" zuggattung="TEC 52.1"/>
+			</timetableentries>
+		</train>
+		<train number="42644" class="FGz" pattern="/FGz/TEC/XSFF -/FEZ-FFBS/hin" name="TEC/42644/69/SU + TEC/42644/222/js" description="42644/3+++++" comment="XSFF - AM S&#13;&#10;P/C 60/384 + XSBR - AM S&#13;&#10;P/C 60, P/C 384" typeNumber="4247" line="XSFF -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FEZ" stationName="Erzhausen" trackID="G-737" bstfahrweg="FDA-737-FLG" departure="19:15:07" regularRunningTime="270" requestedDeparture="19:15:07" requestedTrackID="G-737" requestedBstFahrweg="FDA-737-FLG" type="begin" lineID="3601" timingPoint="true" departureFix="true" zuggattung="TEC 52.1"/>
+				<entry stationID="FFW" trackID="B-7" bstfahrweg="FFGA-7-FFGI" dwegName="1-1000" departure="19:59:05" minStopTime="1356" stopTime="1356" regularRunningTime="100" requestedArrival="19:36:29" requestedDeparture="19:59:05" requestedTrackID="B-7" requestedBstFahrweg="FFGA-7-FFGI" type="stop" trainTypeNumber="4247" lineID="3634" timingPoint="true" departureFix="true" zuggattung="TEC 52.1"/>
+				<entry stationID="FFW A" trackID="G-4" bstfahrweg="FFW-7-FFGI" departure="20:00:45" regularRunningTime="129" requestedDeparture="20:00:45" requestedTrackID="G-4" requestedBstFahrweg="FFW-7-FFGI" type="pass" trainTypeNumber="4247" timingPoint="true" zuggattung="TEC 52.1"/>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-3" bstfahrweg="FFGI-3-FVL" departure="20:05:51" RTMargin2="0" requestedDeparture="20:05:51" requestedTrackID="G-3" requestedBstFahrweg="FFGI-3-FVL" type="end" lineID="3900" timingPoint="true" zuggattung="TEC 52.1"/>
+			</timetableentries>
+		</train>
+		<train number="42647" class="FGz" pattern="/FGz/TEC/AM W/F836A-FFBS/rück" name="TEC/42647/223/js + TEC/42647/199/SU" description="42647/2+++++" comment="AM W - XSFF&#13;&#10;P/C 60, P/C 384 + AM W - XSFF&#13;&#10;P/C 60, 384" typeNumber="4252" line="AM W" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-1" bstfahrweg="FVL-1-FFGI" departure="20:49:22" regularRunningTime="60" requestedDeparture="20:49:22" requestedTrackID="G-1" requestedBstFahrweg="FVL-1-FFGI" type="begin" lineID="3900" timingPoint="true" departureFix="true" zuggattung="TEC 52.1"/>
+				<entry stationID="FFW A" trackID="G-5" bstfahrweg="FFGI-7-FFW" departure="20:53:12" regularRunningTime="143" requestedDeparture="20:53:12" requestedTrackID="G-5" requestedBstFahrweg="FFGI-7-FFW" type="pass" trainTypeNumber="4252" lineID="3634" timingPoint="true" zuggattung="TEC 52.1"/>
+				<entry stationID="FFW" trackID="A-7" bstfahrweg="FFGI-7-FFGA" dwegName="1-1000" departure="21:33:35" minStopTime="180" stopTime="2280" regularRunningTime="185" requestedArrival="20:55:35" requestedDeparture="21:33:35" requestedTrackID="A-7" requestedBstFahrweg="FFGI-7-FFGA" type="stop" trainTypeNumber="4252" timingPoint="true" departureFix="true" zuggattung="TEC 52.1"/>
+				<entry stationID="F836A" stationName="Sbk 836 (3601)" trackID="G-836" bstfahrweg="FEZ-FDA" departure="21:55:58" RTMargin2="0" requestedDeparture="21:55:58" requestedTrackID="G-836" requestedBstFahrweg="FEZ-FDA" type="end" lineID="3601" timingPoint="true" zuggattung="TEC 52.1"/>
+			</timetableentries>
+		</train>
+		<train number="43017" class="FGz" pattern="/FGz/DGS/AHBIU -/F836A-FFBS/rück" name="DGS/43017/223/js + DGS/43017/0/su" description="43017/2" comment="AHBIU - XIGA&#13;&#10;P/C 50, P/C 380&#13;&#10;SBB Cargo K3407&#13;&#10;++ mit EBuLa  ++" typeNumber="4103" line="AHBIU -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-1" bstfahrweg="FVL-1-FFGI" departure="14:05:43" regularRunningTime="92" requestedDeparture="14:05:43" requestedTrackID="G-1" requestedBstFahrweg="FVL-1-FFGI" type="begin" lineID="3900" timingPoint="true" departureFix="true" zuggattung="DGS 36.1"/>
+				<entry stationID="FFW A" trackID="G-5" bstfahrweg="FFGI-7-FFW" departure="14:10:51" regularRunningTime="144" requestedDeparture="14:10:51" requestedTrackID="G-5" requestedBstFahrweg="FFGI-7-FFW" type="pass" trainTypeNumber="4103" lineID="3634" timingPoint="true" zuggattung="DGS 36.1"/>
+				<entry stationID="FFW" trackID="A-7" bstfahrweg="FFGI-7-FFGA" dwegName="1-1000" departure="14:20:57" minStopTime="462" stopTime="462" regularRunningTime="189" requestedArrival="14:13:15" requestedDeparture="14:20:57" requestedTrackID="A-7" requestedBstFahrweg="FFGI-7-FFGA" type="stop" trainTypeNumber="4103" timingPoint="true" departureFix="true" zuggattung="DGS 36.1"/>
+				<entry stationID="F836A" stationName="Sbk 836 (3601)" trackID="G-836" bstfahrweg="FEZ-FDA" departure="14:41:14" RTMargin2="0" requestedDeparture="14:41:14" requestedTrackID="G-836" requestedBstFahrweg="FEZ-FDA" type="end" lineID="3601" timingPoint="true" zuggattung="DGS 36.1"/>
+			</timetableentries>
+		</train>
+		<train number="47444" class="FGz" pattern="/Bedarfszuege/FGz/CS/XPWE -/FFBS-FWF/hin" name="CS/47444/826/Js + CS/47444/825/Su" description="47444/5+++++++++" comment="XPWE - RMW G&#13;&#10;RID Klasse 4.2   Gefahrgut&#13;&#10;U Korr 24 + XPWE - RMW G" typeNumber="4023" line="XPWE -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="0" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-1" bstfahrweg="FVL-1-FFGI" departure="04:19:04" regularRunningTime="81" requestedDeparture="04:19:04" requestedTrackID="G-1" requestedBstFahrweg="FVL-1-FFGI" type="begin" lineID="3900" timingPoint="true" departureFix="true" zuggattung="CS 69.6"/>
+				<entry stationID="FFW A" trackID="G-5" bstfahrweg="FFGI-7-FFW" departure="04:24:02" regularRunningTime="144" requestedDeparture="04:24:02" requestedTrackID="G-5" requestedBstFahrweg="FFGI-7-FFW" type="pass" trainTypeNumber="4023" lineID="3634" timingPoint="true" zuggattung="CS 69.6"/>
+				<entry stationID="FFW" trackID="A-7" bstfahrweg="FFGI-7-FFGA" dwegName="1-1000" departure="04:38:14" minStopTime="180" stopTime="708" regularRunningTime="198" requestedArrival="04:26:26" requestedDeparture="04:38:14" requestedTrackID="A-7" requestedBstFahrweg="FFGI-7-FFGA" type="stop" trainTypeNumber="4023" timingPoint="true" departureFix="true" zuggattung="CS 69.6"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="04:53:38" RTMargin2="0" requestedDeparture="04:53:38" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="CS 69.6"/>
+			</timetableentries>
+		</train>
+		<train number="49299" class="FGz" pattern="/FGz/CSQ/XFVA -/FFBS-FFH/rück" name="CSQ/49299/222/He + CSQ/49299/223/js" description="49299/2+" comment="XFVA - XPMW" typeNumber="4060" line="XFVA -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFH" stationName="Flörsheim (Main)" trackID="G-1" bstfahrweg="FHM-1-FHAS" departure="21:14:26" regularRunningTime="120" requestedDeparture="21:14:26" requestedTrackID="G-1" requestedBstFahrweg="FHM-1-FHAS" type="begin" lineID="3603" timingPoint="true" departureFix="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="FFW" trackID="B-6" bstfahrweg="FFGA-6-FFGI" dwegName="1-1000" departure="22:05:20" minStopTime="180" stopTime="1140" regularRunningTime="91" requestedArrival="21:46:20" requestedDeparture="22:05:20" requestedTrackID="B-6" requestedBstFahrweg="FFGA-6-FFGI" type="stop" trainTypeNumber="4060" lineID="3634" timingPoint="true" departureFix="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="FFW A" trackID="G-4" bstfahrweg="FFW-6-FFGI" departure="22:06:51" regularRunningTime="98" requestedDeparture="22:06:51" requestedTrackID="G-4" requestedBstFahrweg="FFW-6-FFGI" type="pass" trainTypeNumber="4060" timingPoint="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-3" bstfahrweg="FFGI-3-FVL" departure="22:11:19" RTMargin2="0" requestedDeparture="22:11:19" requestedTrackID="G-3" requestedBstFahrweg="FFGI-3-FVL" type="end" lineID="3900" timingPoint="true" zuggattung="CSQ 68.4"/>
+			</timetableentries>
+		</train>
+		<train number="51404" class="FGz" pattern="/FGz/FIR/LE -/F836A-FFBS/rück" name="FIR/51404/826/js + FIR/51404/825/Su" description="51404/2++" comment="LE - RMR M &#13;&#10;P/C 70, P/C 400&#13;&#10;&#13;&#10;U Korr 24 + LE - RMR M &#13;&#10;P/C 70, 400," typeNumber="4131" line="LE -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-1" bstfahrweg="FVL-1-FFGI" departure="14:15:51" regularRunningTime="60" requestedDeparture="14:15:51" requestedTrackID="G-1" requestedBstFahrweg="FVL-1-FFGI" type="begin" lineID="3900" timingPoint="true" departureFix="true" zuggattung="FIR 57.1"/>
+				<entry stationID="FFW A" trackID="A-5" bstfahrweg="FFGI-7-FFW" trackIDForNotConditional="G-5" bstFahrwegBeiAusfallBetriebsHalt="FFGI-7-FFW" departure="14:23:44" minStopTime="60" stopTime="222" regularRunningTime="178" requestedArrival="14:20:02" requestedDeparture="14:23:44" requestedTrackID="A-5" requestedBstFahrweg="FFGI-7-FFW" type="conditional1" trainTypeNumber="4131" lineID="3634" timingPoint="true" departureFix="true" zuggattung="FIR 57.1"/>
+				<entry stationID="FFW" trackID="A-7" bstfahrweg="FFGI-7-FFGA" dwegName="1-1000" departure="14:31:24" minStopTime="180" stopTime="282" regularRunningTime="173" requestedArrival="14:26:42" requestedDeparture="14:31:24" requestedTrackID="A-7" requestedBstFahrweg="FFGI-7-FFGA" type="stop" trainTypeNumber="4131" timingPoint="true" departureFix="true" zuggattung="FIR 57.1"/>
+				<entry stationID="F836A" stationName="Sbk 836 (3601)" trackID="G-836" bstfahrweg="FEZ-FDA" departure="14:57:46" RTMargin2="0" requestedDeparture="14:57:46" requestedTrackID="G-836" requestedBstFahrweg="FEZ-FDA" type="end" lineID="3601" timingPoint="true" zuggattung="FIR 57.1"/>
+			</timetableentries>
+		</train>
+		<train number="51575" class="FGz" pattern="/FGz/FIR/HSR O/FFBS-FWF/hin" name="FIR/51575/827/JS + FIR/51575/828/SU" description="51575/2+" comment="HSR O - RMR K&#13;&#10;P/C 70, P/C 400&#13;&#10;Bef-Ano 1017/1022&#13;&#10;U Korr 24 + HSR O -RMR K&#13;&#10;PC70 PC400&#13;&#10;U Korr 24" typeNumber="4153" line="HSR O" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-1" bstfahrweg="FVL-1-FFGI" departure="10:06:00" regularRunningTime="61" requestedDeparture="10:06:00" requestedTrackID="G-1" requestedBstFahrweg="FVL-1-FFGI" type="begin" lineID="3900" timingPoint="true" departureFix="true" zuggattung="FIR 57.5"/>
+				<entry stationID="FFW A" trackID="G-5" bstfahrweg="FFGI-6-FFW" departure="10:10:41" regularRunningTime="112" requestedDeparture="10:10:41" requestedTrackID="G-5" requestedBstFahrweg="FFGI-6-FFW" type="pass" trainTypeNumber="4153" lineID="3634" timingPoint="true" zuggattung="FIR 57.5"/>
+				<entry stationID="FFW" trackID="A-6" bstfahrweg="FFGI-6-FFGA" dwegName="1-1000" departure="10:17:33" minStopTime="300" stopTime="300" regularRunningTime="196" requestedArrival="10:12:33" requestedDeparture="10:17:33" requestedTrackID="A-6" requestedBstFahrweg="FFGI-6-FFGA" type="stop" trainTypeNumber="4153" timingPoint="true" departureFix="true" zuggattung="FIR 57.5"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="10:45:44" RTMargin2="0" requestedDeparture="10:45:44" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="FIR 57.5"/>
+			</timetableentries>
+		</train>
+		<train number="51577" class="FGz" pattern="/FGz/FIR/HSR O/FFBS-FWF/hin" name="FIR/51577/824/Js + FIR/51577/826/Su" description="51577/2+" comment="HSR O - RMR K&#13;&#10;P/C 70, P/C 400&#13;&#10;Beförderungs-Ano 1022&#13;&#10;U Korr 24 + HSR =-RMR K&#13;&#10;PC70PC400&#13;&#10;U Korr 24" typeNumber="4143" line="HSR O" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-1" bstfahrweg="FVL-1-FFGI" departure="13:32:22" regularRunningTime="67" requestedDeparture="13:32:22" requestedTrackID="G-1" requestedBstFahrweg="FVL-1-FFGI" type="begin" lineID="3900" timingPoint="true" departureFix="true" zuggattung="FIR 57.1"/>
+				<entry stationID="FFW A" trackID="G-5" bstfahrweg="FFGI-6-FFW" departure="13:36:26" regularRunningTime="112" requestedDeparture="13:36:26" requestedTrackID="G-5" requestedBstFahrweg="FFGI-6-FFW" type="pass" trainTypeNumber="4143" lineID="3634" timingPoint="true" zuggattung="FIR 57.1"/>
+				<entry stationID="FFW" trackID="A-6" bstfahrweg="FFGI-6-FFGA" dwegName="1-1000" departure="14:10:42" minStopTime="1944" stopTime="1944" regularRunningTime="197" requestedArrival="13:38:18" requestedDeparture="14:10:42" requestedTrackID="A-6" requestedBstFahrweg="FFGI-6-FFGA" type="stop" trainTypeNumber="4143" timingPoint="true" departureFix="true" zuggattung="FIR 57.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="14:42:51" RTMargin2="0" requestedDeparture="14:42:51" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="FIR 57.1"/>
+			</timetableentries>
+		</train>
+		<train number="51593" class="FGz" pattern="/FGz/FIR/HSR O/F836A-FFBS/rück" name="FIR/51593/824/Js + FIR/51593/825/Su" description="51593/2" comment="HSR O - TK W&#13;&#10;P/C 70, P/C 400&#13;&#10;U Korr 24 + HSR O - TK W&#13;&#10;PC70PC400&#13;&#10;U Korr 24" typeNumber="4139" line="HSR O" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-1" bstfahrweg="FVL-1-FFGI" departure="14:34:40" regularRunningTime="60" requestedDeparture="14:34:40" requestedTrackID="G-1" requestedBstFahrweg="FVL-1-FFGI" type="begin" lineID="3900" timingPoint="true" departureFix="true" zuggattung="FIR 57.1"/>
+				<entry stationID="FFW A" trackID="G-5" bstfahrweg="FFGI-7-FFW" departure="14:38:30" regularRunningTime="144" requestedDeparture="14:38:30" requestedTrackID="G-5" requestedBstFahrweg="FFGI-7-FFW" type="pass" trainTypeNumber="4139" lineID="3634" timingPoint="true" zuggattung="FIR 57.1"/>
+				<entry stationID="FFW" trackID="A-7" bstfahrweg="FFGI-7-FFGA" dwegName="1-1000" departure="14:44:24" minStopTime="210" stopTime="210" regularRunningTime="198" requestedArrival="14:40:54" requestedDeparture="14:44:24" requestedTrackID="A-7" requestedBstFahrweg="FFGI-7-FFGA" type="stop" trainTypeNumber="4139" timingPoint="true" departureFix="true" zuggattung="FIR 57.1"/>
+				<entry stationID="F836A" stationName="Sbk 836 (3601)" trackID="G-836" bstfahrweg="FEZ-FDA" departure="15:02:24" RTMargin2="0" requestedDeparture="15:02:24" requestedTrackID="G-836" requestedBstFahrweg="FEZ-FDA" type="end" lineID="3601" timingPoint="true" zuggattung="FIR 57.1"/>
+			</timetableentries>
+		</train>
+		<train number="51791" class="FGz" pattern="/FGz/FIR/FKR -/FFBS-FWF/hin" name="FIR/51791/0/js + FIR/51791/222/Re" description="51791/1" comment="FKR - RMR K&#13;&#10;P/C 70, P/C 400" typeNumber="4144" line="FKR -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-1" bstfahrweg="FVL-1-FFGI" departure="10:15:46" regularRunningTime="90" requestedDeparture="10:15:46" requestedTrackID="G-1" requestedBstFahrweg="FVL-1-FFGI" type="begin" lineID="3900" timingPoint="true" departureFix="true" zuggattung="FIR 57.1"/>
+				<entry stationID="FFW A" trackID="G-5" bstfahrweg="FFGI-6-FFW" departure="10:22:59" regularRunningTime="112" requestedDeparture="10:22:59" requestedTrackID="G-5" requestedBstFahrweg="FFGI-6-FFW" type="pass" trainTypeNumber="4144" lineID="3634" timingPoint="true" zuggattung="FIR 57.1"/>
+				<entry stationID="FFW" trackID="A-6" bstfahrweg="FFGI-6-FFGA" dwegName="1-1000" departure="10:51:51" minStopTime="1620" stopTime="1620" regularRunningTime="188" requestedArrival="10:24:51" requestedDeparture="10:51:51" requestedTrackID="A-6" requestedBstFahrweg="FFGI-6-FFGA" type="stop" trainTypeNumber="4144" timingPoint="true" departureFix="true" zuggattung="FIR 57.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="11:12:50" RTMargin2="0" requestedDeparture="11:12:50" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="FIR 57.1"/>
+			</timetableentries>
+		</train>
+		<train number="51818" class="FGz" pattern="/FGz/FIR/RMR G/FFBS-FWF/rück" name="FIR/51818/808/su + FIR/51818/809/js" description="51818/2+" comment="RMR G - BSE N&#13;&#10;P/C 70/400 + RMR G - BSE N&#13;&#10;P/C 70, P/C 400" typeNumber="4133" line="RMR G" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="00:49:25" regularRunningTime="166" requestedDeparture="00:49:25" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="FIR 57.5"/>
+				<entry stationID="FFW" trackID="B-7" bstfahrweg="FFGA-7-FFGI-GR" dwegName="1-1000" departure="01:30:07" minStopTime="964" stopTime="964" regularRunningTime="92" requestedArrival="01:14:03" requestedDeparture="01:30:07" requestedTrackID="B-7" requestedBstFahrweg="FFGA-7-FFGI-GR" type="stop" trainTypeNumber="4133" lineID="3634" timingPoint="true" departureFix="true" zuggattung="FIR 57.5"/>
+				<entry stationID="FFW A" trackID="G-4" bstfahrweg="FFW-7-FFGI" departure="01:31:39" regularRunningTime="134" requestedDeparture="01:31:39" requestedTrackID="G-4" requestedBstFahrweg="FFW-7-FFGI" type="pass" trainTypeNumber="4133" timingPoint="true" zuggattung="FIR 57.5"/>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-3" bstfahrweg="FFGI-3-FVL" departure="01:37:12" RTMargin2="0" requestedDeparture="01:37:12" requestedTrackID="G-3" requestedBstFahrweg="FFGI-3-FVL" type="end" lineID="3900" timingPoint="true" zuggattung="FIR 57.5"/>
+			</timetableentries>
+		</train>
+		<train number="51820" class="FGz" pattern="/FGz/FIR/RMR-E -/FFBS-FWF/rück" name="FIR/51820/826/Su + FIR/51820/825/Js" description="51820/2" comment="RMR-E -  HSR B&#13;&#10;PC 70/400 + RMR-E -  HSR B&#13;&#10;PC 70, P/C 400&#13;&#10;U Korr 24" typeNumber="4137" line="RMR-E -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="C-200" bstfahrweg="FMF-200-FZEP" dwegName="1-1000" departure="01:48:08" minStopTime="1062" stopTime="1062" regularRunningTime="297" requestedArrival="01:30:26" requestedDeparture="01:48:08" requestedTrackID="C-200" requestedBstFahrweg="FMF-200-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="FIR 57.5"/>
+				<entry stationID="FFW" trackID="B-6" bstfahrweg="FFGA-6-FFGI-GR" dwegName="1-1000" departure="02:27:04" minStopTime="180" stopTime="1128" regularRunningTime="91" requestedArrival="02:08:16" requestedDeparture="02:27:04" requestedTrackID="B-6" requestedBstFahrweg="FFGA-6-FFGI-GR" type="stop" trainTypeNumber="4137" lineID="3634" timingPoint="true" departureFix="true" zuggattung="FIR 57.5"/>
+				<entry stationID="FFW A" trackID="G-4" bstfahrweg="FFW-6-FFGI" departure="02:28:35" regularRunningTime="96" requestedDeparture="02:28:35" requestedTrackID="G-4" requestedBstFahrweg="FFW-6-FFGI" type="pass" trainTypeNumber="4137" timingPoint="true" zuggattung="FIR 57.5"/>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-3" bstfahrweg="FFGI-3-FVL" departure="02:32:55" RTMargin2="0" requestedDeparture="02:32:55" requestedTrackID="G-3" requestedBstFahrweg="FFGI-3-FVL" type="end" lineID="3900" timingPoint="true" zuggattung="FIR 57.5"/>
+			</timetableentries>
+		</train>
+		<train number="51824" class="FGz" pattern="/FGz/FIR/RMR E/FFBS-FWF/rück" name="FIR/51824/824/Su + FIR/51824/826/Js" description="51824/2+++++++" comment="RMR E  - HSR&#13;&#10; P/C 70/400 + wegen früherer Lage 60062 in früherer Lage bis FG&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;RMR E  - HSR B&#13;&#10;P/C 70, P/C 400&#13;&#10;U Korr 24" typeNumber="4137" line="RMR E" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="03:40:33" regularRunningTime="169" requestedDeparture="03:40:33" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="FIR 57.5"/>
+				<entry stationID="FFW" trackID="B-6" bstfahrweg="FFGA-6-FFGI" dwegName="1-1000" departure="04:36:47" minStopTime="180" stopTime="1476" regularRunningTime="90" requestedArrival="04:12:11" requestedDeparture="04:36:47" requestedTrackID="B-6" requestedBstFahrweg="FFGA-6-FFGI" type="stop" trainTypeNumber="4137" lineID="3634" timingPoint="true" departureFix="true" zuggattung="FIR 57.5"/>
+				<entry stationID="FFW A" trackID="G-4" bstfahrweg="FFW-6-FFGI" departure="04:38:17" regularRunningTime="97" requestedDeparture="04:38:17" requestedTrackID="G-4" requestedBstFahrweg="FFW-6-FFGI" type="pass" trainTypeNumber="4137" timingPoint="true" zuggattung="FIR 57.5"/>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-3" bstfahrweg="FFGI-3-FVL" departure="04:42:37" RTMargin2="0" requestedDeparture="04:42:37" requestedTrackID="G-3" requestedBstFahrweg="FFGI-3-FVL" type="end" lineID="3900" timingPoint="true" zuggattung="FIR 57.5"/>
+			</timetableentries>
+		</train>
+		<train number="51849" class="FGz" pattern="/FGz/FIR/RMR G/FFBS-FWF/rück" name="FIR/51849/824/Su + FIR/51849/826/Js" description="51849/2++" comment="RMR G -  LE V&#13;&#10;ex51919&#13;&#10;P/C 70/400 + RMR G -  LE V&#13;&#10;P/C 70, P/C 400&#13;&#10;U Korr 24" typeNumber="4129" line="RMR G" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="C-200" bstfahrweg="FMF-200-FZEP" dwegName="1-1000" departure="22:33:00" minStopTime="720" stopTime="720" regularRunningTime="296" requestedArrival="22:21:00" requestedDeparture="22:33:00" requestedTrackID="C-200" requestedBstFahrweg="FMF-200-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="FIR 57.5"/>
+				<entry stationID="FFW" trackID="B-6" bstfahrweg="FFGA-6-FFGI" dwegName="1-1000" departure="22:58:02" minStopTime="180" stopTime="426" regularRunningTime="88" requestedArrival="22:50:56" requestedDeparture="22:58:02" requestedTrackID="B-6" requestedBstFahrweg="FFGA-6-FFGI" type="stop" trainTypeNumber="4129" lineID="3634" timingPoint="true" departureFix="true" zuggattung="FIR 57.5"/>
+				<entry stationID="FFW A" trackID="G-4" bstfahrweg="FFW-6-FFGI" departure="22:59:30" regularRunningTime="99" requestedDeparture="22:59:30" requestedTrackID="G-4" requestedBstFahrweg="FFW-6-FFGI" type="pass" trainTypeNumber="4129" timingPoint="true" zuggattung="FIR 57.5"/>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-3" bstfahrweg="FFGI-3-FVL" departure="23:04:10" RTMargin2="0" requestedDeparture="23:04:10" requestedTrackID="G-3" requestedBstFahrweg="FFGI-3-FVL" type="end" lineID="3900" timingPoint="true" zuggattung="FIR 57.5"/>
+			</timetableentries>
+		</train>
+		<train number="51977" class="FGz" pattern="/FGz/FIR/AM /FFBS-FWF/hin" name="FIR/51977/802/js + FIR/51977/801/su" description="51977/2" comment="AM  W - RMR K&#13;&#10;P/C 70 P/C 400&#13;&#10;Bauumleiter zu 51479 im Korr 01 + AM  W - RMR K&#13;&#10;P/C 70 P/C 400&#13;&#10;Bauumleiter zu 51479" typeNumber="4152" line="AM " lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-1" bstfahrweg="FVL-1-FFGI" departure="17:05:51" regularRunningTime="60" requestedDeparture="17:05:51" requestedTrackID="G-1" requestedBstFahrweg="FVL-1-FFGI" type="begin" lineID="3900" timingPoint="true" departureFix="true" zuggattung="FIR 57.5"/>
+				<entry stationID="FFW A" trackID="G-5" bstfahrweg="FFGI-6-FFW" departure="17:09:31" regularRunningTime="112" requestedDeparture="17:09:31" requestedTrackID="G-5" requestedBstFahrweg="FFGI-6-FFW" type="pass" trainTypeNumber="4152" lineID="3634" timingPoint="true" zuggattung="FIR 57.5"/>
+				<entry stationID="FFW" trackID="A-6" bstfahrweg="FFGI-6-FFGA" dwegName="1-1000" departure="17:17:59" minStopTime="396" stopTime="396" regularRunningTime="180" requestedArrival="17:11:23" requestedDeparture="17:17:59" requestedTrackID="A-6" requestedBstFahrweg="FFGI-6-FFGA" type="stop" trainTypeNumber="4152" timingPoint="true" departureFix="true" zuggattung="FIR 57.5"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="17:40:32" RTMargin2="0" requestedDeparture="17:40:32" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="FIR 57.5"/>
+			</timetableentries>
+		</train>
+		<train number="60028" class="FGz" pattern="/FGz/CSQ/HSR O/F836A-FFBS/rück" name="CSQ/60028/119/js + CSQ/60028/223/SU" description="60028/2++" comment="bei Realisierung:&#13;&#10;a) 50099 anpassen: Halt FKR kürzen&#13;&#10;b) 43761 FGB Gleiswechsel 216&#13;&#10;&#13;&#10;&#13;&#10;HSR O - TBF&#13;&#10;Studie zu 60045 rückwärts über neuen Laufweg FKR (statt FHG-FDIL) Richtung neuem Startbf HSR (statt HER) und neuem Zielbf TBF statt MIN + HSR O - TBF" typeNumber="4052" line="HSR O" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-1" bstfahrweg="FVL-1-FFGI" departure="00:54:37" regularRunningTime="64" requestedDeparture="00:54:37" requestedTrackID="G-1" requestedBstFahrweg="FVL-1-FFGI" type="begin" lineID="3900" timingPoint="true" departureFix="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="FFW A" trackID="G-5" bstfahrweg="FFGI-6-FFW" departure="00:58:29" regularRunningTime="123" requestedDeparture="00:58:29" requestedTrackID="G-5" requestedBstFahrweg="FFGI-6-FFW" type="pass" trainTypeNumber="4052" lineID="3634" timingPoint="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="FFW" trackID="A-6" bstfahrweg="FFGI-6-FFGA" dwegName="1-1000" departure="01:15:32" minStopTime="900" stopTime="900" regularRunningTime="152" requestedArrival="01:00:32" requestedDeparture="01:15:32" requestedTrackID="A-6" requestedBstFahrweg="FFGI-6-FFGA" type="stop" trainTypeNumber="4052" timingPoint="true" departureFix="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="F836A" stationName="Sbk 836 (3601)" trackID="G-836" bstfahrweg="FEZ-FDA" departure="01:32:45" RTMargin2="0" requestedDeparture="01:32:45" requestedTrackID="G-836" requestedBstFahrweg="FEZ-FDA" type="end" lineID="3601" timingPoint="true" zuggattung="CSQ 68.4"/>
+			</timetableentries>
+		</train>
+		<train number="60029" class="FGz" pattern="/FGz/CSQ/FKR -/FFBS-FWF/hin" name="CSQ/60029/609/js + CSQ/60029/608/su" description="60029/1++" comment="FKR - SEF&#13;&#10;ohne KV, ohne BZA&#13;&#10;&#13;&#10;RV + FKR - SEF" typeNumber="4071" line="FKR -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-1" bstfahrweg="FVL-1-FFGI" departure="18:15:28" regularRunningTime="73" requestedDeparture="18:15:28" requestedTrackID="G-1" requestedBstFahrweg="FVL-1-FFGI" type="begin" lineID="3900" timingPoint="true" departureFix="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="FFW A" trackID="G-5" bstfahrweg="FFGI-7-FFW" departure="18:19:32" regularRunningTime="144" requestedDeparture="18:19:32" requestedTrackID="G-5" requestedBstFahrweg="FFGI-7-FFW" type="pass" trainTypeNumber="4071" lineID="3634" timingPoint="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="FFW" trackID="A-7" bstfahrweg="FFGI-7-FFGA" dwegName="1-1000" departure="18:35:29" minStopTime="813" stopTime="813" regularRunningTime="190" requestedArrival="18:21:56" requestedDeparture="18:35:29" requestedTrackID="A-7" requestedBstFahrweg="FFGI-7-FFGA" type="stop" trainTypeNumber="4071" timingPoint="true" departureFix="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="18:51:18" RTMargin2="0" requestedDeparture="18:51:18" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="CSQ 68.4"/>
+			</timetableentries>
+		</train>
+		<train number="60091" class="FGz" pattern="/FGz/CSQ/HBHSK -/F836A-FFBS/rück" name="CSQ/60091/824/Js + CSQ/60091/825/Su" description="60091/2++++" comment="HBHSK - TK W&#13;&#10;U Korr 24 + HBHSK-TK W&#13;&#10;Korr 24" typeNumber="4077" line="HBHSK -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-1" bstfahrweg="FVL-1-FFGI" departure="03:43:24" regularRunningTime="63" requestedDeparture="03:43:24" requestedTrackID="G-1" requestedBstFahrweg="FVL-1-FFGI" type="begin" lineID="3900" timingPoint="true" departureFix="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="FFW A" trackID="G-5" bstfahrweg="FFGI-6-FFW" departure="03:47:16" regularRunningTime="118" requestedDeparture="03:47:16" requestedTrackID="G-5" requestedBstFahrweg="FFGI-6-FFW" type="pass" trainTypeNumber="4077" lineID="3634" timingPoint="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="FFW" trackID="A-6" bstfahrweg="FFGI-6-FFGA" dwegName="1-1000" departure="03:51:14" minStopTime="120" stopTime="120" regularRunningTime="172" requestedArrival="03:49:14" requestedDeparture="03:51:14" requestedTrackID="A-6" requestedBstFahrweg="FFGI-6-FFGA" type="stop" trainTypeNumber="4077" timingPoint="true" departureFix="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="F836A" stationName="Sbk 836 (3601)" trackID="G-836" bstfahrweg="FEZ-FDA" departure="04:07:44" RTMargin2="0" requestedDeparture="04:07:44" requestedTrackID="G-836" requestedBstFahrweg="FEZ-FDA" type="end" lineID="3601" timingPoint="true" zuggattung="CSQ 68.4"/>
+			</timetableentries>
+		</train>
+		<train number="60093" class="FGz" pattern="/FGz/CSQ/HBHSK -/F836A-FFBS/rück" name="CSQ/60093/601/js + CSQ/60093/602/su" description="60093/2+" comment="HBHSK - TK S&#13;&#10;&#13;&#10;RV + HBHSK - TK S" typeNumber="4064" line="HBHSK -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-1" bstfahrweg="FVL-1-FFGI" departure="11:05:58" regularRunningTime="77" requestedDeparture="11:05:58" requestedTrackID="G-1" requestedBstFahrweg="FVL-1-FFGI" type="begin" lineID="3900" timingPoint="true" departureFix="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="FFW A" trackID="G-5" bstfahrweg="FFGI-7-FFW" departure="11:10:54" regularRunningTime="144" requestedDeparture="11:10:54" requestedTrackID="G-5" requestedBstFahrweg="FFGI-7-FFW" type="pass" trainTypeNumber="4064" lineID="3634" timingPoint="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="FFW" trackID="A-7" bstfahrweg="FFGI-7-FFGA" dwegName="1-1000" departure="11:36:06" minStopTime="1368" stopTime="1368" regularRunningTime="174" requestedArrival="11:13:18" requestedDeparture="11:36:06" requestedTrackID="A-7" requestedBstFahrweg="FFGI-7-FFGA" type="stop" trainTypeNumber="4064" timingPoint="true" departureFix="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="F836A" stationName="Sbk 836 (3601)" trackID="G-836" bstfahrweg="FEZ-FDA" departure="11:57:54" RTMargin2="0" requestedDeparture="11:57:54" requestedTrackID="G-836" requestedBstFahrweg="FEZ-FDA" type="end" lineID="3601" timingPoint="true" zuggattung="CSQ 68.4"/>
+			</timetableentries>
+		</train>
+		<train number="60406" class="FGz" pattern="/Bedarfszuege/FGz/CT/FGM -/FFBS-FGM/rück" name="CT/60406/98/js" description="60406/1+" comment="FGM - EBTS" typeNumber="4079" line="FGM -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FGM" stationName="Ff-Griesheim" trackID="B-204" bstfahrweg="FHOE-204-FFAU" dwegName="3-1000" departure="15:36:59" minStopTime="1200" stopTime="1200" regularRunningTime="216" requestedArrival="15:16:59" requestedDeparture="15:36:59" requestedTrackID="B-204" requestedBstFahrweg="FHOE-204-FFAU" type="begin" lineID="3631" timingPoint="true" departureFix="true" zuggattung="CT 75.8"/>
+				<entry stationID="FFW" trackID="B-7" bstfahrweg="FFGA-7-FFGI-GR" dwegName="1-1000" departure="16:42:37" minStopTime="3414" stopTime="3414" regularRunningTime="88" requestedArrival="15:45:43" requestedDeparture="16:42:37" requestedTrackID="B-7" requestedBstFahrweg="FFGA-7-FFGI-GR" type="stop" trainTypeNumber="4079" lineID="3634" timingPoint="true" departureFix="true" zuggattung="CT 75.8"/>
+				<entry stationID="FFW A" trackID="G-4" bstfahrweg="FFW-7-FFGI" departure="16:44:05" regularRunningTime="85" requestedDeparture="16:44:05" requestedTrackID="G-4" requestedBstFahrweg="FFW-7-FFGI" type="pass" trainTypeNumber="4079" timingPoint="true" zuggattung="CT 75.8"/>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-3" bstfahrweg="FFGI-3-FVL" departure="16:51:27" RTMargin2="0" requestedDeparture="16:51:27" requestedTrackID="G-3" requestedBstFahrweg="FFGI-3-FVL" type="end" lineID="3900" timingPoint="true" zuggattung="CT 75.8"/>
+			</timetableentries>
+		</train>
+		<train number="60700" class="FGz" pattern="/FGz/CS/DCW -/F836A-FFBS/rück" name="CS/60700/826/Js + CS/60700/825/Su" description="60700/3" comment="DCW - RKR&#13;&#10;U Korr 24" typeNumber="4021" line="DCW -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="0" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-1" bstfahrweg="FVL-1-FFGI" departure="04:52:52" regularRunningTime="66" requestedDeparture="04:52:52" requestedTrackID="G-1" requestedBstFahrweg="FVL-1-FFGI" type="begin" lineID="3900" timingPoint="true" departureFix="true" zuggattung="CS 69.2"/>
+				<entry stationID="FFW A" trackID="G-5" bstfahrweg="FFGI-7-FFW" departure="04:57:02" regularRunningTime="144" requestedDeparture="04:57:02" requestedTrackID="G-5" requestedBstFahrweg="FFGI-7-FFW" type="pass" trainTypeNumber="4021" lineID="3634" timingPoint="true" zuggattung="CS 69.2"/>
+				<entry stationID="FFW" trackID="A-7" bstfahrweg="FFGI-7-FFGA" dwegName="1-1000" departure="05:22:14" minStopTime="180" stopTime="1368" regularRunningTime="180" requestedArrival="04:59:26" requestedDeparture="05:22:14" requestedTrackID="A-7" requestedBstFahrweg="FFGI-7-FFGA" type="stop" trainTypeNumber="4021" timingPoint="true" departureFix="true" zuggattung="CS 69.2"/>
+				<entry stationID="F836A" stationName="Sbk 836 (3601)" trackID="G-836" bstfahrweg="FEZ-FDA" departure="05:41:21" RTMargin2="0" requestedDeparture="05:41:21" requestedTrackID="G-836" requestedBstFahrweg="FEZ-FDA" type="end" lineID="3601" timingPoint="true" zuggattung="CS 69.2"/>
+			</timetableentries>
+		</train>
+		<train number="60784" class="FGz" pattern="/Bedarfszuege/FGz/CS/RLB G/FFBS-FWF/rück" name="CS/60784/222/su + CS/60784/98/He + CS/60784/200/js" description="60784/2" comment="RLB G - HBAG&#13;&#10;GGVSE RID 4.1 + FHOEG - HOR O&#13;&#10;Gefahrgut + FHOEG - HOR O&#13;&#10;RID-Klasse 4.1&#13;&#10;hat Startflügel von RLB G nach FHOEG&#13;&#10;während Baukorridor 09 im Bauumleiterplan über Troisdorf" typeNumber="4042" line="RLB G" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="20:08:24" regularRunningTime="161" requestedDeparture="20:08:24" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="CS 69.8"/>
+				<entry stationID="FFW" trackID="Z-7" bstfahrweg="FFGA-7-FFGI-GR" trackIDForNotConditional="G-7" bstFahrwegBeiAusfallBetriebsHalt="FFGA-7-FFGI-GR" departure="22:00:52" minStopTime="24" stopTime="24" regularRunningTime="86" requestedArrival="22:00:28" requestedDeparture="22:00:52" requestedTrackID="Z-7" requestedBstFahrweg="FFGA-7-FFGI-GR" type="conditional1" trainTypeNumber="4042" lineID="3634" timingPoint="true" zuggattung="CS 69.8"/>
+				<entry stationID="FFW A" trackID="G-4" bstfahrweg="FFW-7-FFGI" departure="22:02:18" regularRunningTime="131" requestedDeparture="22:02:18" requestedTrackID="G-4" requestedBstFahrweg="FFW-7-FFGI" type="pass" trainTypeNumber="4042" timingPoint="true" zuggattung="CS 69.8"/>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-3" bstfahrweg="FFGI-3-FVL" departure="22:07:33" RTMargin2="0" requestedDeparture="22:07:33" requestedTrackID="G-3" requestedBstFahrweg="FFGI-3-FVL" type="end" lineID="3900" timingPoint="true" zuggattung="CS 69.8"/>
+			</timetableentries>
+		</train>
+		<train number="69292" class="FGz" pattern="/FGz/DGS/TK S/FFBS-FWF/rück" name="DGS/69292/1/su + DGS/69292/200/js" description="69292/2" comment="TK S - AWHO&#13;&#10;ex59076&#13;&#10;H3330 BoxXpress&#13;&#10;P/C 70 P/C 400&#13;&#10;NÄ Anpassung an 270/510 + TK S - AWHO&#13;&#10;P/C 70,P/C 400 Verp. gefährlich&#13;&#10;H 3330  BoxXpress&#13;&#10;++ ohne EBuLa ++" typeNumber="4122" line="TK S" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="22:53:55" regularRunningTime="152" requestedDeparture="22:53:55" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="DGS 36.1"/>
+				<entry stationID="FFW" trackID="B-6" bstfahrweg="FFGA-6-FFGI" dwegName="1-1000" departure="23:30:29" minStopTime="552" stopTime="552" regularRunningTime="96" requestedArrival="23:21:17" requestedDeparture="23:30:29" requestedTrackID="B-6" requestedBstFahrweg="FFGA-6-FFGI" type="stop" trainTypeNumber="4122" lineID="3634" timingPoint="true" departureFix="true" zuggattung="DGS 36.1"/>
+				<entry stationID="FFW A" trackID="G-4" bstfahrweg="FFW-6-FFGI" departure="23:32:05" regularRunningTime="98" requestedDeparture="23:32:05" requestedTrackID="G-4" requestedBstFahrweg="FFW-6-FFGI" type="pass" trainTypeNumber="4122" timingPoint="true" zuggattung="DGS 36.1"/>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-3" bstfahrweg="FFGI-3-FVL" departure="23:36:26" RTMargin2="0" requestedDeparture="23:36:26" requestedTrackID="G-3" requestedBstFahrweg="FFGI-3-FVL" type="end" lineID="3900" timingPoint="true" zuggattung="DGS 36.1"/>
+			</timetableentries>
+		</train>
+		<train number="69304" class="FGz" pattern="/Bedarfszuege/FGz/DGS/TK S/FFBS-FWF/rück" name="DGS/69304/222/su + DGS/69304/213/js" description="69304/2+" comment="TK S - AWHO&#13;&#10;ex59054&#13;&#10;BoxXpress (H 3330)&#13;&#10;P/C 70 P/C 400&#13;&#10;+++ ohne EBuLa +++ + TK S - AWHO&#13;&#10;BoxXpress (H 3330)&#13;&#10;P/C 70 P/C 400&#13;&#10;+++ ohne EBuLa +++" typeNumber="4122" line="TK S" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="23:05:07" regularRunningTime="258" requestedDeparture="23:05:07" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="DGS 36.1"/>
+				<entry stationID="FFW" trackID="B-6" bstfahrweg="FFGA-6-FFGI" dwegName="1-1000" departure="24:20:52" minStopTime="2760" stopTime="2760" regularRunningTime="118" requestedArrival="23:34:52" requestedDeparture="24:20:52" requestedTrackID="B-6" requestedBstFahrweg="FFGA-6-FFGI" type="stop" trainTypeNumber="4122" lineID="3634" timingPoint="true" departureFix="true" zuggattung="DGS 36.1"/>
+				<entry stationID="FFW A" trackID="G-4" bstfahrweg="FFW-6-FFGI" departure="24:22:50" regularRunningTime="120" requestedDeparture="24:22:50" requestedTrackID="G-4" requestedBstFahrweg="FFW-6-FFGI" type="pass" trainTypeNumber="4122" timingPoint="true" zuggattung="DGS 36.1"/>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-3" bstfahrweg="FFGI-3-FVL" departure="24:28:10" RTMargin2="0" requestedDeparture="24:28:10" requestedTrackID="G-3" requestedBstFahrweg="FFGI-3-FVL" type="end" lineID="3900" timingPoint="true" zuggattung="DGS 36.1"/>
+			</timetableentries>
+		</train>
+		<train number="73541" numbervar="1" class="NRz" pattern="/NRz/Lr-D/Ohne Linie/FFAU-FFBS/rück" name="Lr-D/73541/1/ks" description="73541/1+" typeNumber="1043" line="Ohne Linie" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-1" bstfahrweg="FVL-1-FFGI" departure="15:46:01" regularRunningTime="134" requestedDeparture="15:46:01" requestedTrackID="G-1" requestedBstFahrweg="FVL-1-FFGI" type="begin" lineID="3900" timingPoint="true" departureFix="true" zuggattung="Lr-D 41.2"/>
+				<entry stationID="FFW A" trackID="G-5" bstfahrweg="FFGI-6-FFW" departure="15:52:05" regularRunningTime="157" requestedDeparture="15:52:05" requestedTrackID="G-5" requestedBstFahrweg="FFGI-6-FFW" type="pass" trainTypeNumber="1043" lineID="3634" timingPoint="true" zuggattung="Lr-D 41.2"/>
+				<entry stationID="FFW" trackID="G-6" bstfahrweg="FFGI-6-FFGA" departure="15:54:42" regularRunningTime="219" requestedDeparture="15:54:42" requestedTrackID="G-6" requestedBstFahrweg="FFGI-6-FFGA" type="pass" trainTypeNumber="1043" timingPoint="true" zuggattung="Lr-D 41.2"/>
+				<entry stationID="FFAU" stationName="Ffm Hbf Außenbf" trackID="A-732" bstfahrweg="FFGA-732-FGM" dwegName="1-1000" departure="16:05:15" minStopTime="300" stopTime="300" RTMargin2="0" requestedArrival="16:00:15" requestedDeparture="16:05:15" requestedTrackID="A-732" requestedBstFahrweg="FFGA-732-FGM" type="end" lineID="3631" timingPoint="true" zuggattung="Lr-D 41.2"/>
+			</timetableentries>
+		</train>
+		<train number="91195" class="FGz" pattern="/FGz/DGS/FKB -/F836A-FFBS/rück" name="DGS/91195/223/jS + DGS/91195/212/SU" description="91195/1" comment="FKB - RLB G&#13;&#10;K4406,  BASF SE&#13;&#10;++  ohne EBuLa  ++&#13;&#10;HG 90 km/h gem Sondergrenz&#13;&#10;lastberechn.&#13;&#10;Ank Gegenzug abwarten&#13;&#10;&quot;Übergang&quot;&#13;&#10;in 2010 als 59298&#13;&#10;in 2011 im Korr 25 ab FBZ über FHN-FDK-FLP + FKB - RLB G&#13;&#10;K4406,  BASF &#13;&#10;++  ohne EBuLa  ++&#13;&#10;ex 59298" typeNumber="4080" line="FKB -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-1" bstfahrweg="FVL-1-FFGI" departure="15:05:30" regularRunningTime="176" requestedDeparture="15:05:30" requestedTrackID="G-1" requestedBstFahrweg="FVL-1-FFGI" type="begin" lineID="3900" timingPoint="true" departureFix="true" zuggattung="DGS 36.1"/>
+				<entry stationID="FFW A" trackID="G-5" bstfahrweg="FFGI-7-FFW" departure="15:12:09" regularRunningTime="144" requestedDeparture="15:12:09" requestedTrackID="G-5" requestedBstFahrweg="FFGI-7-FFW" type="pass" trainTypeNumber="4080" lineID="3634" timingPoint="true" zuggattung="DGS 36.1"/>
+				<entry stationID="FFW" trackID="A-7" bstfahrweg="FFGI-7-FFGA" dwegName="1-1000" departure="15:36:33" minStopTime="120" stopTime="1320" regularRunningTime="199" requestedArrival="15:14:33" requestedDeparture="15:36:33" requestedTrackID="A-7" requestedBstFahrweg="FFGI-7-FFGA" type="stop" trainTypeNumber="4080" timingPoint="true" departureFix="true" zuggattung="DGS 36.1"/>
+				<entry stationID="F836A" stationName="Sbk 836 (3601)" trackID="G-836" bstfahrweg="FEZ-FDA" departure="16:09:20" RTMargin2="0" requestedDeparture="16:09:20" requestedTrackID="G-836" requestedBstFahrweg="FEZ-FDA" type="end" lineID="3601" timingPoint="true" zuggattung="DGS 36.1"/>
+			</timetableentries>
+		</train>
+		<train number="92565" class="NGz" pattern="/NGz/NbZ/Ohne Linie/FFBS-FFW/rück" name="NbZ/92565/0/tr" description="92565/1" typeNumber="6134" line="Ohne Linie" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFW" trackID="B-7" bstfahrweg="FFGA-7-FFGI" dwegName="1-1000" departure="12:43:06" minStopTime="300" stopTime="300" regularRunningTime="69" requestedArrival="12:38:06" requestedDeparture="12:43:06" requestedTrackID="B-7" requestedBstFahrweg="FFGA-7-FFGI" type="stop" trainTypeNumber="6134" lineID="3634" timingPoint="true" departureFix="true" zuggattung="NbZ 87.5"/>
+				<entry stationID="FFW A" trackID="G-4" bstfahrweg="FFW-7-FFGI" departure="12:44:15" regularRunningTime="128" requestedDeparture="12:44:15" requestedTrackID="G-4" requestedBstFahrweg="FFW-7-FFGI" type="pass" trainTypeNumber="6134" timingPoint="true" zuggattung="NbZ 87.5"/>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-3" bstfahrweg="FFGI-3-FVL" departure="13:12:14" RTMargin2="0" requestedDeparture="13:12:14" requestedTrackID="G-3" requestedBstFahrweg="FFGI-3-FVL" type="end" lineID="3900" timingPoint="true" zuggattung="NbZ 87.5"/>
+			</timetableentries>
+		</train>
+		<train number="92577" class="NGz" pattern="/NGz/NbZ/Ohne Linie/FFBS-FFW/hin" name="NbZ/92577/0/tr" description="92577/1" typeNumber="6134" line="Ohne Linie" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="C-2" bstfahrweg="FVL-2-FFGI" dwegName="1-1000" departure="18:35:33" minStopTime="300" stopTime="300" regularRunningTime="80" requestedArrival="18:30:33" requestedDeparture="18:35:33" requestedTrackID="C-2" requestedBstFahrweg="FVL-2-FFGI" type="begin" lineID="3900" timingPoint="true" departureFix="true" zuggattung="NbZ 87.5"/>
+				<entry stationID="FFW A" trackID="G-5" bstfahrweg="FFGI-7-FFW" departure="18:39:42" regularRunningTime="144" requestedDeparture="18:39:42" requestedTrackID="G-5" requestedBstFahrweg="FFGI-7-FFW" type="pass" trainTypeNumber="6134" lineID="3634" timingPoint="true" zuggattung="NbZ 87.5"/>
+				<entry stationID="FFW" trackID="A-7" bstfahrweg="FFGI-7-FFGA" dwegName="1-1000" departure="18:52:06" minStopTime="300" stopTime="600" RTMargin2="0" requestedArrival="18:42:06" requestedDeparture="18:52:06" requestedTrackID="A-7" requestedBstFahrweg="FFGI-7-FFGA" type="stop" trainTypeNumber="6134" timingPoint="true" departureFix="true" zuggattung="NbZ 87.5"/>
+			</timetableentries>
+		</train>
+	</timetable>
+</railsys>

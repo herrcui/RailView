@@ -1,0 +1,994 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<railsys>
+	<version major="1" minor="2" patchlevel="0" comment="Erzeugt von RailSys\Simu/7.6.12 am Fr 18. Jan 10:18:20 2013"/>
+	<timetable>
+		<train number="35030" class="S" pattern="/S/Lr/FFS a/FBSO-FFS/rück" name="Lr/35030/0/hr" description="35030/1" comment="FFS (a. Abst.) - FBSO (f.35309)&#13;&#10;FRH W 104/105/106 - Gl.103 - W 157/158 - FES W 1/2 - Gl.1 - Ggl. bis FNH - W 101/102 - Gl.21&#13;&#10; - Entrostungsfahrt" typeNumber="2003" line="FFS a" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFS" stationName="Ffm Süd" trackID="B-604" bstfahrweg="FLSS-604-FSHF" dwegName="1-1000" departure="04:43:42" minStopTime="120" stopTime="150" regularRunningTime="64" requestedArrival="04:41:12" requestedDeparture="04:43:42" requestedTrackID="B-604" requestedBstFahrweg="FLSS-604-FSHF" type="begin" lineID="3681" timingPoint="true" departureFix="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FNH" trackID="G-21" bstfahrweg="FES-21-FBSO-GR" departure="05:07:34" regularRunningTime="63" requestedDeparture="05:07:34" requestedTrackID="G-21" requestedBstFahrweg="FES-21-FBSO-GR" type="pass" trainTypeNumber="2003" lineID="3641" timingPoint="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FSLN" trackID="G-1" bstfahrweg="FNO-FBSO" departure="05:08:37" regularRunningTime="32" requestedDeparture="05:08:37" requestedTrackID="G-1" requestedBstFahrweg="FNO-FBSO" type="pass" trainTypeNumber="2003" timingPoint="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FSTS" trackID="G-1000" bstfahrweg="FNH-FBSO" departure="05:09:09" regularRunningTime="77" requestedDeparture="05:09:09" requestedTrackID="G-1000" requestedBstFahrweg="FNH-FBSO" type="pass" trainTypeNumber="2003" timingPoint="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FSZN" trackID="G-1000" bstfahrweg="FNH-FBSO" departure="05:10:26" regularRunningTime="122" requestedDeparture="05:10:26" requestedTrackID="G-1000" requestedBstFahrweg="FNH-FBSO" type="pass" trainTypeNumber="2003" timingPoint="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="05:20:28" minStopTime="240" stopTime="480" RTMargin2="0" requestedArrival="05:12:28" requestedDeparture="05:20:28" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2003" timingPoint="true" departureFix="true" zuggattung="Lr 47.2"/>
+			</timetableentries>
+		</train>
+		<train number="35306" class="S" pattern="/S/S/Takt 306,/FBSO-FWX/rück" name="S/35306/0/hr" description="35306/1+" comment="Takt 306, FD - FBSO" typeNumber="2014" line="Takt 306," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="04:41:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="04:41:19" requestedDeparture="04:41:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="05:31:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="05:30:50" requestedDeparture="05:31:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="05:33:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="05:33:12" requestedDeparture="05:33:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="05:35:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="05:34:48" requestedDeparture="05:35:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="05:37:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="05:37:09" requestedDeparture="05:37:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="05:50:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="05:39:49" requestedDeparture="05:50:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35308" class="S" pattern="/S/S/Takt 302,/FBSO-FWX/rück" name="S/35308/2/hr" description="35308/1+" comment="Takt 302, FD - FBSO" typeNumber="2014" line="Takt 302," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="05:11:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="05:11:19" requestedDeparture="05:11:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="06:01:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="06:00:50" requestedDeparture="06:01:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="06:03:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="06:03:12" requestedDeparture="06:03:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="06:05:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="06:04:48" requestedDeparture="06:05:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="06:07:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="06:07:09" requestedDeparture="06:07:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="06:20:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="06:09:49" requestedDeparture="06:20:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35309" class="S" pattern="/S/S/Takt 303,/FBSO-FWX/hin" name="S/35309/0/hr" description="35309/1+" comment="Takt 303, FBSO - FD" typeNumber="2014" line="Takt 303," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="05:20:32" minStopTime="156" stopTime="480" regularRunningTime="108" requestedArrival="05:12:32" requestedDeparture="05:20:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="05:22:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="05:22:20" requestedDeparture="05:22:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="05:25:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="05:24:43" requestedDeparture="05:25:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="05:26:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="05:26:20" requestedDeparture="05:26:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="05:29:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="05:28:40" requestedDeparture="05:29:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="06:19:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="06:19:22" requestedDeparture="06:19:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35310" class="S" pattern="/S/S/Takt 306,/FBSO-FWX/rück" name="S/35310/0/hr" description="35310/1" comment="Takt 306, FD - FBSO" typeNumber="2014" line="Takt 306," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="05:41:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="05:41:19" requestedDeparture="05:41:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="06:31:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="06:30:50" requestedDeparture="06:31:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="06:33:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="06:33:12" requestedDeparture="06:33:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="06:35:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="06:34:48" requestedDeparture="06:35:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="06:37:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="06:37:09" requestedDeparture="06:37:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="06:50:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="06:39:49" requestedDeparture="06:50:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35311" class="S" pattern="/S/S/Takt 307,/FBSO-FWX/hin" name="S/35311/0/hr" description="35311/1+" comment="Takt 307, FBSO - FD" typeNumber="2014" line="Takt 307," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="05:50:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="05:39:50" requestedDeparture="05:50:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="05:52:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="05:52:20" requestedDeparture="05:52:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="05:55:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="05:54:43" requestedDeparture="05:55:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="05:56:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="05:56:20" requestedDeparture="05:56:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="05:59:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="05:58:40" requestedDeparture="05:59:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="06:49:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="06:49:22" requestedDeparture="06:49:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35312" numbervar="1" class="S" pattern="/S/S/Takt 302,/FBSO-FWX/rück" name="S/35312/1/hr" description="35312/1+" comment="Takt 302, FD - FBSO" typeNumber="2015" line="Takt 302," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="06:11:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="06:11:19" requestedDeparture="06:11:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="07:01:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="07:00:50" requestedDeparture="07:01:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2015" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="07:03:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="07:03:12" requestedDeparture="07:03:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="07:05:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="07:04:48" requestedDeparture="07:05:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="07:07:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="07:07:09" requestedDeparture="07:07:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="07:20:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="07:09:49" requestedDeparture="07:20:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35313" class="S" pattern="/S/S/Takt 303,/FBSO-FWX/hin" name="S/35313/0/hr" description="35313/1" comment="Takt 303, FBSO - FD" typeNumber="2014" line="Takt 303," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FNH" departure="06:20:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="06:09:50" requestedDeparture="06:20:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="06:22:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="06:22:20" requestedDeparture="06:22:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="06:25:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="06:24:43" requestedDeparture="06:25:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="06:26:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="06:26:20" requestedDeparture="06:26:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="06:29:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="06:28:40" requestedDeparture="06:29:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="07:19:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="07:19:22" requestedDeparture="07:19:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35314" class="S" pattern="/S/S/Takt 306,/FBSO-FWX/rück" name="S/35314/1/hr" description="35314/1" comment="Takt 306, FD - FBSO" typeNumber="2015" line="Takt 306," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="06:41:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="06:41:19" requestedDeparture="06:41:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="07:31:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="07:30:50" requestedDeparture="07:31:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2015" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="07:33:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="07:33:12" requestedDeparture="07:33:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="07:35:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="07:34:48" requestedDeparture="07:35:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="07:37:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="07:37:09" requestedDeparture="07:37:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="07:50:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="07:39:49" requestedDeparture="07:50:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35315" class="S" pattern="/S/S/Takt 307,/FBSO-FWX/hin" name="S/35315/0/hr" description="35315/1+" comment="Takt 307, FBSO - FD" typeNumber="2014" line="Takt 307," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="06:50:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="06:39:50" requestedDeparture="06:50:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="06:52:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="06:52:20" requestedDeparture="06:52:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="06:55:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="06:54:43" requestedDeparture="06:55:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="06:56:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="06:56:20" requestedDeparture="06:56:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="06:59:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="06:58:40" requestedDeparture="06:59:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="07:49:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="07:49:22" requestedDeparture="07:49:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35316" numbervar="1" class="S" pattern="/S/S/Takt 302,/FBSO-FWX/rück" name="S/35316/1/hr" description="35316/1+" comment="Takt 302, FD - FBSO" typeNumber="2015" line="Takt 302," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="07:11:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="07:11:19" requestedDeparture="07:11:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="08:01:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="08:00:50" requestedDeparture="08:01:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2015" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="08:03:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="08:03:12" requestedDeparture="08:03:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="08:05:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="08:04:48" requestedDeparture="08:05:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="08:07:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="08:07:09" requestedDeparture="08:07:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="08:20:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="08:09:49" requestedDeparture="08:20:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35317" class="S" pattern="/S/S/Takt 303,/FBSO-FWX/hin" name="S/35317/1/hr" description="35317/1+" comment="Takt 303, FBSO - FD" typeNumber="2015" line="Takt 303," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="07:20:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="07:09:50" requestedDeparture="07:20:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2015" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="07:22:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="07:22:20" requestedDeparture="07:22:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="07:25:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="07:24:43" requestedDeparture="07:25:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="07:26:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="07:26:20" requestedDeparture="07:26:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="07:29:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="07:28:40" requestedDeparture="07:29:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="08:19:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="08:19:22" requestedDeparture="08:19:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35318" class="S" pattern="/S/S/Takt 306,/FBSO-FWX/rück" name="S/35318/1/hr" description="35318/1+" comment="Takt 306, FD - FBSO" typeNumber="2015" line="Takt 306," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="07:41:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="07:41:19" requestedDeparture="07:41:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="08:31:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="08:30:50" requestedDeparture="08:31:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2015" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="08:33:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="08:33:12" requestedDeparture="08:33:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="08:35:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="08:34:48" requestedDeparture="08:35:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="08:37:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="08:37:09" requestedDeparture="08:37:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="08:50:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="08:39:49" requestedDeparture="08:50:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35319" numbervar="1" class="S" pattern="/S/S/Takt 307,/FBSO-FWX/hin" name="S/35319/1/hr" description="35319/1" comment="Takt 307, FBSO - FD" typeNumber="2015" line="Takt 307," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FNH" departure="07:50:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="07:39:50" requestedDeparture="07:50:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2015" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="07:52:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="07:52:20" requestedDeparture="07:52:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="07:55:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="07:54:43" requestedDeparture="07:55:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="07:56:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="07:56:20" requestedDeparture="07:56:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="07:59:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="07:58:40" requestedDeparture="07:59:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="08:49:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="08:49:22" requestedDeparture="08:49:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35320" class="S" pattern="/S/S/Takt 302,/FBSO-FWX/rück" name="S/35320/1/hr" description="35320/1+" comment="Takt 302, FD - FBSO" typeNumber="2015" line="Takt 302," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="08:11:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="08:11:19" requestedDeparture="08:11:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="09:01:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="09:00:50" requestedDeparture="09:01:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2015" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="09:03:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="09:03:12" requestedDeparture="09:03:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="09:05:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="09:04:48" requestedDeparture="09:05:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="09:07:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="09:07:09" requestedDeparture="09:07:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="09:20:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="09:09:49" requestedDeparture="09:20:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35321" class="S" pattern="/S/S/Takt 303,/FBSO-FWX/hin" name="S/35321/1/hr" description="35321/1+" comment="Takt 303, FBSO - FD" typeNumber="2015" line="Takt 303," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="08:20:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="08:09:50" requestedDeparture="08:20:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2015" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="08:22:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="08:22:20" requestedDeparture="08:22:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="08:25:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="08:24:43" requestedDeparture="08:25:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="08:26:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="08:26:20" requestedDeparture="08:26:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="08:29:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="08:28:40" requestedDeparture="08:29:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="09:19:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="09:19:22" requestedDeparture="09:19:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35322" class="S" pattern="/S/S/Takt 306,/FBSO-FWX/rück" name="S/35322/0/hr" description="35322/1" comment="Takt 306, FD - FBSO" typeNumber="2014" line="Takt 306," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="08:41:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="08:41:19" requestedDeparture="08:41:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="09:31:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="09:30:50" requestedDeparture="09:31:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="09:33:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="09:33:12" requestedDeparture="09:33:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="09:35:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="09:34:48" requestedDeparture="09:35:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="09:37:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="09:37:09" requestedDeparture="09:37:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="09:50:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="09:39:49" requestedDeparture="09:50:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35323" class="S" pattern="/S/S/Takt 307,/FBSO-FWX/hin" name="S/35323/1/hr" description="35323/1+" comment="Takt 307, FBSO - FD" typeNumber="2015" line="Takt 307," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="08:50:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="08:39:50" requestedDeparture="08:50:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2015" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="08:52:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="08:52:20" requestedDeparture="08:52:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="08:55:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="08:54:43" requestedDeparture="08:55:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="08:56:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="08:56:20" requestedDeparture="08:56:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="08:59:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="08:58:40" requestedDeparture="08:59:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="09:49:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="09:49:22" requestedDeparture="09:49:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35324" class="S" pattern="/S/S/Takt 302,/FBSO-FWX/rück" name="S/35324/0/hr" description="35324/1+" comment="Takt 302, FD - FBSO" typeNumber="2014" line="Takt 302," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="09:11:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="09:11:19" requestedDeparture="09:11:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="10:01:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="10:00:50" requestedDeparture="10:01:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="10:03:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="10:03:12" requestedDeparture="10:03:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="10:05:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="10:04:48" requestedDeparture="10:05:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="10:07:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="10:07:09" requestedDeparture="10:07:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="10:20:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="10:09:49" requestedDeparture="10:20:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35325" class="S" pattern="/S/S/Takt 303,/FBSO-FWX/hin" name="S/35325/1/hr" description="35325/1" comment="Takt 303, FBSO - FD" typeNumber="2015" line="Takt 303," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FNH" departure="09:20:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="09:09:50" requestedDeparture="09:20:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2015" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="09:22:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="09:22:20" requestedDeparture="09:22:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="09:25:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="09:24:43" requestedDeparture="09:25:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="09:26:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="09:26:20" requestedDeparture="09:26:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="09:29:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="09:28:40" requestedDeparture="09:29:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="10:19:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="10:19:22" requestedDeparture="10:19:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35326" class="S" pattern="/S/S/Takt 306,/FBSO-FWX/rück" name="S/35326/0/hr" description="35326/1+" comment="Takt 306, FD - FBSO" typeNumber="2014" line="Takt 306," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="09:41:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="09:41:19" requestedDeparture="09:41:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="10:31:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="10:30:50" requestedDeparture="10:31:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="10:33:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="10:33:12" requestedDeparture="10:33:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="10:35:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="10:34:48" requestedDeparture="10:35:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="10:37:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="10:37:09" requestedDeparture="10:37:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="10:50:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="10:39:49" requestedDeparture="10:50:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35327" class="S" pattern="/S/S/Takt 307,/FBSO-FWX/hin" name="S/35327/0/hr" description="35327/1+" comment="Takt 307, FBSO - FD" typeNumber="2014" line="Takt 307," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="09:50:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="09:39:50" requestedDeparture="09:50:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="09:52:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="09:52:20" requestedDeparture="09:52:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="09:55:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="09:54:43" requestedDeparture="09:55:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="09:56:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="09:56:20" requestedDeparture="09:56:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="09:59:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="09:58:40" requestedDeparture="09:59:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="10:49:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="10:49:22" requestedDeparture="10:49:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35328" class="S" pattern="/S/S/Takt 302,/FBSO-FWX/rück" name="S/35328/0/hr" description="35328/1" comment="Takt 302, FD - FBSO" typeNumber="2014" line="Takt 302," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="10:11:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="10:11:19" requestedDeparture="10:11:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="11:01:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="11:00:50" requestedDeparture="11:01:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="11:03:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="11:03:12" requestedDeparture="11:03:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="11:05:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="11:04:48" requestedDeparture="11:05:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="11:07:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="11:07:09" requestedDeparture="11:07:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="11:20:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="11:09:49" requestedDeparture="11:20:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35329" class="S" pattern="/S/S/Takt 303,/FBSO-FWX/hin" name="S/35329/0/hr" description="35329/1+" comment="Takt 303, FBSO - FD" typeNumber="2014" line="Takt 303," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="10:20:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="10:09:50" requestedDeparture="10:20:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="10:22:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="10:22:20" requestedDeparture="10:22:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="10:25:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="10:24:43" requestedDeparture="10:25:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="10:26:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="10:26:20" requestedDeparture="10:26:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="10:29:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="10:28:40" requestedDeparture="10:29:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="11:19:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="11:19:22" requestedDeparture="11:19:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35330" class="S" pattern="/S/S/Takt 306,/FBSO-FWX/rück" name="S/35330/0/hr" description="35330/1+" comment="Takt 306, FD - FBSO" typeNumber="2014" line="Takt 306," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="10:41:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="10:41:19" requestedDeparture="10:41:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="11:31:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="11:30:50" requestedDeparture="11:31:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="11:33:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="11:33:12" requestedDeparture="11:33:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="11:35:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="11:34:48" requestedDeparture="11:35:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="11:37:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="11:37:09" requestedDeparture="11:37:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="11:50:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="11:39:49" requestedDeparture="11:50:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35331" class="S" pattern="/S/S/Takt 307,/FBSO-FWX/hin" name="S/35331/0/hr" description="35331/1" comment="Takt 307, FBSO - FD" typeNumber="2014" line="Takt 307," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="10:50:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="10:39:50" requestedDeparture="10:50:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="10:52:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="10:52:20" requestedDeparture="10:52:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="10:55:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="10:54:43" requestedDeparture="10:55:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="10:56:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="10:56:20" requestedDeparture="10:56:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="10:59:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="10:58:40" requestedDeparture="10:59:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="11:49:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="11:49:22" requestedDeparture="11:49:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35332" class="S" pattern="/S/S/Takt 302,/FBSO-FWX/rück" name="S/35332/0/hr" description="35332/1" comment="Takt 302, FD - FBSO" typeNumber="2014" line="Takt 302," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="11:11:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="11:11:19" requestedDeparture="11:11:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="12:01:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="12:00:50" requestedDeparture="12:01:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="12:03:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="12:03:12" requestedDeparture="12:03:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="12:05:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="12:04:48" requestedDeparture="12:05:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="12:07:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="12:07:09" requestedDeparture="12:07:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="12:20:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="12:09:49" requestedDeparture="12:20:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35333" class="S" pattern="/S/S/Takt 303,/FBSO-FWX/hin" name="S/35333/0/hr" description="35333/1+" comment="Takt 303, FBSO - FD" typeNumber="2014" line="Takt 303," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FNH" departure="11:20:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="11:09:50" requestedDeparture="11:20:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="11:22:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="11:22:20" requestedDeparture="11:22:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="11:25:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="11:24:43" requestedDeparture="11:25:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="11:26:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="11:26:20" requestedDeparture="11:26:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="11:29:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="11:28:40" requestedDeparture="11:29:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="12:19:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="12:19:22" requestedDeparture="12:19:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35334" class="S" pattern="/S/S/Takt 306,/FBSO-FWX/rück" name="S/35334/0/hr" description="35334/1+" comment="Takt 306, FD - FBSO" typeNumber="2014" line="Takt 306," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="11:41:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="11:41:19" requestedDeparture="11:41:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="12:31:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="12:30:50" requestedDeparture="12:31:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="12:33:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="12:33:12" requestedDeparture="12:33:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="12:35:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="12:34:48" requestedDeparture="12:35:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="12:37:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="12:37:09" requestedDeparture="12:37:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="12:50:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="12:39:49" requestedDeparture="12:50:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35335" class="S" pattern="/S/S/Takt 307,/FBSO-FWX/hin" name="S/35335/0/hr" description="35335/1+" comment="Takt 307, FBSO - FD" typeNumber="2014" line="Takt 307," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="11:50:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="11:39:50" requestedDeparture="11:50:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="11:52:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="11:52:20" requestedDeparture="11:52:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="11:55:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="11:54:43" requestedDeparture="11:55:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="11:56:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="11:56:20" requestedDeparture="11:56:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="11:59:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="11:58:40" requestedDeparture="11:59:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="12:49:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="12:49:22" requestedDeparture="12:49:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35336" class="S" pattern="/S/S/Takt 302,/FBSO-FWX/rück" name="S/35336/0/hr" description="35336/1+" comment="Takt 302, FD - FBSO" typeNumber="2014" line="Takt 302," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="12:11:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="12:11:19" requestedDeparture="12:11:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="13:01:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="13:00:50" requestedDeparture="13:01:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="13:03:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="13:03:12" requestedDeparture="13:03:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="13:05:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="13:04:48" requestedDeparture="13:05:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="13:07:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="13:07:09" requestedDeparture="13:07:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="13:20:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="13:09:49" requestedDeparture="13:20:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35337" class="S" pattern="/S/S/Takt 303,/FBSO-FWX/hin" name="S/35337/0/hr" description="35337/1" comment="Takt 303, FBSO - FD" typeNumber="2014" line="Takt 303," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="12:20:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="12:09:50" requestedDeparture="12:20:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="12:22:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="12:22:20" requestedDeparture="12:22:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="12:25:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="12:24:43" requestedDeparture="12:25:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="12:26:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="12:26:20" requestedDeparture="12:26:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="12:29:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="12:28:40" requestedDeparture="12:29:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="13:19:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="13:19:22" requestedDeparture="13:19:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35338" class="S" pattern="/S/S/Takt 306,/FBSO-FWX/rück" name="S/35338/0/hr" description="35338/1+" comment="Takt 306, FD - FBSO" typeNumber="2014" line="Takt 306," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="12:41:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="12:41:19" requestedDeparture="12:41:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="13:31:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="13:30:50" requestedDeparture="13:31:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="13:33:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="13:33:12" requestedDeparture="13:33:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="13:35:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="13:34:48" requestedDeparture="13:35:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="13:37:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="13:37:09" requestedDeparture="13:37:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="13:50:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="13:39:49" requestedDeparture="13:50:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35339" class="S" pattern="/S/S/Takt 307,/FBSO-FWX/hin" name="S/35339/0/hr" description="35339/1+" comment="Takt 307, FBSO - FD" typeNumber="2014" line="Takt 307," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="12:50:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="12:39:50" requestedDeparture="12:50:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="12:52:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="12:52:20" requestedDeparture="12:52:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="12:55:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="12:54:43" requestedDeparture="12:55:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="12:56:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="12:56:20" requestedDeparture="12:56:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="12:59:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="12:58:40" requestedDeparture="12:59:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="13:49:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="13:49:22" requestedDeparture="13:49:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35340" class="S" pattern="/S/S/Takt 302,/FBSO-FWX/rück" name="S/35340/0/hr" description="35340/1+" comment="Takt 302, FD - FBSO" typeNumber="2014" line="Takt 302," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="13:11:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="13:11:19" requestedDeparture="13:11:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="14:01:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="14:00:50" requestedDeparture="14:01:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="14:03:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="14:03:12" requestedDeparture="14:03:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="14:05:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="14:04:48" requestedDeparture="14:05:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="14:07:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="14:07:09" requestedDeparture="14:07:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="14:20:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="14:09:49" requestedDeparture="14:20:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35341" class="S" pattern="/S/S/Takt 303,/FBSO-FWX/hin" name="S/35341/0/hr" description="35341/1+" comment="Takt 303, FBSO - FD" typeNumber="2014" line="Takt 303," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FNH" departure="13:20:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="13:09:50" requestedDeparture="13:20:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="13:22:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="13:22:20" requestedDeparture="13:22:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="13:25:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="13:24:43" requestedDeparture="13:25:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="13:26:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="13:26:20" requestedDeparture="13:26:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="13:29:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="13:28:40" requestedDeparture="13:29:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="14:19:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="14:19:22" requestedDeparture="14:19:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35342" class="S" pattern="/S/S/Takt 306,/FBSO-FWX/rück" name="S/35342/0/hr" description="35342/1+" comment="Takt 306, FD - FBSO" typeNumber="2014" line="Takt 306," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="13:41:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="13:41:19" requestedDeparture="13:41:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="14:31:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="14:30:50" requestedDeparture="14:31:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="14:33:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="14:33:12" requestedDeparture="14:33:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="14:35:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="14:34:48" requestedDeparture="14:35:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="14:37:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="14:37:09" requestedDeparture="14:37:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="14:50:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="14:39:49" requestedDeparture="14:50:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35343" class="S" pattern="/S/S/Takt 307,/FBSO-FWX/hin" name="S/35343/0/hr" description="35343/1" comment="Takt 307, FBSO - FD" typeNumber="2014" line="Takt 307," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="13:50:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="13:39:50" requestedDeparture="13:50:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="13:52:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="13:52:20" requestedDeparture="13:52:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="13:55:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="13:54:43" requestedDeparture="13:55:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="13:56:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="13:56:20" requestedDeparture="13:56:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="13:59:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="13:58:40" requestedDeparture="13:59:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="14:49:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="14:49:22" requestedDeparture="14:49:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35344" class="S" pattern="/S/S/Takt 302,/FBSO-FWX/rück" name="S/35344/0/hr" description="35344/1+" comment="Takt 302, FD - FBSO" typeNumber="2014" line="Takt 302," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="14:11:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="14:11:19" requestedDeparture="14:11:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="15:01:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="15:00:50" requestedDeparture="15:01:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="15:03:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="15:03:12" requestedDeparture="15:03:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="15:05:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="15:04:48" requestedDeparture="15:05:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="15:07:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="15:07:09" requestedDeparture="15:07:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="15:20:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="15:09:49" requestedDeparture="15:20:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35345" class="S" pattern="/S/S/Takt 303,/FBSO-FWX/hin" name="S/35345/0/hr" description="35345/1+" comment="Takt 303, FBSO - FD" typeNumber="2014" line="Takt 303," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="14:20:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="14:09:50" requestedDeparture="14:20:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="14:22:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="14:22:20" requestedDeparture="14:22:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="14:25:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="14:24:43" requestedDeparture="14:25:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="14:26:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="14:26:20" requestedDeparture="14:26:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="14:29:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="14:28:40" requestedDeparture="14:29:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="15:19:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="15:19:22" requestedDeparture="15:19:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35346" class="S" pattern="/S/S/Takt 306,/FBSO-FWX/rück" name="S/35346/0/hr" description="35346/1+" comment="Takt 306, FD - FBSO" typeNumber="2014" line="Takt 306," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="14:41:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="14:41:19" requestedDeparture="14:41:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="15:31:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="15:30:50" requestedDeparture="15:31:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="15:33:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="15:33:12" requestedDeparture="15:33:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="15:35:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="15:34:48" requestedDeparture="15:35:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="15:37:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="15:37:09" requestedDeparture="15:37:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="15:50:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="15:39:49" requestedDeparture="15:50:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35347" class="S" pattern="/S/S/Takt 307,/FBSO-FWX/hin" name="S/35347/0/hr" description="35347/1+" comment="Takt 307, FBSO - FD" typeNumber="2014" line="Takt 307," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="14:50:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="14:39:50" requestedDeparture="14:50:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="14:52:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="14:52:20" requestedDeparture="14:52:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="14:55:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="14:54:43" requestedDeparture="14:55:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="14:56:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="14:56:20" requestedDeparture="14:56:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="14:59:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="14:58:40" requestedDeparture="14:59:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="15:49:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="15:49:22" requestedDeparture="15:49:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35348" class="S" pattern="/S/S/Takt 302,/FBSO-FWX/rück" name="S/35348/0/hr" description="35348/1+" comment="Takt 302, FD - FBSO" typeNumber="2014" line="Takt 302," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="15:11:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="15:11:19" requestedDeparture="15:11:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="16:01:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="16:00:50" requestedDeparture="16:01:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="16:03:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="16:03:12" requestedDeparture="16:03:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="16:05:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="16:04:48" requestedDeparture="16:05:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="16:07:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="16:07:09" requestedDeparture="16:07:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="16:20:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="16:09:49" requestedDeparture="16:20:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35349" class="S" pattern="/S/S/Takt 303,/FBSO-FWX/hin" name="S/35349/0/hr" description="35349/1+" comment="Takt 303, FBSO - FD" typeNumber="2014" line="Takt 303," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FNH" departure="15:20:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="15:09:50" requestedDeparture="15:20:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="15:22:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="15:22:20" requestedDeparture="15:22:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="15:25:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="15:24:43" requestedDeparture="15:25:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="15:26:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="15:26:20" requestedDeparture="15:26:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="15:29:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="15:28:40" requestedDeparture="15:29:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="16:19:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="16:19:22" requestedDeparture="16:19:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35350" class="S" pattern="/S/S/Takt 306,/FBSO-FWX/rück" name="S/35350/0/hr" description="35350/1+" comment="Takt 306, FD - FBSO" typeNumber="2014" line="Takt 306," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="15:41:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="15:41:19" requestedDeparture="15:41:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="16:31:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="16:30:50" requestedDeparture="16:31:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="16:33:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="16:33:12" requestedDeparture="16:33:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="16:35:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="16:34:48" requestedDeparture="16:35:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="16:37:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="16:37:09" requestedDeparture="16:37:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="16:50:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="16:39:49" requestedDeparture="16:50:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35351" class="S" pattern="/S/S/Takt 307,/FBSO-FWX/hin" name="S/35351/0/hr" description="35351/1+" comment="Takt 307, FBSO - FD" typeNumber="2014" line="Takt 307," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="15:50:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="15:39:50" requestedDeparture="15:50:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="15:52:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="15:52:20" requestedDeparture="15:52:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="15:55:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="15:54:43" requestedDeparture="15:55:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="15:56:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="15:56:20" requestedDeparture="15:56:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="15:59:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="15:58:40" requestedDeparture="15:59:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="16:49:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="16:49:22" requestedDeparture="16:49:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35352" class="S" pattern="/S/S/Takt 302,/FBSO-FWX/rück" name="S/35352/1/hr" description="35352/1+" comment="Takt 302, FD - FBSO" typeNumber="2015" line="Takt 302," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="16:11:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="16:11:19" requestedDeparture="16:11:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="17:01:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="17:00:50" requestedDeparture="17:01:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2015" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="17:03:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="17:03:12" requestedDeparture="17:03:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="17:05:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="17:04:48" requestedDeparture="17:05:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="17:07:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="17:07:09" requestedDeparture="17:07:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="17:20:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="17:09:49" requestedDeparture="17:20:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35353" class="S" pattern="/S/S/Takt 303,/FBSO-FWX/hin" name="S/35353/0/hr" description="35353/1+" comment="Takt 303, FBSO - FD" typeNumber="2014" line="Takt 303," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="16:20:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="16:09:50" requestedDeparture="16:20:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="16:22:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="16:22:20" requestedDeparture="16:22:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="16:25:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="16:24:43" requestedDeparture="16:25:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="16:26:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="16:26:20" requestedDeparture="16:26:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="16:29:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="16:28:40" requestedDeparture="16:29:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="17:19:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="17:19:22" requestedDeparture="17:19:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35354" numbervar="1" class="S" pattern="/S/S/Takt 306,/FBSO-FWX/rück" name="S/35354/1/hr" description="35354/1+" comment="Takt 306, FD - FBSO" typeNumber="2015" line="Takt 306," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="16:41:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="16:41:19" requestedDeparture="16:41:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="17:31:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="17:30:50" requestedDeparture="17:31:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2015" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="17:33:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="17:33:12" requestedDeparture="17:33:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="17:35:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="17:34:48" requestedDeparture="17:35:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="17:37:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="17:37:09" requestedDeparture="17:37:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="17:50:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="17:39:49" requestedDeparture="17:50:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35355" class="S" pattern="/S/S/Takt 307,/FBSO-FWX/hin" name="S/35355/0/hr" description="35355/1+" comment="Takt 307, FBSO - FD" typeNumber="2014" line="Takt 307," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FNH" departure="16:50:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="16:39:50" requestedDeparture="16:50:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="16:52:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="16:52:20" requestedDeparture="16:52:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="16:55:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="16:54:43" requestedDeparture="16:55:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="16:56:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="16:56:20" requestedDeparture="16:56:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="16:59:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="16:58:40" requestedDeparture="16:59:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="17:49:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="17:49:22" requestedDeparture="17:49:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35356" class="S" pattern="/S/S/Takt 302,/FBSO-FWX/rück" name="S/35356/0/hr" description="35356/1+" comment="Takt 302, FD - FBSO" typeNumber="2014" line="Takt 302," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="17:11:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="17:11:19" requestedDeparture="17:11:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="18:01:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="18:00:50" requestedDeparture="18:01:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="18:03:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="18:03:12" requestedDeparture="18:03:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="18:05:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="18:04:48" requestedDeparture="18:05:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="18:07:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="18:07:09" requestedDeparture="18:07:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="18:20:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="18:09:49" requestedDeparture="18:20:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35357" numbervar="1" class="S" pattern="/S/S/Takt 303,/FBSO-FWX/hin" name="S/35357/1/hr" description="35357/1" comment="Takt 303, FBSO - FD" typeNumber="2015" line="Takt 303," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="17:20:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="17:09:50" requestedDeparture="17:20:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2015" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="17:22:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="17:22:20" requestedDeparture="17:22:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="17:25:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="17:24:43" requestedDeparture="17:25:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="17:26:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="17:26:20" requestedDeparture="17:26:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="17:29:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="17:28:40" requestedDeparture="17:29:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="18:19:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="18:19:22" requestedDeparture="18:19:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35358" class="S" pattern="/S/S/Takt 306,/FBSO-FWX/rück" name="S/35358/2/hr" description="35358/1+" comment="Takt 306, FD - FBSO" typeNumber="2014" line="Takt 306," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="17:41:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="17:41:19" requestedDeparture="17:41:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="18:31:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="18:30:50" requestedDeparture="18:31:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="18:33:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="18:33:12" requestedDeparture="18:33:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="18:35:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="18:34:48" requestedDeparture="18:35:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="18:37:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="18:37:09" requestedDeparture="18:37:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="18:50:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="18:39:49" requestedDeparture="18:50:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35359" class="S" pattern="/S/S/Takt 307,/FBSO-FWX/hin" name="S/35359/1/hr" description="35359/1+" comment="Takt 307, FBSO - FD" typeNumber="2015" line="Takt 307," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="17:50:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="17:39:50" requestedDeparture="17:50:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2015" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="17:52:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="17:52:20" requestedDeparture="17:52:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="17:55:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="17:54:43" requestedDeparture="17:55:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="17:56:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="17:56:20" requestedDeparture="17:56:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="17:59:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="17:58:40" requestedDeparture="17:59:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2015" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="18:49:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="18:49:22" requestedDeparture="18:49:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35360" class="S" pattern="/S/S/Takt 302,/FBSO-FWX/rück" name="S/35360/0/hr" description="35360/1+" comment="Takt 302, FD - FBSO" typeNumber="2014" line="Takt 302," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="18:11:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="18:11:19" requestedDeparture="18:11:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="19:01:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="19:00:50" requestedDeparture="19:01:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="19:03:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="19:03:12" requestedDeparture="19:03:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="19:05:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="19:04:48" requestedDeparture="19:05:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="19:07:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="19:07:09" requestedDeparture="19:07:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="19:20:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="19:09:49" requestedDeparture="19:20:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35361" class="S" pattern="/S/S/Takt 303,/FBSO-FWX/hin" name="S/35361/0/hr" description="35361/1+" comment="Takt 303, FBSO - FD" typeNumber="2014" line="Takt 303," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FNH" departure="18:20:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="18:09:50" requestedDeparture="18:20:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="18:22:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="18:22:20" requestedDeparture="18:22:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="18:25:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="18:24:43" requestedDeparture="18:25:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="18:26:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="18:26:20" requestedDeparture="18:26:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="18:29:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="18:28:40" requestedDeparture="18:29:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="19:19:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="19:19:22" requestedDeparture="19:19:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35362" class="S" pattern="/S/S/Takt 306,/FBSO-FWX/rück" name="S/35362/0/hr" description="35362/1+" comment="Takt 306, FD - FBSO" typeNumber="2014" line="Takt 306," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="18:41:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="18:41:19" requestedDeparture="18:41:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="19:31:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="19:30:50" requestedDeparture="19:31:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="19:33:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="19:33:12" requestedDeparture="19:33:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="19:35:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="19:34:48" requestedDeparture="19:35:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="19:37:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="19:37:09" requestedDeparture="19:37:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="19:50:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="19:39:49" requestedDeparture="19:50:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35363" class="S" pattern="/S/S/Takt 307,/FBSO-FWX/hin" name="S/35363/0/hr" description="35363/1+" comment="Takt 307, FBSO - FD" typeNumber="2014" line="Takt 307," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="18:50:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="18:39:50" requestedDeparture="18:50:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="18:52:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="18:52:20" requestedDeparture="18:52:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="18:55:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="18:54:43" requestedDeparture="18:55:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="18:56:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="18:56:20" requestedDeparture="18:56:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="18:59:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="18:58:40" requestedDeparture="18:59:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="19:49:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="19:49:22" requestedDeparture="19:49:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35364" class="S" pattern="/S/S/Takt 302,/FBSO-FWX/rück" name="S/35364/0/hr" description="35364/1+" comment="Takt 302, FD - FBSO" typeNumber="2014" line="Takt 302," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="19:11:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="19:11:19" requestedDeparture="19:11:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="20:01:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="20:00:50" requestedDeparture="20:01:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="20:03:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="20:03:12" requestedDeparture="20:03:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="20:05:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="20:04:48" requestedDeparture="20:05:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="20:07:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="20:07:09" requestedDeparture="20:07:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="20:20:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="20:09:49" requestedDeparture="20:20:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35365" class="S" pattern="/S/S/Takt 303,/FBSO-FWX/hin" name="S/35365/0/hr" description="35365/1+" comment="Takt 303, FBSO - FD" typeNumber="2014" line="Takt 303," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FNH" departure="19:20:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="19:09:50" requestedDeparture="19:20:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="19:22:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="19:22:20" requestedDeparture="19:22:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="19:25:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="19:24:43" requestedDeparture="19:25:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="19:26:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="19:26:20" requestedDeparture="19:26:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="19:29:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="19:28:40" requestedDeparture="19:29:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="20:19:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="20:19:22" requestedDeparture="20:19:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35366" class="S" pattern="/S/S/Takt 306,/FBSO-FWX/rück" name="S/35366/0/hr" description="35366/1+" comment="Takt 306, FD - FBSO" typeNumber="2014" line="Takt 306," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="19:41:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="19:41:19" requestedDeparture="19:41:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="20:31:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="20:30:50" requestedDeparture="20:31:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="20:33:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="20:33:12" requestedDeparture="20:33:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="20:35:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="20:34:48" requestedDeparture="20:35:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="20:37:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="20:37:09" requestedDeparture="20:37:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="20:50:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="20:39:49" requestedDeparture="20:50:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35367" class="S" pattern="/S/S/Takt 307,/FBSO-FWX/hin" name="S/35367/0/hr" description="35367/1+" comment="Takt 307, FBSO - FD" typeNumber="2014" line="Takt 307," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="19:50:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="19:39:50" requestedDeparture="19:50:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="19:52:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="19:52:20" requestedDeparture="19:52:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="19:55:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="19:54:43" requestedDeparture="19:55:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="19:56:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="19:56:20" requestedDeparture="19:56:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="19:59:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="19:58:40" requestedDeparture="19:59:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="20:49:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="20:49:22" requestedDeparture="20:49:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35368" class="S" pattern="/S/S/Takt 302,/FBSO-FWX/rück" name="S/35368/0/hr" description="35368/1+" comment="Takt 302, FD - FBSO" typeNumber="2014" line="Takt 302," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="20:11:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="20:11:19" requestedDeparture="20:11:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="21:01:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="21:00:50" requestedDeparture="21:01:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="21:03:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="21:03:12" requestedDeparture="21:03:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="21:05:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="21:04:48" requestedDeparture="21:05:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="21:07:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="21:07:09" requestedDeparture="21:07:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="21:20:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="21:09:49" requestedDeparture="21:20:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35369" class="S" pattern="/S/S/Takt 303,/FBSO-FWX/hin" name="S/35369/0/hr" description="35369/1+" comment="Takt 303, FBSO - FD" typeNumber="2014" line="Takt 303," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="20:20:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="20:09:50" requestedDeparture="20:20:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="20:22:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="20:22:20" requestedDeparture="20:22:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="20:25:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="20:24:43" requestedDeparture="20:25:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="20:26:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="20:26:20" requestedDeparture="20:26:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="20:29:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="20:28:40" requestedDeparture="20:29:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="21:19:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="21:19:22" requestedDeparture="21:19:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35370" class="S" pattern="/S/S/Takt 306,/FBSO-FWX/rück" name="S/35370/0/hr" description="35370/1+" comment="Takt 306, FD - FBSO" typeNumber="2014" line="Takt 306," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="20:41:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="20:41:19" requestedDeparture="20:41:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="21:31:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="21:30:50" requestedDeparture="21:31:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="21:33:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="21:33:12" requestedDeparture="21:33:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="21:35:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="21:34:48" requestedDeparture="21:35:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="21:37:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="21:37:09" requestedDeparture="21:37:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="21:50:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="21:39:49" requestedDeparture="21:50:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35371" class="S" pattern="/S/S/Takt 307,/FBSO-FWX/hin" name="S/35371/0/hr" description="35371/1+" comment="Takt 307, FBSO - FD" typeNumber="2014" line="Takt 307," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="20:50:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="20:39:50" requestedDeparture="20:50:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="20:52:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="20:52:20" requestedDeparture="20:52:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="20:55:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="20:54:43" requestedDeparture="20:55:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="20:56:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="20:56:20" requestedDeparture="20:56:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="20:59:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="20:58:40" requestedDeparture="20:59:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="21:49:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="21:49:22" requestedDeparture="21:49:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35372" class="S" pattern="/S/S/Takt 302,/FBSO-FWX/rück" name="S/35372/0/hr" description="35372/1+" comment="Takt 302, FD - FBSO" typeNumber="2014" line="Takt 302," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="21:11:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="21:11:19" requestedDeparture="21:11:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="22:01:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="22:00:50" requestedDeparture="22:01:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="22:03:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="22:03:12" requestedDeparture="22:03:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="22:05:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="22:04:48" requestedDeparture="22:05:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="22:07:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="22:07:09" requestedDeparture="22:07:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="22:20:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="22:09:49" requestedDeparture="22:20:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35373" class="S" pattern="/S/S/Takt 303,/FBSO-FWX/hin" name="S/35373/0/hr" description="35373/1" comment="Takt 303, FBSO - FD" typeNumber="2014" line="Takt 303," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="21:20:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="21:09:50" requestedDeparture="21:20:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="21:22:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="21:22:20" requestedDeparture="21:22:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="21:25:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="21:24:43" requestedDeparture="21:25:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="21:26:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="21:26:20" requestedDeparture="21:26:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="21:29:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="21:28:40" requestedDeparture="21:29:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="22:19:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="22:19:22" requestedDeparture="22:19:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35374" class="S" pattern="/S/S/Takt 306,/FBSO-FWX/rück" name="S/35374/0/hr" description="35374/1+" comment="Takt 306, FD - FBSO" typeNumber="2014" line="Takt 306," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="21:41:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="21:41:19" requestedDeparture="21:41:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="22:31:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="22:30:50" requestedDeparture="22:31:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="22:33:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="22:33:12" requestedDeparture="22:33:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="22:35:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="22:34:48" requestedDeparture="22:35:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="22:37:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="22:37:09" requestedDeparture="22:37:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="22:50:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="22:39:49" requestedDeparture="22:50:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35375" class="S" pattern="/S/S/Takt 307,/FBSO-FWX/hin" name="S/35375/0/hr" description="35375/1+" comment="Takt 307, FBSO - FD" typeNumber="2014" line="Takt 307," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="21:50:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="21:39:50" requestedDeparture="21:50:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="21:52:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="21:52:20" requestedDeparture="21:52:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="21:55:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="21:54:43" requestedDeparture="21:55:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="21:56:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="21:56:20" requestedDeparture="21:56:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="21:59:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="21:58:40" requestedDeparture="21:59:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="22:49:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="22:49:22" requestedDeparture="22:49:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35377" class="S" pattern="/S/S/Takt 303,/FBSO-FWX/hin" name="S/35377/0/hr" description="35377/1+" comment="Takt 303, FBSO - FD" typeNumber="2014" line="Takt 303," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="22:20:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="22:09:50" requestedDeparture="22:20:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="22:22:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="22:22:20" requestedDeparture="22:22:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="22:25:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="22:24:43" requestedDeparture="22:25:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="22:26:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="22:26:20" requestedDeparture="22:26:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="22:29:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="22:28:40" requestedDeparture="22:29:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="23:19:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="23:19:22" requestedDeparture="23:19:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35378" class="S" pattern="/S/S/Takt 306,/FBSO-FWX/rück" name="S/35378/0/hr" description="35378/1" comment="Takt 306, FD - FBSO" typeNumber="2014" line="Takt 306," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="22:41:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="22:41:19" requestedDeparture="22:41:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="23:31:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="23:30:50" requestedDeparture="23:31:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="23:33:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="23:33:12" requestedDeparture="23:33:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="23:35:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="23:34:48" requestedDeparture="23:35:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="23:37:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="23:37:09" requestedDeparture="23:37:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FNH-82-FBSO" departure="23:50:31" minStopTime="120" stopTime="642" RTMargin2="0" requestedArrival="23:39:49" requestedDeparture="23:50:31" requestedTrackID="A-82" requestedBstFahrweg="FNH-82-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35379" class="S" pattern="/S/S/Takt 307,/FBSO-FWX/hin" name="S/35379/0/hr" description="35379/1+" comment="Takt 307, FBSO - FD" typeNumber="2014" line="Takt 307," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="22:50:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="22:39:50" requestedDeparture="22:50:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="22:52:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="22:52:20" requestedDeparture="22:52:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="22:55:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="22:54:43" requestedDeparture="22:55:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="22:56:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="22:56:20" requestedDeparture="22:56:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="22:59:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="22:58:40" requestedDeparture="22:59:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="23:49:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="23:49:22" requestedDeparture="23:49:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35382" class="S" pattern="/S/S/Takt 306,/FBSO-FWX/rück" name="S/35382/0/hr" description="35382/1+" comment="Takt 306, FD - FBSO" typeNumber="2014" line="Takt 306," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="B-834" bstfahrweg="FDA-FESZ" departure="23:41:49" minStopTime="30" stopTime="30" regularRunningTime="116" requestedArrival="23:41:19" requestedDeparture="23:41:49" requestedTrackID="B-834" requestedBstFahrweg="FDA-FESZ" type="begin" lineID="3688" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="A-21" bstfahrweg="FES-21-FBSO" dwegName="1-1000" departure="24:31:44" minStopTime="48" stopTime="54" regularRunningTime="88" requestedArrival="24:30:50" requestedDeparture="24:31:44" requestedTrackID="A-21" requestedBstFahrweg="FES-21-FBSO" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="A-1" bstfahrweg="FNO-FBSO" departure="24:33:48" minStopTime="30" stopTime="36" regularRunningTime="60" requestedArrival="24:33:12" requestedDeparture="24:33:48" requestedTrackID="A-1" requestedBstFahrweg="FNO-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="24:35:24" minStopTime="30" stopTime="36" regularRunningTime="105" requestedArrival="24:34:48" requestedDeparture="24:35:24" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="A-1000" bstfahrweg="FNH-FBSO" departure="24:37:39" minStopTime="30" stopTime="30" regularRunningTime="130" requestedArrival="24:37:09" requestedDeparture="24:37:39" requestedTrackID="A-1000" requestedBstFahrweg="FNH-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" zuggattung="S 47.1"/>
+				<entry stationID="FBSO" trackID="A-81" bstfahrweg="FNH-81-FBSO" departure="24:47:19" minStopTime="120" stopTime="450" RTMargin2="0" requestedArrival="24:39:49" requestedDeparture="24:47:19" requestedTrackID="A-81" requestedBstFahrweg="FNH-81-FBSO" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35383" class="S" pattern="/S/S/Takt 307,/FBSO-FWX/hin" name="S/35383/0/hr" description="35383/1+" comment="Takt 307, FBSO - FD" typeNumber="2014" line="Takt 307," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-82" bstfahrweg="FBSO-82-FNH" dwegName="1-1000" departure="23:50:32" minStopTime="156" stopTime="642" regularRunningTime="108" requestedArrival="23:39:50" requestedDeparture="23:50:32" requestedTrackID="D-82" requestedBstFahrweg="FBSO-82-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="23:52:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="23:52:20" requestedDeparture="23:52:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="23:55:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="23:54:43" requestedDeparture="23:55:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="23:56:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="23:56:20" requestedDeparture="23:56:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="23:59:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="23:58:40" requestedDeparture="23:59:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="24:49:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="24:49:22" requestedDeparture="24:49:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+		<train number="35387" class="S" pattern="/S/S/Takt 307,/FBSO-FWX/hin" name="S/35387/0/hr" description="35387/1+" comment="Takt 307, FBSO - FD" typeNumber="2014" line="Takt 307," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FNH" dwegName="2-80" departure="00:50:32" minStopTime="156" stopTime="156" regularRunningTime="108" requestedArrival="00:47:56" requestedDeparture="00:50:32" requestedTrackID="D-81" requestedBstFahrweg="FBSO-81-FNH" type="stop" trainTypeNumber="2014" lineID="3641" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSZN" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="00:52:56" minStopTime="30" stopTime="36" regularRunningTime="107" requestedArrival="00:52:20" requestedDeparture="00:52:56" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSTS" trackID="B-1000" bstfahrweg="FBSO-FNH" departure="00:55:19" minStopTime="30" stopTime="36" regularRunningTime="61" requestedArrival="00:54:43" requestedDeparture="00:55:19" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FSLN" trackID="B-1" bstfahrweg="FBSO-FNH" departure="00:56:56" minStopTime="30" stopTime="36" regularRunningTime="104" requestedArrival="00:56:20" requestedDeparture="00:56:56" requestedTrackID="B-1" requestedBstFahrweg="FBSO-FNH" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FNH" trackID="D-22" bstfahrweg="FBSO-22-FES" dwegName="1-1000" departure="00:59:52" minStopTime="48" stopTime="72" regularRunningTime="86" requestedArrival="00:58:40" requestedDeparture="00:59:52" requestedTrackID="D-22" requestedBstFahrweg="FBSO-22-FES" type="stop" trainTypeNumber="2014" timingPoint="true" departureFix="true" zuggattung="S 47.1"/>
+				<entry stationID="FWX" stationName="Da-Wixhausen" trackID="A-834" bstfahrweg="FESZ-FDA" departure="01:49:52" minStopTime="30" stopTime="30" RTMargin2="0" requestedArrival="01:49:22" requestedDeparture="01:49:52" requestedTrackID="A-834" requestedBstFahrweg="FESZ-FDA" type="end" lineID="3688" timingPoint="true" zuggattung="S 47.1"/>
+			</timetableentries>
+		</train>
+	</timetable>
+</railsys>

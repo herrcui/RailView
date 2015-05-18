@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.infrastructure.InfrastructureElementViewController">
+   <center>
+      <SplitPane dividerPositions="0.8277591973244147" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TableView fx:id="portTable" layoutX="9.0" layoutY="13.0" prefHeight="268.0" prefWidth="453.0">
+                    <columns>
+                      <TableColumn fx:id="idColumn" prefWidth="59.0" text="Id" />
+                      <TableColumn fx:id="portColumn" prefWidth="121.0" text="Port" />
+                        <TableColumn prefWidth="95.0" text="X" fx:id="xColumn" />
+                        <TableColumn fx:id="yColumn" prefWidth="133.0" text="Y" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+        </items>
+      </SplitPane>
+   </center>
+</BorderPane>

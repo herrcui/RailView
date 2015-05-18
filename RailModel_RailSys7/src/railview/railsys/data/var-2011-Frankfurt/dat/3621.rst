@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<railsys>
+	<version major="1" minor="2" patchlevel="0" comment="Erzeugt von RailSys\Simu/7.6.12 am Fr 18. Jan 10:18:20 2013"/>
+	<timetable>
+		<train number="36312" class="S" pattern="/Bedarfszuege/S/Lr/FORD a/FFAU-FOTS/rück" name="Lr/36312/0/hr + Lr/36312/1/hr" description="36312/1" comment="FORD (a. Abst.) - FFS - FGM - FFAU (für Abst.)&#13;&#10;Li-Nr. 289018&#13;&#10;Fahrzeugtausch&#13;&#10;Ausschluß mit Lr 36316 (B)" typeNumber="2003" line="FORD a" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FOTS" stationName="Obertshsn(Kr Of)" trackID="G-522" bstfahrweg="FORD-502-FOBI" departure="01:55:57" regularRunningTime="92" requestedDeparture="01:55:57" requestedTrackID="G-522" requestedBstFahrweg="FORD-502-FOBI" type="begin" lineID="3661" timingPoint="true" departureFix="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FNI" trackID="G-607" bstfahrweg="FFOR-607-653-FGM" departure="02:18:13" regularRunningTime="240" requestedDeparture="02:18:13" requestedTrackID="G-607" requestedBstFahrweg="FFOR-607-653-FGM" type="pass" trainTypeNumber="2003" lineID="3621" timingPoint="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FGM" trackID="X-203" bstfahrweg="FNI-203-FGM-D &lt;-&gt; FHOE-203-FFAU" departure="02:30:43" minStopTime="300" stopTime="510" regularRunningTime="240" requestedArrival="02:22:13" requestedDeparture="02:30:43" requestedTrackID="X-203" requestedBstFahrweg="FNI-203-FGM-D &lt;-&gt; FHOE-203-FFAU" type="stop" trainTypeNumber="2003" timingPoint="true" departureFix="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FFAU" stationName="Ffm Hbf Außenbf" trackID="B-726" bstfahrweg="FGM-726-FFAU" dwegName="1-40" departure="02:35:43" minStopTime="60" stopTime="60" RTMargin2="0" requestedArrival="02:34:43" requestedDeparture="02:35:43" requestedTrackID="B-726" requestedBstFahrweg="FGM-726-FFAU" type="end" lineID="3631" timingPoint="true" zuggattung="Lr 47.2"/>
+			</timetableentries>
+		</train>
+		<train number="36316" class="S" pattern="/Bedarfszuege/S/Lr/FDZ aus/FDZS-FFAU/hin" name="Lr/36316/0/hr + Lr/36316/1/hr" description="36316/1" comment="FDZ (aus Abst.) - FFS - FFAU (f. Abst.)&#13;&#10;Li-Nr.: 289028&#13;&#10;Fahrzeugtausch&#13;&#10;Ausschluß mit Lr 36312 + FDZ (aus Abst.) - FGM - FFAU (f. Abst.)&#13;&#10;Li-Nr.: 289028&#13;&#10;Fahrzeugtausch&#13;&#10;Ausschluß mit Lr 36312" typeNumber="2003" line="FDZ aus" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FDZS" stationName="Dietzenb-Steinb" trackID="G-2" bstfahrweg="FDZ-FOBI" departure="01:54:15" regularRunningTime="148" requestedDeparture="01:54:15" requestedTrackID="G-2" requestedBstFahrweg="FDZ-FOBI" type="begin" lineID="3662" timingPoint="true" departureFix="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FNI" trackID="G-607" bstfahrweg="FFOR-607-653-FGM" departure="02:18:13" regularRunningTime="240" requestedDeparture="02:18:13" requestedTrackID="G-607" requestedBstFahrweg="FFOR-607-653-FGM" type="pass" trainTypeNumber="2003" lineID="3621" timingPoint="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FGM" trackID="X-203" bstfahrweg="FNI-203-FGM-D &lt;-&gt; FHOE-203-FFAU" departure="02:30:43" minStopTime="300" stopTime="510" regularRunningTime="240" requestedArrival="02:22:13" requestedDeparture="02:30:43" requestedTrackID="X-203" requestedBstFahrweg="FNI-203-FGM-D &lt;-&gt; FHOE-203-FFAU" type="stop" trainTypeNumber="2003" timingPoint="true" departureFix="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FFAU" stationName="Ffm Hbf Außenbf" trackID="B-726" bstfahrweg="FGM-726-FFAU" dwegName="1-40" departure="02:35:43" minStopTime="60" stopTime="60" RTMargin2="0" requestedArrival="02:34:43" requestedDeparture="02:35:43" requestedTrackID="B-726" requestedBstFahrweg="FGM-726-FFAU" type="end" lineID="3631" timingPoint="true" zuggattung="Lr 47.2"/>
+			</timetableentries>
+		</train>
+		<train number="36318" class="S" pattern="/Bedarfszuege/S/Lr/FFS aus/FFAU-FFS A/rück" name="Lr/36318/0/hr + Lr/36318/1/hr" description="36318/1" comment="FFS (aus Abst) - FGM - FFAU (f.Abst.)&#13;&#10;Li-Nr.: 289042&#13;&#10;Fahrzeugtausch" typeNumber="2001" line="FFS aus" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFS A" stationName="Ffm Süd Abstbf" trackID="B-633" bstfahrweg="FFS_A-633-FLS" departure="00:38:42" minStopTime="120" stopTime="300" regularRunningTime="84" requestedArrival="00:33:42" requestedDeparture="00:38:42" requestedTrackID="B-633" requestedBstFahrweg="FFS_A-633-FLS" type="begin" lineID="3604" timingPoint="true" departureFix="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FNI" trackID="A-608" bstfahrweg="FFOR-608-658-FGM" departure="00:47:43" minStopTime="120" stopTime="120" regularRunningTime="185" requestedArrival="00:45:43" requestedDeparture="00:47:43" requestedTrackID="A-608" requestedBstFahrweg="FFOR-608-658-FGM" type="stop" trainTypeNumber="2001" lineID="3621" timingPoint="true" departureFix="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FGM" trackID="X-203" bstfahrweg="FNI-203-FGM-D &lt;-&gt; FHOE-203-FFAU" departure="01:07:31" minStopTime="180" stopTime="1003" regularRunningTime="254" requestedArrival="00:50:48" requestedDeparture="01:07:31" requestedTrackID="X-203" requestedBstFahrweg="FNI-203-FGM-D &lt;-&gt; FHOE-203-FFAU" type="stop" trainTypeNumber="2001" timingPoint="true" departureFix="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FFAU" stationName="Ffm Hbf Außenbf" trackID="B-726" bstfahrweg="FGM-726-FFAU" dwegName="1-40" departure="01:13:45" minStopTime="60" stopTime="120" RTMargin2="0" requestedArrival="01:11:45" requestedDeparture="01:13:45" requestedTrackID="B-726" requestedBstFahrweg="FGM-726-FFAU" type="end" lineID="3631" timingPoint="true" departureFix="true" zuggattung="Lr 47.2"/>
+			</timetableentries>
+		</train>
+		<train number="36320" class="S" pattern="/Bedarfszuege/S/Lr/FD aAbst/FEZ-FFAU/hin" name="Lr/36320/126/hr + Lr/36320/612/hr" description="36320/1" comment="FD (a.Abst.) - FGM - FFAU ( für Abstellung)&#13;&#10;Liniennr. 289034&#13;&#10;Fahrzeugtausch" typeNumber="2001" line="FD aAbst" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FEZ" stationName="Erzhausen" trackID="G-737" bstfahrweg="FDA-737-FLG" departure="02:46:59" regularRunningTime="177" requestedDeparture="02:46:59" requestedTrackID="G-737" requestedBstFahrweg="FDA-737-FLG" type="begin" lineID="3601" timingPoint="true" departureFix="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FNI" trackID="A-608" bstfahrweg="FFOR-608-658-FGM" departure="03:07:55" minStopTime="270" stopTime="270" regularRunningTime="215" requestedArrival="03:03:25" requestedDeparture="03:07:55" requestedTrackID="A-608" requestedBstFahrweg="FFOR-608-658-FGM" type="stop" trainTypeNumber="2001" lineID="3621" timingPoint="true" departureFix="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FGM" trackID="X-203" bstfahrweg="FNI-203-FGM-D &lt;-&gt; FHOE-203-FFAU" departure="03:19:30" minStopTime="480" stopTime="480" regularRunningTime="164" requestedArrival="03:11:30" requestedDeparture="03:19:30" requestedTrackID="X-203" requestedBstFahrweg="FNI-203-FGM-D &lt;-&gt; FHOE-203-FFAU" type="stop" trainTypeNumber="2001" timingPoint="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FFAU" stationName="Ffm Hbf Außenbf" trackID="Z-9000" bstfahrweg="FGM-726-FFAU" departure="03:26:14" minStopTime="60" stopTime="240" RTMargin2="0" requestedArrival="03:22:14" requestedDeparture="03:26:14" requestedTrackID="Z-9000" requestedBstFahrweg="FGM-726-FFAU" type="end" lineID="3631" timingPoint="true" departureFix="true" zuggattung="Lr 47.2"/>
+			</timetableentries>
+		</train>
+		<train number="36331" class="S" pattern="/Bedarfszuege/S/Lr/FW aus/FFAU-FRA/rück" name="Lr/36331/0/hr + Lr/36331/1/hr" description="36331/1" comment="FW (aus Abst.) - FFAU (f. Abst)&#13;&#10;Li-Nr. 289 093&#13;&#10;Fahrzeugtausch" typeNumber="2001" line="FW aus" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FRA" stationName="Raunheim" trackID="G-2" bstfahrweg="FRUE-2-FRAC" departure="01:00:28" regularRunningTime="54" requestedDeparture="01:00:28" requestedTrackID="G-2" requestedBstFahrweg="FRUE-2-FRAC" type="begin" lineID="3520" timingPoint="true" departureFix="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FNI" trackID="G-604" bstfahrweg="FSP-604-654-FGM-GR" departure="01:21:27" regularRunningTime="226" requestedDeparture="01:21:27" requestedTrackID="G-604" requestedBstFahrweg="FSP-604-654-FGM-GR" type="pass" trainTypeNumber="2001" lineID="3621" timingPoint="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FGM" trackID="X-203" bstfahrweg="FNI-203-FGM-D &lt;-&gt; FHOE-203-FFAU" departure="01:34:22" minStopTime="300" stopTime="549" regularRunningTime="240" requestedArrival="01:25:13" requestedDeparture="01:34:22" requestedTrackID="X-203" requestedBstFahrweg="FNI-203-FGM-D &lt;-&gt; FHOE-203-FFAU" type="stop" trainTypeNumber="2001" timingPoint="true" departureFix="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FFAU" stationName="Ffm Hbf Außenbf" trackID="B-726" bstfahrweg="FGM-726-FFAU" dwegName="1-40" departure="01:39:22" minStopTime="60" stopTime="60" RTMargin2="0" requestedArrival="01:38:22" requestedDeparture="01:39:22" requestedTrackID="B-726" requestedBstFahrweg="FGM-726-FFAU" type="end" lineID="3631" timingPoint="true" zuggattung="Lr 47.2"/>
+			</timetableentries>
+		</train>
+		<train number="36332" class="S" pattern="/Bedarfszuege/S/Lr/FH aus/FFAU-FMHO/rück" name="Lr/36332/0/hr + Lr/36332/1/hr" description="36332/1" comment="FH (aus Abst.) - FGM - FFAU (f. Abst.)&#13;&#10;Li-Nr.: 289088&#13;&#10;Fahrzeugtausch" typeNumber="2001" line="FH aus" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FMHO" stationName="Mühlheim Ost" trackID="G-2" bstfahrweg="FH_M-FO_G" departure="03:21:27" regularRunningTime="147" requestedDeparture="03:21:27" requestedTrackID="G-2" requestedBstFahrweg="FH_M-FO_G" type="begin" lineID="3600" timingPoint="true" departureFix="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FNI" trackID="A-608" bstfahrweg="FFOR-608-658-FGM" departure="03:38:47" minStopTime="108" stopTime="108" regularRunningTime="186" requestedArrival="03:36:59" requestedDeparture="03:38:47" requestedTrackID="A-608" requestedBstFahrweg="FFOR-608-658-FGM" type="stop" trainTypeNumber="2001" lineID="3621" timingPoint="true" departureFix="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FGM" trackID="X-203" bstfahrweg="FNI-203-FGM-D &lt;-&gt; FHOE-203-FFAU" departure="03:54:29" minStopTime="300" stopTime="756" regularRunningTime="226" requestedArrival="03:41:53" requestedDeparture="03:54:29" requestedTrackID="X-203" requestedBstFahrweg="FNI-203-FGM-D &lt;-&gt; FHOE-203-FFAU" type="stop" trainTypeNumber="2001" timingPoint="true" departureFix="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FFAU" stationName="Ffm Hbf Außenbf" trackID="B-726" bstfahrweg="FGM-726-FFAU" dwegName="1-40" departure="03:59:15" minStopTime="60" stopTime="60" RTMargin2="0" requestedArrival="03:58:15" requestedDeparture="03:59:15" requestedTrackID="B-726" requestedBstFahrweg="FGM-726-FFAU" type="end" lineID="3631" timingPoint="true" zuggattung="Lr 47.2"/>
+			</timetableentries>
+		</train>
+		<train number="46062" class="FRz" pattern="/FRz/LICE-W/Ohne Linie/FF-FGM/hin" name="LICE-W/46062/1/ga + LICE-W/46062/2/ga" description="46062/1+" typeNumber="128" line="Ohne Linie" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FF" stationName="Frankfurt(M) Hbf" trackID="B-19" bstfahrweg="FF-19-FF__H(3520)" departure="11:00:00" minStopTime="60" stopTime="60" regularRunningTime="91" requestedArrival="10:59:00" requestedDeparture="11:00:00" requestedTrackID="B-19" requestedBstFahrweg="FF-19-FF__H(3520)" type="begin" lineID="3520" timingPoint="true" departureFix="true" zuggattung="LICE-W 14.6"/>
+				<entry stationID="FNI" trackID="Y-603" bstfahrweg="FF__H-653-603-FSP &lt;-&gt; FSP-603-653-FGM" departure="11:08:52" minStopTime="240" stopTime="240" regularRunningTime="240" requestedArrival="11:04:52" requestedDeparture="11:08:52" requestedTrackID="Y-603" requestedBstFahrweg="FF__H-653-603-FSP &lt;-&gt; FSP-603-653-FGM" type="stop" trainTypeNumber="128" lineID="3621" timingPoint="true" zuggattung="LICE-W 14.6"/>
+				<entry stationID="FGM" trackID="A-202" bstfahrweg="FNI-202-FHOE" dwegName="1-1000" departure="11:13:52" minStopTime="60" stopTime="60" RTMargin2="0" requestedArrival="11:12:52" requestedDeparture="11:13:52" requestedTrackID="A-202" requestedBstFahrweg="FNI-202-FHOE" type="stop" trainTypeNumber="128" timingPoint="true" zuggattung="LICE-W 14.6"/>
+			</timetableentries>
+		</train>
+		<train number="55592" class="NGz" pattern="/NGz/FZT/FO G/FGM-FO  G/rück" name="FZT/55592/0/si" description="55592/1" comment="FO G - FGM" typeNumber="6110" line="FO G" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FO  G" stationName="Offenbach(M) Gbf" trackID="B-107" bstfahrweg="FMHO-107-152-FO-3600/3664" dwegName="1-1000" departure="12:20:30" minStopTime="300" stopTime="300" regularRunningTime="300" requestedArrival="12:15:30" requestedDeparture="12:20:30" requestedTrackID="B-107" requestedBstFahrweg="FMHO-107-152-FO-3600/3664" type="begin" lineID="3664" timingPoint="true" departureFix="true" zuggattung="FZT 63.7"/>
+				<entry stationID="FNI" trackID="G-608" bstfahrweg="FFOR-608-658-FGM" departure="12:36:27" regularRunningTime="237" requestedDeparture="12:36:27" requestedTrackID="G-608" requestedBstFahrweg="FFOR-608-658-FGM" type="pass" trainTypeNumber="6110" lineID="3621" timingPoint="true" zuggattung="FZT 63.7"/>
+				<entry stationID="FGM" trackID="A-204" bstfahrweg="FNI-204-FGM-D" dwegName="1-1000" departure="12:45:24" minStopTime="300" stopTime="300" RTMargin2="0" requestedArrival="12:40:24" requestedDeparture="12:45:24" requestedTrackID="A-204" requestedBstFahrweg="FNI-204-FGM-D" type="stop" trainTypeNumber="6110" timingPoint="true" zuggattung="FZT 63.7"/>
+			</timetableentries>
+		</train>
+		<train number="55597" class="NGz" pattern="/NGz/FZT/FHOEG -/FHOEG-FO  G/hin" name="FZT/55597/0/He + FZT/55597/1/He" description="55597/1" comment="FHOEG - FGM - FO G&#13;&#10;P/C 70, P/C 400" typeNumber="6111" line="FHOEG -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOEG" stationName="Ff-Höchst Gbf" trackID="B-228" bstfahrweg="FFAWA-228-FHOE" dwegName="1-1000" departure="11:31:06" minStopTime="1800" stopTime="1800" regularRunningTime="79" requestedArrival="11:01:06" requestedDeparture="11:31:06" requestedTrackID="B-228" requestedBstFahrweg="FFAWA-228-FHOE" type="begin" lineID="3603" timingPoint="true" departureFix="true" zuggattung="FZT 63.7"/>
+				<entry stationID="FGM" trackID="B-204" bstfahrweg="FHOE-204-FNI" dwegName="2-1000" departure="12:16:02" minStopTime="1380" stopTime="2222" regularRunningTime="232" requestedArrival="11:39:00" requestedDeparture="12:16:02" requestedTrackID="B-204" requestedBstFahrweg="FHOE-204-FNI" type="stop" trainTypeNumber="6111" lineID="3621" timingPoint="true" departureFix="true" zuggattung="FZT 63.7"/>
+				<entry stationID="FNI" trackID="N-9000" bstfahrweg="FGM-654-607-FFOR" trackIDForNotConditional="G-607" bstFahrwegBeiAusfallBetriebsHalt="FGM-653-607-FFOR" departure="12:19:55" minStopTime="1" stopTime="1" regularRunningTime="368" requestedArrival="12:19:54" requestedDeparture="12:19:55" requestedTrackID="N-9000" requestedBstFahrweg="FGM-654-607-FFOR" type="conditional1" trainTypeNumber="6111" timingPoint="true" zuggattung="FZT 63.7"/>
+				<entry stationID="FO  G" stationName="Offenbach(M) Gbf" trackID="A-106" bstfahrweg="FO-152-106-FMHO-3664/3600" dwegName="1-1000" departure="13:51:25" minStopTime="1800" stopTime="1800" RTMargin2="0" requestedArrival="13:21:25" requestedDeparture="13:51:25" requestedTrackID="A-106" requestedBstFahrweg="FO-152-106-FMHO-3664/3600" type="end" lineID="3664" timingPoint="true" zuggattung="FZT 63.7"/>
+			</timetableentries>
+		</train>
+		<train number="60784" class="FGz" pattern="/Bedarfszuege/FGz/CS/RLB G/FFBS-FWF/rück" name="CS/60784/222/su + CS/60784/98/He + CS/60784/200/js" description="60784/2" comment="RLB G - HBAG&#13;&#10;GGVSE RID 4.1 + FHOEG - HOR O&#13;&#10;Gefahrgut + FHOEG - HOR O&#13;&#10;RID-Klasse 4.1&#13;&#10;hat Startflügel von RLB G nach FHOEG&#13;&#10;während Baukorridor 09 im Bauumleiterplan über Troisdorf" typeNumber="4042" line="RLB G" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="20:08:24" regularRunningTime="161" requestedDeparture="20:08:24" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="CS 69.8"/>
+				<entry stationID="FNI" trackID="G-603" bstfahrweg="FSP-603-653-FGM" departure="20:16:08" regularRunningTime="129" requestedDeparture="20:16:08" requestedTrackID="G-603" requestedBstFahrweg="FSP-603-653-FGM" type="pass" trainTypeNumber="4042" lineID="3621" timingPoint="true" zuggattung="CS 69.8"/>
+				<entry stationID="FGM" trackID="V-9000" bstfahrweg="FNI-202-FHOE" trackIDForNotConditional="G-202" bstFahrwegBeiAusfallBetriebsHalt="FNI-202-FHOE" departure="20:29:47" minStopTime="60" stopTime="690" regularRunningTime="262" requestedArrival="20:18:17" requestedDeparture="20:29:47" requestedTrackID="V-9000" requestedBstFahrweg="FNI-202-FHOE" type="conditional1" trainTypeNumber="4042" timingPoint="true" departureFix="true" zuggattung="CS 69.8"/>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-3" bstfahrweg="FFGI-3-FVL" departure="22:07:33" RTMargin2="0" requestedDeparture="22:07:33" requestedTrackID="G-3" requestedBstFahrweg="FFGI-3-FVL" type="end" lineID="3900" timingPoint="true" zuggattung="CS 69.8"/>
+			</timetableentries>
+		</train>
+		<train number="73596" class="NRz" pattern="/NRz/Lr/Ohne Linie/FFLU-FGM/rück" name="Lr/73596/700/60" description="73596/1" typeNumber="1032" line="Ohne Linie" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FGM" trackID="B-204" bstfahrweg="FHOE-204-FNI" departure="14:41:56" minStopTime="120" stopTime="600" regularRunningTime="96" requestedArrival="14:31:56" requestedDeparture="14:41:56" requestedTrackID="B-204" requestedBstFahrweg="FHOE-204-FNI" type="stop" trainTypeNumber="1032" lineID="3621" timingPoint="true" departureFix="true" zuggattung="Lr 41.2"/>
+				<entry stationID="FNI" trackID="N-9000" bstfahrweg="FGM-654-604-FSP" trackIDForNotConditional="G-603" bstFahrwegBeiAusfallBetriebsHalt="FGM-653-603-FSP" departure="14:52:02" minStopTime="60" stopTime="510" regularRunningTime="221" requestedArrival="14:43:32" requestedDeparture="14:52:02" requestedTrackID="N-9000" requestedBstFahrweg="FGM-654-604-FSP" type="conditional1" trainTypeNumber="1032" timingPoint="true" departureFix="true" zuggattung="Lr 41.2"/>
+				<entry stationID="FFLU" stationName="Ffm Flughf Regio" trackID="A-402" bstfahrweg="FSP-402-FKCH" departure="15:05:12" minStopTime="120" stopTime="120" RTMargin2="0" requestedArrival="15:03:12" requestedDeparture="15:05:12" requestedTrackID="A-402" requestedBstFahrweg="FSP-402-FKCH" type="end" lineID="3683" timingPoint="true" zuggattung="Lr 41.2"/>
+			</timetableentries>
+		</train>
+		<train number="73604" numbervar="1" class="NRz" pattern="/NRz/Lr-D/Ohne Linie/FGM-FKCH/rück" name="Lr-D/73604/700/60" description="73604/1+" typeNumber="1050" line="Ohne Linie" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FKCH" stationName="Kelsterbach" trackID="A-305" bstfahrweg="FRA-305-312-FSP" departure="09:07:30" minStopTime="60" stopTime="300" regularRunningTime="121" requestedArrival="09:02:30" requestedDeparture="09:07:30" requestedTrackID="A-305" requestedBstFahrweg="FRA-305-312-FSP" type="begin" lineID="3520" timingPoint="true" departureFix="true" zuggattung="Lr-D 41.2"/>
+				<entry stationID="FNI" trackID="X-9000" bstfahrweg="FSP-603-653-FGM" trackIDForNotConditional="G-603" bstFahrwegBeiAusfallBetriebsHalt="FSP-603-653-FGM" departure="09:19:47" minStopTime="1" stopTime="1" regularRunningTime="298" requestedArrival="09:19:46" requestedDeparture="09:19:47" requestedTrackID="X-9000" requestedBstFahrweg="FSP-603-653-FGM" type="conditional1" trainTypeNumber="1050" lineID="3621" timingPoint="true" zuggattung="Lr-D 41.2"/>
+				<entry stationID="FGM" trackID="A-203" bstfahrweg="FNI-203-FGM-D" dwegName="1-1000" departure="09:33:51" minStopTime="120" stopTime="546" RTMargin2="0" requestedArrival="09:24:45" requestedDeparture="09:33:51" requestedTrackID="A-203" requestedBstFahrweg="FNI-203-FGM-D" type="stop" trainTypeNumber="1050" timingPoint="true" departureFix="true" zuggattung="Lr-D 41.2"/>
+			</timetableentries>
+		</train>
+		<train number="73608" class="NRz" pattern="/NRz/Lr-D/für 15702/F836A-FGM/rück" name="Lr-D/73608/500/Hr" description="73608/1" comment="für 15702 und 15743" typeNumber="1039" line="für 15702" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FGM" trackID="D-203" bstfahrweg="FHOE-203-FNI" dwegName="2-1000" departure="04:48:27" minStopTime="300" stopTime="600" regularRunningTime="134" requestedArrival="04:38:27" requestedDeparture="04:48:27" requestedTrackID="D-203" requestedBstFahrweg="FHOE-203-FNI" type="stop" trainTypeNumber="1039" lineID="3621" timingPoint="true" departureFix="true" zuggattung="Lr-D 41.2"/>
+				<entry stationID="FNI" trackID="N-9000" bstfahrweg="FGM-654-607-FFOR" trackIDForNotConditional="G-607" bstFahrwegBeiAusfallBetriebsHalt="FGM-653-607-FFOR" departure="04:50:42" minStopTime="1" stopTime="1" regularRunningTime="268" requestedArrival="04:50:41" requestedDeparture="04:50:42" requestedTrackID="N-9000" requestedBstFahrweg="FGM-654-607-FFOR" type="conditional1" trainTypeNumber="1039" timingPoint="true" zuggattung="Lr-D 41.2"/>
+				<entry stationID="F836A" stationName="Sbk 836 (3601)" trackID="G-836" bstfahrweg="FEZ-FDA" departure="05:05:13" RTMargin2="0" requestedDeparture="05:05:13" requestedTrackID="G-836" requestedBstFahrweg="FEZ-FDA" type="end" lineID="3601" timingPoint="true" zuggattung="Lr-D 41.2"/>
+			</timetableentries>
+		</train>
+		<train number="73609" class="NRz" pattern="/NRz/Lr-D/aus 15761/FEZ-FGM/hin" name="Lr-D/73609/501/Hr" description="73609/1+" comment="aus 15761" typeNumber="1036" line="aus 15761" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FEZ" stationName="Erzhausen" trackID="G-737" bstfahrweg="FDA-737-FLG" departure="19:03:32" regularRunningTime="246" requestedDeparture="19:03:32" requestedTrackID="G-737" requestedBstFahrweg="FDA-737-FLG" type="begin" lineID="3601" timingPoint="true" departureFix="true" zuggattung="Lr-D 41.2"/>
+				<entry stationID="FNI" trackID="A-608" bstfahrweg="FFOR-608-658-FGM" departure="19:56:35" minStopTime="1200" stopTime="1200" regularRunningTime="213" requestedArrival="19:36:35" requestedDeparture="19:56:35" requestedTrackID="A-608" requestedBstFahrweg="FFOR-608-658-FGM" type="stop" trainTypeNumber="1036" lineID="3621" timingPoint="true" departureFix="true" zuggattung="Lr-D 41.2"/>
+				<entry stationID="FGM" trackID="A-203" bstfahrweg="FNI-203-FGM-D" dwegName="1-1000" departure="20:19:08" minStopTime="300" stopTime="1140" RTMargin2="0" requestedArrival="20:00:08" requestedDeparture="20:19:08" requestedTrackID="A-203" requestedBstFahrweg="FNI-203-FGM-D" type="stop" trainTypeNumber="1036" timingPoint="true" departureFix="true" zuggattung="Lr-D 41.2"/>
+			</timetableentries>
+		</train>
+		<train number="76944" class="Lz" pattern="/Lz/Tfzf (RaR)/Ohne Linie/FGM-FO  G/hin" name="Tfzf (/76944/222/He + Tfzf (/76944/0/si" description="76944/1+" typeNumber="8530" line="Ohne Linie" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FGM" trackID="B-204" bstfahrweg="FHOE-204-FNI" dwegName="2-1000" departure="03:03:42" minStopTime="300" stopTime="300" regularRunningTime="183" requestedArrival="02:58:42" requestedDeparture="03:03:42" requestedTrackID="B-204" requestedBstFahrweg="FHOE-204-FNI" type="stop" trainTypeNumber="8530" lineID="3621" timingPoint="true" departureFix="true" zuggattung="Tfzf (RaR) 03.1"/>
+				<entry stationID="FNI" trackID="F-603" bstfahrweg="FGM-654-607-FFOR" dwegName="1-1000" departure="03:12:15" minStopTime="330" stopTime="330" regularRunningTime="163" requestedArrival="03:06:45" requestedDeparture="03:12:15" requestedTrackID="F-603" requestedBstFahrweg="FGM-654-607-FFOR" type="stop" trainTypeNumber="8530" timingPoint="true" departureFix="true" zuggattung="Tfzf (RaR) 03.1"/>
+				<entry stationID="FO  G" stationName="Offenbach(M) Gbf" trackID="A-104" bstfahrweg="FO-152-104-FMHO-3664/3600" dwegName="1-1000" departure="03:44:36" minStopTime="300" stopTime="300" RTMargin2="0" requestedArrival="03:39:36" requestedDeparture="03:44:36" requestedTrackID="A-104" requestedBstFahrweg="FO-152-104-FMHO-3664/3600" type="end" lineID="3664" timingPoint="true" zuggattung="Tfzf (RaR) 03.1"/>
+			</timetableentries>
+		</train>
+		<train number="76947" class="Lz" pattern="/Lz/Tfzf (RaR)/FO G/FGM-FO  G/rück" name="Tfzf (/76947/0/si" description="76947/1+" comment="FO G - FGM" typeNumber="8530" line="FO G" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FO  G" stationName="Offenbach(M) Gbf" trackID="B-107" bstfahrweg="FMHO-107-152-FO-3600/3664" dwegName="1-1000" departure="00:51:51" minStopTime="180" stopTime="180" regularRunningTime="180" requestedArrival="00:48:51" requestedDeparture="00:51:51" requestedTrackID="B-107" requestedBstFahrweg="FMHO-107-152-FO-3600/3664" type="begin" lineID="3664" timingPoint="true" departureFix="true" zuggattung="Tfzf (RaR) 03.1"/>
+				<entry stationID="FNI" trackID="G-608" bstfahrweg="FFOR-608-658-FGM" departure="01:04:24" regularRunningTime="255" requestedDeparture="01:04:24" requestedTrackID="G-608" requestedBstFahrweg="FFOR-608-658-FGM" type="pass" trainTypeNumber="8530" lineID="3621" timingPoint="true" zuggattung="Tfzf (RaR) 03.1"/>
+				<entry stationID="FGM" trackID="A-207" bstfahrweg="FNI-207-FGM" departure="01:11:39" minStopTime="180" stopTime="180" RTMargin2="0" requestedArrival="01:08:39" requestedDeparture="01:11:39" requestedTrackID="A-207" requestedBstFahrweg="FNI-207-FGM" type="stop" trainTypeNumber="8530" timingPoint="true" zuggattung="Tfzf (RaR) 03.1"/>
+			</timetableentries>
+		</train>
+		<train number="78668" class="FRz" pattern="/FRz/Lr/aus 2152/FFLF-FGM/hin" name="Lr/78668/700/60" description="78668/1" comment="aus 2152" typeNumber="141" line="aus 2152" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFLF" stationName="Ffm Flughf Fbf" trackID="A-4" bstfahrweg="FMOH-4-FFK" dwegName="2-1000" departure="22:25:12" minStopTime="300" stopTime="1200" regularRunningTime="100" requestedArrival="22:05:12" requestedDeparture="22:25:12" requestedTrackID="A-4" requestedBstFahrweg="FMOH-4-FFK" type="begin" lineID="2690" timingPoint="true" departureFix="true" zuggattung="Lr 11.2"/>
+				<entry stationID="FNI" trackID="G-603" bstfahrweg="FSP-603-653-FGM" departure="22:30:04" regularRunningTime="206" requestedDeparture="22:30:04" requestedTrackID="G-603" requestedBstFahrweg="FSP-603-653-FGM" type="pass" trainTypeNumber="141" lineID="3621" timingPoint="true" zuggattung="Lr 11.2"/>
+				<entry stationID="FGM" trackID="A-203" bstfahrweg="FNI-203-FGM-D" dwegName="1-1000" departure="22:48:30" minStopTime="900" stopTime="900" RTMargin2="0" requestedArrival="22:33:30" requestedDeparture="22:48:30" requestedTrackID="A-203" requestedBstFahrweg="FNI-203-FGM-D" type="stop" trainTypeNumber="141" timingPoint="true" zuggattung="Lr 11.2"/>
+			</timetableentries>
+		</train>
+		<train number="78697" numbervar="2" class="FRz" pattern="/FRz/LICE-W/FGM, als/FGM-FRA/hin" name="LICE-W/78697/700/60" description="78697/1" comment="FGM, als unbegleitete Rangierfahrt von FFA (aus Abst.), - FMZ (für 716)." typeNumber="123" line="FGM, als" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FGM" trackID="D-203" bstfahrweg="FHOE-203-FNI" dwegName="2-1000" departure="05:11:02" minStopTime="300" stopTime="300" regularRunningTime="181" requestedArrival="05:06:02" requestedDeparture="05:11:02" requestedTrackID="D-203" requestedBstFahrweg="FHOE-203-FNI" type="stop" trainTypeNumber="123" lineID="3621" timingPoint="true" departureFix="true" zuggattung="LICE-W 14.2"/>
+				<entry stationID="FNI" trackID="G-604" bstfahrweg="FGM-654-604-FSP" departure="05:14:03" regularRunningTime="91" requestedDeparture="05:14:03" requestedTrackID="G-604" requestedBstFahrweg="FGM-654-604-FSP" type="pass" trainTypeNumber="123" timingPoint="true" zuggattung="LICE-W 14.2"/>
+				<entry stationID="FRA" stationName="Raunheim" trackID="G-1" bstfahrweg="FRAC-1-FRUE" departure="05:33:17" RTMargin2="0" requestedDeparture="05:33:17" requestedTrackID="G-1" requestedBstFahrweg="FRAC-1-FRUE" type="end" lineID="3520" timingPoint="true" zuggattung="LICE-W 14.2"/>
+			</timetableentries>
+		</train>
+		<train number="78703" numbervar="1" class="FRz" pattern="/FRz/LICE-W/Ohne Linie/F836A-FGM/rück" name="LICE-W/78703/500/Hr" description="78703/1" typeNumber="120" line="Ohne Linie" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FGM" trackID="B-204" bstfahrweg="FHOE-204-FNI" departure="05:16:14" minStopTime="600" stopTime="600" regularRunningTime="193" requestedArrival="05:06:14" requestedDeparture="05:16:14" requestedTrackID="B-204" requestedBstFahrweg="FHOE-204-FNI" type="stop" trainTypeNumber="120" lineID="3621" timingPoint="true" departureFix="true" zuggattung="LICE-W 14.2"/>
+				<entry stationID="FNI" trackID="D-603" bstfahrweg="FGM-653-607-FFOR" departure="05:26:03" minStopTime="396" stopTime="396" regularRunningTime="164" requestedArrival="05:19:27" requestedDeparture="05:26:03" requestedTrackID="D-603" requestedBstFahrweg="FGM-653-607-FFOR" type="stop" trainTypeNumber="120" timingPoint="true" departureFix="true" zuggattung="LICE-W 14.2"/>
+				<entry stationID="F836A" stationName="Sbk 836 (3601)" trackID="G-836" bstfahrweg="FEZ-FDA" departure="05:46:12" RTMargin2="0" requestedDeparture="05:46:12" requestedTrackID="G-836" requestedBstFahrweg="FEZ-FDA" type="end" lineID="3601" timingPoint="true" zuggattung="LICE-W 14.2"/>
+			</timetableentries>
+		</train>
+		<train number="91053" class="FGz" pattern="/Bedarfszuege/FGz/DGX/RMG-FHOEG +ohne Ebula+ PC/FEZ-FHOEG/hin" name="DGX/91053/18/su" description="91053/2" comment="RMG-FHOEG&#13;&#10;+ohne Ebula+&#13;&#10;PC 70, PC 400&#13;&#10;RTB Cargo D3113" typeNumber="4123" line="RMG-FHOEG +ohne Ebula+ PC" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FEZ" stationName="Erzhausen" trackID="G-737" bstfahrweg="FDA-737-FLG" departure="24:23:12" regularRunningTime="277" requestedDeparture="24:23:12" requestedTrackID="G-737" requestedBstFahrweg="FDA-737-FLG" type="begin" lineID="3601" timingPoint="true" departureFix="true" zuggattung="DGX 36.9"/>
+				<entry stationID="FNI" trackID="A-608" bstfahrweg="FFOR-608-658-FGM" dwegName="1-1000" departure="25:30:10" minStopTime="330" stopTime="330" regularRunningTime="362" requestedArrival="25:24:40" requestedDeparture="25:30:10" requestedTrackID="A-608" requestedBstFahrweg="FFOR-608-658-FGM" type="stop" trainTypeNumber="4123" lineID="3621" timingPoint="true" departureFix="true" zuggattung="DGX 36.9"/>
+				<entry stationID="FGM" trackID="A-204" bstfahrweg="FNI-204-FGM-D" dwegName="1-1000" departure="25:43:12" minStopTime="420" stopTime="420" regularRunningTime="254" requestedArrival="25:36:12" requestedDeparture="25:43:12" requestedTrackID="A-204" requestedBstFahrweg="FNI-204-FGM-D" type="stop" trainTypeNumber="4123" timingPoint="true" departureFix="true" zuggattung="DGX 36.9"/>
+				<entry stationID="FHOEG" stationName="Ff-Höchst Gbf" trackID="A-227" bstfahrweg="FHOE-227-FHOEA" dwegName="1-1000" departure="26:02:46" minStopTime="600" stopTime="600" RTMargin2="0" requestedArrival="25:52:46" requestedDeparture="26:02:46" requestedTrackID="A-227" requestedBstFahrweg="FHOE-227-FHOEA" type="end" lineID="3603" timingPoint="true" zuggattung="DGX 36.9"/>
+			</timetableentries>
+		</train>
+	</timetable>
+</railsys>

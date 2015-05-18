@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<line lineID="3627" name="Caltex - Brunnenschneise" trafficRouting="on_the_right" type="local" dependentLines="fbrs fcx">
+	<version major="1" minor="2" patchlevel="0" comment=""/>
+	<stations/>
+	<nodes>
+		<node nodeID="19515" description="Verbindungs-Knoten" kilometre="0.600" x="-10654" y="8900" xNet="2474933" yNet="7502021" xWGS84="9668.69" yWGS84="-99.9985"/>
+	</nodes>
+	<links>
+		<link source="19479.fcx" target="19515" gradient="0.8" vmax="100" vmaxr="100" bidirectional="true" electrified="true"/>
+		<link source="19515" target="17321.fbrs" gradient="0.8" vmax="100" vmaxr="100" bidirectional="true" electrified="true"/>
+	</links>
+	<dependentLinks/>
+	<blockSections>
+		<blockSection signallingSystem="lzb" presignal="17326.fbrs" nodes="17348.fbrs 17347.fbrs 17346.fbrs 17345.fbrs 17344.fbrs 17343.fbrs 17319.fbrs 17318.fbrs 17317.fbrs 17316.fbrs 17313.fbrs 17315.fbrs 17336.fbrs 17335.fbrs 17334.fbrs 17333.fbrs 17332.fbrs 17331.fbrs 17330.fbrs 17329.fbrs 17328.fbrs 17327.fbrs 17326.fbrs 17325.fbrs 17324.fbrs 17323.fbrs 17371.fbrs 17322.fbrs 17321.fbrs 19515 19479.fcx 19478.fcx 19518.fcx 19477.fcx 19476.fcx"/>
+		<blockSection presignal="17326.fbrs" nodes="17367.fbrs 17366.fbrs 17365.fbrs 17364.fbrs 17363.fbrs 17362.fbrs 17361.fbrs 17355.fbrs 17354.fbrs 17353.fbrs 17352.fbrs 17320.fbrs 17318.fbrs 17317.fbrs 17316.fbrs 17313.fbrs 17315.fbrs 17336.fbrs 17335.fbrs 17334.fbrs 17333.fbrs 17332.fbrs 17331.fbrs 17330.fbrs 17329.fbrs 17328.fbrs 17327.fbrs 17326.fbrs 17325.fbrs 17324.fbrs 17323.fbrs 17371.fbrs 17322.fbrs 17321.fbrs 19515 19479.fcx 19478.fcx 19518.fcx 19477.fcx 19476.fcx"/>
+		<blockSection signallingSystem="lzb" presignal="19421.fcx" nodes="19443.fcx 19444.fcx 19445.fcx 19446.fcx 19447.fcx 19448.fcx 19449.fcx 19450.fcx 19452.fcx 19453.fcx 19454.fcx 19418.fcx 19416.fcx 19419.fcx 19420.fcx 19421.fcx 19422.fcx 19423.fcx 19424.fcx 19426.fcx 19470.fcx 19471.fcx 19472.fcx 19473.fcx 19474.fcx 19475.fcx 19476.fcx 19477.fcx 19518.fcx 19478.fcx 19479.fcx 19515 17321.fbrs 17322.fbrs 17371.fbrs 17323.fbrs"/>
+		<blockSection signallingSystem="lzb" presignal="19421.fcx" nodes="19496.fcx 19497.fcx 19498.fcx 19499.fcx 19500.fcx 19501.fcx 19502.fcx 19503.fcx 19417.fcx 19416.fcx 19419.fcx 19420.fcx 19421.fcx 19422.fcx 19423.fcx 19424.fcx 19426.fcx 19470.fcx 19471.fcx 19472.fcx 19473.fcx 19474.fcx 19475.fcx 19476.fcx 19477.fcx 19518.fcx 19478.fcx 19479.fcx 19515 17321.fbrs 17322.fbrs 17371.fbrs 17323.fbrs" speedIndicators="19500.fcx"/>
+	</blockSections>
+	<slipDistances/>
+	<approachControlRoutes/>
+	<stationRoutes/>
+	<evzg/>
+	<evzg-katalog/>
+</line>

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<railsys>
+	<version major="1" minor="2" patchlevel="0" comment="Erzeugt von RailSys\Simu/7.6.12 am Fr 18. Jan 10:18:20 2013"/>
+	<timetable>
+		<train number="35034" class="S" pattern="/S/Lr/FD -/FEZ-FHOE/hin" name="Lr/35034/0/hr + Lr/35034/222/ne" description="35034/1" comment="FD - FHOE (aus 35321/ für 36303)&#13;&#10;zur Waschanlage + FD (aus 35321) - FHOE (für Waschanlage), alternativ mit BR 420-5, BrH 129." typeNumber="2003" line="FD -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FEZ" stationName="Erzhausen" trackID="G-737" bstfahrweg="FDA-737-FLG" departure="09:46:32" regularRunningTime="343" requestedDeparture="09:46:32" requestedTrackID="G-737" requestedBstFahrweg="FDA-737-FLG" type="begin" lineID="3601" timingPoint="true" departureFix="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FNI" trackID="A-608" bstfahrweg="FFOR-608-658-FMLA" departure="10:11:24" minStopTime="594" stopTime="594" regularRunningTime="125" requestedArrival="10:01:30" requestedDeparture="10:11:24" requestedTrackID="A-608" requestedBstFahrweg="FFOR-608-658-FMLA" type="stop" trainTypeNumber="2003" lineID="3623" timingPoint="true" departureFix="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FMLA" trackID="B-330" bstfahrweg="FNI-FFTGF" departure="10:14:29" minStopTime="60" stopTime="60" regularRunningTime="64" requestedArrival="10:13:29" requestedDeparture="10:14:29" requestedTrackID="B-330" requestedBstFahrweg="FNI-FFTGF" type="stop" trainTypeNumber="2003" timingPoint="true" departureFix="true" zuggattung="Lr 47.2"/>
+				<entry stationID="FHOE" stationName="Ff-Höchst" trackID="B-10" bstfahrweg="FMLA-010-FHOEG-229/230" dwegName="1-1000" departure="10:31:31" minStopTime="600" stopTime="600" RTMargin2="0" requestedArrival="10:21:31" requestedDeparture="10:31:31" requestedTrackID="B-10" requestedBstFahrweg="FMLA-010-FHOEG-229/230" type="end" lineID="3603" timingPoint="true" zuggattung="Lr 47.2"/>
+			</timetableentries>
+		</train>
+		<train number="41544" class="FGz" pattern="/FGz/DGS/FFO G/FFH-FFO G/rück" name="DGS/41544/222/si + DGS/41544/0/He" description="41544/1" comment="FFOG-XBAWB&#13;&#10;D3117 + FFO G - XBAWB&#13;&#10;P/C 45,  P/C 364&#13;&#10;EVU: Crossrail Benelux  (D3117)" typeNumber="4093" line="FFO G" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFO G" stationName="Ffm Ost Gbf" trackID="B-251" bstfahrweg="FFO_G-251-9-FFO" dwegName="1-75" departure="20:10:44" minStopTime="1200" stopTime="1200" regularRunningTime="115" requestedArrival="19:50:44" requestedDeparture="20:10:44" requestedTrackID="B-251" requestedBstFahrweg="FFO_G-251-9-FFO" type="begin" lineID="3660" timingPoint="true" departureFix="true" zuggattung="DGS 36.1"/>
+				<entry stationID="FNI" trackID="A-608" bstfahrweg="FFOR-608-658-FMLA" dwegName="1-1000" departure="20:36:54" minStopTime="834" stopTime="834" regularRunningTime="181" requestedArrival="20:23:00" requestedDeparture="20:36:54" requestedTrackID="A-608" requestedBstFahrweg="FFOR-608-658-FMLA" type="stop" trainTypeNumber="4093" lineID="3623" timingPoint="true" departureFix="true" zuggattung="DGS 36.1"/>
+				<entry stationID="FMLA" trackID="G-1" bstfahrweg="FNI-FFTGF" departure="20:39:55" regularRunningTime="43" requestedDeparture="20:39:55" requestedTrackID="G-1" requestedBstFahrweg="FNI-FFTGF" type="pass" trainTypeNumber="4093" timingPoint="true" zuggattung="DGS 36.1"/>
+				<entry stationID="FFH" stationName="Flörsheim (Main)" trackID="G-2" bstfahrweg="FHAS-2-FHM" departure="20:55:59" RTMargin2="0" requestedDeparture="20:55:59" requestedTrackID="G-2" requestedBstFahrweg="FHAS-2-FHM" type="end" lineID="3603" timingPoint="true" zuggattung="DGS 36.1"/>
+			</timetableentries>
+		</train>
+		<train number="41945" class="FGz" pattern="/FGz/TEC/KNG -/FFH-FHD/hin" name="TEC/41945/601/He + TEC/41945/600/si" description="41945/2" comment="KNG - XAWEV&#13;&#10;P/C 70 P/C 400&#13;&#10;Z1453 + KNG - XAWN&#13;&#10;P/C 70 P/C 400" typeNumber="4230" line="KNG -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFH" stationName="Flörsheim (Main)" trackID="G-1" bstfahrweg="FHM-1-FHAS" departure="01:13:06" regularRunningTime="129" requestedDeparture="01:13:06" requestedTrackID="G-1" requestedBstFahrweg="FHM-1-FHAS" type="begin" lineID="3603" timingPoint="true" departureFix="true" zuggattung="TEC 52.1"/>
+				<entry stationID="FMLA" trackID="G-2" bstfahrweg="FFTGF-FNI" departure="01:27:06" regularRunningTime="154" requestedDeparture="01:27:06" requestedTrackID="G-2" requestedBstFahrweg="FFTGF-FNI" type="pass" trainTypeNumber="4230" lineID="3623" timingPoint="true" zuggattung="TEC 52.1"/>
+				<entry stationID="FNI" trackID="G-607" bstfahrweg="FMLA-654-607-FFOR" departure="01:29:40" regularRunningTime="130" requestedDeparture="01:29:40" requestedTrackID="G-607" requestedBstFahrweg="FMLA-654-607-FFOR" type="pass" trainTypeNumber="4230" timingPoint="true" zuggattung="TEC 52.1"/>
+				<entry stationID="FHD" stationName="Maintal Ost" trackID="G-811" bstfahrweg="FFMK-801-811S/H2-FHW" departure="01:51:03" RTMargin2="0" requestedDeparture="01:51:03" requestedTrackID="G-811" requestedBstFahrweg="FFMK-801-811S/H2-FHW" type="end" lineID="3660" timingPoint="true" zuggattung="TEC 52.1"/>
+			</timetableentries>
+		</train>
+		<train number="41952" class="FGz" pattern="/FGz/TEC/XAWET -/FFH-FHD/rück" name="TEC/41952/126/si + TEC/41952/222/He" description="41952/3++" comment="XAWN-EDRHD + XAWET - EDRH&#13;&#10;P/C 70,  P/C 400" typeNumber="4229" line="XAWET -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHD" stationName="Maintal Ost" trackID="G-802" bstfahrweg="FHW-802-FFMK" departure="05:15:30" regularRunningTime="124" requestedDeparture="05:15:30" requestedTrackID="G-802" requestedBstFahrweg="FHW-802-FFMK" type="begin" lineID="3660" timingPoint="true" departureFix="true" zuggattung="TEC 52.1"/>
+				<entry stationID="FNI" trackID="A-608" bstfahrweg="FFOR-608-658-FMLA" dwegName="1-1000" departure="05:53:28" minStopTime="186" stopTime="186" regularRunningTime="163" requestedArrival="05:50:22" requestedDeparture="05:53:28" requestedTrackID="A-608" requestedBstFahrweg="FFOR-608-658-FMLA" type="stop" trainTypeNumber="4229" lineID="3623" timingPoint="true" departureFix="true" zuggattung="TEC 52.1"/>
+				<entry stationID="FMLA" trackID="B-330" bstfahrweg="FNI-FFTGF" trackIDForNotConditional="G-1" bstFahrwegBeiAusfallBetriebsHalt="FNI-FFTGF" departure="05:56:12" minStopTime="1" stopTime="1" regularRunningTime="106" requestedArrival="05:56:11" requestedDeparture="05:56:12" requestedTrackID="B-330" requestedBstFahrweg="FNI-FFTGF" type="conditional1" trainTypeNumber="4229" timingPoint="true" zuggattung="TEC 52.1"/>
+				<entry stationID="FFH" stationName="Flörsheim (Main)" trackID="C-3" bstfahrweg="FHAS-3-FHM" dwegName="1-1000" departure="06:23:57" minStopTime="720" stopTime="720" RTMargin2="0" requestedArrival="06:11:57" requestedDeparture="06:23:57" requestedTrackID="C-3" requestedBstFahrweg="FHAS-3-FHM" type="end" lineID="3603" timingPoint="true" departureFix="true" zuggattung="TEC 52.1"/>
+			</timetableentries>
+		</train>
+		<train number="43245" class="FGz" pattern="/FGz/TEC/KKE A/FFH-FHD/hin" name="TEC/43245/850/HE + TEC/43245/601/si" description="43245/2" comment="KKE A - MOR&#13;&#10;P/C 70  P/C 400 + KKE S - MOR&#13;&#10;P/C 70 P/C 400" typeNumber="4222" line="KKE A" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFH" stationName="Flörsheim (Main)" trackID="G-1" bstfahrweg="FHM-1-FHAS" departure="16:01:21" regularRunningTime="111" requestedDeparture="16:01:21" requestedTrackID="G-1" requestedBstFahrweg="FHM-1-FHAS" type="begin" lineID="3603" timingPoint="true" departureFix="true" zuggattung="TEC 52.1"/>
+				<entry stationID="FMLA" trackID="G-2" bstfahrweg="FFTGF-FNI" departure="16:17:34" regularRunningTime="82" requestedDeparture="16:17:34" requestedTrackID="G-2" requestedBstFahrweg="FFTGF-FNI" type="pass" trainTypeNumber="4222" lineID="3623" timingPoint="true" zuggattung="TEC 52.1"/>
+				<entry stationID="FNI" trackID="A-65" bstfahrweg="FMLA-654-607-FFOR" trackIDForNotConditional="G-607" bstFahrwegBeiAusfallBetriebsHalt="FMLA-653-607-FFOR" departure="16:19:56" minStopTime="60" stopTime="60" regularRunningTime="286" requestedArrival="16:18:56" requestedDeparture="16:19:56" requestedTrackID="A-65" requestedBstFahrweg="FMLA-654-607-FFOR" type="conditional1" trainTypeNumber="4222" timingPoint="true" zuggattung="TEC 52.1"/>
+				<entry stationID="FHD" stationName="Maintal Ost" trackID="G-811" bstfahrweg="FFMK-801-811S/H2-FHW" departure="16:42:53" RTMargin2="0" requestedDeparture="16:42:53" requestedTrackID="G-811" requestedBstFahrweg="FFMK-801-811S/H2-FHW" type="end" lineID="3660" timingPoint="true" zuggattung="TEC 52.1"/>
+			</timetableentries>
+		</train>
+		<train number="43901" class="FGz" pattern="/FGz/TEC/KNG -/FFH-FHD/hin" name="TEC/43901/222/He + TEC/43901/73/si" description="43901/2+" comment="KNG - XAWN&#13;&#10;P/C 70, P/C 400 + KNG - XAWN" typeNumber="4246" line="KNG -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFH" stationName="Flörsheim (Main)" trackID="G-1" bstfahrweg="FHM-1-FHAS" departure="11:19:10" regularRunningTime="130" requestedDeparture="11:19:10" requestedTrackID="G-1" requestedBstFahrweg="FHM-1-FHAS" type="begin" lineID="3603" timingPoint="true" departureFix="true" zuggattung="TEC 52.1"/>
+				<entry stationID="FMLA" trackID="G-2" bstfahrweg="FFTGF-FNI" departure="11:56:03" regularRunningTime="70" requestedDeparture="11:56:03" requestedTrackID="G-2" requestedBstFahrweg="FFTGF-FNI" type="pass" trainTypeNumber="4246" lineID="3623" timingPoint="true" zuggattung="TEC 52.1"/>
+				<entry stationID="FNI" trackID="A-65" bstfahrweg="FMLA-658-608-FFOR" trackIDForNotConditional="G-607" bstFahrwegBeiAusfallBetriebsHalt="FMLA-653-607-FFOR" departure="11:58:01" minStopTime="48" stopTime="48" regularRunningTime="360" requestedArrival="11:57:13" requestedDeparture="11:58:01" requestedTrackID="A-65" requestedBstFahrweg="FMLA-658-608-FFOR" type="conditional1" trainTypeNumber="4246" timingPoint="true" zuggattung="TEC 52.1"/>
+				<entry stationID="FHD" stationName="Maintal Ost" trackID="G-811" bstfahrweg="FFMK-801-811S/H2-FHW" departure="14:03:41" RTMargin2="0" requestedDeparture="14:03:41" requestedTrackID="G-811" requestedBstFahrweg="FFMK-801-811S/H2-FHW" type="end" lineID="3660" timingPoint="true" zuggattung="TEC 52.1"/>
+			</timetableentries>
+		</train>
+		<train number="43905" class="FGz" pattern="/FGz/TEC/KNG -/FFH-FHD/hin" name="TEC/43905/73/He + TEC/43905/222/si + TEC/43905/83/si" description="43905/2" comment="KNG - XAWU&#13;&#10;P/C 70, P/C /400" typeNumber="4246" line="KNG -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFH" stationName="Flörsheim (Main)" trackID="G-1" bstfahrweg="FHM-1-FHAS" departure="03:33:47" regularRunningTime="125" requestedDeparture="03:33:47" requestedTrackID="G-1" requestedBstFahrweg="FHM-1-FHAS" type="begin" lineID="3603" timingPoint="true" departureFix="true" zuggattung="TEC 52.1"/>
+				<entry stationID="FMLA" trackID="G-2" bstfahrweg="FFTGF-FNI" departure="03:57:03" regularRunningTime="177" requestedDeparture="03:57:03" requestedTrackID="G-2" requestedBstFahrweg="FFTGF-FNI" type="pass" trainTypeNumber="4246" lineID="3623" timingPoint="true" zuggattung="TEC 52.1"/>
+				<entry stationID="FNI" trackID="G-608" bstfahrweg="FMLA-658-608-FFOR" departure="04:00:00" regularRunningTime="165" requestedDeparture="04:00:00" requestedTrackID="G-608" requestedBstFahrweg="FMLA-658-608-FFOR" type="pass" trainTypeNumber="4246" timingPoint="true" zuggattung="TEC 52.1"/>
+				<entry stationID="FHD" stationName="Maintal Ost" trackID="G-811" bstfahrweg="FFMK-801-811S/H2-FHW" departure="04:28:58" RTMargin2="0" requestedDeparture="04:28:58" requestedTrackID="G-811" requestedBstFahrweg="FFMK-801-811S/H2-FHW" type="end" lineID="3660" timingPoint="true" zuggattung="TEC 52.1"/>
+			</timetableentries>
+		</train>
+		<train number="48600" class="FGz" pattern="/FGz/CIL/XID -/FEZ-FKRI/hin" name="CIL/48600/222/su + CIL/48600/44/He" description="48600/3+" comment="XID - FL + XID - FL&#13;&#10;Tonverkehr" typeNumber="4010" line="XID -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FEZ" stationName="Erzhausen" trackID="G-737" bstfahrweg="FDA-737-FLG" departure="21:24:11" regularRunningTime="198" requestedDeparture="21:24:11" requestedTrackID="G-737" requestedBstFahrweg="FDA-737-FLG" type="begin" lineID="3601" timingPoint="true" departureFix="true" zuggattung="CIL 76.2"/>
+				<entry stationID="FNI" trackID="G-607" bstfahrweg="FFOR-607-654-FMLA" departure="21:43:56" regularRunningTime="155" requestedDeparture="21:43:56" requestedTrackID="G-607" requestedBstFahrweg="FFOR-607-654-FMLA" type="pass" trainTypeNumber="4010" lineID="3623" timingPoint="true" zuggattung="CIL 76.2"/>
+				<entry stationID="FMLA" trackID="G-1" bstfahrweg="FNI-FFTGF" departure="21:46:31" regularRunningTime="43" requestedDeparture="21:46:31" requestedTrackID="G-1" requestedBstFahrweg="FNI-FFTGF" type="pass" trainTypeNumber="4010" timingPoint="true" zuggattung="CIL 76.2"/>
+				<entry stationID="FKRI" stationName="Kriftel" trackID="G-401" bstfahrweg="FFAWA-401-FHF" departure="22:16:45" RTMargin2="0" requestedDeparture="22:16:45" requestedTrackID="G-401" requestedBstFahrweg="FFAWA-401-FHF" type="end" lineID="3610" timingPoint="true" zuggattung="CIL 76.2"/>
+			</timetableentries>
+		</train>
+		<train number="48601" class="FGz" pattern="/FGz/CIL/FL -/F836A-FKRI/rück" name="CIL/48601/17/He + CIL/48601/222/su" description="48601/1" comment="FL - XID&#13;&#10;Tonwagen + FL - XID&#13;&#10;Tonganzzug" typeNumber="4005" line="FL -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FKRI" stationName="Kriftel" trackID="G-402" bstfahrweg="FHF-402-FFAWA" departure="20:28:16" regularRunningTime="115" requestedDeparture="20:28:16" requestedTrackID="G-402" requestedBstFahrweg="FHF-402-FFAWA" type="begin" lineID="3610" timingPoint="true" departureFix="true" zuggattung="CIL 76.2"/>
+				<entry stationID="FMLA" trackID="G-2" bstfahrweg="FFTGF-FNI" departure="21:12:54" regularRunningTime="174" requestedDeparture="21:12:54" requestedTrackID="G-2" requestedBstFahrweg="FFTGF-FNI" type="pass" trainTypeNumber="4005" lineID="3623" timingPoint="true" zuggattung="CIL 76.2"/>
+				<entry stationID="FNI" trackID="G-608" bstfahrweg="FMLA-658-608-FFOR" departure="21:15:48" regularRunningTime="158" requestedDeparture="21:15:48" requestedTrackID="G-608" requestedBstFahrweg="FMLA-658-608-FFOR" type="pass" trainTypeNumber="4005" timingPoint="true" zuggattung="CIL 76.2"/>
+				<entry stationID="F836A" stationName="Sbk 836 (3601)" trackID="G-836" bstfahrweg="FEZ-FDA" departure="21:44:09" RTMargin2="0" requestedDeparture="21:44:09" requestedTrackID="G-836" requestedBstFahrweg="FEZ-FDA" type="end" lineID="3601" timingPoint="true" zuggattung="CIL 76.2"/>
+			</timetableentries>
+		</train>
+		<train number="48604" class="FGz" pattern="/FGz/CIL/XID -/FEZ-FKRI/hin" name="CIL/48604/59/su + CIL/48604/222/He" description="48604/3" comment="XID - FL&#13;&#10;exStudie 49550 zu 48600 + XID - FL&#13;&#10;Studie zu 48600" typeNumber="4010" line="XID -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FEZ" stationName="Erzhausen" trackID="G-737" bstfahrweg="FDA-737-FLG" departure="15:07:42" regularRunningTime="178" requestedDeparture="15:07:42" requestedTrackID="G-737" requestedBstFahrweg="FDA-737-FLG" type="begin" lineID="3601" timingPoint="true" departureFix="true" zuggattung="CIL 76.2"/>
+				<entry stationID="FNI" trackID="Z-608" bstfahrweg="FFOR-608-658-FMLA" trackIDForNotConditional="G-607" bstFahrwegBeiAusfallBetriebsHalt="FFOR-607-653-FMLA" departure="15:29:39" minStopTime="1" stopTime="1" regularRunningTime="122" requestedArrival="15:29:38" requestedDeparture="15:29:39" requestedTrackID="Z-608" requestedBstFahrweg="FFOR-608-658-FMLA" type="conditional1" trainTypeNumber="4010" lineID="3623" timingPoint="true" zuggattung="CIL 76.2"/>
+				<entry stationID="FMLA" trackID="G-1" bstfahrweg="FNI-FFTGF" departure="15:31:41" regularRunningTime="43" requestedDeparture="15:31:41" requestedTrackID="G-1" requestedBstFahrweg="FNI-FFTGF" type="pass" trainTypeNumber="4010" timingPoint="true" zuggattung="CIL 76.2"/>
+				<entry stationID="FKRI" stationName="Kriftel" trackID="G-401" bstfahrweg="FFAWA-401-FHF" departure="15:47:02" RTMargin2="0" requestedDeparture="15:47:02" requestedTrackID="G-401" requestedBstFahrweg="FFAWA-401-FHF" type="end" lineID="3610" timingPoint="true" zuggattung="CIL 76.2"/>
+			</timetableentries>
+		</train>
+		<train number="48607" class="Gz" pattern="/Gz/CIL/FL -/F836A-FKRI/rück" name="CIL/48607/44/He + CIL/48607/222/su" description="48607/1+" comment="FL - XID&#13;&#10;exSt 49555&#13;&#10;Bei Annahme 55597 anpassen. + FL-XID&#13;&#10;exSt 49555" typeNumber="8002" line="FL -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FKRI" stationName="Kriftel" trackID="G-402" bstfahrweg="FHF-402-FFAWA" departure="10:27:55" regularRunningTime="110" requestedDeparture="10:27:55" requestedTrackID="G-402" requestedBstFahrweg="FHF-402-FFAWA" type="begin" lineID="3610" timingPoint="true" departureFix="true" zuggattung="CIL 76.2"/>
+				<entry stationID="FMLA" trackID="G-2" bstfahrweg="FFTGF-FNI" departure="11:18:20" regularRunningTime="158" requestedDeparture="11:18:20" requestedTrackID="G-2" requestedBstFahrweg="FFTGF-FNI" type="pass" trainTypeNumber="8002" lineID="3623" timingPoint="true" zuggattung="CIL 76.2"/>
+				<entry stationID="FNI" trackID="G-607" bstfahrweg="FMLA-654-607-FFOR" departure="11:20:58" regularRunningTime="125" requestedDeparture="11:20:58" requestedTrackID="G-607" requestedBstFahrweg="FMLA-654-607-FFOR" type="pass" trainTypeNumber="8002" timingPoint="true" zuggattung="CIL 76.2"/>
+				<entry stationID="F836A" stationName="Sbk 836 (3601)" trackID="G-836" bstfahrweg="FEZ-FDA" departure="11:35:14" RTMargin2="0" requestedDeparture="11:35:14" requestedTrackID="G-836" requestedBstFahrweg="FEZ-FDA" type="end" lineID="3601" timingPoint="true" zuggattung="CIL 76.2"/>
+			</timetableentries>
+		</train>
+		<train number="52193" class="FGz" pattern="/FGz/FR/FHOEG -/F836A-FHOEG/rück" name="FR/52193/600/He + FR/52193/601/su" description="52193/1" comment="FHOEG - RMR M&#13;&#10;P/C 70  P/C 400&#13;&#10;ex52939" typeNumber="4157" line="FHOEG -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOEG" stationName="Ff-Höchst Gbf" trackID="B-228" bstfahrweg="FFAWA-228-FHOE" dwegName="1-1000" departure="18:40:00" minStopTime="1200" stopTime="1200" regularRunningTime="99" requestedArrival="18:20:00" requestedDeparture="18:40:00" requestedTrackID="B-228" requestedBstFahrweg="FFAWA-228-FHOE" type="begin" lineID="3603" timingPoint="true" departureFix="true" zuggattung="FR 58.1"/>
+				<entry stationID="FMLA" trackID="G-2" bstfahrweg="FFTGF-FNI" departure="18:49:00" regularRunningTime="71" requestedDeparture="18:49:00" requestedTrackID="G-2" requestedBstFahrweg="FFTGF-FNI" type="pass" trainTypeNumber="4157" lineID="3623" timingPoint="true" zuggattung="FR 58.1"/>
+				<entry stationID="FNI" trackID="P-9000" bstfahrweg="FMLA-658-608-FFOR" trackIDForNotConditional="G-607" bstFahrwegBeiAusfallBetriebsHalt="FMLA-653-607-FFOR" departure="18:50:12" minStopTime="1" stopTime="1" regularRunningTime="363" requestedArrival="18:50:11" requestedDeparture="18:50:12" requestedTrackID="P-9000" requestedBstFahrweg="FMLA-658-608-FFOR" type="conditional1" trainTypeNumber="4157" timingPoint="true" zuggattung="FR 58.1"/>
+				<entry stationID="F836A" stationName="Sbk 836 (3601)" trackID="G-836" bstfahrweg="FEZ-FDA" departure="19:10:27" RTMargin2="0" requestedDeparture="19:10:27" requestedTrackID="G-836" requestedBstFahrweg="FEZ-FDA" type="end" lineID="3601" timingPoint="true" zuggattung="FR 58.1"/>
+			</timetableentries>
+		</train>
+		<train number="55580" class="NGz" pattern="/NGz/FZT/FMB W/FHOEG-FRA/rück" name="FZT/55580/0/su" description="55580/1" comment="FMB W - FHOE G&#13;&#10;P/C 70,  P/C 400" typeNumber="6120" line="FMB W" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FRA" stationName="Raunheim" trackID="G-2" bstfahrweg="FRUE-2-FRAC" departure="03:16:07" regularRunningTime="119" requestedDeparture="03:16:07" requestedTrackID="G-2" requestedBstFahrweg="FRUE-2-FRAC" type="begin" lineID="3520" timingPoint="true" departureFix="true" zuggattung="FZT 63.7"/>
+				<entry stationID="FNI" trackID="G-603" bstfahrweg="FSP-603-653-FMLA" departure="03:40:44" regularRunningTime="159" requestedDeparture="03:40:44" requestedTrackID="G-603" requestedBstFahrweg="FSP-603-653-FMLA" type="pass" trainTypeNumber="6120" lineID="3623" timingPoint="true" zuggattung="FZT 63.7"/>
+				<entry stationID="FMLA" trackID="G-1" bstfahrweg="FNI-FFTGF" departure="03:43:23" regularRunningTime="49" requestedDeparture="03:43:23" requestedTrackID="G-1" requestedBstFahrweg="FNI-FFTGF" type="pass" trainTypeNumber="6120" timingPoint="true" zuggattung="FZT 63.7"/>
+				<entry stationID="FHOEG" stationName="Ff-Höchst Gbf" trackID="A-230" bstfahrweg="FHOE-230-FHOEA" dwegName="1-1000" departure="04:04:00" minStopTime="600" stopTime="600" RTMargin2="0" requestedArrival="03:54:00" requestedDeparture="04:04:00" requestedTrackID="A-230" requestedBstFahrweg="FHOE-230-FHOEA" type="end" lineID="3603" timingPoint="true" zuggattung="FZT 63.7"/>
+			</timetableentries>
+		</train>
+		<train number="55584" class="NGz" pattern="/NGz/FZT/FMB W/FHOEG-FRA/rück" name="FZT/55584/0/su" description="55584/1" comment="FMB W - FHOE G&#13;&#10;P/C 70,  P/C 400" typeNumber="6117" line="FMB W" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FRA" stationName="Raunheim" trackID="G-2" bstfahrweg="FRUE-2-FRAC" departure="09:43:25" regularRunningTime="91" requestedDeparture="09:43:25" requestedTrackID="G-2" requestedBstFahrweg="FRUE-2-FRAC" type="begin" lineID="3520" timingPoint="true" departureFix="true" zuggattung="FZT 63.7"/>
+				<entry stationID="FNI" trackID="G-603" bstfahrweg="FSP-603-653-FMLA" departure="10:17:49" regularRunningTime="158" requestedDeparture="10:17:49" requestedTrackID="G-603" requestedBstFahrweg="FSP-603-653-FMLA" type="pass" trainTypeNumber="6117" lineID="3623" timingPoint="true" zuggattung="FZT 63.7"/>
+				<entry stationID="FMLA" trackID="B-330" bstfahrweg="FNI-FFTGF" dwegName="1-1000" departure="10:25:15" minStopTime="288" stopTime="288" regularRunningTime="123" requestedArrival="10:20:27" requestedDeparture="10:25:15" requestedTrackID="B-330" requestedBstFahrweg="FNI-FFTGF" type="stop" trainTypeNumber="6117" timingPoint="true" departureFix="true" zuggattung="FZT 63.7"/>
+				<entry stationID="FHOEG" stationName="Ff-Höchst Gbf" trackID="A-230" bstfahrweg="FHOE-230-FHOEA" dwegName="1-1000" departure="10:45:49" minStopTime="120" stopTime="600" RTMargin2="0" requestedArrival="10:35:49" requestedDeparture="10:45:49" requestedTrackID="A-230" requestedBstFahrweg="FHOE-230-FHOEA" type="end" lineID="3603" timingPoint="true" departureFix="true" zuggattung="FZT 63.7"/>
+			</timetableentries>
+		</train>
+		<train number="55599" class="NGz" pattern="/NGz/FZT/FHOEG -/FHOEG-FRA/hin" name="FZT/55599/222/HE + FZT/55599/59/su" description="55599/1" comment="FHOEG - FMB W&#13;&#10;P/C 70,  P/C 400" typeNumber="6115" line="FHOEG -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOEG" stationName="Ff-Höchst Gbf" trackID="B-230" bstfahrweg="FFAWA-230-FHOE" dwegName="1-1000" departure="22:25:57" minStopTime="600" stopTime="600" regularRunningTime="132" requestedArrival="22:15:57" requestedDeparture="22:25:57" requestedTrackID="B-230" requestedBstFahrweg="FFAWA-230-FHOE" type="begin" lineID="3603" timingPoint="true" departureFix="true" zuggattung="FZT 63.7"/>
+				<entry stationID="FMLA" trackID="G-2" bstfahrweg="FFTGF-FNI" departure="22:36:16" regularRunningTime="179" requestedDeparture="22:36:16" requestedTrackID="G-2" requestedBstFahrweg="FFTGF-FNI" type="pass" trainTypeNumber="6115" lineID="3623" timingPoint="true" zuggattung="FZT 63.7"/>
+				<entry stationID="FNI" trackID="G-604" bstfahrweg="FMLA-654-604-FSP" departure="22:39:15" regularRunningTime="148" requestedDeparture="22:39:15" requestedTrackID="G-604" requestedBstFahrweg="FMLA-654-604-FSP" type="pass" trainTypeNumber="6115" timingPoint="true" zuggattung="FZT 63.7"/>
+				<entry stationID="FRA" stationName="Raunheim" trackID="G-1" bstfahrweg="FRAC-1-FRUE" departure="23:00:43" RTMargin2="0" requestedDeparture="23:00:43" requestedTrackID="G-1" requestedBstFahrweg="FRAC-1-FRUE" type="end" lineID="3520" timingPoint="true" zuggattung="FZT 63.7"/>
+			</timetableentries>
+		</train>
+		<train number="65724" class="Lz" pattern="/Lz/Tfzf (RaS)/FHOEG -/FFO G-FHOEG/rück" name="Tfzf (/65724/59/He" description="65724/1" comment="FHOEG - FFO  G&#13;&#10;aus 41551, für Abst." typeNumber="8536" line="FHOEG -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOEG" stationName="Ff-Höchst Gbf" trackID="B-230" bstfahrweg="FFAWA-230-FHOE" dwegName="1-1000" departure="13:06:00" minStopTime="600" stopTime="600" regularRunningTime="63" requestedArrival="12:56:00" requestedDeparture="13:06:00" requestedTrackID="B-230" requestedBstFahrweg="FFAWA-230-FHOE" type="begin" lineID="3603" timingPoint="true" departureFix="true" zuggattung="Tfzf (RaS) 02.1"/>
+				<entry stationID="FMLA" trackID="G-2" bstfahrweg="FFTGF-FNI" departure="13:11:30" regularRunningTime="62" requestedDeparture="13:11:30" requestedTrackID="G-2" requestedBstFahrweg="FFTGF-FNI" type="pass" trainTypeNumber="8536" lineID="3623" timingPoint="true" zuggattung="Tfzf (RaS) 02.1"/>
+				<entry stationID="FNI" trackID="A-65" bstfahrweg="FMLA-654-607-FFOR" trackIDForNotConditional="G-607" bstFahrwegBeiAusfallBetriebsHalt="FMLA-653-607-FFOR" departure="13:19:32" minStopTime="60" stopTime="420" regularRunningTime="239" requestedArrival="13:12:32" requestedDeparture="13:19:32" requestedTrackID="A-65" requestedBstFahrweg="FMLA-654-607-FFOR" type="conditional1" trainTypeNumber="8536" timingPoint="true" departureFix="true" zuggattung="Tfzf (RaS) 02.1"/>
+				<entry stationID="FFO G" stationName="Ffm Ost Gbf" trackID="A-110" bstfahrweg="FFO-110-204-FFO_G" dwegName="2-1000" departure="13:43:38" minStopTime="600" stopTime="600" RTMargin2="0" requestedArrival="13:33:38" requestedDeparture="13:43:38" requestedTrackID="A-110" requestedBstFahrweg="FFO-110-204-FFO_G" type="end" lineID="3660" timingPoint="true" zuggattung="Tfzf (RaS) 02.1"/>
+			</timetableentries>
+		</train>
+		<train number="65734" class="Lz" pattern="/Lz/Tfzf (RaS)/FMB W/FHOEG-FRA/rück" name="Tfzf (/65734/0/SU" description="65734/1" comment="FMB W - FHOEG&#13;&#10;für 52193" typeNumber="8534" line="FMB W" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FRA" stationName="Raunheim" trackID="G-2" bstfahrweg="FRUE-2-FRAC" departure="16:40:10" regularRunningTime="57" requestedDeparture="16:40:10" requestedTrackID="G-2" requestedBstFahrweg="FRUE-2-FRAC" type="begin" lineID="3520" timingPoint="true" departureFix="true" zuggattung="Tfzf (RaS) 02.1"/>
+				<entry stationID="FNI" trackID="G-603" bstfahrweg="FSP-603-653-FMLA" departure="17:05:23" regularRunningTime="130" requestedDeparture="17:05:23" requestedTrackID="G-603" requestedBstFahrweg="FSP-603-653-FMLA" type="pass" trainTypeNumber="8534" lineID="3623" timingPoint="true" zuggattung="Tfzf (RaS) 02.1"/>
+				<entry stationID="FMLA" trackID="B-330" bstfahrweg="FNI-FFTGF" trackIDForNotConditional="G-1" bstFahrwegBeiAusfallBetriebsHalt="FNI-FFTGF" departure="17:09:33" minStopTime="60" stopTime="120" regularRunningTime="59" requestedArrival="17:07:33" requestedDeparture="17:09:33" requestedTrackID="B-330" requestedBstFahrweg="FNI-FFTGF" type="conditional1" trainTypeNumber="8534" timingPoint="true" departureFix="true" zuggattung="Tfzf (RaS) 02.1"/>
+				<entry stationID="FHOEG" stationName="Ff-Höchst Gbf" trackID="A-227" bstfahrweg="FHOE-227-FHOEA" dwegName="1-1000" departure="17:28:27" minStopTime="600" stopTime="600" RTMargin2="0" requestedArrival="17:18:27" requestedDeparture="17:28:27" requestedTrackID="A-227" requestedBstFahrweg="FHOE-227-FHOEA" type="end" lineID="3603" timingPoint="true" zuggattung="Tfzf (RaS) 02.1"/>
+			</timetableentries>
+		</train>
+		<train number="76935" class="Lz" pattern="/Lz/Tfzf (RaR)/FO /FHOEG-FO  G/rück" name="Tfzf (/76935/0/si" description="76935/1" comment="FO  G - FHOEG" typeNumber="8530" line="FO " lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FO  G" stationName="Offenbach(M) Gbf" trackID="B-104" bstfahrweg="FMHO-104-152-FO-3600/3664" dwegName="1-1000" departure="14:43:22" minStopTime="300" stopTime="300" regularRunningTime="246" requestedArrival="14:38:22" requestedDeparture="14:43:22" requestedTrackID="B-104" requestedBstFahrweg="FMHO-104-152-FO-3600/3664" type="begin" lineID="3664" timingPoint="true" departureFix="true" zuggattung="Tfzf (RaR) 03.1"/>
+				<entry stationID="FNI" trackID="A-608" bstfahrweg="FFOR-608-658-FMLA" trackIDForNotConditional="G-607" bstFahrwegBeiAusfallBetriebsHalt="FFOR-607-653-FMLA" departure="15:04:38" minStopTime="1" stopTime="1" regularRunningTime="112" requestedArrival="15:04:37" requestedDeparture="15:04:38" requestedTrackID="A-608" requestedBstFahrweg="FFOR-608-658-FMLA" type="conditional1" trainTypeNumber="8530" lineID="3623" timingPoint="true" zuggattung="Tfzf (RaR) 03.1"/>
+				<entry stationID="FMLA" trackID="B-330" bstfahrweg="FNI-FFTGF" dwegName="1-1000" departure="15:09:30" minStopTime="180" stopTime="180" regularRunningTime="86" requestedArrival="15:06:30" requestedDeparture="15:09:30" requestedTrackID="B-330" requestedBstFahrweg="FNI-FFTGF" type="stop" trainTypeNumber="8530" timingPoint="true" departureFix="true" zuggattung="Tfzf (RaR) 03.1"/>
+				<entry stationID="FHOEG" stationName="Ff-Höchst Gbf" trackID="A-230" bstfahrweg="FHOE-230-FHOEA" dwegName="1-1000" departure="15:29:14" minStopTime="600" stopTime="600" RTMargin2="0" requestedArrival="15:19:14" requestedDeparture="15:29:14" requestedTrackID="A-230" requestedBstFahrweg="FHOE-230-FHOEA" type="end" lineID="3603" timingPoint="true" zuggattung="Tfzf (RaR) 03.1"/>
+			</timetableentries>
+		</train>
+		<train number="76938" class="Lz" pattern="/Lz/Tfzf (RaR)/FHOEG -/FHOEG-FO  G/hin" name="Tfzf (/76938/0/He + Tfzf (/76938/222/si" description="76938/1" comment="FHOEG - FO G" typeNumber="8530" line="FHOEG -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOEG" stationName="Ff-Höchst Gbf" trackID="B-227" bstfahrweg="FFAWA-227-FHOE" dwegName="1-1000" departure="18:13:30" minStopTime="300" stopTime="300" regularRunningTime="55" requestedArrival="18:08:30" requestedDeparture="18:13:30" requestedTrackID="B-227" requestedBstFahrweg="FFAWA-227-FHOE" type="begin" lineID="3603" timingPoint="true" departureFix="true" zuggattung="Tfzf (RaR) 03.1"/>
+				<entry stationID="FMLA" trackID="G-2" bstfahrweg="FFTGF-FNI" departure="18:20:00" regularRunningTime="63" requestedDeparture="18:20:00" requestedTrackID="G-2" requestedBstFahrweg="FFTGF-FNI" type="pass" trainTypeNumber="8530" lineID="3623" timingPoint="true" zuggattung="Tfzf (RaR) 03.1"/>
+				<entry stationID="FNI" trackID="A-65" bstfahrweg="FMLA-654-607-FFOR" trackIDForNotConditional="G-607" bstFahrwegBeiAusfallBetriebsHalt="FMLA-653-607-FFOR" departure="18:25:33" minStopTime="60" stopTime="270" regularRunningTime="240" requestedArrival="18:21:03" requestedDeparture="18:25:33" requestedTrackID="A-65" requestedBstFahrweg="FMLA-654-607-FFOR" type="conditional1" trainTypeNumber="8530" timingPoint="true" departureFix="true" zuggattung="Tfzf (RaR) 03.1"/>
+				<entry stationID="FO  G" stationName="Offenbach(M) Gbf" trackID="A-106" bstfahrweg="FO-152-106-FMHO-3664/3600" dwegName="1-1000" departure="19:12:16" minStopTime="300" stopTime="300" RTMargin2="0" requestedArrival="19:07:16" requestedDeparture="19:12:16" requestedTrackID="A-106" requestedBstFahrweg="FO-152-106-FMHO-3664/3600" type="end" lineID="3664" timingPoint="true" zuggattung="Tfzf (RaR) 03.1"/>
+			</timetableentries>
+		</train>
+		<train number="76958" class="Lz" pattern="/Lz/Tfzf (RaR)/Ohne Linie/FHOEG-FO  G/hin" name="Tfzf (/76958/222/He + Tfzf (/76958/0/si" description="76958/1" typeNumber="8530" line="Ohne Linie" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOEG" stationName="Ff-Höchst Gbf" trackID="B-227" bstfahrweg="FFAWA-227-FHOE" dwegName="1-1000" departure="04:49:30" minStopTime="300" stopTime="300" regularRunningTime="56" requestedArrival="04:44:30" requestedDeparture="04:49:30" requestedTrackID="B-227" requestedBstFahrweg="FFAWA-227-FHOE" type="begin" lineID="3603" timingPoint="true" departureFix="true" zuggattung="Tfzf (RaR) 03.1"/>
+				<entry stationID="FMLA" trackID="G-2" bstfahrweg="FFTGF-FNI" departure="04:56:04" regularRunningTime="156" requestedDeparture="04:56:04" requestedTrackID="G-2" requestedBstFahrweg="FFTGF-FNI" type="pass" trainTypeNumber="8530" lineID="3623" timingPoint="true" zuggattung="Tfzf (RaR) 03.1"/>
+				<entry stationID="FNI" trackID="G-607" bstfahrweg="FMLA-654-607-FFOR" departure="04:58:40" regularRunningTime="130" requestedDeparture="04:58:40" requestedTrackID="G-607" requestedBstFahrweg="FMLA-654-607-FFOR" type="pass" trainTypeNumber="8530" timingPoint="true" zuggattung="Tfzf (RaR) 03.1"/>
+				<entry stationID="FO  G" stationName="Offenbach(M) Gbf" trackID="A-104" bstfahrweg="FO-152-104-FMHO-3664/3600" dwegName="1-1000" departure="05:31:29" minStopTime="300" stopTime="300" RTMargin2="0" requestedArrival="05:26:29" requestedDeparture="05:31:29" requestedTrackID="A-104" requestedBstFahrweg="FO-152-104-FMHO-3664/3600" type="end" lineID="3664" timingPoint="true" zuggattung="Tfzf (RaR) 03.1"/>
+			</timetableentries>
+		</train>
+		<train number="91052" class="FGz" pattern="/Bedarfszuege/FGz/DGX/FHOEG -/F836A-FHOEG/rück" name="DGS/91052/222/He + DGX/91052/18/su" description="91052/1" comment="FHOEG - RMG&#13;&#10;PC 70 PC 400&#13;&#10;RTB D3113 + FHOEG - RMG&#13;&#10;+ohne Ebula+&#13;&#10;PC70PC400&#13;&#10;D3113 RTB Cargo" typeNumber="4083" line="FHOEG -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOEG" stationName="Ff-Höchst Gbf" trackID="B-228" bstfahrweg="FFAWA-228-FHOE" dwegName="1-1000" departure="16:33:00" minStopTime="1200" stopTime="1200" regularRunningTime="122" requestedArrival="16:13:00" requestedDeparture="16:33:00" requestedTrackID="B-228" requestedBstFahrweg="FFAWA-228-FHOE" type="begin" lineID="3603" timingPoint="true" departureFix="true" zuggattung="DGS 36.9"/>
+				<entry stationID="FMLA" trackID="G-2" bstfahrweg="FFTGF-FNI" departure="16:42:27" regularRunningTime="73" requestedDeparture="16:42:27" requestedTrackID="G-2" requestedBstFahrweg="FFTGF-FNI" type="pass" trainTypeNumber="4083" lineID="3623" timingPoint="true" zuggattung="DGS 36.9"/>
+				<entry stationID="FNI" trackID="A-65" bstfahrweg="FMLA-658-608-FFOR" trackIDForNotConditional="G-607" bstFahrwegBeiAusfallBetriebsHalt="FMLA-653-607-FFOR" departure="16:56:40" minStopTime="60" stopTime="780" regularRunningTime="396" requestedArrival="16:43:40" requestedDeparture="16:56:40" requestedTrackID="A-65" requestedBstFahrweg="FMLA-658-608-FFOR" type="conditional1" trainTypeNumber="4083" timingPoint="true" departureFix="true" zuggattung="DGS 36.9"/>
+				<entry stationID="F836A" stationName="Sbk 836 (3601)" trackID="G-836" bstfahrweg="FEZ-FDA" departure="18:04:22" RTMargin2="0" requestedDeparture="18:04:22" requestedTrackID="G-836" requestedBstFahrweg="FEZ-FDA" type="end" lineID="3601" timingPoint="true" zuggattung="DGX 36.9"/>
+			</timetableentries>
+		</train>
+		<train number="91611" class="FGz" pattern="/Bedarfszuege/FGz/DGS/FFH -/F836A-FFH/rück" name="DGS/91611/223/He + DGS/91611/222/su" description="91611/1" comment="FFH - NWR A&#13;&#10;ex59903&#13;&#10;GGVE3, 30, UN 1202, 1203,1223&#13;&#10;EVU: HGK Köln (D3125)" typeNumber="4081" line="FFH -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFH" stationName="Flörsheim (Main)" trackID="B-1" bstfahrweg="FHM-1-FHAS" dwegName="1-1000" departure="21:33:00" minStopTime="120" stopTime="120" regularRunningTime="254" requestedArrival="21:31:00" requestedDeparture="21:33:00" requestedTrackID="B-1" requestedBstFahrweg="FHM-1-FHAS" type="begin" lineID="3603" timingPoint="true" departureFix="true" zuggattung="DGS 36.9"/>
+				<entry stationID="FMLA" trackID="G-2" bstfahrweg="FFTGF-FNI" departure="22:13:31" regularRunningTime="91" requestedDeparture="22:13:31" requestedTrackID="G-2" requestedBstFahrweg="FFTGF-FNI" type="pass" trainTypeNumber="4081" lineID="3623" timingPoint="true" zuggattung="DGS 36.9"/>
+				<entry stationID="FNI" trackID="A-65" bstfahrweg="FMLA-654-607-FFOR" trackIDForNotConditional="G-607" bstFahrwegBeiAusfallBetriebsHalt="FMLA-653-607-FFOR" departure="22:16:02" minStopTime="60" stopTime="60" regularRunningTime="294" requestedArrival="22:15:02" requestedDeparture="22:16:02" requestedTrackID="A-65" requestedBstFahrweg="FMLA-654-607-FFOR" type="conditional1" trainTypeNumber="4081" timingPoint="true" zuggattung="DGS 36.9"/>
+				<entry stationID="F836A" stationName="Sbk 836 (3601)" trackID="G-836" bstfahrweg="FEZ-FDA" departure="22:33:16" RTMargin2="0" requestedDeparture="22:33:16" requestedTrackID="G-836" requestedBstFahrweg="FEZ-FDA" type="end" lineID="3601" timingPoint="true" zuggattung="DGS 36.9"/>
+			</timetableentries>
+		</train>
+		<train number="91612" class="FGz" pattern="/Bedarfszuege/FGz/DGS/NWR -/FEZ-FFH/hin" name="DGS/91612/0/su" description="91612/2" comment="NWR - FFH&#13;&#10;EVU: HGK (D3125)&#13;&#10;ex59902" typeNumber="4085" line="NWR -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FEZ" stationName="Erzhausen" trackID="G-737" bstfahrweg="FDA-737-FLG" departure="07:19:26" regularRunningTime="272" requestedDeparture="07:19:26" requestedTrackID="G-737" requestedBstFahrweg="FDA-737-FLG" type="begin" lineID="3601" timingPoint="true" departureFix="true" zuggattung="DGS 36.9"/>
+				<entry stationID="FNI" trackID="G-608" bstfahrweg="FFOR-608-658-FMLA" departure="07:37:55" regularRunningTime="157" requestedDeparture="07:37:55" requestedTrackID="G-608" requestedBstFahrweg="FFOR-608-658-FMLA" type="pass" trainTypeNumber="4085" lineID="3623" timingPoint="true" zuggattung="DGS 36.9"/>
+				<entry stationID="FMLA" trackID="B-330" bstfahrweg="FNI-FFTGF" dwegName="1-1000" departure="07:41:32" minStopTime="60" stopTime="60" regularRunningTime="88" requestedArrival="07:40:32" requestedDeparture="07:41:32" requestedTrackID="B-330" requestedBstFahrweg="FNI-FFTGF" type="stop" trainTypeNumber="4085" timingPoint="true" departureFix="true" zuggattung="DGS 36.9"/>
+				<entry stationID="FFH" stationName="Flörsheim (Main)" trackID="C-3" bstfahrweg="FHAS-3-FHM" dwegName="1-1000" departure="08:37:01" minStopTime="600" stopTime="600" RTMargin2="0" requestedArrival="08:27:01" requestedDeparture="08:37:01" requestedTrackID="C-3" requestedBstFahrweg="FHAS-3-FHM" type="end" lineID="3603" timingPoint="true" zuggattung="DGS 36.9"/>
+			</timetableentries>
+		</train>
+	</timetable>
+</railsys>

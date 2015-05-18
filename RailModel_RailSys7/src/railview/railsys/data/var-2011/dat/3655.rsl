@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<line lineID="3655" name="Neu-Isenburg - Buchschlag" trafficRouting="on_the_right" type="local" dependentLines="fbus fnis">
+	<version major="1" minor="2" patchlevel="0" comment=""/>
+	<stations/>
+	<nodes>
+		<node nodeID="73016" description="Verbindungs-Knoten" kilometre="9.500" x="-22780.7" y="1200.08" xNet="2633089.5" yNet="7522800.4" xWGS84="-21716.9" yWGS84="1300.16"/>
+	</nodes>
+	<links>
+		<link source="72981.fnis" target="73016" gradient="2.1" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="73016" target="18618.fbus" gradient="2.1" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+	</links>
+	<dependentLinks/>
+	<blockSections>
+		<blockSection presignal="72896.fnis" nodes="72919.fnis 72920.fnis 72921.fnis 72922.fnis 72923.fnis 72983.fnis 72984.fnis 72985.fnis 72986.fnis 72951.fnis 72936.fnis 72952.fnis 72953.fnis 72901.fnis 72954.fnis 72972.fnis 72895.fnis 72894.fnis 72896.fnis 72897.fnis 72898.fnis 72899.fnis 72975.fnis 72976.fnis 72977.fnis 72978.fnis 73025.fnis 72979.fnis 72980.fnis 72981.fnis 73016 18618.fbus 18666.fbus 18619.fbus"/>
+		<blockSection presignal="72896.fnis" nodes="72932.fnis 72933.fnis 72934.fnis 72935.fnis 72936.fnis 72952.fnis 72953.fnis 72901.fnis 72954.fnis 72972.fnis 72895.fnis 72894.fnis 72896.fnis 72897.fnis 72898.fnis 72899.fnis 72975.fnis 72976.fnis 72977.fnis 72978.fnis 73025.fnis 72979.fnis 72980.fnis 72981.fnis 73016 18618.fbus 18666.fbus 18619.fbus"/>
+		<blockSection presignal="72896.fnis" nodes="72996.fnis 72997.fnis 72832.fnis 72831.fnis 72830.fnis 72937.fnis 72938.fnis 72939.fnis 72923.fnis 72983.fnis 72984.fnis 72985.fnis 72986.fnis 72951.fnis 72936.fnis 72952.fnis 72953.fnis 72901.fnis 72954.fnis 72972.fnis 72895.fnis 72894.fnis 72896.fnis 72897.fnis 72898.fnis 72899.fnis 72975.fnis 72976.fnis 72977.fnis 72978.fnis 73025.fnis 72979.fnis 72980.fnis 72981.fnis 73016 18618.fbus 18666.fbus 18619.fbus"/>
+		<blockSection presignal="18526.fbus" nodes="18527.fbus 18526.fbus 18525.fbus 18522.fbus 18524.fbus 18592.fbus 18591.fbus 18513.fbus 18626.fbus 18625.fbus 18624.fbus 18623.fbus 18622.fbus 18621.fbus 18620.fbus 18619.fbus 18666.fbus 18618.fbus 73016 72981.fnis 72980.fnis 72979.fnis"/>
+	</blockSections>
+	<slipDistances/>
+	<approachControlRoutes/>
+	<stationRoutes/>
+	<evzg/>
+	<evzg-katalog/>
+</line>

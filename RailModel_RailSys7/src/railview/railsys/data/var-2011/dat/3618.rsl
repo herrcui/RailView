@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<line lineID="3618" name="Ffm Hoch/Tief - Ffm Außenbf" trafficRouting="on_the_right" type="local" dependentLines="ff">
+	<version major="1" minor="2" patchlevel="0" comment=""/>
+	<stations/>
+	<nodes/>
+	<links/>
+	<dependentLinks/>
+	<blockSections/>
+	<slipDistances/>
+	<approachControlRoutes/>
+	<stationRoutes/>
+	<evzg/>
+	<evzg-katalog/>
+</line>

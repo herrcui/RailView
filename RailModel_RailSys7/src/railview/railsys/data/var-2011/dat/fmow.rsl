@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<line lineID="fmow" name="Mönchwald" trafficRouting="on_the_right" type="global" dependentLines="3520 3539">
+	<transformations>
+		<transformation line="3520" m11="1" m12="0" m21="0" m22="1" dx="-11907.8" dy="-296.32"/>
+		<transformation line="3539" m11="1" m12="0" m21="0" m22="1" dx="-1040.5" dy="-4789.21"/>
+	</transformations>
+	<version major="1" minor="2" patchlevel="0" comment=""/>
+	<stations>
+		<station stationID="FMOW" name="Mönchwald" xNet="2.4665e+06" yNet="7.4884e+06" xWGS84="0" yWGS84="0"/>
+	</stations>
+	<nodes>
+		<switch start="67793" endOfMainTrack="67791" endOfBranchTrack="67792" nodeID="67790" name="31W102" description="Weichenanfang  Id:67790 Str:3520 Bild (-36.3816 / 70.9632)" kilometre="17.297" x="-3638.16" y="7096.32" xNet="2466168.6" yNet="7488132.3" xWGS84="0" yWGS84="0"/>
+		<node nodeID="67793" description="Neigung S: 0.40 F: -1.00 Id:67793 Str:3520" kilometre="17.360" x="-3531.1758" y="7096.32" xNet="2466257.3" yNet="7488192.1" xWGS84="-3531.1758" yWGS84="7096.32"/>
+		<track trackID="G-106" stationID="FMOW" type="timingPoint" nodeID="67794" name="106" description="Fahrzeitmesspunkt  Id:67794 Str:3520" kilometre="17.373" x="-3509.0997" y="7096.32" xNet="2466275.6" yNet="7488204.5" xWGS84="0" yWGS84="0" referenceNode="67795"/>
+		<node nodeID="67795" description="BremswegF  Id:67795 Str:3520" kilometre="17.398" x="-3466.6457" y="7096.32" xNet="2466310.8" yNet="7488228.2" xWGS84="-3466.6457" yWGS84="7096.32"/>
+		<switch start="67795" endOfMainTrack="67797" endOfBranchTrack="67798" nodeID="67796" name="31W103" description="Weichenanfang  Id:67796 Str:3520 Bild (-34.0721 / 70.9632)" kilometre="17.433" x="-3407.21" y="7096.32" xNet="2466360.1" yNet="7488261.5" xWGS84="0" yWGS84="0"/>
+		<node nodeID="67799" description="Weichenstamm  Id:67799 Str:3520" kilometre="17.175" x="-3684.1946" y="7296.32" xNet="2466018.6" yNet="7488272.4" xWGS84="-3684.1946" yWGS84="7296.32"/>
+		<node nodeID="67801" description="FstrZugschlussstelleS FstrAuflösezeit: 3s Id:67801 Str:3520" kilometre="17.225" x="-3510.6559" y="7296.32" xNet="2466162.5" yNet="7488369.4" xWGS84="-3510.6559" yWGS84="7296.32" referenceNode="67799" releaseContact="true"/>
+		<track trackID="G-104" stationID="FMOW" type="timingPoint" nodeID="67802" name="104" description="Fahrzeitmesspunkt  Id:67802 Str:3520" kilometre="17.373" x="-2996.9816" y="7296.32" xNet="2466588.3" yNet="7488656.7" xWGS84="0" yWGS84="0" referenceNode="67803"/>
+		<node nodeID="67803" description="Neigung S: 0.10 F: -1.00 Id:67803 Str:3520" kilometre="17.398" x="-2910.2123" y="7296.32" xNet="2466660.3" yNet="7488705.2" xWGS84="-2910.2123" yWGS84="7296.32"/>
+		<node nodeID="67804" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:67804 Str:3520" kilometre="17.510" x="-2521.4858" y="7296.32" xNet="2466982.5" yNet="7488922.6" xWGS84="-2521.4858" yWGS84="7296.32"/>
+		<node nodeID="67805" description="Neigung S: 0.80 F: -0.10 Id:67805 Str:3520" kilometre="17.718" x="-1799.5652" y="7296.32" xNet="2467581" yNet="7489326.3" xWGS84="-1799.5652" yWGS84="7296.32"/>
+		<node nodeID="67806" name="V211" description="VorsignalS FstrBildezeit: 9s Id:67806 Str:3520" kilometre="17.848" x="-1348.3648" y="7296.32" xNet="2467955.1" yNet="7489578.6" xWGS84="-1348.3648" yWGS84="7296.32" referenceNode="67805" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="67807" name="V30fI" description="VorsignalF FstrBildezeit: 9s Id:67807 Str:3520" kilometre="17.881" x="-1233.8293" y="7296.32" xNet="2468050" yNet="7489642.6" xWGS84="-1233.8293" yWGS84="7296.32" referenceNode="67808" presignal="true" with1000HzMagnet="true"/>
+		<track trackID="B-104" stationID="FMOW" length="750" type="stopBoardFreight" nodeID="67809" name="104" description="HalteplatzGzF Länge: 750m Id:67809 Str:3520" kilometre="17.886" x="-1147.06" y="7296.32" xNet="2468122" yNet="7489691.1" xWGS84="0" yWGS84="0" referenceNode="67860"/>
+		<node nodeID="67810" description="Betriebsstellengrenze Partner: FRAC Strecke: 3520 Gleis: 2 Id:67810 Str:3520 Bild (-7.5139 / 72.9632)" kilometre="18.000" x="-751.392" y="7296.32" xNet="2468450" yNet="7489912.4" xWGS84="-751.392" yWGS84="7296.32">
+			<netLimitInfo lineID="3520" stationID="FRAC" stationName="Raunheim Cal&amp;Tic"/>
+		</node>
+		<node nodeID="67798" description="WeichenabzweigRechts  Id:67798 Str:3539" kilometre="0.248" x="-3297.2481" y="6905.8438" xNet="2466557.7" yNet="7488165" xWGS84="-3297.2481" yWGS84="6905.8438"/>
+		<node nodeID="67811" description="Bildpunkt  Id:67811 Str:3539 Bild (-32.9175 / 68.9632)" kilometre="0.249" x="-3291.75" y="6896.32" xNet="2466567.6" yNet="7488160.2" xWGS84="-3291.75" yWGS84="6896.32"/>
+		<node nodeID="67812" description="GeschwZulaessigS V: 130 Wirkungsort: signal Zugbeeinflussung: Alle Id:67812 Str:3539" kilometre="0.298" x="-3232.2694" y="6896.32" xNet="2466616.9" yNet="7488193.5" xWGS84="-3232.2694" yWGS84="6896.32"/>
+		<node nodeID="67813" description="BremswegS  Id:67813 Str:3539" kilometre="0.298" x="-3207.9916" y="6896.32" xNet="2466637.1" yNet="7488207.1" xWGS84="-3207.9916" yWGS84="6896.32"/>
+		<node nodeID="67814" description="FstrZugschlussstelleS FstrAuflösezeit: 3s Id:67814 Str:3539" kilometre="0.358" x="-3135.1582" y="6896.32" xNet="2466697.5" yNet="7488247.8" xWGS84="-3135.1582" yWGS84="6896.32" referenceNode="67813" releaseContact="true"/>
+		<node nodeID="67815" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:67815 Str:3539" kilometre="0.410" x="-3072.036" y="6896.32" xNet="2466749.8" yNet="7488283.1" xWGS84="-3072.036" yWGS84="6896.32"/>
+		<node nodeID="67816" description="Neigung S: 1.50 F: -0.40 Id:67816 Str:3539" kilometre="0.422" x="-3057.4693" y="6896.32" xNet="2466761.9" yNet="7488291.2" xWGS84="-3057.4693" yWGS84="6896.32"/>
+		<node nodeID="67817" description="Neigung S: 29.00 F: -1.50 Id:67817 Str:3539" kilometre="0.638" x="-2795.2691" y="6896.32" xNet="2466979.2" yNet="7488437.8" xWGS84="-2795.2691" yWGS84="6896.32"/>
+		<node nodeID="67818" description="GeschwZulaessigF V: 130 Wirkungsort: signal Zugbeeinflussung: Alle Id:67818 Str:3539" kilometre="0.665" x="-2762.4941" y="6896.32" xNet="2467006.4" yNet="7488456.2" xWGS84="-2762.4941" yWGS84="6896.32"/>
+		<node nodeID="67819" name="31Vf,ffIII" description="VorsignalF FstrBildezeit: 9s Id:67819 Str:3539" kilometre="0.665" x="-2738.2163" y="6896.32" xNet="2467026.5" yNet="7488469.8" xWGS84="-2738.2163" yWGS84="6896.32" referenceNode="67820" presignal="true" with1000HzMagnet="true"/>
+		<track trackID="B-112" stationID="FMOW" length="750" type="stopBoardFreight" nodeID="67821" name="112" description="HalteplatzGzF Länge: 750m Id:67821 Str:3539" kilometre="0.670" x="-2707.8691" y="6896.32" xNet="2467051.7" yNet="7488486.7" xWGS84="0" yWGS84="0" referenceNode="67856"/>
+		<node nodeID="67822" description="Neigung S: -25.40 F: -29.00 Id:67822 Str:3539" kilometre="0.850" x="-2489.369" y="6896.32" xNet="2467232.8" yNet="7488608.9" xWGS84="-2489.369" yWGS84="6896.32"/>
+		<node nodeID="67823" name="14V811" description="VorsignalS FstrBildezeit: 9s Id:67823 Str:3539" kilometre="0.910" x="-2416.5356" y="6896.32" xNet="2467293.2" yNet="7488649.6" xWGS84="-2416.5356" yWGS84="6896.32" referenceNode="67822" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="67824" description="Bildpunkt  Id:67824 Str:3539 Bild (-23.6798 / 68.9632)" kilometre="0.950" x="-2367.98" y="6896.32" xNet="2467389" yNet="7488717" xWGS84="-2367.98" yWGS84="6896.32"/>
+		<node nodeID="67825" description="Bildpunkt  Id:67825 Str:3539 Bild (-21.9478 / 65.9632)" kilometre="0.960" x="-2194.78" y="6596.32" xNet="2467644.8" yNet="7488524.9" xWGS84="-2194.78" yWGS84="6596.32"/>
+		<node nodeID="67826" description="Bildpunkt  Id:67826 Str:3539 Bild (-21.9478 / 51.9632)" kilometre="0.970" x="-2194.78" y="5196.32" xNet="2468400" yNet="7488000" xWGS84="-2194.78" yWGS84="5196.32"/>
+		<node nodeID="67827" description="Bildpunkt  Id:67827 Str:3539 Bild (-17.9064 / 44.9632)" kilometre="0.980" x="-1790.64" y="4496.32" xNet="2469200" yNet="7487400" xWGS84="-1790.64" yWGS84="4496.32"/>
+		<node nodeID="67828" description="Betriebsstellengrenze Partner: FMOH Strecke: 3539 Gleis: 0 Id:67828 Str:3539 Bild (1.7236 / 44.9632)" kilometre="1.000" x="172.363" y="4496.32" xNet="2470781.6" yNet="7488107.6" xWGS84="172.363" yWGS84="4496.32">
+			<netLimitInfo lineID="3539" stationID="FMOH" stationName="Mönchhof"/>
+		</node>
+		<node nodeID="67829" description="WeichenabzweigRechts  Id:67829 Str:3520" kilometre="17.175" x="-3742.1793" y="7276.518" xNet="2465981.6" yNet="7488223.5" xWGS84="-3742.1793" yWGS84="7276.518"/>
+		<node nodeID="67830" description="GeschwZulaessigS V: 130 Wirkungsort: signal Zugbeeinflussung: Alle Id:67830 Str:3520" kilometre="17.175" x="-3730.7486" y="7256.716" xNet="2466002.2" yNet="7488213.5" xWGS84="-3730.7486" yWGS84="7256.716"/>
+		<node nodeID="67831" description="GeschwZulaessigF V: 130 Wirkungsort: signal Zugbeeinflussung: Alle Id:67831 Str:3520" kilometre="17.175" x="-3719.3179" y="7236.9141" xNet="2466022.7" yNet="7488203.5" xWGS84="-3719.3179" yWGS84="7236.9141"/>
+		<node nodeID="67792" description="WeichenabzweigRechts  Id:67792 Str:3520" kilometre="17.297" x="-3649.5907" y="7116.122" xNet="2466148.1" yNet="7488142.3" xWGS84="-3649.5907" yWGS84="7116.122"/>
+		<node nodeID="67797" description="Weichenstamm  Id:67797 Str:3520" kilometre="17.433" x="-3325.114" y="7096.32" xNet="2466428.1" yNet="7488307.4" xWGS84="-3325.114" yWGS84="7096.32"/>
+		<node nodeID="67832" description="FstrZugschlussstelleS FstrAuflösezeit: 3s Id:67832 Str:3520" kilometre="17.483" x="-3119.874" y="7096.32" xNet="2466598.3" yNet="7488422.1" xWGS84="-3119.874" yWGS84="7096.32" referenceNode="67797" releaseContact="true"/>
+		<node nodeID="67833" description="LZBEndeS  Id:67833 Str:3520" kilometre="17.483" x="-3037.7779" y="7096.32" xNet="2466666.3" yNet="7488468" xWGS84="-3037.7779" yWGS84="7096.32"/>
+		<speedIndicator nodeID="67834" description="GeschwZulaessigS V: 160 Wirkungsort: hier Zugbeeinflussung: Alle Id:67834 Str:3520" kilometre="17.483" x="-2955.6819" y="7096.32" xNet="2466734.4" yNet="7488514" xWGS84="0" yWGS84="0" referenceNode="67833"/>
+		<node nodeID="67835" description="Neigung S: 0.10 F: -0.40 Id:67835 Str:3520" kilometre="17.493" x="-2914.6339" y="7096.32" xNet="2466768.4" yNet="7488536.9" xWGS84="-2914.6339" yWGS84="7096.32"/>
+		<node nodeID="67836" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:67836 Str:3520" kilometre="17.550" x="-2680.6603" y="7096.32" xNet="2466962.4" yNet="7488667.7" xWGS84="-2680.6603" yWGS84="7096.32"/>
+		<node nodeID="67837" description="Neigung S: 0.80 F: -0.10 Id:67837 Str:3520" kilometre="17.718" x="-1991.0538" y="7096.32" xNet="2467534.1" yNet="7489053.4" xWGS84="-1991.0538" yWGS84="7096.32"/>
+		<node nodeID="67838" name="V212" description="VorsignalS FstrBildezeit: 9s Id:67838 Str:3520" kilometre="17.848" x="-1457.4297" y="7096.32" xNet="2467976.5" yNet="7489351.8" xWGS84="-1457.4297" yWGS84="7096.32" referenceNode="67837" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="67839" name="V30f,ffII" description="VorsignalF FstrBildezeit: 9s Id:67839 Str:3520" kilometre="17.881" x="-1321.9713" y="7096.32" xNet="2468088.8" yNet="7489427.5" xWGS84="-1321.9713" yWGS84="7096.32" referenceNode="67840" presignal="true" with1000HzMagnet="true"/>
+		<track trackID="B-106" stationID="FMOW" length="750" type="stopBoardFreight" nodeID="67841" name="106" description="HalteplatzGzF Länge: 750m Id:67841 Str:3520" kilometre="17.886" x="-1219.3513" y="7096.32" xNet="2468173.9" yNet="7489484.9" xWGS84="0" yWGS84="0" referenceNode="67859"/>
+		<node nodeID="67842" description="Betriebsstellengrenze Partner: FRAC Strecke: 3520 Gleis: 1 Id:67842 Str:3520 Bild (-7.5140 / 70.9632)" kilometre="18.000" x="-751.404" y="7096.32" xNet="2468561.8" yNet="7489746.6" xWGS84="-751.404" yWGS84="7096.32">
+			<netLimitInfo lineID="3520" stationID="FRAC" stationName="Raunheim Cal&amp;Tic"/>
+		</node>
+		<track trackID="A-103" stationID="FMOW" length="750" type="stopBoardFreight" nodeID="67844" name="103" description="HalteplatzGzS Länge: 750m Id:67844 Str:3520" kilometre="16.893" x="-5128.181" y="7099.3627" xNet="2464931.6" yNet="7487301.6" xWGS84="0" yWGS84="0" referenceNode="67858"/>
+		<node nodeID="67846" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:67846 Str:3520" kilometre="17.220" x="-4030.8007" y="7097.1218" xNet="2465842.6" yNet="7487913.4" xWGS84="-4030.8007" yWGS84="7097.1218"/>
+		<speedIndicator nodeID="67847" description="GeschwZulaessigF V: 160 Wirkungsort: hier Zugbeeinflussung: Alle Id:67847 Str:3520" kilometre="17.247" x="-3940.1913" y="7096.9368" xNet="2465917.9" yNet="7487963.9" xWGS84="0" yWGS84="0" referenceNode="67848"/>
+		<node nodeID="67848" description="FstrZugschlussstelleF FstrAuflösezeit: 3s Id:67848 Str:3520" kilometre="17.247" x="-3873.0732" y="7096.7997" xNet="2465973.6" yNet="7488001.4" xWGS84="-3873.0732" yWGS84="7096.7997" referenceNode="67791" releaseContact="true"/>
+		<node nodeID="67791" description="Weichenstamm  Id:67791 Str:3520" kilometre="17.297" x="-3705.2781" y="7096.4571" xNet="2466112.9" yNet="7488094.9" xWGS84="-3705.2781" yWGS84="7096.4571"/>
+		<track trackID="A-105" stationID="FMOW" length="750" type="stopBoardFreight" nodeID="67850" name="105" description="HalteplatzGzS Länge: 750m Id:67850 Str:3520" kilometre="16.893" x="-4935.1524" y="7299.0874" xNet="2464980" yNet="7487575.2" xWGS84="0" yWGS84="0" referenceNode="67857"/>
+		<node nodeID="67852" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:67852 Str:3520" kilometre="17.110" x="-4025.9513" y="7296.9579" xNet="2465734.9" yNet="7488081.8" xWGS84="-4025.9513" yWGS84="7296.9579"/>
+		<node nodeID="67853" description="FstrZugschlussstelleF FstrAuflösezeit: 3s Id:67853 Str:3520" kilometre="17.125" x="-3963.1033" y="7296.8107" xNet="2465787.1" yNet="7488116.8" xWGS84="-3963.1033" yWGS84="7296.8107" referenceNode="67854" releaseContact="true"/>
+		<speedIndicator nodeID="67854" description="GeschwZulaessigF V: 160 Wirkungsort: hier Zugbeeinflussung: Alle Id:67854 Str:3520" kilometre="17.165" x="-3795.5087" y="7296.4181" xNet="2465926.3" yNet="7488210.2" xWGS84="0" yWGS84="0" referenceNode="67800"/>
+		<switch start="67854" endOfMainTrack="67799" endOfBranchTrack="67829" nodeID="67800" name="31W101" description="Weichenanfang  Id:67800 Str:3520 Bild (-37.5361 / 72.9632)" kilometre="17.175" x="-3753.61" y="7296.32" xNet="2465961.1" yNet="7488233.6" xWGS84="0" yWGS84="0"/>
+		<track trackID="X-112" stationID="FMOW" interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="67820" name="31112" description="HauptsignalF DwegAuflösezeit: 3s Id:67820 Str:3539" kilometre="0.665" x="-2713.9385" y="6896.32" xNet="2467046.7" yNet="7488483.3" xWGS84="0" yWGS84="0" referenceNode="67821"/>
+		<track trackID="X-103" stationID="FMOW" interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="67845" name="31103" description="HauptsignalS DwegAuflösezeit: 3s Id:67845 Str:3520" kilometre="16.898" x="-5111.4015" y="7099.3284" xNet="2464945.5" yNet="7487311" xWGS84="0" yWGS84="0" referenceNode="67844"/>
+		<track trackID="X-105" stationID="FMOW" interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="67851" name="31105" description="HauptsignalS DwegAuflösezeit: 3s Id:67851 Str:3520" kilometre="16.898" x="-4914.2031" y="7299.0383" xNet="2464997.4" yNet="7487586.8" xWGS84="0" yWGS84="0" referenceNode="67850"/>
+		<track trackID="X-104" stationID="FMOW" interlockingMachine="Tb:0_Tl:3_NTA" indusi500HzLocation="none" nodeID="67808" name="31104" description="HauptsignalF DwegAuflösezeit: 3s Id:67808 Str:3520" kilometre="17.881" x="-1164.4139" y="7296.32" xNet="2468107.6" yNet="7489681.4" xWGS84="0" yWGS84="0" referenceNode="67809"/>
+		<track trackID="X-106" stationID="FMOW" interlockingMachine="Tb:0_Tl:3_NTA" indusi500HzLocation="none" nodeID="67840" name="31106" description="HauptsignalF DwegAuflösezeit: 3s Id:67840 Str:3520" kilometre="17.881" x="-1239.8753" y="7096.32" xNet="2468156.9" yNet="7489473.4" xWGS84="0" yWGS84="0" referenceNode="67841"/>
+		<stationBorder exitType="regular" stationID="FMOW" lineID="3539" trackNumber="1" nodeID="67856" description="Betriebsstellengrenze Partner: FMOH Strecke: 3539 Gleis: 0 Id:67828 Str:3539 Bild (1.7236 / 44.9632)" kilometre="0.670" x="-2598.619" y="6896.32" xNet="2467142.3" yNet="7488547.8" xWGS84="0" yWGS84="0" referenceNode="67821"/>
+		<stationBorder exitType="regular" stationID="FMOW" lineID="3520" trackNumber="2" nodeID="67857" description="Betriebsstellengrenze Partner: FRA Strecke: 3520 Gleis: 2 Id:67849 Str:3520 Bild (-53.2481 / 73.0000)" kilometre="16.893" x="-5129.9812" y="7299.5437" xNet="2464818.2" yNet="7487466.6" xWGS84="0" yWGS84="0" referenceNode="67850"/>
+		<stationBorder exitType="alternative" stationID="FMOW" lineID="3520" trackNumber="1" nodeID="67858" description="Betriebsstellengrenze Partner: FRA Strecke: 3520 Gleis: 1 Id:67843 Str:3520 Bild (-54.4028 / 71.0000)" kilometre="16.893" x="-5284.2305" y="7099.6813" xNet="2464802.1" yNet="7487214.6" xWGS84="0" yWGS84="0" referenceNode="67844"/>
+		<stationBorder exitType="regular" stationID="FMOW" lineID="3520" trackNumber="1" nodeID="67859" description="Betriebsstellengrenze Partner: FRAC Strecke: 3520 Gleis: 1 Id:67842 Str:3520 Bild (-7.5140 / 70.9632)" kilometre="17.886" x="-985.37764" y="7096.32" xNet="2468367.9" yNet="7489615.7" xWGS84="0" yWGS84="0" referenceNode="67841"/>
+		<stationBorder exitType="alternative" stationID="FMOW" lineID="3520" trackNumber="2" nodeID="67860" description="Betriebsstellengrenze Partner: FRAC Strecke: 3520 Gleis: 2 Id:67810 Str:3520 Bild (-7.5139 / 72.9632)" kilometre="17.886" x="-949.22602" y="7296.32" xNet="2468286" yNet="7489801.8" xWGS84="0" yWGS84="0" referenceNode="67809"/>
+		<signal type="entry" interlockingMachine="sppAuto" nodeID="67843" description="Betriebsstellengrenze Partner: FRA Strecke: 3520 Gleis: 1 Id:67843 Str:3520 Bild (-54.4028 / 71.0000)" kilometre="16.800" x="-5440.28" y="7100" xNet="2464672.5" yNet="7487127.6" xWGS84="-5440.28" yWGS84="7100" referenceNode="67858">
+			<netLimitInfo lineID="3520" stationID="FRA" stationName="Raunheim"/>
+		</signal>
+		<signal type="entry" interlockingMachine="sppAuto" nodeID="67849" description="Betriebsstellengrenze Partner: FRA Strecke: 3520 Gleis: 2 Id:67849 Str:3520 Bild (-53.2481 / 73.0000)" kilometre="16.800" x="-5324.81" y="7300" xNet="2464656.4" yNet="7487358" xWGS84="-5324.81" yWGS84="7300" referenceNode="67857">
+			<netLimitInfo lineID="3520" stationID="FRA" stationName="Raunheim"/>
+		</signal>
+	</nodes>
+	<links>
+		<link source="67790" target="67793" length="63" gradient="1" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="67793" target="67794" length="13" gradient="0.4" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="67794" target="67795" length="25" gradient="0.4" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="67795" target="67796" length="35" gradient="0.4" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="67799" target="67801" length="50" gradient="1" vmax="160" vmaxr="160" electrified="true">
+			<vzg index="9" vmaxr="20"/>
+		</link>
+		<link source="67801" target="67802" length="148" gradient="1" vmax="160" vmaxr="160" electrified="true">
+			<vzg index="9" vmaxr="20"/>
+		</link>
+		<link source="67802" target="67803" length="25" gradient="1" vmax="160" vmaxr="160" electrified="true">
+			<vzg index="9" vmaxr="20"/>
+		</link>
+		<link source="67803" target="67804" length="112" gradient="0.1" vmax="160" vmaxr="160" electrified="true">
+			<vzg index="9" vmaxr="20"/>
+		</link>
+		<link source="67804" target="67805" length="208" gradient="0.1" vmax="160" vmaxr="160" electrified="true">
+			<vzg index="9" vmaxr="20"/>
+		</link>
+		<link source="67805" target="67806" length="130" gradient="0.8" vmax="160" vmaxr="160" electrified="true">
+			<vzg index="9" vmaxr="20"/>
+		</link>
+		<link source="67806" target="67807" length="33" gradient="0.8" vmax="160" vmaxr="160" electrified="true">
+			<vzg index="9" vmaxr="20"/>
+		</link>
+		<link source="67807" target="67808" gradient="0.8" vmax="160" vmaxr="160" electrified="true">
+			<vzg index="9" vmaxr="20"/>
+		</link>
+		<link source="67808" target="67809" length="5" gradient="0.8" vmax="160" vmaxr="160" electrified="true">
+			<vzg index="9" vmaxr="20"/>
+		</link>
+		<link source="67860" target="67810" length="114" gradient="0.8" vmax="160" vmaxr="160" electrified="true">
+			<vzg index="9" vmaxr="20"/>
+		</link>
+		<link source="67798" target="67811" length="1" gradient="0.4" vmax="130" vmaxr="130" bidirectional="true" electrified="true"/>
+		<link source="67811" target="67812" length="49" gradient="0.4" vmax="130" vmaxr="130" bidirectional="true" electrified="true"/>
+		<link source="67812" target="67813" gradient="0.4" vmax="130" vmaxr="130" bidirectional="true" electrified="true"/>
+		<link source="67813" target="67814" length="60" gradient="0.4" vmax="130" vmaxr="130" bidirectional="true" electrified="true"/>
+		<link source="67814" target="67815" length="52" gradient="0.4" vmax="130" vmaxr="130" bidirectional="true" electrified="true"/>
+		<link source="67815" target="67816" length="12" gradient="0.4" vmax="130" vmaxr="130" bidirectional="true" electrified="true"/>
+		<link source="67816" target="67817" length="216" gradient="1.5" vmax="130" vmaxr="130" bidirectional="true" electrified="true"/>
+		<link source="67817" target="67818" length="27" gradient="29" vmax="130" vmaxr="130" bidirectional="true" electrified="true"/>
+		<link source="67818" target="67819" gradient="29" vmax="130" vmaxr="130" bidirectional="true" electrified="true"/>
+		<link source="67819" target="67820" gradient="29" vmax="130" vmaxr="130" bidirectional="true" electrified="true"/>
+		<link source="67820" target="67821" length="5" gradient="29" vmax="130" vmaxr="130" bidirectional="true" electrified="true"/>
+		<link source="67856" target="67822" length="180" gradient="29" vmax="130" vmaxr="130" bidirectional="true" electrified="true"/>
+		<link source="67822" target="67823" length="60" gradient="-25.4" vmax="130" vmaxr="130" bidirectional="true" electrified="true"/>
+		<link source="67823" target="67824" length="40" gradient="-25.4" vmax="130" vmaxr="130" bidirectional="true" electrified="true"/>
+		<link source="67824" target="67825" length="10" gradient="-25.4" vmax="130" vmaxr="130" bidirectional="true" electrified="true"/>
+		<link source="67825" target="67826" length="10" gradient="-25.4" vmax="130" vmaxr="130" bidirectional="true" electrified="true"/>
+		<link source="67826" target="67827" length="10" gradient="-25.4" vmax="130" vmaxr="130" bidirectional="true" electrified="true"/>
+		<link source="67827" target="67828" length="20" gradient="-25.4" vmax="130" vmaxr="130" bidirectional="true" electrified="true"/>
+		<link source="67829" target="67830" gradient="1" vmax="130" vmaxr="130" electrified="true"/>
+		<link source="67830" target="67831" gradient="1" vmax="130" vmaxr="130" electrified="true"/>
+		<link source="67831" target="67792" length="122" gradient="1" vmax="130" vmaxr="130" electrified="true"/>
+		<link source="67797" target="67832" length="50" gradient="0.4" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="67832" target="67833" gradient="0.4" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="67833" target="67834" gradient="0.4" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="67834" target="67835" length="10" gradient="0.4" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="67835" target="67836" length="57" gradient="0.1" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="67836" target="67837" length="168" gradient="0.1" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="67837" target="67838" length="130" gradient="0.8" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="67838" target="67839" length="33" gradient="0.8" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="67839" target="67840" gradient="0.8" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="67840" target="67841" length="5" gradient="0.8" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="67859" target="67842" length="114" gradient="0.8" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="67843" target="67858" length="93" gradient="1" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="67844" target="67845" length="5" gradient="1" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="67845" target="67846" length="322" gradient="1" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="67846" target="67847" length="27" gradient="1" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="67847" target="67848" gradient="1" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="67848" target="67791" length="50" gradient="1" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="67849" target="67857" length="93" gradient="1" vmax="160" vmaxr="160" electrified="true">
+			<vzg index="9" vmaxr="20"/>
+		</link>
+		<link source="67850" target="67851" length="5" gradient="1" vmax="160" vmaxr="160" electrified="true">
+			<vzg index="9" vmaxr="20"/>
+		</link>
+		<link source="67851" target="67852" length="212" gradient="1" vmax="160" vmaxr="160" electrified="true">
+			<vzg index="9" vmaxr="20"/>
+		</link>
+		<link source="67852" target="67853" length="15" gradient="1" vmax="160" vmaxr="160" electrified="true">
+			<vzg index="9" vmaxr="20"/>
+		</link>
+		<link source="67853" target="67854" length="40" gradient="1" vmax="160" vmaxr="160" electrified="true">
+			<vzg index="9" vmaxr="20"/>
+		</link>
+		<link source="67854" target="67800" length="10" gradient="1" vmax="160" vmaxr="160" electrified="true">
+			<vzg index="9" vmaxr="20"/>
+		</link>
+		<link source="67791" target="67790" gradient="1" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="67792" target="67790" gradient="1" vmax="130" vmaxr="130" electrified="true"/>
+		<link source="67796" target="67797" gradient="0.4" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="67796" target="67798" gradient="0.4" vmax="130" vmaxr="130" bidirectional="true" electrified="true"/>
+		<link source="67800" target="67799" gradient="1" vmax="160" vmaxr="160" electrified="true">
+			<vzg index="9" vmaxr="20"/>
+		</link>
+		<link source="67800" target="67829" gradient="1" vmax="130" vmaxr="130" electrified="true"/>
+		<link source="67821" target="67856" gradient="29" vmax="130" vmaxr="130" bidirectional="true" electrified="true"/>
+		<link source="67857" target="67850" gradient="1" vmax="160" vmaxr="160" electrified="true">
+			<vzg index="9" vmaxr="20"/>
+		</link>
+		<link source="67858" target="67844" gradient="1" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="67841" target="67859" gradient="0.8" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="67809" target="67860" gradient="0.8" vmax="160" vmaxr="160" electrified="true">
+			<vzg index="9" vmaxr="20"/>
+		</link>
+	</links>
+	<dependentLinks/>
+	<blockSections>
+		<blockSection nodes="67843 67858 67844 67845"/>
+		<blockSection nodes="67849 67857 67850 67851"/>
+	</blockSections>
+	<slipDistances>
+		<slipDistance signal="67820" name="999.255.67815.fmow.0" publicName="1-1000" description="31112" complete="true" warnerroute="false" nodes="67820 67819 67818 67817 67816 67815"/>
+		<slipDistance signal="67845" name="999.322.67846.fmow.0" publicName="1-1000" description="31103" complete="true" warnerroute="false" nodes="67845 67846"/>
+		<slipDistance signal="67851" name="999.212.67852.fmow.0" publicName="1-1000" description="31105" complete="true" warnerroute="false" nodes="67851 67852"/>
+		<slipDistance signal="67808" name="999.371.67804.fmow.0" publicName="1-1000" description="31104" complete="true" warnerroute="false" nodes="67808 67807 67806 67805 67804"/>
+		<slipDistance signal="67840" name="999.331.67836.fmow.0" publicName="1-1000" description="31106" complete="true" warnerroute="false" nodes="67840 67839 67838 67837 67836"/>
+	</slipDistances>
+	<approachControlRoutes/>
+	<stationRoutes>
+		<stationRoute stationID="FMOW" name="FMOH-FRA" description="FMOH-FRA" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="67856 67821 67820 67819 67818 67817 67816 67815 67814 67813 67812 67811 67798 67796 67795 67794 67793 67790 67792 67831 67830 67829 67800 67854 67853 67852 67851 67850 67857"/>
+		<stationRoute stationID="FMOW" name="FMOH-FRA-RG" description="FMOH-FRA-RG" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=20;NRz=20;S=20;Rz=20;FGz=20;NGz=20;Gz=20;Lz=20" nodes="67856 67821 67820 67819 67818 67817 67816 67815 67814 67813 67812 67811 67798 67796 67795 67794 67793 67790 67791 67848 67847 67846 67845 67844 67858"/>
+		<stationRoute stationID="FMOW" name="FRA-FKCH" description="FRA-FKCH" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="67858 67844 67845 67846 67847 67848 67791 67790 67793 67794 67795 67796 67797 67832 67833 67834 67835 67836 67837 67838 67839 67840 67841 67859"/>
+		<stationRoute stationID="FMOW" name="FRA-FMOH" description="FRA-FMOH" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="67858 67844 67845 67846 67847 67848 67791 67790 67793 67794 67795 67796 67798 67811 67812 67813 67814 67815 67816 67817 67818 67819 67820 67821 67856"/>
+		<stationRoute stationID="FMOW" name="FRA-FMOH-GR" description="FRA-FMOH-GR" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=20;NRz=20;S=20;Rz=20;FGz=20;NGz=20;Gz=20;Lz=20" nodes="67857 67850 67851 67852 67853 67854 67800 67829 67830 67831 67792 67790 67793 67794 67795 67796 67798 67811 67812 67813 67814 67815 67816 67817 67818 67819 67820 67821 67856"/>
+		<stationRoute stationID="FMOW" name="FRA-FRAC-GG" description="FRA-FRAC-GG" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=20;NRz=20;S=20;Rz=20;FGz=20;NGz=20;Gz=20;Lz=20" nodes="67857 67850 67851 67852 67853 67854 67800 67799 67801 67802 67803 67804 67805 67806 67807 67808 67809 67860"/>
+		<stationRoute stationID="FMOW" name="FRA-FRAC-GR" description="FRA-FRAC-GR" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=19;NRz=19;S=19;Rz=19;FGz=19;NGz=19;Gz=19;Lz=19" nodes="67857 67850 67851 67852 67853 67854 67800 67829 67830 67831 67792 67790 67793 67794 67795 67796 67797 67832 67833 67834 67835 67836 67837 67838 67839 67840 67841 67859"/>
+		<stationRoute stationID="FMOW" name="FRAC-FRA" description="FRAC-FRA" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="67860 67809 67808 67807 67806 67805 67804 67803 67802 67801 67799 67800 67854 67853 67852 67851 67850 67857"/>
+		<stationRoute stationID="FMOW" name="FRAC-FRA-GG" description="FRAC-FRA-GG" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=20;NRz=20;S=20;Rz=20;FGz=20;NGz=20;Gz=20;Lz=20" nodes="67859 67841 67840 67839 67838 67837 67836 67835 67834 67833 67832 67797 67796 67795 67794 67793 67790 67791 67848 67847 67846 67845 67844 67858"/>
+		<stationRoute stationID="FMOW" name="FRAC-FRA-GR" description="FRAC-FRA-GR" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=19;NRz=19;S=19;Rz=19;FGz=19;NGz=19;Gz=19;Lz=19" nodes="67859 67841 67840 67839 67838 67837 67836 67835 67834 67833 67832 67797 67796 67795 67794 67793 67790 67792 67831 67830 67829 67800 67854 67853 67852 67851 67850 67857"/>
+	</stationRoutes>
+	<evzg/>
+	<evzg-katalog/>
+</line>

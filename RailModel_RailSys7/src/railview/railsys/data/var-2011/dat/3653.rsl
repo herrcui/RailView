@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<line lineID="3653" name="Buchschlag - Ober Roden" trafficRouting="on_the_right" type="local" dependentLines="fbus">
+	<version major="1" minor="2" patchlevel="0" comment=""/>
+	<stations>
+		<station stationID="FSPO" name="Dreieich-Sprendl" xNet="2.6386e+06" yNet="7.5176e+06" xWGS84="0" yWGS84="0"/>
+	</stations>
+	<nodes>
+		<node nodeID="82332" description="Weichenstamm  Id:82332 Str:3653" kilometre="2.446" x="-23358.005" y="-399.918" xNet="2637979.9" yNet="7517088.6" xWGS84="-9237.605" yWGS84="-200"/>
+		<node nodeID="82334" description="Bildpunkt  Id:82334 Str:3653 Bild (-91.7987 / -1.0000)" kilometre="2.446" x="-23300.27" y="-299.918" xNet="2637955.9" yNet="7517201.5" xWGS84="-9179.87" yWGS84="-100"/>
+		<node nodeID="82335" description="Neigung S: 2.50 F: -3.70 Id:82335 Str:3653" kilometre="2.519" x="-22929.479" y="-299.918" xNet="2638231.4" yNet="7517449.6" xWGS84="-8809.0792" yWGS84="-100"/>
+		<node nodeID="82336" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:82336 Str:3653" kilometre="2.535" x="-22848.21" y="-299.918" xNet="2638291.8" yNet="7517504" xWGS84="-8727.81" yWGS84="-100"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="82337" name="P801" description="HauptsignalF DwegAuflösezeit: 3s Id:82337 Str:3653" kilometre="2.585" x="-22594.244" y="-299.918" xNet="2638480.6" yNet="7517674" xWGS84="0" yWGS84="0" referenceNode="82338"/>
+		<track trackID="B-801" stationID="FSPO" length="150" type="stopBoardFreight" nodeID="82338" name="801" description="HalteplatzGzF Länge: 150m Id:82338 Str:3653" kilometre="2.590" x="-22568.847" y="-299.918" xNet="2638499.4" yNet="7517690.9" xWGS84="0" yWGS84="0" referenceNode="82339"/>
+		<track trackID="D-801" stationID="FSPO" length="120" type="stopBoardPass" nodeID="82339" name="801" description="HalteplatzRzRechtsF Länge: 120m Id:82339 Str:3653" kilometre="2.595" x="-22543.45" y="-299.918" xNet="2638518.3" yNet="7517707.9" xWGS84="0" yWGS84="0" referenceNode="82340">
+			<platform startPos="-5" endPos="-120" width="60" left="false" open="true"/>
+		</track>
+		<track trackID="G-801" stationID="FSPO" type="timingPoint" nodeID="82340" name="801" description="Fahrzeitmesspunkt  Id:82340 Str:3653" kilometre="2.600" x="-22518.054" y="-299.918" xNet="2638537.2" yNet="7517724.9" xWGS84="0" yWGS84="0" referenceNode="82341"/>
+		<node nodeID="82341" description="Neigung S: 2.90 F: -2.50 Id:82341 Str:3653" kilometre="2.719" x="-21913.614" y="-299.918" xNet="2638986.4" yNet="7518129.4" xWGS84="-7793.2141" yWGS84="-100"/>
+		<node nodeID="82342" description="FstrZugschlussstelleF FstrAuflösezeit: 3s Id:82342 Str:3653" kilometre="2.740" x="-21806.948" y="-299.918" xNet="2639065.6" yNet="7518200.8" xWGS84="-7686.5483" yWGS84="-100" referenceNode="82343" releaseContact="true"/>
+		<node nodeID="82343" description="Bildpunkt  Id:82343 Str:3653 Bild (-74.4782 / -1.0000)" kilometre="2.787" x="-21568.22" y="-299.918" xNet="2639243" yNet="7518360.5" xWGS84="-7447.82" yWGS84="-100"/>
+		<node nodeID="82344" description="Weichenstamm  Id:82344 Str:3653" kilometre="2.787" x="-21510.485" y="-399.918" xNet="2639352.9" yNet="7518324.8" xWGS84="-7390.085" yWGS84="-200"/>
+		<node nodeID="82346" description="WeichenabzweigRechts  Id:82346 Str:3653" kilometre="2.446" x="-23312.696" y="-499.918" xNet="2638080.5" yNet="7517044.6" xWGS84="-9192.2959" yWGS84="-300"/>
+		<node nodeID="82347" description="FstrZugschlussstelleS FstrAuflösezeit: 3s Id:82347 Str:3653" kilometre="2.495" x="-23060.238" y="-499.918" xNet="2638268.1" yNet="7517213.5" xWGS84="-8939.8379" yWGS84="-300" referenceNode="82346" releaseContact="true"/>
+		<node nodeID="82348" description="Neigung S: 2.50 F: -3.70 Id:82348 Str:3653" kilometre="2.519" x="-22936.585" y="-499.918" xNet="2638360" yNet="7517296.3" xWGS84="-8816.185" yWGS84="-300"/>
+		<track trackID="G-802" stationID="FSPO" type="timingPoint" nodeID="82349" name="802" description="Fahrzeitmesspunkt  Id:82349 Str:3653" kilometre="2.551" x="-22771.714" y="-499.918" xNet="2638482.5" yNet="7517406.6" xWGS84="0" yWGS84="0" referenceNode="82350"/>
+		<track trackID="A-802" stationID="FSPO" length="120" type="stopBoardPass" nodeID="82350" name="802" description="HalteplatzRzRechtsS Länge: 120m Id:82350 Str:3653" kilometre="2.643" x="-22297.712" y="-499.918" xNet="2638834.8" yNet="7517723.7" xWGS84="0" yWGS84="0" referenceNode="82349">
+			<platform startPos="-5" endPos="-120" width="60" left="false" open="true"/>
+		</track>
+		<track trackID="C-802" stationID="FSPO" length="153" type="stopBoardFreight" nodeID="82351" name="802" description="HalteplatzGzS Länge: 153m Id:82351 Str:3653" kilometre="2.648" x="-22271.951" y="-499.918" xNet="2638853.9" yNet="7517741" xWGS84="0" yWGS84="0" referenceNode="82350"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="82352" name="N802" description="HauptsignalS DwegAuflösezeit: 3s Id:82352 Str:3653" kilometre="2.653" x="-22246.19" y="-499.918" xNet="2638873" yNet="7517758.2" xWGS84="0" yWGS84="0" referenceNode="82351"/>
+		<node nodeID="82353" description="SignalZugschlussstelleS FstrAuflösezeit: 9s Id:82353 Str:3653" kilometre="2.703" x="-21988.579" y="-499.918" xNet="2639064.5" yNet="7517930.6" xWGS84="-7868.1793" yWGS84="-300"/>
+		<node nodeID="82354" description="Neigung S: 2.90 F: -2.50 Id:82354 Str:3653" kilometre="2.719" x="-21906.144" y="-499.918" xNet="2639125.7" yNet="7517985.8" xWGS84="-7785.744" yWGS84="-300"/>
+		<node nodeID="82355" description="WeichenabzweigLinks  Id:82355 Str:3653" kilometre="2.787" x="-21555.794" y="-499.918" xNet="2639386.1" yNet="7518220.2" xWGS84="-7435.3941" yWGS84="-300"/>
+		<node nodeID="82356" description="Betriebsstellengrenze Partner: FBUS Strecke: 3653 Gleis: 0 Id:82356 Str:3653 Bild (-107.9650 / -3.0000)" kilometre="1.560" x="-24916.9" y="-499.918" xNet="2636888.3" yNet="7515971.2" xWGS84="-10796.5" yWGS84="-300"/>
+		<node nodeID="82357" description="Neigung S: 1.70 F: -0.30 Id:82357 Str:3653" kilometre="1.580" x="-24884.478" y="-499.918" xNet="2636912.4" yNet="7515992.9" xWGS84="-10764.078" yWGS84="-300"/>
+		<node nodeID="82358" name="Va801" description="VorsignalS FstrBildezeit: 9s Id:82358 Str:3653" kilometre="1.583" x="-24879.614" y="-499.918" xNet="2636916" yNet="7515996.1" xWGS84="-10759.214" yWGS84="-300" referenceNode="82357" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="82359" description="Neigung S: 5.00 F: -1.70 Id:82359 Str:3653" kilometre="1.680" x="-24722.365" y="-499.918" xNet="2637032.9" yNet="7516101.3" xWGS84="-10601.965" yWGS84="-300"/>
+		<node nodeID="82360" description="Neigung S: 10.00 F: -5.00 Id:82360 Str:3653" kilometre="2.010" x="-24187.395" y="-499.918" xNet="2637430.4" yNet="7516459.3" xWGS84="-10066.995" yWGS84="-300"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="82361" name="A801" description="HauptsignalS DwegAuflösezeit: 3s Id:82361 Str:3653" kilometre="2.253" x="-23793.462" y="-499.918" xNet="2637723.2" yNet="7516722.9" xWGS84="0" yWGS84="0" referenceNode="82360"/>
+		<speedIndicator nodeID="82362" description="GeschwZulaessigS V: 60 Wirkungsort: hier Zugbeeinflussung: Alle Id:82362 Str:3653" kilometre="2.253" x="-23761.039" y="-499.918" xNet="2637747.3" yNet="7516744.6" xWGS84="0" yWGS84="0" referenceNode="82361"/>
+		<speedIndicator nodeID="82363" description="GeschwZulaessigF V: 80 Wirkungsort: hier Zugbeeinflussung: Alle Id:82363 Str:3653" kilometre="2.300" x="-23684.846" y="-499.918" xNet="2637803.9" yNet="7516795.6" xWGS84="0" yWGS84="0" referenceNode="82364"/>
+		<node nodeID="82364" name="BÜ2" description="Bahnuebergang  Id:82364 Str:3653" kilometre="2.371" x="-23569.747" y="-499.918" xNet="2637889.4" yNet="7516872.6" xWGS84="-9449.3467" yWGS84="-300"/>
+		<node nodeID="82365" description="Neigung S: 3.70 F: -10.00 Id:82365 Str:3653" kilometre="2.385" x="-23547.051" y="-499.918" xNet="2637906.3" yNet="7516887.8" xWGS84="-9426.651" yWGS84="-300"/>
+		<node nodeID="82366" description="FstrZugschlussstelleF FstrAuflösezeit: 3s Id:82366 Str:3653" kilometre="2.395" x="-23530.84" y="-499.918" xNet="2637918.4" yNet="7516898.6" xWGS84="-9410.4397" yWGS84="-300" referenceNode="82367" releaseContact="true"/>
+		<node nodeID="82367" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:82367 Str:3653" kilometre="2.440" x="-23457.889" y="-499.918" xNet="2637972.6" yNet="7516947.4" xWGS84="-9337.4892" yWGS84="-300"/>
+		<speedIndicator nodeID="82368" description="GeschwZulaessigF V: 60 Wirkungsort: hier Zugbeeinflussung: Alle Id:82368 Str:3653" kilometre="2.446" x="-23448.162" y="-499.918" xNet="2637979.8" yNet="7516953.9" xWGS84="0" yWGS84="0" referenceNode="82333"/>
+		<switch start="82368" endOfMainTrack="82332" endOfBranchTrack="82346" nodeID="82333" name="W810" description="Weichenanfang  Id:82333 Str:3653 Bild (-92.9534 / -3.0000)" kilometre="2.446" x="-23415.74" y="-499.918" xNet="2638003.9" yNet="7516975.6" xWGS84="0" yWGS84="0"/>
+		<switch start="82369" endOfMainTrack="82344" endOfBranchTrack="82355" nodeID="82345" name="W811" description="Weichenanfang  Id:82345 Str:3653 Bild (-73.3235 / -3.0000)" kilometre="2.787" x="-21452.75" y="-499.918" xNet="2639462.7" yNet="7518289.1" xWGS84="0" yWGS84="0"/>
+		<speedIndicator nodeID="82369" description="GeschwZulaessigS V: 60 Wirkungsort: hier Zugbeeinflussung: Alle Id:82369 Str:3653" kilometre="2.787" x="-21430.718" y="-499.918" xNet="2639479.1" yNet="7518303.9" xWGS84="0" yWGS84="0" referenceNode="82345"/>
+		<node nodeID="82370" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:82370 Str:3653" kilometre="2.800" x="-21416.396" y="-499.918" xNet="2639489.7" yNet="7518313.5" xWGS84="-7295.9965" yWGS84="-300"/>
+		<node nodeID="82371" name="BÜ28" description="Bahnuebergang  Id:82371 Str:3653" kilometre="2.803" x="-21413.092" y="-499.918" xNet="2639492.2" yNet="7518315.7" xWGS84="-7292.6916" yWGS84="-300"/>
+		<node nodeID="82372" description="Neigung S: 14.40 F: -2.90 Id:82372 Str:3653" kilometre="2.827" x="-21386.653" y="-499.918" xNet="2639511.8" yNet="7518333.4" xWGS84="-7266.2527" yWGS84="-300"/>
+		<node nodeID="82373" description="FstrZugschlussstelleS FstrAuflösezeit: 3s Id:82373 Str:3653" kilometre="2.840" x="-21372.332" y="-499.918" xNet="2639522.4" yNet="7518342.9" xWGS84="-7251.9316" yWGS84="-300" referenceNode="82372" releaseContact="true"/>
+		<node nodeID="82374" name="BÜ3" description="Bahnuebergang  Id:82374 Str:3653" kilometre="3.106" x="-21079.3" y="-499.918" xNet="2639740.2" yNet="7518539" xWGS84="-6958.9002" yWGS84="-300"/>
+		<speedIndicator nodeID="82375" description="GeschwZulaessigF V: 60 Wirkungsort: hier Zugbeeinflussung: Alle Id:82375 Str:3653" kilometre="3.180" x="-20997.78" y="-499.918" xNet="2639800.8" yNet="7518593.6" xWGS84="0" yWGS84="0" referenceNode="82376"/>
+		<signal interlockingMachine="sppAuto" indusi500HzLocation="none" nodeID="82376" name="F804" description="HauptsignalF DwegAuflösezeit: 3s Id:82376 Str:3653" kilometre="3.180" x="-20975.748" y="-499.918" xNet="2639817.2" yNet="7518608.3" xWGS84="0" yWGS84="0" referenceNode="82377"/>
+		<speedIndicator nodeID="82377" description="GeschwZulaessigS V: 70 Wirkungsort: hier Zugbeeinflussung: Alle Id:82377 Str:3653" kilometre="3.200" x="-20953.715" y="-499.918" xNet="2639833.5" yNet="7518623.1" xWGS84="0" yWGS84="0" referenceNode="82376"/>
+		<node nodeID="82378" description="Neigung S: 14.50 F: -14.40 Id:82378 Str:3653" kilometre="3.340" x="-20799.488" y="-499.918" xNet="2639948.2" yNet="7518726.3" xWGS84="-6679.0882" yWGS84="-300"/>
+		<node nodeID="82379" description="Neigung S: 14.30 F: -14.50 Id:82379 Str:3653" kilometre="3.600" x="-20513.067" y="-499.918" xNet="2640161" yNet="7518917.9" xWGS84="-6392.6666" yWGS84="-300"/>
+		<node nodeID="82380" name="Vf804" description="VorsignalF FstrBildezeit: 9s Id:82380 Str:3653" kilometre="3.880" x="-20204.612" y="-499.918" xNet="2640390.2" yNet="7519124.3" xWGS84="-6084.2124" yWGS84="-300" referenceNode="82381" presignal="true" with1000HzMagnet="true"/>
+		<signal interlockingMachine="Tb:9_Tl:9_NTA" nodeID="82381" description="Betriebsstellengrenze Partner: FWED Strecke: 3653 Gleis: 0 Id:82381 Str:3653 Bild (-60.6218 / -3.0000)" kilometre="3.900" x="-20182.58" y="-499.918" xNet="2640406.6" yNet="7519139" xWGS84="-6062.18" yWGS84="-300" referenceNode="82380"/>
+		<stationBorder exitType="regular" stationID="FSPO" lineID="3653" trackNumber="1" nodeID="82382" description="Betriebsstellengrenze Partner: FBUS Strecke: 3653 Gleis: 0 Id:82356 Str:3653 Bild (-107.9650 / -3.0000)" kilometre="2.395" x="-23538.945" y="-499.918" xNet="2637912.3" yNet="7516893.2" xWGS84="-9410.4397" yWGS84="-300" referenceNode="82366"/>
+		<stationBorder exitType="regular" stationID="FSPO" lineID="3653" trackNumber="1" nodeID="82383" description="Betriebsstellengrenze Partner: FWED Strecke: 3653 Gleis: 0 Id:82381 Str:3653 Bild (-60.6218 / -3.0000)" kilometre="2.840" x="-21225.816" y="-499.918" xNet="2639631.3" yNet="7518441" xWGS84="-7251.9316" yWGS84="-300" referenceNode="82373"/>
+	</nodes>
+	<links>
+		<link source="82332" target="82334" gradient="3.7" vmaxr="60"/>
+		<link source="82334" target="82335" length="73" gradient="3.7" vmaxr="60"/>
+		<link source="82335" target="82336" length="16" gradient="2.5" vmaxr="60"/>
+		<link source="82336" target="82337" length="50" gradient="2.5" vmaxr="60"/>
+		<link source="82337" target="82338" length="5" gradient="2.5" vmaxr="60"/>
+		<link source="82338" target="82339" length="5" gradient="2.5" vmaxr="60"/>
+		<link source="82339" target="82340" length="5" gradient="2.5" vmaxr="60"/>
+		<link source="82340" target="82341" length="119" gradient="2.5" vmaxr="60"/>
+		<link source="82341" target="82342" length="21" gradient="2.9" vmaxr="60"/>
+		<link source="82342" target="82343" length="47" gradient="2.9" vmaxr="60"/>
+		<link source="82343" target="82344" gradient="2.9" vmaxr="60"/>
+		<link source="82346" target="82347" length="49" gradient="3.7" vmax="60"/>
+		<link source="82347" target="82348" length="24" gradient="3.7" vmax="60"/>
+		<link source="82348" target="82349" length="32" gradient="2.5" vmax="60"/>
+		<link source="82349" target="82350" length="92" gradient="2.5" vmax="60"/>
+		<link source="82350" target="82351" length="5" gradient="2.5" vmax="60"/>
+		<link source="82351" target="82352" length="5" gradient="2.5" vmax="60"/>
+		<link source="82352" target="82353" length="50" gradient="2.5" vmax="60"/>
+		<link source="82353" target="82354" length="16" gradient="2.5" vmax="60"/>
+		<link source="82354" target="82355" length="68" gradient="2.9" vmax="60"/>
+		<link source="82356" target="82357" length="20" gradient="0.3" vmax="80" vmaxr="80" bidirectional="true"/>
+		<link source="82357" target="82358" length="3" gradient="1.7" vmax="80" vmaxr="80" bidirectional="true"/>
+		<link source="82358" target="82359" length="97" gradient="1.7" vmax="80" vmaxr="80" bidirectional="true"/>
+		<link source="82359" target="82360" length="330" gradient="5" vmax="80" vmaxr="80" bidirectional="true"/>
+		<link source="82360" target="82361" length="243" gradient="10" vmax="80" vmaxr="80" bidirectional="true"/>
+		<link source="82361" target="82362" gradient="10" vmax="80" vmaxr="80" bidirectional="true"/>
+		<link source="82362" target="82363" length="47" gradient="10" vmax="60" vmaxr="80" bidirectional="true"/>
+		<link source="82363" target="82364" length="71" gradient="10" vmax="60" vmaxr="60" bidirectional="true"/>
+		<link source="82364" target="82365" length="14" gradient="10" vmax="60" vmaxr="60" bidirectional="true"/>
+		<link source="82365" target="82382" length="10" gradient="3.7" vmax="60" vmaxr="60" bidirectional="true"/>
+		<link source="82366" target="82367" length="45" gradient="3.7" vmax="60" vmaxr="60" bidirectional="true"/>
+		<link source="82367" target="82368" length="6" gradient="3.7" vmax="60" vmaxr="60" bidirectional="true"/>
+		<link source="82368" target="82333" gradient="3.7" vmax="60" vmaxr="60" bidirectional="true"/>
+		<link source="82345" target="82369" gradient="2.9" vmax="60" vmaxr="60"/>
+		<link source="82369" target="82370" length="13" gradient="2.9" vmax="60" vmaxr="60"/>
+		<link source="82370" target="82371" length="3" gradient="2.9" vmax="60" vmaxr="60"/>
+		<link source="82371" target="82372" length="24" gradient="2.9" vmax="60" vmaxr="60"/>
+		<link source="82372" target="82373" length="13" gradient="14.4" vmax="60" vmaxr="60"/>
+		<link source="82383" target="82374" length="266" gradient="14.4" vmax="60" vmaxr="60"/>
+		<link source="82374" target="82375" length="74" gradient="14.4" vmax="60" vmaxr="60"/>
+		<link source="82375" target="82376" gradient="14.4" vmax="60" vmaxr="70"/>
+		<link source="82376" target="82377" length="20" gradient="14.4" vmax="60" vmaxr="70"/>
+		<link source="82377" target="82378" length="140" gradient="14.4" vmax="70" vmaxr="70"/>
+		<link source="82378" target="82379" length="260" gradient="14.5" vmax="70" vmaxr="70"/>
+		<link source="82379" target="82380" length="280" gradient="14.3" vmax="70" vmaxr="70"/>
+		<link source="82380" target="82381" length="20" gradient="14.3" vmax="70" vmaxr="70"/>
+		<link source="82333" target="82332" gradient="3.7" vmaxr="60"/>
+		<link source="82333" target="82346" gradient="3.7" vmax="60"/>
+		<link source="82344" target="82345" gradient="2.9" vmaxr="60"/>
+		<link source="82355" target="82345" gradient="2.9" vmax="60"/>
+		<link source="18659.fbus" target="82356" gradient="0.3" vmax="80" vmaxr="80" bidirectional="true" electrified="true"/>
+		<link source="82382" target="82366" gradient="3.7" vmax="60" vmaxr="60" bidirectional="true"/>
+		<link source="82373" target="82383" gradient="14.4" vmax="60" vmaxr="60"/>
+	</links>
+	<dependentLinks/>
+	<blockSections>
+		<blockSection presignal="82358" nodes="18538.fbus 18539.fbus 18540.fbus 18541.fbus 18542.fbus 18569.fbus 18570.fbus 18571.fbus 18572.fbus 18573.fbus 18574.fbus 18643.fbus 18644.fbus 18645.fbus 18646.fbus 18665.fbus 18647.fbus 18648.fbus 18649.fbus 18650.fbus 18651.fbus 18652.fbus 18653.fbus 18654.fbus 18655.fbus 18656.fbus 18657.fbus 18658.fbus 18659.fbus 82356 82357 82358 82359 82360 82361" speedIndicators="18569.fbus 18648.fbus"/>
+		<blockSection nodes="82361 82362 82363 82364 82365 82382 82366 82367 82368 82333 82346 82347 82348 82349 82350 82351 82352" speedIndicators="82362"/>
+		<blockSection nodes="82352 82353 82354 82355 82345 82369 82370 82371 82372 82373 82383 82374 82375 82376 82377 82378 82379 82380 82381" speedIndicators="82369 82377"/>
+		<blockSection presignal="82380" nodes="82381 82380 82379 82378 82377 82376"/>
+		<blockSection nodes="82376 82375 82374 82383 82373 82372 82371 82370 82369 82345 82344 82343 82342 82341 82340 82339 82338 82337" speedIndicators="82375"/>
+		<blockSection presignal="18658.fbus" nodes="82337 82336 82335 82334 82332 82333 82368 82367 82366 82382 82365 82364 82363 82362 82361 82360 82359 82358 82357 82356 18659.fbus 18658.fbus 18657.fbus 18656.fbus 18655.fbus 18654.fbus 18653.fbus 18652.fbus 18651.fbus 18650.fbus" speedIndicators="18651.fbus 82363 82368"/>
+	</blockSections>
+	<slipDistances>
+		<slipDistance vmax="60" signal="82337" name="39.50.82336.3653.0" publicName="1-60" description="P801" complete="true" warnerroute="false" nodes="82337 82336"/>
+		<slipDistance vmax="60" signal="82352" name="39.50.82353.3653.0" publicName="1-60" description="N802" complete="true" warnerroute="false" nodes="82352 82353"/>
+		<slipDistance signal="82361" name="59.187.82367.3653.0" publicName="1-1000" description="A801" complete="true" warnerroute="false" nodes="82361 82362 82363 82364 82365 82382 82366 82367"/>
+		<slipDistance signal="82376" name="999.380.82370.3653.0" publicName="1-1000" description="F804" complete="true" warnerroute="false" nodes="82376 82375 82374 82383 82373 82372 82371 82370"/>
+	</slipDistances>
+	<approachControlRoutes/>
+	<stationRoutes>
+		<stationRoute stationID="FSPO" name="FBUS-802-FGOZ" description="FBUS-802-FGOZ" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="82382 82366 82367 82368 82333 82346 82347 82348 82349 82350 82351 82352 82353 82354 82355 82345 82369 82370 82371 82372 82373 82383"/>
+		<stationRoute stationID="FSPO" name="FGOZ-801-FBUS" description="FGOZ-801-FBUS" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="82383 82373 82372 82371 82370 82369 82345 82344 82343 82342 82341 82340 82339 82338 82337 82336 82335 82334 82332 82333 82368 82367 82366 82382"/>
+	</stationRoutes>
+	<evzg/>
+	<evzg-katalog/>
+</line>

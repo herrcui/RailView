@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<line lineID="3604" name="Ffm Süd - Ff-Louisa" trafficRouting="on_the_right" type="local" dependentLines="ffs fls">
+	<version major="1" minor="2" patchlevel="0" comment=""/>
+	<stations/>
+	<nodes>
+		<node nodeID="36059" description="Verbindungs-Knoten" kilometre="0.350" x="-6116.0777" y="-1913.16" xNet="2641958.7" yNet="7565999.1" xWGS84="3.91235" yWGS84="-1513.16"/>
+	</nodes>
+	<links>
+		<link source="35946.ffs" target="36059" gradient="8.4" vmax="60" vmaxr="60" bidirectional="true" electrified="true">
+			<vzg index="9" vmax="20"/>
+		</link>
+		<link source="36059" target="62402.fls" gradient="8.4" vmax="60" vmaxr="60" bidirectional="true" electrified="true">
+			<vzg index="9" vmax="20"/>
+		</link>
+	</links>
+	<dependentLinks/>
+	<blockSections>
+		<blockSection presignal="62435.fls" nodes="62436.fls 62435.fls 62434.fls 62433.fls 62430.fls 62432.fls 62505.fls 62504.fls 62484.fls 62546.fls 62545.fls 62544.fls 62543.fls 62415.fls 62414.fls 62413.fls 62412.fls 62411.fls 62410.fls 62409.fls 62408.fls 62407.fls 62406.fls 62570.fls 62405.fls 62404.fls 62403.fls 62402.fls 36059 35946.ffs 35945.ffs 35944.ffs 36079.ffs 35943.ffs 35942.ffs" speedIndicators="35945.ffs"/>
+		<blockSection presignal="35722.ffs" nodes="35723.ffs 35722.ffs 35721.ffs 35720.ffs 35719.ffs 35715.ffs 35717.ffs 35718.ffs 35989.ffs 35784.ffs 35785.ffs 35814.ffs 35813.ffs 35811.ffs 35812.ffs 35933.ffs 35934.ffs 35935.ffs 35936.ffs 35937.ffs 35938.ffs 35939.ffs 35940.ffs 35941.ffs 35942.ffs 35943.ffs 36079.ffs 35944.ffs 35945.ffs 35946.ffs 36059 62402.fls 62403.fls 62404.fls 62405.fls 62570.fls 62406.fls" speedIndicators="35936.ffs 35989.ffs 62405.fls"/>
+		<blockSection presignal="35788.ffs" nodes="35789.ffs 35788.ffs 35787.ffs 35786.ffs 35782.ffs 35784.ffs 35785.ffs 35814.ffs 35813.ffs 35811.ffs 35812.ffs 35933.ffs 35934.ffs 35935.ffs 35936.ffs 35937.ffs 35938.ffs 35939.ffs 35940.ffs 35941.ffs 35942.ffs 35943.ffs 36079.ffs 35944.ffs 35945.ffs 35946.ffs 36059 62402.fls 62403.fls 62404.fls 62405.fls 62570.fls 62406.fls" speedIndicators="35936.ffs 62405.fls"/>
+		<blockSection presignal="35829.ffs" nodes="35830.ffs 35829.ffs 35828.ffs 35827.ffs 35826.ffs 35815.ffs 35814.ffs 35813.ffs 35811.ffs 35812.ffs 35933.ffs 35934.ffs 35935.ffs 35936.ffs 35937.ffs 35938.ffs 35939.ffs 35940.ffs 35941.ffs 35942.ffs 35943.ffs 36079.ffs 35944.ffs 35945.ffs 35946.ffs 36059 62402.fls 62403.fls 62404.fls 62405.fls 62570.fls 62406.fls" speedIndicators="35936.ffs 62405.fls"/>
+		<blockSection presignal="35975.ffs" nodes="35976.ffs 35975.ffs 35974.ffs 35973.ffs 35972.ffs 35911.ffs 35811.ffs 35812.ffs 35933.ffs 35934.ffs 35935.ffs 35936.ffs 35937.ffs 35938.ffs 35939.ffs 35940.ffs 35941.ffs 35942.ffs 35943.ffs 36079.ffs 35944.ffs 35945.ffs 35946.ffs 36059 62402.fls 62403.fls 62404.fls 62405.fls 62570.fls 62406.fls" speedIndicators="35936.ffs 62405.fls"/>
+		<blockSection presignal="36005.ffs" nodes="36006.ffs 36005.ffs 36004.ffs 36003.ffs 36002.ffs 36001.ffs 36000.ffs 35869.ffs 35820.ffs 35818.ffs 35817.ffs 35816.ffs 35717.ffs 35718.ffs 35989.ffs 35784.ffs 35785.ffs 35814.ffs 35813.ffs 35811.ffs 35812.ffs 35933.ffs 35934.ffs 35935.ffs 35936.ffs 35937.ffs 35938.ffs 35939.ffs 35940.ffs 35941.ffs 35942.ffs 35943.ffs 36079.ffs 35944.ffs 35945.ffs 35946.ffs 36059 62402.fls 62403.fls 62404.fls 62405.fls 62570.fls 62406.fls" speedIndicators="35936.ffs 35989.ffs 62405.fls"/>
+		<blockSection presignal="62487.fls" nodes="62488.fls 62487.fls 62486.fls 62485.fls 62483.fls 62484.fls 62546.fls 62545.fls 62544.fls 62543.fls 62415.fls 62414.fls 62413.fls 62412.fls 62411.fls 62410.fls 62409.fls 62408.fls 62407.fls 62406.fls 62570.fls 62405.fls 62404.fls 62403.fls 62402.fls 36059 35946.ffs 35945.ffs 35944.ffs 36079.ffs 35943.ffs 35942.ffs" speedIndicators="35945.ffs"/>
+		<blockSection presignal="35855.ffs" nodes="35856.ffs 35855.ffs 35854.ffs 35853.ffs 35852.ffs 35851.ffs 35824.ffs 35822.ffs 35821.ffs 35819.ffs 35820.ffs 35818.ffs 35817.ffs 35816.ffs 35717.ffs 35718.ffs 35989.ffs 35784.ffs 35785.ffs 35814.ffs 35813.ffs 35811.ffs 35812.ffs 35933.ffs 35934.ffs 35935.ffs 35936.ffs 35937.ffs 35938.ffs 35939.ffs 35940.ffs 35941.ffs 35942.ffs 35943.ffs 36079.ffs 35944.ffs 35945.ffs 35946.ffs 36059 62402.fls 62403.fls 62404.fls 62405.fls 62570.fls 62406.fls" speedIndicators="35936.ffs 35989.ffs 62405.fls"/>
+	</blockSections>
+	<slipDistances/>
+	<approachControlRoutes/>
+	<stationRoutes/>
+	<evzg/>
+	<evzg-katalog/>
+</line>

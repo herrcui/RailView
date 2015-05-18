@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<line lineID="3651" name="Neu-Isenburg - Abzw Forsthaus" trafficRouting="on_the_right" type="local" dependentLines="fnis fsp">
+	<version major="1" minor="2" patchlevel="0" comment=""/>
+	<stations/>
+	<nodes>
+		<node nodeID="73016" description="Verbindungs-Knoten" kilometre="1.700" x="17551.474" y="-12999.989" xNet="2632300" yNet="7546000" xWGS84="5954.59" yWGS84="-96.5637"/>
+	</nodes>
+	<links>
+		<link source="72791.fnis" target="73016" gradient="0.1" vmax="80" vmaxr="80" bidirectional="true" electrified="true"/>
+		<link source="73016" target="34513.fsp" gradient="0.1" vmax="80" vmaxr="80" bidirectional="true" electrified="true"/>
+	</links>
+	<dependentLinks/>
+	<blockSections>
+		<blockSection presignal="34476.fsp" nodes="34477.fsp 34476.fsp 34475.fsp 34474.fsp 34473.fsp 34472.fsp 34471.fsp 34470.fsp 34469.fsp 34468.fsp 34467.fsp 34466.fsp 34462.fsp 34464.fsp 34463.fsp 34507.fsp 34508.fsp 34509.fsp 34510.fsp 34511.fsp 34512.fsp 34432.fsp 34433.fsp 34532.fsp 34531.fsp 34530.fsp 34529.fsp 34528.fsp 34527.fsp 34526.fsp 34525.fsp 34524.fsp 34523.fsp 34522.fsp 34521.fsp 34520.fsp 34564.fsp 34519.fsp 34518.fsp 34517.fsp 34516.fsp 34515.fsp 34514.fsp 34513.fsp 73016 72791.fnis 73019.fnis 72790.fnis 72789.fnis" speedIndicators="34528.fsp"/>
+		<blockSection presignal="72787.fnis" nodes="72703.fnis 72702.fnis 72701.fnis 72700.fnis 72699.fnis 72698.fnis 72697.fnis 72696.fnis 72695.fnis 72694.fnis 72692.fnis 72693.fnis 72796.fnis 72735.fnis 72734.fnis 72733.fnis 72732.fnis 72730.fnis 72731.fnis 72794.fnis 72793.fnis 72792.fnis 72729.fnis 72779.fnis 72780.fnis 72781.fnis 72782.fnis 72783.fnis 72784.fnis 72785.fnis 72786.fnis 72778.fnis 72787.fnis 72788.fnis 72789.fnis 72790.fnis 73019.fnis 72791.fnis 73016 34513.fsp 34514.fsp 34515.fsp 34516.fsp 34517.fsp 34518.fsp 34519.fsp 34564.fsp 34520.fsp 34521.fsp" speedIndicators="72702.fnis"/>
+		<blockSection presignal="72787.fnis" nodes="72756.fnis 72755.fnis 72754.fnis 72753.fnis 72693.fnis 72796.fnis 72735.fnis 72734.fnis 72733.fnis 72732.fnis 72730.fnis 72731.fnis 72794.fnis 72793.fnis 72792.fnis 72729.fnis 72779.fnis 72780.fnis 72781.fnis 72782.fnis 72783.fnis 72784.fnis 72785.fnis 72786.fnis 72778.fnis 72787.fnis 72788.fnis 72789.fnis 72790.fnis 73019.fnis 72791.fnis 73016 34513.fsp 34514.fsp 34515.fsp 34516.fsp 34517.fsp 34518.fsp 34519.fsp 34564.fsp 34520.fsp 34521.fsp"/>
+		<blockSection presignal="34425.fsp" nodes="34424.fsp 34425.fsp 34426.fsp 34427.fsp 34428.fsp 34429.fsp 34430.fsp 34431.fsp 34432.fsp 34433.fsp 34532.fsp 34531.fsp 34530.fsp 34529.fsp 34528.fsp 34527.fsp 34526.fsp 34525.fsp 34524.fsp 34523.fsp 34522.fsp 34521.fsp 34520.fsp 34564.fsp 34519.fsp 34518.fsp 34517.fsp 34516.fsp 34515.fsp 34514.fsp 34513.fsp 73016 72791.fnis 73019.fnis 72790.fnis 72789.fnis" speedIndicators="34528.fsp"/>
+		<blockSection presignal="34544.fsp" nodes="34543.fsp 34544.fsp 34545.fsp 34546.fsp 34547.fsp 34548.fsp 34465.fsp 34464.fsp 34463.fsp 34507.fsp 34508.fsp 34509.fsp 34510.fsp 34511.fsp 34512.fsp 34432.fsp 34433.fsp 34532.fsp 34531.fsp 34530.fsp 34529.fsp 34528.fsp 34527.fsp 34526.fsp 34525.fsp 34524.fsp 34523.fsp 34522.fsp 34521.fsp 34520.fsp 34564.fsp 34519.fsp 34518.fsp 34517.fsp 34516.fsp 34515.fsp 34514.fsp 34513.fsp 73016 72791.fnis 73019.fnis 72790.fnis 72789.fnis" speedIndicators="34528.fsp"/>
+		<blockSection presignal="72787.fnis" nodes="72741.fnis 72740.fnis 72739.fnis 72738.fnis 72737.fnis 72736.fnis 72731.fnis 72794.fnis 72793.fnis 72792.fnis 72729.fnis 72779.fnis 72780.fnis 72781.fnis 72782.fnis 72783.fnis 72784.fnis 72785.fnis 72786.fnis 72778.fnis 72787.fnis 72788.fnis 72789.fnis 72790.fnis 73019.fnis 72791.fnis 73016 34513.fsp 34514.fsp 34515.fsp 34516.fsp 34517.fsp 34518.fsp 34519.fsp 34564.fsp 34520.fsp 34521.fsp"/>
+	</blockSections>
+	<slipDistances/>
+	<approachControlRoutes/>
+	<stationRoutes/>
+	<evzg/>
+	<evzg-katalog/>
+</line>

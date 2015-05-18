@@ -1,0 +1,64 @@
+# ---------------------------------------------------------------------
+# RailSys\Sted Version 7.6.11: Eingabedatei Infrastrukturvariantendatei
+# Dateiname           D:/NONBKU/Railsys Daten/Knoten Frankfurt 2011_Grundzustand_02.03.11/var-2011/dat/infra.dat
+# erzeugt am          7 Mar 2012 15:33:11
+# ---------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------
+# Beschreibung der Infrastrukturvariante
+# ---------------------------------------------------------------------
+
+variante 
+
+# ---------------------------------------------------------------------
+# Parameter für H/V-Signalsystem
+# ---------------------------------------------------------------------
+
+# Abstand eines Vorsignales, wenn nicht speziell im Block überschrieben [m]
+vorsignalabstand   1000
+vorsignalabstandblolaenge 1300
+
+# Abstand des Indusi-500Hz Magneten vor dem Hauptsignal [m]
+# (entspricht meistens dem Abstand500HzMagnetZumSignal des Hauptsignales)
+indusiabstand      250
+# Abstand des Aufloesekontaktes hinter einem Hauptsignal [m]
+aufloeseabstand       0
+# Abstand des Aufloesekontaktes hinter einer Weiche [m]
+aufloeseabstandweiche 0
+
+# ---------------------------------------------------------------------
+# Parameter für Moving Block-Simulation
+# ---------------------------------------------------------------------
+
+weichenumlaufzeit  30
+# Sicherheitsabstand fuer Moving Block-Fahrt [m]
+sicherheitsabstand 150
+# Flag, ob automatische Moving Block Teilung vorgenommen werden soll
+# mbloauto
+# Max. Kantenlaenge der Teilung [m]
+mblolaenge         50
+
+# ---------------------------------------------------------------------
+# Parameter für ATC-Signalsysteme
+# ---------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------
+# Dweg-Parameter
+# ---------------------------------------------------------------------
+
+# Flag, ob die Dwege bei LZB berücksichtigt werden sollen
+dwegbeilzb         1
+# Flag, ob die Vmax bei D-Wegen bei der Fahrzeitberechnung berücksichtigt werden soll
+dwegusevmax        1
+# Flag, ob die englischen Standards für die Dwege berücksichtigt werden sollen
+dweguseenglischestandards 0
+# Flag, ob gegen die DB-Regel getestet werden soll
+dwegregeldb        1
+# Flag, ob im Simu Konflikte auf D-Wegen erlaubt sein sollen
+konflikteaufdwegen 1
+# Flag, ob bei Kanten die Radsatzlast getestet werden soll
+verifykantenradsatzlast 1
+# Flag, ob die Koordinaten der Knoten auf Eindeutigkeit getestet werden sollen
+verifyknotenkoordinaten 1

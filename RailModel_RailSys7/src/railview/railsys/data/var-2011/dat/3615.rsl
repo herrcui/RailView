@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<line lineID="3615" name="Frankf.-Roedelheim - Kronberg" trafficRouting="on_the_right" type="local" dependentLines="fnh frh">
+	<version major="1" minor="2" patchlevel="0" comment=""/>
+	<stations>
+		<station stationID="FKRS" name="Kronberg Süd" xNet="2.545e+06" yNet="7.6679e+06" xWGS84="0" yWGS84="0"/>
+		<station stationID="FESS" name="Eschborn Süd" xNet="2.5957e+06" yNet="7.6538e+06" xWGS84="0" yWGS84="0"/>
+		<station stationID="FES" name="Eschborn" xNet="2.577e+06" yNet="7.6549e+06" xWGS84="0" yWGS84="0"/>
+	</stations>
+	<nodes>
+		<node nodeID="26242" description="Betriebsstellengrenze Partner: FESS Strecke: 3615 Gleis: 1 Id:26242 Str:3615 Bild (42.7240 / -2.0000)" kilometre="2.660" x="4272.4" y="-200" xNet="2578730.4" yNet="7653619.7" xWGS84="4272.4" yWGS84="-200"/>
+		<node nodeID="26243" name="V931" description="VorsignalS FstrBildezeit: 9s Id:26243 Str:3615" kilometre="2.670" x="4263.5858" y="-200" xNet="2578723.9" yNet="7653625.2" xWGS84="4263.5858" yWGS84="-200" referenceNode="26242" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="26244" description="Neigung S: 18.10 F: -15.10 Id:26244 Str:3615" kilometre="2.809" x="4141.0677" y="-200" xNet="2578633.6" yNet="7653702.1" xWGS84="4141.0677" yWGS84="-200"/>
+		<node nodeID="26245" description="Neigung S: 18.60 F: -18.10 Id:26245 Str:3615" kilometre="3.292" x="3715.3394" y="-200" xNet="2578319.7" yNet="7653969.4" xWGS84="3715.3394" yWGS84="-200"/>
+		<node nodeID="26246" description="Neigung S: 15.70 F: -18.60 Id:26246 Str:3615" kilometre="3.584" x="3457.9634" y="-200" xNet="2578130" yNet="7654130.9" xWGS84="3457.9634" yWGS84="-200"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="26247" name="931" description="HauptsignalS DwegAuflösezeit: 3s Id:26247 Str:3615" kilometre="3.640" x="3408.6036" y="-200" xNet="2578093.6" yNet="7654161.9" xWGS84="0" yWGS84="0" referenceNode="26246"/>
+		<node nodeID="26248" name="V933" description="VorsignalS FstrBildezeit: 9s Id:26248 Str:3615" kilometre="3.640" x="3390.9751" y="-200" xNet="2578080.6" yNet="7654173" xWGS84="3390.9751" yWGS84="-200" referenceNode="26247" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="26249" description="GeschwZulaessigS V: 80 Wirkungsort: signal Zugbeeinflussung: Alle Id:26249 Str:3615" kilometre="3.641" x="3390.0936" y="-200" xNet="2578080" yNet="7654173.5" xWGS84="3390.0936" yWGS84="-200"/>
+		<node nodeID="26250" description="GeschwZulaessigS V: 60 Wirkungsort: signal Zugbeeinflussung: Alle Id:26250 Str:3615" kilometre="3.642" x="3389.2122" y="-200" xNet="2578079.3" yNet="7654174.1" xWGS84="3389.2122" yWGS84="-200"/>
+		<node nodeID="26251" description="GeschwZulaessigS V: 40 Wirkungsort: signal Zugbeeinflussung: Alle Id:26251 Str:3615" kilometre="3.643" x="3388.3308" y="-200" xNet="2578078.7" yNet="7654174.6" xWGS84="3388.3308" yWGS84="-200"/>
+		<node nodeID="26252" description="Neigung S: 14.20 F: -15.70 Id:26252 Str:3615" kilometre="3.725" x="3316.0539" y="-200" xNet="2578025.4" yNet="7654220" xWGS84="3316.0539" yWGS84="-200"/>
+		<speedIndicator nodeID="26253" description="GeschwZulaessigF V: 100 Wirkungsort: hier Zugbeeinflussung: Alle Id:26253 Str:3615" kilometre="3.729" x="3312.5282" y="-200" xNet="2578022.8" yNet="7654222.2" xWGS84="0" yWGS84="0" referenceNode="26341"/>
+		<node nodeID="26254" description="FstrZugschlussstelleF FstrAuflösezeit: 3s Id:26254 Str:3615" kilometre="3.729" x="3294.8997" y="-200" xNet="2578009.8" yNet="7654233.3" xWGS84="3294.8997" yWGS84="-200" referenceNode="26255" releaseContact="true"/>
+		<node nodeID="26255" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:26255 Str:3615" kilometre="3.779" x="3250.8285" y="-200" xNet="2577977.3" yNet="7654260.9" xWGS84="3250.8285" yWGS84="-200"/>
+		<switch start="26255" endOfMainTrack="26257" endOfBranchTrack="26258" nodeID="26256" name="W1" description="Weichenanfang  Id:26256 Str:3615 Bild (32.3320 / -2.0000)" kilometre="3.779" x="3233.2" y="-200" xNet="2577964.3" yNet="7654272" xWGS84="0" yWGS84="0"/>
+		<node nodeID="26259" description="Betriebsstellengrenze Partner: FESS Strecke: 3615 Gleis: 2 Id:26259 Str:3615 Bild (42.7240 / -4.0000)" kilometre="2.660" x="4272.4" y="-400" xNet="2578605.9" yNet="7653469.1" xWGS84="4272.4" yWGS84="-400"/>
+		<node nodeID="26260" description="Neigung S: 15.10 F: -0.90 Id:26260 Str:3615" kilometre="2.660" x="4254.2871" y="-400" xNet="2578592.5" yNet="7653480.5" xWGS84="4254.2871" yWGS84="-400"/>
+		<node nodeID="26261" description="Neigung S: 18.10 F: -15.10 Id:26261 Str:3615" kilometre="2.809" x="4119.3456" y="-400" xNet="2578493" yNet="7653565.2" xWGS84="4119.3456" yWGS84="-400"/>
+		<node nodeID="26262" description="Neigung S: 18.60 F: -18.10 Id:26262 Str:3615" kilometre="3.292" x="3681.9181" y="-400" xNet="2578170.6" yNet="7653839.8" xWGS84="3681.9181" yWGS84="-400"/>
+		<node nodeID="26263" description="Neigung S: 15.70 F: -18.60 Id:26263 Str:3615" kilometre="3.584" x="3417.4692" y="-400" xNet="2577975.6" yNet="7654005.8" xWGS84="3417.4692" yWGS84="-400"/>
+		<signal type="shunting" interlockingMachine="sppAuto" indusi500HzLocation="none" nodeID="26264" name="L929" description="SchutzsignalS DwegAuflösezeit: 3s Id:26264 Str:3615" kilometre="3.640" x="3366.7529" y="-400" xNet="2577938.2" yNet="7654037.6" xWGS84="0" yWGS84="0" referenceNode="26263"/>
+		<speedIndicator nodeID="26265" description="GeschwZulaessigS V: 40 Wirkungsort: hier Zugbeeinflussung: Alle Id:26265 Str:3615" kilometre="3.640" x="3348.64" y="-400" xNet="2577924.9" yNet="7654049" xWGS84="0" yWGS84="0" referenceNode="26264"/>
+		<node nodeID="26266" description="Neigung S: 14.20 F: -15.70 Id:26266 Str:3615" kilometre="3.725" x="3271.66" y="-400" xNet="2577868.1" yNet="7654097.3" xWGS84="3271.66" yWGS84="-400"/>
+		<node nodeID="26267" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:26267 Str:3615" kilometre="3.779" x="3222.7551" y="-400" xNet="2577832.1" yNet="7654128" xWGS84="3222.7551" yWGS84="-400"/>
+		<node nodeID="26268" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:26268 Str:3615" kilometre="3.785" x="3217.3212" y="-400" xNet="2577828.1" yNet="7654131.4" xWGS84="3217.3212" yWGS84="-400"/>
+		<node nodeID="26269" description="FstrZugschlussstelleF FstrAuflösezeit: 3s Id:26269 Str:3615" kilometre="3.820" x="3185.6235" y="-400" xNet="2577804.7" yNet="7654151.3" xWGS84="3185.6235" yWGS84="-400" referenceNode="26270" releaseContact="true"/>
+		<speedIndicator nodeID="26270" description="GeschwZulaessigF V: 100 Wirkungsort: hier Zugbeeinflussung: Alle Id:26270 Str:3615" kilometre="3.825" x="3181.0953" y="-400" xNet="2577801.4" yNet="7654154.1" xWGS84="0" yWGS84="0" referenceNode="26271"/>
+		<node nodeID="26271" description="Weichenstamm  Id:26271 Str:3615" kilometre="3.875" x="3135.8129" y="-400" xNet="2577768" yNet="7654182.6" xWGS84="3135.8129" yWGS84="-400"/>
+		<switch start="26274" endOfMainTrack="26271" endOfBranchTrack="26273" nodeID="26272" name="W2" description="Weichenanfang  Id:26272 Str:3615 Bild (31.1770 / -4.0000)" kilometre="3.875" x="3117.7" y="-400" xNet="2577754.6" yNet="7654193.9" xWGS84="0" yWGS84="0"/>
+		<node nodeID="26274" description="Neigung S: 15.20 F: -14.20 Id:26274 Str:3615" kilometre="3.878" x="3096.0531" y="-400" xNet="2577738.7" yNet="7654207.5" xWGS84="3096.0531" yWGS84="-400"/>
+		<switch start="26274" endOfMainTrack="26276" endOfBranchTrack="26277" nodeID="26275" name="W3" description="Weichenanfang  Id:26275 Str:3615 Bild (28.8680 / -4.0000)" kilometre="3.907" x="2886.8" y="-400" xNet="2577584.4" yNet="7654338.9" xWGS84="0" yWGS84="0"/>
+		<node nodeID="26277" description="WeichenabzweigRechts  Id:26277 Str:3615" kilometre="3.907" x="2869.8147" y="-370.58824" xNet="2577590.2" yNet="7654371.7" xWGS84="2869.8147" yWGS84="-370.58824"/>
+		<node nodeID="26278" description="GeschwZulaessigF V: 40 Wirkungsort: signal Zugbeeinflussung: Alle Id:26278 Str:3615" kilometre="3.930" x="2850.2816" y="-336.76471" xNet="2577596.9" yNet="7654409.4" xWGS84="2850.2816" yWGS84="-336.76471"/>
+		<node nodeID="26279" description="WeichenabzweigRechts  Id:26279 Str:3615" kilometre="4.003" x="2788.2853" y="-229.41176" xNet="2577618" yNet="7654529.1" xWGS84="2788.2853" yWGS84="-229.41176"/>
+		<node nodeID="26257" description="Weichenstamm  Id:26257 Str:3615" kilometre="3.779" x="3198.2076" y="-200" xNet="2577938.5" yNet="7654294" xWGS84="3198.2076" yWGS84="-200"/>
+		<node nodeID="26281" description="Neigung S: 15.20 F: -14.20 Id:26281 Str:3615" kilometre="3.878" x="3024.9951" y="-200" xNet="2577810.8" yNet="7654402.7" xWGS84="3024.9951" yWGS84="-200"/>
+		<node nodeID="26282" description="Weichenstamm  Id:26282 Str:3615" kilometre="4.003" x="2806.2924" y="-200" xNet="2577649.6" yNet="7654540" xWGS84="2806.2924" yWGS84="-200"/>
+		<node nodeID="26276" description="Weichenstamm  Id:26276 Str:3615" kilometre="3.907" x="2840.7218" y="-400" xNet="2577550.5" yNet="7654367.8" xWGS84="2840.7218" yWGS84="-400"/>
+		<node nodeID="26283" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:26283 Str:3615" kilometre="3.957" x="2725.5263" y="-400" xNet="2577465.5" yNet="7654440.1" xWGS84="2725.5263" yWGS84="-400"/>
+		<speedIndicator nodeID="26284" description="GeschwZulaessigF V: 120 Wirkungsort: hier Zugbeeinflussung: Alle Id:26284 Str:3615" kilometre="4.000" x="2626.4581" y="-400" xNet="2577392.5" yNet="7654502.3" xWGS84="0" yWGS84="0" referenceNode="26285"/>
+		<node nodeID="26285" description="Neigung S: 2.70 F: -15.20 Id:26285 Str:3615" kilometre="4.064" x="2479.0078" y="-400" xNet="2577283.8" yNet="7654594.8" xWGS84="2479.0078" yWGS84="-400"/>
+		<node nodeID="26286" name="BÜ4" description="Bahnuebergang  Id:26286 Str:3615" kilometre="4.084" x="2432.9296" y="-400" xNet="2577249.8" yNet="7654623.8" xWGS84="2432.9296" yWGS84="-400"/>
+		<node nodeID="26287" description="FstrZugschlussstelleS FstrAuflösezeit: 3s Id:26287 Str:3615" kilometre="4.120" x="2349.9888" y="-400" xNet="2577188.7" yNet="7654675.8" xWGS84="2349.9888" yWGS84="-400" referenceNode="26286" releaseContact="true"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="26288" name="932.1" description="HauptsignalF DwegAuflösezeit: 3s Id:26288 Str:3615" kilometre="4.120" x="2303.9106" y="-400" xNet="2577154.7" yNet="7654704.8" xWGS84="0" yWGS84="0" referenceNode="26289"/>
+		<track trackID="B-1" stationID="FES" length="270" type="stopBoardFreight" nodeID="26289" name="1" description="HalteplatzGzF Länge: 270m Id:26289 Str:3615" kilometre="4.125" x="2292.3911" y="-400" xNet="2577146.2" yNet="7654712" xWGS84="0" yWGS84="0" referenceNode="26290"/>
+		<track trackID="D-1" stationID="FES" length="210" type="stopBoardPass" nodeID="26290" name="1" description="HalteplatzRzLinksF Länge: 210m Id:26290 Str:3615" kilometre="4.125" x="2246.3128" y="-400" xNet="2577112.3" yNet="7654740.9" xWGS84="0" yWGS84="0" referenceNode="26291">
+			<platform startPos="-5" endPos="-210" width="60" left="true" open="true"/>
+		</track>
+		<track trackID="G-1" stationID="FES" type="timingPoint" nodeID="26291" name="1" description="Fahrzeitmesspunkt  Id:26291 Str:3615" kilometre="4.171" x="2140.333" y="-400" xNet="2577034.1" yNet="7654807.4" xWGS84="0" yWGS84="0" referenceNode="26292"/>
+		<track trackID="A-1" stationID="FES" length="210" type="stopBoardPass" nodeID="26292" name="1" description="HalteplatzRzRechtsS Länge: 210m Id:26292 Str:3615" kilometre="4.370" x="1681.8547" y="-400" xNet="2576696.2" yNet="7655095.2" xWGS84="0" yWGS84="0" referenceNode="26291">
+			<platform startPos="-5" endPos="-210" width="60" left="false" open="true"/>
+		</track>
+		<track trackID="C-1" stationID="FES" length="270" type="stopBoardFreight" nodeID="26293" name="1" description="HalteplatzGzS Länge: 270m Id:26293 Str:3615" kilometre="4.390" x="1635.7765" y="-400" xNet="2576662.2" yNet="7655124.1" xWGS84="0" yWGS84="0" referenceNode="26292"/>
+		<signal interlockingMachine="Tb:0_Tl:3_NTA" indusi500HzLocation="none" nodeID="26294" name="933.1" description="HauptsignalS DwegAuflösezeit: 3s Id:26294 Str:3615" kilometre="4.395" x="1624.257" y="-400" xNet="2576653.7" yNet="7655131.4" xWGS84="0" yWGS84="0" referenceNode="26293"/>
+		<node nodeID="26295" name="V935" description="VorsignalS FstrBildezeit: 9s Id:26295 Str:3615" kilometre="4.395" x="1578.1788" y="-400" xNet="2576619.7" yNet="7655160.3" xWGS84="1578.1788" yWGS84="-400" referenceNode="26294" presignal="true" with1000HzMagnet="true"/>
+		<speedIndicator nodeID="26296" description="GeschwZulaessigS V: 120 Wirkungsort: hier Zugbeeinflussung: Alle Id:26296 Str:3615" kilometre="4.395" x="1532.1006" y="-400" xNet="2576585.8" yNet="7655189.2" xWGS84="0" yWGS84="0" referenceNode="26295"/>
+		<node nodeID="26297" description="FstrZugschlussstelleF FstrAuflösezeit: 3s Id:26297 Str:3615" kilometre="4.395" x="1486.0223" y="-400" xNet="2576551.8" yNet="7655218.2" xWGS84="1486.0223" yWGS84="-400" referenceNode="26298" releaseContact="true"/>
+		<speedIndicator nodeID="26298" description="GeschwZulaessigF V: 110 Wirkungsort: hier Zugbeeinflussung: Alle Id:26298 Str:3615" kilometre="4.400" x="1474.5028" y="-400" xNet="2576543.3" yNet="7655225.4" xWGS84="0" yWGS84="0" referenceNode="26299"/>
+		<node nodeID="26299" description="Neigung S: 19.90 F: -2.70 Id:26299 Str:3615" kilometre="4.439" x="1384.6503" y="-400" xNet="2576477.1" yNet="7655281.8" xWGS84="1384.6503" yWGS84="-400"/>
+		<node nodeID="26300" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:26300 Str:3615" kilometre="4.560" x="1105.8771" y="-400" xNet="2576271.6" yNet="7655456.8" xWGS84="1105.8771" yWGS84="-400"/>
+		<node nodeID="26301" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:26301 Str:3615" kilometre="4.560" x="1059.7989" y="-400" xNet="2576237.6" yNet="7655485.7" xWGS84="1059.7989" yWGS84="-400"/>
+		<node nodeID="26302" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:26302 Str:3615" kilometre="4.649" x="854.75084" y="-400" xNet="2576086.4" yNet="7655614.4" xWGS84="854.75084" yWGS84="-400"/>
+		<node nodeID="26303" description="FstrZugschlussstelleS FstrAuflösezeit: 3s Id:26303 Str:3615" kilometre="4.690" x="760.2905" y="-400" xNet="2576016.8" yNet="7655673.7" xWGS84="760.2905" yWGS84="-400" referenceNode="26302" releaseContact="true"/>
+		<node nodeID="26304" description="Neigung S: 16.70 F: -19.90 Id:26304 Str:3615" kilometre="4.769" x="578.28156" y="-400" xNet="2575882.6" yNet="7655787.9" xWGS84="578.28156" yWGS84="-400"/>
+		<node nodeID="26305" name="BÜ47" description="Bahnuebergang  Id:26305 Str:3615" kilometre="4.787" x="536.81117" y="-400" xNet="2575852.1" yNet="7655814" xWGS84="536.81117" yWGS84="-400"/>
+		<speedIndicator nodeID="26306" description="GeschwZulaessigS V: 110 Wirkungsort: hier Zugbeeinflussung: Alle Id:26306 Str:3615" kilometre="4.800" x="506.86034" y="-400" xNet="2575830" yNet="7655832.8" xWGS84="0" yWGS84="0" referenceNode="26305"/>
+		<node nodeID="26307" name="V932" description="VorsignalF FstrBildezeit: 9s Id:26307 Str:3615" kilometre="4.840" x="414.70391" y="-400" xNet="2575762" yNet="7655890.6" xWGS84="414.70391" yWGS84="-400" referenceNode="26308" presignal="true" with1000HzMagnet="true"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="26308" name="934.11" description="HauptsignalF DwegAuflösezeit: 3s Id:26308 Str:3615" kilometre="4.840" x="368.6257" y="-400" xNet="2575728.1" yNet="7655919.5" xWGS84="0" yWGS84="0" referenceNode="26309"/>
+		<node nodeID="26309" description="Betriebsstellengrenze Partner: FNH Strecke: 3615 Gleis: 2 Id:26309 Str:3615 Bild (0.0000 / -4.0000)" kilometre="5.000" x="0" y="-400" xNet="2575456.3" yNet="7656150.9" xWGS84="0" yWGS84="-400"/>
+		<switch start="26310" endOfMainTrack="26282" endOfBranchTrack="26279" nodeID="26280" name="W4" description="Weichenanfang  Id:26280 Str:3615 Bild (27.7130 / -2.0000)" kilometre="4.003" x="2771.3" y="-200" xNet="2577623.8" yNet="7654562" xWGS84="0" yWGS84="0"/>
+		<node nodeID="26310" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:26310 Str:3615" kilometre="4.003" x="2722.5524" y="-200" xNet="2577587.9" yNet="7654592.6" xWGS84="2722.5524" yWGS84="-200"/>
+		<node nodeID="26311" description="Neigung S: 2.70 F: -15.20 Id:26311 Str:3615" kilometre="4.064" x="2573.8723" y="-200" xNet="2577478.3" yNet="7654685.9" xWGS84="2573.8723" yWGS84="-200"/>
+		<node nodeID="26312" name="BÜ4" description="Bahnuebergang  Id:26312 Str:3615" kilometre="4.084" x="2525.1247" y="-200" xNet="2577442.3" yNet="7654716.5" xWGS84="2525.1247" yWGS84="-200"/>
+		<node nodeID="26313" description="FstrZugschlussstelleS FstrAuflösezeit: 3s Id:26313 Str:3615" kilometre="4.120" x="2437.3791" y="-200" xNet="2577377.6" yNet="7654771.6" xWGS84="2437.3791" yWGS84="-200" referenceNode="26312" releaseContact="true"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" nodeID="26314" name="932.2" description="HauptsignalF DwegAuflösezeit: 3s Id:26314 Str:3615" kilometre="4.120" x="2388.6315" y="-200" xNet="2577341.7" yNet="7654802.2" xWGS84="0" yWGS84="0" referenceNode="26315"/>
+		<track trackID="B-2" stationID="FES" length="270" type="stopBoardFreight" nodeID="26315" name="2" description="HalteplatzGzF Länge: 270m Id:26315 Str:3615" kilometre="4.125" x="2376.4446" y="-200" xNet="2577332.7" yNet="7654809.8" xWGS84="0" yWGS84="0" referenceNode="26316"/>
+		<track trackID="D-2" stationID="FES" length="210" type="stopBoardPass" nodeID="26316" name="2" description="HalteplatzRzRechtsF Länge: 210m Id:26316 Str:3615" kilometre="4.125" x="2327.697" y="-200" xNet="2577296.8" yNet="7654840.4" xWGS84="0" yWGS84="0" referenceNode="26317">
+			<platform startPos="-5" endPos="-210" width="60" left="false" open="true"/>
+		</track>
+		<track trackID="G-2" stationID="FES" type="timingPoint" nodeID="26317" name="2" description="Fahrzeitmesspunkt  Id:26317 Str:3615" kilometre="4.171" x="2215.5776" y="-200" xNet="2577214.1" yNet="7654910.8" xWGS84="0" yWGS84="0" referenceNode="26318"/>
+		<track trackID="A-2" stationID="FES" length="210" type="stopBoardPass" nodeID="26318" name="2" description="HalteplatzRzLinksS Länge: 210m Id:26318 Str:3615" kilometre="4.370" x="1730.5391" y="-200" xNet="2576856.6" yNet="7655215.2" xWGS84="0" yWGS84="0" referenceNode="26317">
+			<platform startPos="-5" endPos="-210" width="60" left="true" open="true"/>
+		</track>
+		<track trackID="C-2" stationID="FES" length="270" type="stopBoardFreight" nodeID="26319" name="2" description="HalteplatzGzS Länge: 270m Id:26319 Str:3615" kilometre="4.390" x="1681.7916" y="-200" xNet="2576820.6" yNet="7655245.8" xWGS84="0" yWGS84="0" referenceNode="26318"/>
+		<signal interlockingMachine="Tb:0_Tl:3_NTA" indusi500HzLocation="none" nodeID="26320" name="933.2" description="HauptsignalS DwegAuflösezeit: 3s Id:26320 Str:3615" kilometre="4.395" x="1669.6047" y="-200" xNet="2576811.7" yNet="7655253.5" xWGS84="0" yWGS84="0" referenceNode="26319"/>
+		<node nodeID="26321" name="V935I" description="VorsignalS FstrBildezeit: 9s Id:26321 Str:3615" kilometre="4.395" x="1620.8571" y="-200" xNet="2576775.7" yNet="7655284.1" xWGS84="1620.8571" yWGS84="-200" referenceNode="26320" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="26322" description="FstrZugschlussstelleF FstrAuflösezeit: 3s Id:26322 Str:3615" kilometre="4.395" x="1572.1095" y="-200" xNet="2576739.8" yNet="7655314.7" xWGS84="1572.1095" yWGS84="-200" referenceNode="26323" releaseContact="true"/>
+		<node nodeID="26323" description="Neigung S: 19.90 F: -2.70 Id:26323 Str:3615" kilometre="4.439" x="1464.8648" y="-200" xNet="2576660.7" yNet="7655382" xWGS84="1464.8648" yWGS84="-200"/>
+		<node nodeID="26324" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:26324 Str:3615" kilometre="4.455" x="1425.8668" y="-200" xNet="2576632" yNet="7655406.5" xWGS84="1425.8668" yWGS84="-200"/>
+		<node nodeID="26325" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:26325 Str:3615" kilometre="4.544" x="1208.94" y="-200" xNet="2576472.1" yNet="7655542.7" xWGS84="1208.94" yWGS84="-200"/>
+		<node nodeID="26326" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:26326 Str:3615" kilometre="4.544" x="1160.1924" y="-200" xNet="2576436.1" yNet="7655573.3" xWGS84="1160.1924" yWGS84="-200"/>
+		<speedIndicator nodeID="26327" description="GeschwZulaessigS V: 120 Wirkungsort: hier Zugbeeinflussung: Alle Id:26327 Str:3615" kilometre="4.604" x="1013.9497" y="-200" xNet="2576328.3" yNet="7655665.1" xWGS84="0" yWGS84="0" referenceNode="26326"/>
+		<node nodeID="26328" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:26328 Str:3615" kilometre="4.612" x="994.45066" y="-200" xNet="2576313.9" yNet="7655677.3" xWGS84="994.45066" yWGS84="-200"/>
+		<node nodeID="26329" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:26329 Str:3615" kilometre="4.616" x="984.70114" y="-200" xNet="2576306.8" yNet="7655683.4" xWGS84="984.70114" yWGS84="-200"/>
+		<node nodeID="26330" description="FstrZugschlussstelleS FstrAuflösezeit: 3s Id:26330 Str:3615" kilometre="4.620" x="974.95163" y="-200" xNet="2576299.6" yNet="7655689.5" xWGS84="974.95163" yWGS84="-200" referenceNode="26329" releaseContact="true"/>
+		<node nodeID="26331" description="Neigung S: 16.70 F: -19.90 Id:26331 Str:3615" kilometre="4.769" x="611.78215" y="-200" xNet="2576031.8" yNet="7655917.5" xWGS84="611.78215" yWGS84="-200"/>
+		<node nodeID="26332" name="BÜ47" description="Bahnuebergang  Id:26332 Str:3615" kilometre="4.787" x="567.90932" y="-200" xNet="2575999.5" yNet="7655945" xWGS84="567.90932" yWGS84="-200"/>
+		<speedIndicator nodeID="26333" description="GeschwZulaessigS V: 110 Wirkungsort: hier Zugbeeinflussung: Alle Id:26333 Str:3615" kilometre="4.800" x="536.22339" y="-200" xNet="2575976.1" yNet="7655964.9" xWGS84="0" yWGS84="0" referenceNode="26332"/>
+		<node nodeID="26334" description="GeschwZulaessigF V: 40 Wirkungsort: signal Zugbeeinflussung: Alle Id:26334 Str:3615" kilometre="4.839" x="441.16561" y="-200" xNet="2575906.1" yNet="7656024.6" xWGS84="441.16561" yWGS84="-200"/>
+		<node nodeID="26335" name="V932I" description="VorsignalF FstrBildezeit: 9s Id:26335 Str:3615" kilometre="4.840" x="438.72823" y="-200" xNet="2575904.3" yNet="7656026.1" xWGS84="438.72823" yWGS84="-200" referenceNode="26336" presignal="true" with1000HzMagnet="true"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="26336" name="934.10" description="HauptsignalF DwegAuflösezeit: 3s Id:26336 Str:3615" kilometre="4.840" x="389.98065" y="-200" xNet="2575868.3" yNet="7656056.7" xWGS84="0" yWGS84="0" referenceNode="26337"/>
+		<node nodeID="26337" description="Betriebsstellengrenze Partner: FNH Strecke: 3615 Gleis: 1 Id:26337 Str:3615 Bild (0.0000 / -2.0000)" kilometre="5.000" x="0" y="-200" xNet="2575580.8" yNet="7656301.5" xWGS84="0" yWGS84="-200"/>
+		<node nodeID="26258" description="WeichenabzweigLinks  Id:26258 Str:3615" kilometre="3.779" x="3218.3923" y="-225.64103" xNet="2577937.4" yNet="7654262" xWGS84="3218.3923" yWGS84="-225.64103"/>
+		<node nodeID="26338" description="GeschwZulaessigF V: 60 Wirkungsort: signal Zugbeeinflussung: Alle Id:26338 Str:3615" kilometre="3.875" x="3147.3154" y="-348.71795" xNet="2577808.4" yNet="7654214" xWGS84="3147.3154" yWGS84="-348.71795"/>
+		<node nodeID="26273" description="WeichenabzweigLinks  Id:26273 Str:3615" kilometre="3.875" x="3132.5077" y="-374.35897" xNet="2577781.5" yNet="7654203.9" xWGS84="3132.5077" yWGS84="-374.35897"/>
+		<node nodeID="26343" description="Bildpunkt  Id:26343 Str:3615 Bild (16.1667 / -14.0000)" kilometre="2.310" x="5889.07" y="-1600" xNet="2599615" yNet="7653551" xWGS84="1616.67" yWGS84="-1400"/>
+		<node nodeID="26344" description="Bildpunkt  Id:26344 Str:3615 Bild (18.4762 / -10.0000)" kilometre="2.320" x="6120.02" y="-1200" xNet="2599115" yNet="7653727" xWGS84="1847.62" yWGS84="-1000"/>
+		<node nodeID="26345" description="Bildpunkt  Id:26345 Str:3615 Bild (18.4762 / -6.0000)" kilometre="2.330" x="6120.02" y="-800" xNet="2598733" yNet="7653846" xWGS84="1847.62" yWGS84="-600"/>
+		<node nodeID="26346" description="Bildpunkt  Id:26346 Str:3615 Bild (16.1667 / -2.0000)" kilometre="2.340" x="5889.07" y="-400" xNet="2597833.6" yNet="7654111.3" xWGS84="1616.67" yWGS84="-200"/>
+		<track trackID="B-1" stationID="FESS" length="210" type="stopBoardPass" nodeID="26347" name="1" description="HalteplatzRzRechtsF Länge: 210m Id:26347 Str:3615" kilometre="2.428" x="5444.4857" y="-400" xNet="2596894.5" yNet="7653929.2" xWGS84="0" yWGS84="0" referenceNode="26348">
+			<platform startPos="-5" endPos="-210" width="60" left="false" open="true"/>
+		</track>
+		<track trackID="G-1" stationID="FESS" type="timingPoint" nodeID="26348" name="1" description="Fahrzeitmesspunkt  Id:26348 Str:3615" kilometre="2.531" x="4924.1201" y="-400" xNet="2595795.3" yNet="7653716.2" xWGS84="0" yWGS84="0" referenceNode="26349"/>
+		<track trackID="A-1" stationID="FESS" length="210" type="stopBoardPass" nodeID="26349" name="1" description="HalteplatzRzLinksS Länge: 210m Id:26349 Str:3615" kilometre="2.638" x="4383.5461" y="-400" xNet="2594653.4" yNet="7653494.9" xWGS84="0" yWGS84="0" referenceNode="26348">
+			<platform startPos="-5" endPos="-210" width="60" left="true" open="true"/>
+		</track>
+		<node nodeID="26350" description="Betriebsstellengrenze Partner: FES Strecke: 3615 Gleis: 2 Id:26350 Str:3615 Bild (0.0000 / -2.0000)" kilometre="2.660" x="4272.4" y="-400" xNet="2594418.6" yNet="7653449.4" xWGS84="0" yWGS84="-200"/>
+		<node nodeID="26351" description="Betriebsstellengrenze Partner: FRH Strecke: 3615 Gleis: 1 Id:26351 Str:3615 Bild (13.8574 / -16.0000)" kilometre="2.300" x="5658.14" y="-1800" xNet="2600600" yNet="7653200" xWGS84="1385.74" yWGS84="-1600"/>
+		<node nodeID="26352" description="Bildpunkt  Id:26352 Str:3615 Bild (17.3215 / -16.0000)" kilometre="2.310" x="6004.55" y="-1800" xNet="2600258" yNet="7653415" xWGS84="1732.15" yWGS84="-1600"/>
+		<node nodeID="26353" description="Bildpunkt  Id:26353 Str:3615 Bild (20.7856 / -10.0000)" kilometre="2.320" x="6350.96" y="-1200" xNet="2599718" yNet="7653735" xWGS84="2078.56" yWGS84="-1000"/>
+		<node nodeID="26354" description="Bildpunkt  Id:26354 Str:3615 Bild (20.7856 / -6.0000)" kilometre="2.330" x="6350.96" y="-800" xNet="2599211" yNet="7653921" xWGS84="2078.56" yWGS84="-600"/>
+		<node nodeID="26355" description="Bildpunkt  Id:26355 Str:3615 Bild (17.3215 / 0.0000)" kilometre="2.340" x="6004.55" y="-200" xNet="2597862.3" yNet="7654319.2" xWGS84="1732.15" yWGS84="0"/>
+		<track trackID="B-2" stationID="FESS" length="210" type="stopBoardPass" nodeID="26356" name="2" description="HalteplatzRzLinksF Länge: 210m Id:26356 Str:3615" kilometre="2.428" x="5528.2087" y="-200" xNet="2596856.1" yNet="7654124.2" xWGS84="0" yWGS84="0" referenceNode="26357">
+			<platform startPos="-5" endPos="-210" width="60" left="true" open="true"/>
+		</track>
+		<track trackID="G-2" stationID="FESS" type="timingPoint" nodeID="26357" name="2" description="Fahrzeitmesspunkt  Id:26357 Str:3615" kilometre="2.531" x="4970.673" y="-200" xNet="2595678.4" yNet="7653896" xWGS84="0" yWGS84="0" referenceNode="26358"/>
+		<track trackID="A-2" stationID="FESS" length="210" type="stopBoardPass" nodeID="26358" name="2" description="HalteplatzRzRechtsS Länge: 210m Id:26358 Str:3615" kilometre="2.638" x="4391.4853" y="-200" xNet="2594454.9" yNet="7653658.8" xWGS84="0" yWGS84="0" referenceNode="26357">
+			<platform startPos="-5" endPos="-210" width="60" left="false" open="true"/>
+		</track>
+		<node nodeID="26359" description="Betriebsstellengrenze Partner: FES Strecke: 3615 Gleis: 1 Id:26359 Str:3615 Bild (0.0000 / 0.0000)" kilometre="2.660" x="4272.4" y="-200" xNet="2594203.3" yNet="7653610.1" xWGS84="0" yWGS84="0"/>
+		<node nodeID="57722" description="Betriebsstellengrenze Partner: FNH Strecke: 3615 Gleis: 0 Id:57722 Str:3615 Bild (16.1660 / -8.0000)" kilometre="7.700" x="-5426.9901" y="-200" xNet="2551251" yNet="7667634" xWGS84="1616.6" yWGS84="-800"/>
+		<node nodeID="57723" description="Bildpunkt  Id:57723 Str:3615 Bild (15.0110 / -8.0000)" kilometre="7.710" x="-5542.4901" y="-200" xNet="2550024" yNet="7667635" xWGS84="1501.1" yWGS84="-800"/>
+		<node nodeID="57724" description="Bildpunkt  Id:57724 Str:3615 Bild (10.3920 / 0.0000)" kilometre="7.720" x="-6004.3901" y="600" xNet="2549403" yNet="7667635" xWGS84="1039.2" yWGS84="0"/>
+		<node nodeID="57725" description="Neigung S: 17.45 F: -17.50 Id:57725 Str:3615" kilometre="7.765" x="-6064.344" y="600" xNet="2548779" yNet="7667624" xWGS84="979.24615" yWGS84="0"/>
+		<node nodeID="57726" name="V941" description="VorsignalS FstrBildezeit: 9s Id:57726 Str:3615" kilometre="7.975" x="-6344.1286" y="600" xNet="2548222" yNet="7667624" xWGS84="699.46154" yWGS84="0" referenceNode="57725" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="57727" description="Neigung S: 18.37 F: -17.45 Id:57727 Str:3615" kilometre="8.000" x="-6377.4363" y="600" xNet="2545870" yNet="7667626.1" xWGS84="666.15385" yWGS84="0"/>
+		<track trackID="B-1000" stationID="FKRS" length="210" type="stopBoardPass" nodeID="57728" name="0" description="HalteplatzRzRechtsF Länge: 210m Id:57728 Str:3615" kilometre="8.115" x="-6530.6517" y="600" xNet="2545716.8" yNet="7667626.1" xWGS84="0" yWGS84="0" referenceNode="57729">
+			<platform startPos="-5" endPos="-210" width="60" left="false" open="true"/>
+		</track>
+		<track trackID="G-1000" stationID="FKRS" type="timingPoint" nodeID="57729" name="0" description="Fahrzeitmesspunkt  Id:57729 Str:3615" kilometre="8.220" x="-6670.544" y="600" xNet="2545576.8" yNet="7667626.1" xWGS84="0" yWGS84="0" referenceNode="57730"/>
+		<node nodeID="57730" description="Neigung S: 17.50 F: -18.37 Id:57730 Str:3615" kilometre="8.250" x="-6710.5132" y="600" xNet="2545536.9" yNet="7667626.1" xWGS84="333.07692" yWGS84="0"/>
+		<track trackID="A-1000" stationID="FKRS" length="210" type="stopBoardPass" nodeID="57731" name="0" description="HalteplatzRzLinksS Länge: 210m Id:57731 Str:3615" kilometre="8.325" x="-6810.4363" y="600" xNet="2545437" yNet="7667626.1" xWGS84="0" yWGS84="0" referenceNode="57730">
+			<platform startPos="-5" endPos="-210" width="60" left="true" open="true"/>
+		</track>
+		<node nodeID="57732" name="BÜ8" description="Bahnuebergang  Id:57732 Str:3615" kilometre="8.328" x="-6814.4332" y="600" xNet="2545433" yNet="7667626" xWGS84="229.15692" yWGS84="0"/>
+		<node nodeID="57733" description="Neigung S: 19.50 F: -17.50 Id:57733 Str:3615" kilometre="8.350" x="-6843.744" y="600" xNet="2545403.6" yNet="7667626" xWGS84="199.84615" yWGS84="0"/>
+		<node nodeID="57734" description="Neigung S: 16.50 F: -19.50 Id:57734 Str:3615" kilometre="8.450" x="-6976.9748" y="600" xNet="2545270.5" yNet="7667626.1" xWGS84="66.615385" yWGS84="0"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" nodeID="57735" description="Betriebsstellengrenze Partner: FKRO Strecke: 3615 Gleis: 0 Id:57735 Str:3615 Bild (0.0000 / 0.0000)" kilometre="8.500" x="-7043.5901" y="600" xNet="2545203.9" yNet="7667626.1" xWGS84="0" yWGS84="0" referenceNode="57734"/>
+		<stationBorder exitType="alternative" stationID="FES" lineID="3615" trackNumber="2" nodeID="26339" description="Betriebsstellengrenze Partner: FNH Strecke: 3615 Gleis: 2 Id:26309 Str:3615 Bild (0.0000 / -4.0000)" kilometre="4.690" x="669.28603" y="-400" xNet="2575949.7" yNet="7655730.8" xWGS84="760.2905" yWGS84="-400" referenceNode="26303"/>
+		<stationBorder exitType="regular" stationID="FES" lineID="3615" trackNumber="2" nodeID="26340" description="Betriebsstellengrenze Partner: FESS Strecke: 3615 Gleis: 2 Id:26259 Str:3615 Bild (42.7240 / -4.0000)" kilometre="3.779" x="3247.2075" y="-400" xNet="2577850.1" yNet="7654112.6" xWGS84="3222.7551" yWGS84="-400" referenceNode="26267"/>
+		<stationBorder exitType="alternative" stationID="FES" lineID="3615" trackNumber="1" nodeID="26341" description="Betriebsstellengrenze Partner: FESS Strecke: 3615 Gleis: 1 Id:26242 Str:3615 Bild (42.7240 / -2.0000)" kilometre="3.729" x="3303.714" y="-200" xNet="2578016.3" yNet="7654227.8" xWGS84="3294.8997" yWGS84="-200" referenceNode="26254"/>
+		<stationBorder exitType="regular" stationID="FES" lineID="3615" trackNumber="1" nodeID="26360" description="Betriebsstellengrenze Partner: FNH Strecke: 3615 Gleis: 1 Id:26337 Str:3615 Bild (0.0000 / -2.0000)" kilometre="4.620" x="793.36689" y="-200" xNet="2576165.7" yNet="7655803.5" xWGS84="974.95163" yWGS84="-200" referenceNode="26330"/>
+		<stationBorder exitType="alternative" stationID="FESS" lineID="3615" trackNumber="2" nodeID="26361" description="Betriebsstellengrenze Partner: FES Strecke: 3615 Gleis: 2 Id:26350 Str:3615 Bild (0.0000 / -2.0000)" kilometre="2.638" x="4327.973" y="-400" xNet="2594536" yNet="7653472.1" xWGS84="0" yWGS84="0" referenceNode="26349"/>
+		<stationBorder exitType="regular" stationID="FESS" lineID="3615" trackNumber="2" nodeID="26362" description="Betriebsstellengrenze Partner: FRH Strecke: 3615 Gleis: 2 Id:26342 Str:3615 Bild (13.8574 / -14.0000)" kilometre="2.428" x="5666.7779" y="-400" xNet="2597364" yNet="7654020.2" xWGS84="0" yWGS84="0" referenceNode="26347"/>
+		<stationBorder exitType="regular" stationID="FESS" lineID="3615" trackNumber="1" nodeID="26363" description="Betriebsstellengrenze Partner: FES Strecke: 3615 Gleis: 1 Id:26359 Str:3615 Bild (0.0000 / 0.0000)" kilometre="2.638" x="4331.9427" y="-200" xNet="2594329.1" yNet="7653634.5" xWGS84="0" yWGS84="0" referenceNode="26358"/>
+		<stationBorder exitType="alternative" stationID="FESS" lineID="3615" trackNumber="1" nodeID="26364" description="Betriebsstellengrenze Partner: FRH Strecke: 3615 Gleis: 1 Id:26351 Str:3615 Bild (13.8574 / -16.0000)" kilometre="2.428" x="5766.3794" y="-200" xNet="2597359.2" yNet="7654221.7" xWGS84="0" yWGS84="0" referenceNode="26356"/>
+		<stationBorder exitType="regular" stationID="FKRS" lineID="3615" trackNumber="1" nodeID="57736" description="Betriebsstellengrenze Partner: FKRO Strecke: 3615 Gleis: 0 Id:57735 Str:3615 Bild (0.0000 / 0.0000)" kilometre="8.325" x="-6812.4348" y="600" xNet="2545435" yNet="7667626" xWGS84="0" yWGS84="0" referenceNode="57731"/>
+		<stationBorder exitType="regular" stationID="FKRS" lineID="3615" trackNumber="1" nodeID="57737" description="Betriebsstellengrenze Partner: FNH Strecke: 3615 Gleis: 0 Id:57722 Str:3615 Bild (16.1660 / -8.0000)" kilometre="8.115" x="-6454.044" y="600" xNet="2545793.3" yNet="7667626.1" xWGS84="0" yWGS84="0" referenceNode="57728"/>
+		<signal type="entry" interlockingMachine="sppAuto" nodeID="26342" description="Betriebsstellengrenze Partner: FRH Strecke: 3615 Gleis: 2 Id:26342 Str:3615 Bild (13.8574 / -14.0000)" kilometre="2.300" x="5658.14" y="-1600" xNet="2600407" yNet="7653139" xWGS84="1385.74" yWGS84="-1400" referenceNode="26343"/>
+	</nodes>
+	<links>
+		<link source="26242" target="26243" length="10" gradient="15.1" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26243" target="26244" length="139" gradient="15.1" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26244" target="26245" length="483" gradient="18.1" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26245" target="26246" length="292" gradient="18.6" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26246" target="26247" length="56" gradient="15.7" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26247" target="26248" gradient="15.7" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26248" target="26249" length="1" gradient="15.7" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26249" target="26250" length="1" gradient="15.7" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26250" target="26251" length="1" gradient="15.7" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26251" target="26252" length="82" gradient="15.7" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26252" target="26253" length="4" gradient="14.2" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26253" target="26341" gradient="14.2" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26254" target="26255" length="50" gradient="14.2" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26255" target="26256" gradient="14.2" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26259" target="26260" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="26260" target="26261" length="149" gradient="15.1" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="26261" target="26262" length="483" gradient="18.1" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="26262" target="26263" length="292" gradient="18.6" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="26263" target="26264" length="56" gradient="15.7" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="26264" target="26265" gradient="15.7" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="26265" target="26266" length="85" gradient="15.7" vmax="40" vmaxr="100" electrified="true"/>
+		<link source="26266" target="26340" length="54" gradient="14.2" vmax="40" vmaxr="100" electrified="true"/>
+		<link source="26267" target="26268" length="6" gradient="14.2" vmax="40" vmaxr="100" electrified="true"/>
+		<link source="26268" target="26269" length="35" gradient="14.2" vmax="40" vmaxr="100" electrified="true"/>
+		<link source="26269" target="26270" length="5" gradient="14.2" vmax="40" vmaxr="100" electrified="true"/>
+		<link source="26270" target="26271" length="50" gradient="14.2" vmax="40" vmaxr="120" electrified="true"/>
+		<link source="26272" target="26274" length="3" gradient="14.2" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="26274" target="26275" length="29" gradient="15.2" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="26277" target="26278" length="23" gradient="15.2" vmax="40" vmaxr="40" electrified="true"/>
+		<link source="26278" target="26279" length="73" gradient="15.2" vmax="40" vmaxr="40" electrified="true"/>
+		<link source="26257" target="26281" length="99" gradient="14.2" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26281" target="26282" length="125" gradient="15.2" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26276" target="26283" length="50" gradient="15.2" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="26283" target="26284" length="43" gradient="15.2" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="26284" target="26285" length="64" gradient="15.2" vmax="120" vmaxr="110" electrified="true"/>
+		<link source="26285" target="26286" length="20" gradient="2.7" vmax="120" vmaxr="110" electrified="true"/>
+		<link source="26286" target="26287" length="36" gradient="2.7" vmax="120" vmaxr="110" electrified="true"/>
+		<link source="26287" target="26288" gradient="2.7" vmax="120" vmaxr="110" electrified="true"/>
+		<link source="26288" target="26289" length="5" gradient="2.7" vmax="120" vmaxr="110" electrified="true"/>
+		<link source="26289" target="26290" length="1" gradient="2.7" vmax="120" vmaxr="110" electrified="true"/>
+		<link source="26290" target="26291" length="46" gradient="2.7" vmax="120" vmaxr="110" electrified="true"/>
+		<link source="26291" target="26292" length="199" gradient="2.7" vmax="120" vmaxr="110" electrified="true"/>
+		<link source="26292" target="26293" length="20" gradient="2.7" vmax="120" vmaxr="110" electrified="true"/>
+		<link source="26293" target="26294" length="5" gradient="2.7" vmax="120" vmaxr="110" electrified="true"/>
+		<link source="26294" target="26295" gradient="2.7" vmax="120" vmaxr="110" electrified="true"/>
+		<link source="26295" target="26296" gradient="2.7" vmax="120" vmaxr="110" electrified="true"/>
+		<link source="26296" target="26297" gradient="2.7" vmax="120" vmaxr="110" electrified="true"/>
+		<link source="26297" target="26298" length="5" gradient="2.7" vmax="120" vmaxr="110" electrified="true"/>
+		<link source="26298" target="26299" length="39" gradient="2.7" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26299" target="26300" length="121" gradient="19.9" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26300" target="26301" gradient="19.9" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26301" target="26302" length="89" gradient="19.9" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26302" target="26303" length="41" gradient="19.9" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26339" target="26304" length="79" gradient="19.9" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26304" target="26305" length="18" gradient="16.7" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26305" target="26306" length="13" gradient="16.7" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26306" target="26307" length="40" gradient="16.7" vmax="110" vmaxr="100" electrified="true"/>
+		<link source="26307" target="26308" gradient="16.7" vmax="110" vmaxr="100" electrified="true"/>
+		<link source="26308" target="26309" length="160" gradient="16.7" vmax="110" vmaxr="100" electrified="true"/>
+		<link source="26280" target="26310" gradient="15.2" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26310" target="26311" length="61" gradient="15.2" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26311" target="26312" length="20" gradient="2.7" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26312" target="26313" length="36" gradient="2.7" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26313" target="26314" gradient="2.7" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26314" target="26315" length="5" gradient="2.7" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26315" target="26316" length="1" gradient="2.7" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26316" target="26317" length="46" gradient="2.7" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26317" target="26318" length="199" gradient="2.7" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26318" target="26319" length="20" gradient="2.7" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26319" target="26320" length="5" gradient="2.7" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26320" target="26321" gradient="2.7" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26321" target="26322" gradient="2.7" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26322" target="26323" length="44" gradient="2.7" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26323" target="26324" length="16" gradient="19.9" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26324" target="26325" length="89" gradient="19.9" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26325" target="26326" gradient="19.9" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26326" target="26327" length="60" gradient="19.9" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26327" target="26328" length="8" gradient="19.9" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26328" target="26329" length="4" gradient="19.9" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26329" target="26330" length="4" gradient="19.9" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26360" target="26331" length="149" gradient="19.9" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26331" target="26332" length="18" gradient="16.7" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26332" target="26333" length="13" gradient="16.7" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26333" target="26334" length="39" gradient="16.7" vmax="110" vmaxr="100" electrified="true"/>
+		<link source="26334" target="26335" length="1" gradient="16.7" vmax="110" vmaxr="100" electrified="true"/>
+		<link source="26335" target="26336" gradient="16.7" vmax="110" vmaxr="100" electrified="true"/>
+		<link source="26336" target="26337" length="160" gradient="16.7" vmax="110" vmaxr="100" electrified="true"/>
+		<link source="26258" target="26338" length="96" gradient="14.2" vmax="120" vmaxr="60" electrified="true"/>
+		<link source="26338" target="26273" gradient="14.2" vmax="120" vmaxr="60" electrified="true"/>
+		<link source="26256" target="26257" gradient="14.2" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26256" target="26258" gradient="14.2" vmax="120" vmaxr="60" electrified="true"/>
+		<link source="26271" target="26272" gradient="14.2" vmax="40" vmaxr="120" electrified="true"/>
+		<link source="26273" target="26272" gradient="14.2" vmax="120" vmaxr="60" electrified="true"/>
+		<link source="26275" target="26276" gradient="15.2" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="26275" target="26277" gradient="15.2" vmax="40" vmaxr="40" electrified="true"/>
+		<link source="26282" target="26280" gradient="15.2" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26279" target="26280" gradient="15.2" vmax="40" vmaxr="40" electrified="true"/>
+		<link source="26342" target="26343" length="10" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="26343" target="26344" length="10" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="26344" target="26345" length="10" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="26345" target="26346" length="10" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="26346" target="26362" length="88" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="26347" target="26348" length="103" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="26348" target="26349" length="107" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="26361" target="26350" length="22" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="26351" target="26352" length="10" gradient="15.1" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26352" target="26353" length="10" gradient="15.1" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26353" target="26354" length="10" gradient="15.1" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26354" target="26355" length="10" gradient="15.1" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26355" target="26364" length="88" gradient="15.1" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26356" target="26357" length="103" gradient="15.1" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26357" target="26358" length="107" gradient="15.1" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26363" target="26359" length="22" gradient="15.1" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="57722" target="57723" length="10" gradient="17.5" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="57723" target="57724" length="10" gradient="17.5" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="57724" target="57725" length="45" gradient="17.5" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="57725" target="57726" length="210" gradient="17.45" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="57726" target="57727" length="25" gradient="17.45" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="57727" target="57737" length="115" gradient="18.37" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="57728" target="57729" length="105" gradient="18.37" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="57729" target="57730" length="30" gradient="18.37" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="57730" target="57731" length="75" gradient="17.5" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="57736" target="57732" length="3" gradient="17.5" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="57732" target="57733" length="22" gradient="17.5" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="57733" target="57734" length="100" gradient="19.5" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="57734" target="57735" length="50" gradient="16.5" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="26359" target="26242" gradient="15.1" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26350" target="26259" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="26337" target="71894.fnh" gradient="16.7" vmax="110" vmaxr="100" electrified="true"/>
+		<link source="26309" target="71855.fnh" gradient="16.7" vmax="110" vmaxr="100" electrified="true"/>
+		<link source="78752.frh" target="26351" gradient="15.1" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="78528.frh" target="26342" vmaxr="100" electrified="true"/>
+		<link source="71882.fnh" target="57722" gradient="17.5" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="26303" target="26339" gradient="19.9" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26340" target="26267" gradient="14.2" vmax="40" vmaxr="100" electrified="true"/>
+		<link source="26341" target="26254" gradient="14.2" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26330" target="26360" gradient="19.9" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26349" target="26361" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="26362" target="26347" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="26358" target="26363" gradient="15.1" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="26364" target="26356" gradient="15.1" vmax="120" vmaxr="100" electrified="true"/>
+		<link source="57731" target="57736" gradient="17.5" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="57737" target="57728" gradient="18.37" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+	</links>
+	<dependentLinks/>
+	<blockSections>
+		<blockSection presignal="71776.fnh" nodes="71777.fnh 71776.fnh 71775.fnh 71774.fnh 71773.fnh 71770.fnh 71771.fnh 71890.fnh 71889.fnh 71888.fnh 71887.fnh 71861.fnh 71807.fnh 71860.fnh 71859.fnh 71905.fnh 71858.fnh 71857.fnh 71856.fnh 71855.fnh 26309 26308" speedIndicators="71773.fnh 71860.fnh"/>
+		<blockSection presignal="71825.fnh" nodes="71826.fnh 71825.fnh 71824.fnh 71823.fnh 71822.fnh 71821.fnh 71820.fnh 71818.fnh 71819.fnh 71893.fnh 71892.fnh 71812.fnh 71811.fnh 71810.fnh 71809.fnh 71808.fnh 71806.fnh 71807.fnh 71860.fnh 71859.fnh 71905.fnh 71858.fnh 71857.fnh 71856.fnh 71855.fnh 26309 26308" speedIndicators="71822.fnh 71860.fnh"/>
+		<blockSection presignal="26307" nodes="26308 26307 26306 26305 26304 26339 26303 26302 26301 26300 26299 26298 26297 26296 26295 26294 26293 26292 26291 26290 26289 26288" speedIndicators="26298"/>
+		<blockSection presignal="71776.fnh" nodes="71777.fnh 71776.fnh 71775.fnh 71774.fnh 71773.fnh 71770.fnh 71772.fnh 71886.fnh 71885.fnh 71884.fnh 71883.fnh 71819.fnh 71893.fnh 71892.fnh 71812.fnh 71891.fnh 71900.fnh 71899.fnh 71898.fnh 71906.fnh 71897.fnh 71896.fnh 71895.fnh 71894.fnh 26337 26336" speedIndicators="71773.fnh 71899.fnh"/>
+		<blockSection presignal="71825.fnh" nodes="71826.fnh 71825.fnh 71824.fnh 71823.fnh 71822.fnh 71821.fnh 71820.fnh 71818.fnh 71819.fnh 71893.fnh 71892.fnh 71812.fnh 71891.fnh 71900.fnh 71899.fnh 71898.fnh 71906.fnh 71897.fnh 71896.fnh 71895.fnh 71894.fnh 26337 26336" speedIndicators="71822.fnh 71899.fnh"/>
+		<blockSection presignal="26335" nodes="26336 26335 26334 26333 26332 26331 26360 26330 26329 26328 26327 26326 26325 26324 26323 26322 26321 26320 26319 26318 26317 26316 26315 26314"/>
+		<blockSection nodes="26288 26287 26286 26285 26284 26283 26276 26275 26274 26272 26273 26338 26258 26256 26255 26254 26341 26253 26252 26251 26250 26249 26248 26247 26246 26245 26244 26243 26242 26359 26363 26358 26357 26356 26364 26355 26354 26353 26352 26351 78752.frh 78751.frh 78750.frh 78749.frh 78748.frh 78747.frh 78755.frh 78746.frh 78745.frh" speedIndicators="26253 26284"/>
+		<blockSection nodes="26314 26313 26312 26311 26310 26280 26282 26281 26257 26256 26255 26254 26341 26253 26252 26251 26250 26249 26248 26247 26246 26245 26244 26243 26242 26359 26363 26358 26357 26356 26364 26355 26354 26353 26352 26351 78752.frh 78751.frh 78750.frh 78749.frh 78748.frh 78747.frh 78755.frh 78746.frh 78745.frh" speedIndicators="26253"/>
+		<blockSection presignal="78527.frh" nodes="26288 26287 26286 26285 26284 26283 26276 26275 26274 26272 26271 26270 26269 26268 26267 26340 26266 26265 26264 26263 26262 26261 26260 26259 26350 26361 26349 26348 26347 26362 26346 26345 26344 26343 26342 78528.frh 78527.frh 78526.frh 78525.frh 78524.frh 78523.frh 78522.frh 78521.frh" speedIndicators="26270 26284"/>
+		<blockSection presignal="78527.frh" nodes="26314 26313 26312 26311 26310 26280 26279 26278 26277 26275 26274 26272 26271 26270 26269 26268 26267 26340 26266 26265 26264 26263 26262 26261 26260 26259 26350 26361 26349 26348 26347 26362 26346 26345 26344 26343 26342 78528.frh 78527.frh 78526.frh 78525.frh 78524.frh 78523.frh 78522.frh 78521.frh" speedIndicators="26270"/>
+		<blockSection presignal="26243" nodes="78602.frh 78603.frh 78538.frh 78738.frh 78739.frh 78740.frh 78741.frh 78742.frh 78743.frh 78744.frh 78745.frh 78746.frh 78755.frh 78747.frh 78748.frh 78749.frh 78750.frh 78751.frh 78752.frh 26351 26352 26353 26354 26355 26364 26356 26357 26358 26363 26359 26242 26243 26244 26245 26246 26247" speedIndicators="78738.frh"/>
+		<blockSection presignal="26243" nodes="78656.frh 78657.frh 78658.frh 78659.frh 78575.frh 78574.frh 78576.frh 78577.frh 78578.frh 78753.frh 78715.frh 78714.frh 78716.frh 78717.frh 78718.frh 78719.frh 78720.frh 78721.frh 78722.frh 78723.frh 78724.frh 78511.frh 78536.frh 78537.frh 78538.frh 78738.frh 78739.frh 78740.frh 78741.frh 78742.frh 78743.frh 78744.frh 78745.frh 78746.frh 78755.frh 78747.frh 78748.frh 78749.frh 78750.frh 78751.frh 78752.frh 26351 26352 26353 26354 26355 26364 26356 26357 26358 26363 26359 26242 26243 26244 26245 26246 26247" speedIndicators="78738.frh"/>
+		<blockSection presignal="26243" nodes="78672.frh 78673.frh 78674.frh 78675.frh 78676.frh 78677.frh 78578.frh 78753.frh 78715.frh 78714.frh 78716.frh 78717.frh 78718.frh 78719.frh 78720.frh 78721.frh 78722.frh 78723.frh 78724.frh 78511.frh 78536.frh 78537.frh 78538.frh 78738.frh 78739.frh 78740.frh 78741.frh 78742.frh 78743.frh 78744.frh 78745.frh 78746.frh 78755.frh 78747.frh 78748.frh 78749.frh 78750.frh 78751.frh 78752.frh 26351 26352 26353 26354 26355 26364 26356 26357 26358 26363 26359 26242 26243 26244 26245 26246 26247" speedIndicators="78738.frh"/>
+		<blockSection presignal="26248" nodes="26247 26248 26249 26250 26251 26252 26253 26341 26254 26255 26256 26258 26338 26273 26272 26274 26275 26276 26283 26284 26285 26286 26287 26288 26289 26290 26291 26292 26293 26294"/>
+		<blockSection presignal="26248" nodes="26247 26248 26249 26250 26251 26252 26253 26341 26254 26255 26256 26257 26281 26282 26280 26310 26311 26312 26313 26314 26315 26316 26317 26318 26319 26320"/>
+		<blockSection presignal="26295" nodes="26294 26295 26296 26297 26298 26299 26300 26301 26302 26303 26339 26304 26305 26306 26307 26308 26309 71855.fnh 71856.fnh" speedIndicators="26296 26306"/>
+		<blockSection presignal="26321" nodes="26320 26321 26322 26323 26324 26325 26326 26327 26328 26329 26330 26360 26331 26332 26333 26334 26335 26336 26337 71894.fnh 71895.fnh" speedIndicators="26327 26333"/>
+		<blockSection presignal="57726" nodes="71784.fnh 71785.fnh 71786.fnh 71787.fnh 71788.fnh 71789.fnh 71790.fnh 71800.fnh 71801.fnh 71802.fnh 71803.fnh 71805.fnh 71813.fnh 71814.fnh 71815.fnh 71816.fnh 71817.fnh 71798.fnh 71862.fnh 71863.fnh 71864.fnh 71865.fnh 71866.fnh 71867.fnh 71868.fnh 71869.fnh 71907.fnh 71870.fnh 71871.fnh 71872.fnh 71873.fnh 71874.fnh 71875.fnh 71876.fnh 71877.fnh 71878.fnh 71879.fnh 71880.fnh 71881.fnh 71882.fnh 57722 57723 57724 57725 57726 57727 57737 57728 57729 57730 57731 57736 57732 57733 57734 57735" speedIndicators="71786.fnh 71862.fnh 71867.fnh"/>
+		<blockSection presignal="57726" nodes="71834.fnh 71835.fnh 71836.fnh 71837.fnh 71838.fnh 71792.fnh 71791.fnh 71793.fnh 71794.fnh 71795.fnh 71796.fnh 71797.fnh 71798.fnh 71862.fnh 71863.fnh 71864.fnh 71865.fnh 71866.fnh 71867.fnh 71868.fnh 71869.fnh 71907.fnh 71870.fnh 71871.fnh 71872.fnh 71873.fnh 71874.fnh 71875.fnh 71876.fnh 71877.fnh 71878.fnh 71879.fnh 71880.fnh 71881.fnh 71882.fnh 57722 57723 57724 57725 57726 57727 57737 57728 57729 57730 57731 57736 57732 57733 57734 57735" speedIndicators="71836.fnh 71862.fnh 71867.fnh"/>
+		<blockSection presignal="71880.fnh" nodes="57735 57734 57733 57732 57736 57731 57730 57729 57728 57737 57727 57726 57725 57724 57723 57722 71882.fnh 71881.fnh 71880.fnh 71879.fnh 71878.fnh 71877.fnh 71876.fnh 71875.fnh"/>
+		<blockSection nodes="26264 26265 26266 26340 26267 26268 26269 26270 26271 26272 26274 26275 26276 26283 26284 26285 26286 26287 26288 26289 26290 26291 26292 26293 26294" speedIndicators="26265"/>
+		<blockSection nodes="26264 26265 26266 26340 26267 26268 26269 26270 26271 26272 26274 26275 26277 26278 26279 26280 26310 26311 26312 26313 26314 26315 26316 26317 26318 26319 26320" speedIndicators="26265"/>
+		<blockSection nodes="26342 26343 26344 26345 26346 26362 26347 26348 26349 26361 26350 26259 26260 26261 26262 26263 26264"/>
+		<blockSection nodes="26294 26293 26292 26291 26290 26289 26288"/>
+		<blockSection nodes="26288 26289 26290 26291 26292 26293 26294"/>
+		<blockSection nodes="26320 26319 26318 26317 26316 26315 26314"/>
+		<blockSection nodes="26314 26315 26316 26317 26318 26319 26320"/>
+	</blockSections>
+	<slipDistances>
+		<slipDistance signal="26247" name="59.139.26255.3615.0" publicName="1-1000" description="931" complete="true" warnerroute="false" nodes="26247 26248 26249 26250 26251 26252 26253 26341 26254 26255"/>
+		<slipDistance signal="26288" name="59.163.26283.3615.0" publicName="1-1000" description="932.1" complete="true" warnerroute="false" nodes="26288 26287 26286 26285 26284 26283"/>
+		<slipDistance signal="26294" name="59.165.26300.3615.0" publicName="1-1000" description="933.1" complete="true" warnerroute="false" nodes="26294 26295 26296 26297 26298 26299 26300"/>
+		<slipDistance signal="26308" name="999.280.26301.3615.0" publicName="1-1000" description="934.11" complete="true" warnerroute="false" nodes="26308 26307 26306 26305 26304 26339 26303 26302 26301"/>
+		<slipDistance signal="26314" name="999.1460.26242.3615.0" publicName="1-1000" description="932.2" complete="true" warnerroute="false" nodes="26314 26313 26312 26311 26310 26280 26282 26281 26257 26256 26255 26254 26341 26253 26252 26251 26250 26249 26248 26247 26246 26245 26244 26243 26242"/>
+		<slipDistance signal="26314" name="999.1460.26259.3615.0" publicName="2-1000" description="932.2" complete="true" warnerroute="false" nodes="26314 26313 26312 26311 26310 26280 26279 26278 26277 26275 26274 26272 26271 26270 26269 26268 26267 26340 26266 26265 26264 26263 26262 26261 26260 26259"/>
+		<slipDistance signal="26314" name="999.335.26268.3615.0" publicName="3-1000" description="932.2" complete="true" warnerroute="false" nodes="26314 26313 26312 26311 26310 26280 26279 26278 26277 26275 26274 26272 26271 26270 26269 26268"/>
+		<slipDistance signal="26314" name="59.117.26310.3615.0" publicName="4-1000" description="932.2" complete="true" warnerroute="false" nodes="26314 26313 26312 26311 26310"/>
+		<slipDistance signal="26320" name="999.221.26329.3615.0" publicName="1-1000" description="933.2" complete="true" warnerroute="false" nodes="26320 26321 26322 26323 26324 26325 26326 26327 26328 26329"/>
+		<slipDistance signal="26320" name="39.60.26324.3615.0" publicName="2-1000" description="933.2" complete="true" warnerroute="false" nodes="26320 26321 26322 26323 26324"/>
+		<slipDistance signal="26336" name="999.228.26328.3615.0" publicName="1-1000" description="934.10" complete="true" warnerroute="false" nodes="26336 26335 26334 26333 26332 26331 26360 26330 26329 26328"/>
+		<slipDistance signal="26264" name="59.139.26267.3615.0" publicName="1-1000" description="L929" complete="true" warnerroute="false" nodes="26264 26265 26266 26340 26267"/>
+	</slipDistances>
+	<approachControlRoutes/>
+	<stationRoutes>
+		<stationRoute stationID="FKRS" name="FKRO-FNH" description="FKRO-FNH" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="57736 57731 57730 57729 57728 57737"/>
+		<stationRoute stationID="FKRS" name="FNH-FKRO" description="FNH-FKRO" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="57737 57728 57729 57730 57731 57736"/>
+		<stationRoute stationID="FESS" name="FES-FRH" description="FES-FRH" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="26361 26349 26348 26347 26362"/>
+		<stationRoute stationID="FESS" name="FES-FRH-GG" description="FES-FRH-GG" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=50;NRz=50;S=50;Rz=50;FGz=50;NGz=50;Gz=50;Lz=50" nodes="26363 26358 26357 26356 26364"/>
+		<stationRoute stationID="FESS" name="FRH-FES" description="FRH-FES" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="26364 26356 26357 26358 26363"/>
+		<stationRoute stationID="FESS" name="FRH-FES-GG" description="FRH-FES-GG" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=50;NRz=50;S=50;Rz=50;FGz=50;NGz=50;Gz=50;Lz=50" nodes="26362 26347 26348 26349 26361"/>
+		<stationRoute stationID="FES" name="FNH-1-FRH" description="FNH-1-FRH;FNH-2-FRH;FNH-3-FRH-3;FNH-3-FRH-4" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="26339 26303 26302 26301 26300 26299 26298 26297 26296 26295 26294 26293 26292 26291 26290 26289 26288 26287 26286 26285 26284 26283 26276 26275 26274 26272 26271 26270 26269 26268 26267 26340"/>
+		<stationRoute stationID="FES" name="FNH-1-FRH-RG" description="FNH-1-FRH-RG" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=50;NRz=50;S=50;Rz=50;FGz=50;NGz=50;Gz=50;Lz=50" nodes="26339 26303 26302 26301 26300 26299 26298 26297 26296 26295 26294 26293 26292 26291 26290 26289 26288 26287 26286 26285 26284 26283 26276 26275 26274 26272 26273 26338 26258 26256 26255 26254 26341"/>
+		<stationRoute stationID="FES" name="FNH-2-FRH-GG" description="FNH-2-FRH-GG" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=49;NRz=49;S=49;Rz=49;FGz=49;NGz=49;Gz=49;Lz=49" nodes="26360 26330 26329 26328 26327 26326 26325 26324 26323 26322 26321 26320 26319 26318 26317 26316 26315 26314 26313 26312 26311 26310 26280 26282 26281 26257 26256 26255 26254 26341"/>
+		<stationRoute stationID="FES" name="FNH-2-FRH-GR" description="FNH-2-FRH-GR;FNH-3-FRH-GR-3;FNH-3-FRH-GR-4" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=15;NRz=15;S=15;Rz=15;FGz=15;NGz=15;Gz=15;Lz=15" nodes="26360 26330 26329 26328 26327 26326 26325 26324 26323 26322 26321 26320 26319 26318 26317 26316 26315 26314 26313 26312 26311 26310 26280 26279 26278 26277 26275 26274 26272 26271 26270 26269 26268 26267 26340"/>
+		<stationRoute stationID="FES" name="FRH-1-FNH-GG" description="FRH-1-FNH-GG;FRH-2-FNH-GG;FRH-3-FNH-GG" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=50;NRz=50;S=50;Rz=50;FGz=50;NGz=50;Gz=50;Lz=50" nodes="26340 26267 26268 26269 26270 26271 26272 26274 26275 26276 26283 26284 26285 26286 26287 26288 26289 26290 26291 26292 26293 26294 26295 26296 26297 26298 26299 26300 26301 26302 26303 26339"/>
+		<stationRoute stationID="FES" name="FRH-1-FNH-RG" description="FRH-1-FNH-RG;FRH-2-FNH-RG;FRH-2-FNH-RG-6" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=20;NRz=20;S=20;Rz=20;FGz=20;NGz=20;Gz=20;Lz=20" nodes="26341 26254 26255 26256 26258 26338 26273 26272 26274 26275 26276 26283 26284 26285 26286 26287 26288 26289 26290 26291 26292 26293 26294 26295 26296 26297 26298 26299 26300 26301 26302 26303 26339"/>
+		<stationRoute stationID="FES" name="FRH-2-FNH" description="FRH-2-FNH;FRH-2-FNH-6;FRH-3-FNH-4;FRH-3-FNH-6" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="26341 26254 26255 26256 26257 26281 26282 26280 26310 26311 26312 26313 26314 26315 26316 26317 26318 26319 26320 26321 26322 26323 26324 26325 26326 26327 26328 26329 26330 26360"/>
+		<stationRoute stationID="FES" name="FRH-2-FNH-GR" description="FRH-2-FNH-GR;FRH-3-FNH-GR" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=47;NRz=47;S=47;Rz=47;FGz=47;NGz=47;Gz=47;Lz=47" nodes="26340 26267 26268 26269 26270 26271 26272 26274 26275 26277 26278 26279 26280 26310 26311 26312 26313 26314 26315 26316 26317 26318 26319 26320 26321 26322 26323 26324 26325 26326 26327 26328 26329 26330 26360"/>
+	</stationRoutes>
+	<evzg/>
+	<evzg-katalog/>
+</line>

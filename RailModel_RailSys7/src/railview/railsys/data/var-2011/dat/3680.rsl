@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<line lineID="3680" name="Abzw Schlachth. - Hanau Hbf No" trafficRouting="on_the_right" type="local" dependentLines="fo fshf">
+	<version major="1" minor="2" patchlevel="0" comment=""/>
+	<stations>
+		<station stationID="FOMP" name="Offenb Marktpl" xNet="2.7014e+06" yNet="7.5708e+06" xWGS84="0" yWGS84="0"/>
+		<station stationID="FOLM" name="Offenb Ledermus" xNet="2.6947e+06" yNet="7.5708e+06" xWGS84="0" yWGS84="0"/>
+		<station stationID="FOKL" name="Offenb-Kaiserlei" xNet="2.6896e+06" yNet="7.5708e+06" xWGS84="0" yWGS84="0"/>
+		<station stationID="FMUL" name="Ffm Mühlberg" xNet="2.6815e+06" yNet="7.5724e+06" xWGS84="0" yWGS84="0"/>
+		<station stationID="FMH" name="Mühlheim (Main)" xNet="2.7225e+06" yNet="7.565e+06" xWGS84="0" yWGS84="0"/>
+	</stations>
+	<nodes>
+		<node nodeID="66301" description="Weichenstamm  Id:66301 Str:3680" kilometre="64.480" x="1630.3595" y="-1099.95" xNet="2722072.5" yNet="7565217.5" xWGS84="1630.3595" yWGS84="-1099.95"/>
+		<node nodeID="66303" description="FstrZugschlussstelleS FstrAuflösezeit: 3s Id:66303 Str:3680" kilometre="64.530" x="1691.1332" y="-1099.95" xNet="2722132.8" yNet="7565210.1" xWGS84="1691.1332" yWGS84="-1099.95" referenceNode="66301" releaseContact="true"/>
+		<node nodeID="66304" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:66304 Str:3680" kilometre="64.724" x="1926.9351" y="-1099.95" xNet="2722366.9" yNet="7565181.3" xWGS84="1926.9351" yWGS84="-1099.95"/>
+		<signal interlockingMachine="sppAuto" indusi500HzLocation="none" nodeID="66305" name="21374" description="HauptsignalF DwegAuflösezeit: 3s Id:66305 Str:3680" kilometre="64.774" x="1987.7087" y="-1099.95" xNet="2722427.2" yNet="7565173.9" xWGS84="0" yWGS84="0" referenceNode="66306"/>
+		<track trackID="B-2" stationID="FMH" length="210" type="stopBoardPass" nodeID="66306" name="2" description="HalteplatzRzLinksF Länge: 210m Id:66306 Str:3680" kilometre="64.779" x="1993.7861" y="-1099.95" xNet="2722433.2" yNet="7565173.2" xWGS84="0" yWGS84="0" referenceNode="66307">
+			<platform startPos="-5" endPos="-210" width="60" left="true" open="true"/>
+		</track>
+		<track trackID="G-2" stationID="FMH" type="timingPoint" nodeID="66307" name="2" description="Fahrzeitmesspunkt  Id:66307 Str:3680" kilometre="64.883" x="2120.1954" y="-1099.95" xNet="2722558.7" yNet="7565157.8" xWGS84="0" yWGS84="0" referenceNode="66308"/>
+		<node nodeID="66308" description="GeschwZulaessigS V: 60 Wirkungsort: signal Zugbeeinflussung: Alle Id:66308 Str:3680" kilometre="64.900" x="2140.8584" y="-1099.95" xNet="2722579.2" yNet="7565155.3" xWGS84="2140.8584" yWGS84="-1099.95"/>
+		<track trackID="A-2" stationID="FMH" length="210" type="stopBoardPass" nodeID="66309" name="2" description="HalteplatzRzRechtsS Länge: 210m Id:66309 Str:3680" kilometre="64.980" x="2238.0963" y="-1099.95" xNet="2722675.7" yNet="7565143.4" xWGS84="0" yWGS84="0" referenceNode="66308">
+			<platform startPos="-5" endPos="-210" width="60" left="false" open="true"/>
+		</track>
+		<node nodeID="66310" description="Neigung S: 0.30 F: 0.00 Id:66310 Str:3680" kilometre="64.982" x="2240.5273" y="-1099.95" xNet="2722678.1" yNet="7565143.1" xWGS84="2240.5273" yWGS84="-1099.95"/>
+		<node nodeID="66311" name="21V542" description="VorsignalS FstrBildezeit: 9s Id:66311 Str:3680" kilometre="65.246" x="2561.4123" y="-1099.95" xNet="2722996.6" yNet="7565104" xWGS84="2561.4123" yWGS84="-1099.95" referenceNode="66310" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="66312" description="Neigung S: 0.00 F: -0.30 Id:66312 Str:3680" kilometre="65.483" x="2849.4796" y="-1099.95" xNet="2723282.5" yNet="7565068.9" xWGS84="2849.4796" yWGS84="-1099.95"/>
+		<node nodeID="66314" description="WeichenabzweigRechts  Id:66314 Str:3680" kilometre="64.480" x="1663.785" y="-1199.95" xNet="2722093.5" yNet="7565114.2" xWGS84="1663.785" yWGS84="-1199.95"/>
+		<node nodeID="66315" description="Bildpunkt  Id:66315 Str:3680 Bild (17.2152 / -12.9995)" kilometre="64.480" x="1721.52" y="-1299.95" xNet="2722138.6" yNet="7565007.9" xWGS84="1721.52" yWGS84="-1299.95"/>
+		<node nodeID="66316" description="GeschwZulaessigS V: 100 Wirkungsort: signal Zugbeeinflussung: Alle Id:66316 Str:3680" kilometre="64.520" x="1766.0874" y="-1299.95" xNet="2722182.8" yNet="7565002.4" xWGS84="1766.0874" yWGS84="-1299.95"/>
+		<node nodeID="66317" description="FstrZugschlussstelleS FstrAuflösezeit: 3s Id:66317 Str:3680" kilometre="64.530" x="1777.2292" y="-1299.95" xNet="2722193.9" yNet="7565001.1" xWGS84="1777.2292" yWGS84="-1299.95" referenceNode="66316" releaseContact="true"/>
+		<node nodeID="66318" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:66318 Str:3680" kilometre="64.724" x="1993.3809" y="-1299.95" xNet="2722408.4" yNet="7564974.7" xWGS84="1993.3809" yWGS84="-1299.95"/>
+		<node nodeID="66319" description="GeschwZulaessigF V: 60 Wirkungsort: signal Zugbeeinflussung: Alle Id:66319 Str:3680" kilometre="64.774" x="2049.0902" y="-1299.95" xNet="2722463.7" yNet="7564967.9" xWGS84="2049.0902" yWGS84="-1299.95"/>
+		<signal interlockingMachine="sppAuto" indusi500HzLocation="none" nodeID="66320" name="21371" description="HauptsignalF DwegAuflösezeit: 3s Id:66320 Str:3680" kilometre="64.774" x="2071.3738" y="-1299.95" xNet="2722485.8" yNet="7564965.2" xWGS84="0" yWGS84="0" referenceNode="66321"/>
+		<track trackID="B-1" stationID="FMH" length="210" type="stopBoardPass" nodeID="66321" name="1" description="HalteplatzRzRechtsF Länge: 210m Id:66321 Str:3680" kilometre="64.779" x="2076.9448" y="-1299.95" xNet="2722491.4" yNet="7564964.6" xWGS84="0" yWGS84="0" referenceNode="66322">
+			<platform startPos="-5" endPos="-210" width="60" left="false" open="true"/>
+		</track>
+		<track trackID="G-1" stationID="FMH" type="timingPoint" nodeID="66322" name="1" description="Fahrzeitmesspunkt  Id:66322 Str:3680" kilometre="64.883" x="2192.8199" y="-1299.95" xNet="2722606.4" yNet="7564950.4" xWGS84="0" yWGS84="0" referenceNode="66323"/>
+		<track trackID="A-1" stationID="FMH" length="210" type="stopBoardPass" nodeID="66323" name="1" description="HalteplatzRzLinksS Länge: 210m Id:66323 Str:3680" kilometre="64.980" x="2300.8958" y="-1299.95" xNet="2722713.7" yNet="7564937.3" xWGS84="0" yWGS84="0" referenceNode="66322">
+			<platform startPos="-5" endPos="-210" width="60" left="true" open="true"/>
+		</track>
+		<node nodeID="66324" description="Neigung S: 0.30 F: 0.00 Id:66324 Str:3680" kilometre="64.983" x="2304.2383" y="-1299.95" xNet="2722717" yNet="7564936.9" xWGS84="2304.2383" yWGS84="-1299.95"/>
+		<node nodeID="66325" description="Neigung S: 0.00 F: -0.30 Id:66325 Str:3680" kilometre="65.483" x="2861.3304" y="-1299.95" xNet="2723269.9" yNet="7564869" xWGS84="2861.3304" yWGS84="-1299.95"/>
+		<node nodeID="66326" name="21V531" description="VorsignalS FstrBildezeit: 9s Id:66326 Str:3680" kilometre="65.502" x="2882.4999" y="-1299.95" xNet="2723290.9" yNet="7564866.4" xWGS84="2882.4999" yWGS84="-1299.95" referenceNode="66325" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="66328" description="Betriebsstellengrenze Partner: FOO Strecke: 3680 Gleis: 0 Id:66328 Str:3680 Bild (-0.1053 / -10.9995)" kilometre="63.100" x="-10.5286" y="-1099.95" xNet="2720443.8" yNet="7565417.5" xWGS84="-10.5286" yWGS84="-1099.95"/>
+		<node nodeID="66329" name="21V364" description="VorsignalS FstrBildezeit: 9s Id:66329 Str:3680" kilometre="63.266" x="178.45172" y="-1099.95" xNet="2720631.4" yNet="7565394.4" xWGS84="178.45172" yWGS84="-1099.95" referenceNode="66328" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="66330" description="Neigung S: 0.50 F: 0.00 Id:66330 Str:3680" kilometre="63.553" x="505.18274" y="-1099.95" xNet="2720955.7" yNet="7565354.6" xWGS84="505.18274" yWGS84="-1099.95"/>
+		<node nodeID="66331" description="Neigung S: -0.40 F: -0.50 Id:66331 Str:3680" kilometre="63.996" x="1009.5097" y="-1099.95" xNet="2721456.3" yNet="7565293.2" xWGS84="1009.5097" yWGS84="-1099.95"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="66332" name="21364" description="HauptsignalS DwegAuflösezeit: 3s Id:66332 Str:3680" kilometre="64.354" x="1417.0697" y="-1099.95" xNet="2721860.8" yNet="7565243.5" xWGS84="0" yWGS84="0" referenceNode="66331"/>
+		<speedIndicator nodeID="66333" description="GeschwZulaessigS V: 100 Wirkungsort: hier Zugbeeinflussung: Alle Id:66333 Str:3680" kilometre="64.354" x="1439.8384" y="-1099.95" xNet="2721883.4" yNet="7565240.7" xWGS84="0" yWGS84="0" referenceNode="66332"/>
+		<node nodeID="66334" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:66334 Str:3680" kilometre="64.404" x="1496.7602" y="-1099.95" xNet="2721939.9" yNet="7565233.8" xWGS84="1496.7602" yWGS84="-1099.95"/>
+		<node nodeID="66335" description="FstrZugschlussstelleF FstrAuflösezeit: 3s Id:66335 Str:3680" kilometre="64.430" x="1526.3595" y="-1099.95" xNet="2721969.3" yNet="7565230.2" xWGS84="1526.3595" yWGS84="-1099.95" referenceNode="66336" releaseContact="true"/>
+		<node nodeID="66336" description="Neigung S: 0.00 F: 0.40 Id:66336 Str:3680" kilometre="64.433" x="1529.7748" y="-1099.95" xNet="2721972.7" yNet="7565229.7" xWGS84="1529.7748" yWGS84="-1099.95"/>
+		<speedIndicator nodeID="66337" description="GeschwZulaessigF V: 120 Wirkungsort: hier Zugbeeinflussung: Alle Id:66337 Str:3680" kilometre="64.480" x="1583.2813" y="-1099.95" xNet="2722025.8" yNet="7565223.2" xWGS84="0" yWGS84="0" referenceNode="66302"/>
+		<switch start="66337" endOfMainTrack="66301" endOfBranchTrack="66314" nodeID="66302" name="21W360" description="Weichenanfang  Id:66302 Str:3680 Bild (16.0605 / -10.9995)" kilometre="64.480" x="1606.05" y="-1099.95" xNet="2722048.4" yNet="7565220.5" xWGS84="0" yWGS84="0"/>
+		<node nodeID="68995" description="Betriebsstellengrenze Partner: FSHF Strecke: 3680 Gleis: 2 Id:68995 Str:3680 Bild (-0.0859 / -0.9984)" kilometre="54.100" x="-21006.486" y="2300.1698" xNet="2680547.7" yNet="7573399.5" xWGS84="-8.58765" yWGS84="-99.8352"/>
+		<node nodeID="68996" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:68996 Str:3680" kilometre="54.274" x="-20393.517" y="2300.1698" xNet="2681040.8" yNet="7572954.7" xWGS84="604.38122" yWGS84="-99.8352"/>
+		<node nodeID="68997" name="V134" description="VorsignalF FstrBildezeit: 9s Id:68997 Str:3680" kilometre="54.324" x="-20217.377" y="2300.1698" xNet="2681182.5" yNet="7572826.9" xWGS84="780.5217" yWGS84="-99.8352" referenceNode="68998" presignal="true" with1000HzMagnet="true"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="68998" name="P136" description="HauptsignalF DwegAuflösezeit: 3s Id:68998 Str:3680" kilometre="54.324" x="-20146.92" y="2300.1698" xNet="2681239.2" yNet="7572775.7" xWGS84="0" yWGS84="0" referenceNode="68999"/>
+		<track trackID="B-2" stationID="FMUL" length="210" type="stopBoardPass" nodeID="68999" name="2" description="HalteplatzRzLinksF Länge: 210m Id:68999 Str:3680" kilometre="54.329" x="-20129.306" y="2300.1698" xNet="2681253.4" yNet="7572763" xWGS84="0" yWGS84="0" referenceNode="69000">
+			<platform startPos="-5" endPos="-210" width="60" left="true" open="true"/>
+		</track>
+		<track trackID="G-2" stationID="FMUL" type="timingPoint" nodeID="69000" name="2" description="Fahrzeitmesspunkt  Id:69000 Str:3680" kilometre="54.435" x="-19755.889" y="2300.1698" xNet="2681553.8" yNet="7572492" xWGS84="0" yWGS84="0" referenceNode="69001"/>
+		<track trackID="A-2" stationID="FMUL" length="210" type="stopBoardPass" nodeID="69001" name="2" description="HalteplatzRzRechtsS Länge: 210m Id:69001 Str:3680" kilometre="54.529" x="-19424.745" y="2300.1698" xNet="2681820.2" yNet="7572251.6" xWGS84="0" yWGS84="0" referenceNode="69000">
+			<platform startPos="-5" endPos="-210" width="60" left="false" open="true"/>
+		</track>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="69002" name="N039" description="HauptsignalS DwegAuflösezeit: 3s Id:69002 Str:3680" kilometre="54.543" x="-19375.425" y="2300.1698" xNet="2681859.9" yNet="7572215.9" xWGS84="0" yWGS84="0" referenceNode="69001"/>
+		<node nodeID="69003" description="BremswegS  Id:69003 Str:3680" kilometre="54.543" x="-19304.969" y="2300.1698" xNet="2681916.6" yNet="7572164.7" xWGS84="1692.9294" yWGS84="-99.8352"/>
+		<node nodeID="69004" description="Neigung S: -5.00 F: 0.00 Id:69004 Str:3680" kilometre="54.555" x="-19262.695" y="2300.1698" xNet="2681950.6" yNet="7572134" xWGS84="1735.2031" yWGS84="-99.8352"/>
+		<node nodeID="69005" description="FstrZugschlussstelleF FstrAuflösezeit: 3s Id:69005 Str:3680" kilometre="54.580" x="-19174.625" y="2300.1698" xNet="2682021.4" yNet="7572070.1" xWGS84="1823.2733" yWGS84="-99.8352" referenceNode="69006" releaseContact="true"/>
+		<node nodeID="69006" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:69006 Str:3680" kilometre="54.584" x="-19160.534" y="2300.1698" xNet="2682032.8" yNet="7572059.9" xWGS84="1837.3646" yWGS84="-99.8352"/>
+		<speedIndicator nodeID="69007" description="GeschwZulaessigF V: 80 Wirkungsort: hier Zugbeeinflussung: Alle Id:69007 Str:3680" kilometre="54.630" x="-18998.485" y="2300.1698" xNet="2682163.2" yNet="7571942.3" xWGS84="0" yWGS84="0" referenceNode="69008"/>
+		<switch start="69007" endOfMainTrack="69009" endOfBranchTrack="69010" nodeID="69008" name="W096" description="Weichenanfang  Id:69008 Str:3680 Bild (20.6987 / -0.9984)" kilometre="54.630" x="-18928.028" y="2300.1698" xNet="2682219.8" yNet="7571891.2" xWGS84="0" yWGS84="0"/>
+		<node nodeID="69009" description="Weichenstamm  Id:69009 Str:3680" kilometre="54.630" x="-18879.409" y="2300.1698" xNet="2682259" yNet="7571855.9" xWGS84="2118.4889" yWGS84="-99.8352"/>
+		<node nodeID="69011" description="Weichenstamm  Id:69011 Str:3680" kilometre="54.780" x="-18514.767" y="2300.1698" xNet="2682552.3" yNet="7571591.3" xWGS84="2483.1311" yWGS84="-99.8352"/>
+		<node nodeID="69010" description="WeichenabzweigRechts  Id:69010 Str:3680" kilometre="54.630" x="-18908.783" y="2266.8365" xNet="2682238" yNet="7571844.6" xWGS84="2089.115" yWGS84="-133.1685"/>
+		<node nodeID="69013" description="Neigung S: 0.00 F: 5.00 Id:69013 Str:3680" kilometre="54.630" x="-18889.538" y="2233.5032" xNet="2682256.1" yNet="7571798.1" xWGS84="2108.36" yWGS84="-166.5018"/>
+		<node nodeID="69014" description="GeschwZulaessigS V: 60 Wirkungsort: signal Zugbeeinflussung: Alle Id:69014 Str:3680" kilometre="54.640" x="-18879.916" y="2216.8365" xNet="2682265.2" yNet="7571774.9" xWGS84="2117.9825" yWGS84="-183.16845"/>
+		<node nodeID="69015" description="GeschwZulaessigF V: 60 Wirkungsort: signal Zugbeeinflussung: Alle Id:69015 Str:3680" kilometre="54.650" x="-18870.293" y="2200.1699" xNet="2682274.3" yNet="7571751.6" xWGS84="2127.605" yWGS84="-199.8351"/>
+		<node nodeID="69016" description="WeichenabzweigRechts  Id:69016 Str:3680" kilometre="54.690" x="-18831.803" y="2133.5033" xNet="2682310.6" yNet="7571658.5" xWGS84="2166.095" yWGS84="-266.5017"/>
+		<switch start="69019" endOfMainTrack="69011" endOfBranchTrack="69018" nodeID="69012" name="W099" description="Weichenanfang  Id:69012 Str:3680 Bild (25.3175 / -0.9984)" kilometre="54.780" x="-18466.148" y="2300.1698" xNet="2682591.4" yNet="7571556" xWGS84="0" yWGS84="0"/>
+		<node nodeID="69019" description="FstrZugschlussstelleS FstrAuflösezeit: 3s Id:69019 Str:3680" kilometre="54.830" x="-18434.574" y="2300.1698" xNet="2682616.8" yNet="7571533.1" xWGS84="2563.3242" yWGS84="-99.8352" referenceNode="69012" releaseContact="true"/>
+		<node nodeID="69020" description="Neigung S: 0.00 F: 5.00 Id:69020 Str:3680" kilometre="54.840" x="-18428.259" y="2300.1698" xNet="2682621.9" yNet="7571528.5" xWGS84="2569.6391" yWGS84="-99.8352"/>
+		<node nodeID="69021" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:69021 Str:3680" kilometre="55.010" x="-18320.907" y="2300.1698" xNet="2682708.3" yNet="7571450.6" xWGS84="2676.9914" yWGS84="-99.8352"/>
+		<node nodeID="69022" description="BremswegF  Id:69022 Str:3680" kilometre="55.059" x="-18289.964" y="2300.1698" xNet="2682733.2" yNet="7571428.1" xWGS84="2707.9341" yWGS84="-99.8352"/>
+		<node nodeID="69023" description="MassgebendeNeigungGrenzeF  Id:69023 Str:3680" kilometre="55.060" x="-18289.333" y="2300.1698" xNet="2682733.7" yNet="7571427.7" xWGS84="2708.5656" yWGS84="-99.8352"/>
+		<speedIndicator nodeID="69024" description="GeschwZulaessigF V: 80 Wirkungsort: hier Zugbeeinflussung: Alle Id:69024 Str:3680" kilometre="55.060" x="-18276.703" y="2300.1698" xNet="2682743.8" yNet="7571418.5" xWGS84="0" yWGS84="0" referenceNode="69025"/>
+		<node nodeID="69025" name="FIKTIVI" description="VorsignalF FstrBildezeit: 9s Id:69025 Str:3680" kilometre="55.060" x="-18264.073" y="2300.1698" xNet="2682754" yNet="7571409.3" xWGS84="2733.825" yWGS84="-99.8352" referenceNode="69026" presignal="true" with1000HzMagnet="true"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="69026" name="F140" description="HauptsignalF DwegAuflösezeit: 3s Id:69026 Str:3680" kilometre="55.060" x="-18251.444" y="2300.1698" xNet="2682764.2" yNet="7571400.2" xWGS84="0" yWGS84="0" referenceNode="69027"/>
+		<speedIndicator nodeID="69027" description="GeschwZulaessigS V: 100 Wirkungsort: hier Zugbeeinflussung: Alle Id:69027 Str:3680" kilometre="55.100" x="-18226.184" y="2300.1698" xNet="2682784.5" yNet="7571381.8" xWGS84="0" yWGS84="0" referenceNode="69026"/>
+		<node nodeID="69028" description="Neigung S: 39.80 F: 0.00 Id:69028 Str:3680" kilometre="55.350" x="-18068.313" y="2300.1698" xNet="2682911.5" yNet="7571267.3" xWGS84="2929.5852" yWGS84="-99.8352"/>
+		<node nodeID="69029" name="S-Bahn" description="Tunnel S: 0.00 F: 58.00 Id:69029 Str:3680" kilometre="55.416" x="-18026.635" y="2300.1698" xNet="2682945" yNet="7571237" xWGS84="2971.2631" yWGS84="-99.8352"/>
+		<node nodeID="69030" description="Neigung S: 0.00 F: -39.80 Id:69030 Str:3680" kilometre="55.620" x="-17897.812" y="2300.1698" xNet="2683048.7" yNet="7571143.5" xWGS84="3100.0859" yWGS84="-99.8352"/>
+		<node nodeID="69031" name="Vf140" description="VorsignalF FstrBildezeit: 9s Id:69031 Str:3680" kilometre="55.840" x="-17758.886" y="2300.1698" xNet="2683160.4" yNet="7571042.7" xWGS84="3239.0125" yWGS84="-99.8352" referenceNode="69032" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="69032" description="Betriebsstellengrenze Partner: FOKL Strecke: 3680 Gleis: 2 Id:69032 Str:3680 Bild (33.4005 / -0.9984)" kilometre="56.000" x="-17657.848" y="2300.1698" xNet="2683241.7" yNet="7570969.4" xWGS84="3340.05" yWGS84="-99.8352"/>
+		<node nodeID="69033" description="WeichenabzweigLinks  Id:69033 Str:3680" kilometre="54.720" x="-18562.373" y="2133.5033" xNet="2682527.4" yNet="7571463" xWGS84="2435.525" yWGS84="-266.5017"/>
+		<node nodeID="69035" description="GeschwZulaessigF V: 60 Wirkungsort: signal Zugbeeinflussung: Alle Id:69035 Str:3680" kilometre="54.740" x="-18543.128" y="2166.8366" xNet="2682540.2" yNet="7571481.6" xWGS84="2454.77" yWGS84="-233.1684"/>
+		<node nodeID="69036" description="GeschwZulaessigS V: 60 Wirkungsort: signal Zugbeeinflussung: Alle Id:69036 Str:3680" kilometre="54.750" x="-18533.506" y="2183.5033" xNet="2682546.6" yNet="7571490.9" xWGS84="2464.3925" yWGS84="-216.50175"/>
+		<node nodeID="69037" description="Neigung S: -5.00 F: 0.00 Id:69037 Str:3680" kilometre="54.780" x="-18504.638" y="2233.5032" xNet="2682565.8" yNet="7571518.8" xWGS84="2493.26" yWGS84="-166.5018"/>
+		<node nodeID="69018" description="WeichenabzweigLinks  Id:69018 Str:3680" kilometre="54.780" x="-18485.393" y="2266.8365" xNet="2682578.6" yNet="7571537.4" xWGS84="2512.505" yWGS84="-133.1685"/>
+		<node nodeID="69038" description="Betriebsstellengrenze Partner: FSHF Strecke: 3680 Gleis: 1 Id:69038 Str:3680 Bild (-0.0859 / -2.9983)" kilometre="54.100" x="-21006.492" y="2100.17" xNet="2680563.7" yNet="7573204.2" xWGS84="-8.59375" yWGS84="-299.835"/>
+		<node nodeID="69039" description="Neigung S: 0.00 F: -39.80 Id:69039 Str:3680" kilometre="54.138" x="-20878.231" y="2100.17" xNet="2680666.9" yNet="7573111.1" xWGS84="119.66699" yWGS84="-299.835"/>
+		<signal interlockingMachine="Tb:0_Tl:3_NTA" indusi500HzLocation="none" nodeID="69040" name="A137" description="HauptsignalS DwegAuflösezeit: 3s Id:69040 Str:3680" kilometre="54.200" x="-20668.964" y="2100.17" xNet="2680835.3" yNet="7572959.2" xWGS84="0" yWGS84="0" referenceNode="69039"/>
+		<node nodeID="69041" name="FIKTIVN139" description="VorsignalS FstrBildezeit: 9s Id:69041 Str:3680" kilometre="54.200" x="-20601.458" y="2100.17" xNet="2680889.6" yNet="7572910.2" xWGS84="396.44017" yWGS84="-299.835" referenceNode="69040" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="69042" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:69042 Str:3680" kilometre="54.207" x="-20577.831" y="2100.17" xNet="2680908.6" yNet="7572893.1" xWGS84="420.06715" yWGS84="-299.835"/>
+		<node nodeID="69043" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:69043 Str:3680" kilometre="54.250" x="-20432.694" y="2100.17" xNet="2681025.4" yNet="7572787.8" xWGS84="565.20431" yWGS84="-299.835"/>
+		<signal interlockingMachine="sppAuto" indusi500HzLocation="none" nodeID="69044" name="P036" description="HauptsignalF DwegAuflösezeit: 3s Id:69044 Str:3680" kilometre="54.307" x="-20240.303" y="2100.17" xNet="2681180.1" yNet="7572648.1" xWGS84="0" yWGS84="0" referenceNode="69045"/>
+		<track trackID="B-1" stationID="FMUL" length="210" type="stopBoardPass" nodeID="69045" name="1" description="HalteplatzRzRechtsF Länge: 210m Id:69045 Str:3680" kilometre="54.312" x="-20223.427" y="2100.17" xNet="2681193.7" yNet="7572635.9" xWGS84="0" yWGS84="0" referenceNode="69046">
+			<platform startPos="-5" endPos="-210" width="60" left="false" open="true"/>
+		</track>
+		<track trackID="G-1" stationID="FMUL" type="timingPoint" nodeID="69046" name="1" description="Fahrzeitmesspunkt  Id:69046 Str:3680" kilometre="54.435" x="-19808.267" y="2100.17" xNet="2681527.7" yNet="7572334.6" xWGS84="0" yWGS84="0" referenceNode="69047"/>
+		<track trackID="A-1" stationID="FMUL" length="210" type="stopBoardPass" nodeID="69047" name="1" description="HalteplatzRzLinksS Länge: 210m Id:69047 Str:3680" kilometre="54.529" x="-19490.99" y="2100.17" xNet="2681783" yNet="7572104.4" xWGS84="0" yWGS84="0" referenceNode="69046">
+			<platform startPos="-5" endPos="-210" width="60" left="true" open="true"/>
+		</track>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="69048" name="N139" description="HauptsignalS DwegAuflösezeit: 3s Id:69048 Str:3680" kilometre="54.534" x="-19474.114" y="2100.17" xNet="2681796.5" yNet="7572092.1" xWGS84="0" yWGS84="0" referenceNode="69047"/>
+		<node nodeID="69049" description="BremswegS  Id:69049 Str:3680" kilometre="54.534" x="-19406.608" y="2100.17" xNet="2681850.9" yNet="7572043.1" xWGS84="1591.2902" yWGS84="-299.835"/>
+		<node nodeID="69050" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:69050 Str:3680" kilometre="54.584" x="-19237.844" y="2100.17" xNet="2681986.6" yNet="7571920.6" xWGS84="1760.0544" yWGS84="-299.835"/>
+		<node nodeID="69051" description="FstrZugschlussstelleF FstrAuflösezeit: 3s Id:69051 Str:3680" kilometre="54.640" x="-19048.828" y="2100.17" xNet="2682138.7" yNet="7571783.5" xWGS84="1949.0702" yWGS84="-299.835" referenceNode="69052" releaseContact="true"/>
+		<speedIndicator nodeID="69052" description="GeschwZulaessigF V: 80 Wirkungsort: hier Zugbeeinflussung: Alle Id:69052 Str:3680" kilometre="54.680" x="-18913.817" y="2100.17" xNet="2682247.3" yNet="7571685.5" xWGS84="0" yWGS84="0" referenceNode="69053"/>
+		<node nodeID="69053" description="Weichenstamm  Id:69053 Str:3680" kilometre="54.690" x="-18880.064" y="2100.17" xNet="2682274.5" yNet="7571661" xWGS84="2117.8343" yWGS84="-299.835"/>
+		<node nodeID="69054" description="Weichenstamm  Id:69054 Str:3680" kilometre="54.720" x="-18568.034" y="2100.17" xNet="2682525.5" yNet="7571434.6" xWGS84="2429.8647" yWGS84="-299.835"/>
+		<node nodeID="69055" description="FstrZugschlussstelleS FstrAuflösezeit: 3s Id:69055 Str:3680" kilometre="54.770" x="-18534.072" y="2100.17" xNet="2682552.8" yNet="7571409.9" xWGS84="2463.8265" yWGS84="-299.835" referenceNode="69054" releaseContact="true"/>
+		<node nodeID="69056" description="Neigung S: -0.50 F: 0.00 Id:69056 Str:3680" kilometre="54.800" x="-18513.695" y="2100.17" xNet="2682569.2" yNet="7571395.1" xWGS84="2484.2035" yWGS84="-299.835"/>
+		<node nodeID="69057" description="Neigung S: 0.00 F: 0.50 Id:69057 Str:3680" kilometre="54.840" x="-18486.525" y="2100.17" xNet="2682591.1" yNet="7571375.4" xWGS84="2511.3729" yWGS84="-299.835"/>
+		<speedIndicator nodeID="69058" description="GeschwZulaessigS V: 100 Wirkungsort: hier Zugbeeinflussung: Alle Id:69058 Str:3680" kilometre="54.900" x="-18445.771" y="2100.17" xNet="2682623.9" yNet="7571345.8" xWGS84="0" yWGS84="0" referenceNode="69057"/>
+		<node nodeID="69059" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:69059 Str:3680" kilometre="55.010" x="-18371.055" y="2100.17" xNet="2682684" yNet="7571291.6" xWGS84="2626.8429" yWGS84="-299.835"/>
+		<node nodeID="69060" description="BremswegF  Id:69060 Str:3680" kilometre="55.059" x="-18337.773" y="2100.17" xNet="2682710.7" yNet="7571267.5" xWGS84="2660.1255" yWGS84="-299.835"/>
+		<node nodeID="69061" description="MassgebendeNeigungGrenzeF  Id:69061 Str:3680" kilometre="55.060" x="-18337.094" y="2100.17" xNet="2682711.3" yNet="7571267" xWGS84="2660.8047" yWGS84="-299.835"/>
+		<speedIndicator nodeID="69062" description="GeschwZulaessigF V: 80 Wirkungsort: hier Zugbeeinflussung: Alle Id:69062 Str:3680" kilometre="55.060" x="-18323.509" y="2100.17" xNet="2682722.2" yNet="7571257.1" xWGS84="0" yWGS84="0" referenceNode="69063"/>
+		<node nodeID="69063" name="FIKTIVP" description="VorsignalF FstrBildezeit: 9s Id:69063 Str:3680" kilometre="55.060" x="-18309.924" y="2100.17" xNet="2682733.1" yNet="7571247.2" xWGS84="2687.9741" yWGS84="-299.835" referenceNode="69064" presignal="true" with1000HzMagnet="true"/>
+		<signal interlockingMachine="Tb:0_Tl:3_NTA" indusi500HzLocation="none" nodeID="69064" name="F040" description="HauptsignalF DwegAuflösezeit: 3s Id:69064 Str:3680" kilometre="55.060" x="-18296.34" y="2100.17" xNet="2682744.1" yNet="7571237.4" xWGS84="0" yWGS84="0" referenceNode="69065"/>
+		<node nodeID="69065" description="Neigung S: 39.90 F: 0.00 Id:69065 Str:3680" kilometre="55.350" x="-18099.361" y="2100.17" xNet="2682902.5" yNet="7571094.4" xWGS84="2898.5371" yWGS84="-299.835"/>
+		<node nodeID="69066" name="S-Bahn" description="Tunnel S: 0.00 F: 58.00 Id:69066 Str:3680" kilometre="55.416" x="-18054.532" y="2100.17" xNet="2682938.6" yNet="7571061.9" xWGS84="2943.3666" yWGS84="-299.835"/>
+		<node nodeID="69067" description="Neigung S: 0.00 F: -39.90 Id:69067 Str:3680" kilometre="55.620" x="-17915.968" y="2100.17" xNet="2683050.1" yNet="7570961.3" xWGS84="3081.9306" yWGS84="-299.835"/>
+		<node nodeID="69068" name="Vf040" description="VorsignalF FstrBildezeit: 9s Id:69068 Str:3680" kilometre="55.840" x="-17766.536" y="2100.17" xNet="2683170.3" yNet="7570852.9" xWGS84="3231.3624" yWGS84="-299.835" referenceNode="69069" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="69069" description="Betriebsstellengrenze Partner: FOKL Strecke: 3680 Gleis: 1 Id:69069 Str:3680 Bild (33.4004 / -2.9983)" kilometre="56.000" x="-17657.858" y="2100.17" xNet="2683257.7" yNet="7570774" xWGS84="3340.04" yWGS84="-299.835"/>
+		<switch start="69034" endOfMainTrack="69053" endOfBranchTrack="69016" nodeID="69017" name="W097" description="Weichenanfang  Id:69017 Str:3680 Bild (21.8534 / -2.9983)" kilometre="54.690" x="-18812.558" y="2100.17" xNet="2682328.8" yNet="7571612" xWGS84="0" yWGS84="0"/>
+		<switch start="69017" endOfMainTrack="69054" endOfBranchTrack="69033" nodeID="69034" name="W098" description="Weichenanfang  Id:69034 Str:3680 Bild (24.1628 / -2.9983)" kilometre="54.720" x="-18581.618" y="2100.17" xNet="2682514.6" yNet="7571444.4" xWGS84="0" yWGS84="0"/>
+		<node nodeID="76114" description="Betriebsstellengrenze Partner: FMUL Strecke: 3680 Gleis: 1 Id:76114 Str:3680 Bild (0.0000 / -2.0000)" kilometre="56.000" x="-17657.858" y="2100.17" xNet="2688361.6" yNet="7570784.3" xWGS84="0" yWGS84="-200"/>
+		<node nodeID="76115" name="Va145" description="VorsignalS FstrBildezeit: 9s Id:76115 Str:3680" kilometre="56.125" x="-17530.498" y="2100.17" xNet="2688489" yNet="7570784.3" xWGS84="127.36029" yWGS84="-200" referenceNode="76114" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="76116" description="Neigung S: -39.80 F: 0.00 Id:76116 Str:3680" kilometre="56.380" x="-17270.683" y="2100.17" xNet="2688748.8" yNet="7570784.3" xWGS84="387.17529" yWGS84="-200"/>
+		<node nodeID="76117" name="S-Bahn" description="Tunnel S: 58.00 F: 0.00 Id:76117 Str:3680" kilometre="56.647" x="-16998.641" y="2100.17" xNet="2689020.8" yNet="7570784.3" xWGS84="659.21688" yWGS84="-200"/>
+		<node nodeID="76118" description="Neigung S: -7.20 F: 39.80 Id:76118 Str:3680" kilometre="56.650" x="-16995.585" y="2100.17" xNet="2689023.9" yNet="7570784.3" xWGS84="662.27353" yWGS84="-200"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="76119" name="A145" description="HauptsignalS DwegAuflösezeit: 3s Id:76119 Str:3680" kilometre="56.861" x="-16780.601" y="2100.17" xNet="2689238.9" yNet="7570784.3" xWGS84="0" yWGS84="0" referenceNode="76118"/>
+		<node nodeID="76120" name="FIKTIVN147" description="VorsignalS FstrBildezeit: 9s Id:76120 Str:3680" kilometre="56.861" x="-16760.223" y="2100.17" xNet="2689259.2" yNet="7570784.3" xWGS84="897.63535" yWGS84="-200" referenceNode="76119" presignal="true" with1000HzMagnet="true"/>
+		<speedIndicator nodeID="76121" description="GeschwZulaessigS V: 80 Wirkungsort: hier Zugbeeinflussung: Alle Id:76121 Str:3680" kilometre="56.861" x="-16739.845" y="2100.17" xNet="2689279.6" yNet="7570784.3" xWGS84="0" yWGS84="0" referenceNode="76120"/>
+		<node nodeID="76122" description="MassgebendeNeigungGrenzeS  Id:76122 Str:3680" kilometre="56.861" x="-16719.468" y="2100.17" xNet="2689300" yNet="7570784.3" xWGS84="938.39065" yWGS84="-200"/>
+		<node nodeID="76123" description="BremswegS  Id:76123 Str:3680" kilometre="56.861" x="-16699.09" y="2100.17" xNet="2689320.4" yNet="7570784.3" xWGS84="958.76829" yWGS84="-200"/>
+		<node nodeID="76124" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:76124 Str:3680" kilometre="56.947" x="-16611.466" y="2100.17" xNet="2689408" yNet="7570784.3" xWGS84="1046.3922" yWGS84="-200"/>
+		<node nodeID="76125" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:76125 Str:3680" kilometre="56.972" x="-16585.994" y="2100.17" xNet="2689433.5" yNet="7570784.3" xWGS84="1071.8642" yWGS84="-200"/>
+		<node nodeID="76126" description="Neigung S: 0.00 F: 7.20 Id:76126 Str:3680" kilometre="56.995" x="-16562.56" y="2100.17" xNet="2689456.9" yNet="7570784.3" xWGS84="1095.2985" yWGS84="-200"/>
+		<node nodeID="76127" description="BremswegF  Id:76127 Str:3680" kilometre="57.021" x="-16536.069" y="2100.17" xNet="2689483.4" yNet="7570784.3" xWGS84="1121.7895" yWGS84="-200"/>
+		<node nodeID="76128" description="MassgebendeNeigungGrenzeF  Id:76128 Str:3680" kilometre="57.022" x="-16535.05" y="2100.17" xNet="2689484.4" yNet="7570784.3" xWGS84="1122.8084" yWGS84="-200"/>
+		<speedIndicator nodeID="76129" description="GeschwZulaessigF V: 100 Wirkungsort: hier Zugbeeinflussung: Alle Id:76129 Str:3680" kilometre="57.022" x="-16514.672" y="2100.17" xNet="2689504.8" yNet="7570784.3" xWGS84="0" yWGS84="0" referenceNode="76130"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="76130" name="P846" description="HauptsignalF DwegAuflösezeit: 3s Id:76130 Str:3680" kilometre="57.022" x="-16494.295" y="2100.17" xNet="2689525.2" yNet="7570784.3" xWGS84="0" yWGS84="0" referenceNode="76131"/>
+		<track trackID="B-1" stationID="FOKL" length="210" type="stopBoardPass" nodeID="76131" name="1" description="HalteplatzRzRechtsF Länge: 210m Id:76131 Str:3680" kilometre="57.027" x="-16489.2" y="2100.17" xNet="2689530.3" yNet="7570784.3" xWGS84="0" yWGS84="0" referenceNode="76132">
+			<platform startPos="-5" endPos="-210" width="60" left="false" open="true"/>
+		</track>
+		<track trackID="G-1" stationID="FOKL" type="timingPoint" nodeID="76132" name="1" description="Fahrzeitmesspunkt  Id:76132 Str:3680" kilometre="57.132" x="-16382.218" y="2100.17" xNet="2689637.2" yNet="7570784.3" xWGS84="0" yWGS84="0" referenceNode="76133"/>
+		<track trackID="A-1" stationID="FOKL" length="210" type="stopBoardPass" nodeID="76133" name="1" description="HalteplatzRzLinksS Länge: 210m Id:76133 Str:3680" kilometre="57.237" x="-16275.235" y="2100.17" xNet="2689744.2" yNet="7570784.3" xWGS84="0" yWGS84="0" referenceNode="76132">
+			<platform startPos="-5" endPos="-210" width="60" left="true" open="true"/>
+		</track>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="76134" name="N147" description="HauptsignalS DwegAuflösezeit: 3s Id:76134 Str:3680" kilometre="57.242" x="-16270.141" y="2100.17" xNet="2689749.3" yNet="7570784.3" xWGS84="0" yWGS84="0" referenceNode="76133"/>
+		<node nodeID="76135" name="Va,nI" description="VorsignalS FstrBildezeit: 9s Id:76135 Str:3680" kilometre="57.242" x="-16249.763" y="2100.17" xNet="2689769.7" yNet="7570784.3" xWGS84="1408.0954" yWGS84="-200" referenceNode="76134" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="76136" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:76136 Str:3680" kilometre="57.292" x="-16198.819" y="2100.17" xNet="2689820.6" yNet="7570784.3" xWGS84="1459.0395" yWGS84="-200"/>
+		<node nodeID="76137" description="Neigung S: 14.20 F: 0.00 Id:76137 Str:3680" kilometre="57.300" x="-16190.668" y="2100.17" xNet="2689828.8" yNet="7570784.3" xWGS84="1467.1906" yWGS84="-200"/>
+		<node nodeID="76138" description="Neigung S: 0.00 F: -14.20 Id:76138 Str:3680" kilometre="57.392" x="-16096.931" y="2100.17" xNet="2689922.5" yNet="7570784.3" xWGS84="1560.9278" yWGS84="-200"/>
+		<node nodeID="76139" description="FstrZugschlussstelleF FstrAuflösezeit: 3s Id:76139 Str:3680" kilometre="57.490" x="-15997.08" y="2100.17" xNet="2690022.4" yNet="7570784.3" xWGS84="1660.7782" yWGS84="-200" referenceNode="76140" releaseContact="true"/>
+		<speedIndicator nodeID="76140" description="GeschwZulaessigF V: 80 Wirkungsort: hier Zugbeeinflussung: Alle Id:76140 Str:3680" kilometre="57.530" x="-15956.325" y="2100.17" xNet="2690063.1" yNet="7570784.3" xWGS84="0" yWGS84="0" referenceNode="76141"/>
+		<node nodeID="76141" description="Weichenstamm  Id:76141 Str:3680" kilometre="57.540" x="-15946.136" y="2100.17" xNet="2690073.3" yNet="7570784.3" xWGS84="1711.7224" yWGS84="-200"/>
+		<node nodeID="76143" description="WeichenabzweigRechts  Id:76143 Str:3680" kilometre="57.470" x="-16023.489" y="2269.4008" xNet="2689996" yNet="7570953.6" xWGS84="1634.3692" yWGS84="-30.769231"/>
+		<node nodeID="76145" description="GeschwZulaessigS V: 60 Wirkungsort: signal Zugbeeinflussung: Alle Id:76145 Str:3680" kilometre="57.500" x="-15996.835" y="2223.2469" xNet="2690022.6" yNet="7570907.4" xWGS84="1661.0231" yWGS84="-76.923077"/>
+		<node nodeID="76146" description="GeschwZulaessigF V: 60 Wirkungsort: signal Zugbeeinflussung: Alle Id:76146 Str:3680" kilometre="57.500" x="-15979.066" y="2192.4777" xNet="2690040.4" yNet="7570876.7" xWGS84="1678.7923" yWGS84="-107.69231"/>
+		<node nodeID="76147" description="WeichenabzweigRechts  Id:76147 Str:3680" kilometre="57.540" x="-15943.528" y="2130.9392" xNet="2690075.9" yNet="7570815.1" xWGS84="1714.3308" yWGS84="-169.23077"/>
+		<node nodeID="76148" description="Weichenstamm  Id:76148 Str:3680" kilometre="57.470" x="-15964.275" y="2300.17" xNet="2690055.2" yNet="7570984.3" xWGS84="1693.5833" yWGS84="0"/>
+		<node nodeID="76149" description="Betriebsstellengrenze Partner: FOLM Strecke: 3680 Gleis: 2 Id:76149 Str:3680 Bild (20.7850 / 0.0000)" kilometre="57.570" x="-15579.358" y="2300.17" xNet="2690440.1" yNet="7570984.3" xWGS84="2078.5" yWGS84="0"/>
+		<node nodeID="76150" description="Betriebsstellengrenze Partner: FMUL Strecke: 3680 Gleis: 2 Id:76150 Str:3680 Bild (0.0000 / 0.0000)" kilometre="56.000" x="-17657.858" y="2300.17" xNet="2688361.6" yNet="7570984.3" xWGS84="0" yWGS84="0"/>
+		<node nodeID="76151" name="Va845" description="VorsignalS FstrBildezeit: 9s Id:76151 Str:3680" kilometre="56.125" x="-17535.389" y="2300.17" xNet="2688484.1" yNet="7570984.3" xWGS84="122.4697" yWGS84="0" referenceNode="76150" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="76152" description="Neigung S: -39.80 F: 0.00 Id:76152 Str:3680" kilometre="56.380" x="-17285.55" y="2300.17" xNet="2688733.9" yNet="7570984.3" xWGS84="372.30788" yWGS84="0"/>
+		<node nodeID="76153" name="S-Bahn" description="Tunnel S: 58.00 F: 0.00 Id:76153 Str:3680" kilometre="56.647" x="-17023.955" y="2300.17" xNet="2688995.5" yNet="7570984.3" xWGS84="633.90315" yWGS84="0"/>
+		<node nodeID="76154" description="Neigung S: -7.20 F: 39.80 Id:76154 Str:3680" kilometre="56.650" x="-17021.016" y="2300.17" xNet="2688998.4" yNet="7570984.3" xWGS84="636.84242" yWGS84="0"/>
+		<signal interlockingMachine="Tb:0_Tl:3_NTA" indusi500HzLocation="none" nodeID="76155" name="A845" description="HauptsignalS DwegAuflösezeit: 3s Id:76155 Str:3680" kilometre="56.861" x="-16814.287" y="2300.17" xNet="2689205.2" yNet="7570984.3" xWGS84="0" yWGS84="0" referenceNode="76154"/>
+		<node nodeID="76156" name="FIKTIVN847" description="VorsignalS FstrBildezeit: 9s Id:76156 Str:3680" kilometre="56.861" x="-16794.692" y="2300.17" xNet="2689224.8" yNet="7570984.3" xWGS84="863.16642" yWGS84="0" referenceNode="76155" presignal="true" with1000HzMagnet="true"/>
+		<speedIndicator nodeID="76157" description="GeschwZulaessigS V: 80 Wirkungsort: hier Zugbeeinflussung: Alle Id:76157 Str:3680" kilometre="56.861" x="-16775.097" y="2300.17" xNet="2689244.4" yNet="7570984.3" xWGS84="0" yWGS84="0" referenceNode="76156"/>
+		<node nodeID="76158" description="MassgebendeNeigungGrenzeS  Id:76158 Str:3680" kilometre="56.861" x="-16755.502" y="2300.17" xNet="2689264" yNet="7570984.3" xWGS84="902.35673" yWGS84="0"/>
+		<node nodeID="76159" description="BremswegS  Id:76159 Str:3680" kilometre="56.861" x="-16735.906" y="2300.17" xNet="2689283.5" yNet="7570984.3" xWGS84="921.95188" yWGS84="0"/>
+		<node nodeID="76160" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:76160 Str:3680" kilometre="56.947" x="-16651.647" y="2300.17" xNet="2689367.8" yNet="7570984.3" xWGS84="1006.211" yWGS84="0"/>
+		<node nodeID="76161" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:76161 Str:3680" kilometre="56.972" x="-16627.153" y="2300.17" xNet="2689392.3" yNet="7570984.3" xWGS84="1030.705" yWGS84="0"/>
+		<node nodeID="76162" description="Neigung S: 0.00 F: 7.20 Id:76162 Str:3680" kilometre="56.995" x="-16604.619" y="2300.17" xNet="2689414.8" yNet="7570984.3" xWGS84="1053.2394" yWGS84="0"/>
+		<node nodeID="76163" description="BremswegF  Id:76163 Str:3680" kilometre="57.021" x="-16579.145" y="2300.17" xNet="2689440.3" yNet="7570984.3" xWGS84="1078.7131" yWGS84="0"/>
+		<node nodeID="76164" description="MassgebendeNeigungGrenzeF  Id:76164 Str:3680" kilometre="57.022" x="-16578.166" y="2300.17" xNet="2689441.3" yNet="7570984.3" xWGS84="1079.6928" yWGS84="0"/>
+		<speedIndicator nodeID="76165" description="GeschwZulaessigF V: 100 Wirkungsort: hier Zugbeeinflussung: Alle Id:76165 Str:3680" kilometre="57.022" x="-16558.57" y="2300.17" xNet="2689460.9" yNet="7570984.3" xWGS84="0" yWGS84="0" referenceNode="76166"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="76166" name="P146" description="HauptsignalF DwegAuflösezeit: 3s Id:76166 Str:3680" kilometre="57.022" x="-16538.975" y="2300.17" xNet="2689480.5" yNet="7570984.3" xWGS84="0" yWGS84="0" referenceNode="76167"/>
+		<track trackID="B-2" stationID="FOKL" length="210" type="stopBoardPass" nodeID="76167" name="2" description="HalteplatzRzLinksF Länge: 210m Id:76167 Str:3680" kilometre="57.027" x="-16534.076" y="2300.17" xNet="2689485.4" yNet="7570984.3" xWGS84="0" yWGS84="0" referenceNode="76168">
+			<platform startPos="-5" endPos="-210" width="60" left="true" open="true"/>
+		</track>
+		<track trackID="G-2" stationID="FOKL" type="timingPoint" nodeID="76168" name="2" description="Fahrzeitmesspunkt  Id:76168 Str:3680" kilometre="57.132" x="-16431.202" y="2300.17" xNet="2689588.3" yNet="7570984.3" xWGS84="0" yWGS84="0" referenceNode="76169"/>
+		<track trackID="A-2" stationID="FOKL" length="210" type="stopBoardPass" nodeID="76169" name="2" description="HalteplatzRzRechtsS Länge: 210m Id:76169 Str:3680" kilometre="57.237" x="-16328.327" y="2300.17" xNet="2689691.1" yNet="7570984.3" xWGS84="0" yWGS84="0" referenceNode="76168">
+			<platform startPos="-5" endPos="-210" width="60" left="false" open="true"/>
+		</track>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="76170" name="N847" description="HauptsignalS DwegAuflösezeit: 3s Id:76170 Str:3680" kilometre="57.242" x="-16323.429" y="2300.17" xNet="2689696" yNet="7570984.3" xWGS84="0" yWGS84="0" referenceNode="76169"/>
+		<node nodeID="76171" name="Va,nII" description="VorsignalS FstrBildezeit: 9s Id:76171 Str:3680" kilometre="57.242" x="-16303.833" y="2300.17" xNet="2689715.6" yNet="7570984.3" xWGS84="1354.025" yWGS84="0" referenceNode="76170" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="76172" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:76172 Str:3680" kilometre="57.292" x="-16254.846" y="2300.17" xNet="2689764.6" yNet="7570984.3" xWGS84="1403.0128" yWGS84="0"/>
+		<node nodeID="76173" description="Neigung S: 14.20 F: 0.00 Id:76173 Str:3680" kilometre="57.299" x="-16247.987" y="2300.17" xNet="2689771.5" yNet="7570984.3" xWGS84="1409.8712" yWGS84="0"/>
+		<node nodeID="76174" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:76174 Str:3680" kilometre="57.308" x="-16239.169" y="2300.17" xNet="2689780.3" yNet="7570984.3" xWGS84="1418.689" yWGS84="0"/>
+		<node nodeID="76175" name="FIKTIVP146" description="VorsignalF FstrBildezeit: 9s Id:76175 Str:3680" kilometre="57.358" x="-16190.182" y="2300.17" xNet="2689829.3" yNet="7570984.3" xWGS84="1467.6768" yWGS84="0" referenceNode="76176" presignal="true" with1000HzMagnet="true"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="76176" name="F148" description="HauptsignalF DwegAuflösezeit: 3s Id:76176 Str:3680" kilometre="57.358" x="-16170.586" y="2300.17" xNet="2689848.9" yNet="7570984.3" xWGS84="0" yWGS84="0" referenceNode="76177"/>
+		<node nodeID="76177" description="Neigung S: 0.00 F: -14.20 Id:76177 Str:3680" kilometre="57.392" x="-16137.275" y="2300.17" xNet="2689882.2" yNet="7570984.3" xWGS84="1520.5838" yWGS84="0"/>
+		<node nodeID="76178" description="FstrZugschlussstelleF FstrAuflösezeit: 3s Id:76178 Str:3680" kilometre="57.420" x="-16109.841" y="2300.17" xNet="2689909.6" yNet="7570984.3" xWGS84="1548.017" yWGS84="0" referenceNode="76179" releaseContact="true"/>
+		<speedIndicator nodeID="76179" description="GeschwZulaessigF V: 80 Wirkungsort: hier Zugbeeinflussung: Alle Id:76179 Str:3680" kilometre="57.470" x="-16060.854" y="2300.17" xNet="2689958.6" yNet="7570984.3" xWGS84="0" yWGS84="0" referenceNode="76144"/>
+		<switch start="76179" endOfMainTrack="76148" endOfBranchTrack="76143" nodeID="76144" name="W381" description="Weichenanfang  Id:76144 Str:3680 Bild (16.1660 / 0.0000)" kilometre="57.470" x="-16041.258" y="2300.17" xNet="2689978.2" yNet="7570984.3" xWGS84="0" yWGS84="0"/>
+		<switch start="76224" endOfMainTrack="76141" endOfBranchTrack="76147" nodeID="76142" name="W382" description="Weichenanfang  Id:76142 Str:3680 Bild (17.3210 / -2.0000)" kilometre="57.540" x="-15925.758" y="2100.17" xNet="2690093.7" yNet="7570784.3" xWGS84="0" yWGS84="0"/>
+		<node nodeID="76180" description="Betriebsstellengrenze Partner: FOLM Strecke: 3680 Gleis: 1 Id:76180 Str:3680 Bild (20.7850 / -2.0000)" kilometre="57.570" x="-15579.358" y="2100.17" xNet="2690440.1" yNet="7570784.3" xWGS84="2078.5" yWGS84="-200"/>
+		<node nodeID="76181" description="Betriebsstellengrenze Partner: FOKL Strecke: 3680 Gleis: 1 Id:76181 Str:3680 Bild (0.0000 / -2.0000)" kilometre="57.570" x="-15579.358" y="2100.17" xNet="2693676.2" yNet="7570784.4" xWGS84="0" yWGS84="-200"/>
+		<switch start="76227" endOfMainTrack="76183" endOfBranchTrack="76184" nodeID="76182" name="W383" description="Weichenanfang  Id:76182 Str:3680 Bild (2.3090 / -2.0000)" kilometre="57.600" x="-15348.462" y="2100.17" xNet="2693907.1" yNet="7570784.4" xWGS84="0" yWGS84="0"/>
+		<node nodeID="76185" description="Betriebsstellengrenze Partner: FOKL Strecke: 3680 Gleis: 2 Id:76185 Str:3680 Bild (0.0000 / 0.0000)" kilometre="57.570" x="-15579.358" y="2300.17" xNet="2693676.2" yNet="7570984.4" xWGS84="0" yWGS84="0"/>
+		<node nodeID="76186" description="Weichenstamm  Id:76186 Str:3680" kilometre="57.660" x="-15295.941" y="2300.17" xNet="2693959.6" yNet="7570984.4" xWGS84="283.41736" yWGS84="0"/>
+		<switch start="76189" endOfMainTrack="76186" endOfBranchTrack="76188" nodeID="76187" name="W384" description="Weichenanfang  Id:76187 Str:3680 Bild (3.4640 / 0.0000)" kilometre="57.660" x="-15232.959" y="2300.17" xNet="2694022.6" yNet="7570984.4" xWGS84="0" yWGS84="0"/>
+		<speedIndicator nodeID="76189" description="GeschwZulaessigS V: 80 Wirkungsort: hier Zugbeeinflussung: Alle Id:76189 Str:3680" kilometre="57.660" x="-15190.715" y="2300.17" xNet="2694064.8" yNet="7570984.4" xWGS84="0" yWGS84="0" referenceNode="76187"/>
+		<node nodeID="76190" description="FstrZugschlussstelleS FstrAuflösezeit: 3s Id:76190 Str:3680" kilometre="57.710" x="-15085.105" y="2300.17" xNet="2694170.4" yNet="7570984.4" xWGS84="494.2536" yWGS84="0" referenceNode="76189" releaseContact="true"/>
+		<node nodeID="76191" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:76191 Str:3680" kilometre="57.789" x="-14918.24" y="2300.17" xNet="2694337.3" yNet="7570984.4" xWGS84="661.11807" yWGS84="0"/>
+		<node nodeID="76192" name="Vf,pI" description="VorsignalF FstrBildezeit: 9s Id:76192 Str:3680" kilometre="57.839" x="-14812.63" y="2300.17" xNet="2694442.9" yNet="7570984.4" xWGS84="766.7285" yWGS84="0" referenceNode="76193" presignal="true" with1000HzMagnet="true"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="76193" name="P152" description="HauptsignalF DwegAuflösezeit: 3s Id:76193 Str:3680" kilometre="57.839" x="-14770.386" y="2300.17" xNet="2694485.2" yNet="7570984.4" xWGS84="0" yWGS84="0" referenceNode="76194"/>
+		<track trackID="B-2" stationID="FOLM" length="210" type="stopBoardPass" nodeID="76194" name="2" description="HalteplatzRzLinksF Länge: 210m Id:76194 Str:3680" kilometre="57.844" x="-14759.825" y="2300.17" xNet="2694495.7" yNet="7570984.4" xWGS84="0" yWGS84="0" referenceNode="76195">
+			<platform startPos="-5" endPos="-210" width="60" left="true" open="true"/>
+		</track>
+		<track trackID="G-2" stationID="FOLM" type="timingPoint" nodeID="76195" name="2" description="Fahrzeitmesspunkt  Id:76195 Str:3680" kilometre="57.949" x="-14538.043" y="2300.17" xNet="2694717.5" yNet="7570984.4" xWGS84="0" yWGS84="0" referenceNode="76196"/>
+		<track trackID="A-2" stationID="FOLM" length="210" type="stopBoardPass" nodeID="76196" name="2" description="HalteplatzRzRechtsS Länge: 210m Id:76196 Str:3680" kilometre="58.054" x="-14316.261" y="2300.17" xNet="2694939.3" yNet="7570984.4" xWGS84="0" yWGS84="0" referenceNode="76195">
+			<platform startPos="-5" endPos="-210" width="60" left="false" open="true"/>
+		</track>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="76197" name="N851" description="HauptsignalS DwegAuflösezeit: 3s Id:76197 Str:3680" kilometre="58.059" x="-14305.7" y="2300.17" xNet="2694949.8" yNet="7570984.4" xWGS84="0" yWGS84="0" referenceNode="76196"/>
+		<node nodeID="76198" name="FITTIVN855" description="VorsignalS FstrBildezeit: 9s Id:76198 Str:3680" kilometre="58.059" x="-14263.456" y="2300.17" xNet="2694992.1" yNet="7570984.4" xWGS84="1315.9027" yWGS84="0" referenceNode="76197" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="76199" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:76199 Str:3680" kilometre="58.109" x="-14157.845" y="2300.17" xNet="2695097.7" yNet="7570984.4" xWGS84="1421.5131" yWGS84="0"/>
+		<node nodeID="76200" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:76200 Str:3680" kilometre="58.134" x="-14105.04" y="2300.17" xNet="2695150.5" yNet="7570984.4" xWGS84="1474.3184" yWGS84="0"/>
+		<node nodeID="76201" name="FIKTIVP152" description="VorsignalF FstrBildezeit: 9s Id:76201 Str:3680" kilometre="58.184" x="-13999.43" y="2300.17" xNet="2695256.1" yNet="7570984.4" xWGS84="1579.9288" yWGS84="0" referenceNode="76202" presignal="true" with1000HzMagnet="true"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="76202" name="F154" description="HauptsignalF DwegAuflösezeit: 3s Id:76202 Str:3680" kilometre="58.184" x="-13957.185" y="2300.17" xNet="2695298.4" yNet="7570984.4" xWGS84="0" yWGS84="0" referenceNode="76203"/>
+		<node nodeID="76203" description="Neigung S: -2.50 F: 0.00 Id:76203 Str:3680" kilometre="58.370" x="-13564.315" y="2300.17" xNet="2695691.2" yNet="7570984.4" xWGS84="2015.0437" yWGS84="0"/>
+		<node nodeID="76204" description="Betriebsstellengrenze Partner: FOMP Strecke: 3680 Gleis: 2 Id:76204 Str:3680 Bild (20.7841 / 0.0000)" kilometre="58.400" x="-13500.948" y="2300.17" xNet="2695754.6" yNet="7570984.4" xWGS84="2078.41" yWGS84="0"/>
+		<node nodeID="76184" description="WeichenabzweigLinks  Id:76184 Str:3680" kilometre="57.600" x="-15325.362" y="2140.17" xNet="2693930.2" yNet="7570824.4" xWGS84="253.9966" yWGS84="-160"/>
+		<node nodeID="76205" description="GeschwZulaessigS V: 60 Wirkungsort: signal Zugbeeinflussung: Alle Id:76205 Str:3680" kilometre="57.620" x="-15302.261" y="2180.17" xNet="2693953.3" yNet="7570864.4" xWGS84="277.0972" yWGS84="-120"/>
+		<node nodeID="76206" description="GeschwZulaessigF V: 60 Wirkungsort: signal Zugbeeinflussung: Alle Id:76206 Str:3680" kilometre="57.630" x="-15290.711" y="2200.17" xNet="2693964.8" yNet="7570884.4" xWGS84="288.6475" yWGS84="-100"/>
+		<node nodeID="76188" description="WeichenabzweigLinks  Id:76188 Str:3680" kilometre="57.660" x="-15256.06" y="2260.17" xNet="2693999.5" yNet="7570944.4" xWGS84="323.2984" yWGS84="-40"/>
+		<node nodeID="76183" description="Weichenstamm  Id:76183 Str:3680" kilometre="57.600" x="-15306.417" y="2100.17" xNet="2693949.1" yNet="7570784.4" xWGS84="272.94155" yWGS84="-200"/>
+		<node nodeID="76207" description="FstrZugschlussstelleS FstrAuflösezeit: 3s Id:76207 Str:3680" kilometre="57.650" x="-15201.303" y="2100.17" xNet="2694054.2" yNet="7570784.4" xWGS84="378.05541" yWGS84="-200" referenceNode="76183" releaseContact="true"/>
+		<speedIndicator nodeID="76208" description="GeschwZulaessigS V: 80 Wirkungsort: hier Zugbeeinflussung: Alle Id:76208 Str:3680" kilometre="57.650" x="-15159.257" y="2100.17" xNet="2694096.3" yNet="7570784.4" xWGS84="0" yWGS84="0" referenceNode="76207"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="76209" name="A149" description="HauptsignalS DwegAuflösezeit: 3s Id:76209 Str:3680" kilometre="57.724" x="-15003.689" y="2100.17" xNet="2694251.9" yNet="7570784.4" xWGS84="0" yWGS84="0" referenceNode="76208"/>
+		<node nodeID="76210" name="FITTIVN151" description="VorsignalS FstrBildezeit: 9s Id:76210 Str:3680" kilometre="57.724" x="-14961.643" y="2100.17" xNet="2694293.9" yNet="7570784.4" xWGS84="617.71502" yWGS84="-200" referenceNode="76209" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="76211" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:76211 Str:3680" kilometre="57.774" x="-14856.529" y="2100.17" xNet="2694399" yNet="7570784.4" xWGS84="722.82888" yWGS84="-200"/>
+		<node nodeID="76212" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:76212 Str:3680" kilometre="57.789" x="-14824.995" y="2100.17" xNet="2694430.6" yNet="7570784.4" xWGS84="754.36304" yWGS84="-200"/>
+		<node nodeID="76213" name="Vf,pII" description="VorsignalF FstrBildezeit: 9s Id:76213 Str:3680" kilometre="57.839" x="-14719.881" y="2100.17" xNet="2694535.7" yNet="7570784.4" xWGS84="859.4769" yWGS84="-200" referenceNode="76214" presignal="true" with1000HzMagnet="true"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="76214" name="P852" description="HauptsignalF DwegAuflösezeit: 3s Id:76214 Str:3680" kilometre="57.839" x="-14677.836" y="2100.17" xNet="2694577.7" yNet="7570784.4" xWGS84="0" yWGS84="0" referenceNode="76215"/>
+		<track trackID="B-1" stationID="FOLM" length="210" type="stopBoardPass" nodeID="76215" name="1" description="HalteplatzRzRechtsF Länge: 210m Id:76215 Str:3680" kilometre="57.844" x="-14667.325" y="2100.17" xNet="2694588.2" yNet="7570784.4" xWGS84="0" yWGS84="0" referenceNode="76216">
+			<platform startPos="-5" endPos="-210" width="60" left="false" open="true"/>
+		</track>
+		<track trackID="G-1" stationID="FOLM" type="timingPoint" nodeID="76216" name="1" description="Fahrzeitmesspunkt  Id:76216 Str:3680" kilometre="57.949" x="-14446.585" y="2100.17" xNet="2694809" yNet="7570784.4" xWGS84="0" yWGS84="0" referenceNode="76217"/>
+		<track trackID="A-1" stationID="FOLM" length="210" type="stopBoardPass" nodeID="76217" name="1" description="HalteplatzRzLinksS Länge: 210m Id:76217 Str:3680" kilometre="58.054" x="-14225.846" y="2100.17" xNet="2695029.7" yNet="7570784.4" xWGS84="0" yWGS84="0" referenceNode="76216">
+			<platform startPos="-5" endPos="-210" width="60" left="true" open="true"/>
+		</track>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="76218" name="N151" description="HauptsignalS DwegAuflösezeit: 3s Id:76218 Str:3680" kilometre="58.059" x="-14215.335" y="2100.17" xNet="2695040.2" yNet="7570784.4" xWGS84="0" yWGS84="0" referenceNode="76217"/>
+		<node nodeID="76219" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:76219 Str:3680" kilometre="58.109" x="-14110.221" y="2100.17" xNet="2695145.3" yNet="7570784.4" xWGS84="1469.1373" yWGS84="-200"/>
+		<node nodeID="76220" name="Va153" description="VorsignalS FstrBildezeit: 9s Id:76220 Str:3680" kilometre="58.311" x="-13685.561" y="2100.17" xNet="2695570" yNet="7570784.4" xWGS84="1893.7973" yWGS84="-200" referenceNode="76228" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="76221" description="Neigung S: -2.50 F: 0.00 Id:76221 Str:3680" kilometre="58.370" x="-13561.527" y="2100.17" xNet="2695694" yNet="7570784.4" xWGS84="2017.8317" yWGS84="-200"/>
+		<node nodeID="76222" description="Betriebsstellengrenze Partner: FOMP Strecke: 3680 Gleis: 1 Id:76222 Str:3680 Bild (20.8090 / -2.0000)" kilometre="58.400" x="-13498.458" y="2100.17" xNet="2695757.1" yNet="7570784.4" xWGS84="2080.9" yWGS84="-200"/>
+		<node nodeID="76235" description="Betriebsstellengrenze Partner: FOLM Strecke: 3680 Gleis: 1 Id:76235 Str:3680 Bild (0.0249 / -2.0000)" kilometre="58.400" x="-13498.458" y="2100.17" xNet="2699764.4" yNet="7570777.8" xWGS84="2.49023" yWGS84="-200"/>
+		<node nodeID="76236" description="Neigung S: 0.00 F: 2.50 Id:76236 Str:3680" kilometre="58.690" x="-12714.145" y="2100.1427" xNet="2700580.9" yNet="7570779.8" xWGS84="786.80343" yWGS84="-200.02735"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="76237" name="A153" description="HauptsignalS DwegAuflösezeit: 3s Id:76237 Str:3680" kilometre="58.705" x="-12673.577" y="2100.1412" xNet="2700623.2" yNet="7570779.9" xWGS84="0" yWGS84="0" referenceNode="76236"/>
+		<node nodeID="76238" name="FIKTIVN155" description="VorsignalS FstrBildezeit: 9s Id:76238 Str:3680" kilometre="58.705" x="-12619.487" y="2100.1393" xNet="2700679.5" yNet="7570780.1" xWGS84="881.46192" yWGS84="-200.03065" referenceNode="76237" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="76239" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:76239 Str:3680" kilometre="58.755" x="-12484.26" y="2100.1346" xNet="2700820.3" yNet="7570780.4" xWGS84="1016.6883" yWGS84="-200.03537"/>
+		<node nodeID="76240" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:76240 Str:3680" kilometre="58.788" x="-12395.011" y="2100.1315" xNet="2700913.2" yNet="7570780.7" xWGS84="1105.9378" yWGS84="-200.03848"/>
+		<node nodeID="76241" name="FIKTIVP852" description="VorsignalF FstrBildezeit: 9s Id:76241 Str:3680" kilometre="58.838" x="-12259.784" y="2100.1268" xNet="2701054" yNet="7570781" xWGS84="1241.1642" yWGS84="-200.04319" referenceNode="76242" presignal="true" with1000HzMagnet="true"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="76242" name="P856" description="HauptsignalF DwegAuflösezeit: 3s Id:76242 Str:3680" kilometre="58.838" x="-12205.694" y="2100.1249" xNet="2701110.3" yNet="7570781.1" xWGS84="0" yWGS84="0" referenceNode="76243"/>
+		<track trackID="B-1" stationID="FOMP" length="210" type="stopBoardPass" nodeID="76243" name="1" description="HalteplatzRzRechtsF Länge: 210m Id:76243 Str:3680" kilometre="58.843" x="-12192.171" y="2100.1244" xNet="2701124.4" yNet="7570781.2" xWGS84="0" yWGS84="0" referenceNode="76244">
+			<platform startPos="-5" endPos="-210" width="60" left="false" open="true"/>
+		</track>
+		<track trackID="G-1" stationID="FOMP" type="timingPoint" nodeID="76244" name="1" description="Fahrzeitmesspunkt  Id:76244 Str:3680" kilometre="58.948" x="-11908.196" y="2100.1145" xNet="2701420" yNet="7570781.9" xWGS84="0" yWGS84="0" referenceNode="76245"/>
+		<track trackID="A-1" stationID="FOMP" length="210" type="stopBoardPass" nodeID="76245" name="1" description="HalteplatzRzLinksS Länge: 210m Id:76245 Str:3680" kilometre="59.053" x="-11624.22" y="2100.1046" xNet="2701715.6" yNet="7570782.6" xWGS84="0" yWGS84="0" referenceNode="76244">
+			<platform startPos="-5" endPos="-210" width="60" left="true" open="true"/>
+		</track>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="76246" name="N155" description="HauptsignalS DwegAuflösezeit: 3s Id:76246 Str:3680" kilometre="59.058" x="-11610.698" y="2100.1042" xNet="2701729.7" yNet="7570782.7" xWGS84="0" yWGS84="0" referenceNode="76245"/>
+		<node nodeID="76247" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:76247 Str:3680" kilometre="59.108" x="-11475.471" y="2100.0995" xNet="2701870.5" yNet="7570783" xWGS84="2025.4774" yWGS84="-200.07054"/>
+		<node nodeID="76248" description="Neigung S: 3.00 F: 0.00 Id:76248 Str:3680" kilometre="59.131" x="-11413.267" y="2100.0973" xNet="2701935.2" yNet="7570783.2" xWGS84="2087.6815" yWGS84="-200.07271"/>
+		<node nodeID="76249" description="Bildpunkt  Id:76249 Str:3680 Bild (33.2906 / -2.0012)" kilometre="59.590" x="-10171.889" y="2100.054" xNet="2703227.6" yNet="7570786.3" xWGS84="3329.06" yWGS84="-200.116"/>
+		<node nodeID="76250" description="Bildpunkt  Id:76250 Str:3680 Bild (51.7660 / -34.0012)" kilometre="59.600" x="-8324.3486" y="-1099.95" xNet="2705142.7" yNet="7567697.2" xWGS84="5176.6" yWGS84="-3400.12"/>
+		<node nodeID="76251" description="Betriebsstellengrenze Partner: FOO Strecke: 3680 Gleis: 1 Id:76251 Str:3680 Bild (55.2301 / -34.0012)" kilometre="59.610" x="-7977.9386" y="-1099.95" xNet="2705503.3" yNet="7567698.1" xWGS84="5523.01" yWGS84="-3400.12"/>
+		<node nodeID="76252" description="Betriebsstellengrenze Partner: FOLM Strecke: 3680 Gleis: 2 Id:76252 Str:3680 Bild (0.0000 / 0.0000)" kilometre="58.400" x="-13500.949" y="2300.17" xNet="2699762.4" yNet="7570971.2" xWGS84="0" yWGS84="0"/>
+		<node nodeID="76253" name="Vf154" description="VorsignalF FstrBildezeit: 9s Id:76253 Str:3680" kilometre="58.581" x="-12985.694" y="2300.1527" xNet="2700298.8" yNet="7570972.5" xWGS84="515.25464" yWGS84="-0.01734713" referenceNode="76254" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="76254" description="Neigung S: 0.00 F: 2.50 Id:76254 Str:3680" kilometre="58.690" x="-12675.402" y="2300.1422" xNet="2700621.8" yNet="7570973.3" xWGS84="825.54612" yWGS84="-0.027793744"/>
+		<node nodeID="76255" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:76255 Str:3680" kilometre="58.788" x="-12396.425" y="2300.1328" xNet="2700912.2" yNet="7570974" xWGS84="1104.5238" yWGS84="-0.037186112"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="76256" name="P156" description="HauptsignalF DwegAuflösezeit: 3s Id:76256 Str:3680" kilometre="58.838" x="-12254.089" y="2300.128" xNet="2701060.4" yNet="7570974.4" xWGS84="0" yWGS84="0" referenceNode="76257"/>
+		<track trackID="B-2" stationID="FOMP" length="210" type="stopBoardPass" nodeID="76257" name="2" description="HalteplatzRzLinksF Länge: 210m Id:76257 Str:3680" kilometre="58.843" x="-12239.856" y="2300.1275" xNet="2701075.2" yNet="7570974.4" xWGS84="0" yWGS84="0" referenceNode="76258">
+			<platform startPos="-5" endPos="-210" width="60" left="true" open="true"/>
+		</track>
+		<track trackID="G-2" stationID="FOMP" type="timingPoint" nodeID="76258" name="2" description="Fahrzeitmesspunkt  Id:76258 Str:3680" kilometre="58.948" x="-11940.951" y="2300.1175" xNet="2701386.4" yNet="7570975.2" xWGS84="0" yWGS84="0" referenceNode="76259"/>
+		<track trackID="A-2" stationID="FOMP" length="210" type="stopBoardPass" nodeID="76259" name="2" description="HalteplatzRzRechtsS Länge: 210m Id:76259 Str:3680" kilometre="59.053" x="-11642.046" y="2300.1074" xNet="2701697.6" yNet="7570976" xWGS84="0" yWGS84="0" referenceNode="76258">
+			<platform startPos="-5" endPos="-210" width="60" left="false" open="true"/>
+		</track>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="76260" name="N855" description="HauptsignalS DwegAuflösezeit: 3s Id:76260 Str:3680" kilometre="59.058" x="-11627.813" y="2300.1069" xNet="2701712.4" yNet="7570976" xWGS84="0" yWGS84="0" referenceNode="76259"/>
+		<node nodeID="76261" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:76261 Str:3680" kilometre="59.108" x="-11485.477" y="2300.1021" xNet="2701860.6" yNet="7570976.4" xWGS84="2015.4712" yWGS84="-0.067855071"/>
+		<node nodeID="76262" description="Neigung S: 3.00 F: 0.00 Id:76262 Str:3680" kilometre="59.131" x="-11420.003" y="2300.0999" xNet="2701928.7" yNet="7570976.5" xWGS84="2080.9456" yWGS84="-0.070059402"/>
+		<node nodeID="76263" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:76263 Str:3680" kilometre="59.135" x="-11408.616" y="2300.0996" xNet="2701940.6" yNet="7570976.6" xWGS84="2092.3324" yWGS84="-0.070442764"/>
+		<node nodeID="76264" name="FIKTIVP156" description="VorsignalF FstrBildezeit: 9s Id:76264 Str:3680" kilometre="59.185" x="-11266.281" y="2300.0948" xNet="2702088.8" yNet="7570976.9" xWGS84="2234.6679" yWGS84="-0.075234789" referenceNode="76265" presignal="true" with1000HzMagnet="true"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="76265" name="F158" description="HauptsignalF DwegAuflösezeit: 3s Id:76265 Str:3680" kilometre="59.185" x="-11209.346" y="2300.0928" xNet="2702148.1" yNet="7570977.1" xWGS84="0" yWGS84="0" referenceNode="76266"/>
+		<node nodeID="76266" description="Bildpunkt  Id:76266 Str:3680 Bild (34.4452 / -0.0012)" kilometre="59.590" x="-10056.429" y="2300.054" xNet="2703348.3" yNet="7570980" xWGS84="3444.52" yWGS84="-0.115967"/>
+		<node nodeID="76267" description="Bildpunkt  Id:76267 Str:3680 Bild (52.9205 / -32.0012)" kilometre="59.600" x="-8208.8986" y="-899.95" xNet="2705263.4" yNet="7567890.9" xWGS84="5292.05" yWGS84="-3200.12"/>
+		<node nodeID="76268" name="Vf158" description="VorsignalF FstrBildezeit: 9s Id:76268 Str:3680" kilometre="59.600" x="-8054.9386" y="-899.95" xNet="2705423.7" yNet="7567891.3" xWGS84="5446.01" yWGS84="-3200.12" referenceNode="76269" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="76269" description="Betriebsstellengrenze Partner: FOO Strecke: 3680 Gleis: 2 Id:76269 Str:3680 Bild (55.2299 / -32.0012)" kilometre="59.610" x="-7977.9586" y="-899.95" xNet="2705503.8" yNet="7567891.5" xWGS84="5522.99" yWGS84="-3200.12"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" nodeID="66327" description="Betriebsstellengrenze Partner: FMHD Strecke: 3680 Gleis: 1 Id:66327 Str:3680 Bild (29.9169 / -12.9995)" kilometre="65.600" x="2991.69" y="-1299.95" xNet="2723399.3" yNet="7564853.1" xWGS84="2991.69" yWGS84="-1299.95" referenceNode="66326"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" nodeID="66313" description="Betriebsstellengrenze Partner: FMHD Strecke: 3680 Gleis: 2 Id:66313 Str:3680 Bild (29.9169 / -10.9995)" kilometre="65.600" x="2991.69" y="-1099.95" xNet="2723423.7" yNet="7565051.6" xWGS84="2991.69" yWGS84="-1099.95" referenceNode="66312"/>
+		<stationBorder exitType="regular" stationID="FMH" lineID="3680" trackNumber="1" nodeID="66338" description="Betriebsstellengrenze Partner: FMHD Strecke: 3680 Gleis: 1 Id:66327 Str:3680 Bild (29.9169 / -12.9995)" kilometre="64.980" x="2302.5671" y="-1299.95" xNet="2722715.3" yNet="7564937.1" xWGS84="0" yWGS84="0" referenceNode="66323"/>
+		<stationBorder exitType="regular" stationID="FMH" lineID="3680" trackNumber="1" nodeID="66339" description="Betriebsstellengrenze Partner: FOO Strecke: 3680 Gleis: 0 Id:66328 Str:3680 Bild (-0.1053 / -10.9995)" kilometre="64.404" x="1468.2993" y="-1099.95" xNet="2721911.6" yNet="7565237.2" xWGS84="1496.7602" yWGS84="-1099.95" referenceNode="66334"/>
+		<stationBorder exitType="alternative" stationID="FMH" lineID="3680" trackNumber="2" nodeID="66340" description="Betriebsstellengrenze Partner: FMHD Strecke: 3680 Gleis: 2 Id:66313 Str:3680 Bild (29.9169 / -10.9995)" kilometre="64.980" x="2239.3118" y="-1099.95" xNet="2722676.9" yNet="7565143.3" xWGS84="0" yWGS84="0" referenceNode="66309"/>
+		<stationBorder exitType="alternative" stationID="FMUL" lineID="3680" trackNumber="2" nodeID="69070" description="Betriebsstellengrenze Partner: FOKL Strecke: 3680 Gleis: 2 Id:69032 Str:3680 Bild (33.4005 / -0.9984)" kilometre="55.010" x="-18305.436" y="2300.1698" xNet="2682720.7" yNet="7571439.4" xWGS84="2676.9914" yWGS84="-99.8352" referenceNode="69021"/>
+		<stationBorder exitType="regular" stationID="FMUL" lineID="3680" trackNumber="2" nodeID="69071" description="Betriebsstellengrenze Partner: FSHF Strecke: 3680 Gleis: 2 Id:68995 Str:3680 Bild (-0.0859 / -0.9984)" kilometre="54.274" x="-20700.002" y="2300.1698" xNet="2680794.3" yNet="7573177.1" xWGS84="604.38122" yWGS84="-99.8352" referenceNode="68996"/>
+		<stationBorder exitType="regular" stationID="FMUL" lineID="3680" trackNumber="1" nodeID="69072" description="Betriebsstellengrenze Partner: FOKL Strecke: 3680 Gleis: 1 Id:69069 Str:3680 Bild (33.4004 / -2.9983)" kilometre="55.010" x="-18354.414" y="2100.17" xNet="2682697.4" yNet="7571279.5" xWGS84="2626.8429" yWGS84="-299.835" referenceNode="69059"/>
+		<stationBorder exitType="alternative" stationID="FMUL" lineID="3680" trackNumber="1" nodeID="69073" description="Betriebsstellengrenze Partner: FSHF Strecke: 3680 Gleis: 1 Id:69038 Str:3680 Bild (-0.0859 / -2.9983)" kilometre="54.207" x="-20589.645" y="2100.17" xNet="2680899.1" yNet="7572901.7" xWGS84="420.06715" yWGS84="-299.835" referenceNode="69042"/>
+		<stationBorder exitType="alternative" stationID="FOKL" lineID="3680" trackNumber="1" nodeID="76223" description="Betriebsstellengrenze Partner: FMUL Strecke: 3680 Gleis: 1 Id:76114 Str:3680 Bild (0.0000 / -2.0000)" kilometre="56.947" x="-16655.278" y="2100.17" xNet="2689364.2" yNet="7570784.3" xWGS84="1046.3922" yWGS84="-200" referenceNode="76124"/>
+		<stationBorder exitType="regular" stationID="FOKL" lineID="3680" trackNumber="1" nodeID="76224" description="Betriebsstellengrenze Partner: FOLM Strecke: 3680 Gleis: 1 Id:76180 Str:3680 Bild (20.7850 / -2.0000)" kilometre="57.540" x="-15752.558" y="2100.17" xNet="2690266.9" yNet="7570784.3" xWGS84="0" yWGS84="0" referenceNode="76142"/>
+		<stationBorder exitType="regular" stationID="FOKL" lineID="3680" trackNumber="2" nodeID="76225" description="Betriebsstellengrenze Partner: FMUL Strecke: 3680 Gleis: 2 Id:76150 Str:3680 Bild (0.0000 / 0.0000)" kilometre="56.947" x="-16693.777" y="2300.17" xNet="2689325.7" yNet="7570984.3" xWGS84="1006.211" yWGS84="0" referenceNode="76160"/>
+		<stationBorder exitType="alternative" stationID="FOKL" lineID="3680" trackNumber="2" nodeID="76226" description="Betriebsstellengrenze Partner: FOLM Strecke: 3680 Gleis: 2 Id:76149 Str:3680 Bild (20.7850 / 0.0000)" kilometre="57.470" x="-15771.817" y="2300.17" xNet="2690247.6" yNet="7570984.3" xWGS84="1693.5833" yWGS84="0" referenceNode="76148"/>
+		<stationBorder exitType="alternative" stationID="FOLM" lineID="3680" trackNumber="1" nodeID="76227" description="Betriebsstellengrenze Partner: FOKL Strecke: 3680 Gleis: 1 Id:76181 Str:3680 Bild (0.0000 / -2.0000)" kilometre="57.600" x="-15463.91" y="2100.17" xNet="2693791.6" yNet="7570784.4" xWGS84="0" yWGS84="0" referenceNode="76182"/>
+		<stationBorder exitType="regular" stationID="FOLM" lineID="3680" trackNumber="1" nodeID="76228" description="Betriebsstellengrenze Partner: FOMP Strecke: 3680 Gleis: 1 Id:76222 Str:3680 Bild (20.8090 / -2.0000)" kilometre="58.109" x="-13897.891" y="2100.17" xNet="2695357.7" yNet="7570784.4" xWGS84="1469.1373" yWGS84="-200" referenceNode="76219"/>
+		<stationBorder exitType="regular" stationID="FOLM" lineID="3680" trackNumber="2" nodeID="76229" description="Betriebsstellengrenze Partner: FOKL Strecke: 3680 Gleis: 2 Id:76185 Str:3680 Bild (0.0000 / 0.0000)" kilometre="57.660" x="-15437.65" y="2300.17" xNet="2693817.9" yNet="7570984.4" xWGS84="283.41736" yWGS84="0" referenceNode="76186"/>
+		<stationBorder exitType="alternative" stationID="FOLM" lineID="3680" trackNumber="2" nodeID="76230" description="Betriebsstellengrenze Partner: FOMP Strecke: 3680 Gleis: 2 Id:76204 Str:3680 Bild (20.7841 / 0.0000)" kilometre="58.134" x="-14052.235" y="2300.17" xNet="2695203.3" yNet="7570984.4" xWGS84="1474.3184" yWGS84="0" referenceNode="76200"/>
+		<stationBorder exitType="alternative" stationID="FOMP" lineID="3680" trackNumber="1" nodeID="76270" description="Betriebsstellengrenze Partner: FOLM Strecke: 3680 Gleis: 1 Id:76235 Str:3680 Bild (0.0249 / -2.0000)" kilometre="58.755" x="-12551.873" y="2100.137" xNet="2700749.9" yNet="7570780.3" xWGS84="1016.6883" yWGS84="-200.03537" referenceNode="76239"/>
+		<stationBorder exitType="regular" stationID="FOMP" lineID="3680" trackNumber="1" nodeID="76271" description="Betriebsstellengrenze Partner: FOO Strecke: 3680 Gleis: 1 Id:76251 Str:3680 Bild (55.2301 / -34.0012)" kilometre="59.108" x="-11444.369" y="2100.0984" xNet="2701902.9" yNet="7570783.1" xWGS84="2025.4774" yWGS84="-200.07054" referenceNode="76247"/>
+		<stationBorder exitType="regular" stationID="FOMP" lineID="3680" trackNumber="2" nodeID="76272" description="Betriebsstellengrenze Partner: FOLM Strecke: 3680 Gleis: 2 Id:76252 Str:3680 Bild (0.0000 / 0.0000)" kilometre="58.788" x="-12535.914" y="2300.1375" xNet="2700767" yNet="7570973.7" xWGS84="1104.5238" yWGS84="-0.037186112" referenceNode="76255"/>
+		<stationBorder exitType="alternative" stationID="FOMP" lineID="3680" trackNumber="2" nodeID="76273" description="Betriebsstellengrenze Partner: FOO Strecke: 3680 Gleis: 2 Id:76269 Str:3680 Bild (55.2299 / -32.0012)" kilometre="59.135" x="-11337.448" y="2300.0972" xNet="2702014.7" yNet="7570976.7" xWGS84="2092.3324" yWGS84="-0.070442764" referenceNode="76263"/>
+	</nodes>
+	<links>
+		<link source="66301" target="66303" length="50" vmax="60" vmaxr="100" electrified="true"/>
+		<link source="66303" target="66304" length="194" vmax="60" vmaxr="100" electrified="true"/>
+		<link source="66304" target="66305" length="50" vmax="60" vmaxr="100" electrified="true"/>
+		<link source="66305" target="66306" length="5" vmax="60" vmaxr="100" electrified="true"/>
+		<link source="66306" target="66307" length="104" vmax="60" vmaxr="100" electrified="true"/>
+		<link source="66307" target="66308" length="17" vmax="60" vmaxr="100" electrified="true"/>
+		<link source="66308" target="66309" length="80" vmax="60" vmaxr="100" electrified="true"/>
+		<link source="66340" target="66310" length="2" vmax="60" vmaxr="100" electrified="true"/>
+		<link source="66310" target="66311" length="264" gradient="0.3" vmax="60" vmaxr="100" electrified="true"/>
+		<link source="66311" target="66312" length="237" gradient="0.3" vmax="60" vmaxr="100" electrified="true"/>
+		<link source="66312" target="66313" length="117" vmax="60" vmaxr="100" electrified="true"/>
+		<link source="66314" target="66315" vmax="100" vmaxr="60" electrified="true"/>
+		<link source="66315" target="66316" length="40" vmax="100" vmaxr="60" electrified="true"/>
+		<link source="66316" target="66317" length="10" vmax="100" vmaxr="60" electrified="true"/>
+		<link source="66317" target="66318" length="194" vmax="100" vmaxr="60" electrified="true"/>
+		<link source="66318" target="66319" length="50" vmax="100" vmaxr="60" electrified="true"/>
+		<link source="66319" target="66320" vmax="100" vmaxr="60" electrified="true"/>
+		<link source="66320" target="66321" length="5" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="66321" target="66322" length="104" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="66322" target="66323" length="97" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="66338" target="66324" length="3" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="66324" target="66325" length="500" gradient="0.3" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="66325" target="66326" length="19" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="66326" target="66327" length="98" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="66328" target="66329" length="166" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="66329" target="66330" length="287" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="66330" target="66331" length="443" gradient="0.5" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="66331" target="66332" length="358" gradient="-0.4" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="66332" target="66333" gradient="-0.4" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="66333" target="66339" length="50" gradient="-0.4" vmax="100" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="66334" target="66335" length="26" gradient="-0.4" vmax="100" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="66335" target="66336" length="3" gradient="-0.4" vmax="100" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="66336" target="66337" length="47" vmax="100" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="66337" target="66302" vmax="100" vmaxr="100" bidirectional="true" electrified="true"/>
+		<link source="66302" target="66301" vmax="60" vmaxr="100" electrified="true"/>
+		<link source="66302" target="66314" vmax="100" vmaxr="60" electrified="true"/>
+		<link source="68995" target="69071" length="174" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="68996" target="68997" length="50" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="68997" target="68998" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="68998" target="68999" length="5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="68999" target="69000" length="106" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69000" target="69001" length="94" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69001" target="69002" length="14" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69002" target="69003" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69003" target="69004" length="12" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69004" target="69005" length="25" gradient="-5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69005" target="69006" length="4" gradient="-5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69006" target="69007" length="46" gradient="-5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69007" target="69008" gradient="-5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69009" target="69011" length="150" gradient="-5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69010" target="69013" gradient="-5" vmax="60" vmaxr="60" tunnelCrossSection="58" electrified="true"/>
+		<link source="69013" target="69014" length="10" vmax="60" vmaxr="60" tunnelCrossSection="58" electrified="true"/>
+		<link source="69014" target="69015" length="10" vmax="60" vmaxr="60" tunnelCrossSection="58" electrified="true"/>
+		<link source="69015" target="69016" length="40" vmax="60" vmaxr="60" tunnelCrossSection="58" electrified="true"/>
+		<link source="69012" target="69019" length="50" gradient="-5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69019" target="69020" length="10" gradient="-5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69020" target="69021" length="170" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69070" target="69022" length="49" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69022" target="69023" length="1" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69023" target="69024" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69024" target="69025" vmax="80" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="69025" target="69026" vmax="80" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="69026" target="69027" length="40" vmax="80" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="69027" target="69028" length="250" vmax="100" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="69028" target="69029" length="66" gradient="39.8" vmax="100" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="69029" target="69030" length="204" gradient="39.8" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="69030" target="69031" length="220" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="69031" target="69032" length="160" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="69033" target="69035" length="20"/>
+		<link source="69035" target="69036" length="10"/>
+		<link source="69036" target="69037" length="30"/>
+		<link source="69037" target="69018"/>
+		<link source="69038" target="69039" length="38" gradient="39.8" vmax="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69039" target="69040" length="62" vmax="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69040" target="69041" vmax="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69041" target="69073" length="7" vmax="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69042" target="69043" length="43" vmax="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69043" target="69044" length="57" vmax="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69044" target="69045" length="5" vmax="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69045" target="69046" length="123" vmax="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69046" target="69047" length="94" vmax="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69047" target="69048" length="5" vmax="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69048" target="69049" vmax="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69049" target="69050" length="50" vmax="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69050" target="69051" length="56" vmax="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69051" target="69052" length="40" vmax="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69052" target="69053" length="10" vmax="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69054" target="69055" length="50" vmax="80" vmaxr="60" tunnelCrossSection="58" electrified="true"/>
+		<link source="69055" target="69056" length="30" vmax="80" vmaxr="60" tunnelCrossSection="58" electrified="true"/>
+		<link source="69056" target="69057" length="40" gradient="-0.5" vmax="80" vmaxr="60" tunnelCrossSection="58" electrified="true"/>
+		<link source="69057" target="69058" length="60" vmax="80" vmaxr="60" tunnelCrossSection="58" electrified="true"/>
+		<link source="69058" target="69059" length="110" vmax="100" vmaxr="60" tunnelCrossSection="58" electrified="true"/>
+		<link source="69072" target="69060" length="49" vmax="100" vmaxr="60" tunnelCrossSection="58" electrified="true"/>
+		<link source="69060" target="69061" length="1" vmax="100" vmaxr="60" tunnelCrossSection="58" electrified="true"/>
+		<link source="69061" target="69062" vmax="100" vmaxr="60" tunnelCrossSection="58" electrified="true"/>
+		<link source="69062" target="69063" vmax="100" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="69063" target="69064" vmax="100" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="69064" target="69065" length="290" vmax="100" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="69065" target="69066" length="66" gradient="39.9" vmax="100" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="69066" target="69067" length="204" gradient="39.9" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="69067" target="69068" length="220" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="69068" target="69069" length="160" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="69017" target="69034" length="30" vmax="80" vmaxr="60" tunnelCrossSection="58" electrified="true"/>
+		<link source="69008" target="69009" gradient="-5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69008" target="69010" gradient="-5" vmax="60" vmaxr="60" tunnelCrossSection="58" electrified="true"/>
+		<link source="69011" target="69012" gradient="-5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69018" target="69012"/>
+		<link source="69053" target="69017" vmax="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69016" target="69017" vmax="60" vmaxr="60" tunnelCrossSection="58" electrified="true"/>
+		<link source="69034" target="69054" vmax="80" vmaxr="60" tunnelCrossSection="58" electrified="true"/>
+		<link source="69034" target="69033"/>
+		<link source="76114" target="76115" length="125" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="76115" target="76116" length="255" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="76116" target="76117" length="267" gradient="-39.8" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="76117" target="76118" length="3" gradient="-39.8" vmax="100" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="76118" target="76119" length="211" gradient="-7.2" vmax="100" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="76119" target="76120" gradient="-7.2" vmax="100" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="76120" target="76121" gradient="-7.2" vmax="100" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="76121" target="76122" gradient="-7.2" vmax="80" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="76122" target="76123" gradient="-7.2" vmax="80" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="76123" target="76223" length="86" gradient="-7.2" vmax="80" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="76124" target="76125" length="25" gradient="-7.2" vmax="80" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="76125" target="76126" length="23" gradient="-7.2" vmax="80" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="76126" target="76127" length="26" vmax="80" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="76127" target="76128" length="1" vmax="80" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="76128" target="76129" vmax="80" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="76129" target="76130" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76130" target="76131" length="5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76131" target="76132" length="105" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76132" target="76133" length="105" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76133" target="76134" length="5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76134" target="76135" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76135" target="76136" length="50" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76136" target="76137" length="8" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76137" target="76138" length="92" gradient="14.2" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76138" target="76139" length="98" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76139" target="76140" length="40" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76140" target="76141" length="10" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76143" target="76145" length="30"/>
+		<link source="76145" target="76146"/>
+		<link source="76146" target="76147" length="40"/>
+		<link source="76226" target="76149" length="100" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76150" target="76151" length="125" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="76151" target="76152" length="255" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="76152" target="76153" length="267" gradient="-39.8" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="76153" target="76154" length="3" gradient="-39.8" vmax="100" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="76154" target="76155" length="211" gradient="-7.2" vmax="100" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="76155" target="76156" gradient="-7.2" vmax="100" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="76156" target="76157" gradient="-7.2" vmax="100" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="76157" target="76158" gradient="-7.2" vmax="80" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="76158" target="76159" gradient="-7.2" vmax="80" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="76159" target="76225" length="86" gradient="-7.2" vmax="80" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="76160" target="76161" length="25" gradient="-7.2" vmax="80" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="76161" target="76162" length="23" gradient="-7.2" vmax="80" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="76162" target="76163" length="26" vmax="80" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="76163" target="76164" length="1" vmax="80" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="76164" target="76165" vmax="80" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="76165" target="76166" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76166" target="76167" length="5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76167" target="76168" length="105" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76168" target="76169" length="105" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76169" target="76170" length="5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76170" target="76171" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76171" target="76172" length="50" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76172" target="76173" length="7" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76173" target="76174" length="9" gradient="14.2" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76174" target="76175" length="50" gradient="14.2" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76175" target="76176" gradient="14.2" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76176" target="76177" length="34" gradient="14.2" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76177" target="76178" length="28" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76178" target="76179" length="50" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76179" target="76144" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76224" target="76180" length="30" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76144" target="76148" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76144" target="76143"/>
+		<link source="76141" target="76142" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76147" target="76142"/>
+		<link source="76181" target="76227" length="30" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76185" target="76229" length="90" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76187" target="76189" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76189" target="76190" length="50" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76190" target="76191" length="79" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76191" target="76192" length="50" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76192" target="76193" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76193" target="76194" length="5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76194" target="76195" length="105" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76195" target="76196" length="105" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76196" target="76197" length="5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76197" target="76198" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76198" target="76199" length="50" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76199" target="76200" length="25" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76230" target="76201" length="50" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76201" target="76202" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76202" target="76203" length="186" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76203" target="76204" length="30" gradient="-2.5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76184" target="76205" length="20"/>
+		<link source="76205" target="76206" length="10"/>
+		<link source="76206" target="76188" length="30"/>
+		<link source="76183" target="76207" length="50" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76207" target="76208" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76208" target="76209" length="74" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76209" target="76210" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76210" target="76211" length="50" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76211" target="76212" length="15" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76212" target="76213" length="50" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76213" target="76214" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76214" target="76215" length="5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76215" target="76216" length="105" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76216" target="76217" length="105" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76217" target="76218" length="5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76218" target="76219" length="50" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76228" target="76220" length="202" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76220" target="76221" length="59" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76221" target="76222" length="30" gradient="-2.5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76182" target="76183" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76182" target="76184"/>
+		<link source="76186" target="76187" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76188" target="76187"/>
+		<link source="76235" target="76236" length="290" gradient="-2.5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76236" target="76237" length="15" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76237" target="76238" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76238" target="76270" length="50" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76239" target="76240" length="33" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76240" target="76241" length="50" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76241" target="76242" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76242" target="76243" length="5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76243" target="76244" length="105" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76244" target="76245" length="105" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76245" target="76246" length="5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76246" target="76247" length="50" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76271" target="76248" length="23" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76248" target="76249" length="459" gradient="3" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76249" target="76250" length="10" gradient="3" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76250" target="76251" length="10" gradient="3" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76252" target="76253" length="181" gradient="-2.5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76253" target="76254" length="109" gradient="-2.5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76254" target="76272" length="98" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76255" target="76256" length="50" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76256" target="76257" length="5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76257" target="76258" length="105" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76258" target="76259" length="105" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76259" target="76260" length="5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76260" target="76261" length="50" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76261" target="76262" length="23" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76262" target="76263" length="4" gradient="3" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76273" target="76264" length="50" gradient="3" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76264" target="76265" gradient="3" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76265" target="76266" length="405" gradient="3" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76266" target="76267" length="10" gradient="3" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76267" target="76268" gradient="3" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76268" target="76269" length="10" gradient="3" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76509.fo" target="66328" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="69069" target="76114" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="69032" target="76150" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="80719.fshf" target="69038" gradient="39.8" vmax="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="80679.fshf" target="68995" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76180" target="76181" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76149" target="76185" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76222" target="76235" gradient="-2.5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76204" target="76252" gradient="-2.5" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76251" target="76403.fo" gradient="3" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76269" target="76518.fo" gradient="3" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="66323" target="66338" vmax="100" vmaxr="100" electrified="true"/>
+		<link source="66339" target="66334" gradient="-0.4" vmax="100" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="66309" target="66340" vmax="60" vmaxr="100" electrified="true"/>
+		<link source="69021" target="69070" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69071" target="68996" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="69059" target="69072" vmax="100" vmaxr="60" tunnelCrossSection="58" electrified="true"/>
+		<link source="69073" target="69042" vmax="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76223" target="76124" gradient="-7.2" vmax="80" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="76142" target="76224" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76225" target="76160" gradient="-7.2" vmax="80" vmaxr="100" tunnelCrossSection="58" electrified="true"/>
+		<link source="76148" target="76226" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76227" target="76182" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76219" target="76228" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76229" target="76186" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76200" target="76230" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76270" target="76239" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76247" target="76271" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76272" target="76255" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+		<link source="76263" target="76273" gradient="3" vmax="80" vmaxr="80" tunnelCrossSection="58" electrified="true"/>
+	</links>
+	<dependentLinks/>
+	<blockSections>
+		<blockSection presignal="77156.fshf" nodes="77155.fshf 77156.fshf 77157.fshf 77158.fshf 77166.fshf 77159.fshf 77160.fshf 77161.fshf 77162.fshf 80680.fshf 80681.fshf 80721.fshf 80682.fshf 80683.fshf 80684.fshf 80685.fshf 80663.fshf 80662.fshf 80664.fshf 80665.fshf 80666.fshf 80667.fshf 80668.fshf 80669.fshf 80670.fshf 80671.fshf 80672.fshf 80673.fshf 80674.fshf 80725.fshf 80675.fshf 80676.fshf 80677.fshf 80678.fshf 80679.fshf 68995 69071 68996 68997 68998 68999 69000 69001 69002" speedIndicators="80670.fshf"/>
+		<blockSection presignal="80655.fshf" nodes="80652.fshf 80653.fshf 80654.fshf 80655.fshf 80656.fshf 80657.fshf 80658.fshf 80659.fshf 80661.fshf 80706.fshf 80707.fshf 80708.fshf 80709.fshf 80710.fshf 80711.fshf 80712.fshf 80713.fshf 80724.fshf 80714.fshf 80715.fshf 80716.fshf 80717.fshf 80718.fshf 80719.fshf 69038 69039 69040" speedIndicators="80712.fshf"/>
+		<blockSection presignal="69041" nodes="69040 69041 69073 69042 69043 69044 69045 69046 69047 69048"/>
+		<blockSection presignal="76151" nodes="69002 69003 69004 69005 69006 69007 69008 69009 69011 69012 69019 69020 69021 69070 69022 69023 69024 69025 69026 69027 69028 69029 69030 69031 69032 76150 76151 76152 76153 76154 76155" speedIndicators="69027"/>
+		<blockSection presignal="76156" nodes="76155 76156 76157 76158 76159 76225 76160 76161 76162 76163 76164 76165 76166 76167 76168 76169 76170" speedIndicators="76157"/>
+		<blockSection presignal="76115" nodes="69002 69003 69004 69005 69006 69007 69008 69010 69013 69014 69015 69016 69017 69034 69054 69055 69056 69057 69058 69059 69072 69060 69061 69062 69063 69064 69065 69066 69067 69068 69069 76114 76115 76116 76117 76118 76119" speedIndicators="69058"/>
+		<blockSection presignal="76115" nodes="69048 69049 69050 69051 69052 69053 69017 69034 69054 69055 69056 69057 69058 69059 69072 69060 69061 69062 69063 69064 69065 69066 69067 69068 69069 76114 76115 76116 76117 76118 76119" speedIndicators="69058"/>
+		<blockSection presignal="76120" nodes="76119 76120 76121 76122 76123 76223 76124 76125 76126 76127 76128 76129 76130 76131 76132 76133 76134" speedIndicators="76121"/>
+		<blockSection presignal="76171" nodes="76170 76171 76172 76173 76174 76175 76176 76177 76178 76179 76144 76148 76226 76149 76185 76229 76186 76187 76189 76190 76191 76192 76193 76194 76195 76196 76197" speedIndicators="76189"/>
+		<blockSection presignal="76135" nodes="76134 76135 76136 76137 76138 76139 76140 76141 76142 76224 76180 76181 76227 76182 76183 76207 76208 76209" speedIndicators="76208"/>
+		<blockSection presignal="76210" nodes="76209 76210 76211 76212 76213 76214 76215 76216 76217 76218"/>
+		<blockSection presignal="76198" nodes="76197 76198 76199 76200 76230 76201 76202 76203 76204 76252 76253 76254 76272 76255 76256 76257 76258 76259 76260"/>
+		<blockSection presignal="76220" nodes="76218 76219 76228 76220 76221 76222 76235 76236 76237"/>
+		<blockSection presignal="76238" nodes="76237 76238 76270 76239 76240 76241 76242 76243 76244 76245 76246"/>
+		<blockSection presignal="76519.fo" nodes="76260 76261 76262 76263 76273 76264 76265 76266 76267 76268 76269 76518.fo 76519.fo 76520.fo 76521.fo 76522.fo"/>
+		<blockSection presignal="76404.fo" nodes="76246 76247 76271 76248 76249 76250 76251 76403.fo 76404.fo 76405.fo 76406.fo 76407.fo"/>
+		<blockSection presignal="66329" nodes="76295.fo 76296.fo 76297.fo 76298.fo 76299.fo 76300.fo 76301.fo 76302.fo 76499.fo 76500.fo 76501.fo 76502.fo 76503.fo 76586.fo 76504.fo 76505.fo 76506.fo 76507.fo 76508.fo 76509.fo 66328 66329 66330 66331 66332" speedIndicators="76296.fo 76499.fo"/>
+		<blockSection presignal="66329" nodes="76494.fo 76495.fo 76496.fo 76427.fo 76497.fo 76582.fo 76583.fo 76363.fo 76362.fo 76364.fo 76365.fo 76366.fo 76367.fo 76368.fo 76369.fo 76370.fo 76371.fo 76372.fo 76373.fo 76374.fo 76375.fo 76376.fo 76377.fo 76302.fo 76499.fo 76500.fo 76501.fo 76502.fo 76503.fo 76586.fo 76504.fo 76505.fo 76506.fo 76507.fo 76508.fo 76509.fo 66328 66329 66330 66331 66332" speedIndicators="76373.fo 76499.fo"/>
+		<blockSection presignal="66311" nodes="66332 66333 66339 66334 66335 66336 66337 66302 66301 66303 66304 66305 66306 66307 66308 66309 66340 66310 66311 66312 66313" speedIndicators="66333"/>
+		<blockSection nodes="66332 66333 66339 66334 66335 66336 66337 66302 66314 66315 66316 66317 66318 66319 66320 66321 66322 66323 66338 66324 66325 66326 66327" speedIndicators="66333"/>
+		<blockSection nodes="66313 66312 66311 66310 66340 66309 66308 66307 66306 66305"/>
+		<blockSection nodes="66327 66326 66325 66324 66338 66323 66322 66321 66320"/>
+		<blockSection presignal="76507.fo" nodes="66305 66304 66303 66301 66302 66337 66336 66335 66334 66339 66333 66332 66331 66330 66329 66328 76509.fo 76508.fo 76507.fo 76506.fo 76505.fo" speedIndicators="66337"/>
+		<blockSection presignal="76507.fo" nodes="66320 66319 66318 66317 66316 66315 66314 66302 66337 66336 66335 66334 66339 66333 66332 66331 66330 66329 66328 76509.fo 76508.fo 76507.fo 76506.fo 76505.fo" speedIndicators="66337"/>
+		<blockSection presignal="76311.fo" nodes="76312.fo 76311.fo 76310.fo 76309.fo 76308.fo 76307.fo 76306.fo 76305.fo 76303.fo 76304.fo 76418.fo 76417.fo 76416.fo 76415.fo 76414.fo 76413.fo 76412.fo 76588.fo 76411.fo 76410.fo 76409.fo 76408.fo 76407.fo 76406.fo 76405.fo 76404.fo 76403.fo 76251 76250 76249 76248 76271 76247 76246 76245 76244 76243 76242" speedIndicators="76414.fo"/>
+		<blockSection presignal="76439.fo" nodes="76440.fo 76439.fo 76438.fo 76437.fo 76436.fo 76435.fo 76434.fo 76431.fo 76433.fo 76476.fo 76475.fo 76474.fo 76473.fo 76304.fo 76418.fo 76417.fo 76416.fo 76415.fo 76414.fo 76413.fo 76412.fo 76588.fo 76411.fo 76410.fo 76409.fo 76408.fo 76407.fo 76406.fo 76405.fo 76404.fo 76403.fo 76251 76250 76249 76248 76271 76247 76246 76245 76244 76243 76242" speedIndicators="76414.fo"/>
+		<blockSection presignal="76268" nodes="76312.fo 76311.fo 76310.fo 76309.fo 76308.fo 76307.fo 76306.fo 76305.fo 76303.fo 76304.fo 76418.fo 76498.fo 76571.fo 76570.fo 76569.fo 76530.fo 76479.fo 76529.fo 76528.fo 76527.fo 76526.fo 76525.fo 76587.fo 76524.fo 76523.fo 76522.fo 76521.fo 76520.fo 76519.fo 76518.fo 76269 76268 76267 76266 76265" speedIndicators="76529.fo"/>
+		<blockSection presignal="76268" nodes="76440.fo 76439.fo 76438.fo 76437.fo 76436.fo 76435.fo 76434.fo 76431.fo 76433.fo 76476.fo 76475.fo 76474.fo 76473.fo 76304.fo 76418.fo 76498.fo 76571.fo 76570.fo 76569.fo 76530.fo 76479.fo 76529.fo 76528.fo 76527.fo 76526.fo 76525.fo 76587.fo 76524.fo 76523.fo 76522.fo 76521.fo 76520.fo 76519.fo 76518.fo 76269 76268 76267 76266 76265" speedIndicators="76529.fo"/>
+		<blockSection presignal="76268" nodes="76487.fo 76486.fo 76485.fo 76484.fo 76483.fo 76482.fo 76481.fo 76480.fo 76478.fo 76479.fo 76529.fo 76528.fo 76527.fo 76526.fo 76525.fo 76587.fo 76524.fo 76523.fo 76522.fo 76521.fo 76520.fo 76519.fo 76518.fo 76269 76268 76267 76266 76265" speedIndicators="76486.fo 76529.fo"/>
+		<blockSection presignal="76264" nodes="76265 76264 76273 76263 76262 76261 76260 76259 76258 76257 76256"/>
+		<blockSection presignal="76241" nodes="76242 76241 76240 76239 76270 76238 76237 76236 76235 76222 76221 76220 76228 76219 76218 76217 76216 76215 76214"/>
+		<blockSection presignal="76253" nodes="76256 76255 76272 76254 76253 76252 76204 76203 76202"/>
+		<blockSection presignal="76201" nodes="76202 76201 76230 76200 76199 76198 76197 76196 76195 76194 76193"/>
+		<blockSection presignal="76213" nodes="76214 76213 76212 76211 76210 76209 76208 76207 76183 76182 76227 76181 76180 76224 76142 76141 76140 76139 76138 76137 76136 76135 76134 76133 76132 76131 76130" speedIndicators="76140"/>
+		<blockSection presignal="76192" nodes="76193 76192 76191 76190 76189 76187 76186 76229 76185 76149 76226 76148 76144 76179 76178 76177 76176" speedIndicators="76179"/>
+		<blockSection presignal="76175" nodes="76176 76175 76174 76173 76172 76171 76170 76169 76168 76167 76166"/>
+		<blockSection presignal="69068" nodes="76130 76129 76128 76127 76126 76125 76124 76223 76123 76122 76121 76120 76119 76118 76117 76116 76115 76114 69069 69068 69067 69066 69065 69064" speedIndicators="76129"/>
+		<blockSection presignal="69063" nodes="69064 69063 69062 69061 69060 69072 69059 69058 69057 69056 69055 69054 69034 69017 69016 69015 69014 69013 69010 69008 69007 69006 69005 69004 69003 69002 69001 69000 68999 68998" speedIndicators="69007 69062"/>
+		<blockSection presignal="69031" nodes="76166 76165 76164 76163 76162 76161 76160 76225 76159 76158 76157 76156 76155 76154 76153 76152 76151 76150 69032 69031 69030 69029 69028 69027 69026" speedIndicators="76165"/>
+		<blockSection presignal="69025" nodes="69026 69025 69024 69023 69022 69070 69021 69020 69019 69012 69011 69009 69008 69007 69006 69005 69004 69003 69002 69001 69000 68999 68998" speedIndicators="69007 69024"/>
+		<blockSection presignal="68997" nodes="68998 68997 68996 69071 68995 80679.fshf 80678.fshf 80677.fshf 80676.fshf 80675.fshf 80725.fshf 80674.fshf"/>
+		<blockSection nodes="69002 69001 69000 68999 68998"/>
+		<blockSection nodes="68998 68999 69000 69001 69002"/>
+		<blockSection nodes="69044 69045 69046 69047 69048"/>
+		<blockSection nodes="76134 76133 76132 76131 76130"/>
+		<blockSection nodes="76130 76131 76132 76133 76134"/>
+		<blockSection nodes="76170 76169 76168 76167 76166"/>
+		<blockSection nodes="76166 76167 76168 76169 76170"/>
+		<blockSection nodes="76197 76196 76195 76194 76193"/>
+		<blockSection nodes="76193 76194 76195 76196 76197"/>
+		<blockSection nodes="76218 76217 76216 76215 76214"/>
+		<blockSection nodes="76214 76215 76216 76217 76218"/>
+		<blockSection nodes="76246 76245 76244 76243 76242"/>
+		<blockSection nodes="76242 76243 76244 76245 76246"/>
+		<blockSection nodes="76260 76259 76258 76257 76256"/>
+		<blockSection nodes="76256 76257 76258 76259 76260"/>
+	</blockSections>
+	<slipDistances>
+		<slipDistance signal="66305" name="39.50.66304.3680.0" publicName="1-1000" description="21374" complete="true" warnerroute="false" nodes="66305 66304"/>
+		<slipDistance signal="66320" name="39.50.66318.3680.0" publicName="1-1000" description="21371" complete="true" warnerroute="false" nodes="66320 66319 66318"/>
+		<slipDistance signal="66332" name="39.50.66334.3680.0" publicName="1-1000" description="21364" complete="true" warnerroute="false" nodes="66332 66333 66339 66334"/>
+		<slipDistance signal="68998" name="39.50.68996.3680.0" publicName="1-1000" description="P136" complete="true" warnerroute="false" nodes="68998 68997 68996"/>
+		<slipDistance signal="69002" name="29.41.69006.3680.0" publicName="1-1000" description="N039" complete="true" warnerroute="false" nodes="69002 69003 69004 69005 69006"/>
+		<slipDistance signal="69026" name="39.50.69021.3680.0" publicName="1-1000" description="F140" complete="true" warnerroute="false" nodes="69026 69025 69024 69023 69022 69070 69021"/>
+		<slipDistance signal="69040" name="39.50.69043.3680.0" publicName="1-1000" description="A137" complete="true" warnerroute="false" nodes="69040 69041 69073 69042 69043"/>
+		<slipDistance signal="69048" name="39.50.69050.3680.0" publicName="1-1000" description="N139" complete="true" warnerroute="false" nodes="69048 69049 69050"/>
+		<slipDistance signal="69064" name="39.50.69059.3680.0" publicName="1-1000" description="F040" complete="true" warnerroute="false" nodes="69064 69063 69062 69061 69060 69072 69059"/>
+		<slipDistance signal="76119" name="39.86.76124.3680.0" publicName="1-1000" description="A145" complete="true" warnerroute="false" nodes="76119 76120 76121 76122 76123 76223 76124"/>
+		<slipDistance signal="76130" name="39.50.76125.3680.0" publicName="1-1000" description="P846" complete="true" warnerroute="false" nodes="76130 76129 76128 76127 76126 76125"/>
+		<slipDistance signal="76134" name="39.50.76136.3680.0" publicName="1-1000" description="N147" complete="true" warnerroute="false" nodes="76134 76135 76136"/>
+		<slipDistance signal="76155" name="39.86.76160.3680.0" publicName="1-1000" description="A845" complete="true" warnerroute="false" nodes="76155 76156 76157 76158 76159 76225 76160"/>
+		<slipDistance signal="76166" name="39.50.76161.3680.0" publicName="1-1000" description="P146" complete="true" warnerroute="false" nodes="76166 76165 76164 76163 76162 76161"/>
+		<slipDistance signal="76170" name="39.50.76172.3680.0" publicName="1-1000" description="N847" complete="true" warnerroute="false" nodes="76170 76171 76172"/>
+		<slipDistance signal="76176" name="39.50.76174.3680.0" publicName="1-1000" description="F148" complete="true" warnerroute="false" nodes="76176 76175 76174"/>
+		<slipDistance signal="76193" name="39.50.76191.3680.0" publicName="1-1000" description="P152" complete="true" warnerroute="false" nodes="76193 76192 76191"/>
+		<slipDistance signal="76197" name="39.50.76199.3680.0" publicName="1-1000" description="N851" complete="true" warnerroute="false" nodes="76197 76198 76199"/>
+		<slipDistance signal="76202" name="39.50.76200.3680.0" publicName="1-1000" description="F154" complete="true" warnerroute="false" nodes="76202 76201 76230 76200"/>
+		<slipDistance signal="76209" name="39.50.76211.3680.0" publicName="1-1000" description="A149" complete="true" warnerroute="false" nodes="76209 76210 76211"/>
+		<slipDistance signal="76214" name="39.50.76212.3680.0" publicName="1-1000" description="P852" complete="true" warnerroute="false" nodes="76214 76213 76212"/>
+		<slipDistance signal="76218" name="39.50.76219.3680.0" publicName="1-1000" description="N151" complete="true" warnerroute="false" nodes="76218 76219"/>
+		<slipDistance signal="76237" name="39.50.76239.3680.0" publicName="1-1000" description="A153" complete="true" warnerroute="false" nodes="76237 76238 76270 76239"/>
+		<slipDistance signal="76242" name="39.50.76240.3680.0" publicName="1-1000" description="P856" complete="true" warnerroute="false" nodes="76242 76241 76240"/>
+		<slipDistance signal="76246" name="39.50.76247.3680.0" publicName="1-1000" description="N155" complete="true" warnerroute="false" nodes="76246 76247"/>
+		<slipDistance signal="76256" name="39.50.76255.3680.0" publicName="1-1000" description="P156" complete="true" warnerroute="false" nodes="76256 76255"/>
+		<slipDistance signal="76260" name="39.50.76261.3680.0" publicName="1-1000" description="N855" complete="true" warnerroute="false" nodes="76260 76261"/>
+		<slipDistance signal="76265" name="39.50.76263.3680.0" publicName="1-1000" description="F158" complete="true" warnerroute="false" nodes="76265 76264 76273 76263"/>
+	</slipDistances>
+	<approachControlRoutes/>
+	<stationRoutes>
+		<stationRoute stationID="FOMP" name="FOLM-1-FOO" description="FOLM-1-FOO" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="76270 76239 76240 76241 76242 76243 76244 76245 76246 76247 76271"/>
+		<stationRoute stationID="FOMP" name="FOLM-2-FOO-GG" description="FOLM-2-FOO-GG" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=20;NRz=20;S=20;Rz=20;FGz=20;NGz=20;Gz=20;Lz=20" nodes="76272 76255 76256 76257 76258 76259 76260 76261 76262 76263 76273"/>
+		<stationRoute stationID="FOMP" name="FOO-1-FOLM-GG" description="FOO-1-FOLM-GG" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=20;NRz=20;S=20;Rz=20;FGz=20;NGz=20;Gz=20;Lz=20" nodes="76271 76247 76246 76245 76244 76243 76242 76241 76240 76239 76270"/>
+		<stationRoute stationID="FOMP" name="FOO-2-FOLM" description="FOO-2-FOLM" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="76273 76263 76262 76261 76260 76259 76258 76257 76256 76255 76272"/>
+		<stationRoute stationID="FOLM" name="FOKL-1-FOO" description="FOKL-1-FOO" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="76227 76182 76183 76207 76208 76209 76210 76211 76212 76213 76214 76215 76216 76217 76218 76219 76228"/>
+		<stationRoute stationID="FOLM" name="FOKL-2-FOO-GG" description="FOKL-2-FOO-GG" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=20;NRz=20;S=20;Rz=20;FGz=20;NGz=20;Gz=20;Lz=20" nodes="76229 76186 76187 76189 76190 76191 76192 76193 76194 76195 76196 76197 76198 76199 76200 76230"/>
+		<stationRoute stationID="FOLM" name="FOO-1-FOKL-GG" description="FOO-1-FOKL-GG" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=20;NRz=20;S=20;Rz=20;FGz=20;NGz=20;Gz=20;Lz=20" nodes="76228 76219 76218 76217 76216 76215 76214 76213 76212 76211 76210 76209 76208 76207 76183 76182 76227"/>
+		<stationRoute stationID="FOLM" name="FOO-2-FOKL" description="FOO-2-FOKL" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="76230 76200 76199 76198 76197 76196 76195 76194 76193 76192 76191 76190 76189 76187 76186 76229"/>
+		<stationRoute stationID="FOKL" name="FMUL-1-FOLM" description="FMUL-1-FOLM" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="76223 76124 76125 76126 76127 76128 76129 76130 76131 76132 76133 76134 76135 76136 76137 76138 76139 76140 76141 76142 76224"/>
+		<stationRoute stationID="FOKL" name="FMUL-2-FOLM" description="FMUL-2-FOLM" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=20;NRz=20;S=20;Rz=20;FGz=20;NGz=20;Gz=20;Lz=20" nodes="76225 76160 76161 76162 76163 76164 76165 76166 76167 76168 76169 76170 76171 76172 76173 76174 76175 76176 76177 76178 76179 76144 76148 76226"/>
+		<stationRoute stationID="FOKL" name="FOLM-1-FMUL-GG" description="FOLM-1-FMUL-GG" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=20;NRz=20;S=20;Rz=20;FGz=20;NGz=20;Gz=20;Lz=20" nodes="76224 76142 76141 76140 76139 76138 76137 76136 76135 76134 76133 76132 76131 76130 76129 76128 76127 76126 76125 76124 76223"/>
+		<stationRoute stationID="FOKL" name="FOLM-2-FMUL" description="FOLM-2-FMUL" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="76226 76148 76144 76179 76178 76177 76176 76175 76174 76173 76172 76171 76170 76169 76168 76167 76166 76165 76164 76163 76162 76161 76160 76225"/>
+		<stationRoute stationID="FMUL" name="FOKL-2-FSHF" description="FOKL-2-FSHF" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="69070 69021 69020 69019 69012 69011 69009 69008 69007 69006 69005 69004 69003 69002 69001 69000 68999 68998 68997 68996 69071"/>
+		<stationRoute stationID="FMUL" name="FOKL-2-FSHF-GR" description="FOKL-2-FSHF-GR" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=20;NRz=20;S=20;Rz=20;FGz=20;NGz=20;Gz=20;Lz=20" nodes="69072 69059 69058 69057 69056 69055 69054 69034 69017 69016 69015 69014 69013 69010 69008 69007 69006 69005 69004 69003 69002 69001 69000 68999 68998 68997 68996 69071"/>
+		<stationRoute stationID="FMUL" name="FSHF-1-FOKL" description="FSHF-1-FOKL" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="69073 69042 69043 69044 69045 69046 69047 69048 69049 69050 69051 69052 69053 69017 69034 69054 69055 69056 69057 69058 69059 69072"/>
+		<stationRoute stationID="FMUL" name="FSHF-2-FOKL-GG" description="FSHF-2-FOKL-GG" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=20;NRz=20;S=20;Rz=20;FGz=20;NGz=20;Gz=20;Lz=20" nodes="69071 68996 68997 68998 68999 69000 69001 69002 69003 69004 69005 69006 69007 69008 69009 69011 69012 69019 69020 69021 69070"/>
+		<stationRoute stationID="FMUL" name="FSHF-2-FOKL-GR" description="FSHF-2-FOKL-GR" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=20;NRz=20;S=20;Rz=20;FGz=20;NGz=20;Gz=20;Lz=20" nodes="69071 68996 68997 68998 68999 69000 69001 69002 69003 69004 69005 69006 69007 69008 69010 69013 69014 69015 69016 69017 69034 69054 69055 69056 69057 69058 69059 69072"/>
+		<stationRoute stationID="FMH" name="FMHD-1-FOO" description="FMHD-1-FOO" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=20;NRz=20;S=20;Rz=20;FGz=20;NGz=20;Gz=20;Lz=20" nodes="66338 66323 66322 66321 66320 66319 66318 66317 66316 66315 66314 66302 66337 66336 66335 66334 66339"/>
+		<stationRoute stationID="FMH" name="FMHD-2-FOO" description="FMHD-2-FOO" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="66340 66309 66308 66307 66306 66305 66304 66303 66301 66302 66337 66336 66335 66334 66339"/>
+		<stationRoute stationID="FMH" name="FOO-1-FMHD" description="FOO-1-FMHD" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="66339 66334 66335 66336 66337 66302 66314 66315 66316 66317 66318 66319 66320 66321 66322 66323 66338"/>
+		<stationRoute stationID="FMH" name="FOO-2-FMHD" description="FOO-2-FMHD" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=20;NRz=20;S=20;Rz=20;FGz=20;NGz=20;Gz=20;Lz=20" nodes="66339 66334 66335 66336 66337 66302 66301 66303 66304 66305 66306 66307 66308 66309 66340"/>
+	</stationRoutes>
+	<evzg/>
+	<evzg-katalog/>
+</line>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<railsys>
+	<version major="1" minor="2" patchlevel="0" comment="Erzeugt von RailSys\Simu/7.6.12 am Fr 18. Jan 10:18:20 2013"/>
+	<timetable>
+		<train number="78739" class="FRz" pattern="/FRz/LICE-W/FF aus/FBRM-FF/rück" name="LICE-W/78739/700/60 + LICE-W/78739/0/ne" description="78739/1" comment="FF (aus 821) - KKB (für Abst.)." typeNumber="124" line="FF aus" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FF" stationName="Frankfurt(M) Hbf" trackID="C-4" bstfahrweg="FF-4S/H1-A104-FGUR(3603)" dwegName="3-40" departure="21:15:42" minStopTime="300" stopTime="360" regularRunningTime="159" requestedArrival="21:09:42" requestedDeparture="21:15:42" requestedTrackID="C-4" requestedBstFahrweg="FF-4S/H1-A104-FGUR(3603)" type="begin" lineID="3603" timingPoint="true" departureFix="true" zuggattung="LICE-W 14.2"/>
+				<entry stationID="FBRS" trackID="G-1" bstfahrweg="FKCH-FCX" departure="21:31:11" regularRunningTime="109" requestedDeparture="21:31:11" requestedTrackID="G-1" requestedBstFahrweg="FKCH-FCX" type="pass" trainTypeNumber="124" lineID="3627" timingPoint="true" zuggattung="LICE-W 14.2"/>
+				<entry stationID="FCX" trackID="G-2" bstfahrweg="FBRS-FBRM" departure="21:33:00" regularRunningTime="167" requestedDeparture="21:33:00" requestedTrackID="G-2" requestedBstFahrweg="FBRS-FBRM" type="pass" trainTypeNumber="124" timingPoint="true" zuggattung="LICE-W 14.2"/>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-2" bstfahrweg="FCX-FIDS" departure="21:35:47" RTMargin2="0" requestedDeparture="21:35:47" requestedTrackID="G-2" requestedBstFahrweg="FCX-FIDS" type="end" lineID="2690" timingPoint="true" zuggattung="LICE-W 14.2"/>
+			</timetableentries>
+		</train>
+	</timetable>
+</railsys>

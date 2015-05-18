@@ -1,0 +1,74 @@
+package railview.infrastructure;
+
+import railapp.infrastructure.element.dto.InfrastructureElement;
+import railapp.infrastructure.element.dto.Port;
+import railapp.infrastructure.exception.NullIdException;
+import railapp.infrastructure.service.IInfrastructureServiceUtility;
+import javafx.fxml.FXML;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+public class InfrastructureElementViewController {
+	@FXML
+    private TableView<Port> portTable;
+    @FXML
+    private TableColumn<Port, String> idColumn;
+    @FXML
+    private TableColumn<Port, String> portColumn;
+    @FXML
+    private TableColumn<Port, String> xColumn;
+    @FXML
+    private TableColumn<Port, String> yColumn;
+    
+    private IInfrastructureServiceUtility serviceUtility;
+    
+    public InfrastructureElementViewController() {}
+    
+    public IInfrastructureServiceUtility getServiceUtility() {
+    	return this.serviceUtility;
+    }
+    
+    @FXML
+    private void initialize() {
+        // Initialize the person table with the two columns.
+        idColumn.setCellValueFactory(cellData -> 
+        	new SimpleStringProperty(cellData.getValue().getElement().getId().toString()));
+        
+        portColumn.setCellValueFactory(cellData -> 
+    		new SimpleStringProperty(Integer.toString(cellData.getValue().getPortKey().getNumber())));
+        
+        xColumn.setCellValueFactory(cellData -> 
+			new SimpleStringProperty(Double.toString(cellData.getValue().getCoordinate().getX())));
+        
+        yColumn.setCellValueFactory(cellData -> 
+			new SimpleStringProperty(Double.toString(cellData.getValue().getCoordinate().getY())));
+    }
+  
+    public void setInfrastructureServiceUtility(IInfrastructureServiceUtility serviceUtility) {
+    	this.serviceUtility = serviceUtility;
+    	
+    	setPortTable(serviceUtility);
+    }
+    
+	private void setPortTable(IInfrastructureServiceUtility serviceUtility) {
+		ObservableList<Port> ports = FXCollections.observableArrayList();
+		
+		try {
+			for (InfrastructureElement element : 
+				serviceUtility.getInfrastructureElementService().findElements()) {
+				for (Port port : element.getPorts()) {
+					ports.add(port);
+				}
+			}
+		} catch (NullIdException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+				
+		portTable.setItems(ports);
+	}
+	
+}

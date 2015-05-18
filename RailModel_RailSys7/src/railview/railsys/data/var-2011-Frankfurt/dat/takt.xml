@@ -1,0 +1,1860 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<railsys>
+	<version major="1" minor="0" patchlevel="0" comment="Erzeugt von RailSys\Simu/7.6.12 am Fr 18. Jan 10:18:21 2013"/>
+	<trainpatterns>
+		<trainpattern name="FRz" parenttrainpattern=""/>
+		<trainpattern name="NRz" parenttrainpattern=""/>
+		<trainpattern name="Bedarfszuege" parenttrainpattern=""/>
+		<trainpattern name="S" parenttrainpattern=""/>
+		<trainpattern name="FGz" parenttrainpattern=""/>
+		<trainpattern name="Lz" parenttrainpattern=""/>
+		<trainpattern name="Gz" parenttrainpattern=""/>
+		<trainpattern name="NGz" parenttrainpattern=""/>
+		<trainpattern name="ICE-A" parenttrainpattern="/FRz"/>
+		<trainpattern name="ICE-W" parenttrainpattern="/FRz"/>
+		<trainpattern name="ICE-T" parenttrainpattern="/FRz"/>
+		<trainpattern name="EC" parenttrainpattern="/FRz"/>
+		<trainpattern name="IC" parenttrainpattern="/FRz"/>
+		<trainpattern name="CNL" parenttrainpattern="/FRz"/>
+		<trainpattern name="EN" parenttrainpattern="/FRz"/>
+		<trainpattern name="PbZ-D" parenttrainpattern="/FRz"/>
+		<trainpattern name="TGV" parenttrainpattern="/FRz"/>
+		<trainpattern name="LICE-A" parenttrainpattern="/FRz"/>
+		<trainpattern name="LICE-W" parenttrainpattern="/FRz"/>
+		<trainpattern name="Lr" parenttrainpattern="/FRz"/>
+		<trainpattern name="LICE-T" parenttrainpattern="/FRz"/>
+		<trainpattern name="Zwangshalt in" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="Linie 20," parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="Linie 20 AK" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="Linie 12," parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="200611 -" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="Linie 12 BHF" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="Linie 22," parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="Ä1: Zeit" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="Linie 11," parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="Linie 11" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="0,7´ BZu" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="Ä: vorh" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="Linie 25," parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="Linie 31," parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="Linie 03" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="Hmbg-Sprinter Linie 4" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="FF-FWF" parenttrainpattern="/FRz/ICE-A/Zwangshalt in"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/Zwangshalt in/FF-FWF"/>
+		<trainpattern name="FMHO-FWF" parenttrainpattern="/FRz/ICE-A/Linie 20,"/>
+		<trainpattern name="FMHO-FRA" parenttrainpattern="/FRz/ICE-A/Linie 20,"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/Linie 20,/FMHO-FWF"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/Linie 20,/FMHO-FWF"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/Linie 20,/FMHO-FRA"/>
+		<trainpattern name="FMHO-FWF" parenttrainpattern="/FRz/ICE-A/Linie 20 AK"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/Linie 20 AK/FMHO-FWF"/>
+		<trainpattern name="FF-FWF" parenttrainpattern="/FRz/ICE-A/Ohne Linie"/>
+		<trainpattern name="FRA-FWF" parenttrainpattern="/FRz/ICE-A/Ohne Linie"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/Ohne Linie/FF-FWF"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/Ohne Linie/FF-FWF"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/Ohne Linie/FRA-FWF"/>
+		<trainpattern name="FMHO-FWF" parenttrainpattern="/FRz/ICE-A/Linie 12,"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/Linie 12,/FMHO-FWF"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/Linie 12,/FMHO-FWF"/>
+		<trainpattern name="FMHO-FWF" parenttrainpattern="/FRz/ICE-A/200611 -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/200611 -/FMHO-FWF"/>
+		<trainpattern name="FMHO-FWF" parenttrainpattern="/FRz/ICE-A/Linie 12 BHF"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/Linie 12 BHF/FMHO-FWF"/>
+		<trainpattern name="FMHO-FWF" parenttrainpattern="/FRz/ICE-A/Linie 22,"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/FRz/ICE-A/Linie 22,"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/Linie 22,/FMHO-FWF"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/Linie 22,/FMHO-FWF"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/Linie 22,/FF-FMHO"/>
+		<trainpattern name="FF-FWF" parenttrainpattern="/FRz/ICE-A/Ä1: Zeit"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/Ä1: Zeit/FF-FWF"/>
+		<trainpattern name="FMHO-FWF" parenttrainpattern="/FRz/ICE-A/Linie 11,"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/Linie 11,/FMHO-FWF"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/Linie 11,/FMHO-FWF"/>
+		<trainpattern name="FMHO-FWF" parenttrainpattern="/FRz/ICE-A/Linie 11"/>
+		<trainpattern name="FF-FWF" parenttrainpattern="/FRz/ICE-A/Linie 11"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/Linie 11/FMHO-FWF"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/Linie 11/FF-FWF"/>
+		<trainpattern name="FMHO-FWF" parenttrainpattern="/FRz/ICE-A/0,7´ BZu"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/0,7´ BZu/FMHO-FWF"/>
+		<trainpattern name="FMHO-FWF" parenttrainpattern="/FRz/ICE-A/Ä: vorh"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/Ä: vorh/FMHO-FWF"/>
+		<trainpattern name="FMHO-FRA" parenttrainpattern="/FRz/ICE-A/Linie 25,"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/Linie 25,/FMHO-FRA"/>
+		<trainpattern name="FMHO-FRA" parenttrainpattern="/FRz/ICE-A/Linie 31,"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/Linie 31,/FMHO-FRA"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/Linie 31,/FMHO-FRA"/>
+		<trainpattern name="FMHO-FWF" parenttrainpattern="/FRz/ICE-A/Linie 03"/>
+		<trainpattern name="FEZ-FMHO" parenttrainpattern="/FRz/ICE-A/Linie 03"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/Linie 03/FMHO-FWF"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/Linie 03/FMHO-FWF"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/Linie 03/FEZ-FMHO"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/FRz/ICE-A/Hmbg-Sprinter Linie 4"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/Hmbg-Sprinter Linie 4/F836A-FF"/>
+		<trainpattern name="FF -" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="XBB -" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="XSB -" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="XNAC -" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="KK, So" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="KK, Mo-Fr" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="EDO -" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="HH -" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="KK, Mo" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="MH -" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="EMST -" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="AA -" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="KK -" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="EDO, Mo" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="RK, Mo-Do+Sa" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="RK, Mo-Fr" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="TS, Mo" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="KK, Sa" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="EE, Sa" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="EE, So" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="KD -" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="EE -" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="EOB -" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="NN, Mo" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="FD -" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="FBRM-FF" parenttrainpattern="/FRz/ICE-W/FF -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-W/FF -/FBRM-FF"/>
+		<trainpattern name="FBRM-FF" parenttrainpattern="/FRz/ICE-W/XBB -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-W/XBB -/FBRM-FF"/>
+		<trainpattern name="FBRM-FWF" parenttrainpattern="/FRz/ICE-W/XSB -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-W/XSB -/FBRM-FWF"/>
+		<trainpattern name="FBRM-FWF" parenttrainpattern="/FRz/ICE-W/XNAC -"/>
+		<trainpattern name="FBRM-FF" parenttrainpattern="/FRz/ICE-W/XNAC -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-W/XNAC -/FBRM-FWF"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-W/XNAC -/FBRM-FF"/>
+		<trainpattern name="FBRM-FWF" parenttrainpattern="/FRz/ICE-W/KK, So"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-W/KK, So/FBRM-FWF"/>
+		<trainpattern name="FBRM-FWF" parenttrainpattern="/FRz/ICE-W/KK, Mo-Fr"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-W/KK, Mo-Fr/FBRM-FWF"/>
+		<trainpattern name="FBRM-FWF" parenttrainpattern="/FRz/ICE-W/EDO -"/>
+		<trainpattern name="FBRM-FMHO" parenttrainpattern="/FRz/ICE-W/EDO -"/>
+		<trainpattern name="FBRM-FF" parenttrainpattern="/FRz/ICE-W/EDO -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-W/EDO -/FBRM-FWF"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-W/EDO -/FBRM-FMHO"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-W/EDO -/FBRM-FF"/>
+		<trainpattern name="FBRM-FWF" parenttrainpattern="/FRz/ICE-W/HH -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-W/HH -/FBRM-FWF"/>
+		<trainpattern name="FBRM-FWF" parenttrainpattern="/FRz/ICE-W/KK, Mo"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-W/KK, Mo/FBRM-FWF"/>
+		<trainpattern name="FBRM-FWF" parenttrainpattern="/FRz/ICE-W/MH -"/>
+		<trainpattern name="FBRM-FMHO" parenttrainpattern="/FRz/ICE-W/MH -"/>
+		<trainpattern name="FBRM-FHD" parenttrainpattern="/FRz/ICE-W/MH -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-W/MH -/FBRM-FWF"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-W/MH -/FBRM-FMHO"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-W/MH -/FBRM-FHD"/>
+		<trainpattern name="FBRM-FWF" parenttrainpattern="/FRz/ICE-W/EMST -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-W/EMST -/FBRM-FWF"/>
+		<trainpattern name="FBRM-FWF" parenttrainpattern="/FRz/ICE-W/AA -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-W/AA -/FBRM-FWF"/>
+		<trainpattern name="FBRM-FMHO" parenttrainpattern="/FRz/ICE-W/KK -"/>
+		<trainpattern name="FBRM-FWF" parenttrainpattern="/FRz/ICE-W/KK -"/>
+		<trainpattern name="FBRM-FF" parenttrainpattern="/FRz/ICE-W/KK -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-W/KK -/FBRM-FMHO"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-W/KK -/FBRM-FWF"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-W/KK -/FBRM-FF"/>
+		<trainpattern name="FBRM-FHD" parenttrainpattern="/FRz/ICE-W/EDO, Mo"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-W/EDO, Mo/FBRM-FHD"/>
+		<trainpattern name="FBRM-FWF" parenttrainpattern="/FRz/ICE-W/RK, Mo-Do+Sa"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-W/RK, Mo-Do+Sa/FBRM-FWF"/>
+		<trainpattern name="FBRM-FWF" parenttrainpattern="/FRz/ICE-W/RK, Mo-Fr"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-W/RK, Mo-Fr/FBRM-FWF"/>
+		<trainpattern name="FBRM-FWF" parenttrainpattern="/FRz/ICE-W/TS, Mo"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-W/TS, Mo/FBRM-FWF"/>
+		<trainpattern name="FBRM-FF" parenttrainpattern="/FRz/ICE-W/KK, Sa"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-W/KK, Sa/FBRM-FF"/>
+		<trainpattern name="FBRM-FHD" parenttrainpattern="/FRz/ICE-W/EE, Sa"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-W/EE, Sa/FBRM-FHD"/>
+		<trainpattern name="FBRM-FHD" parenttrainpattern="/FRz/ICE-W/EE, So"/>
+		<trainpattern name="FBRM-FMHO" parenttrainpattern="/FRz/ICE-W/EE, So"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-W/EE, So/FBRM-FHD"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-W/EE, So/FBRM-FMHO"/>
+		<trainpattern name="FBRM-FHD" parenttrainpattern="/FRz/ICE-W/KD -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-W/KD -/FBRM-FHD"/>
+		<trainpattern name="FBRM-FMHO" parenttrainpattern="/FRz/ICE-W/EE -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-W/EE -/FBRM-FMHO"/>
+		<trainpattern name="FBRM-FF" parenttrainpattern="/FRz/ICE-W/EOB -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-W/EOB -/FBRM-FF"/>
+		<trainpattern name="FBRM-FMHO" parenttrainpattern="/FRz/ICE-W/NN, Mo"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-W/NN, Mo/FBRM-FMHO"/>
+		<trainpattern name="FBRM-FEZ" parenttrainpattern="/FRz/ICE-W/FD -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-W/FD -/FBRM-FEZ"/>
+		<trainpattern name="FF-FWF" parenttrainpattern="/FRz/ICE-W/Ohne Linie"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-W/Ohne Linie/FF-FWF"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-W/Ohne Linie/FF-FWF"/>
+		<trainpattern name="Linie 91," parenttrainpattern="/FRz/ICE-T"/>
+		<trainpattern name="Linie 501" parenttrainpattern="/FRz/ICE-T"/>
+		<trainpattern name="Linie 50" parenttrainpattern="/FRz/ICE-T"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/FRz/ICE-T"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/FRz/ICE-T/Linie 91,"/>
+		<trainpattern name="FMHO-FRA" parenttrainpattern="/FRz/ICE-T/Linie 91,"/>
+		<trainpattern name="FF-FHD" parenttrainpattern="/FRz/ICE-T/Linie 91,"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-T/Linie 91,/FF-FMHO"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-T/Linie 91,/FF-FMHO"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-T/Linie 91,/FMHO-FRA"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-T/Linie 91,/FMHO-FRA"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-T/Linie 91,/FF-FHD"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/FRz/ICE-T/Linie 501"/>
+		<trainpattern name="FMHO-FRA" parenttrainpattern="/FRz/ICE-T/Linie 501"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-T/Linie 501/FF-FMHO"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-T/Linie 501/FF-FMHO"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-T/Linie 501/FMHO-FRA"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-T/Linie 501/FMHO-FRA"/>
+		<trainpattern name="FEZ-FMHO" parenttrainpattern="/FRz/ICE-T/Linie 50"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/FRz/ICE-T/Linie 50"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-T/Linie 50/FEZ-FMHO"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-T/Linie 50/F836A-FF"/>
+		<trainpattern name="FF-FWF" parenttrainpattern="/FRz/ICE-T/Ohne Linie"/>
+		<trainpattern name="FF-FRA" parenttrainpattern="/FRz/ICE-T/Ohne Linie"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-T/Ohne Linie/FF-FWF"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-T/Ohne Linie/FF-FRA"/>
+		<trainpattern name="Linie 62" parenttrainpattern="/FRz/EC"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/FRz/EC"/>
+		<trainpattern name="FEZ-FFBS" parenttrainpattern="/FRz/EC/Linie 62"/>
+		<trainpattern name="FEZ-FF" parenttrainpattern="/FRz/EC/Linie 62"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/EC/Linie 62/FEZ-FFBS"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/EC/Linie 62/FEZ-FF"/>
+		<trainpattern name="F836A-FFBS" parenttrainpattern="/FRz/EC/Ohne Linie"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/FRz/EC/Ohne Linie"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/EC/Ohne Linie/F836A-FFBS"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/EC/Ohne Linie/F836A-FF"/>
+		<trainpattern name="außerhalb der" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="XSZH -" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="Linie 22," parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="Linie 62" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="Linie 50" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="Linie 16," parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="Linie 31," parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="L 50" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="Anschluss aus" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="Linie 502" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="L 26" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="Linie 26" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="a T" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="FHP 270m" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/FRz/IC/außerhalb der"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/außerhalb der/F836A-FF"/>
+		<trainpattern name="FEZ-FF" parenttrainpattern="/FRz/IC/XSZH -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/XSZH -/FEZ-FF"/>
+		<trainpattern name="FMHO-FWF" parenttrainpattern="/FRz/IC/Linie 22,"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/Linie 22,/FMHO-FWF"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/Linie 22,/FMHO-FWF"/>
+		<trainpattern name="FEZ-FF" parenttrainpattern="/FRz/IC/Linie 62"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/Linie 62/FEZ-FF"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/FRz/IC/Linie 50"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/Linie 50/FF-FMHO"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/Linie 50/FF-FMHO"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/FRz/IC/Linie 16,"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/Linie 16,/FF-FMHO"/>
+		<trainpattern name="FF-FRA" parenttrainpattern="/FRz/IC/Ohne Linie"/>
+		<trainpattern name="FEZ-FF" parenttrainpattern="/FRz/IC/Ohne Linie"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/FRz/IC/Ohne Linie"/>
+		<trainpattern name="FEZ-FFBS" parenttrainpattern="/FRz/IC/Ohne Linie"/>
+		<trainpattern name="FF-FWF" parenttrainpattern="/FRz/IC/Ohne Linie"/>
+		<trainpattern name="FF-FFBS" parenttrainpattern="/FRz/IC/Ohne Linie"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/Ohne Linie/FF-FRA"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/Ohne Linie/FF-FRA"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/Ohne Linie/FEZ-FF"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/Ohne Linie/F836A-FF"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/Ohne Linie/FEZ-FFBS"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/Ohne Linie/FF-FWF"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/Ohne Linie/FF-FWF"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/Ohne Linie/FF-FFBS"/>
+		<trainpattern name="FMHO-FRA" parenttrainpattern="/FRz/IC/Linie 31,"/>
+		<trainpattern name="FHD-FRA" parenttrainpattern="/FRz/IC/Linie 31,"/>
+		<trainpattern name="FF-FHD" parenttrainpattern="/FRz/IC/Linie 31,"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/FRz/IC/Linie 31,"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/Linie 31,/FMHO-FRA"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/Linie 31,/FMHO-FRA"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/Linie 31,/FHD-FRA"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/Linie 31,/FF-FHD"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/Linie 31,/FF-FMHO"/>
+		<trainpattern name="FEZ-FF" parenttrainpattern="/FRz/IC/L 50"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/FRz/IC/L 50"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/L 50/FEZ-FF"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/L 50/F836A-FF"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/FRz/IC/Anschluss aus"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/Anschluss aus/F836A-FF"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/FRz/IC/Linie 502"/>
+		<trainpattern name="FFLF-FHD" parenttrainpattern="/FRz/IC/Linie 502"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/Linie 502/FF-FMHO"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/Linie 502/FF-FMHO"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/Linie 502/FFLF-FHD"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/Linie 502/FFLF-FHD"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/FRz/IC/L 26"/>
+		<trainpattern name="F836A-FFBS" parenttrainpattern="/FRz/IC/L 26"/>
+		<trainpattern name="FF-FFBS" parenttrainpattern="/FRz/IC/L 26"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/L 26/F836A-FF"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/L 26/F836A-FFBS"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/L 26/FF-FFBS"/>
+		<trainpattern name="F836A-FFBS" parenttrainpattern="/FRz/IC/Linie 26"/>
+		<trainpattern name="FEZ-FFBS" parenttrainpattern="/FRz/IC/Linie 26"/>
+		<trainpattern name="FF-FFBS" parenttrainpattern="/FRz/IC/Linie 26"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/Linie 26/F836A-FFBS"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/Linie 26/FEZ-FFBS"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/Linie 26/FF-FFBS"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/FRz/IC/a T"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/a T/F836A-FF"/>
+		<trainpattern name="FEZ-FF" parenttrainpattern="/FRz/IC/FHP 270m"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/FHP 270m/FEZ-FF"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/FRz/CNL"/>
+		<trainpattern name="XFPO- BLO," parenttrainpattern="/FRz/CNL"/>
+		<trainpattern name="DH -" parenttrainpattern="/FRz/CNL"/>
+		<trainpattern name="XSZH -" parenttrainpattern="/FRz/CNL"/>
+		<trainpattern name="mit Halt" parenttrainpattern="/FRz/CNL"/>
+		<trainpattern name="XDKH -" parenttrainpattern="/FRz/CNL"/>
+		<trainpattern name="FRA-FWF" parenttrainpattern="/FRz/CNL/Ohne Linie"/>
+		<trainpattern name="FMHO-FWF" parenttrainpattern="/FRz/CNL/Ohne Linie"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/CNL/Ohne Linie/FRA-FWF"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/CNL/Ohne Linie/FRA-FWF"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/CNL/Ohne Linie/FMHO-FWF"/>
+		<trainpattern name="FFBS-FWF" parenttrainpattern="/FRz/CNL/XFPO- BLO,"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/CNL/XFPO- BLO,/FFBS-FWF"/>
+		<trainpattern name="FHD-FWF" parenttrainpattern="/FRz/CNL/DH -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/CNL/DH -/FHD-FWF"/>
+		<trainpattern name="FMHO-FWF" parenttrainpattern="/FRz/CNL/XSZH -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/CNL/XSZH -/FMHO-FWF"/>
+		<trainpattern name="FHD-FWF" parenttrainpattern="/FRz/CNL/mit Halt"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/CNL/mit Halt/FHD-FWF"/>
+		<trainpattern name="FHD-FWF" parenttrainpattern="/FRz/CNL/XDKH -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/CNL/XDKH -/FHD-FWF"/>
+		<trainpattern name="NN -" parenttrainpattern="/FRz/EN"/>
+		<trainpattern name="FF -" parenttrainpattern="/FRz/EN"/>
+		<trainpattern name="FHD-FRA" parenttrainpattern="/FRz/EN/NN -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/EN/NN -/FHD-FRA"/>
+		<trainpattern name="FMHO-FRA" parenttrainpattern="/FRz/EN/FF -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/EN/FF -/FMHO-FRA"/>
+		<trainpattern name="alt 1963" parenttrainpattern="/FRz/PbZ-D"/>
+		<trainpattern name="FF-FWF" parenttrainpattern="/FRz/PbZ-D/alt 1963"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/PbZ-D/alt 1963/FF-FWF"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/FRz/TGV"/>
+		<trainpattern name="FF-FWF" parenttrainpattern="/FRz/TGV/Ohne Linie"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/TGV/Ohne Linie/FF-FWF"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/TGV/Ohne Linie/FF-FWF"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/FRz/LICE-A"/>
+		<trainpattern name="aus 1097" parenttrainpattern="/FRz/LICE-A"/>
+		<trainpattern name="wird 1092" parenttrainpattern="/FRz/LICE-A"/>
+		<trainpattern name="FF-FF" parenttrainpattern="/FRz/LICE-A/Ohne Linie"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/LICE-A/Ohne Linie/FF-FF"/>
+		<trainpattern name="FEZ-FF" parenttrainpattern="/FRz/LICE-A/aus 1097"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/LICE-A/aus 1097/FEZ-FF"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/FRz/LICE-A/wird 1092"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/LICE-A/wird 1092/F836A-FF"/>
+		<trainpattern name="FHOE -" parenttrainpattern="/FRz/LICE-W"/>
+		<trainpattern name="FGM -" parenttrainpattern="/FRz/LICE-W"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/FRz/LICE-W"/>
+		<trainpattern name="FGM, als" parenttrainpattern="/FRz/LICE-W"/>
+		<trainpattern name="FF aus" parenttrainpattern="/FRz/LICE-W"/>
+		<trainpattern name="FGM-FHOE" parenttrainpattern="/FRz/LICE-W/FHOE -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/LICE-W/FHOE -/FGM-FHOE"/>
+		<trainpattern name="FGM-FHOE" parenttrainpattern="/FRz/LICE-W/FGM -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/LICE-W/FGM -/FGM-FHOE"/>
+		<trainpattern name="FF-FGM" parenttrainpattern="/FRz/LICE-W/Ohne Linie"/>
+		<trainpattern name="F836A-FGM" parenttrainpattern="/FRz/LICE-W/Ohne Linie"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/LICE-W/Ohne Linie/FF-FGM"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/LICE-W/Ohne Linie/F836A-FGM"/>
+		<trainpattern name="FGM-FRA" parenttrainpattern="/FRz/LICE-W/FGM, als"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/LICE-W/FGM, als/FGM-FRA"/>
+		<trainpattern name="FBRM-FF" parenttrainpattern="/FRz/LICE-W/FF aus"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/LICE-W/FF aus/FBRM-FF"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/FRz/Lr"/>
+		<trainpattern name="aus 2152" parenttrainpattern="/FRz/Lr"/>
+		<trainpattern name="FW aus" parenttrainpattern="/FRz/Lr"/>
+		<trainpattern name="FF-FF" parenttrainpattern="/FRz/Lr/Ohne Linie"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/Lr/Ohne Linie/FF-FF"/>
+		<trainpattern name="FFLF-FGM" parenttrainpattern="/FRz/Lr/aus 2152"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/Lr/aus 2152/FFLF-FGM"/>
+		<trainpattern name="FF-FFH" parenttrainpattern="/FRz/Lr/FW aus"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/Lr/FW aus/FF-FFH"/>
+		<trainpattern name="FW aus" parenttrainpattern="/FRz/LICE-T"/>
+		<trainpattern name="FFH-FGM" parenttrainpattern="/FRz/LICE-T/FW aus"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/LICE-T/FW aus/FFH-FGM"/>
+		<trainpattern name="PbZ-D" parenttrainpattern="/NRz"/>
+		<trainpattern name="RE" parenttrainpattern="/NRz"/>
+		<trainpattern name="RE-D" parenttrainpattern="/NRz"/>
+		<trainpattern name="RB-D" parenttrainpattern="/NRz"/>
+		<trainpattern name="RB" parenttrainpattern="/NRz"/>
+		<trainpattern name="Lr" parenttrainpattern="/NRz"/>
+		<trainpattern name="DPN" parenttrainpattern="/NRz"/>
+		<trainpattern name="DLr" parenttrainpattern="/NRz"/>
+		<trainpattern name="Lt" parenttrainpattern="/NRz"/>
+		<trainpattern name="Lr-D" parenttrainpattern="/NRz"/>
+		<trainpattern name="ALA -" parenttrainpattern="/NRz/PbZ-D"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/NRz/PbZ-D/ALA -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/PbZ-D/ALA -/FF-FMHO"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/NRz/RE"/>
+		<trainpattern name="Verstärkerleistung HVZ," parenttrainpattern="/NRz/RE"/>
+		<trainpattern name="RE " parenttrainpattern="/NRz/RE"/>
+		<trainpattern name="FFU -" parenttrainpattern="/NRz/RE"/>
+		<trainpattern name="FB -" parenttrainpattern="/NRz/RE"/>
+		<trainpattern name="NWH -" parenttrainpattern="/NRz/RE"/>
+		<trainpattern name="FF -" parenttrainpattern="/NRz/RE"/>
+		<trainpattern name="FFLU -" parenttrainpattern="/NRz/RE"/>
+		<trainpattern name="Auschreibungsfahrplan Teilnetz" parenttrainpattern="/NRz/RE"/>
+		<trainpattern name="FH -" parenttrainpattern="/NRz/RE"/>
+		<trainpattern name="FKLM -" parenttrainpattern="/NRz/RE"/>
+		<trainpattern name="FKCH -" parenttrainpattern="/NRz/RE"/>
+		<trainpattern name="NAH -" parenttrainpattern="/NRz/RE"/>
+		<trainpattern name="vereinigt mi" parenttrainpattern="/NRz/RE"/>
+		<trainpattern name="vereinigt mit" parenttrainpattern="/NRz/RE"/>
+		<trainpattern name="FF-FRA" parenttrainpattern="/NRz/RE/Ohne Linie"/>
+		<trainpattern name="FF-FFBS" parenttrainpattern="/NRz/RE/Ohne Linie"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE/Ohne Linie/FF-FRA"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE/Ohne Linie/FF-FRA"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE/Ohne Linie/FF-FFBS"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE/Ohne Linie/FF-FFBS"/>
+		<trainpattern name="FF-FHD" parenttrainpattern="/NRz/RE/Verstärkerleistung HVZ,"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/NRz/RE/Verstärkerleistung HVZ,"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE/Verstärkerleistung HVZ,/FF-FHD"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE/Verstärkerleistung HVZ,/FF-FMHO"/>
+		<trainpattern name="FF-FHD" parenttrainpattern="/NRz/RE/RE "/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE/RE /FF-FHD"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/NRz/RE/FFU -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE/FFU -/FF-FMHO"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/NRz/RE/FB -"/>
+		<trainpattern name="FF-FHD" parenttrainpattern="/NRz/RE/FB -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE/FB -/FF-FMHO"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE/FB -/FF-FHD"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/NRz/RE/NWH -"/>
+		<trainpattern name="FF-FHD" parenttrainpattern="/NRz/RE/NWH -"/>
+		<trainpattern name="FKCH-FMHO" parenttrainpattern="/NRz/RE/NWH -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE/NWH -/FF-FMHO"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE/NWH -/FF-FHD"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE/NWH -/FKCH-FMHO"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/NRz/RE/FF -"/>
+		<trainpattern name="FF-FHD" parenttrainpattern="/NRz/RE/FF -"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE/FF -/FF-FMHO"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE/FF -/FF-FHD"/>
+		<trainpattern name="FFLU-FHD" parenttrainpattern="/NRz/RE/FFLU -"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE/FFLU -/FFLU-FHD"/>
+		<trainpattern name="FF-FFBS" parenttrainpattern="/NRz/RE/Auschreibungsfahrplan Teilnetz"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE/Auschreibungsfahrplan Teilnetz/FF-FFBS"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/NRz/RE/FH -"/>
+		<trainpattern name="FFLU-FHD" parenttrainpattern="/NRz/RE/FH -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE/FH -/FF-FMHO"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE/FH -/FFLU-FHD"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/NRz/RE/FKLM -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE/FKLM -/FF-FMHO"/>
+		<trainpattern name="FHD-FKCH" parenttrainpattern="/NRz/RE/FKCH -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE/FKCH -/FHD-FKCH"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/NRz/RE/NAH -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE/NAH -/FF-FMHO"/>
+		<trainpattern name="FF-FFBS" parenttrainpattern="/NRz/RE/vereinigt mi"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE/vereinigt mi/FF-FFBS"/>
+		<trainpattern name="FF-FFBS" parenttrainpattern="/NRz/RE/vereinigt mit"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE/vereinigt mit/FF-FFBS"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="Frankfurt -" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="Ausschreibungsfahrplan AS Main-Weser" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="Ausschreibungsfahrplan Teilnetz" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="FF -" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="FFU -FF" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="FFU -" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="wg 1354" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="NWH -" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="alternativ 160" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="FL -" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="FH -" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="FF-FFBS" parenttrainpattern="/NRz/RE-D/Ohne Linie"/>
+		<trainpattern name="FF-FRA" parenttrainpattern="/NRz/RE-D/Ohne Linie"/>
+		<trainpattern name="FF-FWF" parenttrainpattern="/NRz/RE-D/Ohne Linie"/>
+		<trainpattern name="FFBS-FFW" parenttrainpattern="/NRz/RE-D/Ohne Linie"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE-D/Ohne Linie/FF-FFBS"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE-D/Ohne Linie/FF-FFBS"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE-D/Ohne Linie/FF-FRA"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE-D/Ohne Linie/FF-FRA"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE-D/Ohne Linie/FF-FWF"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE-D/Ohne Linie/FF-FWF"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE-D/Ohne Linie/FFBS-FFW"/>
+		<trainpattern name="FF-FFBS" parenttrainpattern="/NRz/RE-D/Frankfurt -"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE-D/Frankfurt -/FF-FFBS"/>
+		<trainpattern name="FF-FFBS" parenttrainpattern="/NRz/RE-D/Ausschreibungsfahrplan AS Main-Weser"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE-D/Ausschreibungsfahrplan AS Main-Weser/FF-FFBS"/>
+		<trainpattern name="FF-FFBS" parenttrainpattern="/NRz/RE-D/Ausschreibungsfahrplan Teilnetz"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE-D/Ausschreibungsfahrplan Teilnetz/FF-FFBS"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/NRz/RE-D/FF -"/>
+		<trainpattern name="FF-FHD" parenttrainpattern="/NRz/RE-D/FF -"/>
+		<trainpattern name="FF-FKRI" parenttrainpattern="/NRz/RE-D/FF -"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE-D/FF -/FF-FMHO"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE-D/FF -/FF-FHD"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE-D/FF -/FF-FKRI"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/NRz/RE-D/FFU -FF"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE-D/FFU -FF/FF-FMHO"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/NRz/RE-D/FFU -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE-D/FFU -/FF-FMHO"/>
+		<trainpattern name="FF-FWF" parenttrainpattern="/NRz/RE-D/wg 1354"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE-D/wg 1354/FF-FWF"/>
+		<trainpattern name="FF-FHD" parenttrainpattern="/NRz/RE-D/NWH -"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/NRz/RE-D/NWH -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE-D/NWH -/FF-FHD"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE-D/NWH -/FF-FMHO"/>
+		<trainpattern name="FEZ-FF" parenttrainpattern="/NRz/RE-D/alternativ 160"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/NRz/RE-D/alternativ 160"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE-D/alternativ 160/FEZ-FF"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE-D/alternativ 160/F836A-FF"/>
+		<trainpattern name="FF-FKRI" parenttrainpattern="/NRz/RE-D/FL -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE-D/FL -/FF-FKRI"/>
+		<trainpattern name="FFLU-FHD" parenttrainpattern="/NRz/RE-D/FH -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE-D/FH -/FFLU-FHD"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/NRz/RB-D"/>
+		<trainpattern name="alt 12753" parenttrainpattern="/NRz/RB-D"/>
+		<trainpattern name="FF -" parenttrainpattern="/NRz/RB-D"/>
+		<trainpattern name="alternativ 146" parenttrainpattern="/NRz/RB-D"/>
+		<trainpattern name="alt 15441" parenttrainpattern="/NRz/RB-D"/>
+		<trainpattern name="alternativ 160km" parenttrainpattern="/NRz/RB-D"/>
+		<trainpattern name="alternativ 160" parenttrainpattern="/NRz/RB-D"/>
+		<trainpattern name="alt 15450" parenttrainpattern="/NRz/RB-D"/>
+		<trainpattern name="alt 15452" parenttrainpattern="/NRz/RB-D"/>
+		<trainpattern name="alt 15453" parenttrainpattern="/NRz/RB-D"/>
+		<trainpattern name="alt 15454" parenttrainpattern="/NRz/RB-D"/>
+		<trainpattern name="alt 15457" parenttrainpattern="/NRz/RB-D"/>
+		<trainpattern name="alt 15461" parenttrainpattern="/NRz/RB-D"/>
+		<trainpattern name="alt 15465" parenttrainpattern="/NRz/RB-D"/>
+		<trainpattern name="alt 15470" parenttrainpattern="/NRz/RB-D"/>
+		<trainpattern name="alt 15473" parenttrainpattern="/NRz/RB-D"/>
+		<trainpattern name="alt 15477" parenttrainpattern="/NRz/RB-D"/>
+		<trainpattern name="alt 15478" parenttrainpattern="/NRz/RB-D"/>
+		<trainpattern name="alt 15479" parenttrainpattern="/NRz/RB-D"/>
+		<trainpattern name="alt 15303" parenttrainpattern="/NRz/RB-D"/>
+		<trainpattern name="alt 15306" parenttrainpattern="/NRz/RB-D"/>
+		<trainpattern name="FL -" parenttrainpattern="/NRz/RB-D"/>
+		<trainpattern name="FWAE -" parenttrainpattern="/NRz/RB-D"/>
+		<trainpattern name="abw wg" parenttrainpattern="/NRz/RB-D"/>
+		<trainpattern name="FBSS -" parenttrainpattern="/NRz/RB-D"/>
+		<trainpattern name="FF -FWAE" parenttrainpattern="/NRz/RB-D"/>
+		<trainpattern name="FF-FWF" parenttrainpattern="/NRz/RB-D/Ohne Linie"/>
+		<trainpattern name="FF-FRA" parenttrainpattern="/NRz/RB-D/Ohne Linie"/>
+		<trainpattern name="FEZ-FF" parenttrainpattern="/NRz/RB-D/Ohne Linie"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB-D/Ohne Linie/FF-FWF"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB-D/Ohne Linie/FF-FRA"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB-D/Ohne Linie/FEZ-FF"/>
+		<trainpattern name="FF-FRA" parenttrainpattern="/NRz/RB-D/alt 12753"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB-D/alt 12753/FF-FRA"/>
+		<trainpattern name="FF-FHD" parenttrainpattern="/NRz/RB-D/FF -"/>
+		<trainpattern name="FF-FKRI" parenttrainpattern="/NRz/RB-D/FF -"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/NRz/RB-D/FF -"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB-D/FF -/FF-FHD"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB-D/FF -/FF-FKRI"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB-D/FF -/FF-FMHO"/>
+		<trainpattern name="285t alt" parenttrainpattern="/NRz/RB-D/alternativ 146"/>
+		<trainpattern name="285" parenttrainpattern="/NRz/RB-D/alternativ 146"/>
+		<trainpattern name="FEZ-FF" parenttrainpattern="/NRz/RB-D/alternativ 146/285t alt"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/NRz/RB-D/alternativ 146/285t alt"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB-D/alternativ 146/285t alt/FEZ-FF"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB-D/alternativ 146/285t alt/F836A-FF"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/NRz/RB-D/alternativ 146/285"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB-D/alternativ 146/285/F836A-FF"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/NRz/RB-D/alt 15441"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB-D/alt 15441/F836A-FF"/>
+		<trainpattern name="h,194R+Mg alt" parenttrainpattern="/NRz/RB-D/alternativ 160km"/>
+		<trainpattern name="FEZ-FF" parenttrainpattern="/NRz/RB-D/alternativ 160km/h,194R+Mg alt"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB-D/alternativ 160km/h,194R+Mg alt/FEZ-FF"/>
+		<trainpattern name="FEZ-FF" parenttrainpattern="/NRz/RB-D/alternativ 160"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/NRz/RB-D/alternativ 160"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB-D/alternativ 160/FEZ-FF"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB-D/alternativ 160/F836A-FF"/>
+		<trainpattern name="FEZ-FF" parenttrainpattern="/NRz/RB-D/alt 15450"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB-D/alt 15450/FEZ-FF"/>
+		<trainpattern name="FEZ-FF" parenttrainpattern="/NRz/RB-D/alt 15452"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB-D/alt 15452/FEZ-FF"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/NRz/RB-D/alt 15453"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB-D/alt 15453/F836A-FF"/>
+		<trainpattern name="FEZ-FF" parenttrainpattern="/NRz/RB-D/alt 15454"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB-D/alt 15454/FEZ-FF"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/NRz/RB-D/alt 15457"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB-D/alt 15457/F836A-FF"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/NRz/RB-D/alt 15461"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB-D/alt 15461/F836A-FF"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/NRz/RB-D/alt 15465"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB-D/alt 15465/F836A-FF"/>
+		<trainpattern name="FEZ-FF" parenttrainpattern="/NRz/RB-D/alt 15470"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB-D/alt 15470/FEZ-FF"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/NRz/RB-D/alt 15473"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB-D/alt 15473/F836A-FF"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/NRz/RB-D/alt 15477"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB-D/alt 15477/F836A-FF"/>
+		<trainpattern name="FEZ-FF" parenttrainpattern="/NRz/RB-D/alt 15478"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB-D/alt 15478/FEZ-FF"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/NRz/RB-D/alt 15479"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB-D/alt 15479/F836A-FF"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/NRz/RB-D/alt 15303"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB-D/alt 15303/F836A-FF"/>
+		<trainpattern name="FEZ-FF" parenttrainpattern="/NRz/RB-D/alt 15306"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB-D/alt 15306/FEZ-FF"/>
+		<trainpattern name="FF-FKRI" parenttrainpattern="/NRz/RB-D/FL -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB-D/FL -/FF-FKRI"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/NRz/RB-D/FWAE -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB-D/FWAE -/FF-FMHO"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/NRz/RB-D/abw wg"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB-D/abw wg/FF-FMHO"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/NRz/RB-D/FBSS -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB-D/FBSS -/FF-FMHO"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/NRz/RB-D/FF -FWAE"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB-D/FF -FWAE/FF-FMHO"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="FF -" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="NAH -" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="FFS -" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="FKLM -" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="FH -" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="FF " parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="FBSS -" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="alternativ 2x" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="alternativ 2x646 15989" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15984" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15991" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15964" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15901" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="aus 15808" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15966" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="alternativ 2x646 15990" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15941" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="alternativ 2x646 15992" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15968" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15943" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15902" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15907" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15942" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15945" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15904" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15944" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15947" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15906" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="alternativ 2x646 15911" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15946" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15949" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15908" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="alternativ 2x646 15913" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15948" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15951" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15910" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="alternativ 2x646 15915" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15950" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15953" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15912" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="alternativ 2x646 15917" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15952" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15955" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15914" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15919" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15954" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15957" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15956" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="alternativ 2x646 15921" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15970" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15965" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15958" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15959" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="alternativ 2x646 15972" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15923" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15960" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15967" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="alternativ 2x646 15974" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15961" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15962" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="alternativ 2x646 15925" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="alternativ 2x646 15976" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15969" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15994" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15963" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15978" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="alternativ 2x646 15927" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15926" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15975" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15928" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15977" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15930" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15979" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15932" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15981" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="15983" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="FF-FRA" parenttrainpattern="/NRz/RB/Ohne Linie"/>
+		<trainpattern name="FF-FFBS" parenttrainpattern="/NRz/RB/Ohne Linie"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/Ohne Linie/FF-FRA"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/Ohne Linie/FF-FFBS"/>
+		<trainpattern name="FF-FHD" parenttrainpattern="/NRz/RB/FF -"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/NRz/RB/FF -"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/FF -/FF-FHD"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/FF -/FF-FMHO"/>
+		<trainpattern name="FF-FHD" parenttrainpattern="/NRz/RB/NAH -"/>
+		<trainpattern name="FFS-FHD" parenttrainpattern="/NRz/RB/NAH -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/NAH -/FF-FHD"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/NAH -/FFS-FHD"/>
+		<trainpattern name="FFS-FHD" parenttrainpattern="/NRz/RB/FFS -"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/FFS -/FFS-FHD"/>
+		<trainpattern name="FFS-FHD" parenttrainpattern="/NRz/RB/FKLM -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/FKLM -/FFS-FHD"/>
+		<trainpattern name="FFS-FHD" parenttrainpattern="/NRz/RB/FH -"/>
+		<trainpattern name="FF-FHD" parenttrainpattern="/NRz/RB/FH -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/FH -/FFS-FHD"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/FH -/FF-FHD"/>
+		<trainpattern name="FF-FHD" parenttrainpattern="/NRz/RB/FF "/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/FF /FF-FHD"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/NRz/RB/FBSS -"/>
+		<trainpattern name="FF-FHD" parenttrainpattern="/NRz/RB/FBSS -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/FBSS -/FF-FMHO"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/FBSS -/FF-FHD"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/alternativ 2x"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/alternativ 2x/FBUS-FSPO"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/alternativ 2x/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/alternativ 2x646 15989"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/alternativ 2x646 15989/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15984"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15984/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15991"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/15991/FBUS-FSPO"/>
+		<trainpattern name="FF-FSPO" parenttrainpattern="/NRz/RB/15964"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15964/FF-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15901"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/15901/FBUS-FSPO"/>
+		<trainpattern name="FNISA-FSPO" parenttrainpattern="/NRz/RB/aus 15808"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/aus 15808/FNISA-FSPO"/>
+		<trainpattern name="FF-FSPO" parenttrainpattern="/NRz/RB/15966"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15966/FF-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/alternativ 2x646 15990"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/alternativ 2x646 15990/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15941"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/15941/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/alternativ 2x646 15992"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/alternativ 2x646 15992/FBUS-FSPO"/>
+		<trainpattern name="FF-FSPO" parenttrainpattern="/NRz/RB/15968"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15968/FF-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15943"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/15943/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15902"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15902/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15907"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/15907/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15942"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15942/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15945"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/15945/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15904"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15904/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15944"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15944/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15947"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/15947/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15906"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15906/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/alternativ 2x646 15911"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/alternativ 2x646 15911/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15946"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15946/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15949"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/15949/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15908"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15908/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/alternativ 2x646 15913"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/alternativ 2x646 15913/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15948"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15948/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15951"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/15951/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15910"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15910/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/alternativ 2x646 15915"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/alternativ 2x646 15915/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15950"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15950/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15953"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/15953/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15912"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15912/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/alternativ 2x646 15917"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/alternativ 2x646 15917/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15952"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15952/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15955"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/15955/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15914"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15914/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15919"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/15919/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15954"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15954/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15957"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/15957/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15956"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15956/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/alternativ 2x646 15921"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/alternativ 2x646 15921/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15970"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15970/FBUS-FSPO"/>
+		<trainpattern name="FF-FSPO" parenttrainpattern="/NRz/RB/15965"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/15965/FF-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15958"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15958/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15959"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/15959/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/alternativ 2x646 15972"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/alternativ 2x646 15972/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15923"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/15923/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15960"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15960/FBUS-FSPO"/>
+		<trainpattern name="FF-FSPO" parenttrainpattern="/NRz/RB/15967"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/15967/FF-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/alternativ 2x646 15974"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/alternativ 2x646 15974/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15961"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/15961/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15962"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15962/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/alternativ 2x646 15925"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/alternativ 2x646 15925/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/alternativ 2x646 15976"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/alternativ 2x646 15976/FBUS-FSPO"/>
+		<trainpattern name="FF-FSPO" parenttrainpattern="/NRz/RB/15969"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/15969/FF-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15994"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15994/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15963"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/15963/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15978"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15978/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/alternativ 2x646 15927"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/alternativ 2x646 15927/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15926"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15926/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15975"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/15975/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15928"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15928/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15977"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/15977/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15930"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15930/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15979"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/15979/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15932"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/15932/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15981"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/15981/FBUS-FSPO"/>
+		<trainpattern name="FBUS-FSPO" parenttrainpattern="/NRz/RB/15983"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/15983/FBUS-FSPO"/>
+		<trainpattern name="15997" parenttrainpattern="/NRz/Lr"/>
+		<trainpattern name="15905" parenttrainpattern="/NRz/Lr"/>
+		<trainpattern name="alternativ mit" parenttrainpattern="/NRz/Lr"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/NRz/Lr"/>
+		<trainpattern name="später ab" parenttrainpattern="/NRz/Lr"/>
+		<trainpattern name="Lr aus" parenttrainpattern="/NRz/Lr"/>
+		<trainpattern name="FNISA-FSPO" parenttrainpattern="/NRz/Lr/15997"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/Lr/15997/FNISA-FSPO"/>
+		<trainpattern name="FNISA-FSPO" parenttrainpattern="/NRz/Lr/15905"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/Lr/15905/FNISA-FSPO"/>
+		<trainpattern name="FBUS-FEZ" parenttrainpattern="/NRz/Lr/alternativ mit"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/Lr/alternativ mit/FBUS-FEZ"/>
+		<trainpattern name="FF-FFBS" parenttrainpattern="/NRz/Lr/Ohne Linie"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/NRz/Lr/Ohne Linie"/>
+		<trainpattern name="FF-FHD" parenttrainpattern="/NRz/Lr/Ohne Linie"/>
+		<trainpattern name="FFLU-FGM" parenttrainpattern="/NRz/Lr/Ohne Linie"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/Lr/Ohne Linie/FF-FFBS"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/Lr/Ohne Linie/FF-FFBS"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/Lr/Ohne Linie/FF-FMHO"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/Lr/Ohne Linie/FF-FMHO"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/Lr/Ohne Linie/FF-FHD"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/Lr/Ohne Linie/FFLU-FGM"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/NRz/Lr/später ab"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/Lr/später ab/FF-FMHO"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/NRz/Lr/Lr aus"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/Lr/Lr aus/FF-FMHO"/>
+		<trainpattern name="Takt 100" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="Takt 101" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="Takt 102" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="Takt 103" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="Takt 311" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="aT" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="Takt 309" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="Takt 308" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="FKOE -" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="FF -" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="zusätzl Halt" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="zusätzlicher Halt" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="KNE -" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="FKAU, Mo-Fr(S)," parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="FKAU -" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="FRDH -" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="Odenwald -" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="Odenwald-Express FERO -" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="Odenwald Verstärker" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="84560" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="84579" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="84626" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="84561" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="84562" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="84563" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="84564" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="84565" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="84566" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="84567" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="84568" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="84569" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="84570" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="84571" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="84572" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="84573" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="84574" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="84575" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="84577" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="84597" parenttrainpattern="/NRz/DPN"/>
+		<trainpattern name="FBSO-FHOE" parenttrainpattern="/NRz/DPN/Takt 100"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/DPN/Takt 100/FBSO-FHOE"/>
+		<trainpattern name="FBSO-FHOE" parenttrainpattern="/NRz/DPN/Takt 101"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN/Takt 101/FBSO-FHOE"/>
+		<trainpattern name="FBSO-FHOE" parenttrainpattern="/NRz/DPN/Takt 102"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/DPN/Takt 102/FBSO-FHOE"/>
+		<trainpattern name="FBSO-FHOE" parenttrainpattern="/NRz/DPN/Takt 103"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN/Takt 103/FBSO-FHOE"/>
+		<trainpattern name="FF-FWN" parenttrainpattern="/NRz/DPN/Takt 311"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN/Takt 311/FF-FWN"/>
+		<trainpattern name="FF-FWN" parenttrainpattern="/NRz/DPN/aT"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/DPN/aT/FF-FWN"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN/aT/FF-FWN"/>
+		<trainpattern name="FF-FWN" parenttrainpattern="/NRz/DPN/Takt 309"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN/Takt 309/FF-FWN"/>
+		<trainpattern name="FF-FWN" parenttrainpattern="/NRz/DPN/Takt 308"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/DPN/Takt 308/FF-FWN"/>
+		<trainpattern name="FF-FWN" parenttrainpattern="/NRz/DPN/Ohne Linie"/>
+		<trainpattern name="FF-FFBS" parenttrainpattern="/NRz/DPN/Ohne Linie"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/DPN/Ohne Linie/FF-FWN"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/DPN/Ohne Linie/FF-FFBS"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN/Ohne Linie/FF-FFBS"/>
+		<trainpattern name="FF-FHOE" parenttrainpattern="/NRz/DPN/FKOE -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN/FKOE -/FF-FHOE"/>
+		<trainpattern name="FF-FHOE" parenttrainpattern="/NRz/DPN/FF -"/>
+		<trainpattern name="FF-FFH" parenttrainpattern="/NRz/DPN/FF -"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/DPN/FF -/FF-FHOE"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/DPN/FF -/FF-FFH"/>
+		<trainpattern name="FF-FFBS" parenttrainpattern="/NRz/DPN/zusätzl Halt"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN/zusätzl Halt/FF-FFBS"/>
+		<trainpattern name="FF-FFBS" parenttrainpattern="/NRz/DPN/zusätzlicher Halt"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/DPN/zusätzlicher Halt/FF-FFBS"/>
+		<trainpattern name="FF-FFH" parenttrainpattern="/NRz/DPN/KNE -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN/KNE -/FF-FFH"/>
+		<trainpattern name="FF-FFH" parenttrainpattern="/NRz/DPN/FKAU, Mo-Fr(S),"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN/FKAU, Mo-Fr(S),/FF-FFH"/>
+		<trainpattern name="FF-FFH" parenttrainpattern="/NRz/DPN/FKAU -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN/FKAU -/FF-FFH"/>
+		<trainpattern name="FF-FFH" parenttrainpattern="/NRz/DPN/FRDH -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN/FRDH -/FF-FFH"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/NRz/DPN/Odenwald -"/>
+		<trainpattern name="FF-FHD" parenttrainpattern="/NRz/DPN/Odenwald -"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/DPN/Odenwald -/FF-FMHO"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN/Odenwald -/FF-FMHO"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/DPN/Odenwald -/FF-FHD"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/NRz/DPN/Odenwald-Express FERO -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN/Odenwald-Express FERO -/FF-FMHO"/>
+		<trainpattern name="FF-FHD" parenttrainpattern="/NRz/DPN/Odenwald Verstärker"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN/Odenwald Verstärker/FF-FHD"/>
+		<trainpattern name="FEZ-FF" parenttrainpattern="/NRz/DPN/84560"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/DPN/84560/FEZ-FF"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/NRz/DPN/84579"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN/84579/F836A-FF"/>
+		<trainpattern name="FEZ-FF" parenttrainpattern="/NRz/DPN/84626"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/DPN/84626/FEZ-FF"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/NRz/DPN/84561"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN/84561/F836A-FF"/>
+		<trainpattern name="FEZ-FF" parenttrainpattern="/NRz/DPN/84562"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/DPN/84562/FEZ-FF"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/NRz/DPN/84563"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN/84563/F836A-FF"/>
+		<trainpattern name="FEZ-FF" parenttrainpattern="/NRz/DPN/84564"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/DPN/84564/FEZ-FF"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/NRz/DPN/84565"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN/84565/F836A-FF"/>
+		<trainpattern name="FEZ-FF" parenttrainpattern="/NRz/DPN/84566"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/DPN/84566/FEZ-FF"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/NRz/DPN/84567"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN/84567/F836A-FF"/>
+		<trainpattern name="FEZ-FF" parenttrainpattern="/NRz/DPN/84568"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/DPN/84568/FEZ-FF"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/NRz/DPN/84569"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN/84569/F836A-FF"/>
+		<trainpattern name="FEZ-FF" parenttrainpattern="/NRz/DPN/84570"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/DPN/84570/FEZ-FF"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/NRz/DPN/84571"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN/84571/F836A-FF"/>
+		<trainpattern name="FEZ-FF" parenttrainpattern="/NRz/DPN/84572"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/DPN/84572/FEZ-FF"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/NRz/DPN/84573"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN/84573/F836A-FF"/>
+		<trainpattern name="FEZ-FF" parenttrainpattern="/NRz/DPN/84574"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/DPN/84574/FEZ-FF"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/NRz/DPN/84575"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN/84575/F836A-FF"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/NRz/DPN/84577"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN/84577/F836A-FF"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/NRz/DPN/84597"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN/84597/F836A-FF"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/NRz/DLr"/>
+		<trainpattern name="für 83828" parenttrainpattern="/NRz/DLr"/>
+		<trainpattern name="FKAU aus" parenttrainpattern="/NRz/DLr"/>
+		<trainpattern name="FGM aus" parenttrainpattern="/NRz/DLr"/>
+		<trainpattern name="FF aus" parenttrainpattern="/NRz/DLr"/>
+		<trainpattern name="FFAU aus" parenttrainpattern="/NRz/DLr"/>
+		<trainpattern name="FF-FWN" parenttrainpattern="/NRz/DLr/Ohne Linie"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/DLr/Ohne Linie/FF-FWN"/>
+		<trainpattern name="FF-FFBS" parenttrainpattern="/NRz/DLr/für 83828"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DLr/für 83828/FF-FFBS"/>
+		<trainpattern name="FF-FFH" parenttrainpattern="/NRz/DLr/FKAU aus"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DLr/FKAU aus/FF-FFH"/>
+		<trainpattern name="FF-FGM" parenttrainpattern="/NRz/DLr/FGM aus"/>
+		<trainpattern name="FFAU-FGM" parenttrainpattern="/NRz/DLr/FGM aus"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DLr/FGM aus/FF-FGM"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DLr/FGM aus/FFAU-FGM"/>
+		<trainpattern name="FF-FGM" parenttrainpattern="/NRz/DLr/FF aus"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/DLr/FF aus/FF-FGM"/>
+		<trainpattern name="FFAU-FGM" parenttrainpattern="/NRz/DLr/FFAU aus"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/DLr/FFAU aus/FFAU-FGM"/>
+		<trainpattern name="ggf Absetzen" parenttrainpattern="/NRz/Lt"/>
+		<trainpattern name="alternativ mit" parenttrainpattern="/NRz/Lt"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/NRz/Lt"/>
+		<trainpattern name="FF aus" parenttrainpattern="/NRz/Lt"/>
+		<trainpattern name="FBUS-FF" parenttrainpattern="/NRz/Lt/ggf Absetzen"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/Lt/ggf Absetzen/FBUS-FF"/>
+		<trainpattern name="FBUS-FF" parenttrainpattern="/NRz/Lt/alternativ mit"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/NRz/Lt/alternativ mit"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/Lt/alternativ mit/FBUS-FF"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/Lt/alternativ mit/F836A-FF"/>
+		<trainpattern name="FF-FRA" parenttrainpattern="/NRz/Lt/Ohne Linie"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/Lt/Ohne Linie/FF-FRA"/>
+		<trainpattern name="FF-FFH" parenttrainpattern="/NRz/Lt/FF aus"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/Lt/FF aus/FF-FFH"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/NRz/Lr-D"/>
+		<trainpattern name="FHOE aus" parenttrainpattern="/NRz/Lr-D"/>
+		<trainpattern name="FGM, als" parenttrainpattern="/NRz/Lr-D"/>
+		<trainpattern name="FW aus" parenttrainpattern="/NRz/Lr-D"/>
+		<trainpattern name="für 15702" parenttrainpattern="/NRz/Lr-D"/>
+		<trainpattern name="aus 15761" parenttrainpattern="/NRz/Lr-D"/>
+		<trainpattern name="alternativ 146" parenttrainpattern="/NRz/Lr-D"/>
+		<trainpattern name="FF-FFBS" parenttrainpattern="/NRz/Lr-D/Ohne Linie"/>
+		<trainpattern name="FFAU-FFBS" parenttrainpattern="/NRz/Lr-D/Ohne Linie"/>
+		<trainpattern name="FF-FFW" parenttrainpattern="/NRz/Lr-D/Ohne Linie"/>
+		<trainpattern name="FFAU-FFW" parenttrainpattern="/NRz/Lr-D/Ohne Linie"/>
+		<trainpattern name="FF-FMHO" parenttrainpattern="/NRz/Lr-D/Ohne Linie"/>
+		<trainpattern name="FFLU-FKCH" parenttrainpattern="/NRz/Lr-D/Ohne Linie"/>
+		<trainpattern name="FGM-FKCH" parenttrainpattern="/NRz/Lr-D/Ohne Linie"/>
+		<trainpattern name="FF-FHD" parenttrainpattern="/NRz/Lr-D/Ohne Linie"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/Lr-D/Ohne Linie/FF-FFBS"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/Lr-D/Ohne Linie/FF-FFBS"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/Lr-D/Ohne Linie/FFAU-FFBS"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/Lr-D/Ohne Linie/FF-FFW"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/Lr-D/Ohne Linie/FFAU-FFW"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/Lr-D/Ohne Linie/FF-FMHO"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/Lr-D/Ohne Linie/FFLU-FKCH"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/Lr-D/Ohne Linie/FGM-FKCH"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/Lr-D/Ohne Linie/FF-FHD"/>
+		<trainpattern name="FGM-FHOE" parenttrainpattern="/NRz/Lr-D/FHOE aus"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/Lr-D/FHOE aus/FGM-FHOE"/>
+		<trainpattern name="FGM-FHOE" parenttrainpattern="/NRz/Lr-D/FGM, als"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/Lr-D/FGM, als/FGM-FHOE"/>
+		<trainpattern name="FFH-FGM" parenttrainpattern="/NRz/Lr-D/FW aus"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/Lr-D/FW aus/FFH-FGM"/>
+		<trainpattern name="F836A-FGM" parenttrainpattern="/NRz/Lr-D/für 15702"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/Lr-D/für 15702/F836A-FGM"/>
+		<trainpattern name="FEZ-FGM" parenttrainpattern="/NRz/Lr-D/aus 15761"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/Lr-D/aus 15761/FEZ-FGM"/>
+		<trainpattern name="285t" parenttrainpattern="/NRz/Lr-D/alternativ 146"/>
+		<trainpattern name="F836A-FF" parenttrainpattern="/NRz/Lr-D/alternativ 146/285t"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/Lr-D/alternativ 146/285t/F836A-FF"/>
+		<trainpattern name="NRz" parenttrainpattern="/Bedarfszuege"/>
+		<trainpattern name="S" parenttrainpattern="/Bedarfszuege"/>
+		<trainpattern name="FGz" parenttrainpattern="/Bedarfszuege"/>
+		<trainpattern name="DLr" parenttrainpattern="/Bedarfszuege/NRz"/>
+		<trainpattern name="FGM aus" parenttrainpattern="/Bedarfszuege/NRz/DLr"/>
+		<trainpattern name="FFAU aus" parenttrainpattern="/Bedarfszuege/NRz/DLr"/>
+		<trainpattern name="FFAU-FGM" parenttrainpattern="/Bedarfszuege/NRz/DLr/FGM aus"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/NRz/DLr/FGM aus/FFAU-FGM"/>
+		<trainpattern name="FFAU-FGM" parenttrainpattern="/Bedarfszuege/NRz/DLr/FFAU aus"/>
+		<trainpattern name="hin" parenttrainpattern="/Bedarfszuege/NRz/DLr/FFAU aus/FFAU-FGM"/>
+		<trainpattern name="Lr" parenttrainpattern="/Bedarfszuege/S"/>
+		<trainpattern name="Lt" parenttrainpattern="/Bedarfszuege/S"/>
+		<trainpattern name="FFAU aus" parenttrainpattern="/Bedarfszuege/S/Lr"/>
+		<trainpattern name="FW aus" parenttrainpattern="/Bedarfszuege/S/Lr"/>
+		<trainpattern name="FORD a" parenttrainpattern="/Bedarfszuege/S/Lr"/>
+		<trainpattern name="FFAU a" parenttrainpattern="/Bedarfszuege/S/Lr"/>
+		<trainpattern name="FNSD a" parenttrainpattern="/Bedarfszuege/S/Lr"/>
+		<trainpattern name="FDZ aus" parenttrainpattern="/Bedarfszuege/S/Lr"/>
+		<trainpattern name="FFS aus" parenttrainpattern="/Bedarfszuege/S/Lr"/>
+		<trainpattern name="FD aAbst" parenttrainpattern="/Bedarfszuege/S/Lr"/>
+		<trainpattern name="FFAU aAbst" parenttrainpattern="/Bedarfszuege/S/Lr"/>
+		<trainpattern name="FGE aAbst" parenttrainpattern="/Bedarfszuege/S/Lr"/>
+		<trainpattern name="FW a" parenttrainpattern="/Bedarfszuege/S/Lr"/>
+		<trainpattern name="FH aus" parenttrainpattern="/Bedarfszuege/S/Lr"/>
+		<trainpattern name="FFH a" parenttrainpattern="/Bedarfszuege/S/Lr"/>
+		<trainpattern name="FFAU-FFH" parenttrainpattern="/Bedarfszuege/S/Lr/FFAU aus"/>
+		<trainpattern name="FFAU-FRA" parenttrainpattern="/Bedarfszuege/S/Lr/FFAU aus"/>
+		<trainpattern name="hin" parenttrainpattern="/Bedarfszuege/S/Lr/FFAU aus/FFAU-FFH"/>
+		<trainpattern name="hin" parenttrainpattern="/Bedarfszuege/S/Lr/FFAU aus/FFAU-FRA"/>
+		<trainpattern name="FFAU-FFH" parenttrainpattern="/Bedarfszuege/S/Lr/FW aus"/>
+		<trainpattern name="FFAU-FRA" parenttrainpattern="/Bedarfszuege/S/Lr/FW aus"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/S/Lr/FW aus/FFAU-FFH"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/S/Lr/FW aus/FFAU-FRA"/>
+		<trainpattern name="FFAU-FOTS" parenttrainpattern="/Bedarfszuege/S/Lr/FORD a"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/S/Lr/FORD a/FFAU-FOTS"/>
+		<trainpattern name="FFAU-FOTS" parenttrainpattern="/Bedarfszuege/S/Lr/FFAU a"/>
+		<trainpattern name="FFAU-FKRI" parenttrainpattern="/Bedarfszuege/S/Lr/FFAU a"/>
+		<trainpattern name="FDZS-FFAU" parenttrainpattern="/Bedarfszuege/S/Lr/FFAU a"/>
+		<trainpattern name="FFAU-FFS A" parenttrainpattern="/Bedarfszuege/S/Lr/FFAU a"/>
+		<trainpattern name="FFAU-FWN" parenttrainpattern="/Bedarfszuege/S/Lr/FFAU a"/>
+		<trainpattern name="FFAU-FFBS" parenttrainpattern="/Bedarfszuege/S/Lr/FFAU a"/>
+		<trainpattern name="FFAU-FMHO" parenttrainpattern="/Bedarfszuege/S/Lr/FFAU a"/>
+		<trainpattern name="hin" parenttrainpattern="/Bedarfszuege/S/Lr/FFAU a/FFAU-FOTS"/>
+		<trainpattern name="hin" parenttrainpattern="/Bedarfszuege/S/Lr/FFAU a/FFAU-FKRI"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/S/Lr/FFAU a/FDZS-FFAU"/>
+		<trainpattern name="hin" parenttrainpattern="/Bedarfszuege/S/Lr/FFAU a/FFAU-FFS A"/>
+		<trainpattern name="hin" parenttrainpattern="/Bedarfszuege/S/Lr/FFAU a/FFAU-FWN"/>
+		<trainpattern name="hin" parenttrainpattern="/Bedarfszuege/S/Lr/FFAU a/FFAU-FFBS"/>
+		<trainpattern name="hin" parenttrainpattern="/Bedarfszuege/S/Lr/FFAU a/FFAU-FMHO"/>
+		<trainpattern name="FFAU-FKRI" parenttrainpattern="/Bedarfszuege/S/Lr/FNSD a"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/S/Lr/FNSD a/FFAU-FKRI"/>
+		<trainpattern name="FDZS-FFAU" parenttrainpattern="/Bedarfszuege/S/Lr/FDZ aus"/>
+		<trainpattern name="hin" parenttrainpattern="/Bedarfszuege/S/Lr/FDZ aus/FDZS-FFAU"/>
+		<trainpattern name="FFAU-FFS A" parenttrainpattern="/Bedarfszuege/S/Lr/FFS aus"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/S/Lr/FFS aus/FFAU-FFS A"/>
+		<trainpattern name="FEZ-FFAU" parenttrainpattern="/Bedarfszuege/S/Lr/FD aAbst"/>
+		<trainpattern name="hin" parenttrainpattern="/Bedarfszuege/S/Lr/FD aAbst/FEZ-FFAU"/>
+		<trainpattern name="F836A-FFAU" parenttrainpattern="/Bedarfszuege/S/Lr/FFAU aAbst"/>
+		<trainpattern name="FFAU-FWF" parenttrainpattern="/Bedarfszuege/S/Lr/FFAU aAbst"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/S/Lr/FFAU aAbst/F836A-FFAU"/>
+		<trainpattern name="hin" parenttrainpattern="/Bedarfszuege/S/Lr/FFAU aAbst/FFAU-FWF"/>
+		<trainpattern name="FFAU-FWF" parenttrainpattern="/Bedarfszuege/S/Lr/FGE aAbst"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/S/Lr/FGE aAbst/FFAU-FWF"/>
+		<trainpattern name="FFAU-FRA" parenttrainpattern="/Bedarfszuege/S/Lr/FW a"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/S/Lr/FW a/FFAU-FRA"/>
+		<trainpattern name="FFAU-FMHO" parenttrainpattern="/Bedarfszuege/S/Lr/FH aus"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/S/Lr/FH aus/FFAU-FMHO"/>
+		<trainpattern name="FFAU-FFH" parenttrainpattern="/Bedarfszuege/S/Lr/FFH a"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/S/Lr/FFH a/FFAU-FFH"/>
+		<trainpattern name="FFRI a" parenttrainpattern="/Bedarfszuege/S/Lt"/>
+		<trainpattern name="FFG a" parenttrainpattern="/Bedarfszuege/S/Lt"/>
+		<trainpattern name="FFAU-FWN" parenttrainpattern="/Bedarfszuege/S/Lt/FFRI a"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/S/Lt/FFRI a/FFAU-FWN"/>
+		<trainpattern name="FFAU-FFBS" parenttrainpattern="/Bedarfszuege/S/Lt/FFG a"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/S/Lt/FFG a/FFAU-FFBS"/>
+		<trainpattern name="DGS" parenttrainpattern="/Bedarfszuege/FGz"/>
+		<trainpattern name="CS" parenttrainpattern="/Bedarfszuege/FGz"/>
+		<trainpattern name="CSQ" parenttrainpattern="/Bedarfszuege/FGz"/>
+		<trainpattern name="IKE" parenttrainpattern="/Bedarfszuege/FGz"/>
+		<trainpattern name="FIR" parenttrainpattern="/Bedarfszuege/FGz"/>
+		<trainpattern name="CT" parenttrainpattern="/Bedarfszuege/FGz"/>
+		<trainpattern name="DGX" parenttrainpattern="/Bedarfszuege/FGz"/>
+		<trainpattern name="XID -" parenttrainpattern="/Bedarfszuege/FGz/DGS"/>
+		<trainpattern name="TK S" parenttrainpattern="/Bedarfszuege/FGz/DGS"/>
+		<trainpattern name="FFH -" parenttrainpattern="/Bedarfszuege/FGz/DGS"/>
+		<trainpattern name="NWR -" parenttrainpattern="/Bedarfszuege/FGz/DGS"/>
+		<trainpattern name="FEZ-FFBS" parenttrainpattern="/Bedarfszuege/FGz/DGS/XID -"/>
+		<trainpattern name="hin" parenttrainpattern="/Bedarfszuege/FGz/DGS/XID -/FEZ-FFBS"/>
+		<trainpattern name="FFBS-FWF" parenttrainpattern="/Bedarfszuege/FGz/DGS/TK S"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/FGz/DGS/TK S/FFBS-FWF"/>
+		<trainpattern name="F836A-FFH" parenttrainpattern="/Bedarfszuege/FGz/DGS/FFH -"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/FGz/DGS/FFH -/F836A-FFH"/>
+		<trainpattern name="FEZ-FFH" parenttrainpattern="/Bedarfszuege/FGz/DGS/NWR -"/>
+		<trainpattern name="hin" parenttrainpattern="/Bedarfszuege/FGz/DGS/NWR -/FEZ-FFH"/>
+		<trainpattern name="XPWE -" parenttrainpattern="/Bedarfszuege/FGz/CS"/>
+		<trainpattern name="ROG A-FNF" parenttrainpattern="/Bedarfszuege/FGz/CS"/>
+		<trainpattern name="RLB G" parenttrainpattern="/Bedarfszuege/FGz/CS"/>
+		<trainpattern name="HO N" parenttrainpattern="/Bedarfszuege/FGz/CS"/>
+		<trainpattern name="FFBS-FWF" parenttrainpattern="/Bedarfszuege/FGz/CS/XPWE -"/>
+		<trainpattern name="hin" parenttrainpattern="/Bedarfszuege/FGz/CS/XPWE -/FFBS-FWF"/>
+		<trainpattern name="FEZ-FHD" parenttrainpattern="/Bedarfszuege/FGz/CS/ROG A-FNF"/>
+		<trainpattern name="hin" parenttrainpattern="/Bedarfszuege/FGz/CS/ROG A-FNF/FEZ-FHD"/>
+		<trainpattern name="FFBS-FWF" parenttrainpattern="/Bedarfszuege/FGz/CS/RLB G"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/FGz/CS/RLB G/FFBS-FWF"/>
+		<trainpattern name="FFBS-FHOEG" parenttrainpattern="/Bedarfszuege/FGz/CS/HO N"/>
+		<trainpattern name="hin" parenttrainpattern="/Bedarfszuege/FGz/CS/HO N/FFBS-FHOEG"/>
+		<trainpattern name="FNF -" parenttrainpattern="/Bedarfszuege/FGz/CSQ"/>
+		<trainpattern name="HSR O" parenttrainpattern="/Bedarfszuege/FGz/CSQ"/>
+		<trainpattern name="F836A-FHD" parenttrainpattern="/Bedarfszuege/FGz/CSQ/FNF -"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/FGz/CSQ/FNF -/F836A-FHD"/>
+		<trainpattern name="F836A-FFBS" parenttrainpattern="/Bedarfszuege/FGz/CSQ/HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/FGz/CSQ/HSR O/F836A-FFBS"/>
+		<trainpattern name="RBA A" parenttrainpattern="/Bedarfszuege/FGz/IKE"/>
+		<trainpattern name="FEZ-FFBS" parenttrainpattern="/Bedarfszuege/FGz/IKE/RBA A"/>
+		<trainpattern name="hin" parenttrainpattern="/Bedarfszuege/FGz/IKE/RBA A/FEZ-FFBS"/>
+		<trainpattern name="LE -" parenttrainpattern="/Bedarfszuege/FGz/FIR"/>
+		<trainpattern name="F836A-FFBS" parenttrainpattern="/Bedarfszuege/FGz/FIR/LE -"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/FGz/FIR/LE -/F836A-FFBS"/>
+		<trainpattern name="EBTS -" parenttrainpattern="/Bedarfszuege/FGz/CT"/>
+		<trainpattern name="FGM -" parenttrainpattern="/Bedarfszuege/FGz/CT"/>
+		<trainpattern name="FFH-FGM" parenttrainpattern="/Bedarfszuege/FGz/CT/EBTS -"/>
+		<trainpattern name="hin" parenttrainpattern="/Bedarfszuege/FGz/CT/EBTS -/FFH-FGM"/>
+		<trainpattern name="FFBS-FGM" parenttrainpattern="/Bedarfszuege/FGz/CT/FGM -"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/FGz/CT/FGM -/FFBS-FGM"/>
+		<trainpattern name="FHOEG -" parenttrainpattern="/Bedarfszuege/FGz/DGX"/>
+		<trainpattern name="RMG-FHOEG +ohne Ebula+ PC" parenttrainpattern="/Bedarfszuege/FGz/DGX"/>
+		<trainpattern name="F836A-FHOEG" parenttrainpattern="/Bedarfszuege/FGz/DGX/FHOEG -"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/FGz/DGX/FHOEG -/F836A-FHOEG"/>
+		<trainpattern name="FEZ-FHOEG" parenttrainpattern="/Bedarfszuege/FGz/DGX/RMG-FHOEG +ohne Ebula+ PC"/>
+		<trainpattern name="hin" parenttrainpattern="/Bedarfszuege/FGz/DGX/RMG-FHOEG +ohne Ebula+ PC/FEZ-FHOEG"/>
+		<trainpattern name="Lr" parenttrainpattern="/S"/>
+		<trainpattern name="S" parenttrainpattern="/S"/>
+		<trainpattern name="FFAU aus" parenttrainpattern="/S/Lr"/>
+		<trainpattern name="FHM aus" parenttrainpattern="/S/Lr"/>
+		<trainpattern name="FFAU a" parenttrainpattern="/S/Lr"/>
+		<trainpattern name="FDZ a35281" parenttrainpattern="/S/Lr"/>
+		<trainpattern name="FNSD aus" parenttrainpattern="/S/Lr"/>
+		<trainpattern name="FFS a" parenttrainpattern="/S/Lr"/>
+		<trainpattern name="FD -" parenttrainpattern="/S/Lr"/>
+		<trainpattern name="FFS aAbst" parenttrainpattern="/S/Lr"/>
+		<trainpattern name="FLG -" parenttrainpattern="/S/Lr"/>
+		<trainpattern name="FKRO-FF aus" parenttrainpattern="/S/Lr"/>
+		<trainpattern name="FF a" parenttrainpattern="/S/Lr"/>
+		<trainpattern name="S 9," parenttrainpattern="/S/Lr"/>
+		<trainpattern name="FGM aus" parenttrainpattern="/S/Lr"/>
+		<trainpattern name="FHOE aus" parenttrainpattern="/S/Lr"/>
+		<trainpattern name="FOO a" parenttrainpattern="/S/Lr"/>
+		<trainpattern name="FDZ a36259" parenttrainpattern="/S/Lr"/>
+		<trainpattern name="FFT-FFAU aus" parenttrainpattern="/S/Lr"/>
+		<trainpattern name="FDZ a35285" parenttrainpattern="/S/Lr"/>
+		<trainpattern name="FF-FFAU aus" parenttrainpattern="/S/Lr"/>
+		<trainpattern name="FFAU -" parenttrainpattern="/S/Lr"/>
+		<trainpattern name="FF -" parenttrainpattern="/S/Lr"/>
+		<trainpattern name="FH a" parenttrainpattern="/S/Lr"/>
+		<trainpattern name="FFAU-FOO" parenttrainpattern="/S/Lr/FFAU aus"/>
+		<trainpattern name="FFAU-FFH" parenttrainpattern="/S/Lr/FFAU aus"/>
+		<trainpattern name="FFAU-FRA" parenttrainpattern="/S/Lr/FFAU aus"/>
+		<trainpattern name="FFAU-FGM" parenttrainpattern="/S/Lr/FFAU aus"/>
+		<trainpattern name="FFAU-FHOE" parenttrainpattern="/S/Lr/FFAU aus"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lr/FFAU aus/FFAU-FOO"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lr/FFAU aus/FFAU-FFH"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lr/FFAU aus/FFAU-FRA"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lr/FFAU aus/FFAU-FGM"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lr/FFAU aus/FFAU-FHOE"/>
+		<trainpattern name="FFAU-FFH" parenttrainpattern="/S/Lr/FHM aus"/>
+		<trainpattern name="FFH-FHOEG" parenttrainpattern="/S/Lr/FHM aus"/>
+		<trainpattern name="FFH-FOO" parenttrainpattern="/S/Lr/FHM aus"/>
+		<trainpattern name="rück" parenttrainpattern="/S/Lr/FHM aus/FFAU-FFH"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lr/FHM aus/FFH-FHOEG"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lr/FHM aus/FFH-FOO"/>
+		<trainpattern name="FDZS-FFAU" parenttrainpattern="/S/Lr/FFAU a"/>
+		<trainpattern name="FFAU-FFT" parenttrainpattern="/S/Lr/FFAU a"/>
+		<trainpattern name="FFAU-FFS" parenttrainpattern="/S/Lr/FFAU a"/>
+		<trainpattern name="FFAU-FOO" parenttrainpattern="/S/Lr/FFAU a"/>
+		<trainpattern name="rück" parenttrainpattern="/S/Lr/FFAU a/FDZS-FFAU"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lr/FFAU a/FFAU-FFT"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lr/FFAU a/FFAU-FFS"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lr/FFAU a/FFAU-FOO"/>
+		<trainpattern name="FDZS-FFAU" parenttrainpattern="/S/Lr/FDZ a35281"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lr/FDZ a35281/FDZS-FFAU"/>
+		<trainpattern name="FFAU-FKRI" parenttrainpattern="/S/Lr/FNSD aus"/>
+		<trainpattern name="rück" parenttrainpattern="/S/Lr/FNSD aus/FFAU-FKRI"/>
+		<trainpattern name="FBSO-FFS" parenttrainpattern="/S/Lr/FFS a"/>
+		<trainpattern name="FFS-FKRS" parenttrainpattern="/S/Lr/FFS a"/>
+		<trainpattern name="FFAU-FFS" parenttrainpattern="/S/Lr/FFS a"/>
+		<trainpattern name="rück" parenttrainpattern="/S/Lr/FFS a/FBSO-FFS"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lr/FFS a/FFS-FKRS"/>
+		<trainpattern name="rück" parenttrainpattern="/S/Lr/FFS a/FFAU-FFS"/>
+		<trainpattern name="FEZ-FHOE" parenttrainpattern="/S/Lr/FD -"/>
+		<trainpattern name="FFS-FWX" parenttrainpattern="/S/Lr/FD -"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lr/FD -/FEZ-FHOE"/>
+		<trainpattern name="rück" parenttrainpattern="/S/Lr/FD -/FFS-FWX"/>
+		<trainpattern name="FFS-FLG" parenttrainpattern="/S/Lr/FFS aAbst"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lr/FFS aAbst/FFS-FLG"/>
+		<trainpattern name="FFS-FLG" parenttrainpattern="/S/Lr/FLG -"/>
+		<trainpattern name="rück" parenttrainpattern="/S/Lr/FLG -/FFS-FLG"/>
+		<trainpattern name="FF-FKRS" parenttrainpattern="/S/Lr/FKRO-FF aus"/>
+		<trainpattern name="rück" parenttrainpattern="/S/Lr/FKRO-FF aus/FF-FKRS"/>
+		<trainpattern name="FF-FFBS" parenttrainpattern="/S/Lr/FF a"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lr/FF a/FF-FFBS"/>
+		<trainpattern name="FFAU-FFLU" parenttrainpattern="/S/Lr/S 9,"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lr/S 9,/FFAU-FFLU"/>
+		<trainpattern name="FFAU-FGM" parenttrainpattern="/S/Lr/FGM aus"/>
+		<trainpattern name="rück" parenttrainpattern="/S/Lr/FGM aus/FFAU-FGM"/>
+		<trainpattern name="FFAU-FHOE" parenttrainpattern="/S/Lr/FHOE aus"/>
+		<trainpattern name="rück" parenttrainpattern="/S/Lr/FHOE aus/FFAU-FHOE"/>
+		<trainpattern name="FDZS-FOO" parenttrainpattern="/S/Lr/FOO a"/>
+		<trainpattern name="rück" parenttrainpattern="/S/Lr/FOO a/FDZS-FOO"/>
+		<trainpattern name="FDZS-FOO" parenttrainpattern="/S/Lr/FDZ a36259"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lr/FDZ a36259/FDZS-FOO"/>
+		<trainpattern name="FFAU-FFT" parenttrainpattern="/S/Lr/FFT-FFAU aus"/>
+		<trainpattern name="rück" parenttrainpattern="/S/Lr/FFT-FFAU aus/FFAU-FFT"/>
+		<trainpattern name="FDZS-FOO" parenttrainpattern="/S/Lr/FDZ a35285"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lr/FDZ a35285/FDZS-FOO"/>
+		<trainpattern name="FF-FFAU" parenttrainpattern="/S/Lr/FF-FFAU aus"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lr/FF-FFAU aus/FF-FFAU"/>
+		<trainpattern name="FF-FFAU" parenttrainpattern="/S/Lr/FFAU -"/>
+		<trainpattern name="rück" parenttrainpattern="/S/Lr/FFAU -/FF-FFAU"/>
+		<trainpattern name="FF-FFAU" parenttrainpattern="/S/Lr/FF -"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lr/FF -/FF-FFAU"/>
+		<trainpattern name="FFAU-FMH" parenttrainpattern="/S/Lr/FH a"/>
+		<trainpattern name="rück" parenttrainpattern="/S/Lr/FH a/FFAU-FMH"/>
+		<trainpattern name="FOO -" parenttrainpattern="/S/S"/>
+		<trainpattern name="FORD -" parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 108," parenttrainpattern="/S/S"/>
+		<trainpattern name="FW -" parenttrainpattern="/S/S"/>
+		<trainpattern name="FHOE -" parenttrainpattern="/S/S"/>
+		<trainpattern name="FDZ -" parenttrainpattern="/S/S"/>
+		<trainpattern name="FNSD -" parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 204," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 303," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 306," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 307," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 302," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 405," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 408," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 401," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 404," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 505," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 502," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 501," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 506," parenttrainpattern="/S/S"/>
+		<trainpattern name="S 6" parenttrainpattern="/S/S"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 808," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 804," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 803," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 807," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 906," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 905," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 902," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 901," parenttrainpattern="/S/S"/>
+		<trainpattern name="FHM -" parenttrainpattern="/S/S"/>
+		<trainpattern name="FF -" parenttrainpattern="/S/S"/>
+		<trainpattern name="FGM -" parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 207," parenttrainpattern="/S/S"/>
+		<trainpattern name="FHF -" parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 402," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 403," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 508," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 507," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 514," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 503," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 504," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 601," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 606," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 605," parenttrainpattern="/S/S"/>
+		<trainpattern name="Takt 602," parenttrainpattern="/S/S"/>
+		<trainpattern name="FFH-FOO" parenttrainpattern="/S/S/FOO -"/>
+		<trainpattern name="FHOE-FOO" parenttrainpattern="/S/S/FOO -"/>
+		<trainpattern name="FKRI-FOO" parenttrainpattern="/S/S/FOO -"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/FOO -/FFH-FOO"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/FOO -/FHOE-FOO"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/FOO -/FKRI-FOO"/>
+		<trainpattern name="FFH-FOTS" parenttrainpattern="/S/S/FORD -"/>
+		<trainpattern name="FHOE-FOTS" parenttrainpattern="/S/S/FORD -"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/FORD -/FFH-FOTS"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/FORD -/FHOE-FOTS"/>
+		<trainpattern name="FFH-FOTS" parenttrainpattern="/S/S/Takt 108,"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Takt 108,/FFH-FOTS"/>
+		<trainpattern name="FFH-FOTS" parenttrainpattern="/S/S/FW -"/>
+		<trainpattern name="FFH-FOO" parenttrainpattern="/S/S/FW -"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/FW -/FFH-FOTS"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/FW -/FFH-FOO"/>
+		<trainpattern name="FHOE-FOO" parenttrainpattern="/S/S/FHOE -"/>
+		<trainpattern name="FHOE-FOTS" parenttrainpattern="/S/S/FHOE -"/>
+		<trainpattern name="FF-FHOE" parenttrainpattern="/S/S/FHOE -"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/FHOE -/FHOE-FOO"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/FHOE -/FHOE-FOTS"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/FHOE -/FF-FHOE"/>
+		<trainpattern name="FDZS-FKRI" parenttrainpattern="/S/S/FDZ -"/>
+		<trainpattern name="FDZS-FGM" parenttrainpattern="/S/S/FDZ -"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/FDZ -/FDZS-FKRI"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/FDZ -/FDZS-FGM"/>
+		<trainpattern name="FDZS-FKRI" parenttrainpattern="/S/S/FNSD -"/>
+		<trainpattern name="FKRI-FOO" parenttrainpattern="/S/S/FNSD -"/>
+		<trainpattern name="FF-FKRI" parenttrainpattern="/S/S/FNSD -"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/FNSD -/FDZS-FKRI"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/FNSD -/FKRI-FOO"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/FNSD -/FF-FKRI"/>
+		<trainpattern name="FDZS-FFT" parenttrainpattern="/S/S/Takt 204,"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/Takt 204,/FDZS-FFT"/>
+		<trainpattern name="FFT-FWX" parenttrainpattern="/S/S/Takt 303,"/>
+		<trainpattern name="FBSO-FWX" parenttrainpattern="/S/S/Takt 303,"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/Takt 303,/FFT-FWX"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/Takt 303,/FBSO-FWX"/>
+		<trainpattern name="FBSO-FWX" parenttrainpattern="/S/S/Takt 306,"/>
+		<trainpattern name="FFT-FWX" parenttrainpattern="/S/S/Takt 306,"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Takt 306,/FBSO-FWX"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Takt 306,/FFT-FWX"/>
+		<trainpattern name="FFT-FWX" parenttrainpattern="/S/S/Takt 307,"/>
+		<trainpattern name="FBSO-FWX" parenttrainpattern="/S/S/Takt 307,"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/Takt 307,/FFT-FWX"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/Takt 307,/FBSO-FWX"/>
+		<trainpattern name="FBSO-FWX" parenttrainpattern="/S/S/Takt 302,"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Takt 302,/FBSO-FWX"/>
+		<trainpattern name="FFT-FLG" parenttrainpattern="/S/S/Takt 405,"/>
+		<trainpattern name="FKRS-FLG" parenttrainpattern="/S/S/Takt 405,"/>
+		<trainpattern name="FFS-FKRS" parenttrainpattern="/S/S/Takt 405,"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/Takt 405,/FFT-FLG"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/Takt 405,/FKRS-FLG"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Takt 405,/FFS-FKRS"/>
+		<trainpattern name="FKRS-FLG" parenttrainpattern="/S/S/Takt 408,"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Takt 408,/FKRS-FLG"/>
+		<trainpattern name="FKRS-FLG" parenttrainpattern="/S/S/Takt 401,"/>
+		<trainpattern name="FFS-FKRS" parenttrainpattern="/S/S/Takt 401,"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/Takt 401,/FKRS-FLG"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Takt 401,/FFS-FKRS"/>
+		<trainpattern name="FKRS-FLG" parenttrainpattern="/S/S/Takt 404,"/>
+		<trainpattern name="FFS-FKRS" parenttrainpattern="/S/S/Takt 404,"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Takt 404,/FKRS-FLG"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/Takt 404,/FFS-FKRS"/>
+		<trainpattern name="FFS-FWN" parenttrainpattern="/S/S/Takt 505,"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Takt 505,/FFS-FWN"/>
+		<trainpattern name="FFS-FWN" parenttrainpattern="/S/S/Takt 502,"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/Takt 502,/FFS-FWN"/>
+		<trainpattern name="FFS-FWN" parenttrainpattern="/S/S/Takt 501,"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Takt 501,/FFS-FWN"/>
+		<trainpattern name="FFS-FWN" parenttrainpattern="/S/S/Takt 506,"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/Takt 506,/FFS-FWN"/>
+		<trainpattern name="FFBS-FFS" parenttrainpattern="/S/S/S 6"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/S 6/FFBS-FFS"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/S 6/FFBS-FFS"/>
+		<trainpattern name="FF-FWF" parenttrainpattern="/S/S/Ohne Linie"/>
+		<trainpattern name="FF-FKCH" parenttrainpattern="/S/S/Ohne Linie"/>
+		<trainpattern name="FF-FFLU" parenttrainpattern="/S/S/Ohne Linie"/>
+		<trainpattern name="FF-FRA" parenttrainpattern="/S/S/Ohne Linie"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Ohne Linie/FF-FWF"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/Ohne Linie/FF-FWF"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/Ohne Linie/FF-FKCH"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Ohne Linie/FF-FKCH"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/Ohne Linie/FF-FFLU"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Ohne Linie/FF-FFLU"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Ohne Linie/FF-FRA"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/Ohne Linie/FF-FRA"/>
+		<trainpattern name="FMH-FRA" parenttrainpattern="/S/S/Takt 808,"/>
+		<trainpattern name="FOO-FRA" parenttrainpattern="/S/S/Takt 808,"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/Takt 808,/FMH-FRA"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/Takt 808,/FOO-FRA"/>
+		<trainpattern name="FOO-FRA" parenttrainpattern="/S/S/Takt 804,"/>
+		<trainpattern name="FMH-FRA" parenttrainpattern="/S/S/Takt 804,"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/Takt 804,/FOO-FRA"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/Takt 804,/FMH-FRA"/>
+		<trainpattern name="FMH-FRA" parenttrainpattern="/S/S/Takt 803,"/>
+		<trainpattern name="FOO-FRA" parenttrainpattern="/S/S/Takt 803,"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Takt 803,/FMH-FRA"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Takt 803,/FOO-FRA"/>
+		<trainpattern name="FMH-FRA" parenttrainpattern="/S/S/Takt 807,"/>
+		<trainpattern name="FOO-FRA" parenttrainpattern="/S/S/Takt 807,"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Takt 807,/FMH-FRA"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Takt 807,/FOO-FRA"/>
+		<trainpattern name="FMH-FRA" parenttrainpattern="/S/S/Takt 906,"/>
+		<trainpattern name="FFLU-FMH" parenttrainpattern="/S/S/Takt 906,"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/Takt 906,/FMH-FRA"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Takt 906,/FFLU-FMH"/>
+		<trainpattern name="FMH-FRA" parenttrainpattern="/S/S/Takt 905,"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Takt 905,/FMH-FRA"/>
+		<trainpattern name="FMH-FRA" parenttrainpattern="/S/S/Takt 902,"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/Takt 902,/FMH-FRA"/>
+		<trainpattern name="FMH-FRA" parenttrainpattern="/S/S/Takt 901,"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Takt 901,/FMH-FRA"/>
+		<trainpattern name="FFH-FOTS" parenttrainpattern="/S/S/FHM -"/>
+		<trainpattern name="FFH-FOO" parenttrainpattern="/S/S/FHM -"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/FHM -/FFH-FOTS"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/FHM -/FFH-FOO"/>
+		<trainpattern name="FF-FKRI" parenttrainpattern="/S/S/FF -"/>
+		<trainpattern name="FF-FHOE" parenttrainpattern="/S/S/FF -"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/FF -/FF-FKRI"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/FF -/FF-FHOE"/>
+		<trainpattern name="FDZS-FGM" parenttrainpattern="/S/S/FGM -"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/FGM -/FDZS-FGM"/>
+		<trainpattern name="FDZS-FOO" parenttrainpattern="/S/S/Takt 207,"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Takt 207,/FDZS-FOO"/>
+		<trainpattern name="FDZS-FKRI" parenttrainpattern="/S/S/FHF -"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/FHF -/FDZS-FKRI"/>
+		<trainpattern name="FKRS-FWX" parenttrainpattern="/S/S/Takt 402,"/>
+		<trainpattern name="FKRS-FLG" parenttrainpattern="/S/S/Takt 402,"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Takt 402,/FKRS-FWX"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Takt 402,/FKRS-FLG"/>
+		<trainpattern name="FKRS-FLG" parenttrainpattern="/S/S/Takt 403,"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/Takt 403,/FKRS-FLG"/>
+		<trainpattern name="FFS-FWN" parenttrainpattern="/S/S/Takt 508,"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/Takt 508,/FFS-FWN"/>
+		<trainpattern name="FFS-FWN" parenttrainpattern="/S/S/Takt 507,"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Takt 507,/FFS-FWN"/>
+		<trainpattern name="FFS-FWN" parenttrainpattern="/S/S/Takt 514,"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/Takt 514,/FFS-FWN"/>
+		<trainpattern name="FFS-FWN" parenttrainpattern="/S/S/Takt 503,"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Takt 503,/FFS-FWN"/>
+		<trainpattern name="FFS-FWN" parenttrainpattern="/S/S/Takt 504,"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/Takt 504,/FFS-FWN"/>
+		<trainpattern name="FFBS-FFS" parenttrainpattern="/S/S/Takt 601,"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/Takt 601,/FFBS-FFS"/>
+		<trainpattern name="FFBS-FFS" parenttrainpattern="/S/S/Takt 606,"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Takt 606,/FFBS-FFS"/>
+		<trainpattern name="FFBS-FFS" parenttrainpattern="/S/S/Takt 605,"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/Takt 605,/FFBS-FFS"/>
+		<trainpattern name="FFBS-FFS" parenttrainpattern="/S/S/Takt 602,"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/Takt 602,/FFBS-FFS"/>
+		<trainpattern name="TEC" parenttrainpattern="/FGz"/>
+		<trainpattern name="DGS" parenttrainpattern="/FGz"/>
+		<trainpattern name="CS" parenttrainpattern="/FGz"/>
+		<trainpattern name="CSQ" parenttrainpattern="/FGz"/>
+		<trainpattern name="CIL" parenttrainpattern="/FGz"/>
+		<trainpattern name="IKE" parenttrainpattern="/FGz"/>
+		<trainpattern name="IKL" parenttrainpattern="/FGz"/>
+		<trainpattern name="FIR" parenttrainpattern="/FGz"/>
+		<trainpattern name="FR" parenttrainpattern="/FGz"/>
+		<trainpattern name="XDTA -" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="XIGA -" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="XBAM -" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="XBAKB -" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="KNG -" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="XAWEV-KN M" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="XAWET -" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="EDRH " parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="KKE " parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="XSFF -" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="AM W" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="XAWT- AM" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="KKE A" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="XAWU -" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="F836A-FFBS" parenttrainpattern="/FGz/TEC/XDTA -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/TEC/XDTA -/F836A-FFBS"/>
+		<trainpattern name="FEZ-FFBS" parenttrainpattern="/FGz/TEC/XIGA -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/TEC/XIGA -/FEZ-FFBS"/>
+		<trainpattern name="FFH-FHOEG" parenttrainpattern="/FGz/TEC/XBAM -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/TEC/XBAM -/FFH-FHOEG"/>
+		<trainpattern name="FHD-FRA" parenttrainpattern="/FGz/TEC/XBAKB -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/TEC/XBAKB -/FHD-FRA"/>
+		<trainpattern name="FFH-FHD" parenttrainpattern="/FGz/TEC/KNG -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/TEC/KNG -/FFH-FHD"/>
+		<trainpattern name="FMHO-FRA" parenttrainpattern="/FGz/TEC/XAWEV-KN M"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/TEC/XAWEV-KN M/FMHO-FRA"/>
+		<trainpattern name="FFH-FHD" parenttrainpattern="/FGz/TEC/XAWET -"/>
+		<trainpattern name="FHD-FRA" parenttrainpattern="/FGz/TEC/XAWET -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/TEC/XAWET -/FFH-FHD"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/TEC/XAWET -/FHD-FRA"/>
+		<trainpattern name="FHD-FRA" parenttrainpattern="/FGz/TEC/EDRH "/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/TEC/EDRH /FHD-FRA"/>
+		<trainpattern name="FHD-FRA" parenttrainpattern="/FGz/TEC/KKE "/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/TEC/KKE /FHD-FRA"/>
+		<trainpattern name="FEZ-FFBS" parenttrainpattern="/FGz/TEC/XSFF -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/TEC/XSFF -/FEZ-FFBS"/>
+		<trainpattern name="F836A-FFBS" parenttrainpattern="/FGz/TEC/AM W"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/TEC/AM W/F836A-FFBS"/>
+		<trainpattern name="FEZ-FFBS" parenttrainpattern="/FGz/TEC/XAWT- AM"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/TEC/XAWT- AM/FEZ-FFBS"/>
+		<trainpattern name="FFH-FHD" parenttrainpattern="/FGz/TEC/KKE A"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/TEC/KKE A/FFH-FHD"/>
+		<trainpattern name="FHD-FRA" parenttrainpattern="/FGz/TEC/XAWU -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/TEC/XAWU -/FHD-FRA"/>
+		<trainpattern name="XFCU -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="XPM -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="KRH -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="NXPA -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="NROB -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="FFO G" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="XAWK -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="AHBIU -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="TSH -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="HBG -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="TK S" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="HBHSK -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="RMG -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="EDOE -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="BRU -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="RLB G" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="FKB -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="FEZ-FFBS" parenttrainpattern="/FGz/DGS/XFCU -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/XFCU -/FEZ-FFBS"/>
+		<trainpattern name="F836A-FHD" parenttrainpattern="/FGz/DGS/XPM -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/XPM -/F836A-FHD"/>
+		<trainpattern name="FHD-FRA" parenttrainpattern="/FGz/DGS/KRH -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/KRH -/FHD-FRA"/>
+		<trainpattern name="FHD-FRA" parenttrainpattern="/FGz/DGS/NXPA -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/NXPA -/FHD-FRA"/>
+		<trainpattern name="FFO G-FHD" parenttrainpattern="/FGz/DGS/NROB -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/NROB -/FFO G-FHD"/>
+		<trainpattern name="FFH-FFO G" parenttrainpattern="/FGz/DGS/FFO G"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/FFO G/FFH-FFO G"/>
+		<trainpattern name="FHD-FRA" parenttrainpattern="/FGz/DGS/XAWK -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/XAWK -/FHD-FRA"/>
+		<trainpattern name="F836A-FFBS" parenttrainpattern="/FGz/DGS/AHBIU -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/AHBIU -/F836A-FFBS"/>
+		<trainpattern name="FEZ-FFBS" parenttrainpattern="/FGz/DGS/TSH -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/TSH -/FEZ-FFBS"/>
+		<trainpattern name="FFBS-FWF" parenttrainpattern="/FGz/DGS/HBG -"/>
+		<trainpattern name="FFBS-FFGA" parenttrainpattern="/FGz/DGS/HBG -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/HBG -/FFBS-FWF"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/HBG -/FFBS-FFGA"/>
+		<trainpattern name="FEZ-FFBS" parenttrainpattern="/FGz/DGS/TK S"/>
+		<trainpattern name="FFBS-FWF" parenttrainpattern="/FGz/DGS/TK S"/>
+		<trainpattern name="FEZ-FMHO" parenttrainpattern="/FGz/DGS/TK S"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/TK S/FEZ-FFBS"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/TK S/FFBS-FWF"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/TK S/FEZ-FMHO"/>
+		<trainpattern name="F836A-FFBS" parenttrainpattern="/FGz/DGS/HBHSK -"/>
+		<trainpattern name="FFBS-FWF" parenttrainpattern="/FGz/DGS/HBHSK -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/HBHSK -/F836A-FFBS"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/HBHSK -/FFBS-FWF"/>
+		<trainpattern name="FEZ-FHD" parenttrainpattern="/FGz/DGS/RMG -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/RMG -/FEZ-FHD"/>
+		<trainpattern name="F836A-FFBS" parenttrainpattern="/FGz/DGS/EDOE -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/EDOE -/F836A-FFBS"/>
+		<trainpattern name="FFBS-FWF" parenttrainpattern="/FGz/DGS/BRU -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/BRU -/FFBS-FWF"/>
+		<trainpattern name="FFBS-FWF" parenttrainpattern="/FGz/DGS/RLB G"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/RLB G/FFBS-FWF"/>
+		<trainpattern name="F836A-FFBS" parenttrainpattern="/FGz/DGS/FKB -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/FKB -/F836A-FFBS"/>
+		<trainpattern name="XNMD -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="EWANF -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="XABL -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="RKL -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="TP -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="DCW -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="F836A-FFBS" parenttrainpattern="/FGz/CS/XNMD -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/XNMD -/F836A-FFBS"/>
+		<trainpattern name="F836A-FFBS" parenttrainpattern="/FGz/CS/EWANF -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/EWANF -/F836A-FFBS"/>
+		<trainpattern name="FEZ-FFBS" parenttrainpattern="/FGz/CS/XABL -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/CS/XABL -/FEZ-FFBS"/>
+		<trainpattern name="FEZ-FFBS" parenttrainpattern="/FGz/CS/RKL -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/CS/RKL -/FEZ-FFBS"/>
+		<trainpattern name="FEZ-FFBS" parenttrainpattern="/FGz/CS/TP -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/CS/TP -/FEZ-FFBS"/>
+		<trainpattern name="F836A-FFBS" parenttrainpattern="/FGz/CS/DCW -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/DCW -/F836A-FFBS"/>
+		<trainpattern name="XFRI-Fnf" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="XFVA -" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="XFCE -" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="HSR O" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="FKR -" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="TBF -" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="TSI -" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="HBHSK -" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="FRUO -" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="RRAM-HBSK PC70PC400" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="FEZ-FMHO" parenttrainpattern="/FGz/CSQ/XFRI-Fnf"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/CSQ/XFRI-Fnf/FEZ-FMHO"/>
+		<trainpattern name="FFBS-FFH" parenttrainpattern="/FGz/CSQ/XFVA -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CSQ/XFVA -/FFBS-FFH"/>
+		<trainpattern name="FEZ-FHD" parenttrainpattern="/FGz/CSQ/XFCE -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/CSQ/XFCE -/FEZ-FHD"/>
+		<trainpattern name="F836A-FFBS" parenttrainpattern="/FGz/CSQ/HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CSQ/HSR O/F836A-FFBS"/>
+		<trainpattern name="FFBS-FWF" parenttrainpattern="/FGz/CSQ/FKR -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/CSQ/FKR -/FFBS-FWF"/>
+		<trainpattern name="FEZ-FFBS" parenttrainpattern="/FGz/CSQ/TBF -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/CSQ/TBF -/FEZ-FFBS"/>
+		<trainpattern name="FEZ-FFBS" parenttrainpattern="/FGz/CSQ/TSI -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/CSQ/TSI -/FEZ-FFBS"/>
+		<trainpattern name="F836A-FFBS" parenttrainpattern="/FGz/CSQ/HBHSK -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CSQ/HBHSK -/F836A-FFBS"/>
+		<trainpattern name="F836A-FRA" parenttrainpattern="/FGz/CSQ/FRUO -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CSQ/FRUO -/F836A-FRA"/>
+		<trainpattern name="FEZ-FHD" parenttrainpattern="/FGz/CSQ/RRAM-HBSK PC70PC400"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/CSQ/RRAM-HBSK PC70PC400/FEZ-FHD"/>
+		<trainpattern name="TP -" parenttrainpattern="/FGz/CIL"/>
+		<trainpattern name="XID -" parenttrainpattern="/FGz/CIL"/>
+		<trainpattern name="FL -" parenttrainpattern="/FGz/CIL"/>
+		<trainpattern name="FGK -" parenttrainpattern="/FGz/CIL"/>
+		<trainpattern name="EOBRM -" parenttrainpattern="/FGz/CIL"/>
+		<trainpattern name="FEZ-FFBS" parenttrainpattern="/FGz/CIL/TP -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/CIL/TP -/FEZ-FFBS"/>
+		<trainpattern name="FEZ-FKRI" parenttrainpattern="/FGz/CIL/XID -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/CIL/XID -/FEZ-FKRI"/>
+		<trainpattern name="F836A-FKRI" parenttrainpattern="/FGz/CIL/FL -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CIL/FL -/F836A-FKRI"/>
+		<trainpattern name="FEZ-FFBS" parenttrainpattern="/FGz/CIL/FGK -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/CIL/FGK -/FEZ-FFBS"/>
+		<trainpattern name="FHD-FRA" parenttrainpattern="/FGz/CIL/EOBRM -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CIL/EOBRM -/FHD-FRA"/>
+		<trainpattern name="HBG -" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="RBA A" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="AWHOS -" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="AM W" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="RMG -" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="HBHP -" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="TBS -" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="AHBIU -" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="RLB U" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="RMR K" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="RKR -" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="F836A-FHD" parenttrainpattern="/FGz/IKE/HBG -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKE/HBG -/F836A-FHD"/>
+		<trainpattern name="FEZ-FHD" parenttrainpattern="/FGz/IKE/RBA A"/>
+		<trainpattern name="FEZ-FFBS" parenttrainpattern="/FGz/IKE/RBA A"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/IKE/RBA A/FEZ-FHD"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/IKE/RBA A/FEZ-FFBS"/>
+		<trainpattern name="F836A-FHD" parenttrainpattern="/FGz/IKE/AWHOS -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKE/AWHOS -/F836A-FHD"/>
+		<trainpattern name="FHD-FRA" parenttrainpattern="/FGz/IKE/AM W"/>
+		<trainpattern name="F836A-FFBS" parenttrainpattern="/FGz/IKE/AM W"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKE/AM W/FHD-FRA"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKE/AM W/F836A-FFBS"/>
+		<trainpattern name="FEZ-FHD" parenttrainpattern="/FGz/IKE/RMG -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/IKE/RMG -/FEZ-FHD"/>
+		<trainpattern name="F836A-FHD" parenttrainpattern="/FGz/IKE/HBHP -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKE/HBHP -/F836A-FHD"/>
+		<trainpattern name="FEZ-FFBS" parenttrainpattern="/FGz/IKE/TBS -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/IKE/TBS -/FEZ-FFBS"/>
+		<trainpattern name="FHD-FWF" parenttrainpattern="/FGz/IKE/AHBIU -"/>
+		<trainpattern name="F836A-FFBS" parenttrainpattern="/FGz/IKE/AHBIU -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/IKE/AHBIU -/FHD-FWF"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKE/AHBIU -/F836A-FFBS"/>
+		<trainpattern name="FEZ-FHD" parenttrainpattern="/FGz/IKE/RLB U"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/IKE/RLB U/FEZ-FHD"/>
+		<trainpattern name="FEZ-FFBS" parenttrainpattern="/FGz/IKE/RMR K"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/IKE/RMR K/FEZ-FFBS"/>
+		<trainpattern name="FEZ-FHD" parenttrainpattern="/FGz/IKE/RKR -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/IKE/RKR -/FEZ-FHD"/>
+		<trainpattern name="MLA-RMG" parenttrainpattern="/FGz/IKL"/>
+		<trainpattern name="RMG -" parenttrainpattern="/FGz/IKL"/>
+		<trainpattern name="FHD-FWF" parenttrainpattern="/FGz/IKL/MLA-RMG"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/IKL/MLA-RMG/FHD-FWF"/>
+		<trainpattern name="FEZ-FHD" parenttrainpattern="/FGz/IKL/RMG -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/IKL/RMG -/FEZ-FHD"/>
+		<trainpattern name="LE -" parenttrainpattern="/FGz/FIR"/>
+		<trainpattern name="HSR O" parenttrainpattern="/FGz/FIR"/>
+		<trainpattern name="FKR -" parenttrainpattern="/FGz/FIR"/>
+		<trainpattern name="RMR G" parenttrainpattern="/FGz/FIR"/>
+		<trainpattern name="RMR _" parenttrainpattern="/FGz/FIR"/>
+		<trainpattern name="RMR-E -" parenttrainpattern="/FGz/FIR"/>
+		<trainpattern name="RMR E" parenttrainpattern="/FGz/FIR"/>
+		<trainpattern name="PC 70" parenttrainpattern="/FGz/FIR"/>
+		<trainpattern name="AM " parenttrainpattern="/FGz/FIR"/>
+		<trainpattern name="F836A-FFBS" parenttrainpattern="/FGz/FIR/LE -"/>
+		<trainpattern name="FMHO-FWF" parenttrainpattern="/FGz/FIR/LE -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FIR/LE -/F836A-FFBS"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/FIR/LE -/FMHO-FWF"/>
+		<trainpattern name="FHD-FWF" parenttrainpattern="/FGz/FIR/HSR O"/>
+		<trainpattern name="FFBS-FWF" parenttrainpattern="/FGz/FIR/HSR O"/>
+		<trainpattern name="F836A-FFBS" parenttrainpattern="/FGz/FIR/HSR O"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/FIR/HSR O/FHD-FWF"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/FIR/HSR O/FFBS-FWF"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FIR/HSR O/F836A-FFBS"/>
+		<trainpattern name="FFBS-FWF" parenttrainpattern="/FGz/FIR/FKR -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/FIR/FKR -/FFBS-FWF"/>
+		<trainpattern name="FFBS-FWF" parenttrainpattern="/FGz/FIR/RMR G"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FIR/RMR G/FFBS-FWF"/>
+		<trainpattern name="FFBS-FWF" parenttrainpattern="/FGz/FIR/RMR _"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FIR/RMR _/FFBS-FWF"/>
+		<trainpattern name="FFBS-FWF" parenttrainpattern="/FGz/FIR/RMR-E -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FIR/RMR-E -/FFBS-FWF"/>
+		<trainpattern name="FFBS-FWF" parenttrainpattern="/FGz/FIR/RMR E"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FIR/RMR E/FFBS-FWF"/>
+		<trainpattern name="400" parenttrainpattern="/FGz/FIR/PC 70"/>
+		<trainpattern name="FHD-FWF" parenttrainpattern="/FGz/FIR/PC 70/400"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FIR/PC 70/400/FHD-FWF"/>
+		<trainpattern name="FFBS-FWF" parenttrainpattern="/FGz/FIR/AM "/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/FIR/AM /FFBS-FWF"/>
+		<trainpattern name="FHOEG -" parenttrainpattern="/FGz/FR"/>
+		<trainpattern name="rv" parenttrainpattern="/FGz/FR"/>
+		<trainpattern name="F836A-FHOEG" parenttrainpattern="/FGz/FR/FHOEG -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FR/FHOEG -/F836A-FHOEG"/>
+		<trainpattern name="F836A-FFO G" parenttrainpattern="/FGz/FR/rv"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FR/rv/F836A-FFO G"/>
+		<trainpattern name="Tfzf (F)" parenttrainpattern="/Lz"/>
+		<trainpattern name="Tfzf (RaS)" parenttrainpattern="/Lz"/>
+		<trainpattern name="Tfzf (RaR)" parenttrainpattern="/Lz"/>
+		<trainpattern name="FF aus" parenttrainpattern="/Lz/Tfzf (F)"/>
+		<trainpattern name="FMT aus" parenttrainpattern="/Lz/Tfzf (F)"/>
+		<trainpattern name="FBRM-FF" parenttrainpattern="/Lz/Tfzf (F)/FF aus"/>
+		<trainpattern name="FF-FRA" parenttrainpattern="/Lz/Tfzf (F)/FF aus"/>
+		<trainpattern name="rück" parenttrainpattern="/Lz/Tfzf (F)/FF aus/FBRM-FF"/>
+		<trainpattern name="hin" parenttrainpattern="/Lz/Tfzf (F)/FF aus/FF-FRA"/>
+		<trainpattern name="FBRM-FF" parenttrainpattern="/Lz/Tfzf (F)/FMT aus"/>
+		<trainpattern name="hin" parenttrainpattern="/Lz/Tfzf (F)/FMT aus/FBRM-FF"/>
+		<trainpattern name="FHOEG -" parenttrainpattern="/Lz/Tfzf (RaS)"/>
+		<trainpattern name="FMB W" parenttrainpattern="/Lz/Tfzf (RaS)"/>
+		<trainpattern name="FFO G-FHOEG" parenttrainpattern="/Lz/Tfzf (RaS)/FHOEG -"/>
+		<trainpattern name="rück" parenttrainpattern="/Lz/Tfzf (RaS)/FHOEG -/FFO G-FHOEG"/>
+		<trainpattern name="FHOEG-FRA" parenttrainpattern="/Lz/Tfzf (RaS)/FMB W"/>
+		<trainpattern name="FFO G-FRA" parenttrainpattern="/Lz/Tfzf (RaS)/FMB W"/>
+		<trainpattern name="rück" parenttrainpattern="/Lz/Tfzf (RaS)/FMB W/FHOEG-FRA"/>
+		<trainpattern name="rück" parenttrainpattern="/Lz/Tfzf (RaS)/FMB W/FFO G-FRA"/>
+		<trainpattern name="FO " parenttrainpattern="/Lz/Tfzf (RaR)"/>
+		<trainpattern name="FHOEG -" parenttrainpattern="/Lz/Tfzf (RaR)"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/Lz/Tfzf (RaR)"/>
+		<trainpattern name="FO G" parenttrainpattern="/Lz/Tfzf (RaR)"/>
+		<trainpattern name="FHOEG-FO  G" parenttrainpattern="/Lz/Tfzf (RaR)/FO "/>
+		<trainpattern name="rück" parenttrainpattern="/Lz/Tfzf (RaR)/FO /FHOEG-FO  G"/>
+		<trainpattern name="FHOEG-FO  G" parenttrainpattern="/Lz/Tfzf (RaR)/FHOEG -"/>
+		<trainpattern name="hin" parenttrainpattern="/Lz/Tfzf (RaR)/FHOEG -/FHOEG-FO  G"/>
+		<trainpattern name="FGM-FO  G" parenttrainpattern="/Lz/Tfzf (RaR)/Ohne Linie"/>
+		<trainpattern name="FHOEG-FO  G" parenttrainpattern="/Lz/Tfzf (RaR)/Ohne Linie"/>
+		<trainpattern name="FLG-FO  G" parenttrainpattern="/Lz/Tfzf (RaR)/Ohne Linie"/>
+		<trainpattern name="hin" parenttrainpattern="/Lz/Tfzf (RaR)/Ohne Linie/FGM-FO  G"/>
+		<trainpattern name="hin" parenttrainpattern="/Lz/Tfzf (RaR)/Ohne Linie/FHOEG-FO  G"/>
+		<trainpattern name="rück" parenttrainpattern="/Lz/Tfzf (RaR)/Ohne Linie/FLG-FO  G"/>
+		<trainpattern name="FGM-FO  G" parenttrainpattern="/Lz/Tfzf (RaR)/FO G"/>
+		<trainpattern name="rück" parenttrainpattern="/Lz/Tfzf (RaR)/FO G/FGM-FO  G"/>
+		<trainpattern name="CIL" parenttrainpattern="/Gz"/>
+		<trainpattern name="DGS" parenttrainpattern="/Gz"/>
+		<trainpattern name="FL -" parenttrainpattern="/Gz/CIL"/>
+		<trainpattern name="F836A-FKRI" parenttrainpattern="/Gz/CIL/FL -"/>
+		<trainpattern name="rück" parenttrainpattern="/Gz/CIL/FL -/F836A-FKRI"/>
+		<trainpattern name="RLB G" parenttrainpattern="/Gz/DGS"/>
+		<trainpattern name="BRU -" parenttrainpattern="/Gz/DGS"/>
+		<trainpattern name="FFBS-FWF" parenttrainpattern="/Gz/DGS/RLB G"/>
+		<trainpattern name="rück" parenttrainpattern="/Gz/DGS/RLB G/FFBS-FWF"/>
+		<trainpattern name="FFBS-FWF" parenttrainpattern="/Gz/DGS/BRU -"/>
+		<trainpattern name="hin" parenttrainpattern="/Gz/DGS/BRU -/FFBS-FWF"/>
+		<trainpattern name="FZT" parenttrainpattern="/NGz"/>
+		<trainpattern name="FZ" parenttrainpattern="/NGz"/>
+		<trainpattern name="NbZ" parenttrainpattern="/NGz"/>
+		<trainpattern name="DGS" parenttrainpattern="/NGz"/>
+		<trainpattern name="FMB W" parenttrainpattern="/NGz/FZT"/>
+		<trainpattern name="FGM -" parenttrainpattern="/NGz/FZT"/>
+		<trainpattern name="FO G" parenttrainpattern="/NGz/FZT"/>
+		<trainpattern name="FHOEG -" parenttrainpattern="/NGz/FZT"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/NGz/FZT"/>
+		<trainpattern name="FH S" parenttrainpattern="/NGz/FZT"/>
+		<trainpattern name="FLG -" parenttrainpattern="/NGz/FZT"/>
+		<trainpattern name="FHOEG-FRA" parenttrainpattern="/NGz/FZT/FMB W"/>
+		<trainpattern name="FFO G-FRA" parenttrainpattern="/NGz/FZT/FMB W"/>
+		<trainpattern name="FMHO-FRA" parenttrainpattern="/NGz/FZT/FMB W"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZT/FMB W/FHOEG-FRA"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZT/FMB W/FFO G-FRA"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZT/FMB W/FMHO-FRA"/>
+		<trainpattern name="FGM-FHOEG" parenttrainpattern="/NGz/FZT/FGM -"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/FZT/FGM -/FGM-FHOEG"/>
+		<trainpattern name="FGM-FO  G" parenttrainpattern="/NGz/FZT/FO G"/>
+		<trainpattern name="FO  G-FRA" parenttrainpattern="/NGz/FZT/FO G"/>
+		<trainpattern name="FLG-FO  G" parenttrainpattern="/NGz/FZT/FO G"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZT/FO G/FGM-FO  G"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/FZT/FO G/FO  G-FRA"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZT/FO G/FLG-FO  G"/>
+		<trainpattern name="FHOEG-FO  G" parenttrainpattern="/NGz/FZT/FHOEG -"/>
+		<trainpattern name="FHOEG-FRA" parenttrainpattern="/NGz/FZT/FHOEG -"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/FZT/FHOEG -/FHOEG-FO  G"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/FZT/FHOEG -/FHOEG-FRA"/>
+		<trainpattern name="FFO G-FHD" parenttrainpattern="/NGz/FZT/Ohne Linie"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/FZT/Ohne Linie/FFO G-FHD"/>
+		<trainpattern name="FHD-FRA" parenttrainpattern="/NGz/FZT/FH S"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/FZT/FH S/FHD-FRA"/>
+		<trainpattern name="FLG-FO  G" parenttrainpattern="/NGz/FZT/FLG -"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/FZT/FLG -/FLG-FO  G"/>
+		<trainpattern name="FLG -FO" parenttrainpattern="/NGz/FZ"/>
+		<trainpattern name="FLG-FO  G" parenttrainpattern="/NGz/FZ/FLG -FO"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/FZ/FLG -FO/FLG-FO  G"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/NGz/NbZ"/>
+		<trainpattern name="F836A-FLG" parenttrainpattern="/NGz/NbZ/Ohne Linie"/>
+		<trainpattern name="FFW-FWF" parenttrainpattern="/NGz/NbZ/Ohne Linie"/>
+		<trainpattern name="FFW-FWN" parenttrainpattern="/NGz/NbZ/Ohne Linie"/>
+		<trainpattern name="FFW-FHD" parenttrainpattern="/NGz/NbZ/Ohne Linie"/>
+		<trainpattern name="FFW-FKRI" parenttrainpattern="/NGz/NbZ/Ohne Linie"/>
+		<trainpattern name="FGM-FKRI" parenttrainpattern="/NGz/NbZ/Ohne Linie"/>
+		<trainpattern name="FFW-FGM" parenttrainpattern="/NGz/NbZ/Ohne Linie"/>
+		<trainpattern name="FFBS-FFW" parenttrainpattern="/NGz/NbZ/Ohne Linie"/>
+		<trainpattern name="FFAU-FFBS" parenttrainpattern="/NGz/NbZ/Ohne Linie"/>
+		<trainpattern name="FFAU-FFS" parenttrainpattern="/NGz/NbZ/Ohne Linie"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/NbZ/Ohne Linie/F836A-FLG"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/NbZ/Ohne Linie/FFW-FWF"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/NbZ/Ohne Linie/FFW-FWF"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/NbZ/Ohne Linie/FFW-FWN"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/NbZ/Ohne Linie/FFW-FWN"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/NbZ/Ohne Linie/FFW-FHD"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/NbZ/Ohne Linie/FFW-FHD"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/NbZ/Ohne Linie/FFW-FKRI"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/NbZ/Ohne Linie/FGM-FKRI"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/NbZ/Ohne Linie/FFW-FGM"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/NbZ/Ohne Linie/FFBS-FFW"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/NbZ/Ohne Linie/FFBS-FFW"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/NbZ/Ohne Linie/FFAU-FFBS"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/NbZ/Ohne Linie/FFAU-FFBS"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/NbZ/Ohne Linie/FFAU-FFS"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/NGz/DGS"/>
+		<trainpattern name="F836A-FHD" parenttrainpattern="/NGz/DGS/Ohne Linie"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/DGS/Ohne Linie/F836A-FHD"/>
+	</trainpatterns>
+</railsys>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<line lineID="3620" name="F-Niederrad - Abzw Gutleuthof" trafficRouting="on_the_right" type="local" dependentLines="fgur fni">
+	<version major="1" minor="2" patchlevel="0" comment=""/>
+	<stations/>
+	<nodes>
+		<node nodeID="72324" description="Verbindungs-Knoten" kilometre="34.900" x="7406.62" y="-2496.73" xNet="2623980.9" yNet="7574837.5" xWGS84="5328.14" yWGS84="-2496.73"/>
+		<node nodeID="72325" description="Verbindungs-Knoten" kilometre="34.900" x="7406.62" y="-2296.73" xNet="2623883.5" yNet="7574937.5" xWGS84="5328.14" yWGS84="-2296.73"/>
+	</nodes>
+	<links>
+		<link source="72084.fni" target="72324" gradient="2.2" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="72324" target="44713.fgur" gradient="2.2" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="71999.fni" target="72325" gradient="2.2" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="72325" target="44727.fgur" gradient="2.2" vmax="60" vmaxr="60" electrified="true"/>
+	</links>
+	<dependentLinks/>
+	<blockSections>
+		<blockSection presignal="44698.fgur" nodes="44697.fgur 44698.fgur 44699.fgur 44700.fgur 44701.fgur 44702.fgur 44703.fgur 44704.fgur 44705.fgur 44706.fgur 44708.fgur 44712.fgur 44709.fgur 44710.fgur 44738.fgur 44737.fgur 44736.fgur 44735.fgur 44734.fgur 44733.fgur 44732.fgur 44731.fgur 44730.fgur 44768.fgur 44729.fgur 44728.fgur 44727.fgur 72325 71999.fni 71998.fni 71997.fni 71996.fni 72333.fni 71995.fni 71994.fni" speedIndicators="44737.fgur"/>
+		<blockSection presignal="44684.fgur" nodes="44683.fgur 44684.fgur 44685.fgur 44686.fgur 44687.fgur 44688.fgur 44689.fgur 44690.fgur 44691.fgur 44692.fgur 44694.fgur 44725.fgur 44724.fgur 44723.fgur 44722.fgur 44721.fgur 44720.fgur 44719.fgur 44718.fgur 44717.fgur 44716.fgur 44769.fgur 44715.fgur 44714.fgur 44713.fgur 72324 72084.fni 72083.fni 72082.fni 72081.fni 72332.fni 72080.fni 72079.fni" speedIndicators="44722.fgur"/>
+		<blockSection presignal="71970.fni" nodes="71969.fni 71970.fni 71971.fni 71972.fni 71973.fni 71974.fni 71975.fni 71976.fni 71977.fni 72058.fni 72057.fni 72059.fni 72047.fni 72046.fni 72049.fni 72050.fni 72051.fni 72052.fni 72053.fni 72054.fni 72056.fni 72237.fni 72238.fni 72239.fni 72240.fni 72067.fni 72241.fni 72242.fni 72243.fni 72244.fni 72245.fni 71985.fni 71984.fni 71987.fni 71988.fni 71989.fni 71990.fni 71991.fni 71992.fni 71993.fni 71994.fni 71995.fni 72333.fni 71996.fni 71997.fni 71998.fni 71999.fni 72325 44727.fgur 44728.fgur 44729.fgur 44768.fgur 44730.fgur 44731.fgur" speedIndicators="71972.fni 71987.fni 72239.fni"/>
+		<blockSection presignal="72099.fni" nodes="72098.fni 72099.fni 72100.fni 72101.fni 72102.fni 72103.fni 72104.fni 72105.fni 72106.fni 72015.fni 72014.fni 72017.fni 72018.fni 72019.fni 72020.fni 72021.fni 72022.fni 72023.fni 72025.fni 72136.fni 72137.fni 72135.fni 72139.fni 72140.fni 72141.fni 72142.fni 72143.fni 71986.fni 71984.fni 71987.fni 71988.fni 71989.fni 71990.fni 71991.fni 71992.fni 71993.fni 71994.fni 71995.fni 72333.fni 71996.fni 71997.fni 71998.fni 71999.fni 72325 44727.fgur 44728.fgur 44729.fgur 44768.fgur 44730.fgur 44731.fgur" speedIndicators="71987.fni 72100.fni 72141.fni"/>
+		<blockSection presignal="72258.fni" nodes="72257.fni 72258.fni 72259.fni 72260.fni 72261.fni 72262.fni 72187.fni 72263.fni 72304.fni 72305.fni 72306.fni 72307.fni 72048.fni 72046.fni 72049.fni 72050.fni 72051.fni 72052.fni 72053.fni 72054.fni 72056.fni 72237.fni 72238.fni 72239.fni 72240.fni 72067.fni 72241.fni 72242.fni 72243.fni 72244.fni 72245.fni 71985.fni 71984.fni 71987.fni 71988.fni 71989.fni 71990.fni 71991.fni 71992.fni 71993.fni 71994.fni 71995.fni 72333.fni 71996.fni 71997.fni 71998.fni 71999.fni 72325 44727.fgur 44728.fgur 44729.fgur 44768.fgur 44730.fgur 44731.fgur" speedIndicators="71987.fni 72239.fni"/>
+		<blockSection presignal="72072.fni" nodes="72071.fni 72072.fni 72073.fni 72074.fni 72075.fni 72076.fni 72077.fni 72078.fni 72079.fni 72080.fni 72332.fni 72081.fni 72082.fni 72083.fni 72084.fni 72324 44713.fgur 44714.fgur 44715.fgur 44769.fgur 44716.fgur 44717.fgur"/>
+	</blockSections>
+	<slipDistances/>
+	<approachControlRoutes/>
+	<stationRoutes/>
+	<evzg/>
+	<evzg-katalog/>
+</line>

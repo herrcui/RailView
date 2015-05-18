@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<line lineID="fbso" name="Bad Soden (Ts)" trafficRouting="on_the_right" type="global" dependentLines="3640 3641">
+	<version major="1" minor="2" patchlevel="0" comment=""/>
+	<stations>
+		<station stationID="FBSO" name="Bad Soden (Ts)" xNet="2.5445e+06" yNet="7.6282e+06" xWGS84="0" yWGS84="0"/>
+	</stations>
+	<nodes>
+		<node nodeID="17483" description="Betriebsstellengrenze Partner: FSZ Strecke: 3640 Gleis: 0 Id:17483 Str:3640 Bild (20.8340 / -18.0000)" kilometre="4.700" x="2083.4" y="-1800" xNet="2546400" yNet="7626700" xWGS84="2083.4" yWGS84="-1800">
+			<netLimitInfo lineID="3640" stationID="FSZ" stationName="Sulzbach (Ts)"/>
+		</node>
+		<node nodeID="17484" description="Neigung S: 5.90 F: -6.80 Id:17484 Str:3640" kilometre="4.700" x="2157.1267" y="-1800" xNet="2546391" yNet="7626744" xWGS84="2157.1267" yWGS84="-1800"/>
+		<node nodeID="17485" description="Bildpunkt  Id:17485 Str:3640 Bild (21.9399 / -18.0000)" kilometre="4.710" x="2193.99" y="-1800" xNet="2546386" yNet="7626773" xWGS84="2193.99" yWGS84="-1800"/>
+		<node nodeID="17486" description="Bildpunkt  Id:17486 Str:3640 Bild (24.2490 / -14.0000)" kilometre="4.720" x="2424.9" y="-1400" xNet="2546588" yNet="7627185.4" xWGS84="2424.9" yWGS84="-1400"/>
+		<node nodeID="17487" description="Bildpunkt  Id:17487 Str:3640 Bild (24.2490 / -8.0000)" kilometre="4.730" x="2424.9" y="-800" xNet="2546588" yNet="7627785.4" xWGS84="2424.9" yWGS84="-800"/>
+		<node nodeID="17488" description="Bildpunkt  Id:17488 Str:3640 Bild (21.9399 / -4.0000)" kilometre="4.740" x="2193.99" y="-400" xNet="2546357.1" yNet="7628185.4" xWGS84="2193.99" yWGS84="-400"/>
+		<node nodeID="17489" name="V953h" description="VorsignalS FstrBildezeit: 9s Id:17489 Str:3640" kilometre="4.910" x="2114.9354" y="-400" xNet="2546278" yNet="7628185.4" xWGS84="2114.9354" yWGS84="-400" referenceNode="17488" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="17490" description="Neigung S: 6.40 F: -5.90 Id:17490 Str:3640" kilometre="4.975" x="2084.7087" y="-400" xNet="2546247.8" yNet="7628185.4" xWGS84="2084.7087" yWGS84="-400"/>
+		<node nodeID="17491" name="BÜ5" description="Bahnuebergang  Id:17491 Str:3640" kilometre="5.144" x="2006.1192" y="-400" xNet="2546169.2" yNet="7628185.4" xWGS84="2006.1192" yWGS84="-400"/>
+		<node nodeID="17492" description="Neigung S: 4.70 F: -6.40 Id:17492 Str:3640" kilometre="5.350" x="1910.3236" y="-400" xNet="2546073.4" yNet="7628185.4" xWGS84="1910.3236" yWGS84="-400"/>
+		<node nodeID="17493" description="Neigung S: 6.20 F: -4.70 Id:17493 Str:3640" kilometre="5.540" x="1821.9685" y="-400" xNet="2545985" yNet="7628185.4" xWGS84="1821.9685" yWGS84="-400"/>
+		<node nodeID="17494" description="Neigung S: 4.60 F: -6.20 Id:17494 Str:3640" kilometre="5.860" x="1673.1599" y="-400" xNet="2545836.2" yNet="7628185.4" xWGS84="1673.1599" yWGS84="-400"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="17495" name="953H" description="HauptsignalS DwegAuflösezeit: 3s Id:17495 Str:3640" kilometre="5.923" x="1643.8632" y="-400" xNet="2545806.9" yNet="7628185.4" xWGS84="0" yWGS84="0" referenceNode="17494"/>
+		<speedIndicator nodeID="17496" description="GeschwZulaessigS V: 60 Wirkungsort: hier Zugbeeinflussung: Alle Id:17496 Str:3640" kilometre="5.923" x="1634.5627" y="-400" xNet="2545797.6" yNet="7628185.4" xWGS84="0" yWGS84="0" referenceNode="17495"/>
+		<node nodeID="17497" description="Neigung S: 15.00 F: -4.60 Id:17497 Str:3640" kilometre="6.080" x="1561.5535" y="-400" xNet="2545724.6" yNet="7628185.4" xWGS84="1561.5535" yWGS84="-400"/>
+		<node nodeID="17498" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:17498 Str:3640" kilometre="6.140" x="1533.6519" y="-400" xNet="2545696.7" yNet="7628185.4" xWGS84="1533.6519" yWGS84="-400"/>
+		<node nodeID="17499" description="FstrZugschlussstelleF FstrAuflösezeit: 3s Id:17499 Str:3640" kilometre="6.140" x="1524.3513" y="-400" xNet="2545687.4" yNet="7628185.4" xWGS84="1524.3513" yWGS84="-400" referenceNode="17500" releaseContact="true"/>
+		<speedIndicator nodeID="17500" description="GeschwZulaessigF V: 80 Wirkungsort: hier Zugbeeinflussung: Alle Id:17500 Str:3640" kilometre="6.189" x="1501.565" y="-400" xNet="2545664.6" yNet="7628185.4" xWGS84="0" yWGS84="0" referenceNode="17501"/>
+		<switch start="17500" endOfMainTrack="17502" endOfBranchTrack="17503" nodeID="17501" name="W81" description="Weichenanfang  Id:17501 Str:3640 Bild (15.0110 / -4.0000)" kilometre="6.190" x="1501.1" y="-400" xNet="2545664.2" yNet="7628185.4" xWGS84="0" yWGS84="0"/>
+		<switch start="17507" endOfMainTrack="17505" endOfBranchTrack="17506" nodeID="17504" name="W82" description="Weichenanfang  Id:17504 Str:3641 Bild (13.8569 / -2.0000)" kilometre="4.850" x="1385.69" y="-200" xNet="2545548.8" yNet="7628385.4" xWGS84="0" yWGS84="0"/>
+		<speedIndicator nodeID="17507" description="GeschwZulaessigS V: 30 Wirkungsort: hier Zugbeeinflussung: Alle Id:17507 Str:3641" kilometre="4.850" x="1175.6991" y="-200" xNet="2545338.8" yNet="7628385.4" xWGS84="0" yWGS84="0" referenceNode="17504"/>
+		<switch start="17507" endOfMainTrack="17509" endOfBranchTrack="17510" nodeID="17508" name="W83" description="Weichenanfang  Id:17508 Str:3641 Bild (11.5470 / -2.0000)" kilometre="4.852" x="1154.7" y="-200" xNet="2545317.8" yNet="7628385.4" xWGS84="0" yWGS84="0"/>
+		<node nodeID="17503" description="WeichenabzweigRechts  Id:17503 Str:3641" kilometre="4.726" x="1489.7853" y="-380.39216" xNet="2545652.8" yNet="7628205.1" xWGS84="1489.7853" yWGS84="-380.39216"/>
+		<node nodeID="17511" description="Neigung S: 14.50 F: -15.00 Id:17511 Str:3641" kilometre="4.726" x="1478.4706" y="-360.78431" xNet="2545641.5" yNet="7628224.7" xWGS84="1478.4706" yWGS84="-360.78431"/>
+		<node nodeID="17512" description="GeschwZulaessigF V: 60 Wirkungsort: signal Zugbeeinflussung: Alle Id:17512 Str:3641" kilometre="4.726" x="1467.1559" y="-341.17647" xNet="2545630.2" yNet="7628244.3" xWGS84="1467.1559" yWGS84="-341.17647"/>
+		<node nodeID="17505" description="Weichenstamm  Id:17505 Str:3641" kilometre="4.850" x="1397.0047" y="-219.60784" xNet="2545560.1" yNet="7628365.8" xWGS84="1397.0047" yWGS84="-219.60784"/>
+		<node nodeID="17509" description="Weichenstamm  Id:17509 Str:3640" kilometre="6.314" x="1141.9475" y="-222.09945" xNet="2545305" yNet="7628363.3" xWGS84="1141.9475" yWGS84="-222.09945"/>
+		<node nodeID="17513" description="Neigung S: 3.90 F: -14.50 Id:17513 Str:3640" kilometre="6.326" x="1134.296" y="-235.35912" xNet="2545297.4" yNet="7628350.1" xWGS84="1134.296" yWGS84="-235.35912"/>
+		<node nodeID="17514" description="GeschwZulaessigF V: 40 Wirkungsort: signal Zugbeeinflussung: Alle Id:17514 Str:3640" kilometre="6.390" x="1093.4881" y="-306.07735" xNet="2545256.6" yNet="7628279.4" xWGS84="1093.4881" yWGS84="-306.07735"/>
+		<node nodeID="17515" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:17515 Str:3640" kilometre="6.390" x="1080.7356" y="-328.1768" xNet="2545243.8" yNet="7628257.3" xWGS84="1080.7356" yWGS84="-328.1768"/>
+		<node nodeID="17516" description="WeichenabzweigLinks  Id:17516 Str:3640" kilometre="6.435" x="1052.0425" y="-377.90055" xNet="2545215.1" yNet="7628207.5" xWGS84="1052.0425" yWGS84="-377.90055"/>
+		<node nodeID="17510" description="WeichenabzweigRechts  Id:17510 Str:3641" kilometre="4.852" x="1111.3717" y="-200" xNet="2545274.4" yNet="7628385.4" xWGS84="1111.3717" yWGS84="-200"/>
+		<node nodeID="17518" description="Neigung S: 3.90 F: -14.50 Id:17518 Str:3641" kilometre="4.864" x="1085.3747" y="-200" xNet="2545248.4" yNet="7628385.4" xWGS84="1085.3747" yWGS84="-200"/>
+		<node nodeID="17519" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:17519 Str:3641" kilometre="4.929" x="944.5576" y="-200" xNet="2545107.6" yNet="7628385.4" xWGS84="944.5576" yWGS84="-200"/>
+		<node nodeID="17520" description="FstrZugschlussstelleS FstrAuflösezeit: 3s Id:17520 Str:3641" kilometre="4.979" x="836.23677" y="-200" xNet="2544999.3" yNet="7628385.4" xWGS84="836.23677" yWGS84="-200" referenceNode="17519" releaseContact="true"/>
+		<signal interlockingMachine="sppAuto" indusi500HzLocation="none" nodeID="17521" name="952.82" description="HauptsignalF DwegAuflösezeit: 3s Id:17521 Str:3641" kilometre="4.979" x="792.90844" y="-200" xNet="2544956" yNet="7628385.4" xWGS84="0" yWGS84="0" referenceNode="17522"/>
+		<node nodeID="17522" description="Neigung S: 2.90 F: -3.90 Id:17522 Str:3641" kilometre="5.032" x="678.08837" y="-200" xNet="2544841.2" yNet="7628385.4" xWGS84="678.08837" yWGS84="-200"/>
+		<track trackID="B-82" stationID="FBSO" length="231" type="stopBoardFreight" nodeID="17523" name="82" description="HalteplatzGzF Länge: 231m Id:17523 Str:3641" kilometre="5.050" x="639.09287" y="-200" xNet="2544802.2" yNet="7628385.4" xWGS84="0" yWGS84="0" referenceNode="17524"/>
+		<track trackID="D-82" stationID="FBSO" length="240" type="stopBoardPass" nodeID="17524" name="82" description="HalteplatzRzRechtsF Länge: 240m Id:17524 Str:3641" kilometre="5.050" x="595.76454" y="-200" xNet="2544758.8" yNet="7628385.4" xWGS84="0" yWGS84="0" referenceNode="17525">
+			<platform startPos="-5" endPos="-240" width="60" left="false" open="true"/>
+		</track>
+		<node nodeID="17525" description="Neigung S: 0.00 F: -2.90 Id:17525 Str:3641" kilometre="5.211" x="246.97148" y="-200" xNet="2544410" yNet="7628385.4" xWGS84="246.97148" yWGS84="-200"/>
+		<track trackID="G-82" stationID="FBSO" type="timingPoint" nodeID="17526" name="82" description="Fahrzeitmesspunkt  Id:17526 Str:3641" kilometre="5.235" x="194.97749" y="-200" xNet="2544358" yNet="7628385.4" xWGS84="0" yWGS84="0" referenceNode="17527"/>
+		<track trackID="A-82" stationID="FBSO" length="240" type="stopBoardPass" nodeID="17527" name="82" description="HalteplatzRzLinksS Länge: 240m Id:17527 Str:3641" kilometre="5.281" x="95.322326" y="-200" xNet="2544258.4" yNet="7628385.4" xWGS84="0" yWGS84="0" referenceNode="17526">
+			<platform startPos="-5" endPos="-240" width="60" left="true" open="true"/>
+		</track>
+		<track trackID="C-82" stationID="FBSO" length="231" type="stopBoardFreight" nodeID="17528" name="82" description="HalteplatzGzS Länge: 231m Id:17528 Str:3641" kilometre="5.281" x="51.993996" y="-200" xNet="2544215.1" yNet="7628385.4" xWGS84="0" yWGS84="0" referenceNode="17527"/>
+		<speedIndicator nodeID="17529" description="GeschwZulaessigF V: 70 Wirkungsort: hier Zugbeeinflussung: Alle Id:17529 Str:3641" kilometre="5.285" x="43.32833" y="-200" xNet="2544206.4" yNet="7628385.4" xWGS84="0" yWGS84="0" referenceNode="17530"/>
+		<signal interlockingMachine="Tb:0_Tl:3_NTA" nodeID="17530" description="Prellbock  Id:17530 Str:3641 Bild (0.0000 / -2.0000)" kilometre="5.285" x="0" y="-200" xNet="2544163.1" yNet="7628385.4" xWGS84="0" yWGS84="0" referenceNode="17529"/>
+		<node nodeID="17531" description="Betriebsstellengrenze Partner: FSZN Strecke: 3641 Gleis: 0 Id:17531 Str:3641 Bild (34.6410 / -2.0000)" kilometre="4.000" x="3464.1" y="-200" xNet="2547627.2" yNet="7628385.4" xWGS84="3464.1" yWGS84="-200">
+			<netLimitInfo lineID="3641" stationID="FSZN" stationName="Sulzbach (Ts) N"/>
+		</node>
+		<node nodeID="17532" description="Neigung S: 0.20 F: 25.40 Id:17532 Str:3641" kilometre="4.190" x="3030.1463" y="-200" xNet="2547193.2" yNet="7628385.4" xWGS84="3030.1463" yWGS84="-200"/>
+		<node nodeID="17533" description="Neigung S: 4.70 F: -0.20 Id:17533 Str:3641" kilometre="4.359" x="2644.1558" y="-200" xNet="2546807.2" yNet="7628385.4" xWGS84="2644.1558" yWGS84="-200"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="17534" name="953N" description="HauptsignalS DwegAuflösezeit: 3s Id:17534 Str:3641" kilometre="4.463" x="2406.6233" y="-200" xNet="2546569.7" yNet="7628385.4" xWGS84="0" yWGS84="0" referenceNode="17533"/>
+		<speedIndicator nodeID="17535" description="GeschwZulaessigS V: 60 Wirkungsort: hier Zugbeeinflussung: Alle Id:17535 Str:3641" kilometre="4.463" x="2360.9439" y="-200" xNet="2546524" yNet="7628385.4" xWGS84="0" yWGS84="0" referenceNode="17534"/>
+		<node nodeID="17536" description="Neigung S: 14.50 F: -4.70 Id:17536 Str:3641" kilometre="4.620" x="2002.3611" y="-200" xNet="2546165.4" yNet="7628385.4" xWGS84="2002.3611" yWGS84="-200"/>
+		<node nodeID="17537" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:17537 Str:3641" kilometre="4.769" x="1662.05" y="-200" xNet="2545825.1" yNet="7628385.4" xWGS84="1662.05" yWGS84="-200"/>
+		<speedIndicator nodeID="17538" description="GeschwZulaessigF V: 70 Wirkungsort: hier Zugbeeinflussung: Alle Id:17538 Str:3641" kilometre="4.800" x="1591.247" y="-200" xNet="2545754.3" yNet="7628385.4" xWGS84="0" yWGS84="0" referenceNode="17539"/>
+		<node nodeID="17539" description="FstrZugschlussstelleF FstrAuflösezeit: 3s Id:17539 Str:3641" kilometre="4.800" x="1545.5677" y="-200" xNet="2545708.6" yNet="7628385.4" xWGS84="1545.5677" yWGS84="-200" referenceNode="17506" releaseContact="true"/>
+		<node nodeID="17506" description="WeichenabzweigLinks  Id:17506 Str:3641" kilometre="4.850" x="1431.3693" y="-200" xNet="2545594.4" yNet="7628385.4" xWGS84="1431.3693" yWGS84="-200"/>
+		<switch start="17541" endOfMainTrack="17540" endOfBranchTrack="17516" nodeID="17517" name="W84" description="Weichenanfang  Id:17517 Str:3640 Bild (10.3929 / -4.0000)" kilometre="6.435" x="1039.29" y="-400" xNet="2545202.4" yNet="7628185.4" xWGS84="0" yWGS84="0"/>
+		<node nodeID="17541" description="FstrZugschlussstelleS FstrAuflösezeit: 3s Id:17541 Str:3640" kilometre="6.438" x="1029.5161" y="-400" xNet="2545192.6" yNet="7628185.4" xWGS84="1029.5161" yWGS84="-400" referenceNode="17517" releaseContact="true"/>
+		<signal interlockingMachine="sppAuto" nodeID="17542" name="952.81" description="HauptsignalF DwegAuflösezeit: 3s Id:17542 Str:3640" kilometre="6.440" x="1023.0002" y="-400" xNet="2545186.1" yNet="7628185.4" xWGS84="0" yWGS84="0" referenceNode="17543"/>
+		<track trackID="B-81" stationID="FBSO" length="226" type="stopBoardFreight" nodeID="17543" name="81" description="HalteplatzGzF Länge: 226m Id:17543 Str:3640" kilometre="6.445" x="1006.7104" y="-400" xNet="2545169.8" yNet="7628185.4" xWGS84="0" yWGS84="0" referenceNode="17544"/>
+		<track trackID="D-81" stationID="FBSO" length="215" type="stopBoardPass" nodeID="17544" name="81" description="HalteplatzRzLinksF Länge: 215m Id:17544 Str:3640" kilometre="6.445" x="941.55113" y="-400" xNet="2545104.6" yNet="7628185.4" xWGS84="0" yWGS84="0" referenceNode="17545">
+			<platform startPos="-5" endPos="-215" width="60" left="true" open="true"/>
+		</track>
+		<node nodeID="17545" description="Neigung S: 2.50 F: -3.90 Id:17545 Str:3640" kilometre="6.466" x="873.13392" y="-400" xNet="2545036.2" yNet="7628185.4" xWGS84="873.13392" yWGS84="-400"/>
+		<track trackID="G-81" stationID="FBSO" type="timingPoint" nodeID="17546" name="81" description="Fahrzeitmesspunkt  Id:17546 Str:3640" kilometre="6.625" x="355.1179" y="-400" xNet="2544518.2" yNet="7628185.4" xWGS84="0" yWGS84="0" referenceNode="17547"/>
+		<track trackID="A-81" stationID="FBSO" length="215" type="stopBoardPass" nodeID="17547" name="81" description="HalteplatzRzRechtsS Länge: 215m Id:17547 Str:3640" kilometre="6.671" x="205.25163" y="-400" xNet="2544368.3" yNet="7628185.4" xWGS84="0" yWGS84="0" referenceNode="17546">
+			<platform startPos="-5" endPos="-215" width="60" left="false" open="true"/>
+		</track>
+		<track trackID="C-81" stationID="FBSO" length="226" type="stopBoardFreight" nodeID="17548" name="81" description="HalteplatzGzS Länge: 226m Id:17548 Str:3640" kilometre="6.671" x="140.09238" y="-400" xNet="2544303.2" yNet="7628185.4" xWGS84="0" yWGS84="0" referenceNode="17547"/>
+		<node nodeID="17549" description="Neigung S: 0.00 F: -2.50 Id:17549 Str:3640" kilometre="6.674" x="130.3185" y="-400" xNet="2544293.4" yNet="7628185.4" xWGS84="130.3185" yWGS84="-400"/>
+		<speedIndicator nodeID="17550" description="GeschwZulaessigF V: 80 Wirkungsort: hier Zugbeeinflussung: Alle Id:17550 Str:3640" kilometre="6.674" x="65.159248" y="-400" xNet="2544228.2" yNet="7628185.4" xWGS84="0" yWGS84="0" referenceNode="17551"/>
+		<signal interlockingMachine="Tb:0_Tl:3_NTA" nodeID="17551" description="Prellbock  Id:17551 Str:3640 Bild (0.0000 / -4.0000)" kilometre="6.674" x="0" y="-400" xNet="2544163.1" yNet="7628185.4" xWGS84="0" yWGS84="0" referenceNode="17550"/>
+		<node nodeID="17502" description="Weichenstamm  Id:17502 Str:3640" kilometre="6.190" x="1468.6923" y="-400" xNet="2545631.8" yNet="7628185.4" xWGS84="1468.6923" yWGS84="-400"/>
+		<speedIndicator nodeID="17552" description="GeschwZulaessigS V: 30 Wirkungsort: hier Zugbeeinflussung: Alle Id:17552 Str:3640" kilometre="6.311" x="1272.6256" y="-400" xNet="2545435.7" yNet="7628185.4" xWGS84="0" yWGS84="0" referenceNode="17502"/>
+		<node nodeID="17553" description="Neigung S: 3.90 F: -15.00 Id:17553 Str:3640" kilometre="6.326" x="1248.3198" y="-400" xNet="2545411.4" yNet="7628185.4" xWGS84="1248.3198" yWGS84="-400"/>
+		<node nodeID="17554" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:17554 Str:3640" kilometre="6.390" x="1144.6151" y="-400" xNet="2545307.7" yNet="7628185.4" xWGS84="1144.6151" yWGS84="-400"/>
+		<node nodeID="17540" description="Weichenstamm  Id:17540 Str:3640" kilometre="6.435" x="1071.6977" y="-400" xNet="2545234.8" yNet="7628185.4" xWGS84="1071.6977" yWGS84="-400"/>
+		<stationBorder exitType="regular" stationID="FBSO" lineID="3640" trackNumber="1" nodeID="17555" description="Betriebsstellengrenze Partner: FSZ Strecke: 3640 Gleis: 0 Id:17483 Str:3640 Bild (20.8340 / -18.0000)" kilometre="6.140" x="1547.6027" y="-400" xNet="2545710.7" yNet="7628185.4" xWGS84="1533.6519" yWGS84="-400" referenceNode="17498"/>
+		<stationBorder exitType="regular" stationID="FBSO" lineID="3641" trackNumber="1" nodeID="17556" description="Betriebsstellengrenze Partner: FSZN Strecke: 3641 Gleis: 0 Id:17531 Str:3641 Bild (34.6410 / -2.0000)" kilometre="4.769" x="1832.2056" y="-200" xNet="2545995.3" yNet="7628385.4" xWGS84="1662.05" yWGS84="-200" referenceNode="17537"/>
+		<stationBorder exitType="locked" stationID="FBSO" lineID="3641" trackNumber="" netBorder="true" nodeID="17557" description="Prellbock  Id:17530 Str:3641 Bild (0.0000 / -2.0000)" kilometre="5.285" x="-4.332833" y="-200" xNet="2544158.7" yNet="7628385.4" xWGS84="0" yWGS84="0" referenceNode="17530"/>
+		<stationBorder exitType="locked" stationID="FBSO" lineID="3640" trackNumber="" netBorder="true" nodeID="17558" description="Prellbock  Id:17551 Str:3640 Bild (0.0000 / -4.0000)" kilometre="6.674" x="-6.5159248" y="-400" xNet="2544156.5" yNet="7628185.4" xWGS84="0" yWGS84="0" referenceNode="17551"/>
+	</nodes>
+	<links>
+		<link source="17483" target="17484" gradient="6.8" vmax="80" vmaxr="80" bidirectional="true" electrified="true"/>
+		<link source="17484" target="17485" length="10" gradient="5.9" vmax="80" vmaxr="80" bidirectional="true" electrified="true"/>
+		<link source="17485" target="17486" length="10" gradient="5.9" vmax="80" vmaxr="80" bidirectional="true" electrified="true"/>
+		<link source="17486" target="17487" length="10" gradient="5.9" vmax="80" vmaxr="80" bidirectional="true" electrified="true"/>
+		<link source="17487" target="17488" length="10" gradient="5.9" vmax="80" vmaxr="80" bidirectional="true" electrified="true"/>
+		<link source="17488" target="17489" length="170" gradient="5.9" vmax="80" vmaxr="80" bidirectional="true" electrified="true"/>
+		<link source="17489" target="17490" length="65" gradient="5.9" vmax="80" vmaxr="80" bidirectional="true" electrified="true"/>
+		<link source="17490" target="17491" length="169" gradient="6.4" vmax="80" vmaxr="80" bidirectional="true" electrified="true"/>
+		<link source="17491" target="17492" length="206" gradient="6.4" vmax="80" vmaxr="80" bidirectional="true" electrified="true"/>
+		<link source="17492" target="17493" length="190" gradient="4.7" vmax="80" vmaxr="80" bidirectional="true" electrified="true"/>
+		<link source="17493" target="17494" length="320" gradient="6.2" vmax="80" vmaxr="80" bidirectional="true" electrified="true"/>
+		<link source="17494" target="17495" length="63" gradient="4.6" vmax="80" vmaxr="80" bidirectional="true" electrified="true"/>
+		<link source="17495" target="17496" gradient="4.6" vmax="80" vmaxr="80" bidirectional="true" electrified="true"/>
+		<link source="17496" target="17497" length="157" gradient="4.6" vmax="60" vmaxr="80" bidirectional="true" electrified="true"/>
+		<link source="17497" target="17555" length="60" gradient="15" vmax="60" vmaxr="80" bidirectional="true" electrified="true"/>
+		<link source="17498" target="17499" gradient="15" vmax="60" vmaxr="80" bidirectional="true" electrified="true"/>
+		<link source="17499" target="17500" length="49" gradient="15" vmax="60" vmaxr="80" bidirectional="true" electrified="true"/>
+		<link source="17500" target="17501" length="1" gradient="15" vmax="60" vmaxr="80" bidirectional="true" electrified="true"/>
+		<link source="17504" target="17507" gradient="14.5" vmax="60" vmaxr="70" electrified="true"/>
+		<link source="17507" target="17508" length="2" gradient="14.5" vmax="30" vmaxr="70" electrified="true"/>
+		<link source="17503" target="17511" gradient="15" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="17511" target="17512" gradient="14.5" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="17512" target="17505" length="124" gradient="14.5" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="17509" target="17513" length="12" gradient="14.5" vmax="30" vmaxr="40" electrified="true"/>
+		<link source="17513" target="17514" length="64" gradient="3.9" vmax="30" vmaxr="40" electrified="true"/>
+		<link source="17514" target="17515" gradient="3.9" vmax="30" vmaxr="40" electrified="true"/>
+		<link source="17515" target="17516" length="45" gradient="3.9" vmax="30" vmaxr="40" electrified="true"/>
+		<link source="17510" target="17518" length="12" gradient="14.5" vmax="30" vmaxr="70" electrified="true"/>
+		<link source="17518" target="17519" length="65" gradient="3.9" vmax="30" vmaxr="70" electrified="true"/>
+		<link source="17519" target="17520" length="50" gradient="3.9" vmax="30" vmaxr="70" electrified="true"/>
+		<link source="17520" target="17521" gradient="3.9" vmax="30" vmaxr="70" electrified="true"/>
+		<link source="17521" target="17522" length="53" gradient="3.9" vmax="30" vmaxr="70" electrified="true"/>
+		<link source="17522" target="17523" length="18" gradient="2.9" vmax="30" vmaxr="70" electrified="true"/>
+		<link source="17523" target="17524" length="1" gradient="2.9" vmax="30" vmaxr="70" electrified="true"/>
+		<link source="17524" target="17525" length="161" gradient="2.9" vmax="30" vmaxr="70" electrified="true"/>
+		<link source="17525" target="17526" length="24" vmax="30" vmaxr="70" electrified="true"/>
+		<link source="17526" target="17527" length="46" vmax="30" vmaxr="70" electrified="true"/>
+		<link source="17527" target="17528" length="1" vmax="30" vmaxr="70" electrified="true"/>
+		<link source="17528" target="17529" length="4" vmax="30" vmaxr="70" electrified="true"/>
+		<link source="17529" target="17530" vmax="30" vmaxr="30" electrified="true"/>
+		<link source="17531" target="17532" length="190" gradient="-25.4" vmax="70" vmaxr="70" bidirectional="true" electrified="true"/>
+		<link source="17532" target="17533" length="169" gradient="0.2" vmax="70" vmaxr="70" bidirectional="true" electrified="true"/>
+		<link source="17533" target="17534" length="104" gradient="4.7" vmax="70" vmaxr="70" bidirectional="true" electrified="true"/>
+		<link source="17534" target="17535" gradient="4.7" vmax="70" vmaxr="70" bidirectional="true" electrified="true"/>
+		<link source="17535" target="17536" length="157" gradient="4.7" vmax="60" vmaxr="70" bidirectional="true" electrified="true"/>
+		<link source="17536" target="17556" length="149" gradient="14.5" vmax="60" vmaxr="70" bidirectional="true" electrified="true"/>
+		<link source="17537" target="17538" length="31" gradient="14.5" vmax="60" vmaxr="70" bidirectional="true" electrified="true"/>
+		<link source="17538" target="17539" gradient="14.5" vmax="60" vmaxr="70" bidirectional="true" electrified="true"/>
+		<link source="17539" target="17506" length="50" gradient="14.5" vmax="60" vmaxr="70" bidirectional="true" electrified="true"/>
+		<link source="17517" target="17541" length="3" gradient="3.9" vmax="30" vmaxr="80" electrified="true"/>
+		<link source="17541" target="17542" length="2" gradient="3.9" vmax="30" vmaxr="80" electrified="true"/>
+		<link source="17542" target="17543" length="5" gradient="3.9" vmax="30" vmaxr="80" electrified="true"/>
+		<link source="17543" target="17544" length="1" gradient="3.9" vmax="30" vmaxr="80" electrified="true"/>
+		<link source="17544" target="17545" length="21" gradient="3.9" vmax="30" vmaxr="80" electrified="true"/>
+		<link source="17545" target="17546" length="159" gradient="2.5" vmax="30" vmaxr="80" electrified="true"/>
+		<link source="17546" target="17547" length="46" gradient="2.5" vmax="30" vmaxr="80" electrified="true"/>
+		<link source="17547" target="17548" length="1" gradient="2.5" vmax="30" vmaxr="80" electrified="true"/>
+		<link source="17548" target="17549" length="3" gradient="2.5" vmax="30" vmaxr="80" electrified="true"/>
+		<link source="17549" target="17550" vmax="30" vmaxr="80" electrified="true"/>
+		<link source="17550" target="17551" vmax="30" vmaxr="30" electrified="true"/>
+		<link source="17502" target="17552" length="121" gradient="15" vmax="60" vmaxr="80" electrified="true"/>
+		<link source="17552" target="17553" length="15" gradient="15" vmax="30" vmaxr="80" electrified="true"/>
+		<link source="17553" target="17554" length="64" gradient="3.9" vmax="30" vmaxr="80" electrified="true"/>
+		<link source="17554" target="17540" length="45" gradient="3.9" vmax="30" vmaxr="80" electrified="true"/>
+		<link source="17501" target="17502" gradient="15" vmax="60" vmaxr="80" electrified="true"/>
+		<link source="17501" target="17503" gradient="15" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="17505" target="17504" gradient="14.5" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="17506" target="17504" gradient="14.5" vmax="60" vmaxr="70" bidirectional="true" electrified="true"/>
+		<link source="17508" target="17509" gradient="14.5" vmax="30" vmaxr="40" electrified="true"/>
+		<link source="17508" target="17510" gradient="14.5" vmax="30" vmaxr="70" electrified="true"/>
+		<link source="17540" target="17517" gradient="3.9" vmax="30" vmaxr="80" electrified="true"/>
+		<link source="17516" target="17517" gradient="3.9" vmax="30" vmaxr="40" electrified="true"/>
+		<link source="17555" target="17498" gradient="15" vmax="60" vmaxr="80" bidirectional="true" electrified="true"/>
+		<link source="17556" target="17537" gradient="14.5" vmax="60" vmaxr="70" bidirectional="true" electrified="true"/>
+		<link source="17530" target="17557"/>
+		<link source="17551" target="17558"/>
+	</links>
+	<dependentLinks/>
+	<blockSections>
+		<blockSection nodes="17530 17529 17528 17527 17526 17525 17524 17523 17522 17521" speedIndicators="17529"/>
+		<blockSection nodes="17495 17496 17497 17555 17498 17499 17500 17501 17503 17511 17512 17505 17504 17507 17508 17510 17518 17519 17520 17521 17522 17523 17524 17525 17526 17527 17528 17529 17530" speedIndicators="17496 17507"/>
+		<blockSection nodes="17495 17496 17497 17555 17498 17499 17500 17501 17502 17552 17553 17554 17540 17517 17541 17542 17543 17544 17545 17546 17547 17548 17549 17550 17551" speedIndicators="17496 17552"/>
+		<blockSection nodes="17551 17550 17549 17548 17547 17546 17545 17544 17543 17542" speedIndicators="17550"/>
+		<blockSection nodes="17534 17535 17536 17556 17537 17538 17539 17506 17504 17507 17508 17510 17518 17519 17520 17521 17522 17523 17524 17525 17526 17527 17528 17529 17530" speedIndicators="17507 17535"/>
+		<blockSection nodes="17534 17535 17536 17556 17537 17538 17539 17506 17504 17507 17508 17509 17513 17514 17515 17516 17517 17541 17542 17543 17544 17545 17546 17547 17548 17549 17550 17551" speedIndicators="17507 17535"/>
+		<blockSection nodes="17521 17522 17523 17524 17525 17526 17527 17528 17529 17530"/>
+		<blockSection nodes="17542 17543 17544 17545 17546 17547 17548 17549 17550 17551"/>
+	</blockSections>
+	<slipDistances>
+		<slipDistance signal="17495" name="999.217.17498.fbso.0" publicName="1-1000" description="953H" complete="true" warnerroute="false" nodes="17495 17496 17497 17555 17498"/>
+		<slipDistance signal="17521" name="39.50.17519.fbso.0" publicName="1-1000" description="952.82" complete="true" warnerroute="false" nodes="17521 17520 17519"/>
+		<slipDistance signal="17534" name="999.306.17537.fbso.0" publicName="1-1000" description="953N" complete="true" warnerroute="false" nodes="17534 17535 17536 17556 17537"/>
+		<slipDistance vmax="80" signal="17542" name="39.50.17554.fbso.0" publicName="1-80" description="952.81" complete="true" warnerroute="false" nodes="17542 17541 17517 17540 17554"/>
+		<slipDistance vmax="80" signal="17542" name="39.50.17515.fbso.0" publicName="2-80" description="952.81" complete="true" warnerroute="false" nodes="17542 17541 17517 17516 17515"/>
+	</slipDistances>
+	<approachControlRoutes/>
+	<stationRoutes>
+		<stationRoute stationID="FBSO" name="FBSO-81-FHOE" description="FBSO-81-FHOE" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="17558 17551 17550 17549 17548 17547 17546 17545 17544 17543 17542 17541 17517 17540 17554 17553 17552 17502 17501 17500 17499 17498 17555"/>
+		<stationRoute stationID="FBSO" name="FBSO-81-FNH" description="FBSO-81-FNH" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=99;NRz=99;S=99;Rz=99;FGz=99;NGz=99;Gz=99;Lz=99" nodes="17558 17551 17550 17549 17548 17547 17546 17545 17544 17543 17542 17541 17517 17516 17515 17514 17513 17509 17508 17507 17504 17506 17539 17538 17537 17556"/>
+		<stationRoute stationID="FBSO" name="FBSO-82-FHOE" description="FBSO-82-FHOE" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=40;NRz=40;S=40;Rz=40;FGz=40;NGz=40;Gz=40;Lz=40" nodes="17557 17530 17529 17528 17527 17526 17525 17524 17523 17522 17521 17520 17519 17518 17510 17508 17507 17504 17505 17512 17511 17503 17501 17500 17499 17498 17555"/>
+		<stationRoute stationID="FBSO" name="FBSO-82-FNH" description="FBSO-82-FNH" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=39;NRz=39;S=39;Rz=39;FGz=39;NGz=39;Gz=39;Lz=39" nodes="17557 17530 17529 17528 17527 17526 17525 17524 17523 17522 17521 17520 17519 17518 17510 17508 17507 17504 17506 17539 17538 17537 17556"/>
+		<stationRoute stationID="FBSO" name="FHOE-81-FBSO" description="FHOE-81-FBSO" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="17555 17498 17499 17500 17501 17502 17552 17553 17554 17540 17517 17541 17542 17543 17544 17545 17546 17547 17548 17549 17550 17551 17558"/>
+		<stationRoute stationID="FBSO" name="FHOE-82-FBSO" description="FHOE-82-FBSO" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=80;NRz=80;S=80;Rz=80;FGz=80;NGz=80;Gz=80;Lz=80" nodes="17555 17498 17499 17500 17501 17503 17511 17512 17505 17504 17507 17508 17510 17518 17519 17520 17521 17522 17523 17524 17525 17526 17527 17528 17529 17530 17557"/>
+		<stationRoute stationID="FBSO" name="FNH-81-FBSO" description="FNH-81-FBSO" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="17556 17537 17538 17539 17506 17504 17507 17508 17509 17513 17514 17515 17516 17517 17541 17542 17543 17544 17545 17546 17547 17548 17549 17550 17551 17558"/>
+		<stationRoute stationID="FBSO" name="FNH-82-FBSO" description="FNH-82-FBSO" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=79;NRz=79;S=79;Rz=79;FGz=79;NGz=79;Gz=79;Lz=79" nodes="17556 17537 17538 17539 17506 17504 17507 17508 17510 17518 17519 17520 17521 17522 17523 17524 17525 17526 17527 17528 17529 17530 17557"/>
+	</stationRoutes>
+	<evzg/>
+	<evzg-katalog/>
+</line>

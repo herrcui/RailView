@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<railsys>
+	<version major="1" minor="2" patchlevel="0" comment="Erzeugt von RailSys\Simu/7.6.12 am Fr 18. Jan 10:18:20 2013"/>
+	<timetable>
+		<train number="24250" class="NRz" pattern="/NRz/DPN/Takt 100/FBSO-FHOE/hin" name="DPN/24250/0/hm" description="24250/1" comment="Takt 100" typeNumber="1007" line="Takt 100" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FHOE" dwegName="1-80" departure="05:14:30" minStopTime="120" stopTime="282" regularRunningTime="138" requestedArrival="05:09:48" requestedDeparture="05:14:30" requestedTrackID="D-81" requestedBstFahrweg="FBSO-81-FHOE" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="B-10" bstfahrweg="FBSO-FHOE" departure="05:17:30" minStopTime="30" stopTime="42" regularRunningTime="157" requestedArrival="05:16:48" requestedDeparture="05:17:30" requestedTrackID="B-10" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="B-1000" bstfahrweg="FBSO-FHOE" departure="05:20:49" minStopTime="30" stopTime="42" regularRunningTime="175" requestedArrival="05:20:07" requestedDeparture="05:20:49" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FHOE" trackID="B-11" bstfahrweg="FBSO-011-FHOE" dwegName="1-60" departure="05:30:50" minStopTime="120" stopTime="426" RTMargin2="0" requestedArrival="05:23:44" requestedDeparture="05:30:50" requestedTrackID="B-11" requestedBstFahrweg="FBSO-011-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24251" class="NRz" pattern="/NRz/DPN/Takt 101/FBSO-FHOE/rück" name="DPN/24251/0/hm" description="24251/1" comment="Takt 101" typeNumber="1007" line="Takt 101" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOE" trackID="A-12" bstfahrweg="FHOE-012-FBSO" dwegName="1-1000" departure="05:00:48" minStopTime="180" stopTime="180" regularRunningTime="120" requestedArrival="04:57:48" requestedDeparture="05:00:48" requestedTrackID="A-12" requestedBstFahrweg="FHOE-012-FBSO" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="A-1000" bstfahrweg="FHOE-FBSO" departure="05:03:30" minStopTime="30" stopTime="42" regularRunningTime="162" requestedArrival="05:02:48" requestedDeparture="05:03:30" requestedTrackID="A-1000" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="A-1" bstfahrweg="FHOE-FBSO" departure="05:06:54" minStopTime="30" stopTime="42" regularRunningTime="173" requestedArrival="05:06:12" requestedDeparture="05:06:54" requestedTrackID="A-1" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FBSO" trackID="A-81" bstfahrweg="FHOE-81-FBSO" departure="05:14:29" minStopTime="12" stopTime="282" RTMargin2="0" requestedArrival="05:09:47" requestedDeparture="05:14:29" requestedTrackID="A-81" requestedBstFahrweg="FHOE-81-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24252" class="NRz" pattern="/NRz/DPN/Takt 102/FBSO-FHOE/hin" name="DPN/24252/0/hm" description="24252/1" comment="Takt 102" typeNumber="1007" line="Takt 102" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FHOE" dwegName="1-80" departure="05:44:30" minStopTime="120" stopTime="282" regularRunningTime="138" requestedArrival="05:39:48" requestedDeparture="05:44:30" requestedTrackID="D-81" requestedBstFahrweg="FBSO-81-FHOE" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="B-10" bstfahrweg="FBSO-FHOE" departure="05:47:30" minStopTime="30" stopTime="42" regularRunningTime="157" requestedArrival="05:46:48" requestedDeparture="05:47:30" requestedTrackID="B-10" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="B-1000" bstfahrweg="FBSO-FHOE" departure="05:50:49" minStopTime="30" stopTime="42" regularRunningTime="175" requestedArrival="05:50:07" requestedDeparture="05:50:49" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FHOE" trackID="B-13" bstfahrweg="FBSO-013-FKOE" departure="06:00:50" minStopTime="120" stopTime="426" RTMargin2="0" requestedArrival="05:53:44" requestedDeparture="06:00:50" requestedTrackID="B-11" requestedBstFahrweg="FBSO-011-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24253" numbervar="1" class="NRz" pattern="/NRz/DPN/Takt 103/FBSO-FHOE/rück" name="DPN/24253/1/hm + DPN/24253/0/hm" description="24253/1" comment="Takt 103 + Takt 103&#13;&#10;VTR angepasst&#13;&#10;cl 04.11.2010" typeNumber="1007" line="Takt 103" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOE" trackID="A-11" bstfahrweg="FHOE-011-FBSO" dwegName="1-80" departure="05:30:48" minStopTime="180" stopTime="426" regularRunningTime="120" requestedArrival="05:23:42" requestedDeparture="05:30:48" requestedTrackID="A-11" requestedBstFahrweg="FHOE-011-FBSO" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="A-1000" bstfahrweg="FHOE-FBSO" departure="05:33:30" minStopTime="30" stopTime="42" regularRunningTime="162" requestedArrival="05:32:48" requestedDeparture="05:33:30" requestedTrackID="A-1000" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="A-1" bstfahrweg="FHOE-FBSO" departure="05:36:54" minStopTime="30" stopTime="42" regularRunningTime="173" requestedArrival="05:36:12" requestedDeparture="05:36:54" requestedTrackID="A-1" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FHOE-82-FBSO" departure="05:44:29" minStopTime="12" stopTime="282" RTMargin2="0" requestedArrival="05:39:47" requestedDeparture="05:44:29" requestedTrackID="A-81" requestedBstFahrweg="FHOE-81-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24254" class="NRz" pattern="/NRz/DPN/Takt 100/FBSO-FHOE/hin" name="DPN/24254/0/hm" description="24254/1" comment="Takt 100" typeNumber="1007" line="Takt 100" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FHOE" dwegName="1-80" departure="06:14:30" minStopTime="120" stopTime="282" regularRunningTime="138" requestedArrival="06:09:48" requestedDeparture="06:14:30" requestedTrackID="D-81" requestedBstFahrweg="FBSO-81-FHOE" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="B-10" bstfahrweg="FBSO-FHOE" departure="06:17:30" minStopTime="30" stopTime="42" regularRunningTime="157" requestedArrival="06:16:48" requestedDeparture="06:17:30" requestedTrackID="B-10" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="B-1000" bstfahrweg="FBSO-FHOE" departure="06:20:49" minStopTime="30" stopTime="42" regularRunningTime="175" requestedArrival="06:20:07" requestedDeparture="06:20:49" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FHOE" trackID="B-13" bstfahrweg="FBSO-013-FKOE" departure="06:30:50" minStopTime="120" stopTime="426" RTMargin2="0" requestedArrival="06:23:44" requestedDeparture="06:30:50" requestedTrackID="B-11" requestedBstFahrweg="FBSO-011-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24255" class="NRz" pattern="/NRz/DPN/Takt 101/FBSO-FHOE/rück" name="DPN/24255/0/hm" description="24255/1" comment="Takt 101" typeNumber="1007" line="Takt 101" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOE" trackID="A-11" bstfahrweg="FHOE-011-FBSO" dwegName="1-80" departure="06:00:48" minStopTime="180" stopTime="426" regularRunningTime="120" requestedArrival="05:53:42" requestedDeparture="06:00:48" requestedTrackID="A-11" requestedBstFahrweg="FHOE-011-FBSO" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="A-1000" bstfahrweg="FHOE-FBSO" departure="06:03:30" minStopTime="30" stopTime="42" regularRunningTime="162" requestedArrival="06:02:48" requestedDeparture="06:03:30" requestedTrackID="A-1000" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="A-1" bstfahrweg="FHOE-FBSO" departure="06:06:54" minStopTime="30" stopTime="42" regularRunningTime="173" requestedArrival="06:06:12" requestedDeparture="06:06:54" requestedTrackID="A-1" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FBSO" trackID="A-81" bstfahrweg="FHOE-81-FBSO" departure="06:14:29" minStopTime="12" stopTime="282" RTMargin2="0" requestedArrival="06:09:47" requestedDeparture="06:14:29" requestedTrackID="A-81" requestedBstFahrweg="FHOE-81-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24256" class="NRz" pattern="/NRz/DPN/Takt 102/FBSO-FHOE/hin" name="DPN/24256/0/hm" description="24256/1" comment="Takt 102" typeNumber="1007" line="Takt 102" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FHOE" dwegName="1-80" departure="06:44:30" minStopTime="120" stopTime="282" regularRunningTime="138" requestedArrival="06:39:48" requestedDeparture="06:44:30" requestedTrackID="D-81" requestedBstFahrweg="FBSO-81-FHOE" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="B-10" bstfahrweg="FBSO-FHOE" departure="06:47:30" minStopTime="30" stopTime="42" regularRunningTime="157" requestedArrival="06:46:48" requestedDeparture="06:47:30" requestedTrackID="B-10" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="B-1000" bstfahrweg="FBSO-FHOE" departure="06:50:49" minStopTime="30" stopTime="42" regularRunningTime="175" requestedArrival="06:50:07" requestedDeparture="06:50:49" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FHOE" trackID="B-11" bstfahrweg="FBSO-011-FHOE" dwegName="1-60" departure="07:00:50" minStopTime="120" stopTime="426" RTMargin2="0" requestedArrival="06:53:44" requestedDeparture="07:00:50" requestedTrackID="B-11" requestedBstFahrweg="FBSO-011-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24257" class="NRz" pattern="/NRz/DPN/Takt 103/FBSO-FHOE/rück" name="DPN/24257/0/hm" description="24257/1" comment="Takt 103" typeNumber="1007" line="Takt 103" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOE" trackID="A-11" bstfahrweg="FHOE-011-FBSO" dwegName="1-80" departure="06:30:48" minStopTime="180" stopTime="426" regularRunningTime="120" requestedArrival="06:23:42" requestedDeparture="06:30:48" requestedTrackID="A-11" requestedBstFahrweg="FHOE-011-FBSO" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="A-1000" bstfahrweg="FHOE-FBSO" departure="06:33:30" minStopTime="30" stopTime="42" regularRunningTime="162" requestedArrival="06:32:48" requestedDeparture="06:33:30" requestedTrackID="A-1000" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="A-1" bstfahrweg="FHOE-FBSO" departure="06:36:54" minStopTime="30" stopTime="42" regularRunningTime="173" requestedArrival="06:36:12" requestedDeparture="06:36:54" requestedTrackID="A-1" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FBSO" trackID="A-81" bstfahrweg="FHOE-81-FBSO" departure="06:44:29" minStopTime="12" stopTime="282" RTMargin2="0" requestedArrival="06:39:47" requestedDeparture="06:44:29" requestedTrackID="A-81" requestedBstFahrweg="FHOE-81-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24258" class="NRz" pattern="/NRz/DPN/Takt 100/FBSO-FHOE/hin" name="DPN/24258/0/hm" description="24258/1" comment="Takt 100" typeNumber="1007" line="Takt 100" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FHOE" dwegName="1-80" departure="07:14:30" minStopTime="120" stopTime="282" regularRunningTime="138" requestedArrival="07:09:48" requestedDeparture="07:14:30" requestedTrackID="D-81" requestedBstFahrweg="FBSO-81-FHOE" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="B-10" bstfahrweg="FBSO-FHOE" departure="07:17:30" minStopTime="30" stopTime="42" regularRunningTime="157" requestedArrival="07:16:48" requestedDeparture="07:17:30" requestedTrackID="B-10" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="B-1000" bstfahrweg="FBSO-FHOE" departure="07:20:49" minStopTime="30" stopTime="42" regularRunningTime="175" requestedArrival="07:20:07" requestedDeparture="07:20:49" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FHOE" trackID="B-13" bstfahrweg="FBSO-013-FKOE" departure="07:30:50" minStopTime="120" stopTime="426" RTMargin2="0" requestedArrival="07:23:44" requestedDeparture="07:30:50" requestedTrackID="B-11" requestedBstFahrweg="FBSO-011-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24259" class="NRz" pattern="/NRz/DPN/Takt 101/FBSO-FHOE/rück" name="DPN/24259/0/hm" description="24259/1" comment="Takt 101" typeNumber="1007" line="Takt 101" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOE" trackID="A-11" bstfahrweg="FHOE-011-FBSO" dwegName="1-80" departure="07:00:48" minStopTime="180" stopTime="426" regularRunningTime="120" requestedArrival="06:53:42" requestedDeparture="07:00:48" requestedTrackID="A-11" requestedBstFahrweg="FHOE-011-FBSO" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="A-1000" bstfahrweg="FHOE-FBSO" departure="07:03:30" minStopTime="30" stopTime="42" regularRunningTime="162" requestedArrival="07:02:48" requestedDeparture="07:03:30" requestedTrackID="A-1000" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="A-1" bstfahrweg="FHOE-FBSO" departure="07:06:54" minStopTime="30" stopTime="42" regularRunningTime="173" requestedArrival="07:06:12" requestedDeparture="07:06:54" requestedTrackID="A-1" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FHOE-82-FBSO" departure="07:14:29" minStopTime="12" stopTime="282" RTMargin2="0" requestedArrival="07:09:47" requestedDeparture="07:14:29" requestedTrackID="A-81" requestedBstFahrweg="FHOE-81-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24260" class="NRz" pattern="/NRz/DPN/Takt 102/FBSO-FHOE/hin" name="DPN/24260/0/hm" description="24260/1" comment="Takt 102" typeNumber="1007" line="Takt 102" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FHOE" dwegName="1-80" departure="07:44:30" minStopTime="120" stopTime="282" regularRunningTime="138" requestedArrival="07:39:48" requestedDeparture="07:44:30" requestedTrackID="D-81" requestedBstFahrweg="FBSO-81-FHOE" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="B-10" bstfahrweg="FBSO-FHOE" departure="07:47:30" minStopTime="30" stopTime="42" regularRunningTime="157" requestedArrival="07:46:48" requestedDeparture="07:47:30" requestedTrackID="B-10" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="B-1000" bstfahrweg="FBSO-FHOE" departure="07:50:49" minStopTime="30" stopTime="42" regularRunningTime="175" requestedArrival="07:50:07" requestedDeparture="07:50:49" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FHOE" trackID="B-13" bstfahrweg="FBSO-013-FKOE" departure="08:00:50" minStopTime="120" stopTime="426" RTMargin2="0" requestedArrival="07:53:44" requestedDeparture="08:00:50" requestedTrackID="B-11" requestedBstFahrweg="FBSO-011-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24261" numbervar="1" class="NRz" pattern="/NRz/DPN/Takt 103/FBSO-FHOE/rück" name="DPN/24261/2/hm + DPN/24261/0/hm" description="24261/1" comment="Takt 103" typeNumber="1007" line="Takt 103" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOE" trackID="A-11" bstfahrweg="FHOE-011-FBSO" dwegName="1-80" departure="07:30:48" minStopTime="180" stopTime="426" regularRunningTime="120" requestedArrival="07:23:42" requestedDeparture="07:30:48" requestedTrackID="A-11" requestedBstFahrweg="FHOE-011-FBSO" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="A-1000" bstfahrweg="FHOE-FBSO" departure="07:33:30" minStopTime="30" stopTime="42" regularRunningTime="162" requestedArrival="07:32:48" requestedDeparture="07:33:30" requestedTrackID="A-1000" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="A-1" bstfahrweg="FHOE-FBSO" departure="07:36:54" minStopTime="30" stopTime="42" regularRunningTime="173" requestedArrival="07:36:12" requestedDeparture="07:36:54" requestedTrackID="A-1" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FBSO" trackID="A-81" bstfahrweg="FHOE-81-FBSO" departure="07:44:29" minStopTime="12" stopTime="282" RTMargin2="0" requestedArrival="07:39:47" requestedDeparture="07:44:29" requestedTrackID="A-81" requestedBstFahrweg="FHOE-81-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24262" class="NRz" pattern="/NRz/DPN/Takt 100/FBSO-FHOE/hin" name="DPN/24262/0/hm" description="24262/1" comment="Takt 100" typeNumber="1007" line="Takt 100" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FHOE" dwegName="1-80" departure="08:14:30" minStopTime="120" stopTime="282" regularRunningTime="138" requestedArrival="08:09:48" requestedDeparture="08:14:30" requestedTrackID="D-81" requestedBstFahrweg="FBSO-81-FHOE" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="B-10" bstfahrweg="FBSO-FHOE" departure="08:17:30" minStopTime="30" stopTime="42" regularRunningTime="157" requestedArrival="08:16:48" requestedDeparture="08:17:30" requestedTrackID="B-10" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="B-1000" bstfahrweg="FBSO-FHOE" departure="08:20:49" minStopTime="30" stopTime="42" regularRunningTime="175" requestedArrival="08:20:07" requestedDeparture="08:20:49" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FHOE" trackID="B-11" bstfahrweg="FBSO-011-FHOE" dwegName="1-60" departure="08:30:50" minStopTime="120" stopTime="426" RTMargin2="0" requestedArrival="08:23:44" requestedDeparture="08:30:50" requestedTrackID="B-11" requestedBstFahrweg="FBSO-011-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24263" class="NRz" pattern="/NRz/DPN/Takt 101/FBSO-FHOE/rück" name="DPN/24263/0/hm" description="24263/1" comment="Takt 101" typeNumber="1007" line="Takt 101" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOE" trackID="A-11" bstfahrweg="FHOE-011-FBSO" dwegName="1-80" departure="08:00:48" minStopTime="180" stopTime="426" regularRunningTime="120" requestedArrival="07:53:42" requestedDeparture="08:00:48" requestedTrackID="A-11" requestedBstFahrweg="FHOE-011-FBSO" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="A-1000" bstfahrweg="FHOE-FBSO" departure="08:03:30" minStopTime="30" stopTime="42" regularRunningTime="162" requestedArrival="08:02:48" requestedDeparture="08:03:30" requestedTrackID="A-1000" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="A-1" bstfahrweg="FHOE-FBSO" departure="08:06:54" minStopTime="30" stopTime="42" regularRunningTime="173" requestedArrival="08:06:12" requestedDeparture="08:06:54" requestedTrackID="A-1" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FBSO" trackID="A-81" bstfahrweg="FHOE-81-FBSO" departure="08:14:29" minStopTime="12" stopTime="282" RTMargin2="0" requestedArrival="08:09:47" requestedDeparture="08:14:29" requestedTrackID="A-81" requestedBstFahrweg="FHOE-81-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24264" class="NRz" pattern="/NRz/DPN/Takt 102/FBSO-FHOE/hin" name="DPN/24264/0/hm" description="24264/1" comment="Takt 102" typeNumber="1007" line="Takt 102" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FHOE" dwegName="1-80" departure="08:44:30" minStopTime="120" stopTime="282" regularRunningTime="138" requestedArrival="08:39:48" requestedDeparture="08:44:30" requestedTrackID="D-81" requestedBstFahrweg="FBSO-81-FHOE" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="B-10" bstfahrweg="FBSO-FHOE" departure="08:47:30" minStopTime="30" stopTime="42" regularRunningTime="157" requestedArrival="08:46:48" requestedDeparture="08:47:30" requestedTrackID="B-10" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="B-1000" bstfahrweg="FBSO-FHOE" departure="08:50:49" minStopTime="30" stopTime="42" regularRunningTime="175" requestedArrival="08:50:07" requestedDeparture="08:50:49" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FHOE" trackID="B-13" bstfahrweg="FBSO-013-FKOE" departure="09:30:50" minStopTime="120" stopTime="2226" RTMargin2="0" requestedArrival="08:53:44" requestedDeparture="09:30:50" requestedTrackID="B-11" requestedBstFahrweg="FBSO-011-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24265" class="NRz" pattern="/NRz/DPN/Takt 103/FBSO-FHOE/rück" name="DPN/24265/0/hm" description="24265/1" comment="Takt 103" typeNumber="1007" line="Takt 103" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOE" trackID="A-11" bstfahrweg="FHOE-011-FBSO" dwegName="1-80" departure="08:30:48" minStopTime="180" stopTime="426" regularRunningTime="120" requestedArrival="08:23:42" requestedDeparture="08:30:48" requestedTrackID="A-11" requestedBstFahrweg="FHOE-011-FBSO" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="A-1000" bstfahrweg="FHOE-FBSO" departure="08:33:30" minStopTime="30" stopTime="42" regularRunningTime="162" requestedArrival="08:32:48" requestedDeparture="08:33:30" requestedTrackID="A-1000" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="A-1" bstfahrweg="FHOE-FBSO" departure="08:36:54" minStopTime="30" stopTime="42" regularRunningTime="173" requestedArrival="08:36:12" requestedDeparture="08:36:54" requestedTrackID="A-1" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FHOE-82-FBSO" departure="08:44:29" minStopTime="12" stopTime="282" RTMargin2="0" requestedArrival="08:39:47" requestedDeparture="08:44:29" requestedTrackID="A-81" requestedBstFahrweg="FHOE-81-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24268" class="NRz" pattern="/NRz/DPN/Takt 102/FBSO-FHOE/hin" name="DPN/24268/0/hm" description="24268/1" comment="Takt 102" typeNumber="1007" line="Takt 102" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FHOE" dwegName="1-80" departure="09:44:30" minStopTime="120" stopTime="282" regularRunningTime="138" requestedArrival="09:39:48" requestedDeparture="09:44:30" requestedTrackID="D-81" requestedBstFahrweg="FBSO-81-FHOE" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="B-10" bstfahrweg="FBSO-FHOE" departure="09:47:30" minStopTime="30" stopTime="42" regularRunningTime="157" requestedArrival="09:46:48" requestedDeparture="09:47:30" requestedTrackID="B-10" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="B-1000" bstfahrweg="FBSO-FHOE" departure="09:50:49" minStopTime="30" stopTime="42" regularRunningTime="175" requestedArrival="09:50:07" requestedDeparture="09:50:49" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FHOE" trackID="B-11" bstfahrweg="FBSO-011-FHOE" dwegName="1-60" departure="10:30:50" minStopTime="120" stopTime="2226" RTMargin2="0" requestedArrival="09:53:44" requestedDeparture="10:30:50" requestedTrackID="B-11" requestedBstFahrweg="FBSO-011-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24269" class="NRz" pattern="/NRz/DPN/Takt 103/FBSO-FHOE/rück" name="DPN/24269/0/hm" description="24269/1" comment="Takt 103" typeNumber="1007" line="Takt 103" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOE" trackID="A-11" bstfahrweg="FHOE-011-FBSO" dwegName="1-80" departure="09:30:48" minStopTime="180" stopTime="2226" regularRunningTime="120" requestedArrival="08:53:42" requestedDeparture="09:30:48" requestedTrackID="A-11" requestedBstFahrweg="FHOE-011-FBSO" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="A-1000" bstfahrweg="FHOE-FBSO" departure="09:33:30" minStopTime="30" stopTime="42" regularRunningTime="162" requestedArrival="09:32:48" requestedDeparture="09:33:30" requestedTrackID="A-1000" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="A-1" bstfahrweg="FHOE-FBSO" departure="09:36:54" minStopTime="30" stopTime="42" regularRunningTime="173" requestedArrival="09:36:12" requestedDeparture="09:36:54" requestedTrackID="A-1" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FBSO" trackID="A-81" bstfahrweg="FHOE-81-FBSO" departure="09:44:29" minStopTime="12" stopTime="282" RTMargin2="0" requestedArrival="09:39:47" requestedDeparture="09:44:29" requestedTrackID="A-81" requestedBstFahrweg="FHOE-81-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24270" class="NRz" pattern="/NRz/DPN/Takt 102/FBSO-FHOE/hin" name="DPN/24270/0/hm" description="24270/1" comment="Takt 102" typeNumber="1007" line="Takt 102" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FHOE" dwegName="1-80" departure="10:44:30" minStopTime="120" stopTime="282" regularRunningTime="138" requestedArrival="10:39:48" requestedDeparture="10:44:30" requestedTrackID="D-81" requestedBstFahrweg="FBSO-81-FHOE" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="B-10" bstfahrweg="FBSO-FHOE" departure="10:47:30" minStopTime="30" stopTime="42" regularRunningTime="157" requestedArrival="10:46:48" requestedDeparture="10:47:30" requestedTrackID="B-10" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="B-1000" bstfahrweg="FBSO-FHOE" departure="10:50:49" minStopTime="30" stopTime="42" regularRunningTime="175" requestedArrival="10:50:07" requestedDeparture="10:50:49" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FHOE" trackID="B-13" bstfahrweg="FBSO-013-FKOE" departure="11:30:50" minStopTime="120" stopTime="2226" RTMargin2="0" requestedArrival="10:53:44" requestedDeparture="11:30:50" requestedTrackID="B-11" requestedBstFahrweg="FBSO-011-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24271" class="NRz" pattern="/NRz/DPN/Takt 103/FBSO-FHOE/rück" name="DPN/24271/0/hm" description="24271/1" comment="Takt 103" typeNumber="1007" line="Takt 103" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOE" trackID="A-11" bstfahrweg="FHOE-011-FBSO" dwegName="1-80" departure="10:30:48" minStopTime="180" stopTime="2226" regularRunningTime="120" requestedArrival="09:53:42" requestedDeparture="10:30:48" requestedTrackID="A-11" requestedBstFahrweg="FHOE-011-FBSO" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="A-1000" bstfahrweg="FHOE-FBSO" departure="10:33:30" minStopTime="30" stopTime="42" regularRunningTime="162" requestedArrival="10:32:48" requestedDeparture="10:33:30" requestedTrackID="A-1000" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="A-1" bstfahrweg="FHOE-FBSO" departure="10:36:54" minStopTime="30" stopTime="42" regularRunningTime="173" requestedArrival="10:36:12" requestedDeparture="10:36:54" requestedTrackID="A-1" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FHOE-82-FBSO" departure="10:44:29" minStopTime="12" stopTime="282" RTMargin2="0" requestedArrival="10:39:47" requestedDeparture="10:44:29" requestedTrackID="A-81" requestedBstFahrweg="FHOE-81-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24272" class="NRz" pattern="/NRz/DPN/Takt 102/FBSO-FHOE/hin" name="DPN/24272/0/hm" description="24272/1" comment="Takt 102" typeNumber="1007" line="Takt 102" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FHOE" dwegName="1-80" departure="11:44:30" minStopTime="120" stopTime="282" regularRunningTime="138" requestedArrival="11:39:48" requestedDeparture="11:44:30" requestedTrackID="D-81" requestedBstFahrweg="FBSO-81-FHOE" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="B-10" bstfahrweg="FBSO-FHOE" departure="11:47:30" minStopTime="30" stopTime="42" regularRunningTime="157" requestedArrival="11:46:48" requestedDeparture="11:47:30" requestedTrackID="B-10" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="B-1000" bstfahrweg="FBSO-FHOE" departure="11:50:49" minStopTime="30" stopTime="42" regularRunningTime="175" requestedArrival="11:50:07" requestedDeparture="11:50:49" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FHOE" trackID="B-11" bstfahrweg="FBSO-011-FHOE" dwegName="1-60" departure="12:30:50" minStopTime="120" stopTime="2226" RTMargin2="0" requestedArrival="11:53:44" requestedDeparture="12:30:50" requestedTrackID="B-11" requestedBstFahrweg="FBSO-011-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24273" class="NRz" pattern="/NRz/DPN/Takt 103/FBSO-FHOE/rück" name="DPN/24273/0/hm" description="24273/1" comment="Takt 103" typeNumber="1007" line="Takt 103" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOE" trackID="A-11" bstfahrweg="FHOE-011-FBSO" dwegName="1-80" departure="11:30:48" minStopTime="180" stopTime="2226" regularRunningTime="120" requestedArrival="10:53:42" requestedDeparture="11:30:48" requestedTrackID="A-11" requestedBstFahrweg="FHOE-011-FBSO" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="A-1000" bstfahrweg="FHOE-FBSO" departure="11:33:30" minStopTime="30" stopTime="42" regularRunningTime="162" requestedArrival="11:32:48" requestedDeparture="11:33:30" requestedTrackID="A-1000" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="A-1" bstfahrweg="FHOE-FBSO" departure="11:36:54" minStopTime="30" stopTime="42" regularRunningTime="173" requestedArrival="11:36:12" requestedDeparture="11:36:54" requestedTrackID="A-1" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FBSO" trackID="A-81" bstfahrweg="FHOE-81-FBSO" departure="11:44:29" minStopTime="12" stopTime="282" RTMargin2="0" requestedArrival="11:39:47" requestedDeparture="11:44:29" requestedTrackID="A-81" requestedBstFahrweg="FHOE-81-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24274" class="NRz" pattern="/NRz/DPN/Takt 102/FBSO-FHOE/hin" name="DPN/24274/0/hm" description="24274/1" comment="Takt 102" typeNumber="1007" line="Takt 102" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FHOE" dwegName="1-80" departure="12:44:30" minStopTime="120" stopTime="282" regularRunningTime="138" requestedArrival="12:39:48" requestedDeparture="12:44:30" requestedTrackID="D-81" requestedBstFahrweg="FBSO-81-FHOE" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="B-10" bstfahrweg="FBSO-FHOE" departure="12:47:30" minStopTime="30" stopTime="42" regularRunningTime="157" requestedArrival="12:46:48" requestedDeparture="12:47:30" requestedTrackID="B-10" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="B-1000" bstfahrweg="FBSO-FHOE" departure="12:50:49" minStopTime="30" stopTime="42" regularRunningTime="175" requestedArrival="12:50:07" requestedDeparture="12:50:49" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FHOE" trackID="B-13" bstfahrweg="FBSO-013-FKOE" departure="13:30:50" minStopTime="120" stopTime="2226" RTMargin2="0" requestedArrival="12:53:44" requestedDeparture="13:30:50" requestedTrackID="B-11" requestedBstFahrweg="FBSO-011-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24275" class="NRz" pattern="/NRz/DPN/Takt 103/FBSO-FHOE/rück" name="DPN/24275/0/hm" description="24275/1" comment="Takt 103" typeNumber="1007" line="Takt 103" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOE" trackID="A-11" bstfahrweg="FHOE-011-FBSO" dwegName="1-80" departure="12:30:48" minStopTime="180" stopTime="2226" regularRunningTime="120" requestedArrival="11:53:42" requestedDeparture="12:30:48" requestedTrackID="A-11" requestedBstFahrweg="FHOE-011-FBSO" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="A-1000" bstfahrweg="FHOE-FBSO" departure="12:33:30" minStopTime="30" stopTime="42" regularRunningTime="162" requestedArrival="12:32:48" requestedDeparture="12:33:30" requestedTrackID="A-1000" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="A-1" bstfahrweg="FHOE-FBSO" departure="12:36:54" minStopTime="30" stopTime="42" regularRunningTime="173" requestedArrival="12:36:12" requestedDeparture="12:36:54" requestedTrackID="A-1" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FHOE-82-FBSO" departure="12:44:29" minStopTime="12" stopTime="282" RTMargin2="0" requestedArrival="12:39:47" requestedDeparture="12:44:29" requestedTrackID="A-81" requestedBstFahrweg="FHOE-81-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24276" class="NRz" pattern="/NRz/DPN/Takt 102/FBSO-FHOE/hin" name="DPN/24276/0/hm" description="24276/1" comment="Takt 102" typeNumber="1007" line="Takt 102" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FHOE" dwegName="1-80" departure="13:44:30" minStopTime="120" stopTime="282" regularRunningTime="138" requestedArrival="13:39:48" requestedDeparture="13:44:30" requestedTrackID="D-81" requestedBstFahrweg="FBSO-81-FHOE" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="B-10" bstfahrweg="FBSO-FHOE" departure="13:47:30" minStopTime="30" stopTime="42" regularRunningTime="157" requestedArrival="13:46:48" requestedDeparture="13:47:30" requestedTrackID="B-10" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="B-1000" bstfahrweg="FBSO-FHOE" departure="13:50:49" minStopTime="30" stopTime="42" regularRunningTime="175" requestedArrival="13:50:07" requestedDeparture="13:50:49" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FHOE" trackID="B-11" bstfahrweg="FBSO-011-FHOE" dwegName="1-60" departure="14:30:50" minStopTime="120" stopTime="2226" RTMargin2="0" requestedArrival="13:53:44" requestedDeparture="14:30:50" requestedTrackID="B-11" requestedBstFahrweg="FBSO-011-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24277" class="NRz" pattern="/NRz/DPN/Takt 103/FBSO-FHOE/rück" name="DPN/24277/0/hm" description="24277/1" comment="Takt 103" typeNumber="1007" line="Takt 103" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOE" trackID="A-11" bstfahrweg="FHOE-011-FBSO" dwegName="1-80" departure="13:30:48" minStopTime="180" stopTime="2226" regularRunningTime="120" requestedArrival="12:53:42" requestedDeparture="13:30:48" requestedTrackID="A-11" requestedBstFahrweg="FHOE-011-FBSO" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="A-1000" bstfahrweg="FHOE-FBSO" departure="13:33:30" minStopTime="30" stopTime="42" regularRunningTime="162" requestedArrival="13:32:48" requestedDeparture="13:33:30" requestedTrackID="A-1000" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="A-1" bstfahrweg="FHOE-FBSO" departure="13:36:54" minStopTime="30" stopTime="42" regularRunningTime="173" requestedArrival="13:36:12" requestedDeparture="13:36:54" requestedTrackID="A-1" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FBSO" trackID="A-81" bstfahrweg="FHOE-81-FBSO" departure="13:44:29" minStopTime="12" stopTime="282" RTMargin2="0" requestedArrival="13:39:47" requestedDeparture="13:44:29" requestedTrackID="A-81" requestedBstFahrweg="FHOE-81-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24278" class="NRz" pattern="/NRz/DPN/Takt 102/FBSO-FHOE/hin" name="DPN/24278/0/hm" description="24278/1" comment="Takt 102" typeNumber="1007" line="Takt 102" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FHOE" dwegName="1-80" departure="14:44:30" minStopTime="120" stopTime="282" regularRunningTime="138" requestedArrival="14:39:48" requestedDeparture="14:44:30" requestedTrackID="D-81" requestedBstFahrweg="FBSO-81-FHOE" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="B-10" bstfahrweg="FBSO-FHOE" departure="14:47:30" minStopTime="30" stopTime="42" regularRunningTime="157" requestedArrival="14:46:48" requestedDeparture="14:47:30" requestedTrackID="B-10" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="B-1000" bstfahrweg="FBSO-FHOE" departure="14:50:49" minStopTime="30" stopTime="42" regularRunningTime="175" requestedArrival="14:50:07" requestedDeparture="14:50:49" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FHOE" trackID="B-13" bstfahrweg="FBSO-013-FKOE" departure="15:30:50" minStopTime="120" stopTime="2226" RTMargin2="0" requestedArrival="14:53:44" requestedDeparture="15:30:50" requestedTrackID="B-11" requestedBstFahrweg="FBSO-011-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24279" class="NRz" pattern="/NRz/DPN/Takt 103/FBSO-FHOE/rück" name="DPN/24279/0/hm" description="24279/1" comment="Takt 103" typeNumber="1007" line="Takt 103" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOE" trackID="A-11" bstfahrweg="FHOE-011-FBSO" dwegName="1-80" departure="14:30:48" minStopTime="180" stopTime="2226" regularRunningTime="120" requestedArrival="13:53:42" requestedDeparture="14:30:48" requestedTrackID="A-11" requestedBstFahrweg="FHOE-011-FBSO" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="A-1000" bstfahrweg="FHOE-FBSO" departure="14:33:30" minStopTime="30" stopTime="42" regularRunningTime="162" requestedArrival="14:32:48" requestedDeparture="14:33:30" requestedTrackID="A-1000" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="A-1" bstfahrweg="FHOE-FBSO" departure="14:36:54" minStopTime="30" stopTime="42" regularRunningTime="173" requestedArrival="14:36:12" requestedDeparture="14:36:54" requestedTrackID="A-1" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FHOE-82-FBSO" departure="14:44:29" minStopTime="12" stopTime="282" RTMargin2="0" requestedArrival="14:39:47" requestedDeparture="14:44:29" requestedTrackID="A-81" requestedBstFahrweg="FHOE-81-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24280" class="NRz" pattern="/NRz/DPN/Takt 102/FBSO-FHOE/hin" name="DPN/24280/0/hm" description="24280/1" comment="Takt 102" typeNumber="1007" line="Takt 102" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FHOE" dwegName="1-80" departure="15:44:30" minStopTime="120" stopTime="282" regularRunningTime="138" requestedArrival="15:39:48" requestedDeparture="15:44:30" requestedTrackID="D-81" requestedBstFahrweg="FBSO-81-FHOE" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="B-10" bstfahrweg="FBSO-FHOE" departure="15:47:30" minStopTime="30" stopTime="42" regularRunningTime="157" requestedArrival="15:46:48" requestedDeparture="15:47:30" requestedTrackID="B-10" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="B-1000" bstfahrweg="FBSO-FHOE" departure="15:50:49" minStopTime="30" stopTime="42" regularRunningTime="175" requestedArrival="15:50:07" requestedDeparture="15:50:49" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FHOE" trackID="B-11" bstfahrweg="FBSO-011-FHOE" dwegName="1-60" departure="16:00:50" minStopTime="120" stopTime="426" RTMargin2="0" requestedArrival="15:53:44" requestedDeparture="16:00:50" requestedTrackID="B-11" requestedBstFahrweg="FBSO-011-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24281" class="NRz" pattern="/NRz/DPN/Takt 103/FBSO-FHOE/rück" name="DPN/24281/0/hm" description="24281/1" comment="Takt 103" typeNumber="1007" line="Takt 103" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOE" trackID="A-11" bstfahrweg="FHOE-011-FBSO" dwegName="1-80" departure="15:30:48" minStopTime="180" stopTime="2226" regularRunningTime="120" requestedArrival="14:53:42" requestedDeparture="15:30:48" requestedTrackID="A-11" requestedBstFahrweg="FHOE-011-FBSO" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="A-1000" bstfahrweg="FHOE-FBSO" departure="15:33:30" minStopTime="30" stopTime="42" regularRunningTime="162" requestedArrival="15:32:48" requestedDeparture="15:33:30" requestedTrackID="A-1000" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="A-1" bstfahrweg="FHOE-FBSO" departure="15:36:54" minStopTime="30" stopTime="42" regularRunningTime="173" requestedArrival="15:36:12" requestedDeparture="15:36:54" requestedTrackID="A-1" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FBSO" trackID="A-81" bstfahrweg="FHOE-81-FBSO" departure="15:44:29" minStopTime="12" stopTime="282" RTMargin2="0" requestedArrival="15:39:47" requestedDeparture="15:44:29" requestedTrackID="A-81" requestedBstFahrweg="FHOE-81-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24282" class="NRz" pattern="/NRz/DPN/Takt 100/FBSO-FHOE/hin" name="DPN/24282/0/hm" description="24282/1" comment="Takt 100" typeNumber="1007" line="Takt 100" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FHOE" dwegName="1-80" departure="16:14:30" minStopTime="120" stopTime="282" regularRunningTime="138" requestedArrival="16:09:48" requestedDeparture="16:14:30" requestedTrackID="D-81" requestedBstFahrweg="FBSO-81-FHOE" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="B-10" bstfahrweg="FBSO-FHOE" departure="16:17:30" minStopTime="30" stopTime="42" regularRunningTime="157" requestedArrival="16:16:48" requestedDeparture="16:17:30" requestedTrackID="B-10" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="B-1000" bstfahrweg="FBSO-FHOE" departure="16:20:49" minStopTime="30" stopTime="42" regularRunningTime="175" requestedArrival="16:20:07" requestedDeparture="16:20:49" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FHOE" trackID="B-13" bstfahrweg="FBSO-013-FKOE" departure="16:30:50" minStopTime="120" stopTime="426" RTMargin2="0" requestedArrival="16:23:44" requestedDeparture="16:30:50" requestedTrackID="B-11" requestedBstFahrweg="FBSO-011-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24283" class="NRz" pattern="/NRz/DPN/Takt 101/FBSO-FHOE/rück" name="DPN/24283/0/hm" description="24283/1" comment="Takt 101" typeNumber="1007" line="Takt 101" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOE" trackID="A-11" bstfahrweg="FHOE-011-FBSO" dwegName="1-80" departure="16:00:48" minStopTime="180" stopTime="426" regularRunningTime="120" requestedArrival="15:53:42" requestedDeparture="16:00:48" requestedTrackID="A-11" requestedBstFahrweg="FHOE-011-FBSO" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="A-1000" bstfahrweg="FHOE-FBSO" departure="16:03:30" minStopTime="30" stopTime="42" regularRunningTime="162" requestedArrival="16:02:48" requestedDeparture="16:03:30" requestedTrackID="A-1000" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="A-1" bstfahrweg="FHOE-FBSO" departure="16:06:54" minStopTime="30" stopTime="42" regularRunningTime="173" requestedArrival="16:06:12" requestedDeparture="16:06:54" requestedTrackID="A-1" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FHOE-82-FBSO" departure="16:14:29" minStopTime="12" stopTime="282" RTMargin2="0" requestedArrival="16:09:47" requestedDeparture="16:14:29" requestedTrackID="A-81" requestedBstFahrweg="FHOE-81-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24284" class="NRz" pattern="/NRz/DPN/Takt 102/FBSO-FHOE/hin" name="DPN/24284/0/hm" description="24284/1" comment="Takt 102" typeNumber="1007" line="Takt 102" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FHOE" dwegName="1-80" departure="16:44:30" minStopTime="120" stopTime="282" regularRunningTime="138" requestedArrival="16:39:48" requestedDeparture="16:44:30" requestedTrackID="D-81" requestedBstFahrweg="FBSO-81-FHOE" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="B-10" bstfahrweg="FBSO-FHOE" departure="16:47:30" minStopTime="30" stopTime="42" regularRunningTime="157" requestedArrival="16:46:48" requestedDeparture="16:47:30" requestedTrackID="B-10" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="B-1000" bstfahrweg="FBSO-FHOE" departure="16:50:49" minStopTime="30" stopTime="42" regularRunningTime="175" requestedArrival="16:50:07" requestedDeparture="16:50:49" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FHOE" trackID="B-13" bstfahrweg="FBSO-013-FKOE" departure="17:00:50" minStopTime="120" stopTime="426" RTMargin2="0" requestedArrival="16:53:44" requestedDeparture="17:00:50" requestedTrackID="B-11" requestedBstFahrweg="FBSO-011-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24285" class="NRz" pattern="/NRz/DPN/Takt 103/FBSO-FHOE/rück" name="DPN/24285/0/hm" description="24285/1" comment="Takt 103" typeNumber="1007" line="Takt 103" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOE" trackID="A-11" bstfahrweg="FHOE-011-FBSO" dwegName="1-80" departure="16:30:48" minStopTime="180" stopTime="426" regularRunningTime="120" requestedArrival="16:23:42" requestedDeparture="16:30:48" requestedTrackID="A-11" requestedBstFahrweg="FHOE-011-FBSO" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="A-1000" bstfahrweg="FHOE-FBSO" departure="16:33:30" minStopTime="30" stopTime="42" regularRunningTime="162" requestedArrival="16:32:48" requestedDeparture="16:33:30" requestedTrackID="A-1000" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="A-1" bstfahrweg="FHOE-FBSO" departure="16:36:54" minStopTime="30" stopTime="42" regularRunningTime="173" requestedArrival="16:36:12" requestedDeparture="16:36:54" requestedTrackID="A-1" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FBSO" trackID="A-81" bstfahrweg="FHOE-81-FBSO" departure="16:44:29" minStopTime="12" stopTime="282" RTMargin2="0" requestedArrival="16:39:47" requestedDeparture="16:44:29" requestedTrackID="A-81" requestedBstFahrweg="FHOE-81-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24286" class="NRz" pattern="/NRz/DPN/Takt 100/FBSO-FHOE/hin" name="DPN/24286/0/hm" description="24286/1" comment="Takt 100" typeNumber="1007" line="Takt 100" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FHOE" dwegName="1-80" departure="17:14:30" minStopTime="120" stopTime="282" regularRunningTime="138" requestedArrival="17:09:48" requestedDeparture="17:14:30" requestedTrackID="D-81" requestedBstFahrweg="FBSO-81-FHOE" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="B-10" bstfahrweg="FBSO-FHOE" departure="17:17:30" minStopTime="30" stopTime="42" regularRunningTime="157" requestedArrival="17:16:48" requestedDeparture="17:17:30" requestedTrackID="B-10" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="B-1000" bstfahrweg="FBSO-FHOE" departure="17:20:49" minStopTime="30" stopTime="42" regularRunningTime="175" requestedArrival="17:20:07" requestedDeparture="17:20:49" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FHOE" trackID="B-11" bstfahrweg="FBSO-011-FHOE" dwegName="1-60" departure="17:30:50" minStopTime="120" stopTime="426" RTMargin2="0" requestedArrival="17:23:44" requestedDeparture="17:30:50" requestedTrackID="B-11" requestedBstFahrweg="FBSO-011-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24287" class="NRz" pattern="/NRz/DPN/Takt 101/FBSO-FHOE/rück" name="DPN/24287/0/hm" description="24287/1" comment="Takt 101" typeNumber="1007" line="Takt 101" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOE" trackID="A-11" bstfahrweg="FHOE-011-FBSO" dwegName="1-80" departure="17:00:48" minStopTime="180" stopTime="426" regularRunningTime="120" requestedArrival="16:53:42" requestedDeparture="17:00:48" requestedTrackID="A-11" requestedBstFahrweg="FHOE-011-FBSO" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="A-1000" bstfahrweg="FHOE-FBSO" departure="17:03:30" minStopTime="30" stopTime="42" regularRunningTime="162" requestedArrival="17:02:48" requestedDeparture="17:03:30" requestedTrackID="A-1000" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="A-1" bstfahrweg="FHOE-FBSO" departure="17:06:54" minStopTime="30" stopTime="42" regularRunningTime="173" requestedArrival="17:06:12" requestedDeparture="17:06:54" requestedTrackID="A-1" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FBSO" trackID="A-81" bstfahrweg="FHOE-81-FBSO" departure="17:14:29" minStopTime="12" stopTime="282" RTMargin2="0" requestedArrival="17:09:47" requestedDeparture="17:14:29" requestedTrackID="A-81" requestedBstFahrweg="FHOE-81-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24288" class="NRz" pattern="/NRz/DPN/Takt 102/FBSO-FHOE/hin" name="DPN/24288/0/hm" description="24288/1" comment="Takt 102" typeNumber="1007" line="Takt 102" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FHOE" dwegName="1-80" departure="17:44:30" minStopTime="120" stopTime="282" regularRunningTime="138" requestedArrival="17:39:48" requestedDeparture="17:44:30" requestedTrackID="D-81" requestedBstFahrweg="FBSO-81-FHOE" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="B-10" bstfahrweg="FBSO-FHOE" departure="17:47:30" minStopTime="30" stopTime="42" regularRunningTime="157" requestedArrival="17:46:48" requestedDeparture="17:47:30" requestedTrackID="B-10" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="B-1000" bstfahrweg="FBSO-FHOE" departure="17:50:49" minStopTime="30" stopTime="42" regularRunningTime="175" requestedArrival="17:50:07" requestedDeparture="17:50:49" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FHOE" trackID="B-13" bstfahrweg="FBSO-013-FKOE" departure="18:00:50" minStopTime="120" stopTime="426" RTMargin2="0" requestedArrival="17:53:44" requestedDeparture="18:00:50" requestedTrackID="B-11" requestedBstFahrweg="FBSO-011-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24289" class="NRz" pattern="/NRz/DPN/Takt 103/FBSO-FHOE/rück" name="DPN/24289/0/hm" description="24289/1" comment="Takt 103" typeNumber="1007" line="Takt 103" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOE" trackID="A-11" bstfahrweg="FHOE-011-FBSO" dwegName="1-80" departure="17:30:48" minStopTime="180" stopTime="426" regularRunningTime="120" requestedArrival="17:23:42" requestedDeparture="17:30:48" requestedTrackID="A-11" requestedBstFahrweg="FHOE-011-FBSO" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="A-1000" bstfahrweg="FHOE-FBSO" departure="17:33:30" minStopTime="30" stopTime="42" regularRunningTime="162" requestedArrival="17:32:48" requestedDeparture="17:33:30" requestedTrackID="A-1000" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="A-1" bstfahrweg="FHOE-FBSO" departure="17:36:54" minStopTime="30" stopTime="42" regularRunningTime="173" requestedArrival="17:36:12" requestedDeparture="17:36:54" requestedTrackID="A-1" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FHOE-82-FBSO" departure="17:44:29" minStopTime="12" stopTime="282" RTMargin2="0" requestedArrival="17:39:47" requestedDeparture="17:44:29" requestedTrackID="A-81" requestedBstFahrweg="FHOE-81-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24290" class="NRz" pattern="/NRz/DPN/Takt 100/FBSO-FHOE/hin" name="DPN/24290/0/hm" description="24290/1" comment="Takt 100" typeNumber="1007" line="Takt 100" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FHOE" dwegName="1-80" departure="18:14:30" minStopTime="120" stopTime="282" regularRunningTime="138" requestedArrival="18:09:48" requestedDeparture="18:14:30" requestedTrackID="D-81" requestedBstFahrweg="FBSO-81-FHOE" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="B-10" bstfahrweg="FBSO-FHOE" departure="18:17:30" minStopTime="30" stopTime="42" regularRunningTime="157" requestedArrival="18:16:48" requestedDeparture="18:17:30" requestedTrackID="B-10" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="B-1000" bstfahrweg="FBSO-FHOE" departure="18:20:49" minStopTime="30" stopTime="42" regularRunningTime="175" requestedArrival="18:20:07" requestedDeparture="18:20:49" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FHOE" trackID="B-11" bstfahrweg="FBSO-011-FHOE" dwegName="1-60" departure="18:30:50" minStopTime="120" stopTime="426" RTMargin2="0" requestedArrival="18:23:44" requestedDeparture="18:30:50" requestedTrackID="B-11" requestedBstFahrweg="FBSO-011-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24291" class="NRz" pattern="/NRz/DPN/Takt 101/FBSO-FHOE/rück" name="DPN/24291/0/hm" description="24291/1" comment="Takt 101" typeNumber="1007" line="Takt 101" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOE" trackID="A-11" bstfahrweg="FHOE-011-FBSO" dwegName="1-80" departure="18:00:48" minStopTime="180" stopTime="426" regularRunningTime="120" requestedArrival="17:53:42" requestedDeparture="18:00:48" requestedTrackID="A-11" requestedBstFahrweg="FHOE-011-FBSO" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="A-1000" bstfahrweg="FHOE-FBSO" departure="18:03:30" minStopTime="30" stopTime="42" regularRunningTime="162" requestedArrival="18:02:48" requestedDeparture="18:03:30" requestedTrackID="A-1000" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="A-1" bstfahrweg="FHOE-FBSO" departure="18:06:54" minStopTime="30" stopTime="42" regularRunningTime="173" requestedArrival="18:06:12" requestedDeparture="18:06:54" requestedTrackID="A-1" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FBSO" trackID="A-81" bstfahrweg="FHOE-81-FBSO" departure="18:14:29" minStopTime="12" stopTime="282" RTMargin2="0" requestedArrival="18:09:47" requestedDeparture="18:14:29" requestedTrackID="A-81" requestedBstFahrweg="FHOE-81-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24292" class="NRz" pattern="/NRz/DPN/Takt 102/FBSO-FHOE/hin" name="DPN/24292/0/hm" description="24292/1" comment="Takt 102" typeNumber="1007" line="Takt 102" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FHOE" dwegName="1-80" departure="18:44:30" minStopTime="120" stopTime="282" regularRunningTime="138" requestedArrival="18:39:48" requestedDeparture="18:44:30" requestedTrackID="D-81" requestedBstFahrweg="FBSO-81-FHOE" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="B-10" bstfahrweg="FBSO-FHOE" departure="18:47:30" minStopTime="30" stopTime="42" regularRunningTime="157" requestedArrival="18:46:48" requestedDeparture="18:47:30" requestedTrackID="B-10" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="B-1000" bstfahrweg="FBSO-FHOE" departure="18:50:49" minStopTime="30" stopTime="42" regularRunningTime="175" requestedArrival="18:50:07" requestedDeparture="18:50:49" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FHOE" trackID="B-13" bstfahrweg="FBSO-013-FKOE" departure="19:00:50" minStopTime="120" stopTime="426" RTMargin2="0" requestedArrival="18:53:44" requestedDeparture="19:00:50" requestedTrackID="B-11" requestedBstFahrweg="FBSO-011-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24293" class="NRz" pattern="/NRz/DPN/Takt 103/FBSO-FHOE/rück" name="DPN/24293/0/hm" description="24293/1" comment="Takt 103" typeNumber="1007" line="Takt 103" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOE" trackID="A-11" bstfahrweg="FHOE-011-FBSO" dwegName="1-80" departure="18:30:48" minStopTime="180" stopTime="426" regularRunningTime="120" requestedArrival="18:23:42" requestedDeparture="18:30:48" requestedTrackID="A-11" requestedBstFahrweg="FHOE-011-FBSO" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="A-1000" bstfahrweg="FHOE-FBSO" departure="18:33:30" minStopTime="30" stopTime="42" regularRunningTime="162" requestedArrival="18:32:48" requestedDeparture="18:33:30" requestedTrackID="A-1000" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="A-1" bstfahrweg="FHOE-FBSO" departure="18:36:54" minStopTime="30" stopTime="42" regularRunningTime="173" requestedArrival="18:36:12" requestedDeparture="18:36:54" requestedTrackID="A-1" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FBSO" trackID="A-82" bstfahrweg="FHOE-82-FBSO" departure="18:44:29" minStopTime="12" stopTime="282" RTMargin2="0" requestedArrival="18:39:47" requestedDeparture="18:44:29" requestedTrackID="A-81" requestedBstFahrweg="FHOE-81-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24294" class="NRz" pattern="/NRz/DPN/Takt 100/FBSO-FHOE/hin" name="DPN/24294/0/hm" description="24294/1" comment="Takt 100" typeNumber="1007" line="Takt 100" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FHOE" dwegName="1-80" departure="19:14:30" minStopTime="120" stopTime="282" regularRunningTime="138" requestedArrival="19:09:48" requestedDeparture="19:14:30" requestedTrackID="D-81" requestedBstFahrweg="FBSO-81-FHOE" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="B-10" bstfahrweg="FBSO-FHOE" departure="19:17:30" minStopTime="30" stopTime="42" regularRunningTime="157" requestedArrival="19:16:48" requestedDeparture="19:17:30" requestedTrackID="B-10" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="B-1000" bstfahrweg="FBSO-FHOE" departure="19:20:49" minStopTime="30" stopTime="42" regularRunningTime="175" requestedArrival="19:20:07" requestedDeparture="19:20:49" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FHOE" trackID="B-13" bstfahrweg="FBSO-013-FKOE" departure="19:30:50" minStopTime="120" stopTime="426" RTMargin2="0" requestedArrival="19:23:44" requestedDeparture="19:30:50" requestedTrackID="B-11" requestedBstFahrweg="FBSO-011-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24295" class="NRz" pattern="/NRz/DPN/Takt 101/FBSO-FHOE/rück" name="DPN/24295/0/hm" description="24295/1" comment="Takt 101" typeNumber="1007" line="Takt 101" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOE" trackID="A-11" bstfahrweg="FHOE-011-FBSO" dwegName="1-80" departure="19:00:48" minStopTime="180" stopTime="426" regularRunningTime="120" requestedArrival="18:53:42" requestedDeparture="19:00:48" requestedTrackID="A-11" requestedBstFahrweg="FHOE-011-FBSO" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="A-1000" bstfahrweg="FHOE-FBSO" departure="19:03:30" minStopTime="30" stopTime="42" regularRunningTime="162" requestedArrival="19:02:48" requestedDeparture="19:03:30" requestedTrackID="A-1000" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="A-1" bstfahrweg="FHOE-FBSO" departure="19:06:54" minStopTime="30" stopTime="42" regularRunningTime="173" requestedArrival="19:06:12" requestedDeparture="19:06:54" requestedTrackID="A-1" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FBSO" trackID="A-81" bstfahrweg="FHOE-81-FBSO" departure="19:14:29" minStopTime="12" stopTime="282" RTMargin2="0" requestedArrival="19:09:47" requestedDeparture="19:14:29" requestedTrackID="A-81" requestedBstFahrweg="FHOE-81-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24296" class="NRz" pattern="/NRz/DPN/Takt 102/FBSO-FHOE/hin" name="DPN/24296/0/hm" description="24296/1" comment="Takt 102" typeNumber="1007" line="Takt 102" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FHOE" dwegName="1-80" departure="19:44:30" minStopTime="120" stopTime="282" regularRunningTime="138" requestedArrival="19:39:48" requestedDeparture="19:44:30" requestedTrackID="D-81" requestedBstFahrweg="FBSO-81-FHOE" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="B-10" bstfahrweg="FBSO-FHOE" departure="19:47:30" minStopTime="30" stopTime="42" regularRunningTime="157" requestedArrival="19:46:48" requestedDeparture="19:47:30" requestedTrackID="B-10" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="B-1000" bstfahrweg="FBSO-FHOE" departure="19:50:49" minStopTime="30" stopTime="42" regularRunningTime="175" requestedArrival="19:50:07" requestedDeparture="19:50:49" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FHOE" trackID="B-11" bstfahrweg="FBSO-011-FHOE" dwegName="1-60" departure="20:00:50" minStopTime="120" stopTime="426" RTMargin2="0" requestedArrival="19:53:44" requestedDeparture="20:00:50" requestedTrackID="B-11" requestedBstFahrweg="FBSO-011-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24297" class="NRz" pattern="/NRz/DPN/Takt 103/FBSO-FHOE/rück" name="DPN/24297/0/hm" description="24297/1" comment="Takt 103" typeNumber="1007" line="Takt 103" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOE" trackID="A-11" bstfahrweg="FHOE-011-FBSO" dwegName="1-80" departure="19:30:48" minStopTime="180" stopTime="426" regularRunningTime="120" requestedArrival="19:23:42" requestedDeparture="19:30:48" requestedTrackID="A-11" requestedBstFahrweg="FHOE-011-FBSO" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="A-1000" bstfahrweg="FHOE-FBSO" departure="19:33:30" minStopTime="30" stopTime="42" regularRunningTime="162" requestedArrival="19:32:48" requestedDeparture="19:33:30" requestedTrackID="A-1000" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="A-1" bstfahrweg="FHOE-FBSO" departure="19:36:54" minStopTime="30" stopTime="42" regularRunningTime="173" requestedArrival="19:36:12" requestedDeparture="19:36:54" requestedTrackID="A-1" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FBSO" trackID="A-81" bstfahrweg="FHOE-81-FBSO" departure="19:44:29" minStopTime="12" stopTime="282" RTMargin2="0" requestedArrival="19:39:47" requestedDeparture="19:44:29" requestedTrackID="A-81" requestedBstFahrweg="FHOE-81-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24298" class="NRz" pattern="/NRz/DPN/Takt 100/FBSO-FHOE/hin" name="DPN/24298/0/hm" description="24298/1" comment="Takt 100" typeNumber="1007" line="Takt 100" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FHOE" dwegName="1-80" departure="20:14:30" minStopTime="120" stopTime="282" regularRunningTime="138" requestedArrival="20:09:48" requestedDeparture="20:14:30" requestedTrackID="D-81" requestedBstFahrweg="FBSO-81-FHOE" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="B-10" bstfahrweg="FBSO-FHOE" departure="20:17:30" minStopTime="30" stopTime="42" regularRunningTime="157" requestedArrival="20:16:48" requestedDeparture="20:17:30" requestedTrackID="B-10" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="B-1000" bstfahrweg="FBSO-FHOE" departure="20:20:49" minStopTime="30" stopTime="42" regularRunningTime="175" requestedArrival="20:20:07" requestedDeparture="20:20:49" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FHOE" trackID="B-11" bstfahrweg="FBSO-011-FHOE" dwegName="1-60" departure="20:30:50" minStopTime="120" stopTime="426" RTMargin2="0" requestedArrival="20:23:44" requestedDeparture="20:30:50" requestedTrackID="B-11" requestedBstFahrweg="FBSO-011-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24299" class="NRz" pattern="/NRz/DPN/Takt 101/FBSO-FHOE/rück" name="DPN/24299/0/hm" description="24299/1" comment="Takt 101" typeNumber="1007" line="Takt 101" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOE" trackID="A-11" bstfahrweg="FHOE-011-FBSO" dwegName="1-80" departure="20:00:48" minStopTime="180" stopTime="426" regularRunningTime="120" requestedArrival="19:53:42" requestedDeparture="20:00:48" requestedTrackID="A-11" requestedBstFahrweg="FHOE-011-FBSO" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="A-1000" bstfahrweg="FHOE-FBSO" departure="20:03:30" minStopTime="30" stopTime="42" regularRunningTime="162" requestedArrival="20:02:48" requestedDeparture="20:03:30" requestedTrackID="A-1000" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="A-1" bstfahrweg="FHOE-FBSO" departure="20:06:54" minStopTime="30" stopTime="42" regularRunningTime="173" requestedArrival="20:06:12" requestedDeparture="20:06:54" requestedTrackID="A-1" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FBSO" trackID="A-81" bstfahrweg="FHOE-81-FBSO" departure="20:14:29" minStopTime="12" stopTime="282" RTMargin2="0" requestedArrival="20:09:47" requestedDeparture="20:14:29" requestedTrackID="A-81" requestedBstFahrweg="FHOE-81-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24300" class="NRz" pattern="/NRz/DPN/Takt 102/FBSO-FHOE/hin" name="DPN/24300/0/hm" description="24300/1" comment="Takt 102" typeNumber="1007" line="Takt 102" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBSO" trackID="D-81" bstfahrweg="FBSO-81-FHOE" dwegName="1-80" departure="20:44:30" minStopTime="120" stopTime="282" regularRunningTime="138" requestedArrival="20:39:48" requestedDeparture="20:44:30" requestedTrackID="D-81" requestedBstFahrweg="FBSO-81-FHOE" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="B-10" bstfahrweg="FBSO-FHOE" departure="20:47:30" minStopTime="30" stopTime="42" regularRunningTime="157" requestedArrival="20:46:48" requestedDeparture="20:47:30" requestedTrackID="B-10" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="B-1000" bstfahrweg="FBSO-FHOE" departure="20:50:49" minStopTime="30" stopTime="42" regularRunningTime="175" requestedArrival="20:50:07" requestedDeparture="20:50:49" requestedTrackID="B-1000" requestedBstFahrweg="FBSO-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FHOE" trackID="B-11" bstfahrweg="FBSO-011-FHOE" dwegName="1-60" departure="20:56:44" minStopTime="120" stopTime="180" RTMargin2="0" requestedArrival="20:53:44" requestedDeparture="20:56:44" requestedTrackID="B-11" requestedBstFahrweg="FBSO-011-FHOE" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+		<train number="24301" class="NRz" pattern="/NRz/DPN/Takt 103/FBSO-FHOE/rück" name="DPN/24301/0/hm" description="24301/1" comment="Takt 103" typeNumber="1007" line="Takt 103" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHOE" trackID="A-11" bstfahrweg="FHOE-011-FBSO" dwegName="1-80" departure="20:30:48" minStopTime="180" stopTime="426" regularRunningTime="120" requestedArrival="20:23:42" requestedDeparture="20:30:48" requestedTrackID="A-11" requestedBstFahrweg="FHOE-011-FBSO" type="stop" trainTypeNumber="1007" lineID="3640" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSO" trackID="A-1000" bstfahrweg="FHOE-FBSO" departure="20:33:30" minStopTime="30" stopTime="42" regularRunningTime="162" requestedArrival="20:32:48" requestedDeparture="20:33:30" requestedTrackID="A-1000" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FSZ" trackID="A-1" bstfahrweg="FHOE-FBSO" departure="20:36:54" minStopTime="30" stopTime="42" regularRunningTime="173" requestedArrival="20:36:12" requestedDeparture="20:36:54" requestedTrackID="A-1" requestedBstFahrweg="FHOE-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+				<entry stationID="FBSO" trackID="A-81" bstfahrweg="FHOE-81-FBSO" departure="20:44:29" minStopTime="12" stopTime="282" RTMargin2="0" requestedArrival="20:39:47" requestedDeparture="20:44:29" requestedTrackID="A-81" requestedBstFahrweg="FHOE-81-FBSO" type="stop" trainTypeNumber="1007" timingPoint="true" departureFix="true" zuggattung="DPN 32.1"/>
+			</timetableentries>
+		</train>
+	</timetable>
+</railsys>

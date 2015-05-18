@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<railsys>
+	<version major="1" minor="2" patchlevel="0" comment="Erzeugt von RailSys\Simu/7.6.12 am Fr 18. Jan 10:18:20 2013"/>
+	<timetable>
+		<train number="15806" class="NRz" pattern="/NRz/RB/15964/FF-FSPO/rück" name="RB/15806/0/Hr" description="15806/1" comment="15964" typeNumber="1065" line="15964" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FSPO" stationName="Dreieich-Sprendl" trackID="D-801" bstfahrweg="FGOZ-801-FBUS" dwegName="1-60" departure="06:45:40" minStopTime="42" stopTime="42" regularRunningTime="196" requestedArrival="06:44:58" requestedDeparture="06:45:40" requestedTrackID="D-801" requestedBstFahrweg="FGOZ-801-FBUS" type="begin" lineID="3653" timingPoint="true" departureFix="true" zuggattung="RB 41.1"/>
+				<entry stationID="FNISA" trackID="G-1" bstfahrweg="FD-1-FNIS" departure="06:52:28" regularRunningTime="46" requestedDeparture="06:52:28" requestedTrackID="G-1" requestedBstFahrweg="FD-1-FNIS" type="pass" trainTypeNumber="1065" lineID="3655" timingPoint="true" zuggattung="RB 41.1"/>
+				<entry stationID="FNIS" trackID="B-1" bstfahrweg="FBUS-1-FLS" dwegName="1-1000" departure="06:53:56" minStopTime="42" stopTime="42" regularRunningTime="177" requestedArrival="06:53:14" requestedDeparture="06:53:56" requestedTrackID="B-1" requestedBstFahrweg="FBUS-1-FLS" type="stop" trainTypeNumber="1065" timingPoint="true" zuggattung="RB 41.1"/>
+				<entry stationID="FF" stationName="Frankfurt(M) Hbf" trackID="B-11" bstfahrweg="FMST-11-FF-U2(3601)" departure="07:10:35" minStopTime="180" stopTime="600" RTMargin2="0" requestedArrival="07:00:35" requestedDeparture="07:10:35" requestedTrackID="B-11" requestedBstFahrweg="FMST-11-FF-U2(3601)" type="end" lineID="3601" timingPoint="true" departureFix="true" zuggattung="RB 41.1"/>
+			</timetableentries>
+		</train>
+		<train number="15808" class="NRz" pattern="/NRz/RB/aus 15808/FNISA-FSPO/rück" name="RB/15808/0/Hr + Lr/15808/1/Hr" description="15808/1+" comment="alternativ 2x 646&#13;&#10;15986 + aus 15808" typeNumber="1017" line="aus 15808" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FSPO" stationName="Dreieich-Sprendl" trackID="D-801" bstfahrweg="FGOZ-801-FBUS" dwegName="1-60" departure="07:00:22" minStopTime="60" stopTime="90" regularRunningTime="187" requestedArrival="06:58:52" requestedDeparture="07:00:22" requestedTrackID="D-801" requestedBstFahrweg="FGOZ-801-FBUS" type="begin" lineID="3653" timingPoint="true" departureFix="true" zuggattung="RB 41.1"/>
+				<entry stationID="FBUS" trackID="D-41" bstfahrweg="FSPO-41-FNISA-3655" dwegName="2-1000" departure="07:06:12" minStopTime="60" stopTime="163" regularRunningTime="193" requestedArrival="07:03:29" requestedDeparture="07:06:12" requestedTrackID="D-41" requestedBstFahrweg="FSPO-41-FNISA-3655" type="stop" trainTypeNumber="1017" lineID="3655" timingPoint="true" departureFix="true" zuggattung="Lr 41.2"/>
+				<entry stationID="FNISA" trackID="B-9" bstfahrweg="FBUS-9-FNIS" departure="07:13:25" minStopTime="120" stopTime="240" RTMargin2="0" requestedArrival="07:09:25" requestedDeparture="07:13:25" requestedTrackID="B-9" requestedBstFahrweg="FBUS-9-FNIS" type="stop" trainTypeNumber="1017" timingPoint="true" departureFix="true" zuggattung="Lr 41.2"/>
+			</timetableentries>
+		</train>
+		<train number="15810" class="NRz" pattern="/NRz/RB/15966/FF-FSPO/rück" name="RB/15810/1/Hr" description="15810/1+++" comment="15966" typeNumber="1068" line="15966" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FSPO" stationName="Dreieich-Sprendl" trackID="D-801" bstfahrweg="FGOZ-801-FBUS" dwegName="1-60" departure="07:18:15" minStopTime="36" stopTime="36" regularRunningTime="196" requestedArrival="07:17:39" requestedDeparture="07:18:15" requestedTrackID="D-801" requestedBstFahrweg="FGOZ-801-FBUS" type="begin" lineID="3653" timingPoint="true" departureFix="true" zuggattung="RB 41.1"/>
+				<entry stationID="FNISA" trackID="G-1" bstfahrweg="FD-1-FNIS" departure="07:25:03" regularRunningTime="45" requestedDeparture="07:25:03" requestedTrackID="G-1" requestedBstFahrweg="FD-1-FNIS" type="pass" trainTypeNumber="1068" lineID="3655" timingPoint="true" zuggattung="RB 41.1"/>
+				<entry stationID="FNIS" trackID="B-1" bstfahrweg="FBUS-1-FLS" dwegName="1-1000" departure="07:26:30" minStopTime="42" stopTime="42" regularRunningTime="178" requestedArrival="07:25:48" requestedDeparture="07:26:30" requestedTrackID="B-1" requestedBstFahrweg="FBUS-1-FLS" type="stop" trainTypeNumber="1068" timingPoint="true" zuggattung="RB 41.1"/>
+				<entry stationID="FF" stationName="Frankfurt(M) Hbf" trackID="C-12" bstfahrweg="FMST-12S/H1-FF(3601)" departure="07:44:00" minStopTime="120" stopTime="600" RTMargin2="0" requestedArrival="07:34:00" requestedDeparture="07:44:00" requestedTrackID="C-12" requestedBstFahrweg="FMST-12S/H1-FF(3601)" type="end" lineID="3601" timingPoint="true" departureFix="true" zuggattung="RB 41.1"/>
+			</timetableentries>
+		</train>
+		<train number="15811" class="NRz" pattern="/NRz/Lr/15997/FNISA-FSPO/hin" name="Lr/15811/500/Hr + RB/15811/0/Hr" description="15811/1+" comment="für 15811 + 15997" typeNumber="1017" line="15997" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FNISA" trackID="A-9" bstfahrweg="FNIS-9-FBUS" departure="07:15:37" minStopTime="60" stopTime="120" regularRunningTime="197" requestedArrival="07:13:37" requestedDeparture="07:15:37" requestedTrackID="A-9" requestedBstFahrweg="FNIS-9-FBUS" type="stop" trainTypeNumber="1017" lineID="3655" timingPoint="true" departureFix="true" zuggattung="Lr 41.2"/>
+				<entry stationID="FBUS" trackID="Z-9000" bstfahrweg="FNISA-41-FSPO-3655" departure="07:26:23" minStopTime="120" stopTime="449" regularRunningTime="227" requestedArrival="07:18:54" requestedDeparture="07:26:23" requestedTrackID="Z-9000" requestedBstFahrweg="FNISA-41-FSPO-3655" type="stop" trainTypeNumber="1063" timingPoint="true" departureFix="true" zuggattung="RB 41.1"/>
+				<entry stationID="FSPO" stationName="Dreieich-Sprendl" trackID="A-802" bstfahrweg="FBUS-802-FGOZ" dwegName="1-60" departure="07:31:28" minStopTime="30" stopTime="78" RTMargin2="0" requestedArrival="07:30:10" requestedDeparture="07:31:28" requestedTrackID="A-802" requestedBstFahrweg="FBUS-802-FGOZ" type="end" lineID="3653" timingPoint="true" departureFix="true" zuggattung="RB 41.1"/>
+			</timetableentries>
+		</train>
+		<train number="15815" class="NRz" pattern="/NRz/Lr/15905/FNISA-FSPO/hin" name="Lr/15815/500/Hr + RB/15815/0/Hr" description="15815/1" comment="für 15815 wg. fehlendem Flankenschutz FBUS + 15905" typeNumber="1018" line="15905" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FNISA" trackID="A-1" bstfahrweg="FNIS-1-FBUS" departure="08:18:27" minStopTime="60" stopTime="120" regularRunningTime="192" requestedArrival="08:16:27" requestedDeparture="08:18:27" requestedTrackID="A-1" requestedBstFahrweg="FNIS-1-FBUS" type="stop" trainTypeNumber="1018" lineID="3655" timingPoint="true" departureFix="true" zuggattung="Lr 41.2"/>
+				<entry stationID="FBUS" trackID="A-41" bstfahrweg="FNISA-41-FSPO-3655" dwegName="1-1000" departure="08:26:18" minStopTime="120" stopTime="279" regularRunningTime="172" requestedArrival="08:21:39" requestedDeparture="08:26:18" requestedTrackID="A-41" requestedBstFahrweg="FNISA-41-FSPO-3655" type="stop" trainTypeNumber="1063" timingPoint="true" departureFix="true" zuggattung="RB 41.1"/>
+				<entry stationID="FSPO" stationName="Dreieich-Sprendl" trackID="A-802" bstfahrweg="FBUS-802-FGOZ" dwegName="1-60" departure="08:29:46" minStopTime="36" stopTime="36" RTMargin2="0" requestedArrival="08:29:10" requestedDeparture="08:29:46" requestedTrackID="A-802" requestedBstFahrweg="FBUS-802-FGOZ" type="end" lineID="3653" timingPoint="true" zuggattung="RB 41.1"/>
+			</timetableentries>
+		</train>
+		<train number="15816" class="NRz" pattern="/NRz/RB/15968/FF-FSPO/rück" name="RB/15816/0/Hr" description="15816/1++" comment="15968" typeNumber="1065" line="15968" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FSPO" stationName="Dreieich-Sprendl" trackID="D-801" bstfahrweg="FGOZ-801-FBUS" dwegName="1-60" departure="08:15:42" minStopTime="36" stopTime="36" regularRunningTime="196" requestedArrival="08:15:06" requestedDeparture="08:15:42" requestedTrackID="D-801" requestedBstFahrweg="FGOZ-801-FBUS" type="begin" lineID="3653" timingPoint="true" departureFix="true" zuggattung="RB 41.1"/>
+				<entry stationID="FNISA" trackID="G-1" bstfahrweg="FD-1-FNIS" departure="08:22:36" regularRunningTime="45" requestedDeparture="08:22:36" requestedTrackID="G-1" requestedBstFahrweg="FD-1-FNIS" type="pass" trainTypeNumber="1065" lineID="3655" timingPoint="true" zuggattung="RB 41.1"/>
+				<entry stationID="FNIS" trackID="B-1" bstfahrweg="FBUS-1-FLS" dwegName="1-1000" departure="08:27:39" minStopTime="60" stopTime="258" regularRunningTime="162" requestedArrival="08:23:21" requestedDeparture="08:27:39" requestedTrackID="B-1" requestedBstFahrweg="FBUS-1-FLS" type="stop" trainTypeNumber="1065" timingPoint="true" departureFix="true" zuggattung="RB 41.1"/>
+				<entry stationID="FF" stationName="Frankfurt(M) Hbf" trackID="B-10" bstfahrweg="FMST-10-FF(3601)" departure="08:51:21" minStopTime="180" stopTime="900" RTMargin2="0" requestedArrival="08:36:21" requestedDeparture="08:51:21" requestedTrackID="B-10" requestedBstFahrweg="FMST-10-FF(3601)" type="end" lineID="3601" timingPoint="true" departureFix="true" zuggattung="RB 41.1"/>
+			</timetableentries>
+		</train>
+		<train number="15849" class="NRz" pattern="/NRz/RB/15965/FF-FSPO/hin" name="RB/15849/0/Hr" description="15849/1+" comment="15965" typeNumber="1065" line="15965" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FF" stationName="Frankfurt(M) Hbf" trackID="D-13" bstfahrweg="FF-13F/H2-FMST(3601)" departure="16:29:27" minStopTime="300" stopTime="1140" regularRunningTime="57" requestedArrival="16:10:27" requestedDeparture="16:29:27" requestedTrackID="D-13" requestedBstFahrweg="FF-13F/H2-FMST(3601)" type="begin" lineID="3601" timingPoint="true" departureFix="true" zuggattung="RB 41.1"/>
+				<entry stationID="FNIS" trackID="A-1" bstfahrweg="FLS-1-FBUS" departure="16:36:33" minStopTime="42" stopTime="42" regularRunningTime="43" requestedArrival="16:35:51" requestedDeparture="16:36:33" requestedTrackID="A-1" requestedBstFahrweg="FLS-1-FBUS" type="stop" trainTypeNumber="1065" lineID="3655" timingPoint="true" zuggattung="RB 41.1"/>
+				<entry stationID="FNISA" trackID="G-1" bstfahrweg="FNIS-1-FBUS" departure="16:37:16" regularRunningTime="205" requestedDeparture="16:37:16" requestedTrackID="G-1" requestedBstFahrweg="FNIS-1-FBUS" type="pass" trainTypeNumber="1065" timingPoint="true" zuggattung="RB 41.1"/>
+				<entry stationID="FBUS" trackID="A-41" bstfahrweg="FNISA-41-FSPO-3655" dwegName="1-1000" departure="16:41:23" minStopTime="42" stopTime="42" regularRunningTime="184" requestedArrival="16:40:41" requestedDeparture="16:41:23" requestedTrackID="A-41" requestedBstFahrweg="FNISA-41-FSPO-3655" type="stop" trainTypeNumber="1065" timingPoint="true" zuggattung="RB 41.1"/>
+				<entry stationID="FSPO" stationName="Dreieich-Sprendl" trackID="A-802" bstfahrweg="FBUS-802-FGOZ" dwegName="1-60" departure="16:47:39" minStopTime="48" stopTime="192" RTMargin2="0" requestedArrival="16:44:27" requestedDeparture="16:47:39" requestedTrackID="A-802" requestedBstFahrweg="FBUS-802-FGOZ" type="end" lineID="3653" timingPoint="true" departureFix="true" zuggattung="RB 41.1"/>
+			</timetableentries>
+		</train>
+		<train number="15855" class="NRz" pattern="/NRz/RB/15967/FF-FSPO/hin" name="RB/15855/0/Hr" description="15855/1+" comment="15967" typeNumber="1065" line="15967" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FF" stationName="Frankfurt(M) Hbf" trackID="A-10" bstfahrweg="FF-10-FMST(3601)" departure="17:29:18" minStopTime="300" stopTime="1200" regularRunningTime="53" requestedArrival="17:09:18" requestedDeparture="17:29:18" requestedTrackID="A-10" requestedBstFahrweg="FF-10-FMST(3601)" type="begin" lineID="3601" timingPoint="true" departureFix="true" zuggattung="RB 41.1"/>
+				<entry stationID="FNIS" trackID="A-1" bstfahrweg="FLS-1-FBUS" departure="17:36:38" minStopTime="48" stopTime="60" regularRunningTime="42" requestedArrival="17:35:38" requestedDeparture="17:36:38" requestedTrackID="A-1" requestedBstFahrweg="FLS-1-FBUS" type="stop" trainTypeNumber="1065" lineID="3655" timingPoint="true" departureFix="true" zuggattung="RB 41.1"/>
+				<entry stationID="FNISA" trackID="G-1" bstfahrweg="FNIS-1-FBUS" departure="17:37:20" regularRunningTime="200" requestedDeparture="17:37:20" requestedTrackID="G-1" requestedBstFahrweg="FNIS-1-FBUS" type="pass" trainTypeNumber="1065" timingPoint="true" zuggattung="RB 41.1"/>
+				<entry stationID="FBUS" trackID="A-41" bstfahrweg="FNISA-41-FSPO-3655" dwegName="1-1000" departure="17:41:22" minStopTime="42" stopTime="42" regularRunningTime="184" requestedArrival="17:40:40" requestedDeparture="17:41:22" requestedTrackID="A-41" requestedBstFahrweg="FNISA-41-FSPO-3655" type="stop" trainTypeNumber="1065" timingPoint="true" zuggattung="RB 41.1"/>
+				<entry stationID="FSPO" stationName="Dreieich-Sprendl" trackID="A-802" bstfahrweg="FBUS-802-FGOZ" dwegName="1-60" departure="17:47:38" minStopTime="48" stopTime="192" RTMargin2="0" requestedArrival="17:44:26" requestedDeparture="17:47:38" requestedTrackID="A-802" requestedBstFahrweg="FBUS-802-FGOZ" type="end" lineID="3653" timingPoint="true" departureFix="true" zuggattung="RB 41.1"/>
+			</timetableentries>
+		</train>
+		<train number="15861" class="NRz" pattern="/NRz/RB/15969/FF-FSPO/hin" name="RB/15861/0/Hr" description="15861/1+" comment="15969" typeNumber="1068" line="15969" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FF" stationName="Frankfurt(M) Hbf" trackID="D-12" bstfahrweg="FF-12F/H2-FMST-U2(3601)" departure="18:28:54" minStopTime="180" stopTime="900" regularRunningTime="75" requestedArrival="18:13:54" requestedDeparture="18:28:54" requestedTrackID="D-12" requestedBstFahrweg="FF-12F/H2-FMST-U2(3601)" type="begin" lineID="3601" timingPoint="true" departureFix="true" zuggattung="RB 41.1"/>
+				<entry stationID="FNIS" trackID="A-1" bstfahrweg="FLS-1-FBUS" departure="18:36:41" minStopTime="48" stopTime="60" regularRunningTime="42" requestedArrival="18:35:41" requestedDeparture="18:36:41" requestedTrackID="A-1" requestedBstFahrweg="FLS-1-FBUS" type="stop" trainTypeNumber="1068" lineID="3655" timingPoint="true" departureFix="true" zuggattung="RB 41.1"/>
+				<entry stationID="FNISA" trackID="G-1" bstfahrweg="FNIS-1-FBUS" departure="18:37:23" regularRunningTime="200" requestedDeparture="18:37:23" requestedTrackID="G-1" requestedBstFahrweg="FNIS-1-FBUS" type="pass" trainTypeNumber="1068" timingPoint="true" zuggattung="RB 41.1"/>
+				<entry stationID="FBUS" trackID="A-41" bstfahrweg="FNISA-41-FSPO-3655" dwegName="1-1000" departure="18:41:25" minStopTime="42" stopTime="42" regularRunningTime="184" requestedArrival="18:40:43" requestedDeparture="18:41:25" requestedTrackID="A-41" requestedBstFahrweg="FNISA-41-FSPO-3655" type="stop" trainTypeNumber="1068" timingPoint="true" zuggattung="RB 41.1"/>
+				<entry stationID="FSPO" stationName="Dreieich-Sprendl" trackID="A-802" bstfahrweg="FBUS-802-FGOZ" dwegName="1-60" departure="18:47:41" minStopTime="48" stopTime="192" RTMargin2="0" requestedArrival="18:44:29" requestedDeparture="18:47:41" requestedTrackID="A-802" requestedBstFahrweg="FBUS-802-FGOZ" type="end" lineID="3653" timingPoint="true" departureFix="true" zuggattung="RB 41.1"/>
+			</timetableentries>
+		</train>
+		<train number="40314" class="FGz" pattern="/FGz/DGS/XPM -/F836A-FHD/rück" name="DGS/40314/280/si + DGS/40314/0/SU" description="40314/3+" comment="XPM - XFCU&#13;&#10;KV P/C 45, P 359 / C 364&#13;&#10;umgesetzte Studie zu 40424&#13;&#10;L 3553 +++ o. EBuLa +++ + XPM - XFCU&#13;&#10;+++ ohne Ebula +++&#13;&#10;P/C 45, P 359, C 364&#13;&#10;umgesetzte Studie zu 40424&#13;&#10;L 3553 ITL&#13;&#10;BZA 11-1021/11;11-1048/11;&#13;&#10;11-1033/11; 11-1034/11;11-1023 /11; 11-1050/11" typeNumber="4092" line="XPM -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FHD" stationName="Maintal Ost" trackID="G-802" bstfahrweg="FHW-802-FFMK" departure="15:04:10" regularRunningTime="82" requestedDeparture="15:04:10" requestedTrackID="G-802" requestedBstFahrweg="FHW-802-FFMK" type="begin" lineID="3660" timingPoint="true" departureFix="true" zuggattung="DGS 36.1"/>
+				<entry stationID="FNIS" trackID="Z-1" bstfahrweg="FLS-1-FBUS" trackIDForNotConditional="G-1" bstFahrwegBeiAusfallBetriebsHalt="FLS-1-FBUS" departure="15:53:43" minStopTime="60" stopTime="180" regularRunningTime="271" requestedArrival="15:50:43" requestedDeparture="15:53:43" requestedTrackID="Z-1" requestedBstFahrweg="FLS-1-FBUS" type="conditional1" trainTypeNumber="4092" lineID="3655" timingPoint="true" departureFix="true" zuggattung="DGS 36.1"/>
+				<entry stationID="FNISA" trackID="A-8" bstfahrweg="FNIS-8-FD" dwegName="1-1000" departure="16:13:44" minStopTime="930" stopTime="930" regularRunningTime="215" requestedArrival="15:58:14" requestedDeparture="16:13:44" requestedTrackID="A-8" requestedBstFahrweg="FNIS-8-FD" type="stop" trainTypeNumber="4092" timingPoint="true" departureFix="true" zuggattung="DGS 36.1"/>
+				<entry stationID="F836A" stationName="Sbk 836 (3601)" trackID="G-836" bstfahrweg="FEZ-FDA" departure="16:26:27" RTMargin2="0" requestedDeparture="16:26:27" requestedTrackID="G-836" requestedBstFahrweg="FEZ-FDA" type="end" lineID="3601" timingPoint="true" zuggattung="DGS 36.1"/>
+			</timetableentries>
+		</train>
+		<train number="46717" class="FGz" pattern="/FGz/CS/XNMD -/F836A-FFBS/rück" name="CS/46717/606/js + CS/46717/607/su" description="46717/3+++++" comment="XNMD - XAWT&#13;&#10;&#13;&#10;RV + XNMD - XAWT" typeNumber="4030" line="XNMD -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-1" bstfahrweg="FVL-1-FFGI" departure="09:45:37" regularRunningTime="110" requestedDeparture="09:45:37" requestedTrackID="G-1" requestedBstFahrweg="FVL-1-FFGI" type="begin" lineID="3900" timingPoint="true" departureFix="true" zuggattung="CS 69.1"/>
+				<entry stationID="FNIS" trackID="G-1" bstfahrweg="FLS-1-FBUS" departure="10:01:22" regularRunningTime="25" requestedDeparture="10:01:22" requestedTrackID="G-1" requestedBstFahrweg="FLS-1-FBUS" type="pass" trainTypeNumber="4030" lineID="3655" timingPoint="true" zuggattung="CS 69.1"/>
+				<entry stationID="FNISA" trackID="G-1" bstfahrweg="FNIS-1-FD" departure="10:01:47" regularRunningTime="158" requestedDeparture="10:01:47" requestedTrackID="G-1" requestedBstFahrweg="FNIS-1-FD" type="pass" trainTypeNumber="4030" timingPoint="true" zuggattung="CS 69.1"/>
+				<entry stationID="F836A" stationName="Sbk 836 (3601)" trackID="G-836" bstfahrweg="FEZ-FDA" departure="10:11:22" RTMargin2="0" requestedDeparture="10:11:22" requestedTrackID="G-836" requestedBstFahrweg="FEZ-FDA" type="end" lineID="3601" timingPoint="true" zuggattung="CS 69.1"/>
+			</timetableentries>
+		</train>
+		<train number="48600" class="FGz" pattern="/FGz/CIL/XID -/FEZ-FKRI/hin" name="CIL/48600/222/su + CIL/48600/44/He" description="48600/3+" comment="XID - FL + XID - FL&#13;&#10;Tonverkehr" typeNumber="4010" line="XID -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FEZ" stationName="Erzhausen" trackID="G-737" bstfahrweg="FDA-737-FLG" departure="21:24:11" regularRunningTime="198" requestedDeparture="21:24:11" requestedTrackID="G-737" requestedBstFahrweg="FDA-737-FLG" type="begin" lineID="3601" timingPoint="true" departureFix="true" zuggattung="CIL 76.2"/>
+				<entry stationID="FNISA" trackID="G-1" bstfahrweg="FD-1-FNIS" departure="21:31:48" regularRunningTime="60" requestedDeparture="21:31:48" requestedTrackID="G-1" requestedBstFahrweg="FD-1-FNIS" type="pass" trainTypeNumber="4010" lineID="3655" timingPoint="true" zuggattung="CIL 76.2"/>
+				<entry stationID="FNIS" trackID="X-1" bstfahrweg="FBUS-1-FFOR" trackIDForNotConditional="G-1" bstFahrwegBeiAusfallBetriebsHalt="FBUS-1-FFOR" departure="21:38:48" minStopTime="60" stopTime="360" regularRunningTime="184" requestedArrival="21:32:48" requestedDeparture="21:38:48" requestedTrackID="X-1" requestedBstFahrweg="FBUS-1-FFOR" type="conditional1" trainTypeNumber="4010" timingPoint="true" departureFix="true" zuggattung="CIL 76.2"/>
+				<entry stationID="FKRI" stationName="Kriftel" trackID="G-401" bstfahrweg="FFAWA-401-FHF" departure="22:16:45" RTMargin2="0" requestedDeparture="22:16:45" requestedTrackID="G-401" requestedBstFahrweg="FFAWA-401-FHF" type="end" lineID="3610" timingPoint="true" zuggattung="CIL 76.2"/>
+			</timetableentries>
+		</train>
+		<train number="49156" class="FGz" pattern="/FGz/CS/XABL -/FEZ-FFBS/hin" name="CS/49156/827/su + CS/49156/828/js" description="49156/3" comment="XABL - HBHSK&#13;&#10;korr 27+24 + XABL - HBHSK&#13;&#10;U Korr 24+28+27" typeNumber="4037" line="XABL -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FEZ" stationName="Erzhausen" trackID="G-737" bstfahrweg="FDA-737-FLG" departure="26:07:50" regularRunningTime="204" requestedDeparture="26:07:50" requestedTrackID="G-737" requestedBstFahrweg="FDA-737-FLG" type="begin" lineID="3601" timingPoint="true" departureFix="true" zuggattung="CS 69.5"/>
+				<entry stationID="FNISA" trackID="B-10" bstfahrweg="FD-10-FNIS" dwegName="1-1000" departure="26:52:00" minStopTime="2148" stopTime="2148" regularRunningTime="71" requestedArrival="26:16:12" requestedDeparture="26:52:00" requestedTrackID="B-10" requestedBstFahrweg="FD-10-FNIS" type="stop" trainTypeNumber="4037" lineID="3655" timingPoint="true" departureFix="true" zuggattung="CS 69.5"/>
+				<entry stationID="FNIS" trackID="G-1" bstfahrweg="FBUS-1-FLS" departure="26:53:11" regularRunningTime="189" requestedDeparture="26:53:11" requestedTrackID="G-1" requestedBstFahrweg="FBUS-1-FLS" type="pass" trainTypeNumber="4037" timingPoint="true" zuggattung="CS 69.5"/>
+				<entry stationID="FFBS" stationName="Ff-Frankf Berg" trackID="G-3" bstfahrweg="FFGI-3-FVL" departure="27:10:53" RTMargin2="0" requestedDeparture="27:10:53" requestedTrackID="G-3" requestedBstFahrweg="FFGI-3-FVL" type="end" lineID="3900" timingPoint="true" zuggattung="CS 69.5"/>
+			</timetableentries>
+		</train>
+		<train number="73511" class="NRz" pattern="/NRz/Lt/ggf Absetzen/FBUS-FF/hin" name="Lt/73511/500/Hr + Lt/73511/501/Hr" description="73511/1+" comment="ggf Absetzen eine Tw in FNISA&#13;&#10;alternativ 628 + ggf Absetzen eine Tw in FNISA" typeNumber="1057" line="ggf Absetzen" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBUS" trackID="D-41" bstfahrweg="FSPO-41-FNISA-3655" dwegName="2-1000" departure="07:40:49" minStopTime="30" stopTime="150" regularRunningTime="233" requestedArrival="07:38:19" requestedDeparture="07:40:49" requestedTrackID="D-41" requestedBstFahrweg="FSPO-41-FNISA-3655" type="stop" trainTypeNumber="1057" lineID="3655" timingPoint="true" departureFix="true" zuggattung="Lt 41.3"/>
+				<entry stationID="FNISA" trackID="B-10" bstfahrweg="FBUS-10-FNIS" departure="08:02:00" minStopTime="120" stopTime="1038" regularRunningTime="43" requestedArrival="07:44:42" requestedDeparture="08:02:00" requestedTrackID="B-10" requestedBstFahrweg="FBUS-10-FNIS" type="stop" trainTypeNumber="1056" timingPoint="true" departureFix="true" zuggattung="Lt 41.3"/>
+				<entry stationID="FNIS" trackID="G-1" bstfahrweg="FBUS-1-FFOR" departure="08:02:43" regularRunningTime="149" requestedDeparture="08:02:43" requestedTrackID="G-1" requestedBstFahrweg="FBUS-1-FFOR" type="pass" trainTypeNumber="1056" timingPoint="true" zuggattung="Lt 41.3"/>
+				<entry stationID="FF" stationName="Frankfurt(M) Hbf" trackID="C-18" bstfahrweg="FF__H-18S/H1-FF(3520)" departure="08:32:14" minStopTime="300" stopTime="900" RTMargin2="0" requestedArrival="08:17:14" requestedDeparture="08:32:14" requestedTrackID="C-18" requestedBstFahrweg="FF__H-18S/H1-FF(3520)" type="end" lineID="3520" timingPoint="true" departureFix="true" zuggattung="Lt 41.3"/>
+			</timetableentries>
+		</train>
+		<train number="73512" class="NRz" pattern="/NRz/Lt/alternativ mit/FBUS-FF/hin" name="Lt/73512/502/Hr" description="73512/1++" comment="alternativ mit 628" typeNumber="1056" line="alternativ mit" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBUS" trackID="D-41" bstfahrweg="FSPO-41-FNISA-3655" dwegName="2-1000" departure="20:25:24" minStopTime="60" stopTime="60" regularRunningTime="143" requestedArrival="20:24:24" requestedDeparture="20:25:24" requestedTrackID="D-41" requestedBstFahrweg="FSPO-41-FNISA-3655" type="stop" trainTypeNumber="1056" lineID="3655" timingPoint="true" departureFix="true" zuggattung="Lt 41.3"/>
+				<entry stationID="FNISA" trackID="G-1" bstfahrweg="FBUS-1-FNIS" departure="20:27:47" regularRunningTime="41" requestedDeparture="20:27:47" requestedTrackID="G-1" requestedBstFahrweg="FBUS-1-FNIS" type="pass" trainTypeNumber="1056" timingPoint="true" zuggattung="Lt 41.3"/>
+				<entry stationID="FNIS" trackID="B-1" bstfahrweg="FBUS-1-FFOR" dwegName="1-1000" departure="20:40:28" minStopTime="720" stopTime="720" regularRunningTime="172" requestedArrival="20:28:28" requestedDeparture="20:40:28" requestedTrackID="B-1" requestedBstFahrweg="FBUS-1-FFOR" type="stop" trainTypeNumber="1056" timingPoint="true" departureFix="true" zuggattung="Lt 41.3"/>
+				<entry stationID="FF" stationName="Frankfurt(M) Hbf" trackID="D-1" bstfahrweg="FGUR-1F/H1-FF(3603)" departure="21:49:06" minStopTime="3300" stopTime="3300" RTMargin2="0" requestedArrival="20:54:06" requestedDeparture="21:49:06" requestedTrackID="D-1" requestedBstFahrweg="FGUR-1F/H1-FF(3603)" type="end" lineID="3603" timingPoint="true" zuggattung="Lt 41.3"/>
+			</timetableentries>
+		</train>
+		<train number="73515" class="NRz" pattern="/NRz/Lr/alternativ mit/FBUS-FEZ/rück" name="Lr/73515/500/Hr + Lr/73515/501/Hr" description="73515/1++" comment="alternativ mit 218/ 3 Wg. + " typeNumber="1019" line="alternativ mit" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FEZ" stationName="Erzhausen" trackID="G-737" bstfahrweg="FDA-737-FLG" departure="06:26:59" regularRunningTime="163" requestedDeparture="06:26:59" requestedTrackID="G-737" requestedBstFahrweg="FDA-737-FLG" type="begin" lineID="3601" timingPoint="true" departureFix="true" zuggattung="Lr 41.2"/>
+				<entry stationID="FNISA" trackID="Y-8" bstfahrweg="FD-8-FNIS &lt;-&gt; FNIS-8-FBUS" departure="06:47:30" minStopTime="480" stopTime="810" regularRunningTime="239" requestedArrival="06:34:00" requestedDeparture="06:47:30" requestedTrackID="Y-8" requestedBstFahrweg="FD-8-FNIS &lt;-&gt; FNIS-8-FBUS" type="stop" trainTypeNumber="1019" lineID="3655" timingPoint="true" departureFix="true" zuggattung="Lr 41.2"/>
+				<entry stationID="FBUS" trackID="Z-9000" bstfahrweg="FNISA-41-FSPO-3655" departure="06:52:29" minStopTime="6" stopTime="60" RTMargin2="0" requestedArrival="06:51:29" requestedDeparture="06:52:29" requestedTrackID="Z-9000" requestedBstFahrweg="FNISA-41-FSPO-3655" type="stop" trainTypeNumber="1019" timingPoint="true" departureFix="true" zuggattung="Lr 41.2"/>
+			</timetableentries>
+		</train>
+		<train number="73609" class="NRz" pattern="/NRz/Lr-D/aus 15761/FEZ-FGM/hin" name="Lr-D/73609/501/Hr" description="73609/1+" comment="aus 15761" typeNumber="1036" line="aus 15761" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FEZ" stationName="Erzhausen" trackID="G-737" bstfahrweg="FDA-737-FLG" departure="19:03:32" regularRunningTime="246" requestedDeparture="19:03:32" requestedTrackID="G-737" requestedBstFahrweg="FDA-737-FLG" type="begin" lineID="3601" timingPoint="true" departureFix="true" zuggattung="Lr-D 41.2"/>
+				<entry stationID="FNISA" trackID="B-10" bstfahrweg="FD-10-FNIS" departure="19:30:25" minStopTime="1080" stopTime="1080" regularRunningTime="44" requestedArrival="19:12:25" requestedDeparture="19:30:25" requestedTrackID="B-10" requestedBstFahrweg="FD-10-FNIS" type="stop" trainTypeNumber="1036" lineID="3655" timingPoint="true" departureFix="true" zuggattung="Lr-D 41.2"/>
+				<entry stationID="FNIS" trackID="G-1" bstfahrweg="FBUS-1-FFOR" departure="19:31:09" regularRunningTime="152" requestedDeparture="19:31:09" requestedTrackID="G-1" requestedBstFahrweg="FBUS-1-FFOR" type="pass" trainTypeNumber="1036" timingPoint="true" zuggattung="Lr-D 41.2"/>
+				<entry stationID="FGM" stationName="Ff-Griesheim" trackID="A-203" bstfahrweg="FNI-203-FGM-D" dwegName="1-1000" departure="20:19:08" minStopTime="300" stopTime="1140" RTMargin2="0" requestedArrival="20:00:08" requestedDeparture="20:19:08" requestedTrackID="A-203" requestedBstFahrweg="FNI-203-FGM-D" type="end" lineID="3621" timingPoint="true" departureFix="true" zuggattung="Lr-D 41.2"/>
+			</timetableentries>
+		</train>
+		<train number="91053" class="FGz" pattern="/Bedarfszuege/FGz/DGX/RMG-FHOEG +ohne Ebula+ PC/FEZ-FHOEG/hin" name="DGX/91053/18/su" description="91053/2" comment="RMG-FHOEG&#13;&#10;+ohne Ebula+&#13;&#10;PC 70, PC 400&#13;&#10;RTB Cargo D3113" typeNumber="4123" line="RMG-FHOEG +ohne Ebula+ PC" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FEZ" stationName="Erzhausen" trackID="G-737" bstfahrweg="FDA-737-FLG" departure="24:23:12" regularRunningTime="277" requestedDeparture="24:23:12" requestedTrackID="G-737" requestedBstFahrweg="FDA-737-FLG" type="begin" lineID="3601" timingPoint="true" departureFix="true" zuggattung="DGX 36.9"/>
+				<entry stationID="FNISA" trackID="B-10" bstfahrweg="FD-10-FNIS" dwegName="1-1000" departure="25:11:46" minStopTime="2250" stopTime="2250" regularRunningTime="98" requestedArrival="24:34:16" requestedDeparture="25:11:46" requestedTrackID="B-10" requestedBstFahrweg="FD-10-FNIS" type="stop" trainTypeNumber="4123" lineID="3655" timingPoint="true" departureFix="true" zuggattung="DGX 36.9"/>
+				<entry stationID="FNIS" trackID="G-1" bstfahrweg="FBUS-1-FFOR" departure="25:13:24" regularRunningTime="239" requestedDeparture="25:13:24" requestedTrackID="G-1" requestedBstFahrweg="FBUS-1-FFOR" type="pass" trainTypeNumber="4123" timingPoint="true" zuggattung="DGX 36.9"/>
+				<entry stationID="FHOEG" stationName="Ff-Höchst Gbf" trackID="A-227" bstfahrweg="FHOE-227-FHOEA" dwegName="1-1000" departure="26:02:46" minStopTime="600" stopTime="600" RTMargin2="0" requestedArrival="25:52:46" requestedDeparture="26:02:46" requestedTrackID="A-227" requestedBstFahrweg="FHOE-227-FHOEA" type="end" lineID="3603" timingPoint="true" zuggattung="DGX 36.9"/>
+			</timetableentries>
+		</train>
+	</timetable>
+</railsys>

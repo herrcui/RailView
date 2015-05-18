@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<line lineID="3539" name="Abzw Mönchwald - Abzw Mönchhof" trafficRouting="on_the_right" type="local" dependentLines="fmoh fmow">
+	<version major="1" minor="2" patchlevel="0" comment=""/>
+	<stations/>
+	<nodes>
+		<node nodeID="67855" description="Verbindungs-Knoten" kilometre="1.000" x="-868.14" y="-292.886" xNet="2478257.3" yNet="7491213.4" xWGS84="172.363" yWGS84="4496.32"/>
+	</nodes>
+	<links>
+		<link source="67828.fmow" target="67855" gradient="-25.4" vmax="130" vmaxr="130" bidirectional="true" electrified="true"/>
+		<link source="67855" target="67701.fmoh" gradient="-25.4" vmax="130" vmaxr="130" bidirectional="true" electrified="true"/>
+	</links>
+	<dependentLinks/>
+	<blockSections>
+		<blockSection signallingSystem="lzb" presignal="67703.fmoh" nodes="67678.fmoh 67677.fmoh 67676.fmoh 67675.fmoh 67674.fmoh 67672.fmoh 67673.fmoh 67720.fmoh 67719.fmoh 67718.fmoh 67716.fmoh 67715.fmoh 67714.fmoh 67713.fmoh 67712.fmoh 67711.fmoh 67710.fmoh 67709.fmoh 67708.fmoh 67707.fmoh 67746.fmoh 67706.fmoh 67705.fmoh 67704.fmoh 67703.fmoh 67702.fmoh 67701.fmoh 67855 67828.fmow 67827.fmow 67826.fmow 67825.fmow 67824.fmow 67823.fmow 67822.fmow 67856.fmow 67821.fmow 67820.fmow"/>
+		<blockSection signallingSystem="lzb" presignal="67703.fmoh" nodes="67693.fmoh 67692.fmoh 67691.fmoh 67690.fmoh 67689.fmoh 67686.fmoh 67688.fmoh 67723.fmoh 67722.fmoh 67721.fmoh 67673.fmoh 67720.fmoh 67719.fmoh 67718.fmoh 67716.fmoh 67715.fmoh 67714.fmoh 67713.fmoh 67712.fmoh 67711.fmoh 67710.fmoh 67709.fmoh 67708.fmoh 67707.fmoh 67746.fmoh 67706.fmoh 67705.fmoh 67704.fmoh 67703.fmoh 67702.fmoh 67701.fmoh 67855 67828.fmow 67827.fmow 67826.fmow 67825.fmow 67824.fmow 67823.fmow 67822.fmow 67856.fmow 67821.fmow 67820.fmow"/>
+		<blockSection signallingSystem="lzb" presignal="67823.fmow" nodes="67845.fmow 67846.fmow 67847.fmow 67848.fmow 67791.fmow 67790.fmow 67793.fmow 67794.fmow 67795.fmow 67796.fmow 67798.fmow 67811.fmow 67812.fmow 67813.fmow 67814.fmow 67815.fmow 67816.fmow 67817.fmow 67818.fmow 67819.fmow 67820.fmow 67821.fmow 67856.fmow 67822.fmow 67823.fmow 67824.fmow 67825.fmow 67826.fmow 67827.fmow 67828.fmow 67855 67701.fmoh 67702.fmoh 67703.fmoh 67704.fmoh 67705.fmoh 67706.fmoh 67746.fmoh 67707.fmoh 67708.fmoh" speedIndicators="67706.fmoh"/>
+		<blockSection presignal="67823.fmow" nodes="67851.fmow 67852.fmow 67853.fmow 67854.fmow 67800.fmow 67829.fmow 67830.fmow 67831.fmow 67792.fmow 67790.fmow 67793.fmow 67794.fmow 67795.fmow 67796.fmow 67798.fmow 67811.fmow 67812.fmow 67813.fmow 67814.fmow 67815.fmow 67816.fmow 67817.fmow 67818.fmow 67819.fmow 67820.fmow 67821.fmow 67856.fmow 67822.fmow 67823.fmow 67824.fmow 67825.fmow 67826.fmow 67827.fmow 67828.fmow 67855 67701.fmoh 67702.fmoh 67703.fmoh 67704.fmoh 67705.fmoh 67706.fmoh 67746.fmoh 67707.fmoh 67708.fmoh" speedIndicators="67706.fmoh"/>
+	</blockSections>
+	<slipDistances/>
+	<approachControlRoutes/>
+	<stationRoutes/>
+	<evzg/>
+	<evzg-katalog/>
+</line>

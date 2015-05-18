@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<line lineID="3606" name="Bft FFS A - Bf FFM Süd" trafficRouting="on_the_right" type="local" dependentLines="ffs">
+	<version major="1" minor="2" patchlevel="0" comment=""/>
+	<stations/>
+	<nodes/>
+	<links/>
+	<dependentLinks/>
+	<blockSections/>
+	<slipDistances/>
+	<approachControlRoutes/>
+	<stationRoutes/>
+	<evzg/>
+	<evzg-katalog/>
+</line>

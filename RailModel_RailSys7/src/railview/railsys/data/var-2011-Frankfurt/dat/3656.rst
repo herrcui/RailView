@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<railsys>
+	<version major="1" minor="2" patchlevel="0" comment="Erzeugt von RailSys\Simu/7.6.12 am Fr 18. Jan 10:18:20 2013"/>
+	<timetable>
+		<train number="5" numbervar="1" class="FRz" pattern="/FRz/ICE-A/Zwangshalt in/FF-FWF/hin" name="ICE-A/5/710/60 + ICE-A/5/711/60" description="5/2" comment="Zwangshalt in FSP entspricht 0,8 Min BZu + " typeNumber="93" line="Zwangshalt in" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FF" stationName="Frankfurt(M) Hbf" trackID="B-19" bstfahrweg="FF-19-FF__H(3520)" departure="05:38:42" minStopTime="120" stopTime="540" regularRunningTime="82" requestedArrival="05:29:42" requestedDeparture="05:38:42" requestedTrackID="B-19" requestedBstFahrweg="FF-19-FF__H(3520)" type="begin" lineID="3520" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FFLF" trackID="Y-5" bstfahrweg="FFK-5-FMOH-6-GG &lt;-&gt; FMOH-5-FZEP" departure="05:55:42" minStopTime="300" stopTime="303" regularRunningTime="159" requestedArrival="05:50:39" requestedDeparture="05:55:42" requestedTrackID="Y-5" requestedBstFahrweg="FFK-5-FMOH-6-GG &lt;-&gt; FMOH-5-FZEP" type="stop" trainTypeNumber="93" lineID="3656" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FZEP" trackID="G-483" bstfahrweg="FFLF-483-FWF" departure="05:58:21" regularRunningTime="103" requestedDeparture="05:58:21" requestedTrackID="G-483" requestedBstFahrweg="FFLF-483-FWF" type="pass" trainTypeNumber="93" timingPoint="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="06:00:04" RTMargin2="0" requestedDeparture="06:00:04" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="ICE-A 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="104" class="FRz" pattern="/FRz/ICE-W/XSB -/FBRM-FWF/rück" name="ICE-W/104/743/60 + ICE-W/104/0/ne" description="104/3" comment="XSB - XNAC, Linie 43, Takt." typeNumber="108" line="XSB -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="18:01:46" regularRunningTime="100" requestedDeparture="18:01:46" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="18:03:26" regularRunningTime="193" requestedDeparture="18:03:26" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="108" lineID="3656" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="B-6" bstfahrweg="FZEP-6-FMOH" dwegName="2-1000" departure="18:09:42" minStopTime="180" stopTime="183" regularRunningTime="169" requestedArrival="18:06:39" requestedDeparture="18:09:42" requestedTrackID="B-6" requestedBstFahrweg="FZEP-6-FMOH" type="stop" trainTypeNumber="108" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-2" bstfahrweg="FCX-FIDS" departure="18:15:25" RTMargin2="0" requestedDeparture="18:15:25" requestedTrackID="G-2" requestedBstFahrweg="FCX-FIDS" type="end" lineID="2690" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="105" class="FRz" pattern="/FRz/ICE-W/XNAC -/FBRM-FWF/hin" name="ICE-W/105/0/ne + ICE-W/105/743/60" description="105/3" comment="XNAC - XSB, Linie 43, Takt. + " typeNumber="109" line="XNAC -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-1" bstfahrweg="FIDS-FCX" departure="11:44:41" regularRunningTime="123" requestedDeparture="11:44:41" requestedTrackID="G-1" requestedBstFahrweg="FIDS-FCX" type="begin" lineID="2690" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="A-5" bstfahrweg="FMOH-5-FZEP" dwegName="4-1000" departure="11:54:42" minStopTime="180" stopTime="181" regularRunningTime="155" requestedArrival="11:51:41" requestedDeparture="11:54:42" requestedTrackID="A-5" requestedBstFahrweg="FMOH-5-FZEP" type="stop" trainTypeNumber="109" lineID="3656" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-483" bstfahrweg="FFLF-483-FWF" departure="11:57:17" regularRunningTime="97" requestedDeparture="11:57:17" requestedTrackID="G-483" requestedBstFahrweg="FFLF-483-FWF" type="pass" trainTypeNumber="109" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="11:58:54" RTMargin2="0" requestedDeparture="11:58:54" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="206" class="FRz" pattern="/FRz/ICE-W/XSB -/FBRM-FWF/rück" name="ICE-W/206/743/60 + ICE-W/206/0/ne" description="206/3" comment="XSB - EDO, Linie 43, Takt." typeNumber="109" line="XSB -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="16:01:46" regularRunningTime="100" requestedDeparture="16:01:46" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="16:03:26" regularRunningTime="193" requestedDeparture="16:03:26" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="109" lineID="3656" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="B-6" bstfahrweg="FZEP-6-FMOH" dwegName="2-1000" departure="16:09:42" minStopTime="180" stopTime="183" regularRunningTime="169" requestedArrival="16:06:39" requestedDeparture="16:09:42" requestedTrackID="B-6" requestedBstFahrweg="FZEP-6-FMOH" type="stop" trainTypeNumber="109" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-2" bstfahrweg="FCX-FIDS" departure="16:15:25" RTMargin2="0" requestedDeparture="16:15:25" requestedTrackID="G-2" requestedBstFahrweg="FCX-FIDS" type="end" lineID="2690" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="207" class="FRz" pattern="/FRz/ICE-W/KK, So/FBRM-FWF/hin" name="ICE-W/207/0/ne + ICE-W/207/743/60" description="207/2" comment="KK, So * ab EDO, - XSB, Linie 43, Takt. + " typeNumber="109" line="KK, So" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-1" bstfahrweg="FIDS-FCX" departure="13:44:41" regularRunningTime="123" requestedDeparture="13:44:41" requestedTrackID="G-1" requestedBstFahrweg="FIDS-FCX" type="begin" lineID="2690" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="A-5" bstfahrweg="FMOH-5-FZEP" dwegName="4-1000" departure="13:54:42" minStopTime="180" stopTime="181" regularRunningTime="155" requestedArrival="13:51:41" requestedDeparture="13:54:42" requestedTrackID="A-5" requestedBstFahrweg="FMOH-5-FZEP" type="stop" trainTypeNumber="109" lineID="3656" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-483" bstfahrweg="FFLF-483-FWF" departure="13:57:17" regularRunningTime="97" requestedDeparture="13:57:17" requestedTrackID="G-483" requestedBstFahrweg="FFLF-483-FWF" type="pass" trainTypeNumber="109" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="13:58:54" RTMargin2="0" requestedDeparture="13:58:54" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="208" class="FRz" pattern="/FRz/ICE-W/XSB -/FBRM-FWF/rück" name="ICE-W/208/743/60 + ICE-W/208/0/ne" description="208/3" comment="XSB - KK, Sa * bis EDO, Linie 43, Takt." typeNumber="109" line="XSB -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="14:01:46" regularRunningTime="100" requestedDeparture="14:01:46" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="14:03:26" regularRunningTime="193" requestedDeparture="14:03:26" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="109" lineID="3656" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="B-6" bstfahrweg="FZEP-6-FMOH" dwegName="2-1000" departure="14:09:42" minStopTime="180" stopTime="183" regularRunningTime="169" requestedArrival="14:06:39" requestedDeparture="14:09:42" requestedTrackID="B-6" requestedBstFahrweg="FZEP-6-FMOH" type="stop" trainTypeNumber="109" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-2" bstfahrweg="FCX-FIDS" departure="14:15:25" RTMargin2="0" requestedDeparture="14:15:25" requestedTrackID="G-2" requestedBstFahrweg="FCX-FIDS" type="end" lineID="2690" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="209" class="FRz" pattern="/FRz/ICE-W/KK, Mo-Fr/FBRM-FWF/hin" name="ICE-W/209/0/ne + ICE-W/209/743/60" description="209/2" comment="KK, Mo-Fr * ab EDO, - XSB, Linie 43, Takt. + " typeNumber="109" line="KK, Mo-Fr" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-1" bstfahrweg="FIDS-FCX" departure="15:44:41" regularRunningTime="123" requestedDeparture="15:44:41" requestedTrackID="G-1" requestedBstFahrweg="FIDS-FCX" type="begin" lineID="2690" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="A-5" bstfahrweg="FMOH-5-FZEP" dwegName="4-1000" departure="15:54:42" minStopTime="180" stopTime="181" regularRunningTime="155" requestedArrival="15:51:41" requestedDeparture="15:54:42" requestedTrackID="A-5" requestedBstFahrweg="FMOH-5-FZEP" type="stop" trainTypeNumber="109" lineID="3656" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-483" bstfahrweg="FFLF-483-FWF" departure="15:57:17" regularRunningTime="97" requestedDeparture="15:57:17" requestedTrackID="G-483" requestedBstFahrweg="FFLF-483-FWF" type="pass" trainTypeNumber="109" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="15:58:54" RTMargin2="0" requestedDeparture="15:58:54" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="418" numbervar="1" class="FRz" pattern="/FRz/CNL/Ohne Linie/FRA-FWF/rück" name="CNL/418/880/60" description="418/3" typeNumber="26" line="Ohne Linie" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="03:34:24" regularRunningTime="134" requestedDeparture="03:34:24" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="CNL 22.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="03:36:38" regularRunningTime="169" requestedDeparture="03:36:38" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="26" lineID="3656" timingPoint="true" zuggattung="CNL 22.1"/>
+				<entry stationID="FFLF" trackID="B-6" bstfahrweg="FZEP-6-FMOH" dwegName="1-1000" departure="03:41:27" minStopTime="120" stopTime="120" regularRunningTime="237" requestedArrival="03:39:27" requestedDeparture="03:41:27" requestedTrackID="B-6" requestedBstFahrweg="FZEP-6-FMOH" type="stop" trainTypeNumber="26" timingPoint="true" zuggattung="CNL 22.1"/>
+				<entry stationID="FRA" stationName="Raunheim" trackID="G-1" bstfahrweg="FRAC-1-FRUE" departure="03:49:08" RTMargin2="0" requestedDeparture="03:49:08" requestedTrackID="G-1" requestedBstFahrweg="FRAC-1-FRUE" type="end" lineID="3520" timingPoint="true" zuggattung="CNL 22.1"/>
+			</timetableentries>
+		</train>
+		<train number="419" numbervar="1" class="FRz" pattern="/FRz/CNL/Ohne Linie/FRA-FWF/hin" name="CNL/419/701/60" description="419/3+" typeNumber="30" line="Ohne Linie" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FRA" stationName="Raunheim" trackID="G-2" bstfahrweg="FRUE-2-FRAC" departure="01:48:52" regularRunningTime="39" requestedDeparture="01:48:52" requestedTrackID="G-2" requestedBstFahrweg="FRUE-2-FRAC" type="begin" lineID="3520" timingPoint="true" departureFix="true" zuggattung="CNL 22.1"/>
+				<entry stationID="FFLF" trackID="A-5" bstfahrweg="FMOH-5-FZEP" dwegName="4-1000" departure="01:56:54" minStopTime="120" stopTime="132" regularRunningTime="197" requestedArrival="01:54:42" requestedDeparture="01:56:54" requestedTrackID="A-5" requestedBstFahrweg="FMOH-5-FZEP" type="stop" trainTypeNumber="30" lineID="3656" timingPoint="true" departureFix="true" zuggattung="CNL 22.1"/>
+				<entry stationID="FZEP" trackID="G-483" bstfahrweg="FFLF-483-FWF" departure="02:00:11" regularRunningTime="112" requestedDeparture="02:00:11" requestedTrackID="G-483" requestedBstFahrweg="FFLF-483-FWF" type="pass" trainTypeNumber="30" timingPoint="true" zuggattung="CNL 22.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="02:02:03" RTMargin2="0" requestedDeparture="02:02:03" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="CNL 22.1"/>
+			</timetableentries>
+		</train>
+		<train number="500" class="FRz" pattern="/FRz/ICE-W/XSB -/FBRM-FWF/rück" name="ICE-W/500/743/60 + ICE-W/500/0/ne" description="500/3+" comment="XSB - EDO, Linie 43, Takt." typeNumber="109" line="XSB -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="22:01:46" regularRunningTime="100" requestedDeparture="22:01:46" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="22:03:26" regularRunningTime="193" requestedDeparture="22:03:26" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="109" lineID="3656" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="B-6" bstfahrweg="FZEP-6-FMOH" dwegName="2-1000" departure="22:09:42" minStopTime="180" stopTime="183" regularRunningTime="169" requestedArrival="22:06:39" requestedDeparture="22:09:42" requestedTrackID="B-6" requestedBstFahrweg="FZEP-6-FMOH" type="stop" trainTypeNumber="109" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-2" bstfahrweg="FCX-FIDS" departure="22:15:25" RTMargin2="0" requestedDeparture="22:15:25" requestedTrackID="G-2" requestedBstFahrweg="FCX-FIDS" type="end" lineID="2690" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="501" class="FRz" pattern="/FRz/ICE-W/EDO -/FBRM-FWF/hin" name="ICE-W/501/0/ne + ICE-W/501/743/60" description="501/2" comment="EDO - XSB, Linie 43, Takt. + " typeNumber="109" line="EDO -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-1" bstfahrweg="FIDS-FCX" departure="07:44:41" regularRunningTime="123" requestedDeparture="07:44:41" requestedTrackID="G-1" requestedBstFahrweg="FIDS-FCX" type="begin" lineID="2690" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="A-5" bstfahrweg="FMOH-5-FZEP" dwegName="4-1000" departure="07:54:42" minStopTime="180" stopTime="181" regularRunningTime="155" requestedArrival="07:51:41" requestedDeparture="07:54:42" requestedTrackID="A-5" requestedBstFahrweg="FMOH-5-FZEP" type="stop" trainTypeNumber="109" lineID="3656" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-483" bstfahrweg="FFLF-483-FWF" departure="07:57:17" regularRunningTime="97" requestedDeparture="07:57:17" requestedTrackID="G-483" requestedBstFahrweg="FFLF-483-FWF" type="pass" trainTypeNumber="109" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="07:58:54" RTMargin2="0" requestedDeparture="07:58:54" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="502" class="FRz" pattern="/FRz/ICE-W/XSB -/FBRM-FWF/rück" name="ICE-W/502/743/60 + ICE-W/502/0/ne" description="502/3" comment="XSB - HH, Linie 43, Takt." typeNumber="109" line="XSB -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="20:01:46" regularRunningTime="100" requestedDeparture="20:01:46" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="20:03:26" regularRunningTime="193" requestedDeparture="20:03:26" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="109" lineID="3656" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="B-6" bstfahrweg="FZEP-6-FMOH" dwegName="2-1000" departure="20:09:42" minStopTime="180" stopTime="183" regularRunningTime="169" requestedArrival="20:06:39" requestedDeparture="20:09:42" requestedTrackID="B-6" requestedBstFahrweg="FZEP-6-FMOH" type="stop" trainTypeNumber="109" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-2" bstfahrweg="FCX-FIDS" departure="20:15:25" RTMargin2="0" requestedDeparture="20:15:25" requestedTrackID="G-2" requestedBstFahrweg="FCX-FIDS" type="end" lineID="2690" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="503" class="FRz" pattern="/FRz/ICE-W/HH -/FBRM-FWF/hin" name="ICE-W/503/0/ne + ICE-W/503/743/60" description="503/3" comment="HH - XSB, Linie 43, Takt. + " typeNumber="109" line="HH -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-1" bstfahrweg="FIDS-FCX" departure="09:44:41" regularRunningTime="123" requestedDeparture="09:44:41" requestedTrackID="G-1" requestedBstFahrweg="FIDS-FCX" type="begin" lineID="2690" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="A-5" bstfahrweg="FMOH-5-FZEP" dwegName="4-1000" departure="09:54:42" minStopTime="180" stopTime="181" regularRunningTime="155" requestedArrival="09:51:41" requestedDeparture="09:54:42" requestedTrackID="A-5" requestedBstFahrweg="FMOH-5-FZEP" type="stop" trainTypeNumber="109" lineID="3656" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-483" bstfahrweg="FFLF-483-FWF" departure="09:57:17" regularRunningTime="97" requestedDeparture="09:57:17" requestedTrackID="G-483" requestedBstFahrweg="FFLF-483-FWF" type="pass" trainTypeNumber="109" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="09:58:54" RTMargin2="0" requestedDeparture="09:58:54" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="510" class="FRz" pattern="/FRz/ICE-A/Ohne Linie/FRA-FWF/rück" name="ICE-A/510/843/60" description="510/3" typeNumber="92" line="Ohne Linie" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="22:57:33" regularRunningTime="108" requestedDeparture="22:57:33" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="22:59:21" regularRunningTime="251" requestedDeparture="22:59:21" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="92" lineID="3656" timingPoint="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FFLF" trackID="B-6" bstfahrweg="FZEP-6-FMOH" dwegName="2-1000" departure="23:13:44" minStopTime="120" stopTime="612" regularRunningTime="200" requestedArrival="23:03:32" requestedDeparture="23:13:44" requestedTrackID="B-6" requestedBstFahrweg="FZEP-6-FMOH" type="stop" trainTypeNumber="92" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FRA" stationName="Raunheim" trackID="G-1" bstfahrweg="FRAC-1-FRUE" departure="23:18:58" RTMargin2="0" requestedDeparture="23:18:58" requestedTrackID="G-1" requestedBstFahrweg="FRAC-1-FRUE" type="end" lineID="3520" timingPoint="true" zuggattung="ICE-A 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="511" class="FRz" pattern="/FRz/ICE-W/KK, Mo/FBRM-FWF/hin" name="ICE-W/511/0/ne + ICE-W/511/742/60" description="511/2" comment="KK, Mo * ab EDO, - MH, Linie 42, Takt. + " typeNumber="109" line="KK, Mo" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-1" bstfahrweg="FIDS-FCX" departure="06:44:41" regularRunningTime="123" requestedDeparture="06:44:41" requestedTrackID="G-1" requestedBstFahrweg="FIDS-FCX" type="begin" lineID="2690" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="A-5" bstfahrweg="FMOH-5-FZEP" dwegName="4-1000" departure="06:54:42" minStopTime="180" stopTime="181" regularRunningTime="155" requestedArrival="06:51:41" requestedDeparture="06:54:42" requestedTrackID="A-5" requestedBstFahrweg="FMOH-5-FZEP" type="stop" trainTypeNumber="109" lineID="3656" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-483" bstfahrweg="FFLF-483-FWF" departure="06:57:17" regularRunningTime="97" requestedDeparture="06:57:17" requestedTrackID="G-483" requestedBstFahrweg="FFLF-483-FWF" type="pass" trainTypeNumber="109" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="06:58:54" RTMargin2="0" requestedDeparture="06:58:54" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="512" class="FRz" pattern="/FRz/ICE-W/MH -/FBRM-FWF/rück" name="ICE-W/512/742/60 + ICE-W/512/0/ne" description="512/3" comment="MH - EMST, Linie 42, Takt." typeNumber="109" line="MH -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="21:01:46" regularRunningTime="100" requestedDeparture="21:01:46" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="21:03:26" regularRunningTime="193" requestedDeparture="21:03:26" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="109" lineID="3656" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="B-6" bstfahrweg="FZEP-6-FMOH" dwegName="2-1000" departure="21:09:42" minStopTime="180" stopTime="183" regularRunningTime="169" requestedArrival="21:06:39" requestedDeparture="21:09:42" requestedTrackID="B-6" requestedBstFahrweg="FZEP-6-FMOH" type="stop" trainTypeNumber="109" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-2" bstfahrweg="FCX-FIDS" departure="21:15:25" RTMargin2="0" requestedDeparture="21:15:25" requestedTrackID="G-2" requestedBstFahrweg="FCX-FIDS" type="end" lineID="2690" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="513" class="FRz" pattern="/FRz/ICE-W/EMST -/FBRM-FWF/hin" name="ICE-W/513/0/ne + ICE-W/513/742/60" description="513/2" comment="EMST - MH, Linie 42, Takt. + " typeNumber="109" line="EMST -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-1" bstfahrweg="FIDS-FCX" departure="08:44:41" regularRunningTime="123" requestedDeparture="08:44:41" requestedTrackID="G-1" requestedBstFahrweg="FIDS-FCX" type="begin" lineID="2690" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="A-5" bstfahrweg="FMOH-5-FZEP" dwegName="4-1000" departure="08:54:42" minStopTime="180" stopTime="181" regularRunningTime="155" requestedArrival="08:51:41" requestedDeparture="08:54:42" requestedTrackID="A-5" requestedBstFahrweg="FMOH-5-FZEP" type="stop" trainTypeNumber="109" lineID="3656" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-483" bstfahrweg="FFLF-483-FWF" departure="08:57:17" regularRunningTime="97" requestedDeparture="08:57:17" requestedTrackID="G-483" requestedBstFahrweg="FFLF-483-FWF" type="pass" trainTypeNumber="109" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="08:58:54" RTMargin2="0" requestedDeparture="08:58:54" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="514" class="FRz" pattern="/FRz/ICE-W/MH -/FBRM-FWF/rück" name="ICE-W/514/742/60 + ICE-W/514/0/ne" description="514/3" comment="MH - AA, Linie 42, Takt." typeNumber="109" line="MH -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="19:01:46" regularRunningTime="100" requestedDeparture="19:01:46" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="19:03:26" regularRunningTime="193" requestedDeparture="19:03:26" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="109" lineID="3656" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="B-6" bstfahrweg="FZEP-6-FMOH" dwegName="2-1000" departure="19:09:42" minStopTime="180" stopTime="183" regularRunningTime="169" requestedArrival="19:06:39" requestedDeparture="19:09:42" requestedTrackID="B-6" requestedBstFahrweg="FZEP-6-FMOH" type="stop" trainTypeNumber="109" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-2" bstfahrweg="FCX-FIDS" departure="19:15:25" RTMargin2="0" requestedDeparture="19:15:25" requestedTrackID="G-2" requestedBstFahrweg="FCX-FIDS" type="end" lineID="2690" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="515" class="FRz" pattern="/FRz/ICE-W/AA -/FBRM-FWF/hin" name="ICE-W/515/0/ne + ICE-W/515/742/60" description="515/3" comment="AA - MH, Linie 42, Takt. + " typeNumber="109" line="AA -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-1" bstfahrweg="FIDS-FCX" departure="10:44:41" regularRunningTime="123" requestedDeparture="10:44:41" requestedTrackID="G-1" requestedBstFahrweg="FIDS-FCX" type="begin" lineID="2690" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="A-5" bstfahrweg="FMOH-5-FZEP" dwegName="4-1000" departure="10:54:42" minStopTime="180" stopTime="181" regularRunningTime="155" requestedArrival="10:51:41" requestedDeparture="10:54:42" requestedTrackID="A-5" requestedBstFahrweg="FMOH-5-FZEP" type="stop" trainTypeNumber="109" lineID="3656" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-483" bstfahrweg="FFLF-483-FWF" departure="10:57:17" regularRunningTime="97" requestedDeparture="10:57:17" requestedTrackID="G-483" requestedBstFahrweg="FFLF-483-FWF" type="pass" trainTypeNumber="109" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="10:58:54" RTMargin2="0" requestedDeparture="10:58:54" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="516" class="FRz" pattern="/FRz/ICE-W/MH -/FBRM-FWF/rück" name="ICE-W/516/742/60 + ICE-W/516/0/ne" description="516/3" comment="MH - EDO, Linie 42, Takt." typeNumber="109" line="MH -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="17:01:46" regularRunningTime="100" requestedDeparture="17:01:46" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="17:03:26" regularRunningTime="193" requestedDeparture="17:03:26" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="109" lineID="3656" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="B-6" bstfahrweg="FZEP-6-FMOH" dwegName="2-1000" departure="17:09:42" minStopTime="180" stopTime="183" regularRunningTime="169" requestedArrival="17:06:39" requestedDeparture="17:09:42" requestedTrackID="B-6" requestedBstFahrweg="FZEP-6-FMOH" type="stop" trainTypeNumber="109" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-2" bstfahrweg="FCX-FIDS" departure="17:15:25" RTMargin2="0" requestedDeparture="17:15:25" requestedTrackID="G-2" requestedBstFahrweg="FCX-FIDS" type="end" lineID="2690" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="517" class="FRz" pattern="/FRz/ICE-W/EDO -/FBRM-FWF/hin" name="ICE-W/517/0/ne + ICE-W/517/742/60" description="517/2" comment="EDO - MH, Linie 42, Takt. + " typeNumber="109" line="EDO -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-1" bstfahrweg="FIDS-FCX" departure="12:44:41" regularRunningTime="123" requestedDeparture="12:44:41" requestedTrackID="G-1" requestedBstFahrweg="FIDS-FCX" type="begin" lineID="2690" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="A-5" bstfahrweg="FMOH-5-FZEP" dwegName="4-1000" departure="12:54:42" minStopTime="180" stopTime="181" regularRunningTime="155" requestedArrival="12:51:41" requestedDeparture="12:54:42" requestedTrackID="A-5" requestedBstFahrweg="FMOH-5-FZEP" type="stop" trainTypeNumber="109" lineID="3656" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-483" bstfahrweg="FFLF-483-FWF" departure="12:57:17" regularRunningTime="97" requestedDeparture="12:57:17" requestedTrackID="G-483" requestedBstFahrweg="FFLF-483-FWF" type="pass" trainTypeNumber="109" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="12:58:54" RTMargin2="0" requestedDeparture="12:58:54" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="518" class="FRz" pattern="/FRz/ICE-W/MH -/FBRM-FWF/rück" name="ICE-W/518/742/60 + ICE-W/518/0/ne" description="518/3" comment="MH - EDO, Linie 42, Takt." typeNumber="109" line="MH -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="15:01:46" regularRunningTime="100" requestedDeparture="15:01:46" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="15:03:26" regularRunningTime="193" requestedDeparture="15:03:26" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="109" lineID="3656" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="B-6" bstfahrweg="FZEP-6-FMOH" dwegName="2-1000" departure="15:09:42" minStopTime="180" stopTime="183" regularRunningTime="169" requestedArrival="15:06:39" requestedDeparture="15:09:42" requestedTrackID="B-6" requestedBstFahrweg="FZEP-6-FMOH" type="stop" trainTypeNumber="109" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-2" bstfahrweg="FCX-FIDS" departure="15:15:25" RTMargin2="0" requestedDeparture="15:15:25" requestedTrackID="G-2" requestedBstFahrweg="FCX-FIDS" type="end" lineID="2690" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="519" class="FRz" pattern="/FRz/ICE-W/EDO -/FBRM-FWF/hin" name="ICE-W/519/0/ne + ICE-W/519/742/60" description="519/2" comment="EDO - MH, Linie 42, Takt. + " typeNumber="109" line="EDO -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-1" bstfahrweg="FIDS-FCX" departure="14:44:41" regularRunningTime="123" requestedDeparture="14:44:41" requestedTrackID="G-1" requestedBstFahrweg="FIDS-FCX" type="begin" lineID="2690" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="A-5" bstfahrweg="FMOH-5-FZEP" dwegName="4-1000" departure="14:54:42" minStopTime="180" stopTime="181" regularRunningTime="155" requestedArrival="14:51:41" requestedDeparture="14:54:42" requestedTrackID="A-5" requestedBstFahrweg="FMOH-5-FZEP" type="stop" trainTypeNumber="109" lineID="3656" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-483" bstfahrweg="FFLF-483-FWF" departure="14:57:17" regularRunningTime="97" requestedDeparture="14:57:17" requestedTrackID="G-483" requestedBstFahrweg="FFLF-483-FWF" type="pass" trainTypeNumber="109" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="14:58:54" RTMargin2="0" requestedDeparture="14:58:54" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="572" class="FRz" pattern="/FRz/ICE-A/Linie 22,/FMHO-FWF/rück" name="ICE-A/572/721/60 + ICE-A/572/722/60 + ICE-A/572/0/ri" description="572/2" comment="Zusatzhalt entspricht 2,9´ BZu +  + Linie 22, &#13;&#10;TS - AA, &#13;&#10;Ä1: VT wg Ersatz durch 1072 lokbespannt, &#13;&#10;Ä2: VT" typeNumber="93" line="Linie 22," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="18:34:05" regularRunningTime="96" requestedDeparture="18:34:05" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="18:35:41" regularRunningTime="194" requestedDeparture="18:35:41" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="93" lineID="3656" timingPoint="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FFLF" trackID="Z-6" bstfahrweg="FZEP-6-FMOH &lt;-&gt; FMOH-6-FFK-6-GG" departure="18:42:53" minStopTime="240" stopTime="238" regularRunningTime="124" requestedArrival="18:38:55" requestedDeparture="18:42:53" requestedTrackID="Z-6" requestedBstFahrweg="FZEP-6-FMOH &lt;-&gt; FMOH-6-FFK-6-GG" type="stop" trainTypeNumber="93" timingPoint="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FMHO" stationName="Mühlheim Ost" trackID="G-1" bstfahrweg="FO_G-FH_M" departure="19:09:09" RTMargin2="0" requestedDeparture="19:09:09" requestedTrackID="G-1" requestedBstFahrweg="FO_G-FH_M" type="end" lineID="3600" timingPoint="true" zuggattung="ICE-A 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="575" class="FRz" pattern="/FRz/ICE-A/Linie 22,/FMHO-FWF/hin" name="ICE-A/575/0/ri + ICE-A/575/721/60 + ICE-A/575/722/60" description="575/2" comment="Linie 22, &#13;&#10;AA - TS + " typeNumber="93" line="Linie 22," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FMHO" stationName="Mühlheim Ost" trackID="G-2" bstfahrweg="FH_M-FO_G" departure="12:48:36" regularRunningTime="134" requestedDeparture="12:48:36" requestedTrackID="G-2" requestedBstFahrweg="FH_M-FO_G" type="begin" lineID="3600" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FFLF" trackID="Y-5" bstfahrweg="FFK-5-FMOH-6-GG &lt;-&gt; FMOH-5-FZEP" departure="13:20:48" minStopTime="240" stopTime="241" regularRunningTime="161" requestedArrival="13:16:47" requestedDeparture="13:20:48" requestedTrackID="Y-5" requestedBstFahrweg="FFK-5-FMOH-6-GG &lt;-&gt; FMOH-5-FZEP" type="stop" trainTypeNumber="93" lineID="3656" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FZEP" trackID="G-483" bstfahrweg="FFLF-483-FWF" departure="13:23:29" regularRunningTime="97" requestedDeparture="13:23:29" requestedTrackID="G-483" requestedBstFahrweg="FFLF-483-FWF" type="pass" trainTypeNumber="93" timingPoint="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="13:25:06" RTMargin2="0" requestedDeparture="13:25:06" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="ICE-A 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="576" class="FRz" pattern="/FRz/ICE-A/Linie 22,/FMHO-FWF/rück" name="ICE-A/576/721/60 + ICE-A/576/722/60 + ICE-A/576/0/ri" description="576/2+" comment="Zusatzhalt entspricht 2,9´ BZu +  + Linie 22, &#13;&#10;TS - AA" typeNumber="93" line="Linie 22," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="14:34:05" regularRunningTime="96" requestedDeparture="14:34:05" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="14:35:41" regularRunningTime="194" requestedDeparture="14:35:41" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="93" lineID="3656" timingPoint="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FFLF" trackID="Y-5" bstfahrweg="FZEP-5-FMOH &lt;-&gt; FMOH-5-FFK" departure="14:42:53" minStopTime="240" stopTime="238" regularRunningTime="124" requestedArrival="14:38:55" requestedDeparture="14:42:53" requestedTrackID="Y-5" requestedBstFahrweg="FZEP-5-FMOH &lt;-&gt; FMOH-5-FFK" type="stop" trainTypeNumber="93" timingPoint="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FMHO" stationName="Mühlheim Ost" trackID="G-1" bstfahrweg="FO_G-FH_M" departure="15:09:03" RTMargin2="0" requestedDeparture="15:09:03" requestedTrackID="G-1" requestedBstFahrweg="FO_G-FH_M" type="end" lineID="3600" timingPoint="true" zuggattung="ICE-A 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="577" class="FRz" pattern="/FRz/ICE-A/Linie 22,/FMHO-FWF/hin" name="ICE-A/577/0/fp + ICE-A/577/721/fp + ICE-A/577/722/fp" description="577/2+" comment="Linie 22, &#13;&#10;AA - TS, &#13;&#10;Ä1: VT wg Ersatz durch 1077 lokbespannt, &#13;&#10;Ä2: VT + " typeNumber="93" line="Linie 22," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FMHO" stationName="Mühlheim Ost" trackID="G-2" bstfahrweg="FH_M-FO_G" departure="14:48:36" regularRunningTime="134" requestedDeparture="14:48:36" requestedTrackID="G-2" requestedBstFahrweg="FH_M-FO_G" type="begin" lineID="3600" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FFLF" trackID="Z-6" bstfahrweg="FFK-6-FMOH &lt;-&gt; FMOH-6-FZEP" departure="15:20:48" minStopTime="240" stopTime="241" regularRunningTime="161" requestedArrival="15:16:47" requestedDeparture="15:20:48" requestedTrackID="Z-6" requestedBstFahrweg="FFK-6-FMOH &lt;-&gt; FMOH-6-FZEP" type="stop" trainTypeNumber="93" lineID="3656" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FZEP" trackID="G-483" bstfahrweg="FFLF-483-FWF" departure="15:23:29" regularRunningTime="97" requestedDeparture="15:23:29" requestedTrackID="G-483" requestedBstFahrweg="FFLF-483-FWF" type="pass" trainTypeNumber="93" timingPoint="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="15:25:06" RTMargin2="0" requestedDeparture="15:25:06" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="ICE-A 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="579" class="FRz" pattern="/FRz/ICE-A/Linie 22,/FMHO-FWF/hin" name="ICE-A/579/0/ri + ICE-A/579/721/60 + ICE-A/579/722/60" description="579/2" comment="Linie 22, &#13;&#10;AA - TS + " typeNumber="93" line="Linie 22," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FMHO" stationName="Mühlheim Ost" trackID="G-2" bstfahrweg="FH_M-FO_G" departure="16:48:36" regularRunningTime="134" requestedDeparture="16:48:36" requestedTrackID="G-2" requestedBstFahrweg="FH_M-FO_G" type="begin" lineID="3600" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FFLF" trackID="Z-6" bstfahrweg="FFK-6-FMOH &lt;-&gt; FMOH-6-FZEP" departure="17:20:48" minStopTime="240" stopTime="241" regularRunningTime="161" requestedArrival="17:16:47" requestedDeparture="17:20:48" requestedTrackID="Z-6" requestedBstFahrweg="FFK-6-FMOH &lt;-&gt; FMOH-6-FZEP" type="stop" trainTypeNumber="93" lineID="3656" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FZEP" trackID="G-483" bstfahrweg="FFLF-483-FWF" departure="17:23:29" regularRunningTime="97" requestedDeparture="17:23:29" requestedTrackID="G-483" requestedBstFahrweg="FFLF-483-FWF" type="pass" trainTypeNumber="93" timingPoint="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="17:25:06" RTMargin2="0" requestedDeparture="17:25:06" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="ICE-A 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="600" class="FRz" pattern="/FRz/ICE-W/XSB -/FBRM-FWF/rück" name="ICE-W/600/743/60 + ICE-W/600/0/ne" description="600/3" comment="XSB - KK, Sa * bis EDO, Linie 43, Takt." typeNumber="109" line="XSB -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="12:01:46" regularRunningTime="100" requestedDeparture="12:01:46" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="12:03:26" regularRunningTime="193" requestedDeparture="12:03:26" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="109" lineID="3656" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="B-6" bstfahrweg="FZEP-6-FMOH" dwegName="2-1000" departure="12:09:42" minStopTime="180" stopTime="183" regularRunningTime="169" requestedArrival="12:06:39" requestedDeparture="12:09:42" requestedTrackID="B-6" requestedBstFahrweg="FZEP-6-FMOH" type="stop" trainTypeNumber="109" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-2" bstfahrweg="FCX-FIDS" departure="12:15:25" RTMargin2="0" requestedDeparture="12:15:25" requestedTrackID="G-2" requestedBstFahrweg="FCX-FIDS" type="end" lineID="2690" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="601" class="FRz" pattern="/FRz/ICE-W/KK -/FBRM-FWF/hin" name="ICE-W/601/0/ne + ICE-W/601/743/60" description="601/2" comment="KK - XSB, Linie 43, Takt. + " typeNumber="109" line="KK -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-1" bstfahrweg="FIDS-FCX" departure="17:44:41" regularRunningTime="123" requestedDeparture="17:44:41" requestedTrackID="G-1" requestedBstFahrweg="FIDS-FCX" type="begin" lineID="2690" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="A-5" bstfahrweg="FMOH-5-FZEP" dwegName="4-1000" departure="17:54:42" minStopTime="180" stopTime="181" regularRunningTime="155" requestedArrival="17:51:41" requestedDeparture="17:54:42" requestedTrackID="A-5" requestedBstFahrweg="FMOH-5-FZEP" type="stop" trainTypeNumber="109" lineID="3656" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-483" bstfahrweg="FFLF-483-FWF" departure="17:57:17" regularRunningTime="97" requestedDeparture="17:57:17" requestedTrackID="G-483" requestedBstFahrweg="FFLF-483-FWF" type="pass" trainTypeNumber="109" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="17:58:54" RTMargin2="0" requestedDeparture="17:58:54" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="602" class="FRz" pattern="/FRz/ICE-W/RK, Mo-Do+Sa/FBRM-FWF/rück" name="ICE-W/602/743/60 + ICE-W/602/0/ne" description="602/3" comment="RK, Mo-Do+Sa * ab XSB, - KK, Mo-Do * bis EDO, Linie 43, Takt." typeNumber="109" line="RK, Mo-Do+Sa" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="10:01:46" regularRunningTime="100" requestedDeparture="10:01:46" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="10:03:26" regularRunningTime="193" requestedDeparture="10:03:26" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="109" lineID="3656" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="B-6" bstfahrweg="FZEP-6-FMOH" dwegName="2-1000" departure="10:09:42" minStopTime="180" stopTime="183" regularRunningTime="169" requestedArrival="10:06:39" requestedDeparture="10:09:42" requestedTrackID="B-6" requestedBstFahrweg="FZEP-6-FMOH" type="stop" trainTypeNumber="109" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-2" bstfahrweg="FCX-FIDS" departure="10:15:25" RTMargin2="0" requestedDeparture="10:15:25" requestedTrackID="G-2" requestedBstFahrweg="FCX-FIDS" type="end" lineID="2690" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="603" class="FRz" pattern="/FRz/ICE-W/KK -/FBRM-FWF/hin" name="ICE-W/603/0/ne + ICE-W/603/743/60" description="603/2" comment="KK - RK, So * bis XSB, Linie 43, Takt. + " typeNumber="109" line="KK -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-1" bstfahrweg="FIDS-FCX" departure="19:44:41" regularRunningTime="123" requestedDeparture="19:44:41" requestedTrackID="G-1" requestedBstFahrweg="FIDS-FCX" type="begin" lineID="2690" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="A-5" bstfahrweg="FMOH-5-FZEP" dwegName="4-1000" departure="19:54:42" minStopTime="180" stopTime="181" regularRunningTime="155" requestedArrival="19:51:41" requestedDeparture="19:54:42" requestedTrackID="A-5" requestedBstFahrweg="FMOH-5-FZEP" type="stop" trainTypeNumber="109" lineID="3656" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-483" bstfahrweg="FFLF-483-FWF" departure="19:57:17" regularRunningTime="97" requestedDeparture="19:57:17" requestedTrackID="G-483" requestedBstFahrweg="FFLF-483-FWF" type="pass" trainTypeNumber="109" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="19:58:54" RTMargin2="0" requestedDeparture="19:58:54" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="604" class="FRz" pattern="/FRz/ICE-W/RK, Mo-Fr/FBRM-FWF/rück" name="ICE-W/604/743/60 + ICE-W/604/0/ne" description="604/2" comment="RK, Mo-Fr * ab RB, - KK, Linie 43, Takt." typeNumber="109" line="RK, Mo-Fr" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="08:01:46" regularRunningTime="100" requestedDeparture="08:01:46" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="08:03:26" regularRunningTime="193" requestedDeparture="08:03:26" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="109" lineID="3656" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="B-6" bstfahrweg="FZEP-6-FMOH" dwegName="2-1000" departure="08:09:42" minStopTime="180" stopTime="183" regularRunningTime="169" requestedArrival="08:06:39" requestedDeparture="08:09:42" requestedTrackID="B-6" requestedBstFahrweg="FZEP-6-FMOH" type="stop" trainTypeNumber="109" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-2" bstfahrweg="FCX-FIDS" departure="08:15:25" RTMargin2="0" requestedDeparture="08:15:25" requestedTrackID="G-2" requestedBstFahrweg="FCX-FIDS" type="end" lineID="2690" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="605" class="FRz" pattern="/FRz/ICE-W/EDO -/FBRM-FWF/hin" name="ICE-W/605/0/ne + ICE-W/605/743/60" description="605/2" comment="EDO - RK, So-Do * bis RB, Linie 43, vor Takt. + " typeNumber="109" line="EDO -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-1" bstfahrweg="FIDS-FCX" departure="21:44:41" regularRunningTime="123" requestedDeparture="21:44:41" requestedTrackID="G-1" requestedBstFahrweg="FIDS-FCX" type="begin" lineID="2690" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="A-5" bstfahrweg="FMOH-5-FZEP" dwegName="4-1000" departure="21:54:42" minStopTime="180" stopTime="181" regularRunningTime="155" requestedArrival="21:51:41" requestedDeparture="21:54:42" requestedTrackID="A-5" requestedBstFahrweg="FMOH-5-FZEP" type="stop" trainTypeNumber="109" lineID="3656" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-483" bstfahrweg="FFLF-483-FWF" departure="21:57:17" regularRunningTime="97" requestedDeparture="21:57:17" requestedTrackID="G-483" requestedBstFahrweg="FFLF-483-FWF" type="pass" trainTypeNumber="109" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="21:58:54" RTMargin2="0" requestedDeparture="21:58:54" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="610" class="FRz" pattern="/FRz/ICE-W/MH -/FBRM-FWF/rück" name="ICE-W/610/742/60 + ICE-W/610/0/ne" description="610/3" comment="MH - EDO, Linie 42, Takt." typeNumber="109" line="MH -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="13:01:46" regularRunningTime="100" requestedDeparture="13:01:46" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="13:03:26" regularRunningTime="193" requestedDeparture="13:03:26" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="109" lineID="3656" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="B-6" bstfahrweg="FZEP-6-FMOH" dwegName="2-1000" departure="13:09:42" minStopTime="180" stopTime="183" regularRunningTime="169" requestedArrival="13:06:39" requestedDeparture="13:09:42" requestedTrackID="B-6" requestedBstFahrweg="FZEP-6-FMOH" type="stop" trainTypeNumber="109" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-2" bstfahrweg="FCX-FIDS" departure="13:15:25" RTMargin2="0" requestedDeparture="13:15:25" requestedTrackID="G-2" requestedBstFahrweg="FCX-FIDS" type="end" lineID="2690" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="611" class="FRz" pattern="/FRz/ICE-W/EDO -/FBRM-FWF/hin" name="ICE-W/611/0/ne + ICE-W/611/742/60" description="611/2" comment="EDO - MH, Linie 42, Takt. + " typeNumber="109" line="EDO -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-1" bstfahrweg="FIDS-FCX" departure="16:44:41" regularRunningTime="123" requestedDeparture="16:44:41" requestedTrackID="G-1" requestedBstFahrweg="FIDS-FCX" type="begin" lineID="2690" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="A-5" bstfahrweg="FMOH-5-FZEP" dwegName="4-1000" departure="16:54:42" minStopTime="180" stopTime="181" regularRunningTime="155" requestedArrival="16:51:41" requestedDeparture="16:54:42" requestedTrackID="A-5" requestedBstFahrweg="FMOH-5-FZEP" type="stop" trainTypeNumber="109" lineID="3656" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-483" bstfahrweg="FFLF-483-FWF" departure="16:57:17" regularRunningTime="97" requestedDeparture="16:57:17" requestedTrackID="G-483" requestedBstFahrweg="FFLF-483-FWF" type="pass" trainTypeNumber="109" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="16:58:54" RTMargin2="0" requestedDeparture="16:58:54" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="612" class="FRz" pattern="/FRz/ICE-W/MH -/FBRM-FWF/rück" name="ICE-W/612/742/60 + ICE-W/612/0/ne" description="612/3" comment="MH - EDO, Linie 42, Takt." typeNumber="109" line="MH -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="11:01:46" regularRunningTime="100" requestedDeparture="11:01:46" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="11:03:26" regularRunningTime="193" requestedDeparture="11:03:26" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="109" lineID="3656" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="B-6" bstfahrweg="FZEP-6-FMOH" dwegName="2-1000" departure="11:09:42" minStopTime="180" stopTime="183" regularRunningTime="169" requestedArrival="11:06:39" requestedDeparture="11:09:42" requestedTrackID="B-6" requestedBstFahrweg="FZEP-6-FMOH" type="stop" trainTypeNumber="109" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-2" bstfahrweg="FCX-FIDS" departure="11:15:25" RTMargin2="0" requestedDeparture="11:15:25" requestedTrackID="G-2" requestedBstFahrweg="FCX-FIDS" type="end" lineID="2690" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="613" class="FRz" pattern="/FRz/ICE-W/EDO -/FBRM-FWF/hin" name="ICE-W/613/0/ne + ICE-W/613/742/60" description="613/2" comment="EDO - MH, Linie 42, Takt. + " typeNumber="109" line="EDO -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-1" bstfahrweg="FIDS-FCX" departure="18:44:41" regularRunningTime="123" requestedDeparture="18:44:41" requestedTrackID="G-1" requestedBstFahrweg="FIDS-FCX" type="begin" lineID="2690" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="A-5" bstfahrweg="FMOH-5-FZEP" dwegName="4-1000" departure="18:54:42" minStopTime="180" stopTime="181" regularRunningTime="155" requestedArrival="18:51:41" requestedDeparture="18:54:42" requestedTrackID="A-5" requestedBstFahrweg="FMOH-5-FZEP" type="stop" trainTypeNumber="109" lineID="3656" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-483" bstfahrweg="FFLF-483-FWF" departure="18:57:17" regularRunningTime="97" requestedDeparture="18:57:17" requestedTrackID="G-483" requestedBstFahrweg="FFLF-483-FWF" type="pass" trainTypeNumber="109" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="18:58:54" RTMargin2="0" requestedDeparture="18:58:54" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="614" class="FRz" pattern="/FRz/ICE-W/MH -/FBRM-FWF/rück" name="ICE-W/614/742/60 + ICE-W/614/0/ne" description="614/3" comment="MH - EDO, Linie 42, Takt." typeNumber="109" line="MH -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="09:01:46" regularRunningTime="100" requestedDeparture="09:01:46" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="09:03:26" regularRunningTime="193" requestedDeparture="09:03:26" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="109" lineID="3656" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="B-6" bstfahrweg="FZEP-6-FMOH" dwegName="2-1000" departure="09:09:42" minStopTime="180" stopTime="183" regularRunningTime="169" requestedArrival="09:06:39" requestedDeparture="09:09:42" requestedTrackID="B-6" requestedBstFahrweg="FZEP-6-FMOH" type="stop" trainTypeNumber="109" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-2" bstfahrweg="FCX-FIDS" departure="09:15:25" RTMargin2="0" requestedDeparture="09:15:25" requestedTrackID="G-2" requestedBstFahrweg="FCX-FIDS" type="end" lineID="2690" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="615" class="FRz" pattern="/FRz/ICE-W/EDO -/FBRM-FWF/hin" name="ICE-W/615/0/ne + ICE-W/615/742/60" description="615/2" comment="EDO - MH, Linie 42, nach Takt. + " typeNumber="109" line="EDO -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-1" bstfahrweg="FIDS-FCX" departure="20:44:41" regularRunningTime="123" requestedDeparture="20:44:41" requestedTrackID="G-1" requestedBstFahrweg="FIDS-FCX" type="begin" lineID="2690" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="A-5" bstfahrweg="FMOH-5-FZEP" dwegName="4-1000" departure="20:54:42" minStopTime="180" stopTime="181" regularRunningTime="155" requestedArrival="20:51:41" requestedDeparture="20:54:42" requestedTrackID="A-5" requestedBstFahrweg="FMOH-5-FZEP" type="stop" trainTypeNumber="109" lineID="3656" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-483" bstfahrweg="FFLF-483-FWF" departure="20:57:17" regularRunningTime="97" requestedDeparture="20:57:17" requestedTrackID="G-483" requestedBstFahrweg="FFLF-483-FWF" type="pass" trainTypeNumber="109" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="20:58:54" RTMargin2="0" requestedDeparture="20:58:54" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="616" class="FRz" pattern="/FRz/ICE-W/MH -/FBRM-FWF/rück" name="ICE-W/616/742/60 + ICE-W/616/0/ne" description="616/3" comment="MH - EDO, Linie 42, Takt." typeNumber="109" line="MH -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="07:01:46" regularRunningTime="100" requestedDeparture="07:01:46" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="07:03:26" regularRunningTime="193" requestedDeparture="07:03:26" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="109" lineID="3656" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="B-6" bstfahrweg="FZEP-6-FMOH" dwegName="2-1000" departure="07:09:42" minStopTime="180" stopTime="183" regularRunningTime="169" requestedArrival="07:06:39" requestedDeparture="07:09:42" requestedTrackID="B-6" requestedBstFahrweg="FZEP-6-FMOH" type="stop" trainTypeNumber="109" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-2" bstfahrweg="FCX-FIDS" departure="07:15:25" RTMargin2="0" requestedDeparture="07:15:25" requestedTrackID="G-2" requestedBstFahrweg="FCX-FIDS" type="end" lineID="2690" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="617" class="FRz" pattern="/FRz/ICE-W/EDO -/FBRM-FWF/hin" name="ICE-W/617/0/ne + ICE-W/617/742/60" description="617/2" comment="EDO - RM, Mo-Fr * bis TS, Linie 42, Takt. + " typeNumber="109" line="EDO -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-1" bstfahrweg="FIDS-FCX" departure="22:44:41" regularRunningTime="123" requestedDeparture="22:44:41" requestedTrackID="G-1" requestedBstFahrweg="FIDS-FCX" type="begin" lineID="2690" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="A-5" bstfahrweg="FMOH-5-FZEP" dwegName="4-1000" departure="23:04:43" minStopTime="780" stopTime="782" regularRunningTime="144" requestedArrival="22:51:41" requestedDeparture="23:04:43" requestedTrackID="A-5" requestedBstFahrweg="FMOH-5-FZEP" type="stop" trainTypeNumber="109" lineID="3656" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-483" bstfahrweg="FFLF-483-FWF" departure="23:07:07" regularRunningTime="118" requestedDeparture="23:07:07" requestedTrackID="G-483" requestedBstFahrweg="FFLF-483-FWF" type="pass" trainTypeNumber="109" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="Z-9000" bstfahrweg="FZEP-202-FMF" trackIDForNotConditional="G-202" bstFahrwegBeiAusfallBetriebsHalt="FZEP-202-FMF" departure="23:09:06" minStopTime="1" stopTime="1" RTMargin2="0" requestedArrival="23:09:05" requestedDeparture="23:09:06" requestedTrackID="Z-9000" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="618" class="FRz" pattern="/FRz/ICE-W/TS, Mo/FBRM-FWF/rück" name="ICE-W/618/721/60 + ICE-W/618/722/60 + ICE-W/618/745/60 + ICE-W/618/2/ne" description="618/3+" comment="alt 1590 +  + TS, Mo * ab MH, - EE, Linie 42, vor Takt." typeNumber="107" line="TS, Mo" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="05:07:22" regularRunningTime="128" requestedDeparture="05:07:22" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="05:09:30" regularRunningTime="193" requestedDeparture="05:09:30" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="107" lineID="3656" timingPoint="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FFLF" trackID="Y-5" bstfahrweg="FZEP-5-FMOH &lt;-&gt; FMOH-5-FFK" departure="05:17:42" minStopTime="240" stopTime="299" regularRunningTime="90" requestedArrival="05:12:43" requestedDeparture="05:17:42" requestedTrackID="Y-5" requestedBstFahrweg="FZEP-5-FMOH &lt;-&gt; FMOH-5-FFK" type="stop" trainTypeNumber="107" timingPoint="true" departureFix="true" zuggattung="ICE-W 14.1"/>
+				<entry stationID="FBRM" stationName="Breckenheim" trackID="G-2" bstfahrweg="FCX-FIDS" departure="06:07:14" RTMargin2="0" requestedDeparture="06:07:14" requestedTrackID="G-2" requestedBstFahrweg="FCX-FIDS" type="end" lineID="2690" timingPoint="true" zuggattung="ICE-W 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="770" class="FRz" pattern="/FRz/ICE-A/Linie 22,/FMHO-FWF/rück" name="ICE-A/770/721/60 + ICE-A/770/722/60 + ICE-A/770/0/ri" description="770/2" comment="Zusatzhalt entspricht 2,9´ BZu +  + Linie 22, &#13;&#10;TS - AA" typeNumber="93" line="Linie 22," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="10:34:05" regularRunningTime="96" requestedDeparture="10:34:05" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="10:35:41" regularRunningTime="194" requestedDeparture="10:35:41" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="93" lineID="3656" timingPoint="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FFLF" trackID="Y-5" bstfahrweg="FZEP-5-FMOH &lt;-&gt; FMOH-5-FFK" departure="10:42:53" minStopTime="240" stopTime="238" regularRunningTime="124" requestedArrival="10:38:55" requestedDeparture="10:42:53" requestedTrackID="Y-5" requestedBstFahrweg="FZEP-5-FMOH &lt;-&gt; FMOH-5-FFK" type="stop" trainTypeNumber="93" timingPoint="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FMHO" stationName="Mühlheim Ost" trackID="G-1" bstfahrweg="FO_G-FH_M" departure="11:09:03" RTMargin2="0" requestedDeparture="11:09:03" requestedTrackID="G-1" requestedBstFahrweg="FO_G-FH_M" type="end" lineID="3600" timingPoint="true" zuggattung="ICE-A 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="771" class="FRz" pattern="/FRz/ICE-A/Linie 22,/FMHO-FWF/hin" name="ICE-A/771/0/ri + ICE-A/771/721/60 + ICE-A/771/722/60" description="771/2" comment="Linie 22, &#13;&#10;AA - TS + " typeNumber="93" line="Linie 22," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FMHO" stationName="Mühlheim Ost" trackID="G-2" bstfahrweg="FH_M-FO_G" departure="18:48:36" regularRunningTime="134" requestedDeparture="18:48:36" requestedTrackID="G-2" requestedBstFahrweg="FH_M-FO_G" type="begin" lineID="3600" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FFLF" trackID="Z-6" bstfahrweg="FFK-6-FMOH &lt;-&gt; FMOH-6-FZEP" departure="19:20:48" minStopTime="240" stopTime="241" regularRunningTime="161" requestedArrival="19:16:47" requestedDeparture="19:20:48" requestedTrackID="Z-6" requestedBstFahrweg="FFK-6-FMOH &lt;-&gt; FMOH-6-FZEP" type="stop" trainTypeNumber="93" lineID="3656" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FZEP" trackID="G-483" bstfahrweg="FFLF-483-FWF" departure="19:23:29" regularRunningTime="97" requestedDeparture="19:23:29" requestedTrackID="G-483" requestedBstFahrweg="FFLF-483-FWF" type="pass" trainTypeNumber="93" timingPoint="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="19:25:06" RTMargin2="0" requestedDeparture="19:25:06" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="ICE-A 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="772" class="FRz" pattern="/FRz/ICE-A/Linie 22,/FMHO-FWF/rück" name="ICE-A/772/721/60 + ICE-A/772/722/60 + ICE-A/772/0/ri" description="772/2" comment="Zusatzhalt entspricht 2,9´ BZu +  + Linie 22, &#13;&#10;TS - AA" typeNumber="93" line="Linie 22," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="08:34:05" regularRunningTime="96" requestedDeparture="08:34:05" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="08:35:41" regularRunningTime="194" requestedDeparture="08:35:41" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="93" lineID="3656" timingPoint="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FFLF" trackID="Y-5" bstfahrweg="FZEP-5-FMOH &lt;-&gt; FMOH-5-FFK" departure="08:42:53" minStopTime="240" stopTime="238" regularRunningTime="124" requestedArrival="08:38:55" requestedDeparture="08:42:53" requestedTrackID="Y-5" requestedBstFahrweg="FZEP-5-FMOH &lt;-&gt; FMOH-5-FFK" type="stop" trainTypeNumber="93" timingPoint="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FMHO" stationName="Mühlheim Ost" trackID="G-1" bstfahrweg="FO_G-FH_M" departure="09:09:03" RTMargin2="0" requestedDeparture="09:09:03" requestedTrackID="G-1" requestedBstFahrweg="FO_G-FH_M" type="end" lineID="3600" timingPoint="true" zuggattung="ICE-A 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="773" class="FRz" pattern="/FRz/ICE-A/Linie 22,/FMHO-FWF/hin" name="ICE-A/773/0/ri + ICE-A/773/721/60 + ICE-A/773/722/60" description="773/2" comment="Linie 22, &#13;&#10;AA - TS + " typeNumber="93" line="Linie 22," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FMHO" stationName="Mühlheim Ost" trackID="G-2" bstfahrweg="FH_M-FO_G" departure="20:48:36" regularRunningTime="134" requestedDeparture="20:48:36" requestedTrackID="G-2" requestedBstFahrweg="FH_M-FO_G" type="begin" lineID="3600" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FFLF" trackID="Y-5" bstfahrweg="FFK-5-FMOH-6-GG &lt;-&gt; FMOH-5-FZEP" departure="21:20:48" minStopTime="240" stopTime="241" regularRunningTime="161" requestedArrival="21:16:47" requestedDeparture="21:20:48" requestedTrackID="Y-5" requestedBstFahrweg="FFK-5-FMOH-6-GG &lt;-&gt; FMOH-5-FZEP" type="stop" trainTypeNumber="93" lineID="3656" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FZEP" trackID="G-483" bstfahrweg="FFLF-483-FWF" departure="21:23:29" regularRunningTime="97" requestedDeparture="21:23:29" requestedTrackID="G-483" requestedBstFahrweg="FFLF-483-FWF" type="pass" trainTypeNumber="93" timingPoint="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="21:25:06" RTMargin2="0" requestedDeparture="21:25:06" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="ICE-A 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="774" class="FRz" pattern="/FRz/ICE-A/0,7´ BZu/FMHO-FWF/rück" name="ICE-A/774/721/60 + ICE-A/774/722/60 + ICE-A/774/0/ri" description="774/2" comment="Zusatzhalt entspricht 1,7´ BZu + 0,7´ BZu in Halt FF wg 824. + Linie 22, &#13;&#10;TS - AA" typeNumber="93" line="0,7´ BZu" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="06:34:02" regularRunningTime="94" requestedDeparture="06:34:02" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="06:35:36" regularRunningTime="200" requestedDeparture="06:35:36" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="93" lineID="3656" timingPoint="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FFLF" trackID="Y-5" bstfahrweg="FZEP-5-FMOH &lt;-&gt; FMOH-5-FFK" departure="06:42:54" minStopTime="240" stopTime="238" regularRunningTime="109" requestedArrival="06:38:56" requestedDeparture="06:42:54" requestedTrackID="Y-5" requestedBstFahrweg="FZEP-5-FMOH &lt;-&gt; FMOH-5-FFK" type="stop" trainTypeNumber="93" timingPoint="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FMHO" stationName="Mühlheim Ost" trackID="G-1" bstfahrweg="FO_G-FH_M" departure="07:09:03" RTMargin2="0" requestedDeparture="07:09:03" requestedTrackID="G-1" requestedBstFahrweg="FO_G-FH_M" type="end" lineID="3600" timingPoint="true" zuggattung="ICE-A 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="973" class="FRz" pattern="/FRz/ICE-A/Linie 22,/FMHO-FWF/hin" name="ICE-A/973/0/ri + ICE-A/973/721/60 + ICE-A/973/722/60" description="973/2" comment="Linie 22, &#13;&#10;AK - TS + " typeNumber="93" line="Linie 22," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FMHO" stationName="Mühlheim Ost" trackID="G-2" bstfahrweg="FH_M-FO_G" departure="10:48:36" regularRunningTime="134" requestedDeparture="10:48:36" requestedTrackID="G-2" requestedBstFahrweg="FH_M-FO_G" type="begin" lineID="3600" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FFLF" trackID="Z-6" bstfahrweg="FFK-6-FMOH &lt;-&gt; FMOH-6-FZEP" departure="11:20:48" minStopTime="240" stopTime="241" regularRunningTime="161" requestedArrival="11:16:47" requestedDeparture="11:20:48" requestedTrackID="Z-6" requestedBstFahrweg="FFK-6-FMOH &lt;-&gt; FMOH-6-FZEP" type="stop" trainTypeNumber="93" lineID="3656" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FZEP" trackID="G-483" bstfahrweg="FFLF-483-FWF" departure="11:23:29" regularRunningTime="97" requestedDeparture="11:23:29" requestedTrackID="G-483" requestedBstFahrweg="FFLF-483-FWF" type="pass" trainTypeNumber="93" timingPoint="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="11:25:06" RTMargin2="0" requestedDeparture="11:25:06" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="ICE-A 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="974" class="FRz" pattern="/FRz/ICE-A/Linie 22,/FMHO-FWF/rück" name="ICE-A/974/721/60 + ICE-A/974/722/60 + ICE-A/974/0/ri" description="974/2" comment="Zusatzhalt entspricht 2,9´ BZu +  + Linie 22, &#13;&#10;TS - AK" typeNumber="93" line="Linie 22," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="16:34:05" regularRunningTime="96" requestedDeparture="16:34:05" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="16:35:41" regularRunningTime="194" requestedDeparture="16:35:41" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="93" lineID="3656" timingPoint="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FFLF" trackID="Z-6" bstfahrweg="FZEP-6-FMOH &lt;-&gt; FMOH-6-FFK-6-GG" departure="16:42:53" minStopTime="240" stopTime="238" regularRunningTime="124" requestedArrival="16:38:55" requestedDeparture="16:42:53" requestedTrackID="Z-6" requestedBstFahrweg="FZEP-6-FMOH &lt;-&gt; FMOH-6-FFK-6-GG" type="stop" trainTypeNumber="93" timingPoint="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FMHO" stationName="Mühlheim Ost" trackID="G-1" bstfahrweg="FO_G-FH_M" departure="17:09:03" RTMargin2="0" requestedDeparture="17:09:03" requestedTrackID="G-1" requestedBstFahrweg="FO_G-FH_M" type="end" lineID="3600" timingPoint="true" zuggattung="ICE-A 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="990" numbervar="1" class="FRz" pattern="/FRz/ICE-A/Linie 11/FF-FWF/rück" name="ICE-A/990/720/60 + ICE-A/990/721/60" description="990/3+" comment="Linie 11 + " typeNumber="93" line="Linie 11" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="00:18:33" regularRunningTime="96" requestedDeparture="00:18:33" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="00:20:09" regularRunningTime="193" requestedDeparture="00:20:09" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="93" lineID="3656" timingPoint="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FFLF" trackID="Z-6" bstfahrweg="FZEP-6-FMOH &lt;-&gt; FMOH-6-FFK-6-GG" departure="00:29:41" minStopTime="240" stopTime="379" regularRunningTime="138" requestedArrival="00:23:22" requestedDeparture="00:29:41" requestedTrackID="Z-6" requestedBstFahrweg="FZEP-6-FMOH &lt;-&gt; FMOH-6-FFK-6-GG" type="stop" trainTypeNumber="93" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FF" stationName="Frankfurt(M) Hbf" trackID="B-9" bstfahrweg="FMST-9F/H1-FF(3601)" departure="00:55:40" minStopTime="300" stopTime="780" RTMargin2="0" requestedArrival="00:42:40" requestedDeparture="00:55:40" requestedTrackID="B-9" requestedBstFahrweg="FMST-9F/H1-FF(3601)" type="end" lineID="3601" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="1071" class="FRz" pattern="/FRz/IC/Linie 22,/FMHO-FWF/hin" name="IC/1071/3/ri + IC/1071/821/60 + IC/1071/822/60" description="1071/2" comment="Linie 22, &#13;&#10;AA - TS, &#13;&#10;Ersatz für 571: lokbespannt statt ICE, &#13;&#10;Bz zw HG - FKW übernimmt Nord komplett, &#13;&#10;Verlagerung 2,1 min Bz von FKW - FFU vor FKW, &#13;&#10;Ä1: VT, &#13;&#10;Ä2: BrH, &#13;&#10;Ä3: VMZ + " typeNumber="81" line="Linie 22," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FMHO" stationName="Mühlheim Ost" trackID="G-2" bstfahrweg="FH_M-FO_G" departure="08:48:49" regularRunningTime="123" requestedDeparture="08:48:49" requestedTrackID="G-2" requestedBstFahrweg="FH_M-FO_G" type="begin" lineID="3600" timingPoint="true" departureFix="true" zuggattung="IC 11.1"/>
+				<entry stationID="FFLF" trackID="Z-6" bstfahrweg="FFK-6-FMOH &lt;-&gt; FMOH-6-FZEP" departure="09:20:48" minStopTime="240" stopTime="241" regularRunningTime="161" requestedArrival="09:16:47" requestedDeparture="09:20:48" requestedTrackID="Z-6" requestedBstFahrweg="FFK-6-FMOH &lt;-&gt; FMOH-6-FZEP" type="stop" trainTypeNumber="81" lineID="3656" timingPoint="true" departureFix="true" zuggattung="IC 11.1"/>
+				<entry stationID="FZEP" trackID="G-483" bstfahrweg="FFLF-483-FWF" departure="09:23:29" regularRunningTime="97" requestedDeparture="09:23:29" requestedTrackID="G-483" requestedBstFahrweg="FFLF-483-FWF" type="pass" trainTypeNumber="81" timingPoint="true" zuggattung="IC 11.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="09:25:06" RTMargin2="0" requestedDeparture="09:25:06" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="IC 11.1"/>
+			</timetableentries>
+		</train>
+		<train number="1078" class="FRz" pattern="/FRz/IC/Linie 22,/FMHO-FWF/rück" name="IC/1078/822/60 + IC/1078/821/60 + IC/1078/3/ri" description="1078/2++++" comment="Zusatzhalt entspricht 2,9´ BZu +  + Linie 22, &#13;&#10;TS - AA, &#13;&#10;Ersatz für 578: lokbespannt statt ICE, &#13;&#10;Verlagerung Bz 1,3 min von FFU - FKW direkt hinter FKW, Bz FKW - HG zw Nord und Mitte aufgeteilt, &#13;&#10;Ä1: VT, &#13;&#10;Ä2: BrH, &#13;&#10;Ä3: VMZ" typeNumber="80" line="Linie 22," lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="12:34:06" regularRunningTime="97" requestedDeparture="12:34:06" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="IC 11.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="12:35:43" regularRunningTime="193" requestedDeparture="12:35:43" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="80" lineID="3656" timingPoint="true" zuggattung="IC 11.1"/>
+				<entry stationID="FFLF" trackID="Z-6" bstfahrweg="FZEP-6-FMOH &lt;-&gt; FMOH-6-FFK-6-GG" departure="12:42:53" minStopTime="240" stopTime="237" regularRunningTime="124" requestedArrival="12:38:56" requestedDeparture="12:42:53" requestedTrackID="Z-6" requestedBstFahrweg="FZEP-6-FMOH &lt;-&gt; FMOH-6-FFK-6-GG" type="stop" trainTypeNumber="80" timingPoint="true" zuggattung="IC 11.1"/>
+				<entry stationID="FMHO" stationName="Mühlheim Ost" trackID="G-1" bstfahrweg="FO_G-FH_M" departure="13:08:38" RTMargin2="0" requestedDeparture="13:08:38" requestedTrackID="G-1" requestedBstFahrweg="FO_G-FH_M" type="end" lineID="3600" timingPoint="true" zuggattung="IC 11.1"/>
+			</timetableentries>
+		</train>
+		<train number="1591" class="FRz" pattern="/FRz/ICE-T/Ohne Linie/FF-FWF/hin" name="ICE-T/1591/801/60 + ICE-T/1591/802/60" description="1591/1" typeNumber="100" line="Ohne Linie" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FF" stationName="Frankfurt(M) Hbf" trackID="C-3" bstfahrweg="FF-3S/H2-FGUR(3603)" dwegName="2-60" departure="24:07:55" minStopTime="300" stopTime="600" regularRunningTime="155" requestedArrival="23:57:55" requestedDeparture="24:07:55" requestedTrackID="C-3" requestedBstFahrweg="FF-3S/H2-FGUR(3603)" type="begin" lineID="3603" timingPoint="true" departureFix="true" zuggattung="ICE-T 14.1"/>
+				<entry stationID="FFLF" trackID="Y-5" bstfahrweg="FFK-5-FMOH-6-GG &lt;-&gt; FMOH-5-FZEP" departure="24:28:42" minStopTime="300" stopTime="308" regularRunningTime="238" requestedArrival="24:23:34" requestedDeparture="24:28:42" requestedTrackID="Y-5" requestedBstFahrweg="FFK-5-FMOH-6-GG &lt;-&gt; FMOH-5-FZEP" type="stop" trainTypeNumber="100" lineID="3656" timingPoint="true" departureFix="true" zuggattung="ICE-T 14.1"/>
+				<entry stationID="FZEP" trackID="G-483" bstfahrweg="FFLF-483-FWF" departure="24:32:40" regularRunningTime="126" requestedDeparture="24:32:40" requestedTrackID="G-483" requestedBstFahrweg="FFLF-483-FWF" type="pass" trainTypeNumber="100" timingPoint="true" zuggattung="ICE-T 14.1"/>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-202" bstfahrweg="FZEP-202-FMF" departure="24:34:46" RTMargin2="0" requestedDeparture="24:34:46" requestedTrackID="G-202" requestedBstFahrweg="FZEP-202-FMF" type="end" lineID="4010" timingPoint="true" zuggattung="ICE-T 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="2804" class="FRz" pattern="/FRz/ICE-A/Ohne Linie/FRA-FWF/rück" name="ICE-A/2804/843/ga" description="2804/3" typeNumber="92" line="Ohne Linie" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="FWF" stationName="Walldorf (Hess)" trackID="G-201" bstfahrweg="FMF-201-FZEP" departure="22:57:33" regularRunningTime="108" requestedDeparture="22:57:33" requestedTrackID="G-201" requestedBstFahrweg="FMF-201-FZEP" type="begin" lineID="4010" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FZEP" trackID="G-484" bstfahrweg="FWF-484-FFLF" departure="22:59:21" regularRunningTime="251" requestedDeparture="22:59:21" requestedTrackID="G-484" requestedBstFahrweg="FWF-484-FFLF" type="pass" trainTypeNumber="92" lineID="3656" timingPoint="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FFLF" trackID="B-6" bstfahrweg="FZEP-6-FMOH" dwegName="2-1000" departure="23:13:44" minStopTime="120" stopTime="612" regularRunningTime="200" requestedArrival="23:03:32" requestedDeparture="23:13:44" requestedTrackID="B-6" requestedBstFahrweg="FZEP-6-FMOH" type="stop" trainTypeNumber="92" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.1"/>
+				<entry stationID="FRA" stationName="Raunheim" trackID="G-1" bstfahrweg="FRAC-1-FRUE" departure="23:18:58" RTMargin2="0" requestedDeparture="23:18:58" requestedTrackID="G-1" requestedBstFahrweg="FRAC-1-FRUE" type="end" lineID="3520" timingPoint="true" zuggattung="ICE-A 14.1"/>
+			</timetableentries>
+		</train>
+	</timetable>
+</railsys>
