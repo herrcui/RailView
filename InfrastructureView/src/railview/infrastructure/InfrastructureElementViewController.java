@@ -4,6 +4,7 @@ import railapp.infrastructure.element.dto.InfrastructureElement;
 import railapp.infrastructure.element.dto.Port;
 import railapp.infrastructure.exception.NullIdException;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
+import railapp.units.Coordinate;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -38,7 +39,7 @@ public class InfrastructureElementViewController {
         	new SimpleStringProperty(cellData.getValue().getElement().getId().toString()));
         
         portColumn.setCellValueFactory(cellData -> 
-    		new SimpleStringProperty(Integer.toString(cellData.getValue().getPortKey().getNumber())));
+    		new SimpleStringProperty(Integer.toString(cellData.getValue().getNumber())));
         
         xColumn.setCellValueFactory(cellData -> 
 			new SimpleStringProperty(Double.toString(cellData.getValue().getCoordinate().getX())));
@@ -69,6 +70,27 @@ public class InfrastructureElementViewController {
 		}
 				
 		portTable.setItems(ports);
+	}
+	
+	private void drawInfrastructureElement(InfrastructureElement element) {
+		if (element.getPorts().size() == 2) {
+			drawLine(element.findPort(1).getCoordinate(), element.findPort(2).getCoordinate());
+		}
+		
+		if (element.getPorts().size() == 3) {
+			// Draw 1-2, Draw 3 - (1-2/2)
+			drawLine(element.findPort(1).getCoordinate(), element.findPort(2).getCoordinate());
+		}
+		
+		if (element.getPorts().size() == 4) {
+			// Draw 1-3, Draw 2-4
+			drawLine(element.findPort(1).getCoordinate(), element.findPort(3).getCoordinate());
+			drawLine(element.findPort(2).getCoordinate(), element.findPort(4).getCoordinate());
+		}
+	}
+	
+	private void drawLine(Coordinate c1, Coordinate c2) {
+		
 	}
 	
 }
