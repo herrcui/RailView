@@ -14,6 +14,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -31,6 +32,8 @@ public class InfrastructureElementViewController {
     private TableColumn<Port, String> yColumn;
     @FXML
     private AnchorPane networkPaneRoot;
+    
+    private Stage stage;
     
     private IInfrastructureServiceUtility serviceUtility;
     private NetworkPaneController networkPaneController;
@@ -70,6 +73,11 @@ public class InfrastructureElementViewController {
         }
     }
   
+	public void setStage(Stage stage) {
+		this.stage = stage;
+		this.networkPaneController.setStage(stage);
+	}
+    
     public void setInfrastructureServiceUtility(IInfrastructureServiceUtility serviceUtility) {
     	this.serviceUtility = serviceUtility;
     	

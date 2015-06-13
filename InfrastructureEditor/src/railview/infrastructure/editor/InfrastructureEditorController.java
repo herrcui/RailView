@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railview.infrastructure.container.NetworkPaneController;
 
@@ -35,11 +36,16 @@ public class InfrastructureEditorController {
 		return this.networkPaneController;
 	}
 	
-	 public void setInfrastructureServiceUtility(IInfrastructureServiceUtility serviceUtility) {
-	    this.serviceUtility = serviceUtility;
-	 }
+	public void setStage(Stage stage) {
+		this.stage = stage;
+		this.networkPaneController.setStage(stage);
+	}	
+	
+	public void setInfrastructureServiceUtility(IInfrastructureServiceUtility serviceUtility) {
+	   this.serviceUtility = serviceUtility;
+	}
 	
 	private NetworkPaneController networkPaneController;
 	private IInfrastructureServiceUtility serviceUtility;
-	
+	private Stage stage;
 }

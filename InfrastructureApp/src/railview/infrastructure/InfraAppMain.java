@@ -42,9 +42,11 @@ public class InfraAppMain extends Application {
             FXMLLoader loader = new FXMLLoader();
             URL location = InfrastructureElementViewController.class.getResource("InfrastructureElementOverview.fxml");
             loader.setLocation(location);
-            this.rootLayout = (AnchorPane) loader.load();
             
+            this.rootLayout = (AnchorPane) loader.load();
             InfrastructureElementViewController controller = loader.getController();
+            controller.setStage(this.primaryStage);
+            
             controller.setInfrastructureServiceUtility(serviceUtility);
         } catch (IOException e) {
             e.printStackTrace();
@@ -61,6 +63,7 @@ public class InfraAppMain extends Application {
             
             InfrastructureEditorController controller = loader.getController();
             controller.setInfrastructureServiceUtility(serviceUtility);
+            controller.setStage(this.primaryStage);
         } catch (IOException e) {
             e.printStackTrace();
         }
