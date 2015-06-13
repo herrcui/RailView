@@ -3,15 +3,15 @@
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<BorderPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.infrastructure.InfrastructureElementViewController">
-   <center>
-      <SplitPane dividerPositions="0.8277591973244147" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+<AnchorPane prefHeight="398.0" prefWidth="776.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.infrastructure.InfrastructureElementViewController">
+   <children>
+      <SplitPane dividerPositions="0.5762273901808785" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="396.0" prefWidth="468.0">
                <children>
-                  <TableView fx:id="portTable" layoutX="9.0" layoutY="13.0" prefHeight="268.0" prefWidth="453.0">
+                  <TableView fx:id="portTable" layoutX="9.0" layoutY="13.0" prefHeight="368.0" prefWidth="425.0">
                     <columns>
                       <TableColumn fx:id="idColumn" prefWidth="59.0" text="Id" />
                       <TableColumn fx:id="portColumn" prefWidth="121.0" text="Port" />
@@ -21,8 +21,8 @@
                   </TableView>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+          <AnchorPane fx:id="networkPaneRoot" minHeight="0.0" minWidth="0.0" prefHeight="334.0" prefWidth="225.0" />
         </items>
       </SplitPane>
-   </center>
-</BorderPane>
+   </children>
+</AnchorPane>
