@@ -14,7 +14,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -33,16 +32,9 @@ public class InfrastructureElementViewController {
     @FXML
     private AnchorPane networkPaneRoot;
     
-    private Stage stage;
-    
-    private IInfrastructureServiceUtility serviceUtility;
     private NetworkPaneController networkPaneController;
     
     public InfrastructureElementViewController() {}
-    
-    public IInfrastructureServiceUtility getServiceUtility() {
-    	return this.serviceUtility;
-    }
     
     @FXML
     private void initialize() {
@@ -66,21 +58,13 @@ public class InfrastructureElementViewController {
             StackPane networkPane = (StackPane) loader.load();
             
             this.networkPaneController = loader.getController();
-            
             this.networkPaneRoot.getChildren().add(networkPane);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-  
-	public void setStage(Stage stage) {
-		this.stage = stage;
-		this.networkPaneController.setStage(stage);
-	}
     
-    public void setInfrastructureServiceUtility(IInfrastructureServiceUtility serviceUtility) {
-    	this.serviceUtility = serviceUtility;
-    	
+    public void setInfrastructureServiceUtility(IInfrastructureServiceUtility serviceUtility) {  	
     	setPortTable(serviceUtility);
     	this.networkPaneController.setInfrastructureServiceUtility(serviceUtility);
     }
@@ -101,27 +85,5 @@ public class InfrastructureElementViewController {
 		}
 				
 		portTable.setItems(ports);
-	}
-	
-//	private void drawInfrastructureElement(InfrastructureElement element) {
-//		if (element.getPorts().size() == 2) {
-//			drawLine(element.findPort(1).getCoordinate(), element.findPort(2).getCoordinate());
-//		}
-//		
-//		if (element.getPorts().size() == 3) {
-//			// Draw 1-2, Draw 3 - (1-2/2)
-//			drawLine(element.findPort(1).getCoordinate(), element.findPort(2).getCoordinate());
-//		}
-//		
-//		if (element.getPorts().size() == 4) {
-//			// Draw 1-3, Draw 2-4
-//			drawLine(element.findPort(1).getCoordinate(), element.findPort(3).getCoordinate());
-//			drawLine(element.findPort(2).getCoordinate(), element.findPort(4).getCoordinate());
-//		}
-//	}
-//	
-//	private void drawLine(Coordinate c1, Coordinate c2) {
-//		
-//	}
-	
+	}	
 }

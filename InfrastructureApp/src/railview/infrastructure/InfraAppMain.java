@@ -27,33 +27,32 @@ public class InfraAppMain extends Application {
 	}
 	
 	private void initRootLayout() {
-		//this.initInfrastructureEditor();
-		this.initInfrastructureView();
+		InfrastructureEditorController controller = this.initInfrastructureEditor();
+	    //InfrastructureElementViewController controller = this.initInfrastructureView();
 		if (this.rootLayout != null) {
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);
+			
+            controller.setInfrastructureServiceUtility(serviceUtility);
 			primaryStage.show();
 		}
 	}
 	
-	private void initInfrastructureView() {
+	private InfrastructureElementViewController initInfrastructureView() {
 		try {
-            // Load person overview.
             FXMLLoader loader = new FXMLLoader();
             URL location = InfrastructureElementViewController.class.getResource("InfrastructureElementOverview.fxml");
             loader.setLocation(location);
-            
             this.rootLayout = (AnchorPane) loader.load();
             InfrastructureElementViewController controller = loader.getController();
-            controller.setStage(this.primaryStage);
-            
-            controller.setInfrastructureServiceUtility(serviceUtility);
+            return controller;
         } catch (IOException e) {
             e.printStackTrace();
+            return null;
         }
 	}
 	
-	private void initInfrastructureEditor() {
+	private InfrastructureEditorController initInfrastructureEditor() {
 		try {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
@@ -62,10 +61,10 @@ public class InfraAppMain extends Application {
             this.rootLayout = (AnchorPane) loader.load();
             
             InfrastructureEditorController controller = loader.getController();
-            controller.setInfrastructureServiceUtility(serviceUtility);
-            controller.setStage(this.primaryStage);
+            return controller;
         } catch (IOException e) {
             e.printStackTrace();
+            return null;
         }
 	}
 	
