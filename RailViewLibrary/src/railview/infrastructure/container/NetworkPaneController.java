@@ -48,10 +48,12 @@ public class NetworkPaneController {
 	}
 	
 	@FXML
-    private void initialize() {
+	public void initialize() {
 		this.elementCanvas = new InfrastructureElementsCanvas();
 		this.stackPane.getChildren().add(this.elementCanvas);
 		this.elementCanvas.widthProperty().bind(this.stackPane.widthProperty());
 		this.elementCanvas.heightProperty().bind(this.stackPane.heightProperty());
+		
 	}
+
 }

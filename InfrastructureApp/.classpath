@@ -7,5 +7,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/RailModel_RailSys7"/>
 	<classpathentry kind="lib" path="/Library/RailModel/InfrastructureDefinition.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/InfrastructureEditor"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/RailViewLibrary"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

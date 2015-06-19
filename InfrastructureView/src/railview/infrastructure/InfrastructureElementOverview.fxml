@@ -9,7 +9,7 @@
    <children>
       <SplitPane dividerPositions="0.5762273901808785" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="396.0" prefWidth="468.0">
+          <AnchorPane  minHeight="0.0" minWidth="0.0" prefHeight="396.0" prefWidth="468.0">
                <children>
                   <TableView fx:id="portTable" layoutX="9.0" layoutY="13.0" prefHeight="368.0" prefWidth="425.0">
                     <columns>
