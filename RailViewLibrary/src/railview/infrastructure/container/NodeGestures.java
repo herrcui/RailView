@@ -4,15 +4,15 @@ import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 import railview.infrastructure.container.DragContext;
-import railview.infrastructure.container.PannableCanvas;
+import railview.infrastructure.container.PannablePane;
 
 class NodeGestures {
 
     private DragContext nodeDragContext = new DragContext();
 
-    PannableCanvas canvas;
+    PannablePane canvas;
 
-    public NodeGestures( PannableCanvas canvas) {
+    public NodeGestures( PannablePane canvas) {
         this.canvas = canvas;
 
     }

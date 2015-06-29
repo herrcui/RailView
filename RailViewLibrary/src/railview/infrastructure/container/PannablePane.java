@@ -7,11 +7,11 @@ import javafx.scene.transform.Scale;
 /**
  * The canvas which holds all of the nodes of the application.
  */
-public class PannableCanvas extends Pane {
+public class PannablePane extends Pane {
 
     Scale scaleTransform;
 
-    public PannableCanvas() {
+    public PannablePane() {
 
         setStyle("-fx-background-color: lightgrey; -fx-border-color: blue;");
 
@@ -26,7 +26,6 @@ public class PannableCanvas extends Pane {
                     );
             System.out.println( "canvas bounds: " + getBoundsInParent());   
                 });
-
     }
 
     /**
