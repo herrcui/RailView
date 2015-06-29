@@ -16,7 +16,7 @@ public class NetworkPaneController {
 	@FXML
     private Label infraLabel;
 	
-	private InfrastructureElementsCanvas elementCanvas;
+	private InfrastructureElementsPane elementPane;
 	
 	public void setInfrastructureServiceUtility(IInfrastructureServiceUtility serviceUtility) {
 		try {
@@ -39,8 +39,8 @@ public class NetworkPaneController {
 			
 			CoordinateMapper mapper = new CoordinateMapper(maxX, minX, maxY, minY);
 			
-			this.elementCanvas.setCoordinateMapper(mapper);
-			this.elementCanvas.setElements(elements);
+			this.elementPane.setCoordinateMapper(mapper);
+			this.elementPane.setElements(elements);
 			
 		} catch (NullIdException e) {
 			e.printStackTrace();
@@ -49,11 +49,7 @@ public class NetworkPaneController {
 	
 	@FXML
 	public void initialize() {
-		this.elementCanvas = new InfrastructureElementsCanvas();
-		this.stackPane.getChildren().add(this.elementCanvas);
-		this.elementCanvas.widthProperty().bind(this.stackPane.widthProperty());
-		this.elementCanvas.heightProperty().bind(this.stackPane.heightProperty());
-		
+		this.elementPane = new InfrastructureElementsPane();
+		this.stackPane.getChildren().add(this.elementPane);		
 	}
-
 }
