@@ -92,10 +92,10 @@ public class NetworkPaneController {
 	
 	@FXML
 	private void ScrollWheel(){
-		SceneGestures sceneGestures = new SceneGestures(elementPane);
-		SceneGestures sceneGestures2 = new SceneGestures(secondLayer);
-		anchorPane.addEventFilter( ScrollEvent.ANY, sceneGestures.getOnScrollEventHandler());
-		anchorPane.addEventFilter( ScrollEvent.ANY, sceneGestures2.getOnScrollEventHandler());
+		NodeGestures nodeGestures = new NodeGestures(elementPane);
+		NodeGestures nodeGestures2 = new NodeGestures(secondLayer);
+		anchorPane.addEventFilter( ScrollEvent.ANY, nodeGestures.getOnScrollEventHandler());
+		anchorPane.addEventFilter( ScrollEvent.ANY, nodeGestures2.getOnScrollEventHandler());
 
 	
 /**	  @FXML private void ScrollEvent(){ anchorPane.setOnScroll(new

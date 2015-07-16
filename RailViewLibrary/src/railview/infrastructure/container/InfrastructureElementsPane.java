@@ -4,10 +4,15 @@ import java.util.Collection;
 
 import railapp.infrastructure.element.dto.InfrastructureElement;
 import railapp.infrastructure.element.dto.Track;
+import javafx.animation.TranslateTransition;
+import javafx.animation.TranslateTransitionBuilder;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
+import javafx.scene.shape.Rectangle;
+import javafx.util.Duration;
 
 public class InfrastructureElementsPane extends PannablePane {
 	private Collection<InfrastructureElement> elements;
@@ -70,7 +75,12 @@ public class InfrastructureElementsPane extends PannablePane {
 
 	}
 
+
 	private void drawInfrastructureElement(InfrastructureElement element) {
+		final Rectangle rect1 = new Rectangle(10, 10, 100, 100);
+		rect1.setArcHeight(20);
+		rect1.setArcWidth(20);
+		rect1.setFill(Color.RED);
 		
 		if (element instanceof Track) {
 			Line line = new Line();
@@ -85,6 +95,8 @@ public class InfrastructureElementsPane extends PannablePane {
 							.getY(), this));
 			
 			line.setStrokeWidth(0.2);
+			
+			
 			
 			this.getChildren().add(line);
 		}
