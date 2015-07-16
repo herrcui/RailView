@@ -23,11 +23,10 @@ public class InfrastructureElementsPane extends PannablePane {
 		this.addEventFilter(MouseEvent.MOUSE_DRAGGED,
 				nodeGestures.getOnMouseDraggedEventHandler());
 
-
 		this.widthProperty().addListener(observable -> draw());
 		this.heightProperty().addListener(observable -> draw());
 	
-		ScrollEvent();
+//		ScrollEvent();
 	}
 	
 	void setCoordinateMapper(CoordinateMapper mapper) {

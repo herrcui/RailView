@@ -13,7 +13,7 @@ public class PannablePane extends Pane {
 
     public PannablePane() {
 
-        setStyle("-fx-background-color: lightgrey; -fx-border-color: blue;");
+       // setStyle("-fx-background-color: lightgrey; -fx-border-color: blue; -fx-opacity: 0.5");
 
         // add scale transform
         scaleTransform = new Scale( 1.0, 1.0);
@@ -27,10 +27,6 @@ public class PannablePane extends Pane {
             System.out.println( "canvas bounds: " + getBoundsInParent());   
                 });
     }
-
-    /**
-     * Add a grid to the canvas, send it to back
-     */
 
 
     public Scale getScaleTransform() {

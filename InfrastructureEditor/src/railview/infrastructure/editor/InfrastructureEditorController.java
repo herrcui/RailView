@@ -5,6 +5,7 @@ import java.net.URL;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
@@ -13,7 +14,7 @@ import railview.infrastructure.container.NetworkPaneController;
 public class InfrastructureEditorController {
 
 	@FXML
-	private HBox networkPaneRoot;
+	private AnchorPane networkPaneRoot;
 
 	@FXML
 	public void initialize() {
