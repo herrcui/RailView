@@ -5,8 +5,4 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.StackPane?>
 
-<StackPane fx:id="anchorPane" onMouseClicked="#mousePress" onScroll="#ScrollWheel" prefHeight="400.0" prefWidth="397.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.infrastructure.container.NetworkPaneController">
-   <children>
-      <Label fx:id="infraLabel" prefHeight="44.0" prefWidth="193.0" text="My Infrastructure" />
-   </children>
-</StackPane>
+<StackPane fx:id="anchorPane" onMouseClicked="#mouseclick" onScroll="#ScrollWheel" prefHeight="400.0" prefWidth="397.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.infrastructure.container.NetworkPaneController" />

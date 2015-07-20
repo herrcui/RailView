@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.transform.Scale;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railview.infrastructure.container.NetworkPaneController;
 
@@ -26,6 +27,7 @@ public class InfrastructureEditorController {
 			StackPane networkPane = (StackPane) loader.load();
 			this.networkPaneController = loader.getController();
 			this.networkPaneRoot.getChildren().add(networkPane);
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

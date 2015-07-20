@@ -18,19 +18,21 @@ public class InfrastructureElementsPane extends PannablePane {
 	private Collection<InfrastructureElement> elements;
 	private CoordinateMapper mapper;
 	final double SCALE_DELTA = 1.1;
+	private double pressedX, pressedY;
 	
 	public InfrastructureElementsPane() {
 
 		NodeGestures nodeGestures = new NodeGestures(this);
 
-		this.addEventFilter(MouseEvent.MOUSE_PRESSED,
-				nodeGestures.getOnMousePressedEventHandler());
-		this.addEventFilter(MouseEvent.MOUSE_DRAGGED,
-				nodeGestures.getOnMouseDraggedEventHandler());
+	//	this.addEventFilter(MouseEvent.MOUSE_PRESSED,
+	//			nodeGestures.getOnMousePressedEventHandler());
+	//	this.addEventFilter(MouseEvent.MOUSE_DRAGGED,
+	//			nodeGestures.getOnMouseDraggedEventHandler());
 
 		this.widthProperty().addListener(observable -> draw());
 		this.heightProperty().addListener(observable -> draw());
 	
+		
 //		ScrollEvent();
 	}
 	
@@ -77,10 +79,6 @@ public class InfrastructureElementsPane extends PannablePane {
 
 
 	private void drawInfrastructureElement(InfrastructureElement element) {
-		final Rectangle rect1 = new Rectangle(10, 10, 100, 100);
-		rect1.setArcHeight(20);
-		rect1.setArcWidth(20);
-		rect1.setFill(Color.RED);
 		
 		if (element instanceof Track) {
 			Line line = new Line();

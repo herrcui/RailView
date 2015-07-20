@@ -82,29 +82,38 @@ class NodeGestures {
             double oldScale = scale;
 
             if (event.getDeltaY() < 0)
-                scale -= delta;
+                scale /= delta;
             else
-                scale += delta;
+                scale *= delta;
 
-            if (scale <= MIN_SCALE) {
-                scale = MIN_SCALE;
-            } else if (scale >= MAX_SCALE) {
-                scale = MAX_SCALE;
-            }
+            scale = clamp( scale, MIN_SCALE, MAX_SCALE);
 
-            // pivot value must be untransformed, i. e. without scaling
-            canvas.setPivot( 
-                    ((event.getSceneX() - canvas.getBoundsInParent().getMinX()) / oldScale),
-                    ((event.getSceneY() - canvas.getBoundsInParent().getMinY()) / oldScale)
-                    );
+            double f = (scale / oldScale)-1;
+
+            double dx = (event.getSceneX() - (canvas.getBoundsInParent().getWidth()/2 + canvas.getBoundsInParent().getMinX()));
+            double dy = (event.getSceneY() - (canvas.getBoundsInParent().getHeight()/2 + canvas.getBoundsInParent().getMinY()));
 
             canvas.setScale( scale);
 
-            System.out.println( "new pivot x: " + canvas.scaleTransform.getPivotX() + "/" + canvas.scaleTransform.getPivotY() + ", new scale: " + scale);
-            System.out.println( "bounds: " + canvas.getBoundsInParent());       
+            // note: pivot value must be untransformed, i. e. without scaling
+            canvas.setPivot(f*dx, f*dy);
 
             event.consume();
 
         }
+
     };
+
+
+    public static double clamp( double value, double min, double max) {
+
+        if( Double.compare(value, min) < 0)
+            return min;
+
+        if( Double.compare(value, max) > 0)
+            return max;
+
+        return value;
+    }
+
 }

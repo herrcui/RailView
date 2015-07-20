@@ -1,7 +1,10 @@
 package railview.infrastructure.container;
 
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.transform.Scale;
 
 /**
@@ -11,49 +14,24 @@ public class PannablePane extends Pane {
 
     Scale scaleTransform;
 
+    DoubleProperty myScale = new SimpleDoubleProperty(1.0);
+    
     public PannablePane() {
 
-       // setStyle("-fx-background-color: lightgrey; -fx-border-color: blue; -fx-opacity: 0.5");
-
-        // add scale transform
-        scaleTransform = new Scale( 1.0, 1.0);
-        getTransforms().add( scaleTransform);
-
-        // logging
-        addEventFilter(MouseEvent.MOUSE_PRESSED, event -> { 
-            System.out.println( 
-                    "canvas event: " + ( ((event.getSceneX() - getBoundsInParent().getMinX()) / getScale()) + ", scale: " + getScale())
-                    );
-            System.out.println( "canvas bounds: " + getBoundsInParent());   
-                });
+        scaleXProperty().bind(myScale);
+        scaleYProperty().bind(myScale);
     }
-
-
-    public Scale getScaleTransform() {
-        return scaleTransform;
-    }
-
+    
     public double getScale() {
-        return scaleTransform.getY();
+        return myScale.get();
     }
 
-    /**
-     * Set x/y scale
-     * @param scale
-     */
     public void setScale( double scale) {
-        scaleTransform.setX(scale);
-        scaleTransform.setY(scale);
+        myScale.set(scale);
     }
 
-    /**
-     * Set x/y pivot points
-     * @param x
-     * @param y
-     */
     public void setPivot( double x, double y) {
-        scaleTransform.setPivotX(x);
-        scaleTransform.setPivotY(y);
+        setTranslateX(getTranslateX()-x);
+        setTranslateY(getTranslateY()-y);
     }
 }
-

@@ -32,14 +32,17 @@ public class NetworkPaneController {
 	final double SCALE_DELTA = 1.1;
 	private InfrastructureElementsPane elementPane;
 	private SecondLayer secondLayer;
+	private JavaFXanimations animation;
+	private double pressedX, pressedY;
 
 	@FXML
 	public void initialize() {
 		this.elementPane = new InfrastructureElementsPane();
 		this.secondLayer = new SecondLayer();
-
-		this.anchorPane.getChildren().add(this.elementPane);
+		this.animation = new JavaFXanimations();
 		this.anchorPane.getChildren().add(this.secondLayer);
+		this.anchorPane.getChildren().add(this.animation);
+		this.anchorPane.getChildren().add(this.elementPane);
 		// this.stackPane.getChildren().add(this.elementGroup);
 	}
 
@@ -73,13 +76,13 @@ public class NetworkPaneController {
 			this.elementPane.setCoordinateMapper(mapper);
 			this.elementPane.setElements(elements);
 			this.secondLayer.setCoordinateMapper(mapper);
-			this.secondLayer.setCoordinateMapper(mapper);
+			this.animation.setCoordinateMapper(mapper);
 
 		} catch (NullIdException e) {
 			e.printStackTrace();
 		}
 	}
-
+/**
 	@FXML
 	private void mousePress() {
 		NodeGestures nodeGestures = new NodeGestures(elementPane);
@@ -89,13 +92,38 @@ public class NetworkPaneController {
 		anchorPane.addEventFilter(MouseEvent.MOUSE_DRAGGED,
 				nodeGestures.getOnMouseDraggedEventHandler());
 	}
+	**/
+	@FXML
+	private void mouseclick(){
+		elementPane.setOnMousePressed(new EventHandler<MouseEvent>()
+		        {
+            public void handle(MouseEvent event)
+            {
+                pressedX = event.getX();
+                pressedY = event.getY();
+            }
+        });
+
+        elementPane.setOnMouseDragged(new EventHandler<MouseEvent>()
+        {
+            public void handle(MouseEvent event)
+            {
+                elementPane.setTranslateX(elementPane.getTranslateX() + event.getX() - pressedX);
+                elementPane.setTranslateY(elementPane.getTranslateY() + event.getY() - pressedY);
+
+                event.consume();
+            }
+        });
+	}
 	
 	@FXML
 	private void ScrollWheel(){
 		NodeGestures nodeGestures = new NodeGestures(elementPane);
 		NodeGestures nodeGestures2 = new NodeGestures(secondLayer);
+		NodeGestures nodeGestures3 = new NodeGestures(animation);
 		anchorPane.addEventFilter( ScrollEvent.ANY, nodeGestures.getOnScrollEventHandler());
 		anchorPane.addEventFilter( ScrollEvent.ANY, nodeGestures2.getOnScrollEventHandler());
+		anchorPane.addEventFilter( ScrollEvent.ANY, nodeGestures3.getOnScrollEventHandler());
 
 	
 /**	  @FXML private void ScrollEvent(){ anchorPane.setOnScroll(new
