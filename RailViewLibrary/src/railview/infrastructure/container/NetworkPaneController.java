@@ -18,7 +18,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import railapp.infrastructure.element.dto.InfrastructureElement;
 import railapp.infrastructure.element.dto.Port;
-import railapp.infrastructure.exception.NullIdException;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 
 public class NetworkPaneController {
@@ -48,39 +47,34 @@ public class NetworkPaneController {
 
 	public void setInfrastructureServiceUtility(
 			IInfrastructureServiceUtility serviceUtility) {
-		try {
-			Collection<InfrastructureElement> elements = serviceUtility
-					.getInfrastructureElementService().findElements();
+		Collection<InfrastructureElement> elements = serviceUtility
+				.getInfrastructureElementService().findElements();
 
-			double maxX = Double.MIN_VALUE;
-			double minX = Double.MAX_VALUE;
-			double maxY = Double.MIN_VALUE;
-			double minY = Double.MAX_VALUE;
+		double maxX = Double.MIN_VALUE;
+		double minX = Double.MAX_VALUE;
+		double maxY = Double.MIN_VALUE;
+		double minY = Double.MAX_VALUE;
 
-			for (InfrastructureElement element : elements) {
-				for (Port port : element.getPorts()) {
-					if (port.getCoordinate().getX() > maxX)
-						maxX = port.getCoordinate().getX();
-					if (port.getCoordinate().getX() < minX)
-						minX = port.getCoordinate().getX();
-					if (port.getCoordinate().getY() > maxY)
-						maxY = port.getCoordinate().getY();
-					if (port.getCoordinate().getY() < minY)
-						minY = port.getCoordinate().getY();
-				}
+		for (InfrastructureElement element : elements) {
+			for (Port port : element.getPorts()) {
+				if (port.getCoordinate().getX() > maxX)
+					maxX = port.getCoordinate().getX();
+				if (port.getCoordinate().getX() < minX)
+					minX = port.getCoordinate().getX();
+				if (port.getCoordinate().getY() > maxY)
+					maxY = port.getCoordinate().getY();
+				if (port.getCoordinate().getY() < minY)
+					minY = port.getCoordinate().getY();
 			}
-
-			CoordinateMapper mapper = new CoordinateMapper(maxX, minX, maxY,
-					minY);
-
-			this.elementPane.setCoordinateMapper(mapper);
-			this.elementPane.setElements(elements);
-			this.secondLayer.setCoordinateMapper(mapper);
-			this.animation.setCoordinateMapper(mapper);
-
-		} catch (NullIdException e) {
-			e.printStackTrace();
 		}
+
+		CoordinateMapper mapper = new CoordinateMapper(maxX, minX, maxY,
+				minY);
+
+		this.elementPane.setCoordinateMapper(mapper);
+		this.elementPane.setElements(elements);
+		this.secondLayer.setCoordinateMapper(mapper);
+		this.animation.setCoordinateMapper(mapper);
 	}
 /**
 	@FXML
@@ -95,7 +89,7 @@ public class NetworkPaneController {
 	**/
 	@FXML
 	private void mouseclick(){
-		elementPane.setOnMousePressed(new EventHandler<MouseEvent>()
+		anchorPane.setOnMousePressed(new EventHandler<MouseEvent>()
 		        {
             public void handle(MouseEvent event)
             {
@@ -104,12 +98,12 @@ public class NetworkPaneController {
             }
         });
 
-        elementPane.setOnMouseDragged(new EventHandler<MouseEvent>()
+        anchorPane.setOnMouseDragged(new EventHandler<MouseEvent>()
         {
             public void handle(MouseEvent event)
             {
-                elementPane.setTranslateX(elementPane.getTranslateX() + event.getX() - pressedX);
-                elementPane.setTranslateY(elementPane.getTranslateY() + event.getY() - pressedY);
+            	anchorPane.setTranslateX(anchorPane.getTranslateX() + event.getX() - pressedX);
+            	anchorPane.setTranslateY(anchorPane.getTranslateY() + event.getY() - pressedY);
 
                 event.consume();
             }

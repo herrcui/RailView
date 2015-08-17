@@ -5,7 +5,6 @@ import java.net.URL;
 
 import railapp.infrastructure.element.dto.InfrastructureElement;
 import railapp.infrastructure.element.dto.Port;
-import railapp.infrastructure.exception.NullIdException;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railview.infrastructure.container.NetworkPaneController;
 import javafx.fxml.FXML;
@@ -40,7 +39,7 @@ public class InfrastructureElementViewController {
     private void initialize() {
         // Initialize the person table with the two columns.
         idColumn.setCellValueFactory(cellData -> 
-        	new SimpleStringProperty(cellData.getValue().getElement().getId().toString()));
+        	new SimpleStringProperty(cellData.getValue().getInfrastructureElement().getId().toString()));
         
         portColumn.setCellValueFactory(cellData -> 
     		new SimpleStringProperty(Integer.toString(cellData.getValue().getNumber())));
@@ -72,16 +71,11 @@ public class InfrastructureElementViewController {
 	private void setPortTable(IInfrastructureServiceUtility serviceUtility) {
 		ObservableList<Port> ports = FXCollections.observableArrayList();
 		
-		try {
-			for (InfrastructureElement element : 
-				serviceUtility.getInfrastructureElementService().findElements()) {
-				for (Port port : element.getPorts()) {
-					ports.add(port);
-				}
+		for (InfrastructureElement element : 
+			serviceUtility.getInfrastructureElementService().findElements()) {
+			for (Port port : element.getPorts()) {
+				ports.add(port);
 			}
-		} catch (NullIdException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
 				
 		portTable.setItems(ports);

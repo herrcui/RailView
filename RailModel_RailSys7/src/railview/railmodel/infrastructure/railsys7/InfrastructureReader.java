@@ -5,7 +5,6 @@ import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import railapp.infrastructure.exception.NullIdException;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.infrastructure.service.ServiceUtility;
 import railapp.parser.railsys7.infrastructure.InfrastructureParser;
@@ -37,15 +36,9 @@ public class InfrastructureReader {
 		IInfrastructureServiceUtility infraServiceUtility = new ServiceUtility();
 
 		InfrastructureParser parser = InfrastructureParser.getInstance(
-				infraServiceUtility, this.path);
-		try {
-			parser.parse();
-			return infraServiceUtility;
-		} catch (NullIdException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return null;
-		}
+				 this.path, infraServiceUtility);
+		parser.parse();
+		return infraServiceUtility;
 	}
 	
 	private Path path;
