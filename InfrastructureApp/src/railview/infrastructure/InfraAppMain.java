@@ -23,7 +23,8 @@ public class InfraAppMain extends Application {
 	}
 
 	public static void main(String[] args) {
-		serviceUtility = InfrastructureReader.getInstance().initialize();
+		infraServiceUtility = InfrastructureReader.getInstance().initialize();
+		
 		launch(args);
 	}
 
@@ -36,7 +37,7 @@ public class InfraAppMain extends Application {
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);
 
-			controller.setInfrastructureServiceUtility(serviceUtility);
+			controller.setInfrastructureServiceUtility(infraServiceUtility);
 			primaryStage.show();
 			
 			   final double initWidth  = scene.getWidth();
@@ -70,5 +71,5 @@ public class InfraAppMain extends Application {
 	private Stage primaryStage;
 	private AnchorPane rootLayout;
 
-	private static IInfrastructureServiceUtility serviceUtility;
+	private static IInfrastructureServiceUtility infraServiceUtility;
 }
