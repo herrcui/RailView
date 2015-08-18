@@ -1,0 +1,51 @@
+? Stromart: Wechselstrom 16,7 Hz,15kV, 600A
+? Rutkommentar: Kurzzug, 4tlg (160km/h) LZB
+? Eisenbahnunternehmen: DB
+? TriebfahrzeugBaureiheTyp: D
+? Triebfahrzeugart: Elektrische Triebwagen mit  Fremdstromzuführung(ET)
+? Achslast: 0 t
+? Ausrüstung mit automatischer Kupplung: ja
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: ja
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: ja
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 0 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          160.000
+TraktionsTyp elektrisch
+Loklaenge [m]         67.500
+Lokmasse [t]         128.800
+Reibmasse [t]        128.800
+Haftreibungswert       1.000
+Rholok (-)             5.750
+Rutkommentar        Kurzzug, 4tlg (160km/h) LZB
+ST      ge     0.000 150.000   10.160 150.000    0.000   0.000
+ST      ge    10.160 150.000   20.320 150.000    0.000   0.000
+ST      ge    20.320 150.000   30.480 150.000    0.000   0.000
+ST      ge    30.480 150.000   40.640 150.000    0.000   0.000
+ST      ge    40.640 150.000   50.800 150.000    0.000   0.000
+ST      ge    50.800 150.002   55.640 137.137    0.000   0.000
+ST      ge    55.640 137.137   60.480 125.855    0.000   0.000
+ST      ge    60.480 125.855   65.320 116.155    0.000   0.000
+ST      ge    65.320 116.155   70.160 108.038    0.000   0.000
+ST      ge    70.160 108.038   75.000 101.504    0.000   0.000
+ST      ge    75.000 101.497   84.000  91.118    0.000   0.000
+ST      ge    84.000  91.118   93.000  82.129    0.000   0.000
+ST      ge    93.000  82.129  102.000  74.529    0.000   0.000
+ST      ge   102.000  74.529  111.000  68.319    0.000   0.000
+ST      ge   111.000  68.319  120.000  63.498    0.000   0.000
+ST      ge   120.000  63.500  128.000  56.020    0.000   0.000
+ST      ge   128.000  56.020  136.000  49.500    0.000   0.000
+ST      ge   136.000  49.500  144.000  43.940    0.000   0.000
+ST      ge   144.000  43.940  152.000  39.340    0.000   0.000
+ST      ge   152.000  39.340  160.000  35.700    0.000   0.000
+LW  vplus15        1731.033325      25.005219       0.410058       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

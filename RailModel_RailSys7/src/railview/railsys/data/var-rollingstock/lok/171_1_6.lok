@@ -1,0 +1,53 @@
+? Stromart: Wechselstrom 50Hz, 25kV
+? Rutkommentar: Rübelandlok (3,2MW)
+? Eisenbahnunternehmen: DB
+? TriebfahrzeugBaureiheTyp: D
+? Triebfahrzeugart: Elektrische Lokomotiven
+? Achslast: 20.5 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: nein
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Heizungsart: a - Wechselspannung 1000V, 16,7 bzw. 50 Hz
+? Bremsgewicht: 159 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+? Bremsgewicht: 127 t in Bremsstellung druckluftbediente Güterzugbremse (bel. Gwg.)
+Vmax [km/h]           80.000
+TraktionsTyp elektrisch
+Loklaenge [m]         18.600
+Lokmasse [t]         123.000
+Reibmasse [t]        123.000
+Haftreibungswert       1.000
+Rholok (-)            24.600
+Rutkommentar        Rübelandlok (3,2MW)
+ST      ge     0.000 378.666    8.000 351.852    0.000   0.000
+ST      ge     8.000 351.852   16.000 329.224    0.000   0.000
+ST      ge    16.000 329.224   24.000 310.781    0.000   0.000
+ST      ge    24.000 310.781   32.000 296.524    0.000   0.000
+ST      ge    32.000 296.524   40.000 286.453    0.000   0.000
+ST      ge    40.000 286.452   42.000 257.925    0.000   0.000
+ST      ge    42.000 257.925   44.000 232.379    0.000   0.000
+ST      ge    44.000 232.379   46.000 209.816    0.000   0.000
+ST      ge    46.000 209.816   48.000 190.236    0.000   0.000
+ST      ge    48.000 190.236   50.000 173.637    0.000   0.000
+ST      ge    50.000 173.637   52.000 160.295    0.000   0.000
+ST      ge    52.000 160.295   54.000 148.523    0.000   0.000
+ST      ge    54.000 148.523   56.000 138.321    0.000   0.000
+ST      ge    56.000 138.321   58.000 129.688    0.000   0.000
+ST      ge    58.000 129.688   60.000 122.625    0.000   0.000
+ST      ge    60.000 122.625   64.000 109.794    0.000   0.000
+ST      ge    64.000 109.794   68.000  98.375    0.000   0.000
+ST      ge    68.000  98.375   72.000  88.368    0.000   0.000
+ST      ge    72.000  88.368   76.000  79.775    0.000   0.000
+ST      ge    76.000  79.775   80.000  72.594    0.000   0.000
+LW  vplus15        4295.603027       0.000000       0.463032       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

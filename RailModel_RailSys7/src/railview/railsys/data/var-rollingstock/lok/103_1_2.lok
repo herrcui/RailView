@@ -1,0 +1,77 @@
+? Stromart: Wechselstrom 16,7 Hz,15kV, 600A
+? Rutkommentar: Reisezug
+? Eisenbahnunternehmen: DB
+? TriebfahrzeugBaureiheTyp: D
+? Triebfahrzeugart: Elektrische Lokomotiven
+? Achslast: 19.5 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: ja
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: ja
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: ja
+? Neigungstechnik: keine
+? Heizungsart: a - Wechselspannung 1000V, 16,7 bzw. 50 Hz
+? Bremsgewicht: 250 t in Bremsstellung druckluftbediente Hochleistungsbremse mit elektrischer Zusatzbremse (nur bei Tfz) bei Hgmax > 160 km/h
+? Bremsgewicht: 235 t in Bremsstellung druckluftbediente Hochleistungsbremse mit elektrischer Zusatzbremse
+? Bremsgewicht: 190 t in Bremsstellung druckluftbediente Personenzugbremse mit elektrischer Zusatzbremse
+? Bremsgewicht: 150 t in Bremsstellung druckluftbediente Hochleistungsbremse  mit höherem Bremsgewicht als <R>-(R)
+? Bremsgewicht: 85 t in Bremsstellung druckluftbediente Güterzugbremse (bel. Gwg.)
+? Bremsgewicht: 100 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          200.000
+TraktionsTyp elektrisch
+Loklaenge [m]         19.500
+Lokmasse [t]         116.000
+Reibmasse [t]        116.000
+Haftreibungswert       1.000
+Rholok (-)            11.800
+Rutkommentar        Reisezug
+ST      ge     0.000 305.719    8.000 289.961    0.000   0.000
+ST      ge     8.000 289.961   16.000 274.992    0.000   0.000
+ST      ge    16.000 274.992   24.000 260.809    0.000   0.000
+ST      ge    24.000 260.809   32.000 247.415    0.000   0.000
+ST      ge    32.000 247.415   40.000 234.807    0.000   0.000
+ST      ge    40.000 234.807   46.000 225.623    0.000   0.000
+ST      ge    46.000 225.623   52.000 216.939    0.000   0.000
+ST      ge    52.000 216.939   58.000 208.756    0.000   0.000
+ST      ge    58.000 208.756   64.000 201.073    0.000   0.000
+ST      ge    64.000 201.073   70.000 193.891    0.000   0.000
+ST      ge    70.000 193.891   74.000 189.420    0.000   0.000
+ST      ge    74.000 189.420   78.000 185.265    0.000   0.000
+ST      ge    78.000 185.265   82.000 181.427    0.000   0.000
+ST      ge    82.000 181.427   86.000 177.906    0.000   0.000
+ST      ge    86.000 177.906   90.000 174.702    0.000   0.000
+ST      ge    90.000 174.702   94.000 171.813    0.000   0.000
+ST      ge    94.000 171.813   98.000 169.238    0.000   0.000
+ST      ge    98.000 169.238  102.000 166.977    0.000   0.000
+ST      ge   102.000 166.977  106.000 165.030    0.000   0.000
+ST      ge   106.000 165.030  110.000 163.396    0.000   0.000
+ST      ge   110.000 163.396  114.000 161.693    0.000   0.000
+ST      ge   114.000 161.693  118.000 160.077    0.000   0.000
+ST      ge   118.000 160.077  122.000 158.546    0.000   0.000
+ST      ge   122.000 158.546  126.000 157.102    0.000   0.000
+ST      ge   126.000 157.102  130.000 155.744    0.000   0.000
+ST      ge   130.000 155.744  133.800 154.555    0.000   0.000
+ST      ge   133.800 154.555  137.600 153.480    0.000   0.000
+ST      ge   137.600 153.480  141.400 152.519    0.000   0.000
+ST      ge   141.400 152.519  145.200 151.671    0.000   0.000
+ST      ge   145.200 151.671  149.000 150.937    0.000   0.000
+ST      ge   149.000 150.937  153.200 141.742    0.000   0.000
+ST      ge   153.200 141.742  157.400 133.476    0.000   0.000
+ST      ge   157.400 133.476  161.600 126.139    0.000   0.000
+ST      ge   161.600 126.139  165.800 119.730    0.000   0.000
+ST      ge   165.800 119.730  170.000 114.250    0.000   0.000
+ST      ge   170.000 114.250  176.000 106.206    0.000   0.000
+ST      ge   176.000 106.206  182.000  98.691    0.000   0.000
+ST      ge   182.000  98.691  188.000  91.703    0.000   0.000
+ST      ge   188.000  91.703  194.000  85.244    0.000   0.000
+ST      ge   194.000  85.244  200.000  79.314    0.000   0.000
+LW  vplus15        3049.732910       6.304298       0.209934       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

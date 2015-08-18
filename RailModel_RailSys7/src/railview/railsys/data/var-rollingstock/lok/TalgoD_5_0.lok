@@ -1,0 +1,66 @@
+? Stromart: ohne Stromart
+? Rutkommentar: Talgo XXI (TK+8Mw+TK) 160km/h
+? Eisenbahnunternehmen: EVU
+? TriebfahrzeugBaureiheTyp: N
+? Triebfahrzeugart: Brennkrafttriebwagen(ohne Schienenomnibusse)(VT)
+? Achslast: 17 t
+? Ausrüstung mit automatischer Kupplung: ja
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: ja
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: ja
+? Wendezugfähigkeit: ja
+? Druckertüchtigt: ja
+? Neigungstechnik: passive Neigetechnik
+? Bremsgewicht: 0 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          160.000
+TraktionsTyp Diesel
+Loklaenge [m]        135.000
+Lokmasse [t]         225.600
+Reibmasse [t]        225.600
+Haftreibungswert       1.000
+Rholok (-)             4.670
+Rutkommentar        Talgo XXI (TK+8Mw+TK) 160km/h
+ST      ge     0.000 137.340    8.460 137.340    0.000   0.000
+ST      ge     8.460 137.340   16.920 137.340    0.000   0.000
+ST      ge    16.920 137.340   25.380 137.340    0.000   0.000
+ST      ge    25.380 137.340   33.840 137.340    0.000   0.000
+ST      ge    33.840 137.340   42.300 137.340    0.000   0.000
+ST      ge    42.300 137.199   45.840 126.806    0.000   0.000
+ST      ge    45.840 126.806   49.380 117.562    0.000   0.000
+ST      ge    49.380 117.562   52.920 109.467    0.000   0.000
+ST      ge    52.920 109.467   56.460 102.520    0.000   0.000
+ST      ge    56.460 102.520   60.000  96.722    0.000   0.000
+ST      ge    60.000  96.720   64.000  90.777    0.000   0.000
+ST      ge    64.000  90.777   68.000  85.387    0.000   0.000
+ST      ge    68.000  85.387   72.000  80.551    0.000   0.000
+ST      ge    72.000  80.551   76.000  76.269    0.000   0.000
+ST      ge    76.000  76.269   80.000  72.540    0.000   0.000
+ST      ge    80.000  72.539   84.000  69.122    0.000   0.000
+ST      ge    84.000  69.122   88.000  65.962    0.000   0.000
+ST      ge    88.000  65.962   92.000  63.060    0.000   0.000
+ST      ge    92.000  63.060   96.000  60.416    0.000   0.000
+ST      ge    96.000  60.416  100.000  58.029    0.000   0.000
+ST      ge   100.000  58.030  104.000  55.818    0.000   0.000
+ST      ge   104.000  55.818  108.000  53.744    0.000   0.000
+ST      ge   108.000  53.744  112.000  51.810    0.000   0.000
+ST      ge   112.000  51.810  116.000  50.016    0.000   0.000
+ST      ge   116.000  50.016  120.000  48.360    0.000   0.000
+ST      ge   120.000  48.360  124.000  46.808    0.000   0.000
+ST      ge   124.000  46.808  128.000  45.342    0.000   0.000
+ST      ge   128.000  45.342  132.000  43.960    0.000   0.000
+ST      ge   132.000  43.960  136.000  42.662    0.000   0.000
+ST      ge   136.000  42.662  140.000  41.450    0.000   0.000
+ST      ge   140.000  41.450  144.000  40.305    0.000   0.000
+ST      ge   144.000  40.305  148.000  39.215    0.000   0.000
+ST      ge   148.000  39.215  152.000  38.179    0.000   0.000
+ST      ge   152.000  38.179  156.000  37.197    0.000   0.000
+ST      ge   156.000  37.197  160.000  36.270    0.000   0.000
+LW  vplus15        1969.691040      24.610073       0.310977       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

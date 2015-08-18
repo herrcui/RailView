@@ -1,0 +1,66 @@
+? Stromart: Wechselstrom 16,7 Hz,15kV, 600A
+? Rutkommentar: Coradia LIREX, 3tlg, Pu=2170kW, 180Sitzpl
+? Eisenbahnunternehmen: DB
+? TriebfahrzeugBaureiheTyp: D
+? Triebfahrzeugart: Elektrische Triebwagen mit  Fremdstromzuführung(ET)
+? Achslast: 18.6 t
+? Ausrüstung mit automatischer Kupplung: ja
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: ja
+? Wendezugfähigkeit: ja
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 0 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          160.000
+TraktionsTyp elektrisch
+Loklaenge [m]         55.000
+Lokmasse [t]         127.500
+Reibmasse [t]        127.500
+Haftreibungswert       1.000
+Rholok (-)             4.240
+Rutkommentar        Coradia LIREX, 3tlg, Pu=2170kW, 180Sitzpl
+ST      ge     0.000 142.000    9.880 142.000    0.000   0.000
+ST      ge     9.880 142.000   19.760 142.000    0.000   0.000
+ST      ge    19.760 142.000   29.640 142.000    0.000   0.000
+ST      ge    29.640 142.000   39.520 142.000    0.000   0.000
+ST      ge    39.520 142.000   49.400 142.000    0.000   0.000
+ST      ge    49.400 142.103   52.120 134.781    0.000   0.000
+ST      ge    52.120 134.781   54.840 128.053    0.000   0.000
+ST      ge    54.840 128.053   57.560 121.918    0.000   0.000
+ST      ge    57.560 121.918   60.280 116.377    0.000   0.000
+ST      ge    60.280 116.377   63.000 111.430    0.000   0.000
+ST      ge    63.000 111.430   66.000 106.413    0.000   0.000
+ST      ge    66.000 106.413   69.000 101.763    0.000   0.000
+ST      ge    69.000 101.763   72.000  97.477    0.000   0.000
+ST      ge    72.000  97.477   75.000  93.556    0.000   0.000
+ST      ge    75.000  93.556   78.000  90.001    0.000   0.000
+ST      ge    78.000  90.001   82.000  85.659    0.000   0.000
+ST      ge    82.000  85.659   86.000  81.651    0.000   0.000
+ST      ge    86.000  81.651   90.000  77.977    0.000   0.000
+ST      ge    90.000  77.977   94.000  74.638    0.000   0.000
+ST      ge    94.000  74.638   98.000  71.633    0.000   0.000
+ST      ge    98.000  71.633  104.000  67.562    0.000   0.000
+ST      ge   104.000  67.562  110.000  63.847    0.000   0.000
+ST      ge   110.000  63.847  116.000  60.489    0.000   0.000
+ST      ge   116.000  60.489  122.000  57.488    0.000   0.000
+ST      ge   122.000  57.488  128.000  54.844    0.000   0.000
+ST      ge   128.000  54.833  132.400  51.287    0.000   0.000
+ST      ge   132.400  51.287  136.800  48.023    0.000   0.000
+ST      ge   136.800  48.023  141.200  45.042    0.000   0.000
+ST      ge   141.200  45.042  145.600  42.344    0.000   0.000
+ST      ge   145.600  42.344  150.000  39.928    0.000   0.000
+ST      ge   150.000  39.928  152.000  38.886    0.000   0.000
+ST      ge   152.000  38.886  154.000  37.882    0.000   0.000
+ST      ge   154.000  37.882  156.000  36.915    0.000   0.000
+ST      ge   156.000  36.915  158.000  35.985    0.000   0.000
+ST      ge   158.000  35.985  160.000  35.093    0.000   0.000
+LW  vplus15        1463.406738      15.096854       0.389457       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

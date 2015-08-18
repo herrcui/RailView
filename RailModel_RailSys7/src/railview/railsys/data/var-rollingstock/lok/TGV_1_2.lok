@@ -1,0 +1,61 @@
+? Stromart: Wechselstrom 16,7 Hz,15kV, 600A
+? Rutkommentar: SNCF Thalys,HV140km/h
+? Eisenbahnunternehmen: SNCF
+? TriebfahrzeugBaureiheTyp: S
+? Triebfahrzeugart: Elektrische Triebwagen mit  Fremdstromzuführung(ET)
+? Achslast: 0 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: ja
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: ja
+? Druckertüchtigt: ja
+? Neigungstechnik: keine
+? Bremsgewicht: 0 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          200.000
+TraktionsTyp elektrisch
+Loklaenge [m]        200.000
+Lokmasse [t]         416.000
+Reibmasse [t]        416.000
+Haftreibungswert       1.000
+Rholok (-)             8.000
+Rutkommentar        SNCF Thalys,HV140km/h
+ST      ge     0.000 219.075    4.600 219.075    0.000   0.000
+ST      ge     4.600 219.075    9.200 219.075    0.000   0.000
+ST      ge     9.200 219.075   13.800 219.075    0.000   0.000
+ST      ge    13.800 219.075   18.400 219.075    0.000   0.000
+ST      ge    18.400 219.075   23.000 219.075    0.000   0.000
+ST      ge    23.000 219.075   28.400 218.545    0.000   0.000
+ST      ge    28.400 218.545   33.800 217.490    0.000   0.000
+ST      ge    33.800 217.490   39.200 215.909    0.000   0.000
+ST      ge    39.200 215.909   44.600 213.803    0.000   0.000
+ST      ge    44.600 213.803   50.000 211.172    0.000   0.000
+ST      ge    50.000 211.172   58.000 194.002    0.000   0.000
+ST      ge    58.000 194.002   66.000 178.203    0.000   0.000
+ST      ge    66.000 178.203   74.000 163.776    0.000   0.000
+ST      ge    74.000 163.776   82.000 150.721    0.000   0.000
+ST      ge    82.000 150.721   90.000 139.038    0.000   0.000
+ST      ge    90.000 139.037   98.000 129.979    0.000   0.000
+ST      ge    98.000 129.979  106.000 121.437    0.000   0.000
+ST      ge   106.000 121.437  114.000 113.412    0.000   0.000
+ST      ge   114.000 113.412  122.000 105.905    0.000   0.000
+ST      ge   122.000 105.905  130.000  98.914    0.000   0.000
+ST      ge   130.000  98.914  138.000  93.152    0.000   0.000
+ST      ge   138.000  93.152  146.000  88.110    0.000   0.000
+ST      ge   146.000  88.110  154.000  83.789    0.000   0.000
+ST      ge   154.000  83.789  162.000  80.188    0.000   0.000
+ST      ge   162.000  80.188  170.000  77.307    0.000   0.000
+ST      ge   170.000  77.306  176.000  75.207    0.000   0.000
+ST      ge   176.000  75.207  182.000  73.151    0.000   0.000
+ST      ge   182.000  73.151  188.000  71.136    0.000   0.000
+ST      ge   188.000  71.136  194.000  69.164    0.000   0.000
+ST      ge   194.000  69.164  200.000  67.234    0.000   0.000
+LW  vplus15        2815.862305      48.155327       0.510120       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

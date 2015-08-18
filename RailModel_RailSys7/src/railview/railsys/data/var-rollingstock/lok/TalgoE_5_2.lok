@@ -1,0 +1,67 @@
+? Stromart: Wechselstrom 16,7 Hz,15kV, 600A
+? Rutkommentar: TalgoXXII DoSto-ET 10tlg, 2,7MW
+? Eisenbahnunternehmen: EVU
+? TriebfahrzeugBaureiheTyp: N
+? Triebfahrzeugart: Elektrische Triebwagen mit  Fremdstromzuführung(ET)
+? Achslast: 20 t
+? Ausrüstung mit automatischer Kupplung: ja
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: nein
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: ja
+? Wendezugfähigkeit: ja
+? Druckertüchtigt: nein
+? Neigungstechnik: passive Neigetechnik
+? Bremsgewicht: 323 t in Bremsstellung druckluftbediente Hochleistungsbremse  mit höherem Bremsgewicht als <R>-(R)
+? Bremsgewicht: 395 t in Bremsstellung druckluftbediente Hochleistungsbremse mit zusätzlicher Magnetschienenbremse
+Vmax [km/h]          160.000
+TraktionsTyp elektrisch
+Loklaenge [m]         98.000
+Lokmasse [t]         220.000
+Reibmasse [t]        220.000
+Haftreibungswert       1.000
+Rholok (-)             5.450
+Rutkommentar        TalgoXXII DoSto-ET 10tlg, 2,7MW
+ST      ge     0.000 225.000    8.640 225.000    0.000   0.000
+ST      ge     8.640 225.000   17.280 225.000    0.000   0.000
+ST      ge    17.280 225.000   25.920 225.000    0.000   0.000
+ST      ge    25.920 225.000   34.560 225.000    0.000   0.000
+ST      ge    34.560 225.000   43.200 225.000    0.000   0.000
+ST      ge    43.200 225.000   45.160 215.323    0.000   0.000
+ST      ge    45.160 215.323   47.120 206.324    0.000   0.000
+ST      ge    47.120 206.324   49.080 198.003    0.000   0.000
+ST      ge    49.080 198.003   51.040 190.361    0.000   0.000
+ST      ge    51.040 190.361   53.000 183.396    0.000   0.000
+ST      ge    53.000 183.396   55.600 174.909    0.000   0.000
+ST      ge    55.600 174.909   58.200 167.053    0.000   0.000
+ST      ge    58.200 167.053   60.800 159.828    0.000   0.000
+ST      ge    60.800 159.828   63.400 153.235    0.000   0.000
+ST      ge    63.400 153.235   66.000 147.273    0.000   0.000
+ST      ge    66.000 147.273   68.800 141.327    0.000   0.000
+ST      ge    68.800 141.327   71.600 135.777    0.000   0.000
+ST      ge    71.600 135.777   74.400 130.623    0.000   0.000
+ST      ge    74.400 130.623   77.200 125.864    0.000   0.000
+ST      ge    77.200 125.864   80.000 121.500    0.000   0.000
+ST      ge    80.000 121.500   84.000 115.776    0.000   0.000
+ST      ge    84.000 115.776   88.000 110.484    0.000   0.000
+ST      ge    88.000 110.484   92.000 105.624    0.000   0.000
+ST      ge    92.000 105.624   96.000 101.196    0.000   0.000
+ST      ge    96.000 101.196  100.000  97.200    0.000   0.000
+ST      ge   100.000  97.200  106.000  91.778    0.000   0.000
+ST      ge   106.000  91.778  112.000  86.823    0.000   0.000
+ST      ge   112.000  86.823  118.000  82.337    0.000   0.000
+ST      ge   118.000  82.337  124.000  78.319    0.000   0.000
+ST      ge   124.000  78.319  130.000  74.769    0.000   0.000
+ST      ge   130.000  74.769  136.000  71.501    0.000   0.000
+ST      ge   136.000  71.501  142.000  68.465    0.000   0.000
+ST      ge   142.000  68.465  148.000  65.662    0.000   0.000
+ST      ge   148.000  65.662  154.000  63.090    0.000   0.000
+ST      ge   154.000  63.090  160.000  60.750    0.000   0.000
+LW  vplus15        1963.962036      31.855032       0.505215       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

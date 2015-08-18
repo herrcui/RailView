@@ -1,0 +1,51 @@
+? Stromart: ohne Stromart
+? Rutkommentar: Voith Gravita 15BB DH SG
+? Eisenbahnunternehmen: DB
+? TriebfahrzeugBaureiheTyp: D
+? Triebfahrzeugart: Brennkraftlokomotiven
+? Achslast: 21 t
+? Ausrüstung mit automatischer Kupplung: ja
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 50 t in Bremsstellung druckluftbediente Güterzugbremse (bel. Gwg.)
+Vmax [km/h]          100.000
+TraktionsTyp Diesel
+Loklaenge [m]         17.000
+Lokmasse [t]          84.000
+Reibmasse [t]         84.000
+Haftreibungswert       1.000
+Rholok (-)             4.760
+Rutkommentar        Voith Gravita 15BB DH SG
+ST      ge     0.000 232.000    6.200 211.737    0.000   0.000
+ST      ge     6.200 211.737   12.400 190.906    0.000   0.000
+ST      ge    12.400 190.906   18.600 169.506    0.000   0.000
+ST      ge    18.600 169.506   24.800 147.538    0.000   0.000
+ST      ge    24.800 147.538   31.000 125.001    0.000   0.000
+ST      ge    31.000 125.002   34.800 113.534    0.000   0.000
+ST      ge    34.800 113.534   38.600 103.400    0.000   0.000
+ST      ge    38.600 103.400   42.400  94.601    0.000   0.000
+ST      ge    42.400  94.601   46.200  87.135    0.000   0.000
+ST      ge    46.200  87.135   50.000  81.004    0.000   0.000
+ST      ge    50.000  81.002   53.200  74.839    0.000   0.000
+ST      ge    53.200  74.839   56.400  69.658    0.000   0.000
+ST      ge    56.400  69.658   59.600  65.458    0.000   0.000
+ST      ge    59.600  65.458   62.800  62.239    0.000   0.000
+ST      ge    62.800  62.239   66.000  60.002    0.000   0.000
+ST      ge    66.000  60.003   72.800  54.838    0.000   0.000
+ST      ge    72.800  54.838   79.600  50.256    0.000   0.000
+ST      ge    79.600  50.256   86.400  46.256    0.000   0.000
+ST      ge    86.400  46.256   93.200  42.839    0.000   0.000
+ST      ge    93.200  42.839  100.000  40.005    0.000   0.000
+LW  vplus15        2809.976318       9.006757       0.300186       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

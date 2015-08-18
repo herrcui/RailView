@@ -1,0 +1,63 @@
+? Stromart: Wechselstrom 16,7 Hz,15kV, 600A
+? Rutkommentar: SNCF FRET BB 437000; Pu=4,2MW
+? Eisenbahnunternehmen: SNCF
+? TriebfahrzeugBaureiheTyp: S
+? Triebfahrzeugart: Elektrische Lokomotiven
+? Achslast: 0 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 94 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+? Bremsgewicht: 76 t in Bremsstellung druckluftbediente Güterzugbremse (bel. Gwg.)
+? Bremsgewicht: 94 t in Bremsstellung druckluftbediente Personenzugbremse mit elektrischer Zusatzbremse
+Vmax [km/h]          140.000
+TraktionsTyp elektrisch
+Loklaenge [m]         17.000
+Lokmasse [t]          90.000
+Reibmasse [t]         90.000
+Haftreibungswert       1.000
+Rholok (-)            11.400
+Rutkommentar        SNCF FRET BB 437000; Pu=4,2MW
+ST      ge     0.000 320.000    2.000 320.000    0.000   0.000
+ST      ge     2.000 320.000    4.000 320.000    0.000   0.000
+ST      ge     4.000 320.000    6.000 320.000    0.000   0.000
+ST      ge     6.000 320.000    8.000 320.000    0.000   0.000
+ST      ge     8.000 320.000   10.000 320.000    0.000   0.000
+ST      ge    10.000 320.000   20.000 295.904    0.000   0.000
+ST      ge    20.000 295.904   30.000 277.056    0.000   0.000
+ST      ge    30.000 277.056   40.000 263.456    0.000   0.000
+ST      ge    40.000 263.456   50.000 255.104    0.000   0.000
+ST      ge    50.000 255.104   60.000 252.000    0.000   0.000
+ST      ge    60.000 252.000   64.000 236.520    0.000   0.000
+ST      ge    64.000 236.520   68.000 222.480    0.000   0.000
+ST      ge    68.000 222.480   72.000 209.880    0.000   0.000
+ST      ge    72.000 209.880   76.000 198.720    0.000   0.000
+ST      ge    76.000 198.720   80.000 189.000    0.000   0.000
+ST      ge    80.000 189.000   84.000 180.096    0.000   0.000
+ST      ge    84.000 180.096   88.000 171.864    0.000   0.000
+ST      ge    88.000 171.864   92.000 164.304    0.000   0.000
+ST      ge    92.000 164.304   96.000 157.416    0.000   0.000
+ST      ge    96.000 157.416  100.000 151.200    0.000   0.000
+ST      ge   100.000 151.199  104.000 145.426    0.000   0.000
+ST      ge   104.000 145.426  108.000 140.020    0.000   0.000
+ST      ge   108.000 140.020  112.000 134.980    0.000   0.000
+ST      ge   112.000 134.980  116.000 130.306    0.000   0.000
+ST      ge   116.000 130.306  120.000 125.999    0.000   0.000
+ST      ge   120.000 126.012  124.000 121.970    0.000   0.000
+ST      ge   124.000 121.970  128.000 118.148    0.000   0.000
+ST      ge   128.000 118.148  132.000 114.549    0.000   0.000
+ST      ge   132.000 114.549  136.000 111.171    0.000   0.000
+ST      ge   136.000 111.171  140.000 108.014    0.000   0.000
+LW  vplus15        1474.442993       8.396379       0.279585       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

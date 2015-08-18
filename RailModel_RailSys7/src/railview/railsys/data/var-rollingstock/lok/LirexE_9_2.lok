@@ -1,0 +1,76 @@
+? Stromart: Wechselstrom 16,7 Hz,15kV, 600A
+? Rutkommentar: Coradia LIREX, 5tlg, E, Pu=2590kW
+? Eisenbahnunternehmen: EVU
+? TriebfahrzeugBaureiheTyp: N
+? Triebfahrzeugart: Elektrische Triebwagen mit  Fremdstromzuführung(ET)
+? Achslast: 0 t
+? Ausrüstung mit automatischer Kupplung: ja
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: ja
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 0 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          160.000
+TraktionsTyp elektrisch
+Loklaenge [m]         87.000
+Lokmasse [t]         187.700
+Reibmasse [t]        187.700
+Haftreibungswert       1.000
+Rholok (-)             4.160
+Rutkommentar        Coradia LIREX, 5tlg, E, Pu=2590kW
+ST      ge     0.000 200.000    8.380 200.000    0.000   0.000
+ST      ge     8.380 200.000   16.760 200.000    0.000   0.000
+ST      ge    16.760 200.000   25.140 200.000    0.000   0.000
+ST      ge    25.140 200.000   33.520 200.000    0.000   0.000
+ST      ge    33.520 200.000   41.900 200.000    0.000   0.000
+ST      ge    41.900 200.187   43.940 190.991    0.000   0.000
+ST      ge    43.940 190.991   45.980 182.474    0.000   0.000
+ST      ge    45.980 182.474   48.020 174.636    0.000   0.000
+ST      ge    48.020 174.636   50.060 167.476    0.000   0.000
+ST      ge    50.060 167.476   52.100 160.994    0.000   0.000
+ST      ge    52.100 160.994   54.900 152.885    0.000   0.000
+ST      ge    54.900 152.885   57.700 145.421    0.000   0.000
+ST      ge    57.700 145.421   60.500 138.601    0.000   0.000
+ST      ge    60.500 138.601   63.300 132.426    0.000   0.000
+ST      ge    63.300 132.426   66.100 126.896    0.000   0.000
+ST      ge    66.100 126.898   68.100 123.188    0.000   0.000
+ST      ge    68.100 123.188   70.100 119.666    0.000   0.000
+ST      ge    70.100 119.666   72.100 116.331    0.000   0.000
+ST      ge    72.100 116.331   74.100 113.183    0.000   0.000
+ST      ge    74.100 113.183   76.100 110.223    0.000   0.000
+ST      ge    76.100 110.223   78.100 107.410    0.000   0.000
+ST      ge    78.100 107.410   80.100 104.724    0.000   0.000
+ST      ge    80.100 104.724   82.100 102.164    0.000   0.000
+ST      ge    82.100 102.164   84.100  99.729    0.000   0.000
+ST      ge    84.100  99.729   86.100  97.421    0.000   0.000
+ST      ge    86.100  97.474   88.880  91.530    0.000   0.000
+ST      ge    88.880  91.530   91.660  86.037    0.000   0.000
+ST      ge    91.660  86.037   94.440  80.994    0.000   0.000
+ST      ge    94.440  80.994   97.220  76.402    0.000   0.000
+ST      ge    97.220  76.402  100.000  72.261    0.000   0.000
+ST      ge   100.000  72.261  104.000  66.884    0.000   0.000
+ST      ge   104.000  66.884  108.000  61.988    0.000   0.000
+ST      ge   108.000  61.988  112.000  57.572    0.000   0.000
+ST      ge   112.000  57.572  116.000  53.636    0.000   0.000
+ST      ge   116.000  53.636  120.000  50.181    0.000   0.000
+ST      ge   120.000  50.181  126.000  45.609    0.000   0.000
+ST      ge   126.000  45.609  132.000  41.516    0.000   0.000
+ST      ge   132.000  41.516  138.000  37.903    0.000   0.000
+ST      ge   138.000  37.903  144.000  34.769    0.000   0.000
+ST      ge   144.000  34.769  150.000  32.116    0.000   0.000
+ST      ge   150.000  32.116  152.000  31.278    0.000   0.000
+ST      ge   152.000  31.278  154.000  30.470    0.000   0.000
+ST      ge   154.000  30.470  156.000  29.692    0.000   0.000
+ST      ge   156.000  29.692  158.000  28.945    0.000   0.000
+ST      ge   158.000  28.945  160.000  28.227    0.000   0.000
+LW  vplus15        2191.190918      20.107401       0.500310       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

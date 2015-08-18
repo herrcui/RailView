@@ -1,0 +1,35 @@
+* Dateiname 1008.zug
+* Geändert/erzeugt am 2012-03-02
+* von RailSys 7.6.11
+Zugnummer               1008
+Regelzuschlag          3.000
+Vmax (km/h)          100.000
+Bremsen (m/s^2)        0.700
+Stutzen (m/s^2)        1.000
+Widerstand (Wagen)   ohnewwk
+Widerstand (Kurve)    ohnebw
+Bezeichnung                       DPN VT_2E_2_0 + VT_2E_2_0 + VT_2E_2_0
+Kuerzel                           DPN
+Klasse                            NRz
+VzG                               2
+SpitzEin                          120
+SpitzAus                          60
+FarbeDarstellung                  0
+Wertigkeit                        3000
+WertigkeitDelta                   1
+WertigkeitVerspaetung             9900
+WertigkeitDelta2                  1
+WertigkeitVerspaetung2            9999
+LZB               F
+MovingBlock       aus
+Vorreservierungszeit              0
+Bloeckezureservieren              0
+MaximaleZugkraft                  500000
+ZugkraftBeschraenken              J
+MaximaleBeschleunigung              1.000
+PZB90-Modus                       Auto
+Tfz      VT_2E_2_0     1.000   1.000
+Tfz      VT_2E_2_0     1.000   1.000
+Tfz      VT_2E_2_0     1.000   1.000
+Wg 1   0.010   0.010   0.010   0.000   0.000    1    1    2
+End                

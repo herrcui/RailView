@@ -1,0 +1,61 @@
+? Stromart: 2-Systemstrom 16,7 Hz, 15kV+50Hz,25kV
+? Rutkommentar: ÖBB 1063
+? Eisenbahnunternehmen: ÖBB
+? TriebfahrzeugBaureiheTyp: S
+? Triebfahrzeugart: Elektrische Lokomotiven
+? Achslast: 20.5 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 70 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          100.000
+TraktionsTyp elektrisch
+Loklaenge [m]         15.600
+Lokmasse [t]          82.000
+Reibmasse [t]         82.000
+Haftreibungswert       1.000
+Rholok (-)            11.000
+Rutkommentar        ÖBB 1063
+ST      ge     0.000 201.000    4.000 201.000    0.000   0.000
+ST      ge     4.000 201.000    8.000 201.000    0.000   0.000
+ST      ge     8.000 201.000   12.000 201.000    0.000   0.000
+ST      ge    12.000 201.000   16.000 201.000    0.000   0.000
+ST      ge    16.000 201.000   20.000 201.000    0.000   0.000
+ST      ge    20.000 201.001   23.000 197.561    0.000   0.000
+ST      ge    23.000 197.561   26.000 194.241    0.000   0.000
+ST      ge    26.000 194.241   29.000 191.041    0.000   0.000
+ST      ge    29.000 191.041   32.000 187.961    0.000   0.000
+ST      ge    32.000 187.961   35.000 185.001    0.000   0.000
+ST      ge    35.000 185.000   36.000 183.200    0.000   0.000
+ST      ge    36.000 183.200   37.000 181.400    0.000   0.000
+ST      ge    37.000 181.400   38.000 179.600    0.000   0.000
+ST      ge    38.000 179.600   39.000 177.800    0.000   0.000
+ST      ge    39.000 177.800   40.000 176.000    0.000   0.000
+ST      ge    40.000 176.000   44.000 160.040    0.000   0.000
+ST      ge    44.000 160.040   48.000 146.160    0.000   0.000
+ST      ge    48.000 146.160   52.000 134.360    0.000   0.000
+ST      ge    52.000 134.360   56.000 124.640    0.000   0.000
+ST      ge    56.000 124.640   60.000 117.000    0.000   0.000
+ST      ge    60.000 116.998   65.000 107.931    0.000   0.000
+ST      ge    65.000 107.931   70.000  99.998    0.000   0.000
+ST      ge    70.000  99.998   75.000  93.198    0.000   0.000
+ST      ge    75.000  93.198   80.000  87.531    0.000   0.000
+ST      ge    80.000  87.531   85.000  82.997    0.000   0.000
+ST      ge    85.000  82.997   88.000  77.437    0.000   0.000
+ST      ge    88.000  77.437   91.000  72.357    0.000   0.000
+ST      ge    91.000  72.357   94.000  67.757    0.000   0.000
+ST      ge    94.000  67.757   97.000  63.637    0.000   0.000
+ST      ge    97.000  63.637  100.000  59.997    0.000   0.000
+LW  vplus15        1608.839966      17.697241       0.489519       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

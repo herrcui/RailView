@@ -1,0 +1,48 @@
+? Stromart: Wechselstrom 16,7 Hz,15kV, 600A
+? Rutkommentar: Wendezug,geschoben (3,6MW)
+? Eisenbahnunternehmen: DB
+? TriebfahrzeugBaureiheTyp: D
+? Triebfahrzeugart: Elektrische Lokomotiven
+? Achslast: 20.8 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: ja
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Heizungsart: a - Wechselspannung 1000V, 16,7 bzw. 50 Hz
+? Bremsgewicht: 54 t in Bremsstellung druckluftbediente Güterzugbremse (bel. Gwg.)
+? Bremsgewicht: 72 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          110.000
+TraktionsTyp elektrisch
+Loklaenge [m]         16.500
+Lokmasse [t]          83.000
+Reibmasse [t]         83.000
+Haftreibungswert       1.000
+Rholok (-)            23.700
+Rutkommentar        Wendezug,geschoben (3,6MW)
+ST      ge     0.000 153.821   16.200 153.821    0.000   0.000
+ST      ge    16.200 153.821   32.400 153.821    0.000   0.000
+ST      ge    32.400 153.821   48.600 153.821    0.000   0.000
+ST      ge    48.600 153.821   64.800 153.821    0.000   0.000
+ST      ge    64.800 153.821   81.000 153.821    0.000   0.000
+ST      ge    81.000 153.821   82.800 147.438    0.000   0.000
+ST      ge    82.800 147.438   84.600 141.362    0.000   0.000
+ST      ge    84.600 141.362   86.400 135.594    0.000   0.000
+ST      ge    86.400 135.594   88.200 130.133    0.000   0.000
+ST      ge    88.200 130.133   90.000 124.979    0.000   0.000
+ST      ge    90.000 124.979   94.000 114.943    0.000   0.000
+ST      ge    94.000 114.943   98.000 105.983    0.000   0.000
+ST      ge    98.000 105.983  102.000  98.099    0.000   0.000
+ST      ge   102.000  98.099  106.000  91.293    0.000   0.000
+ST      ge   106.000  91.293  110.000  85.563    0.000   0.000
+LW  vplus15        2312.413086       8.109731       0.279585       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

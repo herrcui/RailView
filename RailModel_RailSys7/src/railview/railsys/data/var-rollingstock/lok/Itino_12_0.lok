@@ -1,0 +1,76 @@
+? Stromart: ohne Stromart
+? Rutkommentar: Itino , 3tlg, DH, VOITH-Getriebe
+? Eisenbahnunternehmen: EVU
+? TriebfahrzeugBaureiheTyp: N
+? Triebfahrzeugart: Brennkrafttriebwagen(ohne Schienenomnibusse)(VT)
+? Achslast: 17 t
+? Ausrüstung mit automatischer Kupplung: ja
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: ja
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: ja
+? Wendezugfähigkeit: ja
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 0 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          160.000
+TraktionsTyp Diesel
+Loklaenge [m]         56.000
+Lokmasse [t]         105.000
+Reibmasse [t]        105.000
+Haftreibungswert       1.000
+Rholok (-)             5.240
+Rutkommentar        Itino , 3tlg, DH, VOITH-Getriebe
+ST      ge     0.000  91.350    1.600  91.370    0.000   0.000
+ST      ge     1.600  91.370    3.200  91.371    0.000   0.000
+ST      ge     3.200  91.371    4.800  91.353    0.000   0.000
+ST      ge     4.800  91.353    6.400  91.316    0.000   0.000
+ST      ge     6.400  91.316    8.000  91.260    0.000   0.000
+ST      ge     8.000  91.256   12.400  85.700    0.000   0.000
+ST      ge    12.400  85.700   16.800  80.378    0.000   0.000
+ST      ge    16.800  80.378   21.200  75.290    0.000   0.000
+ST      ge    21.200  75.290   25.600  70.437    0.000   0.000
+ST      ge    25.600  70.437   30.000  65.818    0.000   0.000
+ST      ge    30.000  65.819   34.000  61.823    0.000   0.000
+ST      ge    34.000  61.823   38.000  58.021    0.000   0.000
+ST      ge    38.000  58.021   42.000  54.412    0.000   0.000
+ST      ge    42.000  54.412   46.000  50.997    0.000   0.000
+ST      ge    46.000  50.997   50.000  47.775    0.000   0.000
+ST      ge    50.000  47.777   54.000  44.750    0.000   0.000
+ST      ge    54.000  44.750   58.000  41.916    0.000   0.000
+ST      ge    58.000  41.916   62.000  39.276    0.000   0.000
+ST      ge    62.000  39.276   66.000  36.829    0.000   0.000
+ST      ge    66.000  36.829   70.000  34.575    0.000   0.000
+ST      ge    70.000  34.425   73.400  32.662    0.000   0.000
+ST      ge    73.400  32.662   76.800  31.002    0.000   0.000
+ST      ge    76.800  31.002   80.200  29.444    0.000   0.000
+ST      ge    80.200  29.444   83.600  27.988    0.000   0.000
+ST      ge    83.600  27.988   87.000  26.633    0.000   0.000
+ST      ge    87.000  24.180   91.600  24.582    0.000   0.000
+ST      ge    91.600  24.582   96.200  24.684    0.000   0.000
+ST      ge    96.200  24.684  100.800  24.485    0.000   0.000
+ST      ge   100.800  24.485  105.400  23.985    0.000   0.000
+ST      ge   105.400  23.985  110.000  23.185    0.000   0.000
+ST      ge   110.000  23.176  113.660  22.565    0.000   0.000
+ST      ge   113.660  22.565  117.320  21.895    0.000   0.000
+ST      ge   117.320  21.895  120.980  21.167    0.000   0.000
+ST      ge   120.980  21.167  124.640  20.381    0.000   0.000
+ST      ge   124.640  20.381  128.300  19.537    0.000   0.000
+ST      ge   128.300  18.603  132.640  18.673    0.000   0.000
+ST      ge   132.640  18.673  136.980  18.572    0.000   0.000
+ST      ge   136.980  18.572  141.320  18.301    0.000   0.000
+ST      ge   141.320  18.301  145.660  17.858    0.000   0.000
+ST      ge   145.660  17.858  150.000  17.245    0.000   0.000
+ST      ge   150.000  17.240  152.000  17.034    0.000   0.000
+ST      ge   152.000  17.034  154.000  16.820    0.000   0.000
+ST      ge   154.000  16.820  156.000  16.597    0.000   0.000
+ST      ge   156.000  16.597  158.000  16.365    0.000   0.000
+ST      ge   158.000  16.365  160.000  16.124    0.000   0.000
+LW  vplus15        2297.011475      31.921249       0.363951       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

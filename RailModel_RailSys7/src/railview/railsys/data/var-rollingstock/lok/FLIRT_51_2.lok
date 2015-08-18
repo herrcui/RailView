@@ -1,0 +1,66 @@
+? Stromart: Wechselstrom 16,7 Hz,15kV, 600A
+? Rutkommentar: FLIRT EMU 4tlg - 4Treibachsen/10.2b, 2600kW, 265Sitzpl
+? Eisenbahnunternehmen: EVU
+? TriebfahrzeugBaureiheTyp: N
+? Triebfahrzeugart: Elektrische Triebwagen mit  Fremdstromzuführung(ET)
+? Achslast: 18.8 t
+? Ausrüstung mit automatischer Kupplung: ja
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: ja
+? Wendezugfähigkeit: ja
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 0 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          160.000
+TraktionsTyp elektrisch
+Loklaenge [m]         74.000
+Lokmasse [t]         141.100
+Reibmasse [t]        141.100
+Haftreibungswert       1.000
+Rholok (-)             6.450
+Rutkommentar        FLIRT EMU 4tlg - 4Treibachsen/10.2b, 2600kW, 265Sitzpl
+ST      ge     0.000 172.000    9.800 172.000    0.000   0.000
+ST      ge     9.800 172.000   19.600 172.000    0.000   0.000
+ST      ge    19.600 172.000   29.400 172.000    0.000   0.000
+ST      ge    29.400 172.000   39.200 172.000    0.000   0.000
+ST      ge    39.200 172.000   49.000 172.000    0.000   0.000
+ST      ge    49.000 171.920   51.200 164.597    0.000   0.000
+ST      ge    51.200 164.597   53.400 157.784    0.000   0.000
+ST      ge    53.400 157.784   55.600 151.480    0.000   0.000
+ST      ge    55.600 151.480   57.800 145.685    0.000   0.000
+ST      ge    57.800 145.685   60.000 140.400    0.000   0.000
+ST      ge    60.000 140.400   62.000 135.895    0.000   0.000
+ST      ge    62.000 135.895   64.000 131.637    0.000   0.000
+ST      ge    64.000 131.637   66.000 127.625    0.000   0.000
+ST      ge    66.000 127.625   68.000 123.861    0.000   0.000
+ST      ge    68.000 123.861   70.000 120.343    0.000   0.000
+ST      ge    70.000 120.343   74.000 113.925    0.000   0.000
+ST      ge    74.000 113.925   78.000 108.041    0.000   0.000
+ST      ge    78.000 108.041   82.000 102.693    0.000   0.000
+ST      ge    82.000 102.693   86.000  97.879    0.000   0.000
+ST      ge    86.000  97.879   90.000  93.600    0.000   0.000
+ST      ge    90.000  93.600   94.000  89.652    0.000   0.000
+ST      ge    94.000  89.652   98.000  85.976    0.000   0.000
+ST      ge    98.000  85.976  102.000  82.572    0.000   0.000
+ST      ge   102.000  82.572  106.000  79.441    0.000   0.000
+ST      ge   106.000  79.441  110.000  76.582    0.000   0.000
+ST      ge   110.000  76.582  116.000  72.670    0.000   0.000
+ST      ge   116.000  72.670  122.000  69.072    0.000   0.000
+ST      ge   122.000  69.072  128.000  65.790    0.000   0.000
+ST      ge   128.000  65.790  134.000  62.823    0.000   0.000
+ST      ge   134.000  62.823  140.000  60.171    0.000   0.000
+ST      ge   140.000  60.171  144.000  58.507    0.000   0.000
+ST      ge   144.000  58.507  148.000  56.922    0.000   0.000
+ST      ge   148.000  56.922  152.000  55.418    0.000   0.000
+ST      ge   152.000  55.418  156.000  53.994    0.000   0.000
+ST      ge   156.000  53.994  160.000  52.650    0.000   0.000
+LW  vplus15        2283.915039      13.800385       0.345312       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

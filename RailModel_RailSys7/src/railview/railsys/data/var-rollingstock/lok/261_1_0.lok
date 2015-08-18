@@ -1,0 +1,57 @@
+? Stromart: ohne Stromart
+? Rutkommentar: BR 1261 Voith Gravita 10BB, DH, SG
+? Eisenbahnunternehmen: DB
+? TriebfahrzeugBaureiheTyp: D
+? Triebfahrzeugart: Brennkraftlokomotiven
+? Achslast: 20 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 71 t in Bremsstellung druckluftbediente Güterzugbremse (bel. Gwg.)
+? Bremsgewicht: 85 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          100.000
+TraktionsTyp Diesel
+Loklaenge [m]         16.000
+Lokmasse [t]          80.000
+Reibmasse [t]         80.000
+Haftreibungswert       1.000
+Rholok (-)             7.000
+Rutkommentar        BR 1261 Voith Gravita 10BB, DH, SG
+ST      ge     0.000 202.000    4.000 185.880    0.000   0.000
+ST      ge     4.000 185.880    8.000 169.920    0.000   0.000
+ST      ge     8.000 169.920   12.000 154.120    0.000   0.000
+ST      ge    12.000 154.120   16.000 138.480    0.000   0.000
+ST      ge    16.000 138.480   20.000 123.000    0.000   0.000
+ST      ge    20.000 123.000   24.000 108.360    0.000   0.000
+ST      ge    24.000 108.360   28.000  95.640    0.000   0.000
+ST      ge    28.000  95.640   32.000  84.840    0.000   0.000
+ST      ge    32.000  84.840   36.000  75.960    0.000   0.000
+ST      ge    36.000  75.960   40.000  69.000    0.000   0.000
+ST      ge    40.000  69.000   43.000  64.360    0.000   0.000
+ST      ge    43.000  64.360   46.000  59.840    0.000   0.000
+ST      ge    46.000  59.840   49.000  55.440    0.000   0.000
+ST      ge    49.000  55.440   52.000  51.160    0.000   0.000
+ST      ge    52.000  51.160   55.000  47.000    0.000   0.000
+ST      ge    55.000  44.996   58.000  43.836    0.000   0.000
+ST      ge    58.000  43.836   61.000  42.556    0.000   0.000
+ST      ge    61.000  42.556   64.000  41.156    0.000   0.000
+ST      ge    64.000  41.156   67.000  39.636    0.000   0.000
+ST      ge    67.000  39.636   70.000  37.995    0.000   0.000
+ST      ge    70.000  38.000   76.000  35.560    0.000   0.000
+ST      ge    76.000  35.560   82.000  33.240    0.000   0.000
+ST      ge    82.000  33.240   88.000  31.040    0.000   0.000
+ST      ge    88.000  31.040   94.000  28.960    0.000   0.000
+ST      ge    94.000  28.960  100.000  27.000    0.000   0.000
+LW  vplus15        2817.431885       9.001656       0.300186       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

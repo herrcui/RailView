@@ -1,0 +1,46 @@
+? Stromart: ohne Stromart
+? Rutkommentar: Talent3, T311, 1100kW, 160km/h
+? Eisenbahnunternehmen: DB
+? TriebfahrzeugBaureiheTyp: D
+? Triebfahrzeugart: Brennkrafttriebwagen(ohne Schienenomnibusse)(VT)
+? Achslast: 0 t
+? Ausrüstung mit automatischer Kupplung: ja
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: ja
+? Druckertüchtigt: nein
+? Neigungstechnik: aktive Neigetechnik
+? Bremsgewicht: 0 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          160.000
+TraktionsTyp Diesel
+Loklaenge [m]         52.000
+Lokmasse [t]         101.000
+Reibmasse [t]        101.000
+Haftreibungswert       1.000
+Rholok (-)            10.000
+Rutkommentar        Talent3, T311, 1100kW, 160km/h
+ST      ge     0.000  97.168   16.000  79.342    0.000   0.000
+ST      ge    16.000  79.342   32.000  64.011    0.000   0.000
+ST      ge    32.000  64.011   48.000  51.176    0.000   0.000
+ST      ge    48.000  51.176   64.000  40.835    0.000   0.000
+ST      ge    64.000  40.835   80.000  32.990    0.000   0.000
+ST      ge    80.000  32.993   87.600  30.834    0.000   0.000
+ST      ge    87.600  30.834   95.200  28.675    0.000   0.000
+ST      ge    95.200  28.675  102.800  26.516    0.000   0.000
+ST      ge   102.800  26.516  110.400  24.356    0.000   0.000
+ST      ge   110.400  24.356  118.000  22.197    0.000   0.000
+ST      ge   118.000  22.195  126.400  21.515    0.000   0.000
+ST      ge   126.400  21.515  134.800  20.836    0.000   0.000
+ST      ge   134.800  20.836  143.200  20.156    0.000   0.000
+ST      ge   143.200  20.156  151.600  19.476    0.000   0.000
+ST      ge   151.600  19.476  160.000  18.796    0.000   0.000
+LW  vplus15        1575.387939      10.304424       0.240345       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

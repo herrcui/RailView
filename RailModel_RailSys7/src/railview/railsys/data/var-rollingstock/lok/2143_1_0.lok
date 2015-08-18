@@ -1,0 +1,52 @@
+? Stromart: ohne Stromart
+? Rutkommentar: ÖBB 2143 (VBG-Lok), DH, Pm=1115kW
+? Eisenbahnunternehmen: ÖBB
+? TriebfahrzeugBaureiheTyp: S
+? Triebfahrzeugart: Brennkraftlokomotiven
+? Achslast: 17.2 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 53 t in Bremsstellung druckluftbediente Güterzugbremse (bel. Gwg.)
+? Bremsgewicht: 67 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          110.000
+TraktionsTyp Diesel
+Loklaenge [m]         16.000
+Lokmasse [t]          67.000
+Reibmasse [t]         67.000
+Haftreibungswert       1.000
+Rholok (-)             5.990
+Rutkommentar        ÖBB 2143 (VBG-Lok), DH, Pm=1115kW
+ST      ge     0.000 164.000    2.400 164.000    0.000   0.000
+ST      ge     2.400 164.000    4.800 164.000    0.000   0.000
+ST      ge     4.800 164.000    7.200 164.000    0.000   0.000
+ST      ge     7.200 164.000    9.600 164.000    0.000   0.000
+ST      ge     9.600 164.000   12.000 164.000    0.000   0.000
+ST      ge    12.000 164.001   15.600 149.441    0.000   0.000
+ST      ge    15.600 149.441   19.200 135.361    0.000   0.000
+ST      ge    19.200 135.361   22.800 121.761    0.000   0.000
+ST      ge    22.800 121.761   26.400 108.641    0.000   0.000
+ST      ge    26.400 108.641   30.000  96.002    0.000   0.000
+ST      ge    30.000  96.002   37.800  80.459    0.000   0.000
+ST      ge    37.800  80.459   45.600  66.839    0.000   0.000
+ST      ge    45.600  66.839   53.400  55.139    0.000   0.000
+ST      ge    53.400  55.139   61.200  45.361    0.000   0.000
+ST      ge    61.200  45.361   69.000  37.504    0.000   0.000
+ST      ge    69.000  42.501   77.200  38.402    0.000   0.000
+ST      ge    77.200  38.402   85.400  34.802    0.000   0.000
+ST      ge    85.400  34.802   93.600  31.702    0.000   0.000
+ST      ge    93.600  31.702  101.800  29.102    0.000   0.000
+ST      ge   101.800  29.102  110.000  27.002    0.000   0.000
+LW  vplus15        1597.166138      19.810118       0.257022       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

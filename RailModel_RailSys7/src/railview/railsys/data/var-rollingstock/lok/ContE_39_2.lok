@@ -1,0 +1,71 @@
+? Stromart: Wechselstrom 16,7 Hz,15kV, 600A
+? Rutkommentar: BR 4610 registriert in S: ET  VGT X61/X62 2,9MW 214Sitzpl
+? Eisenbahnunternehmen: EVU
+? TriebfahrzeugBaureiheTyp: N
+? Triebfahrzeugart: Elektrische Triebwagen mit  Fremdstromzuführung(ET)
+? Achslast: 20 t
+? Ausrüstung mit automatischer Kupplung: ja
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: ja
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 374 t in Bremsstellung druckluftbediente Hochleistungsbremse mit zusätzlicher Magnetschienenbremse
+Vmax [km/h]          160.000
+TraktionsTyp elektrisch
+Loklaenge [m]         75.000
+Lokmasse [t]         194.600
+Reibmasse [t]        194.600
+Haftreibungswert       1.000
+Rholok (-)             1.390
+Rutkommentar        BR 4610 registriert in S: ET  VGT X61/X62 2,9MW 214Sitzpl
+ST      ge     0.000 203.000    9.260 203.000    0.000   0.000
+ST      ge     9.260 203.000   18.520 203.000    0.000   0.000
+ST      ge    18.520 203.000   27.780 203.000    0.000   0.000
+ST      ge    27.780 203.000   37.040 203.000    0.000   0.000
+ST      ge    37.040 203.000   46.300 203.000    0.000   0.000
+ST      ge    46.300 202.939   48.480 193.901    0.000   0.000
+ST      ge    48.480 193.901   50.660 185.514    0.000   0.000
+ST      ge    50.660 185.514   52.840 177.779    0.000   0.000
+ST      ge    52.840 177.779   55.020 170.696    0.000   0.000
+ST      ge    55.020 170.696   57.200 164.264    0.000   0.000
+ST      ge    57.200 164.264   60.200 156.174    0.000   0.000
+ST      ge    60.200 156.174   63.200 148.717    0.000   0.000
+ST      ge    63.200 148.717   66.200 141.891    0.000   0.000
+ST      ge    66.200 141.891   69.200 135.698    0.000   0.000
+ST      ge    69.200 135.698   72.200 130.137    0.000   0.000
+ST      ge    72.200 130.137   76.200 123.393    0.000   0.000
+ST      ge    76.200 123.393   80.200 117.199    0.000   0.000
+ST      ge    80.200 117.199   84.200 111.553    0.000   0.000
+ST      ge    84.200 111.553   88.200 106.456    0.000   0.000
+ST      ge    88.200 106.456   92.200 101.908    0.000   0.000
+ST      ge    92.200 101.908   96.200  97.707    0.000   0.000
+ST      ge    96.200  97.707  100.200  93.790    0.000   0.000
+ST      ge   100.200  93.790  104.200  90.157    0.000   0.000
+ST      ge   104.200  90.157  108.200  86.808    0.000   0.000
+ST      ge   108.200  86.808  112.200  83.743    0.000   0.000
+ST      ge   112.200  83.743  114.200  82.279    0.000   0.000
+ST      ge   114.200  82.279  116.200  80.862    0.000   0.000
+ST      ge   116.200  80.862  118.200  79.491    0.000   0.000
+ST      ge   118.200  79.491  120.200  78.167    0.000   0.000
+ST      ge   120.200  78.167  122.200  76.890    0.000   0.000
+ST      ge   122.200  76.904  125.760  72.646    0.000   0.000
+ST      ge   125.760  72.646  129.320  68.686    0.000   0.000
+ST      ge   129.320  68.686  132.880  65.023    0.000   0.000
+ST      ge   132.880  65.023  136.440  61.659    0.000   0.000
+ST      ge   136.440  61.659  140.000  58.592    0.000   0.000
+ST      ge   140.000  58.592  144.000  55.407    0.000   0.000
+ST      ge   144.000  55.407  148.000  52.441    0.000   0.000
+ST      ge   148.000  52.441  152.000  49.694    0.000   0.000
+ST      ge   152.000  49.694  156.000  47.167    0.000   0.000
+ST      ge   156.000  47.167  160.000  44.859    0.000   0.000
+LW  vplus15        2004.477295      17.906664       0.440469       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

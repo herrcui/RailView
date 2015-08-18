@@ -1,0 +1,66 @@
+? Stromart: ohne Stromart
+? Rutkommentar: NE Regio Tram Citadis 500, 2x348kW, DH; entspricht BR 689
+? Eisenbahnunternehmen: EVU
+? TriebfahrzeugBaureiheTyp: N
+? Triebfahrzeugart: Brennkrafttriebwagen(ohne Schienenomnibusse)(VT)
+? Achslast: 11 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: ja
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 95 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          100.000
+TraktionsTyp Diesel
+Loklaenge [m]         36.500
+Lokmasse [t]          68.400
+Reibmasse [t]         68.400
+Haftreibungswert       1.000
+Rholok (-)            10.000
+Rutkommentar        NE Regio Tram Citadis 500, 2x348kW, DH; entspricht BR 689
+ST      ge     0.000  86.470    4.440  86.470    0.000   0.000
+ST      ge     4.440  86.470    8.880  86.470    0.000   0.000
+ST      ge     8.880  86.470   13.320  86.470    0.000   0.000
+ST      ge    13.320  86.470   17.760  86.470    0.000   0.000
+ST      ge    17.760  86.470   22.200  86.470    0.000   0.000
+ST      ge    22.200  86.434   23.560  81.518    0.000   0.000
+ST      ge    23.560  81.518   24.920  77.034    0.000   0.000
+ST      ge    24.920  77.034   26.280  72.980    0.000   0.000
+ST      ge    26.280  72.980   27.640  69.357    0.000   0.000
+ST      ge    27.640  69.357   29.000  66.166    0.000   0.000
+ST      ge    29.000  66.166   31.200  61.598    0.000   0.000
+ST      ge    31.200  61.598   33.400  57.495    0.000   0.000
+ST      ge    33.400  57.495   35.600  53.856    0.000   0.000
+ST      ge    35.600  53.856   37.800  50.681    0.000   0.000
+ST      ge    37.800  50.681   40.000  47.970    0.000   0.000
+ST      ge    40.000  47.970   42.000  45.710    0.000   0.000
+ST      ge    42.000  45.710   44.000  43.621    0.000   0.000
+ST      ge    44.000  43.621   46.000  41.702    0.000   0.000
+ST      ge    46.000  41.702   48.000  39.954    0.000   0.000
+ST      ge    48.000  39.954   50.000  38.376    0.000   0.000
+ST      ge    50.000  38.376   54.000  35.598    0.000   0.000
+ST      ge    54.000  35.598   58.000  33.113    0.000   0.000
+ST      ge    58.000  33.113   62.000  30.920    0.000   0.000
+ST      ge    62.000  30.920   66.000  29.020    0.000   0.000
+ST      ge    66.000  29.020   70.000  27.411    0.000   0.000
+ST      ge    70.000  27.411   74.000  24.599    0.000   0.000
+ST      ge    74.000  24.599   78.000  22.110    0.000   0.000
+ST      ge    78.000  22.110   82.000  19.944    0.000   0.000
+ST      ge    82.000  19.944   86.000  18.102    0.000   0.000
+ST      ge    86.000  18.102   90.000  16.582    0.000   0.000
+ST      ge    90.000  16.582   92.000  15.873    0.000   0.000
+ST      ge    92.000  15.873   94.000  15.203    0.000   0.000
+ST      ge    94.000  15.203   96.000  14.573    0.000   0.000
+ST      ge    96.000  14.573   98.000  13.982    0.000   0.000
+ST      ge    98.000  13.982  100.000  13.432    0.000   0.000
+LW  vplus15        2603.495605      14.003854       0.300186       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

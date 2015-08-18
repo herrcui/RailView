@@ -1,0 +1,51 @@
+? Stromart: Wechselstrom 16,7 Hz,15kV, 600A
+? Rutkommentar: BLS RABe 525 NINA (1000kW)
+? Eisenbahnunternehmen: SBB
+? TriebfahrzeugBaureiheTyp: S
+? Triebfahrzeugart: Elektrische Triebwagen mit  Fremdstromzuführung(ET)
+? Achslast: 15 t
+? Ausrüstung mit automatischer Kupplung: ja
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: nein
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: ja
+? Wendezugfähigkeit: ja
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 0 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          140.000
+TraktionsTyp elektrisch
+Loklaenge [m]         48.000
+Lokmasse [t]          89.200
+Reibmasse [t]         89.200
+Haftreibungswert       1.000
+Rholok (-)             6.910
+Rutkommentar        BLS RABe 525 NINA (1000kW)
+ST      ge     0.000 105.000   13.720 105.000    0.000   0.000
+ST      ge    13.720 105.000   27.440 105.000    0.000   0.000
+ST      ge    27.440 105.000   41.160 105.000    0.000   0.000
+ST      ge    41.160 105.000   54.880 105.000    0.000   0.000
+ST      ge    54.880 105.000   68.600 105.000    0.000   0.000
+ST      ge    68.600 104.958   72.880  98.888    0.000   0.000
+ST      ge    72.880  98.888   77.160  93.357    0.000   0.000
+ST      ge    77.160  93.357   81.440  88.366    0.000   0.000
+ST      ge    81.440  88.366   85.720  83.913    0.000   0.000
+ST      ge    85.720  83.913   90.000  80.000    0.000   0.000
+ST      ge    90.000  80.000   96.000  75.086    0.000   0.000
+ST      ge    96.000  75.086  102.000  70.629    0.000   0.000
+ST      ge   102.000  70.629  108.000  66.629    0.000   0.000
+ST      ge   108.000  66.629  114.000  63.086    0.000   0.000
+ST      ge   114.000  63.086  120.000  60.000    0.000   0.000
+ST      ge   120.000  60.000  124.000  58.075    0.000   0.000
+ST      ge   124.000  58.075  128.000  56.255    0.000   0.000
+ST      ge   128.000  56.255  132.000  54.541    0.000   0.000
+ST      ge   132.000  54.541  136.000  52.932    0.000   0.000
+ST      ge   136.000  52.932  140.000  51.429    0.000   0.000
+LW  vplus15        1408.833740      12.338233       0.411039       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

@@ -1,0 +1,61 @@
+? Stromart: ohne Stromart
+? Rutkommentar: NE Class 66,  Vmax=120km/h,DE
+? Eisenbahnunternehmen: EVU
+? TriebfahrzeugBaureiheTyp: N
+? Triebfahrzeugart: Brennkraftlokomotiven
+? Achslast: 0 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 0 t in Bremsstellung druckluftbediente Güterzugbremse (bel. Gwg.)
+Vmax [km/h]          120.000
+TraktionsTyp Diesel
+Loklaenge [m]         21.000
+Lokmasse [t]         126.000
+Reibmasse [t]        126.000
+Haftreibungswert       1.000
+Rholok (-)            17.000
+Rutkommentar        NE Class 66,  Vmax=120km/h,DE
+ST      ge     0.000 413.251    2.800 412.514    0.000   0.000
+ST      ge     2.800 412.514    5.600 411.870    0.000   0.000
+ST      ge     5.600 411.870    8.400 411.319    0.000   0.000
+ST      ge     8.400 411.319   11.200 410.861    0.000   0.000
+ST      ge    11.200 410.861   14.000 410.497    0.000   0.000
+ST      ge    14.000 410.497   17.200 359.253    0.000   0.000
+ST      ge    17.200 359.253   20.400 315.629    0.000   0.000
+ST      ge    20.400 315.629   23.600 279.625    0.000   0.000
+ST      ge    23.600 279.625   26.800 251.240    0.000   0.000
+ST      ge    26.800 251.240   30.000 230.475    0.000   0.000
+ST      ge    30.000 230.475   34.000 207.582    0.000   0.000
+ST      ge    34.000 207.582   38.000 187.639    0.000   0.000
+ST      ge    38.000 187.639   42.000 170.648    0.000   0.000
+ST      ge    42.000 170.648   46.000 156.609    0.000   0.000
+ST      ge    46.000 156.609   50.000 145.520    0.000   0.000
+ST      ge    50.000 145.520   54.000 135.294    0.000   0.000
+ST      ge    54.000 135.294   58.000 126.226    0.000   0.000
+ST      ge    58.000 126.226   62.000 118.315    0.000   0.000
+ST      ge    62.000 118.315   66.000 111.560    0.000   0.000
+ST      ge    66.000 111.560   70.000 105.962    0.000   0.000
+ST      ge    70.000 105.962   74.000 101.002    0.000   0.000
+ST      ge    74.000 101.002   78.000  96.450    0.000   0.000
+ST      ge    78.000  96.450   82.000  92.309    0.000   0.000
+ST      ge    82.000  92.309   86.000  88.576    0.000   0.000
+ST      ge    86.000  88.576   90.000  85.253    0.000   0.000
+ST      ge    90.000  85.253   96.000  80.766    0.000   0.000
+ST      ge    96.000  80.766  102.000  76.737    0.000   0.000
+ST      ge   102.000  76.737  108.000  73.166    0.000   0.000
+ST      ge   108.000  73.166  114.000  70.054    0.000   0.000
+ST      ge   114.000  70.054  120.000  67.399    0.000   0.000
+LW  vplus15        3189.034912      10.197495       0.340407       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end
