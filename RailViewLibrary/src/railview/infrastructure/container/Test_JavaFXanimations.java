@@ -16,11 +16,11 @@ import javafx.scene.shape.Shape;
 import javafx.scene.shape.VLineTo;
 import javafx.util.Duration;
 
-public class JavaFXanimations extends PannablePane {
+public class Test_JavaFXanimations extends PannablePane {
 
 	private CoordinateMapper mapper;
 	
-	public JavaFXanimations() {
+	public Test_JavaFXanimations() {
 		applyAnimation();
 	}
 	

@@ -53,6 +53,7 @@ public class DoSim extends Application {
 			primaryStage.setScene(scene);
 
 			controller.setInfrastructureServiceUtility(infraServiceUtility);
+			controller.setSimulationManager(simulator);
 			primaryStage.show();
 			
 		    final double initWidth  = scene.getWidth();

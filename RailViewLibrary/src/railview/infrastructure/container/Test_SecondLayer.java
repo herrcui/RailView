@@ -11,11 +11,11 @@ import javafx.util.Duration;
 import railapp.infrastructure.element.dto.InfrastructureElement;
 import railapp.infrastructure.element.dto.Track;
 
-public class SecondLayer extends PannablePane {
+public class Test_SecondLayer extends PannablePane {
 	
 	private CoordinateMapper mapper;
 	
-	public SecondLayer() {
+	public Test_SecondLayer() {
 
 		this.widthProperty().addListener(observable -> draw());
 		this.heightProperty().addListener(observable -> draw());

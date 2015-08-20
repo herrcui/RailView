@@ -1,6 +1,8 @@
 package railview.infrastructure.container;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -19,6 +21,8 @@ import javafx.scene.layout.StackPane;
 import railapp.infrastructure.element.dto.InfrastructureElement;
 import railapp.infrastructure.element.dto.Port;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
+import railapp.simulation.train.AbstractTrainSimulator;
+import railapp.units.Coordinate;
 
 public class NetworkPaneController {
 	private static final double MAX_SCALE = 10.0d;
@@ -30,18 +34,21 @@ public class NetworkPaneController {
 
 	final double SCALE_DELTA = 1.1;
 	private InfrastructureElementsPane elementPane;
-	private SecondLayer secondLayer;
-	private JavaFXanimations animation;
+	private TrainPane trainPane;
+	private Test_SecondLayer secondLayer;
+	private Test_JavaFXanimations animation;
 	private double pressedX, pressedY;
 
 	@FXML
 	public void initialize() {
 		this.elementPane = new InfrastructureElementsPane();
-		this.secondLayer = new SecondLayer();
-		this.animation = new JavaFXanimations();
+		this.trainPane = new TrainPane();
+		this.secondLayer = new Test_SecondLayer();
+		this.animation = new Test_JavaFXanimations();
 		this.anchorPane.getChildren().add(this.secondLayer);
 		this.anchorPane.getChildren().add(this.animation);
 		this.anchorPane.getChildren().add(this.elementPane);
+		this.anchorPane.getChildren().add(this.trainPane);
 		// this.stackPane.getChildren().add(this.elementGroup);
 	}
 
@@ -134,7 +141,11 @@ public class NetworkPaneController {
 	 
 	           } }); }
 **/	
+	}
 
-
-	}}
+	public void updateTrainCoordinates(Map<AbstractTrainSimulator, List<Coordinate>> map) {
+		this.trainPane.setCoordinateMap(map);
+	}
+}
+	
 

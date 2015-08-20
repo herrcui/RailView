@@ -8,14 +8,13 @@
 	<classpathentry kind="lib" path="/Library/RailModel/InfrastructureDefinition.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/InfrastructureEditor"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/RailViewLibrary"/>
-	<classpathentry kind="lib" path="/Library/RailModel/RailSimulator.jar"/>
 	<classpathentry kind="lib" path="/Library/RailModel/TimetableDefinition.jar"/>
-	<classpathentry kind="lib" path="/Library/RailModel/BasicDefinition.jar"/>
 	<classpathentry kind="lib" path="/Library/RailModel/InfrastructureRepository.jar"/>
 	<classpathentry kind="lib" path="/Library/RailModel/RailSys7Parser.jar"/>
 	<classpathentry kind="lib" path="/Library/RailModel/RollingstockDefinition.jar"/>
 	<classpathentry kind="lib" path="/Library/RailModel/RollingstockRepository.jar"/>
 	<classpathentry kind="lib" path="/Library/RailModel/TimetableRepository.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/SimulationView"/>
+	<classpathentry kind="lib" path="/Library/RailModel/RailSimulator.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

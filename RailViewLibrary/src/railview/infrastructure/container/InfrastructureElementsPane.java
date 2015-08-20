@@ -95,7 +95,6 @@ public class InfrastructureElementsPane extends PannablePane {
 			line.setStrokeWidth(0.2);
 			
 			
-			
 			this.getChildren().add(line);
 		}
 	}
