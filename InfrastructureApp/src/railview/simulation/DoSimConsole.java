@@ -1,4 +1,4 @@
-package railview.infrastructure;
+package railview.simulation;
 
 import railapp.infrastructure.dto.Network;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;

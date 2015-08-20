@@ -16,5 +16,6 @@
 	<classpathentry kind="lib" path="/Library/RailModel/RollingstockDefinition.jar"/>
 	<classpathentry kind="lib" path="/Library/RailModel/RollingstockRepository.jar"/>
 	<classpathentry kind="lib" path="/Library/RailModel/TimetableRepository.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/SimulationView"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
