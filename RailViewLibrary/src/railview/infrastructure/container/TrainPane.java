@@ -26,8 +26,8 @@ public class TrainPane extends PannablePane {
 				List<Coordinate> coordinateList = entry.getValue();
 				if (coordinateList != null) {
 					System.out.println(entry.getKey().getTrain().getNumber() + 
-							": X: " + coordinateList.get(0).getX() +
-							": Y: " + coordinateList.get(0).getY());
+							": X: " + coordinateList.get(1).getX() +
+							": Y: " + coordinateList.get(1).getY());
 				}
 			}
 		}
