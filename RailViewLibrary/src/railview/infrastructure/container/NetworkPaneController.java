@@ -47,9 +47,9 @@ public class NetworkPaneController {
 		this.animation = new Test_JavaFXanimations();
 		this.anchorPane.getChildren().add(this.secondLayer);
 		this.anchorPane.getChildren().add(this.animation);
-		this.anchorPane.getChildren().add(this.elementPane);
+	//	this.anchorPane.getChildren().add(this.elementPane);
 		this.anchorPane.getChildren().add(this.trainPane);
-		// this.stackPane.getChildren().add(this.elementGroup);
+
 	}
 
 	public void setInfrastructureServiceUtility(
@@ -81,7 +81,7 @@ public class NetworkPaneController {
 		this.elementPane.setCoordinateMapper(mapper);
 		this.elementPane.setElements(elements);
 		this.secondLayer.setCoordinateMapper(mapper);
-		this.animation.setCoordinateMapper(mapper);
+		this.trainPane.setCoordinateMapper(mapper);
 	}
 /**
 	@FXML
