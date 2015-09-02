@@ -3,6 +3,7 @@ package railview.simulation;
 import java.io.IOException;
 import java.net.URL;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
@@ -36,8 +37,24 @@ public class SimulationController {
 	@FXML
 	public void startSimulation() {
 		if (this.simulator != null) {
-			(new Thread(this.simulator)).start();
-			(new Thread(new SimulationUpdater())).start();
+			new Thread(this.simulator).start();
+			
+			Thread t = new Thread(() -> {
+				(new SimulationUpdater()).periodicalUpdate(); 
+			});			
+			t.setDaemon(true);
+			t.start();
+		}
+	}
+	
+	@FXML
+	public void replaySimulation() {
+		if (this.simulator != null) {
+			Thread t = new Thread(() -> {
+				(new SimulationUpdater()).periodicalUpdate(); 
+			});			
+			t.setDaemon(true);
+			t.start();
 		}
 	}
 	
@@ -57,22 +74,23 @@ public class SimulationController {
 	
 	private NetworkPaneController networkPaneController;
 	private SimulationManager simulator;
-	private Duration interval = Duration.fromSecond(300);
+	private Duration simulationInterval = Duration.fromSecond(300);
+	private int UIPause = 1000;
 	
-	class SimulationUpdater implements Runnable {
+	class SimulationUpdater {
 		private Time time = Time.getInstance(0, 0, 0);
-		
-		@Override
-		public void run() {
+
+		void periodicalUpdate() {
 			while (time.compareTo(Time.getInstance(1, 23, 59, 59, 0)) < 0) {
+				Platform.runLater( () -> 
 				networkPaneController.updateTrainCoordinates(
-					simulator.getTrainCoordinateMap(time));
+					simulator.getTrainCoordinates(time)));
 				try {
-					Thread.sleep(1000);
+					Thread.sleep(UIPause);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				time = time.add(interval);
+				time = time.add(simulationInterval);
 				System.out.println(time.toString());
 			}
 		}

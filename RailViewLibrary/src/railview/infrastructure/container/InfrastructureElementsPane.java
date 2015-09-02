@@ -4,26 +4,14 @@ import java.util.Collection;
 
 import railapp.infrastructure.element.dto.InfrastructureElement;
 import railapp.infrastructure.element.dto.Track;
-import javafx.animation.TranslateTransition;
-import javafx.animation.TranslateTransitionBuilder;
-import javafx.event.EventHandler;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.input.ScrollEvent;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
-import javafx.scene.shape.Rectangle;
-import javafx.util.Duration;
 
 public class InfrastructureElementsPane extends PannablePane {
 	private Collection<InfrastructureElement> elements;
 	private CoordinateMapper mapper;
 	final double SCALE_DELTA = 1.1;
-	private double pressedX, pressedY;
 	
 	public InfrastructureElementsPane() {
-
-		NodeGestures nodeGestures = new NodeGestures(this);
-
 	//	this.addEventFilter(MouseEvent.MOUSE_PRESSED,
 	//			nodeGestures.getOnMousePressedEventHandler());
 	//	this.addEventFilter(MouseEvent.MOUSE_DRAGGED,
@@ -55,6 +43,7 @@ public class InfrastructureElementsPane extends PannablePane {
 		}
 	}
 	
+	/*
 	private void ScrollEvent() {
 		this.setOnScroll(new EventHandler<ScrollEvent>() {
 			@Override
@@ -76,7 +65,7 @@ public class InfrastructureElementsPane extends PannablePane {
 		});
 
 	}
-
+	*/
 
 	private void drawInfrastructureElement(InfrastructureElement element) {
 		
@@ -92,8 +81,7 @@ public class InfrastructureElementsPane extends PannablePane {
 			line.setEndY(mapper.mapToPaneY(element.findPort(2).getCoordinate()
 							.getY(), this));
 			
-			line.setStrokeWidth(0.2);
-			
+			line.setStrokeWidth(0.2);			
 			
 			this.getChildren().add(line);
 		}

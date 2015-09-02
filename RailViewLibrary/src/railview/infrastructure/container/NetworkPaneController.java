@@ -4,19 +4,10 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.Group;
-import javafx.scene.Node;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import railapp.infrastructure.element.dto.InfrastructureElement;
 import railapp.infrastructure.element.dto.Port;
@@ -25,29 +16,19 @@ import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.units.Coordinate;
 
 public class NetworkPaneController {
-	private static final double MAX_SCALE = 10.0d;
-	private static final double MIN_SCALE = .1d;
 	@FXML
 	private StackPane anchorPane;
-	@FXML
-	private Label infraLabel;
 
 	final double SCALE_DELTA = 1.1;
 	private InfrastructureElementsPane elementPane;
 	private TrainPane trainPane;
-	private Test_SecondLayer secondLayer;
-	private Test_JavaFXanimations animation;
 	private double pressedX, pressedY;
 
 	@FXML
 	public void initialize() {
 		this.elementPane = new InfrastructureElementsPane();
 		this.trainPane = new TrainPane();
-		this.secondLayer = new Test_SecondLayer();
-		this.animation = new Test_JavaFXanimations();
-		this.anchorPane.getChildren().add(this.secondLayer);
-		this.anchorPane.getChildren().add(this.animation);
-	//	this.anchorPane.getChildren().add(this.elementPane);
+		this.anchorPane.getChildren().add(this.elementPane);
 		this.anchorPane.getChildren().add(this.trainPane);
 
 	}
@@ -80,7 +61,6 @@ public class NetworkPaneController {
 
 		this.elementPane.setCoordinateMapper(mapper);
 		this.elementPane.setElements(elements);
-		this.secondLayer.setCoordinateMapper(mapper);
 		this.trainPane.setCoordinateMapper(mapper);
 	}
 /**
@@ -119,12 +99,11 @@ public class NetworkPaneController {
 	
 	@FXML
 	private void ScrollWheel(){
-		NodeGestures nodeGestures = new NodeGestures(elementPane);
-		NodeGestures nodeGestures2 = new NodeGestures(secondLayer);
-		NodeGestures nodeGestures3 = new NodeGestures(animation);
-		anchorPane.addEventFilter( ScrollEvent.ANY, nodeGestures.getOnScrollEventHandler());
-		anchorPane.addEventFilter( ScrollEvent.ANY, nodeGestures2.getOnScrollEventHandler());
-		anchorPane.addEventFilter( ScrollEvent.ANY, nodeGestures3.getOnScrollEventHandler());
+		NodeGestures elemNodeGestures = new NodeGestures(elementPane);
+		NodeGestures trainNodeGestures = new NodeGestures(trainPane);
+		
+		anchorPane.addEventFilter( ScrollEvent.ANY, elemNodeGestures.getOnScrollEventHandler());
+		anchorPane.addEventFilter( ScrollEvent.ANY, trainNodeGestures.getOnScrollEventHandler());
 
 	
 /**	  @FXML private void ScrollEvent(){ anchorPane.setOnScroll(new
@@ -144,7 +123,7 @@ public class NetworkPaneController {
 	}
 
 	public void updateTrainCoordinates(Map<AbstractTrainSimulator, List<Coordinate>> map) {
-		this.trainPane.setCoordinateMap(map);
+		this.trainPane.updateTrainLocations(map);
 	}
 }
 	

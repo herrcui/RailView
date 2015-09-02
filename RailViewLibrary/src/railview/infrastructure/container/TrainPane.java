@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.units.Coordinate;
@@ -20,54 +21,49 @@ public class TrainPane extends PannablePane {
 	void setCoordinateMapper(CoordinateMapper mapper) {
 		this.mapper = mapper;
 	}
+	
+	void updateTrainLocations(final Map<AbstractTrainSimulator, List<Coordinate>> map) {
+		this.trainCoordinates = map;
+		
+		this.draw();
+	}
 
 	private void draw() {
 		this.getChildren().clear();
-
-		this.drawLines(coordinateMap);
+		this.drawLines(trainCoordinates);
 	}
 
 	private void drawLines(Map<AbstractTrainSimulator, List<Coordinate>> map) {
-		this.coordinateMap = map;
-		if (this.coordinateMap != null) {
-			for (Entry<AbstractTrainSimulator, List<Coordinate>> entry : this.coordinateMap
+		this.trainCoordinates = map;
+		if (this.trainCoordinates != null) {
+			for (Entry<AbstractTrainSimulator, List<Coordinate>> entry : this.trainCoordinates
 					.entrySet()) {
 				List<Coordinate> coordinateList = entry.getValue();
-				if (coordinateList != null) {
-
-					for (int i = 0; i < coordinateMap.size(); i++) {
+				System.out.println("Train Number: " + entry.getKey().getTrain().getNumber());
+				if (coordinateList != null && coordinateList.size() > 0) {
+					for (int i = 0; i < coordinateList.size() - 1; i++) {
 						Line line = new Line();
+						line.setFill(Color.RED);
 						line.setStartX(mapper.mapToPaneX(coordinateList.get(i)
 								.getX(), this));
-						line.setStartY(mapper.mapToPaneX(coordinateList.get(i)
+						line.setStartY(mapper.mapToPaneY(coordinateList.get(i)
 								.getY(), this));
 						line.setEndX(mapper.mapToPaneX(coordinateList
 								.get(i+1).getX(), this));
-						line.setEndY(mapper.mapToPaneX(coordinateList
+						line.setEndY(mapper.mapToPaneY(coordinateList
 								.get(i+1).getY(), this));
 
+						line.setStrokeWidth(0.4);			
+						line.setStroke(Color.RED);
+						
 						this.getChildren().add(line);
+						System.out.println(line.getStartX() + ", " + line.getStartY() + "->" + 
+								line.getEndX() + ", " + line.getEndY());
 					}
 				}
 			}
 		}
 	}
 
-	void setCoordinateMap(Map<AbstractTrainSimulator, List<Coordinate>> map) {
-		this.coordinateMap = map;
-
-		if (this.coordinateMap != null) {
-			for (Entry<AbstractTrainSimulator, List<Coordinate>> entry : this.coordinateMap
-					.entrySet()) {
-				List<Coordinate> coordinateList = entry.getValue();
-				if (coordinateList != null) {
-					System.out.println(entry.getKey().getTrain().getNumber()
-							+ ": X: " + coordinateList.get(1).getX() + ": Y: "
-							+ coordinateList.get(1).getY());
-				}
-			}
-		}
-	}
-
-	private Map<AbstractTrainSimulator, List<Coordinate>> coordinateMap;
+	private Map<AbstractTrainSimulator, List<Coordinate>> trainCoordinates;
 }
