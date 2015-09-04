@@ -53,7 +53,7 @@ public class TrainPane extends PannablePane {
 						line.setEndY(mapper.mapToPaneY(coordinateList
 								.get(i+1).getY(), this));
 
-						line.setStrokeWidth(0.4);			
+						line.setStrokeWidth(0.2);			
 						line.setStroke(Color.RED);
 						
 						this.getChildren().add(line);

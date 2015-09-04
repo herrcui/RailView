@@ -74,8 +74,8 @@ public class SimulationController {
 	
 	private NetworkPaneController networkPaneController;
 	private SimulationManager simulator;
-	private Duration simulationInterval = Duration.fromSecond(300);
-	private int UIPause = 1000;
+	private Duration simulationInterval = Duration.fromSecond(120);
+	private int UIPause = 100;
 	
 	class SimulationUpdater {
 		private Time time = Time.getInstance(0, 0, 0);
