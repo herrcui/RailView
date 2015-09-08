@@ -6,6 +6,7 @@ import java.net.URL;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
@@ -17,6 +18,9 @@ import railview.infrastructure.container.NetworkPaneController;
 public class SimulationController {
 	@FXML
 	private AnchorPane networkPaneRoot;
+	
+	@FXML
+	private Label timeLabel;
 	
 	@FXML
 	public void initialize() {
@@ -74,7 +78,7 @@ public class SimulationController {
 	
 	private NetworkPaneController networkPaneController;
 	private SimulationManager simulator;
-	private Duration simulationInterval = Duration.fromSecond(120);
+	private Duration updateInterval = Duration.fromSecond(60);
 	private int UIPause = 100;
 	
 	class SimulationUpdater {
@@ -82,16 +86,25 @@ public class SimulationController {
 
 		void periodicalUpdate() {
 			while (time.compareTo(Time.getInstance(1, 23, 59, 59, 0)) < 0) {
-				Platform.runLater( () -> 
-				networkPaneController.updateTrainCoordinates(
-					simulator.getTrainCoordinates(time)));
+
+				Platform.runLater(new Runnable() {
+					@Override public void run() {
+						timeLabel.setText("Simulation Time: " + time.toString());
+						networkPaneController.updateTrainCoordinates(
+								simulator.getTrainCoordinates(time), time);
+					}
+				});
+				
 				try {
 					Thread.sleep(UIPause);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				time = time.add(simulationInterval);
-				System.out.println(time.toString());
+				
+				time = time.add(updateInterval);
+				if (time.compareTo(simulator.getTime()) > 0) {
+					time = simulator.getTime();
+				}
 			}
 		}
 	}

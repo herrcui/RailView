@@ -14,6 +14,7 @@ import railapp.infrastructure.element.dto.Port;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.units.Coordinate;
+import railapp.units.Time;
 
 public class NetworkPaneController {
 	@FXML
@@ -122,8 +123,9 @@ public class NetworkPaneController {
 **/	
 	}
 
-	public void updateTrainCoordinates(Map<AbstractTrainSimulator, List<Coordinate>> map) {
-		this.trainPane.updateTrainLocations(map);
+	public void updateTrainCoordinates(Map<AbstractTrainSimulator, List<Coordinate>> map,
+			Time time) {
+		this.trainPane.updateTrainLocations(map, time);
 	}
 }
 	

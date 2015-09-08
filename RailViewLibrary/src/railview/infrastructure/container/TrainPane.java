@@ -8,6 +8,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.units.Coordinate;
+import railapp.units.Time;
 
 public class TrainPane extends PannablePane {
 
@@ -22,7 +23,8 @@ public class TrainPane extends PannablePane {
 		this.mapper = mapper;
 	}
 	
-	void updateTrainLocations(final Map<AbstractTrainSimulator, List<Coordinate>> map) {
+	void updateTrainLocations(final Map<AbstractTrainSimulator, List<Coordinate>> map,
+			Time time) {
 		this.trainCoordinates = map;
 		
 		this.draw();
