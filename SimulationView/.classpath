@@ -8,5 +8,6 @@
 	<classpathentry kind="lib" path="/Library/RailModel/InfrastructureRepository.jar"/>
 	<classpathentry kind="lib" path="/Library/RailModel/RailSimulator.jar"/>
 	<classpathentry kind="lib" path="/Library/RailModel/BasicDefinition.jar"/>
+	<classpathentry kind="lib" path="C:/Projekte/201X RailApp/RichClient/source/RailView/Library/RailModel/RollingstockDefinition.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

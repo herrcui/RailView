@@ -10,7 +10,10 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
+import railapp.rollingstock.dto.Train;
 import railapp.simulation.SimulationManager;
+import railapp.simulation.events.EventListener;
+import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.units.Duration;
 import railapp.units.Time;
 import railview.infrastructure.container.NetworkPaneController;
@@ -21,6 +24,12 @@ public class SimulationController {
 	
 	@FXML
 	private Label timeLabel;
+	
+	@FXML
+	private Label activeLabel;
+	
+	@FXML
+	private Label terminatedLabel;
 	
 	@FXML
 	public void initialize() {
@@ -44,7 +53,7 @@ public class SimulationController {
 			new Thread(this.simulator).start();
 			
 			Thread t = new Thread(() -> {
-				(new SimulationUpdater()).periodicalUpdate(); 
+				(new SimulationUpdater()).periodicalUpdate(false); 
 			});			
 			t.setDaemon(true);
 			t.start();
@@ -55,7 +64,7 @@ public class SimulationController {
 	public void replaySimulation() {
 		if (this.simulator != null) {
 			Thread t = new Thread(() -> {
-				(new SimulationUpdater()).periodicalUpdate(); 
+				(new SimulationUpdater()).periodicalUpdate(true); 
 			});			
 			t.setDaemon(true);
 			t.start();
@@ -83,15 +92,48 @@ public class SimulationController {
 	
 	class SimulationUpdater {
 		private Time time = Time.getInstance(0, 0, 0);
+		boolean isUpdateCompleted = false;
 
-		void periodicalUpdate() {
-			while (time.compareTo(Time.getInstance(1, 23, 59, 59, 0)) < 0) {
-
+		void periodicalUpdate(boolean isReplay) {
+			while (! isUpdateCompleted) {
 				Platform.runLater(new Runnable() {
 					@Override public void run() {
 						timeLabel.setText("Simulation Time: " + time.toString());
+						
 						networkPaneController.updateTrainCoordinates(
 								simulator.getTrainCoordinates(time), time);
+						
+						int numActive = 0;
+						int numTerminate = 0;
+						for (EventListener listener : simulator.getListeners()) {
+							if (listener instanceof AbstractTrainSimulator) {
+								AbstractTrainSimulator trainSimulator = (AbstractTrainSimulator) listener;
+								
+								if (trainSimulator.getTerminateTime() != null) {
+									if (trainSimulator.getTerminateTime().compareTo(time) < 0) {
+										numTerminate++;
+									} else {
+										if (trainSimulator.getActiveTime().compareTo(time) < 0) {
+											numActive++;
+										}
+									}
+								} else {
+									if (trainSimulator.getActiveTime() != null && 
+											trainSimulator.getActiveTime().compareTo(time) < 0) {
+										numActive++;
+									}
+								}
+							}
+						}
+						
+						activeLabel.setText("Active Trains: " + numActive);
+						terminatedLabel.setText("Terminated Trains: " + numTerminate);
+						
+						if (isReplay) {
+							isUpdateCompleted = time.compareTo(simulator.getTerminatedTime()) >= 0;
+						} else {
+							isUpdateCompleted = time.compareTo(simulator.getTerminatedTime()) >= 0;
+						}
 					}
 				});
 				
@@ -101,9 +143,17 @@ public class SimulationController {
 					e.printStackTrace();
 				}
 				
-				time = time.add(updateInterval);
-				if (time.compareTo(simulator.getTime()) > 0) {
-					time = simulator.getTime();
+				if (isReplay) {
+					time = time.add(updateInterval);
+				} else {
+					if (simulator.getTerminatedTime() == null) { // not terminated yet
+						time = time.add(updateInterval);
+						if (time.compareTo(simulator.getTime()) > 0) {
+							time = simulator.getTime(); // if update too fast, slow down
+						}
+					} else {
+						time = time.add(updateInterval);
+					}
 				}
 			}
 		}
