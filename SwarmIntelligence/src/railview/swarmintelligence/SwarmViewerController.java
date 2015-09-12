@@ -1,4 +1,4 @@
-package railview.simulation;
+package railview.swarmintelligence;
 
 import java.io.IOException;
 import java.net.URL;
@@ -10,15 +10,15 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
-import railapp.rollingstock.dto.Train;
 import railapp.simulation.SimulationManager;
 import railapp.simulation.events.EventListener;
 import railapp.simulation.train.AbstractTrainSimulator;
+import railapp.swarmintelligence.SwarmManager;
 import railapp.units.Duration;
 import railapp.units.Time;
 import railview.infrastructure.container.NetworkPaneController;
 
-public class SimulationController {
+public class SwarmViewerController {
 	@FXML
 	private AnchorPane networkPaneRoot;
 	
@@ -53,7 +53,7 @@ public class SimulationController {
 			new Thread(this.simulator).start();
 			
 			Thread t = new Thread(() -> {
-				(new SimulationUpdater()).periodicalUpdate(false); 
+				(new SwarmUpdater()).periodicalUpdate(false); 
 			});			
 			t.setDaemon(true);
 			t.start();
@@ -64,7 +64,7 @@ public class SimulationController {
 	public void replaySimulation() {
 		if (this.simulator != null) {
 			Thread t = new Thread(() -> {
-				(new SimulationUpdater()).periodicalUpdate(true); 
+				(new SwarmUpdater()).periodicalUpdate(true); 
 			});			
 			t.setDaemon(true);
 			t.start();
@@ -85,15 +85,20 @@ public class SimulationController {
 		this.simulator = simulator;
 	}
 	
+	public void setSwarmManager(SwarmManager swarmManager) {
+		this.swarmManager = swarmManager;
+	}
+	
 	private NetworkPaneController networkPaneController;
 	private SimulationManager simulator;
+	private SwarmManager swarmManager;
 	private Duration updateInterval = Duration.fromSecond(60);
 	private int UIPause = 100;
 	
-	class SimulationUpdater {
+	class SwarmUpdater {
 		private Time time = Time.getInstance(0, 0, 0);
 		boolean isUpdateCompleted = false;
-
+		
 		void periodicalUpdate(boolean isReplay) {
 			while (! isUpdateCompleted) {
 				Platform.runLater(new Runnable() {
@@ -160,5 +165,5 @@ public class SimulationController {
 				}
 			}
 		} // periodicalUpdate(boolean isReplay)
-	} // class SimulationUpdater
+	}
 }

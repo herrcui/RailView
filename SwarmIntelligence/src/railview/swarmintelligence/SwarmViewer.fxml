@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.swarmintelligence.SwarmViewerController">
+   <children>
+      <SplitPane dividerPositions="0.6105527638190955" layoutX="130.0" layoutY="69.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane fx:id="networkPaneRoot" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane dividerPositions="0.5922818791946308" layoutX="114.0" layoutY="-4.0" prefHeight="152.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <Button layoutX="21.0" layoutY="19.0" mnemonicParsing="false" onMouseClicked="#startSimulation" text="Start" />
+                              <Button layoutX="72.0" layoutY="19.0" mnemonicParsing="false" onAction="#replaySimulation" text="Replay" />
+                              <Label fx:id="timeLabel" layoutX="21.0" layoutY="56.0" prefHeight="17.0" prefWidth="248.0" text="Simulation Time:" />
+                              <Label fx:id="activeLabel" layoutX="310.0" layoutY="56.0" text="Active Trains:" />
+                              <Label fx:id="terminatedLabel" layoutX="494.0" layoutY="56.0" text="Terminated Trains:" />
+                           </children></AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

@@ -41,7 +41,7 @@ public class TrainPane extends PannablePane {
 			for (Entry<AbstractTrainSimulator, List<Coordinate>> entry : this.trainCoordinates
 					.entrySet()) {
 				List<Coordinate> coordinateList = entry.getValue();
-				System.out.println("Train Number: " + entry.getKey().getTrain().getNumber());
+
 				if (coordinateList != null && coordinateList.size() > 0) {
 					for (int i = 0; i < coordinateList.size() - 1; i++) {
 						Line line = new Line();
@@ -59,8 +59,6 @@ public class TrainPane extends PannablePane {
 						line.setStroke(Color.RED);
 						
 						this.getChildren().add(line);
-						System.out.println(line.getStartX() + ", " + line.getStartY() + "->" + 
-								line.getEndX() + ", " + line.getEndY());
 					}
 				}
 			}

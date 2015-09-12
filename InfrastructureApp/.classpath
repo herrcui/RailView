@@ -16,5 +16,7 @@
 	<classpathentry kind="lib" path="/Library/RailModel/TimetableRepository.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/SimulationView"/>
 	<classpathentry kind="lib" path="/Library/RailModel/RailSimulator.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/SwarmIntelligence"/>
+	<classpathentry kind="lib" path="/Library/RailModel/SwarmIntelligence.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
