@@ -13,25 +13,29 @@ import railapp.infrastructure.element.dto.InfrastructureElement;
 import railapp.infrastructure.element.dto.Port;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.simulation.train.AbstractTrainSimulator;
+import railapp.swarmintelligence.Swarm;
+import railapp.swarmintelligence.SwarmManager;
 import railapp.units.Coordinate;
 import railapp.units.Time;
 
 public class NetworkPaneController {
 	@FXML
-	private StackPane anchorPane;
+	private StackPane stackPane;
 
 	final double SCALE_DELTA = 1.1;
 	private InfrastructureElementsPane elementPane;
 	private TrainPane trainPane;
+	private SwarmPane swarmPane;
 	private double pressedX, pressedY;
 
 	@FXML
 	public void initialize() {
 		this.elementPane = new InfrastructureElementsPane();
 		this.trainPane = new TrainPane();
-		this.anchorPane.getChildren().add(this.elementPane);
-		this.anchorPane.getChildren().add(this.trainPane);
-
+		this.swarmPane = new SwarmPane();
+		this.stackPane.getChildren().add(this.elementPane);
+		this.stackPane.getChildren().add(this.trainPane);
+		this.stackPane.getChildren().add(this.swarmPane);
 	}
 
 	public void setInfrastructureServiceUtility(
@@ -63,21 +67,12 @@ public class NetworkPaneController {
 		this.elementPane.setCoordinateMapper(mapper);
 		this.elementPane.setElements(elements);
 		this.trainPane.setCoordinateMapper(mapper);
+		this.swarmPane.setCoordinateMapper(mapper);
 	}
-/**
-	@FXML
-	private void mousePress() {
-		NodeGestures nodeGestures = new NodeGestures(elementPane);
 
-		anchorPane.addEventFilter(MouseEvent.MOUSE_PRESSED,
-				nodeGestures.getOnMousePressedEventHandler());
-		anchorPane.addEventFilter(MouseEvent.MOUSE_DRAGGED,
-				nodeGestures.getOnMouseDraggedEventHandler());
-	}
-	**/
 	@FXML
-	private void mouseclick(){
-		anchorPane.setOnMousePressed(new EventHandler<MouseEvent>()
+	private void mouseEnter(){
+		stackPane.setOnMousePressed(new EventHandler<MouseEvent>()
 		        {
             public void handle(MouseEvent event)
             {
@@ -86,12 +81,12 @@ public class NetworkPaneController {
             }
         });
 
-        anchorPane.setOnMouseDragged(new EventHandler<MouseEvent>()
+		stackPane.setOnMouseDragged(new EventHandler<MouseEvent>()
         {
             public void handle(MouseEvent event)
             {
-            	anchorPane.setTranslateX(anchorPane.getTranslateX() + event.getX() - pressedX);
-            	anchorPane.setTranslateY(anchorPane.getTranslateY() + event.getY() - pressedY);
+            	stackPane.setTranslateX(stackPane.getTranslateX() + event.getX() - pressedX);
+            	stackPane.setTranslateY(stackPane.getTranslateY() + event.getY() - pressedY);
 
                 event.consume();
             }
@@ -99,33 +94,23 @@ public class NetworkPaneController {
 	}
 	
 	@FXML
-	private void ScrollWheel(){
+	private void scrollWheel(){
 		NodeGestures elemNodeGestures = new NodeGestures(elementPane);
 		NodeGestures trainNodeGestures = new NodeGestures(trainPane);
+		NodeGestures swarmNodeGestures = new NodeGestures(swarmPane);
 		
-		anchorPane.addEventFilter( ScrollEvent.ANY, elemNodeGestures.getOnScrollEventHandler());
-		anchorPane.addEventFilter( ScrollEvent.ANY, trainNodeGestures.getOnScrollEventHandler());
-
-	
-/**	  @FXML private void ScrollEvent(){ anchorPane.setOnScroll(new
-	        EventHandler<ScrollEvent>() {
-	  @Override public void handle(ScrollEvent event) { event.consume();
-	
-	           if (event.getDeltaY() == 0) { return; }
-	 
-	           double scaleFactor = (event.getDeltaY() > 0) ? SCALE_DELTA : 1
-	           / SCALE_DELTA;
-	 
-	           anchorPane.setScaleX(anchorPane.getScaleX() * scaleFactor);
-	           anchorPane.setScaleY(anchorPane.getScaleY() * scaleFactor);
-	 
-	           } }); }
-**/	
+		stackPane.addEventFilter( ScrollEvent.ANY, elemNodeGestures.getOnScrollEventHandler());
+		stackPane.addEventFilter( ScrollEvent.ANY, trainNodeGestures.getOnScrollEventHandler());
+		stackPane.addEventFilter( ScrollEvent.ANY, swarmNodeGestures.getOnScrollEventHandler());
 	}
 
 	public void updateTrainCoordinates(Map<AbstractTrainSimulator, List<Coordinate>> map,
 			Time time) {
 		this.trainPane.updateTrainLocations(map, time);
+	}
+	
+	public void updateSwarms(Map<AbstractTrainSimulator, List<Coordinate>> map, Collection<Swarm> swarms) {
+		this.swarmPane.updateSwarms(map, swarms);
 	}
 }
 	

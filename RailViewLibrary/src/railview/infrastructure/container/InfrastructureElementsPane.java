@@ -7,6 +7,7 @@ import railapp.infrastructure.element.dto.InfrastructureElement;
 import railapp.infrastructure.element.dto.Track;
 import railapp.infrastructure.element.dto.Turnout;
 import railapp.units.Coordinate;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 
 public class InfrastructureElementsPane extends PannablePane {
@@ -102,6 +103,7 @@ public class InfrastructureElementsPane extends PannablePane {
 			line.setEndX(mapper.mapToPaneX(coordinates.get(i + 1).getX(), this));
 			line.setEndY(mapper.mapToPaneY(coordinates.get(i + 1).getY(), this));
 			
+			line.setStroke(Color.LIGHTGRAY);
 			line.setStrokeWidth(0.1);			
 			
 			this.getChildren().add(line);

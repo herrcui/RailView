@@ -5,4 +5,5 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.StackPane?>
 
-<StackPane fx:id="anchorPane" onMouseClicked="#mouseclick" onScroll="#ScrollWheel" prefHeight="400.0" prefWidth="397.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.infrastructure.container.NetworkPaneController" />
+
+<StackPane fx:id="stackPane" onMouseEntered="#mouseEnter" onScroll="#scrollWheel" prefHeight="400.0" prefWidth="397.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.infrastructure.container.NetworkPaneController" />

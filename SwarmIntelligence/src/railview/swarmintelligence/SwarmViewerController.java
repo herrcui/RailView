@@ -2,6 +2,9 @@ package railview.swarmintelligence;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -13,7 +16,9 @@ import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.simulation.SimulationManager;
 import railapp.simulation.events.EventListener;
 import railapp.simulation.train.AbstractTrainSimulator;
+import railapp.swarmintelligence.Swarm;
 import railapp.swarmintelligence.SwarmManager;
+import railapp.units.Coordinate;
 import railapp.units.Duration;
 import railapp.units.Time;
 import railview.infrastructure.container.NetworkPaneController;
@@ -104,11 +109,15 @@ public class SwarmViewerController {
 				Platform.runLater(new Runnable() {
 					@Override public void run() {
 						timeLabel.setText("Simulation Time: " + time.toString());
+
+						Collection<Swarm> swarms = swarmManager.getSwarms(time);
+						Map<AbstractTrainSimulator, List<Coordinate>> coordinates = simulator.getTrainCoordinates(time);
 						
-						networkPaneController.updateTrainCoordinates(
-								simulator.getTrainCoordinates(time), time);
+						networkPaneController.updateSwarms(coordinates, swarms);
 						
-						if (simulator.getTime() != null || simulator.getTerminatedTime() != null) { // initialization is finished
+						if (simulator.getTime() != null || simulator.getTerminatedTime() != null) { 
+							// simulator.getTime() != null: after initialization and before simulation finished
+							// simulator.getTerminatedTime() != null: simulation finished
 							int numActive = 0;
 							int numTerminate = 0;
 							for (EventListener listener : simulator.getListeners()) {
