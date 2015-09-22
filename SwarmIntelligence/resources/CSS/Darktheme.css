@@ -1,0 +1,15 @@
+.background {
+   	 -fx-background-color: #1d1d1d;
+}
+
+.background-white {
+  	  -fx-background-color: #FFFFFF;
+}
+
+.label {
+	-fx-font-family: "Century Gothic";
+}
+
+.label-bright {
+	-fx-font-family: "Century Gothic";
+}

@@ -6,9 +6,11 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+import javafx.animation.FadeTransition;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
@@ -24,8 +26,13 @@ import railapp.units.Time;
 import railview.infrastructure.container.NetworkPaneController;
 
 public class SwarmViewerController {
+	
+	
 	@FXML
 	private AnchorPane networkPaneRoot;
+	
+	@FXML
+	private AnchorPane menuPane;
 	
 	@FXML
 	private Label timeLabel;
@@ -37,6 +44,9 @@ public class SwarmViewerController {
 	private Label terminatedLabel;
 	
 	@FXML
+	private Button startButton;
+	
+	@FXML
 	public void initialize() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
@@ -45,7 +55,11 @@ public class SwarmViewerController {
 			loader.setLocation(location);
 			StackPane networkPane = (StackPane) loader.load();
 			this.networkPaneController = loader.getController();
-			this.networkPaneRoot.getChildren().add(networkPane);
+			AnchorPane.setLeftAnchor(networkPane, (this.networkPaneRoot.prefWidth(-1)/2)-(networkPane.prefWidth(-1)/2));
+			AnchorPane.setTopAnchor(networkPane,(this.networkPaneRoot.prefHeight(-1)/2)-(networkPane.prefHeight(-1)/2));
+			this.networkPaneRoot.getChildren().addAll(networkPane);
+			//ButtonAction();
+			System.out.println(this.networkPaneRoot.getWidth());
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -62,8 +76,44 @@ public class SwarmViewerController {
 			});			
 			t.setDaemon(true);
 			t.start();
+
 		}
 	}
+	
+
+	@FXML
+	private void fadeRoot() {
+	
+
+	                FadeTransition fadeTransition 
+	                        = new FadeTransition(javafx.util.Duration.millis(500), menuPane);
+	                fadeTransition.setToValue(0.0);
+	                fadeTransition.play();
+	            }
+
+		  
+	@FXML
+	private void appear() {
+	                FadeTransition fadeTransition 
+	                        = new FadeTransition(javafx.util.Duration.millis(500), menuPane);
+	                fadeTransition.setFromValue(0.0);
+	                fadeTransition.setToValue(1.0);
+	                fadeTransition.play();
+	            }
+
+  		
+	@FXML
+	private void fadeMenu() {
+		
+	                FadeTransition fadeTransition 
+	                        = new FadeTransition(javafx.util.Duration.millis(500), menuPane);
+	                fadeTransition.setFromValue(1.0);
+	                fadeTransition.setToValue(0.0);
+	                fadeTransition.play();
+
+				}
+			
+
 	
 	@FXML
 	public void replaySimulation() {
