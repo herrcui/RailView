@@ -103,7 +103,7 @@ public class SwarmPane extends PannablePane {
 				line.setEndY(mapper.mapToPaneY(coordinateList
 						.get(i+1).getY(), this));
 
-				line.setStrokeWidth(0.2);			
+				line.setStrokeWidth(0.3);			
 				line.setStroke(color);
 				
 				this.getChildren().add(line);
