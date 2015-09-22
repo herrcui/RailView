@@ -16,6 +16,7 @@ import railview.simulation.SimulationController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.transform.Scale;
 import javafx.stage.Stage;
@@ -26,6 +27,7 @@ public class SwarmApplication extends Application {
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("Swarm Viewer");
+		this.primaryStage.getIcons().add(new Image("file:resources/images/1442691661_swarm_app.png"));
 		this.initRootLayout();
 	}
 
@@ -62,13 +64,14 @@ public class SwarmApplication extends Application {
 			
 			primaryStage.show();
 			
-		    final double initWidth  = scene.getWidth();
+/**		    final double initWidth  = scene.getWidth();
 		    final double initHeight = scene.getHeight();
 		    Scale scale = new Scale();
 		    scale.xProperty().bind(scene.widthProperty().divide(initWidth));
 		    scale.yProperty().bind(scene.heightProperty().divide(initHeight));
 		    scale.setPivotX(0); scale.setPivotY(0);
 		    rootLayout.getTransforms().addAll(scale);
+**/	
 		}
 	}
 	

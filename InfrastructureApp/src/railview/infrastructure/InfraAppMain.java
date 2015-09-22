@@ -40,13 +40,14 @@ public class InfraAppMain extends Application {
 			controller.setInfrastructureServiceUtility(infraServiceUtility);
 			primaryStage.show();
 			
-		    final double initWidth  = scene.getWidth();
+/**		    final double initWidth  = scene.getWidth();
 		    final double initHeight = scene.getHeight();
 		    Scale scale = new Scale();
 		    scale.xProperty().bind(scene.widthProperty().divide(initWidth));
 		    scale.yProperty().bind(scene.heightProperty().divide(initHeight));
 		    scale.setPivotX(0); scale.setPivotY(0);
 		    rootLayout.getTransforms().addAll(scale);
+	**/
 		}
 	}
 

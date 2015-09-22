@@ -6,6 +6,7 @@ import java.net.URL;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.transform.Scale;
@@ -15,7 +16,7 @@ import railview.infrastructure.container.NetworkPaneController;
 public class InfrastructureEditorController {
 
 	@FXML
-	private AnchorPane networkPaneRoot;
+	private BorderPane networkPaneRoot;
 
 	@FXML
 	public void initialize() {
@@ -26,7 +27,8 @@ public class InfrastructureEditorController {
 			loader.setLocation(location);
 			StackPane networkPane = (StackPane) loader.load();
 			this.networkPaneController = loader.getController();
-			this.networkPaneRoot.getChildren().add(networkPane);
+			this.networkPaneRoot.setCenter(networkPane);
+			//this.networkPaneRoot.getChildren().add(networkPane);
 
 		} catch (IOException e) {
 			e.printStackTrace();

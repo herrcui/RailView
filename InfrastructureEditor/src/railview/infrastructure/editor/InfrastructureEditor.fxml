@@ -12,7 +12,7 @@
    <children>
       <SplitPane dividerPositions="0.6105527638190955" layoutX="130.0" layoutY="69.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane fx:id="networkPaneRoot" />
+          <BorderPane fx:id="networkPaneRoot" />
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
                   <SplitPane dividerPositions="0.5922818791946308" layoutX="114.0" layoutY="-4.0" prefHeight="152.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

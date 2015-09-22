@@ -103,7 +103,7 @@ public class InfrastructureElementsPane extends PannablePane {
 			line.setEndX(mapper.mapToPaneX(coordinates.get(i + 1).getX(), this));
 			line.setEndY(mapper.mapToPaneY(coordinates.get(i + 1).getY(), this));
 			
-			line.setStroke(Color.LIGHTGRAY);
+			line.setStroke(Color.WHITE);
 			line.setStrokeWidth(0.1);			
 			
 			this.getChildren().add(line);
