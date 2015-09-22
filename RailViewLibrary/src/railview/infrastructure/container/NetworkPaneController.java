@@ -109,8 +109,8 @@ public class NetworkPaneController {
 		this.trainPane.updateTrainLocations(map, time);
 	}
 	
-	public void updateSwarms(Map<AbstractTrainSimulator, List<Coordinate>> map, Collection<Swarm> swarms) {
-		this.swarmPane.updateSwarms(map, swarms);
+	public void updateSwarms(Map<AbstractTrainSimulator, List<Coordinate>> map, Collection<Swarm> swarms, Time time) {
+		this.swarmPane.updateSwarms(map, swarms, time);
 	}
 }
 	

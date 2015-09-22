@@ -113,7 +113,7 @@ public class SwarmViewerController {
 						Collection<Swarm> swarms = swarmManager.getSwarms(time);
 						Map<AbstractTrainSimulator, List<Coordinate>> coordinates = simulator.getTrainCoordinates(time);
 						
-						networkPaneController.updateSwarms(coordinates, swarms);
+						networkPaneController.updateSwarms(coordinates, swarms, time);
 						
 						if (simulator.getTime() != null || simulator.getTerminatedTime() != null) { 
 							// simulator.getTime() != null: after initialization and before simulation finished

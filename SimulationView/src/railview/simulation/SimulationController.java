@@ -10,7 +10,6 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
-import railapp.rollingstock.dto.Train;
 import railapp.simulation.SimulationManager;
 import railapp.simulation.events.EventListener;
 import railapp.simulation.train.AbstractTrainSimulator;

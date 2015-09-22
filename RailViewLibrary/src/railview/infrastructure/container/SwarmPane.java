@@ -13,6 +13,7 @@ import javafx.scene.shape.Line;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.swarmintelligence.Swarm;
 import railapp.units.Coordinate;
+import railapp.units.Time;
 
 public class SwarmPane extends PannablePane {
 	private CoordinateMapper mapper;
@@ -27,7 +28,8 @@ public class SwarmPane extends PannablePane {
 	}
 	
 	public void updateSwarms(Map<AbstractTrainSimulator, List<Coordinate>> coordinates,
-			Collection<Swarm> swarms) {
+			Collection<Swarm> swarms,
+			Time time) {
 		this.trainCoordinates = coordinates;
 		this.swarms = swarms;
 		this.draw();
