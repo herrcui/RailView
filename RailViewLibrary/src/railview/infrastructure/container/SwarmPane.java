@@ -41,11 +41,9 @@ public class SwarmPane extends PannablePane {
 	}
 	
 	private void drawSwarms() {
-		Set<Color> usedColor = new HashSet<Color>();
 		if (this.trainCoordinates != null && this.swarms != null) {	// TODO: check not both are not null
 			for (Swarm swarm : this.swarms) {
-				Color color = this.getSwarmColor(swarm, usedColor);
-				usedColor.add(color);
+				Color color = this.getSwarmColor(swarm);
 				for (AbstractTrainSimulator train : swarm.getTrains()) {
 					this.drawTrain(train ,color);
 				}
@@ -53,25 +51,15 @@ public class SwarmPane extends PannablePane {
 		}
 	}
 	
-	private Color getSwarmColor(Swarm swarm, Set<Color> usedColor) {
+	private Color getSwarmColor(Swarm swarm) {
 		Color color = this.swarmColorMap.get(swarm);
 		if (color == null) {
-			for (AbstractTrainSimulator train : swarm.getTrains()) {
-				color = this.trainColorMap.get(train);
-				if (color != null && !usedColor.contains(color)) {
-					break;
-				}
-			}
-			
-			if (color == null) {
+			while (color == null || this.usedColors.contains(color)) {
 				color = generateRandomColor();
 			}
 			
 			this.swarmColorMap.put(swarm, color);
-			
-			for (AbstractTrainSimulator train : swarm.getTrains()) {
-				this.trainColorMap.put(train, color);
-			}
+			this.usedColors.add(color);
 		}
 		
 		return color;
@@ -114,6 +102,6 @@ public class SwarmPane extends PannablePane {
 	private Map<AbstractTrainSimulator, List<Coordinate>> trainCoordinates;
 	private Collection<Swarm> swarms;
 	
+	private Set<Color> usedColors = new HashSet<Color>();
 	private Map<Swarm, Color> swarmColorMap = new HashMap<Swarm, Color>();
-	private Map<AbstractTrainSimulator, Color> trainColorMap = new HashMap<AbstractTrainSimulator, Color>();
 }
