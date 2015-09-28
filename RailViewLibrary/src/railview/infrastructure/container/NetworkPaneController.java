@@ -4,21 +4,16 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-import javafx.animation.FadeTransition;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.StackPane;
-import javafx.util.Duration;
 import railapp.infrastructure.element.dto.InfrastructureElement;
 import railapp.infrastructure.element.dto.Port;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.swarmintelligence.Swarm;
-import railapp.swarmintelligence.SwarmManager;
 import railapp.units.Coordinate;
 import railapp.units.Time;
 

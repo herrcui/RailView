@@ -14,7 +14,6 @@ import railapp.timetable.service.ITimetableServiceUtility;
 import railview.railmodel.infrastructure.railsys7.InfrastructureReader;
 import railview.railmodel.infrastructure.railsys7.RollingStockReader;
 import railview.railmodel.infrastructure.railsys7.TimetableReader;
-import railview.simulation.SimulationController;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -22,7 +21,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.transform.Scale;
 import javafx.stage.Stage;
 
@@ -67,7 +65,7 @@ public class SwarmApplication extends Application {
 			controller.setSimulationManager(simulator);
 			controller.setSwarmManager(swarmManager);
 			primaryStage.show();
-//			letterbox(scene, rootLayout);
+			letterbox(scene, rootLayout);
 		    
 /**		    final double initWidth  = scene.getWidth();
 		    final double initHeight = scene.getHeight();

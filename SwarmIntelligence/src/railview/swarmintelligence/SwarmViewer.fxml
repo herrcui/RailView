@@ -33,7 +33,7 @@
                </graphic>
             </Button>
             <Label fx:id="timeLabel" layoutX="263.0" layoutY="20.0" prefHeight="17.0" prefWidth="248.0" styleClass="label-bright" stylesheets="@../../../resources/CSS/Darktheme.css" text="Simulation Time:" />
-            <Label fx:id="activeLabel" layoutX="575.0" layoutY="20.0" text="Active Trains:" />
+            <Label fx:id="activeLabel" layoutX="575.0" layoutY="20.0" text="Active Trains/Swarms:" />
             <Label fx:id="terminatedLabel" layoutX="858.0" layoutY="20.0" text="Terminated Trains:" />
             <Button layoutX="100.0" layoutY="13.0" mnemonicParsing="false">
                <graphic>

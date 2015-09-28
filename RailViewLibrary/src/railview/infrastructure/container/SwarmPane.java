@@ -1,5 +1,6 @@
 package railview.infrastructure.container;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -32,6 +33,7 @@ public class SwarmPane extends PannablePane {
 			Time time) {
 		this.trainCoordinates = coordinates;
 		this.swarms = swarms;
+		this.currentTime = time;
 		this.draw();
 	}
 
@@ -41,12 +43,10 @@ public class SwarmPane extends PannablePane {
 	}
 	
 	private void drawSwarms() {
-		if (this.trainCoordinates != null && this.swarms != null) {	// TODO: check not both are not null
-			for (Swarm swarm : this.swarms) {
-				Color color = this.getSwarmColor(swarm);
-				for (AbstractTrainSimulator train : swarm.getTrains()) {
-					this.drawTrain(train ,color);
-				}
+		for (Swarm swarm : this.swarms) {
+			Color color = this.getSwarmColor(swarm);
+			for (AbstractTrainSimulator train : swarm.getTrains(this.currentTime)) {
+				this.drawTrain(train ,color);
 			}
 		}
 	}
@@ -100,8 +100,9 @@ public class SwarmPane extends PannablePane {
 	}
 
 	private Map<AbstractTrainSimulator, List<Coordinate>> trainCoordinates;
-	private Collection<Swarm> swarms;
+	private Collection<Swarm> swarms = new ArrayList<Swarm>();
 	
 	private Set<Color> usedColors = new HashSet<Color>();
 	private Map<Swarm, Color> swarmColorMap = new HashMap<Swarm, Color>();
+	private Time currentTime;
 }

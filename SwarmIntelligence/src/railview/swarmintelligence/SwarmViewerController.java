@@ -160,7 +160,6 @@ public class SwarmViewerController {
 
 						Collection<Swarm> swarms = swarmManager.getSwarms(time);
 						Map<AbstractTrainSimulator, List<Coordinate>> coordinates = simulator.getTrainCoordinates(time);
-						
 						networkPaneController.updateSwarms(coordinates, swarms, time);
 						
 						if (simulator.getTime() != null || simulator.getTerminatedTime() != null) { 
@@ -189,7 +188,7 @@ public class SwarmViewerController {
 								}
 							}
 						
-							activeLabel.setText("Active Trains: " + numActive);
+							activeLabel.setText("Active Trains/Swarms: " + numActive + "/" + swarms.size());
 							terminatedLabel.setText("Terminated Trains: " + numTerminate);
 						} // if (simulator.getTime() != null)
 						
