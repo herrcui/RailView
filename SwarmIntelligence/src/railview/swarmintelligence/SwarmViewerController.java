@@ -58,8 +58,6 @@ public class SwarmViewerController {
 			AnchorPane.setLeftAnchor(networkPane, (this.networkPaneRoot.prefWidth(-1)/2)-(networkPane.prefWidth(-1)/2));
 			AnchorPane.setTopAnchor(networkPane,(this.networkPaneRoot.prefHeight(-1)/2)-(networkPane.prefHeight(-1)/2));
 			this.networkPaneRoot.getChildren().addAll(networkPane);
-			//ButtonAction();
-			System.out.println(this.networkPaneRoot.getWidth());
 
 		} catch (IOException e) {
 			e.printStackTrace();
