@@ -65,68 +65,8 @@ public class SwarmApplication extends Application {
 			controller.setSimulationManager(simulator);
 			controller.setSwarmManager(swarmManager);
 			primaryStage.show();
-			letterbox(scene, rootLayout);
-		    
-/**		    final double initWidth  = scene.getWidth();
-		    final double initHeight = scene.getHeight();
-		    Scale scale = new Scale();
-		    scale.xProperty().bind(scene.widthProperty().divide(initWidth));
-		    scale.yProperty().bind(scene.heightProperty().divide(initHeight));
-		    scale.setPivotX(0); scale.setPivotY(0);
-		    rootLayout.getTransforms().addAll(scale);
-**/	
 		}
 	}
-	
-	  private void letterbox(final Scene scene, final AnchorPane rootLayout) {
-		    final double initWidth  = scene.getWidth();
-		    final double initHeight = scene.getHeight();
-		    final double ratio      = initWidth / initHeight;
-
-		    SceneSizeChangeListener sizeListener = new SceneSizeChangeListener(scene, ratio, initHeight, initWidth, rootLayout);
-		    scene.widthProperty().addListener(sizeListener);
-		    scene.heightProperty().addListener(sizeListener);
-		  }
-
-	  private static class SceneSizeChangeListener implements ChangeListener<Number> {
-		    private final Scene scene;
-		    private final double ratio;
-		    private final double initHeight;
-		    private final double initWidth;
-		    private final AnchorPane rootLayout;
-
-		    public SceneSizeChangeListener(Scene scene, double ratio, double initHeight, double initWidth, AnchorPane rootLayout) {
-		      this.scene = scene;
-		      this.ratio = ratio;
-		      this.initHeight = initHeight;
-		      this.initWidth = initWidth;
-		      this.rootLayout = rootLayout;
-		    }
-
-		    @Override
-		    public void changed(ObservableValue<? extends Number> observableValue, Number oldValue, Number newValue) {
-		      final double newWidth  = scene.getWidth();
-		      final double newHeight = scene.getHeight();
-
-		      double scaleFactor =
-		          newWidth / newHeight > ratio
-		              ? newHeight / initHeight
-		              : newWidth / initWidth;
-
-		      if (scaleFactor >= 1) {
-		        Scale scale = new Scale(scaleFactor, scaleFactor);
-		        scale.setPivotX(0);
-		        scale.setPivotY(0);
-		        scene.getRoot().getTransforms().setAll(scale);
-
-		        rootLayout.setPrefWidth (newWidth  / scaleFactor);
-		        rootLayout.setPrefHeight(newHeight / scaleFactor);
-		      } else {
-		    	  rootLayout.setPrefWidth (Math.max(initWidth,  newWidth));
-		    	  rootLayout.setPrefHeight(Math.max(initHeight, newHeight));
-		      }
-		    }
-		  }
 	
 	private SwarmViewerController initializeSwarmViewerController() {
 		try {

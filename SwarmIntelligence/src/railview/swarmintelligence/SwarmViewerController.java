@@ -188,6 +188,10 @@ public class SwarmViewerController {
 								}
 							}
 						
+							if (numActive == 0 && swarms.size() == 1) {
+								String s = "";
+							}
+							
 							activeLabel.setText("Active Trains/Swarms: " + numActive + "/" + swarms.size());
 							terminatedLabel.setText("Terminated Trains: " + numTerminate);
 						} // if (simulator.getTime() != null)
