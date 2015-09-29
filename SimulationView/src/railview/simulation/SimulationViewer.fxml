@@ -1,37 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.*?>
-<?import javafx.scene.canvas.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.StackPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.SimulationController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.SimulationController">
    <children>
-      <SplitPane dividerPositions="0.6105527638190955" layoutX="130.0" layoutY="69.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <items>
-          <AnchorPane fx:id="networkPaneRoot" />
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+      <AnchorPane fx:id="networkPaneRoot" onMouseEntered="#fadeRoot" prefHeight="700.0" prefWidth="1100.0" styleClass="background" stylesheets="@../../../resources/CSS/Darktheme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+          <AnchorPane fx:id="menuPane" onMouseEntered="#appear" onMouseExited="#fadeMenu" prefHeight="60.0" prefWidth="1100.0" styleClass="background-white" stylesheets="@../../../resources/CSS/Darktheme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="640.0">
                <children>
-                  <SplitPane dividerPositions="0.5922818791946308" layoutX="114.0" layoutY="-4.0" prefHeight="152.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                           <children>
-                              <Button layoutX="21.0" layoutY="19.0" mnemonicParsing="false" onMouseClicked="#startSimulation" text="Start" />
-                              <Button layoutX="72.0" layoutY="19.0" mnemonicParsing="false" onAction="#replaySimulation" text="Replay" />
-                              <Label fx:id="timeLabel" layoutX="21.0" layoutY="56.0" prefHeight="17.0" prefWidth="248.0" text="Simulation Time:" />
-                              <Label fx:id="activeLabel" layoutX="310.0" layoutY="56.0" text="Active Trains:" />
-                              <Label fx:id="terminatedLabel" layoutX="494.0" layoutY="56.0" text="Terminated Trains:" />
-                           </children></AnchorPane>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
-                    </items>
-                  </SplitPane>
+                  <Button layoutX="35.0" layoutY="13.0" mnemonicParsing="false" onAction="#startSimulation">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../resources/images/1442737609_icon-play.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="165.0" layoutY="13.0" mnemonicParsing="false" onAction="#replaySimulation">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../resources/images/1442737820_refresh.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Label fx:id="timeLabel" layoutX="263.0" layoutY="20.0" prefHeight="17.0" prefWidth="248.0" styleClass="label-bright" stylesheets="@../../../resources/CSS/Darktheme.css" text="Simulation Time:" />
+                  <Label fx:id="activeLabel" layoutX="575.0" layoutY="20.0" text="Active Trains/Swarms:" />
+                  <Label fx:id="terminatedLabel" layoutX="858.0" layoutY="20.0" text="Terminated Trains:" />
+                  <Button layoutX="100.0" layoutY="13.0" mnemonicParsing="false">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../resources/images/1442738064_icon-pause.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                </children>
             </AnchorPane>
-        </items>
-      </SplitPane>
-
+         </children></AnchorPane>
    </children>
 </AnchorPane>

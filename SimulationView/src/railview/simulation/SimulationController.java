@@ -3,6 +3,7 @@ package railview.simulation;
 import java.io.IOException;
 import java.net.URL;
 
+import javafx.animation.FadeTransition;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,6 +32,9 @@ public class SimulationController {
 	private Label terminatedLabel;
 	
 	@FXML
+	private AnchorPane menuPane;
+	
+	@FXML
 	public void initialize() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
@@ -39,6 +43,8 @@ public class SimulationController {
 			loader.setLocation(location);
 			StackPane networkPane = (StackPane) loader.load();
 			this.networkPaneController = loader.getController();
+			AnchorPane.setLeftAnchor(networkPane, (this.networkPaneRoot.prefWidth(-1)/2)-(networkPane.prefWidth(-1)/2));
+			AnchorPane.setTopAnchor(networkPane,(this.networkPaneRoot.prefHeight(-1)/2)-(networkPane.prefHeight(-1)/2));
 			this.networkPaneRoot.getChildren().add(networkPane);
 
 		} catch (IOException e) {
@@ -69,6 +75,38 @@ public class SimulationController {
 			t.start();
 		}
 	}
+	
+	@FXML
+	private void fadeRoot() {
+	
+
+	                FadeTransition fadeTransition 
+	                        = new FadeTransition(javafx.util.Duration.millis(500), menuPane);
+	                fadeTransition.setToValue(0.0);
+	                fadeTransition.play();
+	            }
+
+		  
+	@FXML
+	private void appear() {
+	                FadeTransition fadeTransition 
+	                        = new FadeTransition(javafx.util.Duration.millis(500), menuPane);
+	                fadeTransition.setFromValue(0.0);
+	                fadeTransition.setToValue(1.0);
+	                fadeTransition.play();
+	            }
+
+  		
+	@FXML
+	private void fadeMenu() {
+		
+	                FadeTransition fadeTransition 
+	                        = new FadeTransition(javafx.util.Duration.millis(500), menuPane);
+	                fadeTransition.setFromValue(1.0);
+	                fadeTransition.setToValue(0.0);
+	                fadeTransition.play();
+
+				}
 	
 	public NetworkPaneController getNetworkPaneController() {
 		return this.networkPaneController;
