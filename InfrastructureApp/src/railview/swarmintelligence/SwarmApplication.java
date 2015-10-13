@@ -3,8 +3,6 @@ package railview.swarmintelligence;
 import java.io.IOException;
 import java.net.URL;
 
-
-
 import railapp.infrastructure.dto.Network;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.rollingstock.service.IRollingStockServiceUtility;
@@ -15,13 +13,10 @@ import railview.railmodel.infrastructure.railsys7.InfrastructureReader;
 import railview.railmodel.infrastructure.railsys7.RollingStockReader;
 import railview.railmodel.infrastructure.railsys7.TimetableReader;
 import javafx.application.Application;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.transform.Scale;
 import javafx.stage.Stage;
 
 public class SwarmApplication extends Application {
@@ -56,6 +51,13 @@ public class SwarmApplication extends Application {
 	
 	private void initRootLayout() {
 		SwarmViewerController controller = this.initializeSwarmViewerController();
+		  SideBar sidebar = new SideBar();
+		    sidebar.setMinWidth(rootLayout.getPrefWidth());
+		    sidebar.setMinHeight(rootLayout.getPrefHeight());
+		    rootLayout.getChildren().addAll(
+		    		sidebar,
+		    	              sidebar.getControlButton()
+		    	    );
 		
 		if (this.rootLayout != null) {
 			Scene scene = new Scene(rootLayout);
@@ -64,6 +66,8 @@ public class SwarmApplication extends Application {
 			controller.setInfrastructureServiceUtility(infraServiceUtility);
 			controller.setSimulationManager(simulator);
 			controller.setSwarmManager(swarmManager);
+		    sidebar.prefWidthProperty().bind(scene.widthProperty());
+		    sidebar.prefHeightProperty().bind(scene.heightProperty());
 			primaryStage.show();
 		}
 	}
