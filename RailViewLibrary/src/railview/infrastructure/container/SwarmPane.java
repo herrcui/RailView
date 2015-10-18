@@ -47,7 +47,6 @@ public class SwarmPane extends PannablePane {
 			Color color = this.getSwarmColor(swarm);
 			for (AbstractTrainSimulator train : swarm.getTrains(this.currentTime)) {
 				this.drawTrain(train ,color);
-				//System.out.println(this.currentTime.toString() + swarm.getId() + train.getTrain().getNumber());
 			}
 		}
 	}

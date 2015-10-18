@@ -8,5 +8,6 @@
 	<classpathentry kind="lib" path="/Library/RailModel/SwarmIntelligence.jar"/>
 	<classpathentry kind="lib" path="/Library/RailModel/BasicDefinition.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/RailViewLibrary"/>
+	<classpathentry kind="lib" path="/Library/RailModel/RollingstockDefinition.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

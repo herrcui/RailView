@@ -51,13 +51,6 @@ public class SwarmApplication extends Application {
 	
 	private void initRootLayout() {
 		SwarmViewerController controller = this.initializeSwarmViewerController();
-		  SideBar sidebar = new SideBar();
-		    sidebar.setMinWidth(rootLayout.getPrefWidth());
-		    sidebar.setMinHeight(rootLayout.getPrefHeight());
-		    rootLayout.getChildren().addAll(
-		    		sidebar,
-		    	              sidebar.getControlButton()
-		    	    );
 		
 		if (this.rootLayout != null) {
 			Scene scene = new Scene(rootLayout);
@@ -66,8 +59,6 @@ public class SwarmApplication extends Application {
 			controller.setInfrastructureServiceUtility(infraServiceUtility);
 			controller.setSimulationManager(simulator);
 			controller.setSwarmManager(swarmManager);
-		    sidebar.prefWidthProperty().bind(scene.widthProperty());
-		    sidebar.prefHeightProperty().bind(scene.heightProperty());
 			primaryStage.show();
 		}
 	}

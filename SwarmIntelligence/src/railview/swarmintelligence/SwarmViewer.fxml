@@ -11,7 +11,10 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.swarmintelligence.SwarmViewerController">
    <children>
-      <AnchorPane fx:id="networkPaneRoot" onMouseEntered="#fadeRoot" prefHeight="700.0" prefWidth="1100.0" styleClass="background" stylesheets="@../../../resources/CSS/Darktheme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane fx:id="networkPaneRoot" onMouseEntered="#fadeRoot" prefHeight="700.0" prefWidth="1100.0" styleClass="background" stylesheets="@../../../resources/CSS/Darktheme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="controlButton" mnemonicParsing="false" onAction="#handleButtonAction" text="Button" />
+         </children></AnchorPane>
     <AnchorPane fx:id="menuPane" onMouseEntered="#appear" onMouseExited="#fadeMenu" prefHeight="60.0" prefWidth="1100.0" styleClass="background-white" stylesheets="@../../../resources/CSS/Darktheme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Button layoutX="35.0" layoutY="13.0" mnemonicParsing="false" onAction="#startSimulation">
@@ -46,5 +49,18 @@
             </Button>
          </children>
       </AnchorPane>
+      <AnchorPane fx:id="sideBar" prefHeight="200.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0">
+         <children>
+            <TableView fx:id="informationTable" prefHeight="276.0" prefWidth="226.0" AnchorPane.bottomAnchor="100.0">
+              <columns>
+                <TableColumn fx:id="firstColumn" prefWidth="75.0" text="C1" />
+                <TableColumn fx:id="secondColumn" prefWidth="75.0" text="C2" />
+                  <TableColumn fx:id="thirdColumn" prefWidth="75.0" text="C3" />
+              </columns>
+            </TableView>
+         </children>
+         <padding>
+            <Insets left="100.0" top="100.0" />
+         </padding></AnchorPane>
    </children>
 </AnchorPane>
