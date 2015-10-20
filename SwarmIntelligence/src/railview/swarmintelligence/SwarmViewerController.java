@@ -13,6 +13,8 @@ import javafx.animation.FadeTransition;
 import javafx.animation.Transition;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -120,14 +122,6 @@ public class SwarmViewerController {
 	
 	@FXML
 	public void initialize() {
-		Time time = Time.getInstance(0, 3, 0);
-		firstColumn.setCellValueFactory(cellData -> new SimpleStringProperty(
-				cellData.getValue().getTrains(time).toString()));
-		secondColumn.setCellValueFactory(cellData -> new SimpleStringProperty(
-				cellData.getValue().getId().toString()));
-		thirdColumn.setCellValueFactory(cellData -> new SimpleStringProperty(
-				cellData.getValue().getTrain().getNumber()));
-
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			URL location = NetworkPaneController.class
@@ -161,11 +155,8 @@ public class SwarmViewerController {
 		}
 	}
 	
-
 	@FXML
 	private void fadeRoot() {
-	
-
 	                FadeTransition fadeTransition 
 	                        = new FadeTransition(javafx.util.Duration.millis(500), menuPane);
 	                fadeTransition.setToValue(0.0);
@@ -185,7 +176,6 @@ public class SwarmViewerController {
   		
 	@FXML
 	private void fadeMenu() {
-		
 	                FadeTransition fadeTransition 
 	                        = new FadeTransition(javafx.util.Duration.millis(500), menuPane);
 	                fadeTransition.setFromValue(1.0);
@@ -225,6 +215,18 @@ public class SwarmViewerController {
 		this.swarmManager = swarmManager;
 	}
 	
+	public void updateSwarms(Collection<Swarm> swarms, Time time) {
+		ObservableList<Swarm> data = FXCollections.observableArrayList();
+		data.addAll(swarms);
+		
+		firstColumn.setCellValueFactory(celldata -> new SimpleStringProperty(
+				celldata.getValue().getId().toString()));
+		secondColumn.setCellValueFactory(celldata -> new SimpleStringProperty(
+				celldata.getValue().getCreationTime().toString()));
+		
+		informationTable.setItems(data);
+	}
+	
 	private NetworkPaneController networkPaneController;
 	private SimulationManager simulator;
 	private SwarmManager swarmManager;
@@ -245,6 +247,7 @@ public class SwarmViewerController {
 						Map<AbstractTrainSimulator, List<Coordinate>> coordinates = simulator.getTrainCoordinates(time);
 						networkPaneController.updateSwarms(coordinates, swarms, time);
 						
+						updateSwarms(swarms, time);
 						
 						if (simulator.getTime() != null || simulator.getTerminatedTime() != null) { 
 							// simulator.getTime() != null: after initialization and before simulation finished
