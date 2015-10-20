@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="338.0" prefWidth="246.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.swarmintelligence.ui.SwarmSidebarController">
+   <children>
+      <TableView fx:id="swarmTable" layoutX="14.0" layoutY="23.0" prefHeight="338.0" prefWidth="246.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="87.0" text="Id" />
+          <TableColumn fx:id="creationTimeColumn" prefWidth="158.0" text="Creation Time" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

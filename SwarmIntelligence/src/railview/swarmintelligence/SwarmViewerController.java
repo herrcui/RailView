@@ -36,6 +36,7 @@ import railapp.units.Duration;
 import railapp.units.Time;
 import railview.infrastructure.container.NetworkPaneController;
 import railview.infrastructure.container.SwarmPane;
+import railview.swarmintelligence.ui.SwarmSidebarController;
 
 public class SwarmViewerController {
 	
@@ -59,7 +60,7 @@ public class SwarmViewerController {
 	private Button startButton;
 	
 	@FXML
-	private Button controlButton;
+	private Button sidebarControlButton;
 	
 	@FXML
 	private AnchorPane sideBar;
@@ -91,7 +92,7 @@ public class SwarmViewerController {
 	          hideSidebar.onFinishedProperty().set(new EventHandler<ActionEvent>() {
 	            @Override public void handle(ActionEvent actionEvent) {
 	            	sideBar.setVisible(false);
-	                controlButton.setText("Show");
+	            	sidebarControlButton.setText("Show");
 	            }
 	          });
 	  
@@ -105,7 +106,7 @@ public class SwarmViewerController {
 	          };
 	          showSidebar.onFinishedProperty().set(new EventHandler<ActionEvent>() {
 	            @Override public void handle(ActionEvent actionEvent) {
-	              controlButton.setText("Hide");
+	            	sidebarControlButton.setText("Hide");
 	            }
 	          });
 	  
@@ -129,11 +130,20 @@ public class SwarmViewerController {
 			loader.setLocation(location);
 			StackPane networkPane = (StackPane) loader.load();
 			this.networkPaneController = loader.getController();
-			sideBar.setVisible(false);
+			
+			FXMLLoader sidebarloader = new FXMLLoader();
+			URL sidebarlocation = SwarmSidebarController.class
+					.getResource("SwarmSidebar.fxml");
+			sidebarloader.setLocation(sidebarlocation);
+			AnchorPane swarmSidebarPane = (AnchorPane) sidebarloader.load();
+			this.swarmSidebarController = sidebarloader.getController();
+			
+			//sideBar.setVisible(false);
 			AnchorPane.setLeftAnchor(networkPane, (this.networkPaneRoot.prefWidth(-1)/2)-(networkPane.prefWidth(-1)/2));
 			AnchorPane.setTopAnchor(networkPane,(this.networkPaneRoot.prefHeight(-1)/2)-(networkPane.prefHeight(-1)/2));
 			this.networkPaneRoot.getChildren().addAll(networkPane);
-			
+			sideBar.getChildren().add(0, swarmSidebarPane);
+			sidebarControlButton.setVisible(true);
 			
 
 		} catch (IOException e) {
@@ -228,6 +238,8 @@ public class SwarmViewerController {
 	}
 	
 	private NetworkPaneController networkPaneController;
+	private SwarmSidebarController swarmSidebarController;
+	
 	private SimulationManager simulator;
 	private SwarmManager swarmManager;
 	private Duration updateInterval = Duration.fromSecond(60);
@@ -246,8 +258,7 @@ public class SwarmViewerController {
 						Collection<Swarm> swarms = swarmManager.getSwarms(time);
 						Map<AbstractTrainSimulator, List<Coordinate>> coordinates = simulator.getTrainCoordinates(time);
 						networkPaneController.updateSwarms(coordinates, swarms, time);
-						
-						updateSwarms(swarms, time);
+						swarmSidebarController.updateSwarms(swarms, time);
 						
 						if (simulator.getTime() != null || simulator.getTerminatedTime() != null) { 
 							// simulator.getTime() != null: after initialization and before simulation finished
