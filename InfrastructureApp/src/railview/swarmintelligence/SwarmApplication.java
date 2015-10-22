@@ -55,7 +55,7 @@ public class SwarmApplication extends Application {
 		if (this.rootLayout != null) {
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);
-
+		
 			controller.setInfrastructureServiceUtility(infraServiceUtility);
 			controller.setSimulationManager(simulator);
 			controller.setSwarmManager(swarmManager);
@@ -82,7 +82,6 @@ public class SwarmApplication extends Application {
 	
 	private Stage primaryStage;
 	private AnchorPane rootLayout;
-
 	private static SimulationManager simulator;
 	private static SwarmManager swarmManager;
 	private static IInfrastructureServiceUtility infraServiceUtility;

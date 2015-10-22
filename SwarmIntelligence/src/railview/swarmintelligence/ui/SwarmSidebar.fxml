@@ -5,13 +5,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="338.0" prefWidth="246.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.swarmintelligence.ui.SwarmSidebarController">
+<StackPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.swarmintelligence.ui.SwarmSidebarController">
    <children>
-      <TableView fx:id="swarmTable" layoutX="14.0" layoutY="23.0" prefHeight="338.0" prefWidth="246.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <TableView fx:id="swarmTable" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columns>
-          <TableColumn fx:id="idColumn" prefWidth="87.0" text="Id" />
-          <TableColumn fx:id="creationTimeColumn" prefWidth="158.0" text="Creation Time" />
+          <TableColumn fx:id="idColumn" maxWidth="1.7976931348623157E308" minWidth="90.0" prefWidth="-1.0" text="Id" />
+          <TableColumn fx:id="creationTimeColumn" maxWidth="1.7976931348623157E308" minWidth="155.0" prefWidth="-1.0" text="Creation Time" />
         </columns>
       </TableView>
    </children>
-</AnchorPane>
+</StackPane>

@@ -7,7 +7,6 @@ import javafx.scene.layout.Pane;
  */
 public class PannablePane extends Pane {
     public PannablePane() {
-        this.setScale(1);
     }
     
     public double getScale() {

@@ -6,8 +6,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-import org.omg.CORBA.Current;
-
 import javafx.animation.Animation;
 import javafx.animation.FadeTransition;
 import javafx.animation.Transition;
@@ -34,93 +32,60 @@ import railapp.swarmintelligence.SwarmManager;
 import railapp.units.Coordinate;
 import railapp.units.Duration;
 import railapp.units.Time;
+import railview.infrastructure.container.GraphPaneController;
 import railview.infrastructure.container.NetworkPaneController;
-import railview.infrastructure.container.SwarmPane;
 import railview.swarmintelligence.ui.SwarmSidebarController;
 
 public class SwarmViewerController {
-	
-	
+
 	@FXML
 	private AnchorPane networkPaneRoot;
-	
+
 	@FXML
 	private AnchorPane menuPane;
-	
+
+	@FXML
+	private AnchorPane symbolPane;
+
 	@FXML
 	private Label timeLabel;
-	
+
 	@FXML
 	private Label activeLabel;
-	
+
 	@FXML
 	private Label terminatedLabel;
-	
+
 	@FXML
 	private Button startButton;
-	
+
 	@FXML
-	private Button sidebarControlButton;
-	
+	private Button sidebarOpenButton;
+
+	@FXML
+	private Button sidebarCloseButton;
+
+	@FXML
+	private Button graphButton;
+
+	@FXML
+	private Button swarmButton;
+
 	@FXML
 	private AnchorPane sideBar;
-	
+
 	@FXML
-    private TableView<Swarm> informationTable;
-	
-    @FXML
-    private TableColumn<Swarm, String> firstColumn;
-    
-    @FXML
-    private TableColumn<Swarm, String> secondColumn;
-    
-    @FXML
-    private TableColumn<AbstractTrainSimulator, String> thirdColumn;
-    
-	
+	private TableView<Swarm> informationTable;
+
 	@FXML
-	public void handleButtonAction(ActionEvent event) {
-			sideBar.setPickOnBounds(false);
-	          final double startWidth = sideBar.getWidth();
-	          final Animation hideSidebar = new Transition() {
-	            { setCycleDuration(javafx.util.Duration.millis(250)); }
-	            protected void interpolate(double frac) {
-	              final double curWidth = startWidth * (1.0 - frac);
-	              sideBar.setTranslateX(-startWidth + curWidth);
-	            }
-	          };
-	          hideSidebar.onFinishedProperty().set(new EventHandler<ActionEvent>() {
-	            @Override public void handle(ActionEvent actionEvent) {
-	            	sideBar.setVisible(false);
-	            	sidebarControlButton.setText("Show");
-	            }
-	          });
-	  
-	 
-	          final Animation showSidebar = new Transition() {
-	            { setCycleDuration(javafx.util.Duration.millis(250)); }
-	            protected void interpolate(double frac) {
-	              final double curWidth = startWidth * frac;
-	              sideBar.setTranslateX(-startWidth + curWidth);
-	            }
-	          };
-	          showSidebar.onFinishedProperty().set(new EventHandler<ActionEvent>() {
-	            @Override public void handle(ActionEvent actionEvent) {
-	            	sidebarControlButton.setText("Hide");
-	            }
-	          });
-	  
-	          if (showSidebar.statusProperty().get() == Animation.Status.STOPPED && hideSidebar.statusProperty().get() == Animation.Status.STOPPED) {
-	            if (sideBar.isVisible()) {
-	              hideSidebar.play();
-	            } else {
-	            	sideBar.setVisible(true);
-	              showSidebar.play();
-	            }
-	          }
-	        }
-	
-	
+	private TableColumn<Swarm, String> firstColumn;
+
+	@FXML
+	private TableColumn<Swarm, String> secondColumn;
+
+	@FXML
+	private TableColumn<AbstractTrainSimulator, String> thirdColumn;
+
 	@FXML
 	public void initialize() {
 		try {
@@ -128,193 +93,323 @@ public class SwarmViewerController {
 			URL location = NetworkPaneController.class
 					.getResource("NetworkPane.fxml");
 			loader.setLocation(location);
-			StackPane networkPane = (StackPane) loader.load();
+			networkPane = (StackPane) loader.load();
 			this.networkPaneController = loader.getController();
-			
+
 			FXMLLoader sidebarloader = new FXMLLoader();
 			URL sidebarlocation = SwarmSidebarController.class
 					.getResource("SwarmSidebar.fxml");
 			sidebarloader.setLocation(sidebarlocation);
-			AnchorPane swarmSidebarPane = (AnchorPane) sidebarloader.load();
+			StackPane swarmSidebarPane = (StackPane) sidebarloader.load();
 			this.swarmSidebarController = sidebarloader.getController();
-			
-			//sideBar.setVisible(false);
-			AnchorPane.setLeftAnchor(networkPane, (this.networkPaneRoot.prefWidth(-1)/2)-(networkPane.prefWidth(-1)/2));
-			AnchorPane.setTopAnchor(networkPane,(this.networkPaneRoot.prefHeight(-1)/2)-(networkPane.prefHeight(-1)/2));
-			this.networkPaneRoot.getChildren().addAll(networkPane);
+
+			FXMLLoader graphpaneloader = new FXMLLoader();
+			URL graphpanelocation = GraphPaneController.class
+					.getResource("GraphPane.fxml");
+			graphpaneloader.setLocation(graphpanelocation);
+			graphPane = (AnchorPane) graphpaneloader.load();
+			this.graphPaneController = graphpaneloader.getController();
+
+			AnchorPane.setLeftAnchor(
+					networkPane,
+					(this.networkPaneRoot.prefWidth(-1) / 2)
+							- (networkPane.prefWidth(-1) / 2));
+			AnchorPane.setTopAnchor(
+					networkPane,
+					(this.networkPaneRoot.prefHeight(-1) / 2)
+							- (networkPane.prefHeight(-1) / 2));
+
+			AnchorPane.setLeftAnchor(swarmSidebarPane, 0.0);
+			AnchorPane.setTopAnchor(swarmSidebarPane, 0.0);
+			AnchorPane.setBottomAnchor(swarmSidebarPane, 0.0);
+			AnchorPane.setRightAnchor(swarmSidebarPane, 0.0);
+
+			this.networkPaneRoot.getChildren().addAll(networkPane, graphPane);
 			sideBar.getChildren().add(0, swarmSidebarPane);
-			sidebarControlButton.setVisible(true);
-			
+
+			sideBar.setVisible(false);
+			graphPane.setVisible(false);
 
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@FXML
 	public void startSimulation() {
 		if (this.simulator != null) {
 			new Thread(this.simulator).start();
-			
+
 			Thread t = new Thread(() -> {
-				(new SwarmUpdater()).periodicalUpdate(false); 
-			});			
+				(new SwarmUpdater()).periodicalUpdate(false);
+			});
 			t.setDaemon(true);
 			t.start();
 
 		}
 	}
-	
+
 	@FXML
 	private void fadeRoot() {
-	                FadeTransition fadeTransition 
-	                        = new FadeTransition(javafx.util.Duration.millis(500), menuPane);
-	                fadeTransition.setToValue(0.0);
-	                fadeTransition.play();
-	            }
+		FadeTransition fadeTransition = new FadeTransition(
+				javafx.util.Duration.millis(500), menuPane);
+		fadeTransition.setToValue(0.0);
+		fadeTransition.play();
 
-		  
+		FadeTransition fadeTransition2 = new FadeTransition(
+				javafx.util.Duration.millis(500), symbolPane);
+		fadeTransition2.setToValue(0.0);
+		fadeTransition2.play();
+	}
+
 	@FXML
 	private void appear() {
-	                FadeTransition fadeTransition 
-	                        = new FadeTransition(javafx.util.Duration.millis(500), menuPane);
-	                fadeTransition.setFromValue(0.0);
-	                fadeTransition.setToValue(1.0);
-	                fadeTransition.play();
-	            }
+		FadeTransition fadeTransition = new FadeTransition(
+				javafx.util.Duration.millis(500), menuPane);
+		fadeTransition.setFromValue(0.0);
+		fadeTransition.setToValue(1.0);
+		fadeTransition.play();
+	}
 
-  		
 	@FXML
 	private void fadeMenu() {
-	                FadeTransition fadeTransition 
-	                        = new FadeTransition(javafx.util.Duration.millis(500), menuPane);
-	                fadeTransition.setFromValue(1.0);
-	                fadeTransition.setToValue(0.0);
-	                fadeTransition.play();
+		FadeTransition fadeTransition = new FadeTransition(
+				javafx.util.Duration.millis(500), menuPane);
+		fadeTransition.setFromValue(1.0);
+		fadeTransition.setToValue(0.0);
+		fadeTransition.play();
 
-				}
-			
+	}
 
-	
+	@FXML
+	private void fadeSymbolPaneRoot() {
+		FadeTransition fadeTransition = new FadeTransition(
+				javafx.util.Duration.millis(500), symbolPane);
+		fadeTransition.setToValue(0.0);
+		fadeTransition.play();
+	}
+
+	@FXML
+	private void appearSymbolPane() {
+		FadeTransition fadeTransition = new FadeTransition(
+				javafx.util.Duration.millis(500), symbolPane);
+		fadeTransition.setFromValue(0.0);
+		fadeTransition.setToValue(1.0);
+		fadeTransition.play();
+	}
+
+	@FXML
+	private void fadeSymbolPane() {
+		FadeTransition fadeTransition = new FadeTransition(
+				javafx.util.Duration.millis(500), symbolPane);
+		fadeTransition.setFromValue(1.0);
+		fadeTransition.setToValue(0.0);
+		fadeTransition.play();
+
+	}
+
 	@FXML
 	public void replaySimulation() {
 		if (this.simulator != null) {
 			Thread t = new Thread(() -> {
-				(new SwarmUpdater()).periodicalUpdate(true); 
-			});			
+				(new SwarmUpdater()).periodicalUpdate(true);
+			});
 			t.setDaemon(true);
 			t.start();
 		}
 	}
-	
+
+	@FXML
+	public void graphButtonClicked() {
+		graphPane.setVisible(true);
+		networkPane.setVisible(false);
+	}
+
+	@FXML
+	public void swarmButtonClicked() {
+		graphPane.setVisible(false);
+		networkPane.setVisible(true);
+	}
+
+	@FXML
+	public void handleButtonAction(ActionEvent event) {
+		sideBar.setPickOnBounds(false);
+		final double startWidth = sideBar.getWidth();
+		final Animation hideSidebar = new Transition() {
+			{
+				setCycleDuration(javafx.util.Duration.millis(250));
+			}
+
+			protected void interpolate(double frac) {
+				final double curWidth = startWidth * (1.0 - frac);
+				sideBar.setTranslateX(-startWidth + curWidth);
+			}
+		};
+		hideSidebar.onFinishedProperty().set(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent actionEvent) {
+				sideBar.setVisible(false);
+				sidebarOpenButton.setVisible(true);
+			}
+		});
+
+		final Animation showSidebar = new Transition() {
+			{
+				setCycleDuration(javafx.util.Duration.millis(250));
+			}
+
+			protected void interpolate(double frac) {
+				final double curWidth = startWidth * frac;
+				sideBar.setTranslateX(-startWidth + curWidth);
+			}
+		};
+		showSidebar.onFinishedProperty().set(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent actionEvent) {
+				sidebarOpenButton.setVisible(false);
+			}
+		});
+
+		if (showSidebar.statusProperty().get() == Animation.Status.STOPPED
+				&& hideSidebar.statusProperty().get() == Animation.Status.STOPPED) {
+			if (sideBar.isVisible()) {
+				hideSidebar.play();
+			} else {
+				sideBar.setVisible(true);
+				showSidebar.play();
+			}
+		}
+	}
+
 	public NetworkPaneController getNetworkPaneController() {
 		return this.networkPaneController;
 	}
-	
+
 	public void setInfrastructureServiceUtility(
 			IInfrastructureServiceUtility serviceUtility) {
 		this.networkPaneController
 				.setInfrastructureServiceUtility(serviceUtility);
 	}
-	
+
 	public void setSimulationManager(SimulationManager simulator) {
 		this.simulator = simulator;
 	}
-	
+
 	public void setSwarmManager(SwarmManager swarmManager) {
 		this.swarmManager = swarmManager;
 	}
-	
+
 	public void updateSwarms(Collection<Swarm> swarms, Time time) {
 		ObservableList<Swarm> data = FXCollections.observableArrayList();
 		data.addAll(swarms);
-		
+
 		firstColumn.setCellValueFactory(celldata -> new SimpleStringProperty(
 				celldata.getValue().getId().toString()));
 		secondColumn.setCellValueFactory(celldata -> new SimpleStringProperty(
 				celldata.getValue().getCreationTime().toString()));
-		
+
 		informationTable.setItems(data);
 	}
-	
+
+	private AnchorPane graphPane;
+	private StackPane networkPane;
+
 	private NetworkPaneController networkPaneController;
 	private SwarmSidebarController swarmSidebarController;
-	
+	private GraphPaneController graphPaneController;
+
 	private SimulationManager simulator;
 	private SwarmManager swarmManager;
 	private Duration updateInterval = Duration.fromSecond(60);
 	private int UIPause = 100;
-	
+
 	class SwarmUpdater {
 		private Time time = Time.getInstance(0, 0, 0);
 		boolean isUpdateCompleted = false;
-		
+
 		void periodicalUpdate(boolean isReplay) {
-			while (! isUpdateCompleted) {
+			while (!isUpdateCompleted) {
 				Platform.runLater(new Runnable() {
-					@Override public void run() {
+					@Override
+					public void run() {
 						timeLabel.setText("Simulation Time: " + time.toString());
 
 						Collection<Swarm> swarms = swarmManager.getSwarms(time);
-						Map<AbstractTrainSimulator, List<Coordinate>> coordinates = simulator.getTrainCoordinates(time);
-						networkPaneController.updateSwarms(coordinates, swarms, time);
+						Map<AbstractTrainSimulator, List<Coordinate>> coordinates = simulator
+								.getTrainCoordinates(time);
+						networkPaneController.updateSwarms(coordinates, swarms,
+								time);
 						swarmSidebarController.updateSwarms(swarms, time);
-						
-						if (simulator.getTime() != null || simulator.getTerminatedTime() != null) { 
-							// simulator.getTime() != null: after initialization and before simulation finished
-							// simulator.getTerminatedTime() != null: simulation finished
+
+						if (simulator.getTime() != null
+								|| simulator.getTerminatedTime() != null) {
+							// simulator.getTime() != null: after initialization
+							// and before simulation finished
+							// simulator.getTerminatedTime() != null: simulation
+							// finished
 							int numActive = 0;
 							int numTerminate = 0;
-							for (EventListener listener : simulator.getListeners()) {
+							for (EventListener listener : simulator
+									.getListeners()) {
 								if (listener instanceof AbstractTrainSimulator) {
 									AbstractTrainSimulator trainSimulator = (AbstractTrainSimulator) listener;
-									
+
 									if (trainSimulator.getTerminateTime() != null) {
-										if (trainSimulator.getTerminateTime().compareTo(time) < 0) {
+										if (trainSimulator.getTerminateTime()
+												.compareTo(time) < 0) {
 											numTerminate++;
 										} else {
-											if (trainSimulator.getActiveTime().compareTo(time) < 0) {
+											if (trainSimulator.getActiveTime()
+													.compareTo(time) < 0) {
 												numActive++;
 											}
 										}
 									} else {
-										if (trainSimulator.getActiveTime() != null && 
-												trainSimulator.getActiveTime().compareTo(time) < 0) {
+										if (trainSimulator.getActiveTime() != null
+												&& trainSimulator
+														.getActiveTime()
+														.compareTo(time) < 0) {
 											numActive++;
 										}
 									}
 								}
 							}
-						
+
 							if (numActive == 0 && swarms.size() == 1) {
 								String s = "";
 							}
-							
-							activeLabel.setText("Active Trains/Swarms: " + numActive + "/" + swarms.size());
-							terminatedLabel.setText("Terminated Trains: " + numTerminate);
+
+							activeLabel.setText("Active Trains/Swarms: "
+									+ numActive + "/" + swarms.size());
+							terminatedLabel.setText("Terminated Trains: "
+									+ numTerminate);
 						} // if (simulator.getTime() != null)
-						
-						if (simulator.getTerminatedTime() != null &&
-								time.compareTo(simulator.getTerminatedTime()) >= 0) {
+
+						if (simulator.getTerminatedTime() != null
+								&& time.compareTo(simulator.getTerminatedTime()) >= 0) {
 							isUpdateCompleted = true;
 						}
 					}
 				});
-				
+
 				try {
 					Thread.sleep(UIPause);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				
+
 				if (isReplay) {
 					time = time.add(updateInterval);
 				} else {
-					if (simulator.getTerminatedTime() == null) { // not terminated yet
-						if (simulator.getTime() != null) { // initialization not completed yet
+					if (simulator.getTerminatedTime() == null) { // not
+																	// terminated
+																	// yet
+						if (simulator.getTime() != null) { // initialization not
+															// completed yet
 							time = time.add(updateInterval);
 							if (time.compareTo(simulator.getTime()) > 0) {
-								time = simulator.getTime(); // if update too fast, slow down
+								time = simulator.getTime(); // if update too
+															// fast, slow down
 							}
 						}
 					} else {
