@@ -45,7 +45,7 @@
       </AnchorPane>
     <AnchorPane fx:id="menuPane" onMouseEntered="#appear" onMouseExited="#fadeMenu" prefHeight="72.0" prefWidth="1320.0" styleClass="background-white" stylesheets="@../../../resources/CSS/Darktheme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Button layoutX="35.0" layoutY="15.0" mnemonicParsing="false" onAction="#startSimulation">
+            <Button fx:id="startButton" layoutX="35.0" layoutY="15.0" mnemonicParsing="false" onAction="#startSimulation">
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -66,7 +66,7 @@
             <Label fx:id="timeLabel" layoutX="263.0" layoutY="30.0" prefHeight="17.0" prefWidth="248.0" styleClass="label-bright" stylesheets="@../../../resources/CSS/Darktheme.css" text="Simulation Time:" />
             <Label fx:id="activeLabel" layoutX="575.0" layoutY="30.0" text="Active Trains/Swarms:" />
             <Label fx:id="terminatedLabel" layoutX="858.0" layoutY="30.0" text="Terminated Trains:" />
-            <Button layoutX="100.0" layoutY="15.0" mnemonicParsing="false">
+            <Button fx:id="pauseButton" layoutX="100.0" layoutY="15.0" mnemonicParsing="false" onAction="#pauseSimulation">
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>

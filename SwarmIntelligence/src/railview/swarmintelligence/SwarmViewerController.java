@@ -58,6 +58,9 @@ public class SwarmViewerController {
 
 	@FXML
 	private Button startButton;
+	
+	@FXML
+	private Button pauseButton;
 
 	@FXML
 	private Button sidebarOpenButton;
@@ -108,7 +111,6 @@ public class SwarmViewerController {
 					.getResource("GraphPane.fxml");
 			graphpaneloader.setLocation(graphpanelocation);
 			graphPane = (AnchorPane) graphpaneloader.load();
-			this.graphPaneController = graphpaneloader.getController();
 
 			AnchorPane.setLeftAnchor(
 					networkPane,
@@ -137,15 +139,37 @@ public class SwarmViewerController {
 
 	@FXML
 	public void startSimulation() {
+		if (isPause) {
+			isPause = false;
+			this.pauseButton.setDisable(false);
+			this.startButton.setDisable(true);
+		}
+		
+		if (this.simulator != null){
+			if (this.simulationThread == null) {
+				this.simulationThread = new Thread(this.simulator);
+				this.simulationThread.start();
+			}
+
+			if (this.updateThread == null) {
+				this.updateThread = new Thread(() -> {
+					(new SwarmUpdater()).periodicalUpdate(false);
+				});
+				
+				updateThread.setDaemon(true);
+				updateThread.start();
+			}
+		}
+	}
+	
+	@FXML
+	public void pauseSimulation() {
 		if (this.simulator != null) {
-			new Thread(this.simulator).start();
-
-			Thread t = new Thread(() -> {
-				(new SwarmUpdater()).periodicalUpdate(false);
-			});
-			t.setDaemon(true);
-			t.start();
-
+			if (! isPause) {
+				isPause = true;
+				this.pauseButton.setDisable(true);
+				this.startButton.setDisable(false);
+			}
 		}
 	}
 
@@ -263,6 +287,7 @@ public class SwarmViewerController {
 				sideBar.setTranslateX(-startWidth + curWidth);
 			}
 		};
+		
 		showSidebar.onFinishedProperty().set(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
@@ -316,12 +341,16 @@ public class SwarmViewerController {
 
 	private NetworkPaneController networkPaneController;
 	private SwarmSidebarController swarmSidebarController;
-	private GraphPaneController graphPaneController;
 
 	private SimulationManager simulator;
 	private SwarmManager swarmManager;
 	private Duration updateInterval = Duration.fromSecond(60);
 	private int UIPause = 100;
+	
+	private boolean isPause = false;
+	
+	private Thread updateThread = null;
+	private Thread simulationThread = null;
 
 	class SwarmUpdater {
 		private Time time = Time.getInstance(0, 0, 0);
@@ -329,68 +358,66 @@ public class SwarmViewerController {
 
 		void periodicalUpdate(boolean isReplay) {
 			while (!isUpdateCompleted) {
-				Platform.runLater(new Runnable() {
-					@Override
-					public void run() {
-						timeLabel.setText("Simulation Time: " + time.toString());
-
-						Collection<Swarm> swarms = swarmManager.getSwarms(time);
-						Map<AbstractTrainSimulator, List<Coordinate>> coordinates = simulator
-								.getTrainCoordinates(time);
-						networkPaneController.updateSwarms(coordinates, swarms,
-								time);
-						swarmSidebarController.updateSwarms(swarms, time);
-
-						if (simulator.getTime() != null
-								|| simulator.getTerminatedTime() != null) {
-							// simulator.getTime() != null: after initialization
-							// and before simulation finished
-							// simulator.getTerminatedTime() != null: simulation
-							// finished
-							int numActive = 0;
-							int numTerminate = 0;
-							for (EventListener listener : simulator
-									.getListeners()) {
-								if (listener instanceof AbstractTrainSimulator) {
-									AbstractTrainSimulator trainSimulator = (AbstractTrainSimulator) listener;
-
-									if (trainSimulator.getTerminateTime() != null) {
-										if (trainSimulator.getTerminateTime()
-												.compareTo(time) < 0) {
-											numTerminate++;
-										} else {
-											if (trainSimulator.getActiveTime()
+				if (!isPause) {
+					Platform.runLater(new Runnable() {
+						@Override
+						public void run() {
+							timeLabel.setText("Simulation Time: " + time.toString());
+	
+							Collection<Swarm> swarms = swarmManager.getSwarms(time);
+							Map<AbstractTrainSimulator, List<Coordinate>> coordinates = simulator
+									.getTrainCoordinates(time);
+							networkPaneController.updateSwarms(coordinates, swarms,
+									time);
+							swarmSidebarController.updateSwarms(swarms, time);
+	
+							if (simulator.getTime() != null
+									|| simulator.getTerminatedTime() != null) {
+								// simulator.getTime() != null: after initialization
+								// and before simulation finished
+								// simulator.getTerminatedTime() != null: simulation
+								// finished
+								int numActive = 0;
+								int numTerminate = 0;
+								for (EventListener listener : simulator
+										.getListeners()) {
+									if (listener instanceof AbstractTrainSimulator) {
+										AbstractTrainSimulator trainSimulator = (AbstractTrainSimulator) listener;
+	
+										if (trainSimulator.getTerminateTime() != null) {
+											if (trainSimulator.getTerminateTime()
 													.compareTo(time) < 0) {
+												numTerminate++;
+											} else {
+												if (trainSimulator.getActiveTime()
+														.compareTo(time) < 0) {
+													numActive++;
+												}
+											}
+										} else {
+											if (trainSimulator.getActiveTime() != null
+													&& trainSimulator
+															.getActiveTime()
+															.compareTo(time) < 0) {
 												numActive++;
 											}
 										}
-									} else {
-										if (trainSimulator.getActiveTime() != null
-												&& trainSimulator
-														.getActiveTime()
-														.compareTo(time) < 0) {
-											numActive++;
-										}
 									}
 								}
+	
+								activeLabel.setText("Active Trains/Swarms: "
+										+ numActive + "/" + swarms.size());
+								terminatedLabel.setText("Terminated Trains: "
+										+ numTerminate);
+							} // if (simulator.getTime() != null)
+	
+							if (simulator.getTerminatedTime() != null
+									&& time.compareTo(simulator.getTerminatedTime()) >= 0) {
+								isUpdateCompleted = true;
 							}
-
-							if (numActive == 0 && swarms.size() == 1) {
-								String s = "";
-							}
-
-							activeLabel.setText("Active Trains/Swarms: "
-									+ numActive + "/" + swarms.size());
-							terminatedLabel.setText("Terminated Trains: "
-									+ numTerminate);
-						} // if (simulator.getTime() != null)
-
-						if (simulator.getTerminatedTime() != null
-								&& time.compareTo(simulator.getTerminatedTime()) >= 0) {
-							isUpdateCompleted = true;
-						}
-					}
-				});
+						} // public void run() {
+					}); // Platform.runLater(new Runnable() {
+				} // if (!isPause)
 
 				try {
 					Thread.sleep(UIPause);
@@ -401,15 +428,11 @@ public class SwarmViewerController {
 				if (isReplay) {
 					time = time.add(updateInterval);
 				} else {
-					if (simulator.getTerminatedTime() == null) { // not
-																	// terminated
-																	// yet
-						if (simulator.getTime() != null) { // initialization not
-															// completed yet
+					if (simulator.getTerminatedTime() == null) { // not terminated yet
+						if (simulator.getTime() != null) { // initialization not completed yet
 							time = time.add(updateInterval);
 							if (time.compareTo(simulator.getTime()) > 0) {
-								time = simulator.getTime(); // if update too
-															// fast, slow down
+								time = simulator.getTime(); // if update too fast, slow down
 							}
 						}
 					} else {
