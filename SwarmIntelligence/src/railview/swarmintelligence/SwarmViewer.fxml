@@ -54,7 +54,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="165.0" layoutY="15.0" mnemonicParsing="false" onAction="#replaySimulation">
+            <Button fx:id="replayButton" layoutX="165.0" layoutY="15.0" mnemonicParsing="false" onAction="#replaySimulation">
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -75,6 +75,7 @@
                   </ImageView>
                </graphic>
             </Button>
+            <Slider fx:id="speedBar" blockIncrement="1.0" layoutX="1046.0" layoutY="29.0" prefHeight="14.0" prefWidth="227.0" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="sideBar" prefWidth="300.0" AnchorPane.bottomAnchor="72.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">

@@ -19,6 +19,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
@@ -61,7 +62,13 @@ public class SwarmViewerController {
 	
 	@FXML
 	private Button pauseButton;
+	
+	@FXML
+	private Button replayButton;
 
+	@FXML
+	private Slider speedBar;
+	
 	@FXML
 	private Button sidebarOpenButton;
 
@@ -131,6 +138,10 @@ public class SwarmViewerController {
 
 			sideBar.setVisible(false);
 			graphPane.setVisible(false);
+			
+			startButton.setDisable(false);
+			pauseButton.setDisable(true);
+			replayButton.setDisable(true);
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -141,8 +152,6 @@ public class SwarmViewerController {
 	public void startSimulation() {
 		if (isPause) {
 			isPause = false;
-			this.pauseButton.setDisable(false);
-			this.startButton.setDisable(true);
 		}
 		
 		if (this.simulator != null){
@@ -159,6 +168,14 @@ public class SwarmViewerController {
 				updateThread.setDaemon(true);
 				updateThread.start();
 			}
+			
+			this.startButton.setDisable(true);
+			this.pauseButton.setDisable(false);
+			if (this.simulator != null && this.simulator.getTerminatedTime() != null) {
+				this.replayButton.setDisable(false);
+			} else {
+				this.replayButton.setDisable(true);
+			}
 		}
 	}
 	
@@ -169,7 +186,27 @@ public class SwarmViewerController {
 				isPause = true;
 				this.pauseButton.setDisable(true);
 				this.startButton.setDisable(false);
+				if (this.simulator != null && this.simulator.getTerminatedTime() != null) {
+					this.replayButton.setDisable(false);
+				} else {
+					this.replayButton.setDisable(true);
+				}
 			}
+		}
+	}
+	
+	@FXML
+	public void replaySimulation() {
+		if (this.simulator != null && this.simulator.getTerminatedTime() != null) {
+			if (this.updateThread == null)
+			{
+				this.updateThread = new Thread(() -> {
+					(new SwarmUpdater()).periodicalUpdate(true);
+				});
+			}
+			
+			this.updateThread.setDaemon(true);
+			this.updateThread.start();
 		}
 	}
 
@@ -230,17 +267,6 @@ public class SwarmViewerController {
 		fadeTransition.setToValue(0.0);
 		fadeTransition.play();
 
-	}
-
-	@FXML
-	public void replaySimulation() {
-		if (this.simulator != null) {
-			Thread t = new Thread(() -> {
-				(new SwarmUpdater()).periodicalUpdate(true);
-			});
-			t.setDaemon(true);
-			t.start();
-		}
 	}
 
 	@FXML
@@ -344,8 +370,8 @@ public class SwarmViewerController {
 
 	private SimulationManager simulator;
 	private SwarmManager swarmManager;
-	private Duration updateInterval = Duration.fromSecond(60);
 	private int UIPause = 100;
+	private int MAXSpeed = 20000; // 100 : 20000
 	
 	private boolean isPause = false;
 	
@@ -415,6 +441,10 @@ public class SwarmViewerController {
 									&& time.compareTo(simulator.getTerminatedTime()) >= 0) {
 								isUpdateCompleted = true;
 							}
+							
+							if (simulator.getTerminatedTime() != null) {
+								replayButton.setDisable(false);
+							}
 						} // public void run() {
 					}); // Platform.runLater(new Runnable() {
 				} // if (!isPause)
@@ -423,6 +453,18 @@ public class SwarmViewerController {
 					Thread.sleep(UIPause);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
+				}
+
+				Duration updateInterval = Duration.fromTotalMilliSecond(UIPause);
+				if (simulator.getTime() != null) {
+					updateInterval = Duration.fromTotalMilliSecond(MAXSpeed * speedBar.getValue()/100);
+					if (speedBar.getValue() == speedBar.getMin()) {
+						updateInterval = Duration.fromTotalMilliSecond(UIPause);
+					}
+					
+					if (speedBar.getValue() == speedBar.getMax()) {
+						updateInterval = simulator.getTime().getDifference(time);
+					}
 				}
 
 				if (isReplay) {
