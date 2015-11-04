@@ -2,7 +2,9 @@ package railview.swarmintelligence;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -64,7 +66,7 @@ public class SwarmViewerController {
 	private Button pauseButton;
 	
 	@FXML
-	private Button replayButton;
+	private Button stopButton;
 
 	@FXML
 	private Slider speedBar;
@@ -141,7 +143,7 @@ public class SwarmViewerController {
 			
 			startButton.setDisable(false);
 			pauseButton.setDisable(true);
-			replayButton.setDisable(true);
+			stopButton.setDisable(true);
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -154,27 +156,29 @@ public class SwarmViewerController {
 			isPause = false;
 		}
 		
+		if (isStop) {
+			isStop = false;
+		}
+		
+		this.startButton.setDisable(true);
+		this.pauseButton.setDisable(false);
+		this.stopButton.setDisable(false);
+		
 		if (this.simulator != null){
 			if (this.simulationThread == null) {
 				this.simulationThread = new Thread(this.simulator);
 				this.simulationThread.start();
 			}
-
-			if (this.updateThread == null) {
-				this.updateThread = new Thread(() -> {
-					(new SwarmUpdater()).periodicalUpdate(false);
-				});
-				
-				updateThread.setDaemon(true);
-				updateThread.start();
-			}
 			
-			this.startButton.setDisable(true);
-			this.pauseButton.setDisable(false);
-			if (this.simulator != null && this.simulator.getTerminatedTime() != null) {
-				this.replayButton.setDisable(false);
-			} else {
-				this.replayButton.setDisable(true);
+			if (this.swarmUpdater == null) {
+				this.swarmUpdater = new SwarmUpdater();
+			}
+
+			if (this.updateThread == null) {	
+				this.updateThread = new Thread(() -> {
+					this.swarmUpdater.periodicalUpdate(false);
+				});
+				this.updateThread.start();	
 			}
 		}
 	}
@@ -184,30 +188,30 @@ public class SwarmViewerController {
 		if (this.simulator != null) {
 			if (! isPause) {
 				isPause = true;
-				this.pauseButton.setDisable(true);
+				
 				this.startButton.setDisable(false);
-				if (this.simulator != null && this.simulator.getTerminatedTime() != null) {
-					this.replayButton.setDisable(false);
-				} else {
-					this.replayButton.setDisable(true);
-				}
+				this.pauseButton.setDisable(true);
+				this.stopButton.setDisable(false);
 			}
 		}
 	}
 	
 	@FXML
-	public void replaySimulation() {
-		if (this.simulator != null && this.simulator.getTerminatedTime() != null) {
-			if (this.updateThread == null)
-			{
-				this.updateThread = new Thread(() -> {
-					(new SwarmUpdater()).periodicalUpdate(true);
-				});
-			}
-			
-			this.updateThread.setDaemon(true);
-			this.updateThread.start();
+	public void stopSimulation() {
+		if (this.simulator != null) {
+			this.simulator.stop();
+			this.swarmManager.stop();
+			this.swarmUpdater.stopUpdate();
 		}
+		
+		this.isStop = true;
+		
+		this.startButton.setDisable(false);
+		this.pauseButton.setDisable(true);
+		this.stopButton.setDisable(true);
+		
+		this.simulationThread = null;
+		this.updateThread = null;
 	}
 
 	@FXML
@@ -371,19 +375,24 @@ public class SwarmViewerController {
 	private SimulationManager simulator;
 	private SwarmManager swarmManager;
 	private int UIPause = 100;
-	private int MAXSpeed = 30000; // 1 : 300
+	private int MAXSpeed = 20000; // 1 : 200
 	
 	private boolean isPause = false;
+	private boolean isStop = false;
 	
 	private Thread updateThread = null;
 	private Thread simulationThread = null;
+	private SwarmUpdater swarmUpdater = null;
 
 	class SwarmUpdater {
 		private Time time = Time.getInstance(0, 0, 0);
-		boolean isUpdateCompleted = false;
 
-		void periodicalUpdate(boolean isReplay) {
-			while (!isUpdateCompleted) {
+		void periodicalUpdate(boolean isReplay) {			
+			while ((simulator.getTerminatedTime() == null || time.compareTo(simulator.getTerminatedTime()) < 0)) {
+				if (isStop) {
+					break;
+				}
+				
 				if (!isPause) {
 					Platform.runLater(new Runnable() {
 						@Override
@@ -395,31 +404,31 @@ public class SwarmViewerController {
 									time);
 							swarmSidebarController.updateSwarms(swarms, time);
 							
-							updateStatus(swarms);
-
-							if (simulator.getTerminatedTime() != null
-									&& time.compareTo(simulator.getTerminatedTime()) >= 0) {
-								isUpdateCompleted = true;
-							}
-							
-							if (simulator.getTerminatedTime() != null) {
-								replayButton.setDisable(false);
-							}
+							updateStatusBar(swarms);
 						} // public void run() {
 					}); // Platform.runLater(new Runnable() {
+					
+					try {
+						Thread.sleep(UIPause);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					
+					this.setTime(isReplay);
 				} // if (!isPause)
-
-				try {
-					Thread.sleep(UIPause);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-
-				this.setTime(isReplay);
-			}
+			} // while ((simulator.getTerminatedTime() == null || time.compareTo(simulator.getTerminatedTime()) < 0))
 		} // periodicalUpdate(boolean isReplay)
+		
+		void stopUpdate() {
+			time = Time.getInstance(0, 0, 0);
+			Collection<Swarm> swarms = new ArrayList<Swarm>();
+			networkPaneController.updateSwarms(
+					new HashMap<AbstractTrainSimulator, List<Coordinate>>(), swarms, time);
+			swarmSidebarController.updateSwarms(swarms, time);
+			updateStatusBar(swarms);
+		}
 	
-		private void updateStatus(Collection<Swarm> swarms) {
+		private void updateStatusBar(Collection<Swarm> swarms) {
 			timeLabel.setText("Simulation Time: " + time.toString());
 			
 			if (simulator.getTime() != null	|| simulator.getTerminatedTime() != null) {
