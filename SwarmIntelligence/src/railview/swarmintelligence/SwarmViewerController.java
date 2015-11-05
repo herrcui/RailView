@@ -165,18 +165,14 @@ public class SwarmViewerController {
 		this.stopButton.setDisable(false);
 		
 		if (this.simulator != null){
-			if (this.simulationThread == null) {
+			if (this.simulationThread == null || !this.simulationThread.isAlive()) {
 				this.simulationThread = new Thread(this.simulator);
 				this.simulationThread.start();
 			}
 			
-			if (this.swarmUpdater == null) {
-				this.swarmUpdater = new SwarmUpdater();
-			}
-
-			if (this.updateThread == null) {	
+			if (this.updateThread == null || !this.updateThread.isAlive()) {	
 				this.updateThread = new Thread(() -> {
-					this.swarmUpdater.periodicalUpdate(false);
+					(new SwarmUpdater()).periodicalUpdate(false);
 				});
 				this.updateThread.start();	
 			}
@@ -201,7 +197,6 @@ public class SwarmViewerController {
 		if (this.simulator != null) {
 			this.simulator.stop();
 			this.swarmManager.stop();
-			this.swarmUpdater.stopUpdate();
 		}
 		
 		this.isStop = true;
@@ -209,9 +204,13 @@ public class SwarmViewerController {
 		this.startButton.setDisable(false);
 		this.pauseButton.setDisable(true);
 		this.stopButton.setDisable(true);
-		
-		this.simulationThread = null;
-		this.updateThread = null;
+
+		try {
+			this.simulationThread.join();
+			this.updateThread.join();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		};
 	}
 
 	@FXML
@@ -382,14 +381,24 @@ public class SwarmViewerController {
 	
 	private Thread updateThread = null;
 	private Thread simulationThread = null;
-	private SwarmUpdater swarmUpdater = null;
 
 	class SwarmUpdater {
 		private Time time = Time.getInstance(0, 0, 0);
+		private boolean updateTerminated = false;
 
+		boolean isUpdateTerminated() {
+			return this.updateTerminated;
+		}
+		
 		void periodicalUpdate(boolean isReplay) {			
-			while ((simulator.getTerminatedTime() == null || time.compareTo(simulator.getTerminatedTime()) < 0)) {
+			while (! updateTerminated) {
 				if (isStop) {
+					updateTerminated = true;
+					break;
+				}
+				
+				if (simulator.getStatus() == SimulationManager.TERMINATED && time.compareTo(simulator.getTime()) > 0) {
+					updateTerminated = true;
 					break;
 				}
 				
@@ -408,70 +417,56 @@ public class SwarmViewerController {
 						} // public void run() {
 					}); // Platform.runLater(new Runnable() {
 					
-					try {
-						Thread.sleep(UIPause);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-					
 					this.setTime(isReplay);
 				} // if (!isPause)
+				
+				try {
+					Thread.sleep(UIPause);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 			} // while ((simulator.getTerminatedTime() == null || time.compareTo(simulator.getTerminatedTime()) < 0))
 		} // periodicalUpdate(boolean isReplay)
-		
-		void stopUpdate() {
-			time = Time.getInstance(0, 0, 0);
-			Collection<Swarm> swarms = new ArrayList<Swarm>();
-			networkPaneController.updateSwarms(
-					new HashMap<AbstractTrainSimulator, List<Coordinate>>(), swarms, time);
-			swarmSidebarController.updateSwarms(swarms, time);
-			updateStatusBar(swarms);
-		}
 	
 		private void updateStatusBar(Collection<Swarm> swarms) {
 			timeLabel.setText("Simulation Time: " + time.toString());
 			
-			if (simulator.getTime() != null	|| simulator.getTerminatedTime() != null) {
-				// simulator.getTime() != null: after initialization and before simulation finished
-				// simulator.getTerminatedTime() != null: simulation finished
-				int numActive = 0;
-				int numTerminate = 0;
+			int numActive = 0;
+			int numTerminate = 0;
+			
+			if (simulator.getStatus() != SimulationManager.INACTIVE) {
 				for (EventListener listener : simulator
 						.getListeners()) {
 					if (listener instanceof AbstractTrainSimulator) {
 						AbstractTrainSimulator trainSimulator = (AbstractTrainSimulator) listener;
 
 						if (trainSimulator.getTerminateTime() != null) {
-							if (trainSimulator.getTerminateTime()
-									.compareTo(time) < 0) {
+							if (trainSimulator.getTerminateTime().compareTo(time) < 0) {
 								numTerminate++;
 							} else {
-								if (trainSimulator.getActiveTime()
-										.compareTo(time) < 0) {
+								if (trainSimulator.getActiveTime().compareTo(time) < 0) {
 									numActive++;
 								}
 							}
 						} else {
-							if (trainSimulator.getActiveTime() != null
-									&& trainSimulator
-											.getActiveTime()
-											.compareTo(time) < 0) {
+							if (trainSimulator.getActiveTime() != null && 
+								trainSimulator.getActiveTime().compareTo(time) < 0) {
 								numActive++;
 							}
 						}
 					}
 				}
-
-				activeLabel.setText("Active Trains/Swarms: "
-						+ numActive + "/" + swarms.size());
-				terminatedLabel.setText("Terminated Trains: "
-						+ numTerminate);
-			} // if (simulator.getTime() != null	|| simulator.getTerminatedTime() != null)
+			} // if (simulator.getStatus() != SimulationManager.INACTIVE)
+			
+			activeLabel.setText("Active Trains/Swarms: "
+					+ numActive + "/" + swarms.size());
+			terminatedLabel.setText("Terminated Trains: "
+					+ numTerminate);
 		}
 		
 		private void setTime(boolean isReplay) {
 			Duration updateInterval = Duration.fromTotalMilliSecond(UIPause);
-			if (simulator.getTime() != null || simulator.getTerminatedTime() != null) {
+			if (simulator.getStatus() != SimulationManager.INACTIVE) {
 				updateInterval = Duration.fromTotalMilliSecond(MAXSpeed * speedBar.getValue()/100);
 				if (speedBar.getValue() == speedBar.getMin()) {
 					updateInterval = Duration.fromTotalMilliSecond(UIPause);
@@ -485,12 +480,10 @@ public class SwarmViewerController {
 			if (isReplay) {
 				time = time.add(updateInterval);
 			} else {
-				if (simulator.getTerminatedTime() == null) { // not terminated yet
-					if (simulator.getTime() != null) { // initialization not completed yet
-						time = time.add(updateInterval);
-						if (time.compareTo(simulator.getTime()) > 0) {
-							time = simulator.getTime(); // if update too fast, slow down
-						}
+				if (simulator.getStatus() == SimulationManager.RUNNING) { // not terminated yet
+					time = time.add(updateInterval);
+					if (time.compareTo(simulator.getTime()) > 0) {
+						time = simulator.getTime(); // if update too fast, slow down
 					}
 				} else {
 					time = time.add(updateInterval);

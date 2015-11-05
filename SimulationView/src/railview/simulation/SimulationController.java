@@ -140,7 +140,7 @@ public class SimulationController {
 						networkPaneController.updateTrainCoordinates(
 								simulator.getTrainCoordinates(time), time);
 						
-						if (simulator.getTime() != null || simulator.getTerminatedTime() != null) { // initialization is finished
+						if (simulator.getStatus() != SimulationManager.INACTIVE) { // initialization is finished
 							int numActive = 0;
 							int numTerminate = 0;
 							for (EventListener listener : simulator.getListeners()) {
@@ -168,8 +168,8 @@ public class SimulationController {
 							terminatedLabel.setText("Terminated Trains: " + numTerminate);
 						} // if (simulator.getTime() != null)
 						
-						if (simulator.getTerminatedTime() != null &&
-								time.compareTo(simulator.getTerminatedTime()) >= 0) {
+						if (simulator.getStatus() == SimulationManager.TERMINATED &&
+								time.compareTo(simulator.getTime()) >= 0) {
 							isUpdateCompleted = true;
 						}
 					}
@@ -184,12 +184,10 @@ public class SimulationController {
 				if (isReplay) {
 					time = time.add(updateInterval);
 				} else {
-					if (simulator.getTerminatedTime() == null) { // not terminated yet
-						if (simulator.getTime() != null) { // initialization not completed yet
-							time = time.add(updateInterval);
-							if (time.compareTo(simulator.getTime()) > 0) {
-								time = simulator.getTime(); // if update too fast, slow down
-							}
+					if (simulator.getStatus() == SimulationManager.RUNNING) { // not terminated yet
+						time = time.add(updateInterval);
+						if (time.compareTo(simulator.getTime()) > 0) {
+							time = simulator.getTime(); // if update too fast, slow down
 						}
 					} else {
 						time = time.add(updateInterval);
