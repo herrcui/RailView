@@ -1,23 +1,11 @@
 package railview.controller.framework;
 
 import javafx.application.Platform;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import railapp.simulation.SimulationManager;
 import railapp.units.Time;
 
 public abstract class AbstractSimulationController {
-	@FXML
-	protected Button startButton;
-
-	@FXML
-	protected Button pauseButton;
-
-	@FXML
-	protected Button stopButton;
-
-	@FXML
-	final public void startSimulation() {
+	protected void startSimulation() {
 		if (isOnPauseCommand) {
 			isOnPauseCommand = false;
 		}
@@ -25,10 +13,6 @@ public abstract class AbstractSimulationController {
 		if (isOnStopCommand) {
 			isOnStopCommand = false;
 		}
-
-		this.startButton.setDisable(true);
-		this.pauseButton.setDisable(false);
-		this.stopButton.setDisable(false);
 
 		if (!this.isUpdating) {
 			if (this.simulationThread == null || !this.simulationThread.isAlive()) {
@@ -47,26 +31,16 @@ public abstract class AbstractSimulationController {
 		}
 	}
 
-	@FXML
-	final public void pauseSimulation() {
+	protected void pauseSimulation() {
 		if (! isOnPauseCommand) {
 			isOnPauseCommand = true;
-
-			this.startButton.setDisable(false);
-			this.pauseButton.setDisable(true);
-			this.stopButton.setDisable(false);
 		}
 	}
 
-	@FXML
-	public void stopSimulation() {
+	protected void stopSimulation() {
 		this.simulator.stop();
 
 		this.isOnStopCommand = true;
-
-		this.startButton.setDisable(false);
-		this.pauseButton.setDisable(true);
-		this.stopButton.setDisable(true);
 
 		try {
 			this.simulationThread.join();
@@ -87,7 +61,7 @@ public abstract class AbstractSimulationController {
 	protected int UIPause = 100;
 	protected Time updateTime = Time.getInstance(0, 0, 0);
 
-	private SimulationManager simulator;
+	protected SimulationManager simulator;
 
 	private boolean isOnPauseCommand = false;
 	private boolean isOnStopCommand = false;

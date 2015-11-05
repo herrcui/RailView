@@ -12,12 +12,9 @@ import railview.railmodel.infrastructure.railsys7.InfrastructureReader;
 import railview.railmodel.infrastructure.railsys7.RollingStockReader;
 import railview.railmodel.infrastructure.railsys7.TimetableReader;
 import javafx.application.Application;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.transform.Scale;
 import javafx.stage.Stage;
 
 public class DoSim extends Application {
@@ -32,24 +29,24 @@ public class DoSim extends Application {
 	public static void main(String[] args) {
 		infraServiceUtility = InfrastructureReader.getInstance().initialize();
 		Network network = infraServiceUtility.getNetworkService().allNetworks().iterator().next();
-		
+
 		// Rollilngstock
 		rollingStockServiceUtility = RollingStockReader.getInstance().initialize();
-		
+
 		// Timetable
 		timeTableServiceUtility = TimetableReader.getInstance(
 				infraServiceUtility, rollingStockServiceUtility, network).initialize();
-		
+
 		simulator = SimulationManager.getInstance(infraServiceUtility,
 				rollingStockServiceUtility,
 				timeTableServiceUtility);
-		
+
 		launch(args);
 	}
-	
+
 	private void initRootLayout() {
 		SimulationController controller = this.initializeSimulationController();
-		
+
 		if (this.rootLayout != null) {
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);
@@ -59,7 +56,7 @@ public class DoSim extends Application {
 			primaryStage.show();
 		}
 	}
-	
+
 	private SimulationController initializeSimulationController() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
@@ -76,7 +73,7 @@ public class DoSim extends Application {
 			return null;
 		}
 	}
-	
+
 	private Stage primaryStage;
 	private AnchorPane rootLayout;
 

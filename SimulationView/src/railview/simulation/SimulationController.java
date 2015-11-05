@@ -6,6 +6,7 @@ import java.net.URL;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
@@ -34,6 +35,15 @@ public class SimulationController extends AbstractSimulationController {
 	private AnchorPane menuPane;
 
 	@FXML
+	protected Button startButton;
+
+	@FXML
+	protected Button pauseButton;
+
+	@FXML
+	protected Button stopButton;
+
+	@FXML
 	public void initialize() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
@@ -49,6 +59,33 @@ public class SimulationController extends AbstractSimulationController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	@FXML
+	public void startSimulation() {
+		super.startSimulation();
+
+		this.startButton.setDisable(true);
+		this.pauseButton.setDisable(false);
+		this.stopButton.setDisable(false);
+	}
+
+	@FXML
+	public void pauseSimulation() {
+		super.pauseSimulation();
+
+		this.startButton.setDisable(false);
+		this.pauseButton.setDisable(true);
+		this.stopButton.setDisable(false);
+	}
+
+	@FXML
+	public void stopSimulation() {
+		super.stopSimulation();
+
+		this.startButton.setDisable(false);
+		this.pauseButton.setDisable(true);
+		this.stopButton.setDisable(true);
 	}
 
 	@FXML
@@ -72,13 +109,11 @@ public class SimulationController extends AbstractSimulationController {
 
 	@FXML
 	private void fadeMenu() {
-
 	                FadeTransition fadeTransition
 	                        = new FadeTransition(javafx.util.Duration.millis(500), menuPane);
 	                fadeTransition.setFromValue(1.0);
 	                fadeTransition.setToValue(0.0);
 	                fadeTransition.play();
-
 				}
 
 	public NetworkPaneController getNetworkPaneController() {
@@ -88,13 +123,13 @@ public class SimulationController extends AbstractSimulationController {
 	public void setInfrastructureServiceUtility(
 			IInfrastructureServiceUtility serviceUtility) {
 		this.networkPaneController
-				.setInfrastructureServiceUtility(serviceUtility);
+			.setInfrastructureServiceUtility(serviceUtility);
 	}
 
 	@Override
 	protected void updateUI() {
 		networkPaneController.updateTrainCoordinates(
-				simulator.getTrainCoordinates(this.updateTime), this.updateTime);
+			simulator.getTrainCoordinates(this.updateTime), this.updateTime);
 		updateStatusBar();
 	}
 
@@ -148,6 +183,5 @@ public class SimulationController extends AbstractSimulationController {
 	}
 
 	private NetworkPaneController networkPaneController;
-	private SimulationManager simulator;
 	private Duration updateInterval = Duration.fromSecond(60);
 }
