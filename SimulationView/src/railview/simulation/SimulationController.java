@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 
 import javafx.animation.FadeTransition;
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -15,25 +14,25 @@ import railapp.simulation.SimulationManager;
 import railapp.simulation.events.EventListener;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.units.Duration;
-import railapp.units.Time;
+import railview.controller.framework.AbstractSimulationController;
 import railview.infrastructure.container.NetworkPaneController;
 
-public class SimulationController {
+public class SimulationController extends AbstractSimulationController {
 	@FXML
 	private AnchorPane networkPaneRoot;
-	
+
 	@FXML
 	private Label timeLabel;
-	
+
 	@FXML
 	private Label activeLabel;
-	
+
 	@FXML
 	private Label terminatedLabel;
-	
+
 	@FXML
 	private AnchorPane menuPane;
-	
+
 	@FXML
 	public void initialize() {
 		try {
@@ -51,149 +50,104 @@ public class SimulationController {
 			e.printStackTrace();
 		}
 	}
-	
-	@FXML
-	public void startSimulation() {
-		if (this.simulator != null) {
-			new Thread(this.simulator).start();
-			
-			Thread t = new Thread(() -> {
-				(new SimulationUpdater()).periodicalUpdate(false); 
-			});			
-			t.setDaemon(true);
-			t.start();
-		}
-	}
-	
-	@FXML
-	public void replaySimulation() {
-		if (this.simulator != null) {
-			Thread t = new Thread(() -> {
-				(new SimulationUpdater()).periodicalUpdate(true); 
-			});			
-			t.setDaemon(true);
-			t.start();
-		}
-	}
-	
+
 	@FXML
 	private void fadeRoot() {
-	
-
-	                FadeTransition fadeTransition 
+	                FadeTransition fadeTransition
 	                        = new FadeTransition(javafx.util.Duration.millis(500), menuPane);
 	                fadeTransition.setToValue(0.0);
 	                fadeTransition.play();
 	            }
 
-		  
+
 	@FXML
 	private void appear() {
-	                FadeTransition fadeTransition 
+	                FadeTransition fadeTransition
 	                        = new FadeTransition(javafx.util.Duration.millis(500), menuPane);
 	                fadeTransition.setFromValue(0.0);
 	                fadeTransition.setToValue(1.0);
 	                fadeTransition.play();
 	            }
 
-  		
+
 	@FXML
 	private void fadeMenu() {
-		
-	                FadeTransition fadeTransition 
+
+	                FadeTransition fadeTransition
 	                        = new FadeTransition(javafx.util.Duration.millis(500), menuPane);
 	                fadeTransition.setFromValue(1.0);
 	                fadeTransition.setToValue(0.0);
 	                fadeTransition.play();
 
 				}
-	
+
 	public NetworkPaneController getNetworkPaneController() {
 		return this.networkPaneController;
 	}
-	
+
 	public void setInfrastructureServiceUtility(
 			IInfrastructureServiceUtility serviceUtility) {
 		this.networkPaneController
 				.setInfrastructureServiceUtility(serviceUtility);
 	}
-	
-	public void setSimulationManager(SimulationManager simulator) {
-		this.simulator = simulator;
-	}
-	
-	private NetworkPaneController networkPaneController;
-	private SimulationManager simulator;
-	private Duration updateInterval = Duration.fromSecond(60);
-	private int UIPause = 100;
-	
-	class SimulationUpdater {
-		private Time time = Time.getInstance(0, 0, 0);
-		boolean isUpdateCompleted = false;
 
-		void periodicalUpdate(boolean isReplay) {
-			while (! isUpdateCompleted) {
-				Platform.runLater(new Runnable() {
-					@Override public void run() {
-						timeLabel.setText("Simulation Time: " + time.toString());
-						
-						networkPaneController.updateTrainCoordinates(
-								simulator.getTrainCoordinates(time), time);
-						
-						if (simulator.getStatus() != SimulationManager.INACTIVE) { // initialization is finished
-							int numActive = 0;
-							int numTerminate = 0;
-							for (EventListener listener : simulator.getListeners()) {
-								if (listener instanceof AbstractTrainSimulator) {
-									AbstractTrainSimulator trainSimulator = (AbstractTrainSimulator) listener;
-									
-									if (trainSimulator.getTerminateTime() != null) {
-										if (trainSimulator.getTerminateTime().compareTo(time) < 0) {
-											numTerminate++;
-										} else {
-											if (trainSimulator.getActiveTime().compareTo(time) < 0) {
-												numActive++;
-											}
-										}
-									} else {
-										if (trainSimulator.getActiveTime() != null && 
-												trainSimulator.getActiveTime().compareTo(time) < 0) {
-											numActive++;
-										}
-									}
-								}
+	@Override
+	protected void updateUI() {
+		networkPaneController.updateTrainCoordinates(
+				simulator.getTrainCoordinates(this.updateTime), this.updateTime);
+		updateStatusBar();
+	}
+
+	private void updateStatusBar() {
+		timeLabel.setText("Simulation Time: " + this.updateTime.toString());
+
+		int numActive = 0;
+		int numTerminate = 0;
+
+		if (simulator.getStatus() != SimulationManager.INACTIVE) {
+			for (EventListener listener : simulator.getListeners()) {
+				if (listener instanceof AbstractTrainSimulator) {
+					AbstractTrainSimulator trainSimulator = (AbstractTrainSimulator) listener;
+
+					if (trainSimulator.getTerminateTime() != null) {
+						if (trainSimulator.getTerminateTime().compareTo(this.updateTime) < 0) {
+							numTerminate++;
+						} else {
+							if (trainSimulator.getActiveTime().compareTo(this.updateTime) < 0) {
+								numActive++;
 							}
-						
-							activeLabel.setText("Active Trains: " + numActive);
-							terminatedLabel.setText("Terminated Trains: " + numTerminate);
-						} // if (simulator.getTime() != null)
-						
-						if (simulator.getStatus() == SimulationManager.TERMINATED &&
-								time.compareTo(simulator.getTime()) >= 0) {
-							isUpdateCompleted = true;
-						}
-					}
-				});
-				
-				try {
-					Thread.sleep(UIPause);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				
-				if (isReplay) {
-					time = time.add(updateInterval);
-				} else {
-					if (simulator.getStatus() == SimulationManager.RUNNING) { // not terminated yet
-						time = time.add(updateInterval);
-						if (time.compareTo(simulator.getTime()) > 0) {
-							time = simulator.getTime(); // if update too fast, slow down
 						}
 					} else {
-						time = time.add(updateInterval);
+						if (trainSimulator.getActiveTime() != null &&
+							trainSimulator.getActiveTime().compareTo(this.updateTime) < 0) {
+							numActive++;
+						}
 					}
 				}
 			}
-		} // periodicalUpdate(boolean isReplay)
-	} // class SimulationUpdater
+		} // if (simulator.getStatus() != SimulationManager.INACTIVE)
+
+		activeLabel.setText("Active Trains: " + numActive);
+		terminatedLabel.setText("Terminated Trains: " + numTerminate);
+	}
+
+	@Override
+	protected void setTime(boolean isReplay) {
+		if (isReplay) {
+			this.updateTime = this.updateTime.add(updateInterval);
+		} else {
+			if (simulator.getStatus() == SimulationManager.RUNNING) { // not terminated yet
+				this.updateTime = this.updateTime.add(updateInterval);
+				if (this.updateTime.compareTo(simulator.getTime()) > 0) {
+					this.updateTime = simulator.getTime(); // if update too fast, slow down
+				}
+			} else {
+				this.updateTime = this.updateTime.add(updateInterval);
+			}
+		}
+	}
+
+	private NetworkPaneController networkPaneController;
+	private SimulationManager simulator;
+	private Duration updateInterval = Duration.fromSecond(60);
 }

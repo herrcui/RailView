@@ -2,9 +2,7 @@ package railview.swarmintelligence;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -61,16 +59,16 @@ public class SwarmViewerController {
 
 	@FXML
 	private Button startButton;
-	
+
 	@FXML
 	private Button pauseButton;
-	
+
 	@FXML
 	private Button stopButton;
 
 	@FXML
 	private Slider speedBar;
-	
+
 	@FXML
 	private Button sidebarOpenButton;
 
@@ -140,7 +138,7 @@ public class SwarmViewerController {
 
 			sideBar.setVisible(false);
 			graphPane.setVisible(false);
-			
+
 			startButton.setDisable(false);
 			pauseButton.setDisable(true);
 			stopButton.setDisable(true);
@@ -152,55 +150,53 @@ public class SwarmViewerController {
 
 	@FXML
 	public void startSimulation() {
-		if (isPause) {
-			isPause = false;
+		if (isOnPauseCommand) {
+			isOnPauseCommand = false;
 		}
-		
-		if (isStop) {
-			isStop = false;
+
+		if (isOnStopCommand) {
+			isOnStopCommand = false;
 		}
-		
+
 		this.startButton.setDisable(true);
 		this.pauseButton.setDisable(false);
 		this.stopButton.setDisable(false);
-		
-		if (this.simulator != null){
+
+		if (!this.isUpdating) {
 			if (this.simulationThread == null || !this.simulationThread.isAlive()) {
 				this.simulationThread = new Thread(this.simulator);
 				this.simulationThread.start();
 			}
-			
-			if (this.updateThread == null || !this.updateThread.isAlive()) {	
+
+			if (this.updateThread == null || !this.updateThread.isAlive()) {
 				this.updateThread = new Thread(() -> {
 					(new SwarmUpdater()).periodicalUpdate(false);
 				});
-				this.updateThread.start();	
+
+				isUpdating = true;
+				this.updateThread.start();
 			}
 		}
 	}
-	
+
 	@FXML
 	public void pauseSimulation() {
-		if (this.simulator != null) {
-			if (! isPause) {
-				isPause = true;
-				
-				this.startButton.setDisable(false);
-				this.pauseButton.setDisable(true);
-				this.stopButton.setDisable(false);
-			}
+		if (! isOnPauseCommand) {
+			isOnPauseCommand = true;
+
+			this.startButton.setDisable(false);
+			this.pauseButton.setDisable(true);
+			this.stopButton.setDisable(false);
 		}
 	}
-	
+
 	@FXML
 	public void stopSimulation() {
-		if (this.simulator != null) {
-			this.simulator.stop();
-			this.swarmManager.stop();
-		}
-		
-		this.isStop = true;
-		
+		this.simulator.stop();
+		this.swarmManager.stop();
+
+		this.isOnStopCommand = true;
+
 		this.startButton.setDisable(false);
 		this.pauseButton.setDisable(true);
 		this.stopButton.setDisable(true);
@@ -316,7 +312,7 @@ public class SwarmViewerController {
 				sideBar.setTranslateX(-startWidth + curWidth);
 			}
 		};
-		
+
 		showSidebar.onFinishedProperty().set(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
@@ -375,34 +371,31 @@ public class SwarmViewerController {
 	private SwarmManager swarmManager;
 	private int UIPause = 100;
 	private int MAXSpeed = 20000; // 1 : 200
-	
-	private boolean isPause = false;
-	private boolean isStop = false;
-	
+
+	private boolean isOnPauseCommand = false;
+	private boolean isOnStopCommand = false;
+
+	private boolean isUpdating = false;
+
 	private Thread updateThread = null;
 	private Thread simulationThread = null;
 
 	class SwarmUpdater {
 		private Time time = Time.getInstance(0, 0, 0);
-		private boolean updateTerminated = false;
 
-		boolean isUpdateTerminated() {
-			return this.updateTerminated;
-		}
-		
-		void periodicalUpdate(boolean isReplay) {			
-			while (! updateTerminated) {
-				if (isStop) {
-					updateTerminated = true;
+		void periodicalUpdate(boolean isReplay) {
+			while (isUpdating) {
+				if (isOnStopCommand) {
+					isUpdating = false;
 					break;
 				}
-				
+
 				if (simulator.getStatus() == SimulationManager.TERMINATED && time.compareTo(simulator.getTime()) > 0) {
-					updateTerminated = true;
+					isUpdating = false;
 					break;
 				}
-				
-				if (!isPause) {
+
+				if (!isOnPauseCommand) {
 					Platform.runLater(new Runnable() {
 						@Override
 						public void run() {
@@ -412,14 +405,14 @@ public class SwarmViewerController {
 							networkPaneController.updateSwarms(coordinates, swarms,
 									time);
 							swarmSidebarController.updateSwarms(swarms, time);
-							
+
 							updateStatusBar(swarms);
 						} // public void run() {
 					}); // Platform.runLater(new Runnable() {
-					
+
 					this.setTime(isReplay);
 				} // if (!isPause)
-				
+
 				try {
 					Thread.sleep(UIPause);
 				} catch (InterruptedException e) {
@@ -427,13 +420,13 @@ public class SwarmViewerController {
 				}
 			} // while ((simulator.getTerminatedTime() == null || time.compareTo(simulator.getTerminatedTime()) < 0))
 		} // periodicalUpdate(boolean isReplay)
-	
+
 		private void updateStatusBar(Collection<Swarm> swarms) {
 			timeLabel.setText("Simulation Time: " + time.toString());
-			
+
 			int numActive = 0;
 			int numTerminate = 0;
-			
+
 			if (simulator.getStatus() != SimulationManager.INACTIVE) {
 				for (EventListener listener : simulator
 						.getListeners()) {
@@ -449,7 +442,7 @@ public class SwarmViewerController {
 								}
 							}
 						} else {
-							if (trainSimulator.getActiveTime() != null && 
+							if (trainSimulator.getActiveTime() != null &&
 								trainSimulator.getActiveTime().compareTo(time) < 0) {
 								numActive++;
 							}
@@ -457,13 +450,13 @@ public class SwarmViewerController {
 					}
 				}
 			} // if (simulator.getStatus() != SimulationManager.INACTIVE)
-			
+
 			activeLabel.setText("Active Trains/Swarms: "
 					+ numActive + "/" + swarms.size());
 			terminatedLabel.setText("Terminated Trains: "
 					+ numTerminate);
 		}
-		
+
 		private void setTime(boolean isReplay) {
 			Duration updateInterval = Duration.fromTotalMilliSecond(UIPause);
 			if (simulator.getStatus() != SimulationManager.INACTIVE) {
@@ -471,8 +464,11 @@ public class SwarmViewerController {
 				if (speedBar.getValue() == speedBar.getMin()) {
 					updateInterval = Duration.fromTotalMilliSecond(UIPause);
 				}
-				
-				if (speedBar.getValue() == speedBar.getMax() && simulator.getTime() != null) {
+
+				if (speedBar.getValue() == speedBar.getMax() &&
+					simulator.getTime() != null &&
+					simulator.getStatus() != SimulationManager.TERMINATED) {
+
 					updateInterval = simulator.getTime().getDifference(time);
 				}
 			}
