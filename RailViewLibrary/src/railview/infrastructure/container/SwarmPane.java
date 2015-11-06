@@ -27,7 +27,7 @@ public class SwarmPane extends PannablePane {
 	void setCoordinateMapper(CoordinateMapper mapper) {
 		this.mapper = mapper;
 	}
-	
+
 	public void updateSwarms(Map<AbstractTrainSimulator, List<Coordinate>> coordinates,
 			Collection<Swarm> swarms,
 			Time time) {
@@ -41,30 +41,41 @@ public class SwarmPane extends PannablePane {
 		this.getChildren().clear();
 		this.drawSwarms();
 	}
-	
+
 	private void drawSwarms() {
 		for (Swarm swarm : this.swarms) {
 			Color color = this.getSwarmColor(swarm);
-			for (AbstractTrainSimulator train : swarm.getTrains(this.currentTime)) {
+
+			Collection<AbstractTrainSimulator> trains = swarm.getTrains(this.currentTime);
+
+			for (AbstractTrainSimulator train : trains) {
 				this.drawTrain(train ,color);
 			}
 		}
 	}
-	
+
 	private Color getSwarmColor(Swarm swarm) {
 		Color color = this.swarmColorMap.get(swarm);
 		if (color == null) {
-			while (color == null || this.usedColors.contains(color)) {
+			if (swarm.getTrains(this.currentTime).size() == 1) {
+				color = this.COLOR_SINGLETRAIN;
+				this.swarmColorMap.put(swarm, color);
+				return color;
+			}
+
+			while (color == null ||
+					this.usedColors.contains(color) ||
+					color.equals(this.COLOR_SINGLETRAIN)) {
 				color = generateRandomColor();
 			}
-			
+
 			this.swarmColorMap.put(swarm, color);
 			this.usedColors.add(color);
 		}
-		
+
 		return color;
 	}
-	
+
 	private Color generateRandomColor() {
 	    Random random = new Random();
 	    double red = random.nextInt(256);
@@ -81,7 +92,7 @@ public class SwarmPane extends PannablePane {
 		if (coordinateList != null && coordinateList.size() > 0) {
 			for (int i = 0; i < coordinateList.size() - 1; i++) {
 				Line line = new Line();
-				line.setFill(color);
+
 				line.setStartX(mapper.mapToPaneX(coordinateList.get(i)
 						.getX(), this));
 				line.setStartY(mapper.mapToPaneY(coordinateList.get(i)
@@ -91,9 +102,9 @@ public class SwarmPane extends PannablePane {
 				line.setEndY(mapper.mapToPaneY(coordinateList
 						.get(i+1).getY(), this));
 
-				line.setStrokeWidth(0.3);			
+				line.setStrokeWidth(0.3);
 				line.setStroke(color);
-				
+
 				this.getChildren().add(line);
 			}
 		}
@@ -101,8 +112,10 @@ public class SwarmPane extends PannablePane {
 
 	private Map<AbstractTrainSimulator, List<Coordinate>> trainCoordinates;
 	private Collection<Swarm> swarms = new ArrayList<Swarm>();
-	
+
 	private Set<Color> usedColors = new HashSet<Color>();
 	private Map<Swarm, Color> swarmColorMap = new HashMap<Swarm, Color>();
 	private Time currentTime;
+
+	private Color COLOR_SINGLETRAIN = Color.WHITESMOKE;
 }
