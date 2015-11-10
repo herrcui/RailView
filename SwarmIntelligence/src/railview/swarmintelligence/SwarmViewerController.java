@@ -10,6 +10,8 @@ import javafx.animation.Animation;
 import javafx.animation.FadeTransition;
 import javafx.animation.Transition;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -21,6 +23,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
@@ -65,6 +68,12 @@ public class SwarmViewerController extends AbstractSimulationController {
 
 	@FXML
 	private Button stopButton;
+	
+	@FXML
+	private Button lockButton;
+	
+	@FXML
+	private Button unlockButton;
 
 	@FXML
 	private Slider speedBar;
@@ -119,15 +128,6 @@ public class SwarmViewerController extends AbstractSimulationController {
 			graphpaneloader.setLocation(graphpanelocation);
 			graphPane = (AnchorPane) graphpaneloader.load();
 
-			AnchorPane.setLeftAnchor(
-					networkPane,
-					(this.networkPaneRoot.prefWidth(-1) / 2)
-							- (networkPane.prefWidth(-1) / 2));
-			AnchorPane.setTopAnchor(
-					networkPane,
-					(this.networkPaneRoot.prefHeight(-1) / 2)
-							- (networkPane.prefHeight(-1) / 2));
-
 			AnchorPane.setLeftAnchor(swarmSidebarPane, 0.0);
 			AnchorPane.setTopAnchor(swarmSidebarPane, 0.0);
 			AnchorPane.setBottomAnchor(swarmSidebarPane, 0.0);
@@ -136,8 +136,26 @@ public class SwarmViewerController extends AbstractSimulationController {
 			this.networkPaneRoot.getChildren().addAll(networkPane, graphPane);
 			sideBar.getChildren().add(0, swarmSidebarPane);
 
+			networkPaneRoot.widthProperty().addListener(new ChangeListener<Number>() {
+			    @Override public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneWidth, Number newSceneWidth) {
+			    	symbolPane.setLayoutX((newSceneWidth.doubleValue()- symbolPane.getPrefWidth())/2);
+			    	networkPane.setLayoutX((newSceneWidth.doubleValue() / 2)- (networkPane.prefWidth(-1) / 2));
+			    	graphPane.setPrefWidth(newSceneWidth.doubleValue());
+			    }
+			});
+
+			networkPaneRoot.heightProperty().addListener(new ChangeListener<Number>() {
+			    @Override public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneHeight, Number newSceneHeight) {
+			    	sidebarOpenButton.setLayoutY(newSceneHeight.doubleValue()/2 - menuPane.getPrefHeight());
+			    	sidebarCloseButton.setLayoutY(newSceneHeight.doubleValue()/2 - menuPane.getPrefHeight());
+			    	networkPane.setLayoutY((newSceneHeight.doubleValue() / 2)- (networkPane.prefHeight(-1) / 2));
+			       	graphPane.setPrefHeight(newSceneHeight.doubleValue());
+			    }
+			});
+			
 			sideBar.setVisible(false);
 			graphPane.setVisible(false);
+			symbolPane.setOpacity(0.0);
 
 			startButton.setDisable(false);
 			pauseButton.setDisable(true);
@@ -175,38 +193,60 @@ public class SwarmViewerController extends AbstractSimulationController {
 		this.pauseButton.setDisable(true);
 		this.stopButton.setDisable(true);
 	}
-
+	
 	@FXML
-	private void fadeRoot() {
-		FadeTransition fadeTransition = new FadeTransition(
-				javafx.util.Duration.millis(500), menuPane);
-		fadeTransition.setToValue(0.0);
-		fadeTransition.play();
+	public void lock(){
+		
+		menuPane.setOnMouseEntered(new EventHandler<MouseEvent>(){
 
-		FadeTransition fadeTransition2 = new FadeTransition(
-				javafx.util.Duration.millis(500), symbolPane);
-		fadeTransition2.setToValue(0.0);
-		fadeTransition2.play();
+            public void handle(MouseEvent event)
+            {
+            	menuPane.setOpacity(1.0);
+            }
+		});
+		menuPane.setOnMouseExited(new EventHandler<MouseEvent>(){
+
+            public void handle(MouseEvent event)
+            {
+            	menuPane.setOpacity(1.0);
+            }
+		});
+		lockButton.setVisible(false);
+		unlockButton.setVisible(true);
 	}
-
+	
 	@FXML
-	private void appear() {
-		FadeTransition fadeTransition = new FadeTransition(
-				javafx.util.Duration.millis(500), menuPane);
-		fadeTransition.setFromValue(0.0);
-		fadeTransition.setToValue(1.0);
-		fadeTransition.play();
-	}
+	public void unlock(){
+		
+			menuPane.setOnMouseEntered(new EventHandler<MouseEvent>(){
 
-	@FXML
-	private void fadeMenu() {
-		FadeTransition fadeTransition = new FadeTransition(
-				javafx.util.Duration.millis(500), menuPane);
-		fadeTransition.setFromValue(1.0);
-		fadeTransition.setToValue(0.0);
-		fadeTransition.play();
+	            public void handle(MouseEvent event)
+	            {
+			FadeTransition fadeTransition1 = new FadeTransition(
+					javafx.util.Duration.millis(500), menuPane);
+			fadeTransition1.setFromValue(0);
+			fadeTransition1.setToValue(1.0);
+			fadeTransition1.play();
+	            }
+			});
+			
+			menuPane.setOnMouseExited(new EventHandler<MouseEvent>(){
 
-	}
+	            public void handle(MouseEvent event)
+	            {
+	    			FadeTransition fadeTransition2 = new FadeTransition(
+	    					javafx.util.Duration.millis(500), menuPane);
+	    			fadeTransition2.setFromValue(1.0);
+	    			fadeTransition2.setToValue(0.0);
+	    			fadeTransition2.play();
+	            }
+			});
+			
+			unlockButton.setVisible(false);
+			lockButton.setVisible(true);
+			
+			
+}
 
 	@FXML
 	private void fadeSymbolPaneRoot() {
