@@ -127,6 +127,7 @@ public class SwarmViewerController extends AbstractSimulationController {
 					.getResource("GraphPane.fxml");
 			graphpaneloader.setLocation(graphpanelocation);
 			graphPane = (AnchorPane) graphpaneloader.load();
+			this.graphPaneController = graphpaneloader.getController();
 
 			AnchorPane.setLeftAnchor(swarmSidebarPane, 0.0);
 			AnchorPane.setTopAnchor(swarmSidebarPane, 0.0);
@@ -350,6 +351,7 @@ public class SwarmViewerController extends AbstractSimulationController {
 
 	public void setSwarmManager(SwarmManager swarmManager) {
 		this.swarmManager = swarmManager;
+		this.graphPaneController.setSwarmManager(swarmManager);
 	}
 
 	public void updateSwarms(Collection<Swarm> swarms, Time time) {
@@ -447,6 +449,7 @@ public class SwarmViewerController extends AbstractSimulationController {
 
 	private NetworkPaneController networkPaneController;
 	private SwarmSidebarController swarmSidebarController;
+	private GraphPaneController graphPaneController;
 
 	private SwarmManager swarmManager;
 	private int UIPause = 100;

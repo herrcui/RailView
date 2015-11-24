@@ -3,11 +3,15 @@ package railview.infrastructure.container;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 
 import railapp.simulation.events.toinfrastructure.RequestResourceEvent;
 import railapp.simulation.events.toinfrastructure.RequestResult;
+import railapp.swarmintelligence.Swarm;
+import railapp.swarmintelligence.SwarmLogger;
+import railapp.swarmintelligence.SwarmManager;
 import railapp.units.Duration;
 import railapp.units.Time;
 import javafx.fxml.FXML;
@@ -24,13 +28,38 @@ public class GraphPaneController {
 	@FXML
 	public void initialize() {
 		secondLayer.setVisible(false);
-		
+	}
+	
+	public void setSwarmManager(SwarmManager si) {
+		this.si = si;
+	}
+	
+	// duration.getTotalMilliSecond()/1000
+	private Map<Integer, List<Duration>> getSizeAndLifecycle() {
+		Map<Integer, List<Duration>> map = new TreeMap<Integer, List<Duration>>();
+		SwarmLogger logger = si.getLogger();
+		for (Swarm swarm : logger.getSwarmSet()) {
+			if (swarm.getTerminationTime() == null) {
+				continue;
+			}
+			
+			Integer size =  swarm.getTrains().size();
+			List<Duration> lifeCycles = map.get(size);
+			if (lifeCycles == null) {
+				lifeCycles = new ArrayList<Duration>();
+				map.put(size, lifeCycles);
+			}
+			
+			lifeCycles.add(swarm.getTerminationTime().getDifference(swarm.getCreationTime()));
+		}
+		return map;
 	}
 	
 	// for the historgamm, go throught the sorted duration, and get the size:
 	//
 	// (double) entry.getKey().getTotalMilliSecond()/1000
 	// entry.getValue().size()
+	/*
 	private TreeMap<Duration, List<RequestResourceEvent>> getHistogrammData() {
 		TreeMap<Duration, List<RequestResourceEvent>> result = new TreeMap<Duration, List<RequestResourceEvent>>();
 		double currentLimit = interval.getTotalMilliSecond();
@@ -67,7 +96,11 @@ public class GraphPaneController {
 		return event.getResultMap();
 	}
 	
+	
 	private TreeMap<Duration, List<RequestResourceEvent>> durationMap;
 	
 	private Duration interval = Duration.fromSecond(120);
+	*/
+	
+	private SwarmManager si;
 }
