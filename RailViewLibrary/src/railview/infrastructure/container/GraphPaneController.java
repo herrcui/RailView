@@ -1,6 +1,8 @@
 package railview.infrastructure.container;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,6 +17,9 @@ import railapp.swarmintelligence.SwarmManager;
 import railapp.units.Duration;
 import railapp.units.Time;
 import javafx.fxml.FXML;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.ScatterChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.layout.AnchorPane;
 
 public class GraphPaneController {
@@ -28,10 +33,54 @@ public class GraphPaneController {
 	@FXML
 	public void initialize() {
 		secondLayer.setVisible(false);
+		getScatterChart();
 	}
 	
 	public void setSwarmManager(SwarmManager si) {
 		this.si = si;
+	}
+	
+	public void getScatterChart() {
+		final NumberAxis xAxis = new NumberAxis(0, 10, 1);
+	    final NumberAxis yAxis = new NumberAxis(-100, 500, 100);
+	    final ScatterChart<Number,Number> sc = new
+	            ScatterChart<Number,Number>(xAxis,yAxis);
+	    XYChart.Series series1 = new XYChart.Series();
+	    
+/**	    Map<Integer, List<Duration>> map = new TreeMap<Integer, List<Duration>>();
+		SwarmLogger logger = si.getLogger();
+		for (Swarm swarm : logger.getSwarmSet()) {
+			if (swarm.getTerminationTime() == null) {
+				continue;
+			}
+			
+			Integer size =  swarm.getTrains().size();
+			List<Duration> lifeCycles = map.get(size);
+			if (lifeCycles == null) {
+				lifeCycles = new ArrayList<Duration>();
+				map.put(size, lifeCycles);
+			}
+			
+			lifeCycles.add(swarm.getTerminationTime().getDifference(swarm.getCreationTime()));
+			
+		}
+**/		
+	for (Entry<Integer, List<Duration>> entry : getSizeAndLifecycle().entrySet()) {
+			 series1.getData().add(new XYChart.Data(entry.getKey(), entry.getValue()));
+		}
+	    
+		
+//	    for(Entry<Integer,List<Duration>> entry : map.entrySet()) {
+//	    	  Integer key = entry.getKey();
+//	    	  List<Duration> value = entry.getValue();
+	    	  
+//	    	  System.out.println(key + " => " + value);
+	//    	  series1.getData().add(new XYChart.Data(8.5, 323));
+	    	  series1.getData().add(new XYChart.Data(10, 100));
+//	    	}
+	    
+        sc.getData().addAll(series1);
+        this.firstLayer.getChildren().add(sc);
 	}
 	
 	// duration.getTotalMilliSecond()/1000
@@ -51,8 +100,11 @@ public class GraphPaneController {
 			}
 			
 			lifeCycles.add(swarm.getTerminationTime().getDifference(swarm.getCreationTime()));
+			
+			
 		}
-		return map;
+		
+		return map;		
 	}
 	
 	// for the historgamm, go throught the sorted duration, and get the size:

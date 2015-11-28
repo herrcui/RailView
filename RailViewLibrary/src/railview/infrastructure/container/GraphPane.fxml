@@ -10,14 +10,6 @@
    <children>
       <AnchorPane fx:id="firstLayer" layoutX="100.0" layoutY="30.0" prefHeight="750.0" prefWidth="1110.0">
          <children>
-            <BarChart layoutX="275.0" layoutY="5.0" prefHeight="400.0" prefWidth="600.0">
-              <xAxis>
-                <CategoryAxis side="BOTTOM" />
-              </xAxis>
-              <yAxis>
-                <NumberAxis side="LEFT" />
-              </yAxis>
-            </BarChart>
             <TableView layoutX="110.0" layoutY="420.0" prefHeight="300.0" prefWidth="900.0">
               <columns>
                 <TableColumn prefWidth="225.0" text="C1" />
@@ -26,6 +18,14 @@
                   <TableColumn prefWidth="225.0" text="Column X" />
               </columns>
             </TableView>
+            <ScatterChart layoutX="346.0" layoutY="-12.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </ScatterChart>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="secondLayer" layoutX="100.0" layoutY="250.0" prefHeight="500.0" prefWidth="1110.0">
