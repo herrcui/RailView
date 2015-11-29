@@ -33,14 +33,15 @@ public class GraphPaneController {
 	@FXML
 	public void initialize() {
 		secondLayer.setVisible(false);
-		getScatterChart();
+		//getScatterChart();
 	}
 	
 	public void setSwarmManager(SwarmManager si) {
 		this.si = si;
+		this.getScatterChart(si);
 	}
 	
-	public void getScatterChart() {
+	public void getScatterChart(SwarmManager si) {
 		final NumberAxis xAxis = new NumberAxis(0, 10, 1);
 	    final NumberAxis yAxis = new NumberAxis(-100, 500, 100);
 	    final ScatterChart<Number,Number> sc = new
