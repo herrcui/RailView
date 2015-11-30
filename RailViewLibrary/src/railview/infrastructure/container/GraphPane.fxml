@@ -18,14 +18,6 @@
                   <TableColumn prefWidth="225.0" text="Column X" />
               </columns>
             </TableView>
-            <ScatterChart layoutX="346.0" layoutY="-12.0">
-              <xAxis>
-                <CategoryAxis side="BOTTOM" />
-              </xAxis>
-              <yAxis>
-                <NumberAxis side="LEFT" />
-              </yAxis>
-            </ScatterChart>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="secondLayer" layoutX="100.0" layoutY="250.0" prefHeight="500.0" prefWidth="1110.0">

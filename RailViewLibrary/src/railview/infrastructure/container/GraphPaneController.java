@@ -7,6 +7,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 import java.util.TreeMap;
 
 import railapp.simulation.events.toinfrastructure.RequestResourceEvent;
@@ -16,6 +17,8 @@ import railapp.swarmintelligence.SwarmLogger;
 import railapp.swarmintelligence.SwarmManager;
 import railapp.units.Duration;
 import railapp.units.Time;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.ScatterChart;
@@ -38,52 +41,36 @@ public class GraphPaneController {
 	
 	public void setSwarmManager(SwarmManager si) {
 		this.si = si;
-		this.getScatterChart(si);
-	}
-	
-	public void getScatterChart(SwarmManager si) {
 		final NumberAxis xAxis = new NumberAxis(0, 10, 1);
-	    final NumberAxis yAxis = new NumberAxis(-100, 500, 100);
+	    final NumberAxis yAxis = new NumberAxis(0, 500, 50);
 	    final ScatterChart<Number,Number> sc = new
 	            ScatterChart<Number,Number>(xAxis,yAxis);
-	    XYChart.Series series1 = new XYChart.Series();
-	    
-/**	    Map<Integer, List<Duration>> map = new TreeMap<Integer, List<Duration>>();
-		SwarmLogger logger = si.getLogger();
-		for (Swarm swarm : logger.getSwarmSet()) {
-			if (swarm.getTerminationTime() == null) {
-				continue;
-			}
-			
-			Integer size =  swarm.getTrains().size();
-			List<Duration> lifeCycles = map.get(size);
-			if (lifeCycles == null) {
-				lifeCycles = new ArrayList<Duration>();
-				map.put(size, lifeCycles);
-			}
-			
-			lifeCycles.add(swarm.getTerminationTime().getDifference(swarm.getCreationTime()));
-			
-		}
-**/		
-	for (Entry<Integer, List<Duration>> entry : getSizeAndLifecycle().entrySet()) {
-			 series1.getData().add(new XYChart.Data(entry.getKey(), entry.getValue()));
-		}
-	    
-		
-//	    for(Entry<Integer,List<Duration>> entry : map.entrySet()) {
-//	    	  Integer key = entry.getKey();
-//	    	  List<Duration> value = entry.getValue();
-	    	  
-//	    	  System.out.println(key + " => " + value);
-	//    	  series1.getData().add(new XYChart.Data(8.5, 323));
-	    	  series1.getData().add(new XYChart.Data(10, 100));
-//	    	}
-	    
-        sc.getData().addAll(series1);
-        this.firstLayer.getChildren().add(sc);
+	    sc.setData(getScatterChart(si));
+	    sc.setLayoutX(350);
+	    firstLayer.getChildren().add(sc);
 	}
 	
+	public ObservableList<XYChart.Series<Number,Number>> getScatterChart(SwarmManager si) {
+		this.si = si;
+		ObservableList<XYChart.Series<Number,Number>> chart = FXCollections.observableArrayList();
+	    XYChart.Series series1 = new XYChart.Series();
+	    series1.setName("Lifecycle");
+	    
+	    for(Entry<Integer,List<Duration>> entry : getSizeAndLifecycle().entrySet()) {
+	    	  int x = entry.getKey();
+	    	  for(Duration duration : entry.getValue()) {
+	    		  double y= duration.getTotalMilliSecond()/1000;
+	    		  series1.getData().add(new XYChart.Data(x, y));
+	    	  }
+	    }
+	    
+	    //dummy, to see if its works
+		series1.getData().add(new XYChart.Data(1,2));
+
+		chart.add(series1);
+		return chart;
+	}
+
 	// duration.getTotalMilliSecond()/1000
 	private Map<Integer, List<Duration>> getSizeAndLifecycle() {
 		Map<Integer, List<Duration>> map = new TreeMap<Integer, List<Duration>>();
