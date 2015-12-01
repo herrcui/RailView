@@ -22,7 +22,8 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.ScatterChart;
-import javafx.scene.chart.XYChart;
+import javafx.scene.chart.XYChart.Data;
+import javafx.scene.chart.XYChart.Series;
 import javafx.scene.layout.AnchorPane;
 
 public class GraphPaneController {
@@ -33,42 +34,39 @@ public class GraphPaneController {
 	@FXML
 	private AnchorPane secondLayer;
 	
+	private ScatterChart<Number,Number> sc;
+	
 	@FXML
 	public void initialize() {
 		secondLayer.setVisible(false);
-		//getScatterChart();
 	}
 	
 	public void setSwarmManager(SwarmManager si) {
 		this.si = si;
 		final NumberAxis xAxis = new NumberAxis(0, 10, 1);
 	    final NumberAxis yAxis = new NumberAxis(0, 500, 50);
-	    final ScatterChart<Number,Number> sc = new
-	            ScatterChart<Number,Number>(xAxis,yAxis);
-	    sc.setData(getScatterChart(si));
+	    
+	    sc = new ScatterChart<Number,Number>(xAxis,yAxis);
+	    ObservableList<Series<Number,Number>> chart = FXCollections.observableArrayList();
+	    Series<Number,Number> series = new Series<Number,Number>();
+	    chart.add(series);
+	    series.setName("Lifecycle");
+	    
+	    sc.setData(chart);
 	    sc.setLayoutX(350);
 	    firstLayer.getChildren().add(sc);
 	}
 	
-	public ObservableList<XYChart.Series<Number,Number>> getScatterChart(SwarmManager si) {
-		this.si = si;
-		ObservableList<XYChart.Series<Number,Number>> chart = FXCollections.observableArrayList();
-	    XYChart.Series series1 = new XYChart.Series();
-	    series1.setName("Lifecycle");
-	    
+	public void setScatterChart() {	
+		Series<Number,Number> series = sc.getData().get(0);
+		
 	    for(Entry<Integer,List<Duration>> entry : getSizeAndLifecycle().entrySet()) {
-	    	  int x = entry.getKey();
-	    	  for(Duration duration : entry.getValue()) {
-	    		  double y= duration.getTotalMilliSecond()/1000;
-	    		  series1.getData().add(new XYChart.Data(x, y));
-	    	  }
+	    	int x = entry.getKey();
+	    	for(Duration duration : entry.getValue()) {
+	    		double y= duration.getTotalMilliSecond()/1000;
+	    		series.getData().add(new Data<Number, Number>(x, y));
+	    	}
 	    }
-	    
-	    //dummy, to see if its works
-		series1.getData().add(new XYChart.Data(1,2));
-
-		chart.add(series1);
-		return chart;
 	}
 
 	// duration.getTotalMilliSecond()/1000
