@@ -373,7 +373,7 @@ public class SwarmViewerController extends AbstractSimulationController {
 				.getTrainCoordinates(updateTime);
 		this.networkPaneController.updateSwarms(coordinates, swarms, updateTime);
 		this.swarmSidebarController.updateSwarms(swarms, updateTime);
-		this.graphPaneController.setScatterChart();
+		this.graphPaneController.setScatterChart(updateTime);
 
 		updateStatusBar(swarms);
 	}

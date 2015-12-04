@@ -34,7 +34,11 @@ public class GraphPaneController {
 	@FXML
 	private AnchorPane secondLayer;
 	
-	private ScatterChart<Number,Number> sc;
+	private ScatterChart<Number,Number> scatterChart;
+	
+	private Time lastUpdateTime = null;
+	
+	private Duration timeInterval = Duration.fromSecond(300);
 	
 	@FXML
 	public void initialize() {
@@ -46,27 +50,38 @@ public class GraphPaneController {
 		final NumberAxis xAxis = new NumberAxis(0, 10, 1);
 	    final NumberAxis yAxis = new NumberAxis(0, 500, 50);
 	    
-	    sc = new ScatterChart<Number,Number>(xAxis,yAxis);
-	    ObservableList<Series<Number,Number>> chart = FXCollections.observableArrayList();
+	    scatterChart = new ScatterChart<Number,Number>(xAxis,yAxis);
+	    ObservableList<Series<Number,Number>> dataList = FXCollections.observableArrayList();
 	    Series<Number,Number> series = new Series<Number,Number>();
-	    chart.add(series);
+	    dataList.add(series);
 	    series.setName("Lifecycle");
 	    
-	    sc.setData(chart);
-	    sc.setLayoutX(350);
-	    firstLayer.getChildren().add(sc);
+	    scatterChart.setData(dataList);
+	    scatterChart.setLayoutX(350);
+	    firstLayer.getChildren().add(scatterChart);
 	}
 	
-	public void setScatterChart() {	
-		Series<Number,Number> series = sc.getData().get(0);
+	public void setScatterChart(Time updateTime) {	
+		if (this.lastUpdateTime != null &&
+				updateTime.getDifference(this.lastUpdateTime).getTotalMilliSecond() < this.timeInterval.getTotalMilliSecond()) {
+			return;
+		}
+		
+		ObservableList<Data<Number, Number>> seriesData = scatterChart.getData().get(0).getData();
+		seriesData.clear();
 		
 	    for(Entry<Integer,List<Duration>> entry : getSizeAndLifecycle().entrySet()) {
 	    	int x = entry.getKey();
+	    	if (x == 1) {
+	    		continue;
+	    	}
 	    	for(Duration duration : entry.getValue()) {
 	    		double y= duration.getTotalMilliSecond()/1000;
-	    		series.getData().add(new Data<Number, Number>(x, y));
+	    		seriesData.add(new Data<Number, Number>(x, y));
 	    	}
 	    }
+	    
+	    this.lastUpdateTime = updateTime;
 	}
 
 	// duration.getTotalMilliSecond()/1000
@@ -86,7 +101,6 @@ public class GraphPaneController {
 			}
 			
 			lifeCycles.add(swarm.getTerminationTime().getDifference(swarm.getCreationTime()));
-			
 			
 		}
 		
