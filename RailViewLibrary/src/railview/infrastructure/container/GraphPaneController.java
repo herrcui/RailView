@@ -38,7 +38,7 @@ public class GraphPaneController {
 	
 	private Time lastUpdateTime = null;
 	
-	private Duration timeInterval = Duration.fromSecond(300);
+	private Duration timeInterval = Duration.fromSecond(60);
 	
 	@FXML
 	public void initialize() {
@@ -48,7 +48,7 @@ public class GraphPaneController {
 	public void setSwarmManager(SwarmManager si) {
 		this.si = si;
 		final NumberAxis xAxis = new NumberAxis(0, 10, 1);
-	    final NumberAxis yAxis = new NumberAxis(0, 500, 50);
+	    final NumberAxis yAxis = new NumberAxis(0, 1800, 60);
 	    
 	    scatterChart = new ScatterChart<Number,Number>(xAxis,yAxis);
 	    ObservableList<Series<Number,Number>> dataList = FXCollections.observableArrayList();
@@ -70,11 +70,9 @@ public class GraphPaneController {
 		ObservableList<Data<Number, Number>> seriesData = scatterChart.getData().get(0).getData();
 		seriesData.clear();
 		
-	    for(Entry<Integer,List<Duration>> entry : getSizeAndLifecycle().entrySet()) {
+	    for(Entry<Integer,List<Duration>> entry : getSizeAndLifecycle(updateTime).entrySet()) {
 	    	int x = entry.getKey();
-	    	if (x == 1) {
-	    		continue;
-	    	}
+
 	    	for(Duration duration : entry.getValue()) {
 	    		double y= duration.getTotalMilliSecond()/1000;
 	    		seriesData.add(new Data<Number, Number>(x, y));
@@ -85,13 +83,10 @@ public class GraphPaneController {
 	}
 
 	// duration.getTotalMilliSecond()/1000
-	private Map<Integer, List<Duration>> getSizeAndLifecycle() {
+	private Map<Integer, List<Duration>> getSizeAndLifecycle(Time updateTime) {
 		Map<Integer, List<Duration>> map = new TreeMap<Integer, List<Duration>>();
 		SwarmLogger logger = si.getLogger();
 		for (Swarm swarm : logger.getSwarmSet()) {
-			if (swarm.getTerminationTime() == null) {
-				continue;
-			}
 			
 			Integer size =  swarm.getTrains().size();
 			List<Duration> lifeCycles = map.get(size);
@@ -100,7 +95,11 @@ public class GraphPaneController {
 				map.put(size, lifeCycles);
 			}
 			
-			lifeCycles.add(swarm.getTerminationTime().getDifference(swarm.getCreationTime()));
+			if (swarm.getTerminationTime() == null) {
+				lifeCycles.add(updateTime.getDifference(swarm.getCreationTime()));
+			} else {
+				lifeCycles.add(swarm.getTerminationTime().getDifference(swarm.getCreationTime()));
+			}
 			
 		}
 		
