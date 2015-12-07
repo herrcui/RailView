@@ -21,7 +21,7 @@ import railapp.simulation.events.EventListener;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.units.Duration;
 import railview.controller.framework.AbstractSimulationController;
-import railview.infrastructure.container.GraphPaneController;
+import railview.simulation.ui.GraphPaneController;
 import railview.infrastructure.container.NetworkPaneController;
 
 public class SimulationController extends AbstractSimulationController {

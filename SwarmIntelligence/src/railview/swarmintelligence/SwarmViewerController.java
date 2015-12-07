@@ -36,7 +36,7 @@ import railapp.units.Coordinate;
 import railapp.units.Duration;
 import railapp.units.Time;
 import railview.controller.framework.AbstractSimulationController;
-import railview.infrastructure.container.GraphPaneController;
+import railview.swarmintelligence.ui.GraphPaneController;
 import railview.infrastructure.container.NetworkPaneController;
 import railview.swarmintelligence.ui.SwarmSidebarController;
 

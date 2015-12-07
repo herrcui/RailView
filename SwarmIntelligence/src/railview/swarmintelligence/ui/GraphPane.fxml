@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="840" prefWidth="1320" styleClass="background-white" stylesheets="@../../../../../SwarmIntelligence/resources/CSS/Darktheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.swarmintelligence.ui.GraphPaneController">
+   <children>
+      <AnchorPane fx:id="firstLayer" layoutX="100.0" layoutY="30.0" prefHeight="750.0" prefWidth="1110.0">
+         <children>
+            <TableView layoutX="110.0" layoutY="420.0" prefHeight="300.0" prefWidth="900.0">
+              <columns>
+                <TableColumn prefWidth="225.0" text="C1" />
+                <TableColumn prefWidth="225.0" text="C2" />
+                  <TableColumn prefWidth="225.0" text="Column X" />
+                  <TableColumn prefWidth="225.0" text="Column X" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="secondLayer" layoutX="100.0" layoutY="250.0" prefHeight="500.0" prefWidth="1110.0">
+         <children>
+            <Button layoutY="180.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="180.0" />
+            <Button layoutY="260.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="180.0" text="Deadlock" />
+            <Button layoutY="340.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="180.0" text="Conflict" />
+            <Button layoutY="420.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="180.0" text="Pending" />
+            <AnchorPane layoutX="400.0" prefHeight="500.0" prefWidth="710.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
