@@ -46,7 +46,7 @@ public class SwarmPane extends PannablePane {
 		for (Swarm swarm : this.swarms) {
 			Color color = this.getSwarmColor(swarm);
 
-			Collection<AbstractTrainSimulator> trains = swarm.getTrains(this.currentTime);
+			Collection<AbstractTrainSimulator> trains = swarm.getTrains();
 
 			for (AbstractTrainSimulator train : trains) {
 				this.drawTrain(train ,color);
@@ -57,7 +57,7 @@ public class SwarmPane extends PannablePane {
 	private Color getSwarmColor(Swarm swarm) {
 		Color color = this.swarmColorMap.get(swarm);
 		if (color == null) {
-			if (swarm.getTrains(this.currentTime).size() == 1) {
+			if (swarm.getTrains().size() == 1) {
 				color = this.COLOR_SINGLETRAIN;
 				this.swarmColorMap.put(swarm, color);
 				return color;
