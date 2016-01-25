@@ -1,11 +1,16 @@
 package railview.simulation;
 
+import java.awt.Desktop;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javafx.animation.FadeTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +20,7 @@ import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import javafx.stage.FileChooser;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.simulation.SimulationManager;
 import railapp.simulation.events.EventListener;
@@ -65,6 +71,9 @@ public class SimulationController extends AbstractSimulationController {
 	private Button unlockButton;
 	
 	@FXML
+	private Button openFile;
+	
+	@FXML
 	private Slider speedBar;
 
 	@FXML
@@ -99,6 +108,7 @@ public class SimulationController extends AbstractSimulationController {
 			
 			graphPane.setVisible(false);
 			symbolPane.setOpacity(0.0);
+			openFile();
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -295,7 +305,33 @@ public class SimulationController extends AbstractSimulationController {
 			}
 		}
 	}
+	
+	public void openFile() {
+	openFile.setOnAction(
+            new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(final ActionEvent e) {
+                    File file = fileChooser.showOpenDialog(networkPaneRoot.getScene().getWindow());
+                    if (file != null) {
+                        openFile(file);
+                    }
+                }
+            });
+	}
 
+    private void openFile(File file) {
+        try {
+            desktop.open(file);
+        } catch (IOException ex) {
+            Logger.getLogger(
+                SimulationController.class.getName()).log(
+                    Level.SEVERE, null, ex
+                );
+        }
+    }
+    
+    final FileChooser fileChooser = new FileChooser();
+	private Desktop desktop = Desktop.getDesktop();
 	private StackPane networkPane;
 	private AnchorPane graphPane;
 	private NetworkPaneController networkPaneController;

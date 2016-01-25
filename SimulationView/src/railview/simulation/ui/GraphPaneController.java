@@ -1,20 +1,17 @@
 package railview.simulation.ui;
 
 import javafx.fxml.FXML;
+import javafx.geometry.Side;
+import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
 
 public class GraphPaneController {
-	
 	@FXML
-	private AnchorPane firstLayer;
-	
-	@FXML
-	private AnchorPane secondLayer;
-	
+	private TabPane tabPane;
 	
 	@FXML
 	public void initialize() {
-		secondLayer.setVisible(false);
+        tabPane.setSide(Side.BOTTOM);
 	}
 	
 

@@ -1,33 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="840" prefWidth="1320" styleClass="background-white" stylesheets="@../../../../../SwarmIntelligence/resources/CSS/Darktheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.swarmintelligence.ui.GraphPaneController">
+<AnchorPane prefHeight="840" prefWidth="1320" styleClass="background-white" stylesheets="@../../../../../SimulationView/resources/CSS/Darktheme.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.ui.GraphPaneController">
    <children>
-      <AnchorPane fx:id="firstLayer" layoutX="100.0" layoutY="30.0" prefHeight="750.0" prefWidth="1110.0">
-         <children>
-            <TableView layoutX="110.0" layoutY="420.0" prefHeight="300.0" prefWidth="900.0">
-              <columns>
-                <TableColumn prefWidth="225.0" text="C1" />
-                <TableColumn prefWidth="225.0" text="C2" />
-                  <TableColumn prefWidth="225.0" text="Column X" />
-                  <TableColumn prefWidth="225.0" text="Column X" />
-              </columns>
-            </TableView>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="secondLayer" layoutX="100.0" layoutY="250.0" prefHeight="500.0" prefWidth="1110.0">
-         <children>
-            <Button layoutY="180.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="180.0" />
-            <Button layoutY="260.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="180.0" text="Deadlock" />
-            <Button layoutY="340.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="180.0" text="Conflict" />
-            <Button layoutY="420.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="180.0" text="Pending" />
-            <AnchorPane layoutX="400.0" prefHeight="500.0" prefWidth="710.0" />
-         </children>
-      </AnchorPane>
+      <TabPane fx:id="tabPane" prefHeight="840.0" prefWidth="1320.0" stylesheets="@../../../../resources/CSS/Tabs.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Running Dynamics">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="281.0" prefWidth="377.0">
+                     <children>
+                        <LineChart layoutX="370.0" layoutY="171.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Untitled Tab">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+            <Tab text="Untitled Tab">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
    </children>
 </AnchorPane>
