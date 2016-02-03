@@ -99,7 +99,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="openFile" layoutY="7.0" mnemonicParsing="false" styleClass="button-dark-blue" stylesheets="@../../../resources/CSS/Darktheme.css" AnchorPane.leftAnchor="295.0">
+            <Button layoutY="7.0" mnemonicParsing="false" onAction="#onButtonAction" styleClass="button-dark-blue" stylesheets="@../../../resources/CSS/Darktheme.css" AnchorPane.leftAnchor="295.0">
                <graphic>
                   <ImageView fitHeight="45.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>

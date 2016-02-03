@@ -1,17 +1,43 @@
 package railview.simulation.ui;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.geometry.Side;
+import javafx.scene.chart.LineChart;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
 
 public class GraphPaneController {
+	
+	@FXML
+	private AnchorPane anchorPane;
+	
 	@FXML
 	private TabPane tabPane;
 	
 	@FXML
+	private AnchorPane runningPane;
+	
+	@FXML
+	private LineChart chart1;
+	
+	@FXML
 	public void initialize() {
         tabPane.setSide(Side.BOTTOM);
+        
+        anchorPane.widthProperty().addListener(new ChangeListener<Number>() {
+		    @Override public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneWidth, Number newSceneWidth) {
+		    	chart1.setLayoutX((newSceneWidth.doubleValue() / 2)- (chart1.prefWidth(-1) / 2));
+		    }
+		});
+        
+
+        anchorPane.heightProperty().addListener(new ChangeListener<Number>() {
+		    @Override public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneHeight, Number newSceneHeight) {
+		    	chart1.setLayoutY((newSceneHeight.doubleValue() / 2)- (chart1.prefHeight(-1) / 2));
+		    }
+		});
 	}
 	
 

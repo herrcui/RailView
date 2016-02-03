@@ -7,15 +7,15 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="840" prefWidth="1320" styleClass="background-white" stylesheets="@../../../../../SimulationView/resources/CSS/Darktheme.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.ui.GraphPaneController">
+<AnchorPane fx:id="anchorPane" prefHeight="840" prefWidth="1320" styleClass="background-white" stylesheets="@../../../../../SimulationView/resources/CSS/Darktheme.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.ui.GraphPaneController">
    <children>
-      <TabPane fx:id="tabPane" prefHeight="840.0" prefWidth="1320.0" stylesheets="@../../../../resources/CSS/Tabs.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <TabPane fx:id="tabPane" layoutX="224.0" layoutY="164.0" prefHeight="840.0" prefWidth="1320.0" stylesheets="@../../../../resources/CSS/Tabs.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
           <Tab text="Running Dynamics">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="281.0" prefWidth="377.0">
+              <AnchorPane fx:id="runningPane" minHeight="0.0" minWidth="0.0">
                      <children>
-                        <LineChart layoutX="370.0" layoutY="171.0">
+                        <LineChart fx:id="chart1" layoutX="422.0" layoutY="192.0">
                           <xAxis>
                             <CategoryAxis side="BOTTOM" />
                           </xAxis>

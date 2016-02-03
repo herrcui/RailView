@@ -1,12 +1,8 @@
 package railview.simulation;
 
-import java.awt.Desktop;
-import java.io.File;
+
 import java.io.IOException;
 import java.net.URL;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import javafx.animation.FadeTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -15,12 +11,12 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
-import javafx.stage.FileChooser;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.simulation.SimulationManager;
 import railapp.simulation.events.EventListener;
@@ -28,6 +24,7 @@ import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.units.Duration;
 import railview.controller.framework.AbstractSimulationController;
 import railview.simulation.ui.GraphPaneController;
+import railview.simulation.ui.DialogPaneController;
 import railview.infrastructure.container.NetworkPaneController;
 
 public class SimulationController extends AbstractSimulationController {
@@ -70,11 +67,18 @@ public class SimulationController extends AbstractSimulationController {
 	@FXML
 	private Button unlockButton;
 	
-	@FXML
-	private Button openFile;
 	
 	@FXML
 	private Slider speedBar;
+	
+	@FXML
+	private Button openOne;
+	
+	@FXML
+	private Button openTwo;
+	
+	@FXML
+	private Button openThree;
 
 	@FXML
 	public void initialize() {
@@ -92,24 +96,28 @@ public class SimulationController extends AbstractSimulationController {
 			graphpaneloader.setLocation(graphpanelocation);
 			graphPane = (AnchorPane) graphpaneloader.load();
 			
+			
 			this.networkPaneRoot.getChildren().addAll(networkPane, graphPane);
 			
 			networkPaneRoot.widthProperty().addListener(new ChangeListener<Number>() {
 			    @Override public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneWidth, Number newSceneWidth) {
+			    	symbolPane.setLayoutX((newSceneWidth.doubleValue()- symbolPane.getPrefWidth())/2);
 			    	networkPane.setLayoutX((newSceneWidth.doubleValue() / 2)- (networkPane.prefWidth(-1) / 2));
+			    	graphPane.setPrefWidth(newSceneWidth.doubleValue());
 			    }
 			});
 
 			networkPaneRoot.heightProperty().addListener(new ChangeListener<Number>() {
 			    @Override public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneHeight, Number newSceneHeight) {
 			    	networkPane.setLayoutY((newSceneHeight.doubleValue() / 2)- (networkPane.prefHeight(-1) / 2));
+			       	graphPane.setPrefHeight(newSceneHeight.doubleValue());
 			    }
 			});
-			
+	
 			graphPane.setVisible(false);
 			symbolPane.setOpacity(0.0);
-			openFile();
 
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -225,6 +233,14 @@ public class SimulationController extends AbstractSimulationController {
 		graphPane.setVisible(false);
 		networkPane.setVisible(true);
 	}
+	
+	@FXML
+	    void onButtonAction(ActionEvent event)
+	    {
+	        DialogPaneController testDialog = new DialogPaneController(null);
+	        testDialog.showAndWait();
+	    }
+	
 
 	public NetworkPaneController getNetworkPaneController() {
 		return this.networkPaneController;
@@ -305,33 +321,9 @@ public class SimulationController extends AbstractSimulationController {
 			}
 		}
 	}
-	
-	public void openFile() {
-	openFile.setOnAction(
-            new EventHandler<ActionEvent>() {
-                @Override
-                public void handle(final ActionEvent e) {
-                    File file = fileChooser.showOpenDialog(networkPaneRoot.getScene().getWindow());
-                    if (file != null) {
-                        openFile(file);
-                    }
-                }
-            });
-	}
-
-    private void openFile(File file) {
-        try {
-            desktop.open(file);
-        } catch (IOException ex) {
-            Logger.getLogger(
-                SimulationController.class.getName()).log(
-                    Level.SEVERE, null, ex
-                );
-        }
-    }
+	   
     
-    final FileChooser fileChooser = new FileChooser();
-	private Desktop desktop = Desktop.getDesktop();
+    private DialogPane fileChooserPane;
 	private StackPane networkPane;
 	private AnchorPane graphPane;
 	private NetworkPaneController networkPaneController;
