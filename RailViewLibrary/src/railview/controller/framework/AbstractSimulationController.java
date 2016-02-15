@@ -50,7 +50,7 @@ public abstract class AbstractSimulationController {
 		};
 	}
 
-	final public void setSimulationManager(SimulationManager simulator) {
+	public void setSimulationManager(SimulationManager simulator) {
 		this.simulator = simulator;
 	}
 

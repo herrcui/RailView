@@ -82,19 +82,19 @@ public class SimulationController extends AbstractSimulationController {
 	@FXML
 	public void initialize() {
 		try {
-			FXMLLoader loader = new FXMLLoader();
+			FXMLLoader networkpaneloader = new FXMLLoader();
 			URL location = NetworkPaneController.class
 					.getResource("NetworkPane.fxml");
-			loader.setLocation(location);
-			networkPane = (StackPane) loader.load();
-			this.networkPaneController = loader.getController();
+			networkpaneloader.setLocation(location);
+			networkPane = (StackPane) networkpaneloader.load();
+			this.networkPaneController = networkpaneloader.getController();
 			
 			FXMLLoader graphpaneloader = new FXMLLoader();
 			URL graphpanelocation = GraphPaneController.class
 					.getResource("GraphPane.fxml");
 			graphpaneloader.setLocation(graphpanelocation);
 			graphPane = (AnchorPane) graphpaneloader.load();
-			
+			this.graphPaneController = graphpaneloader.getController();
 			
 			this.networkPaneRoot.getChildren().addAll(networkPane, graphPane);
 			
@@ -256,6 +256,13 @@ public class SimulationController extends AbstractSimulationController {
 		networkPaneController.updateTrainCoordinates(
 			simulator.getTrainCoordinates(this.updateTime), this.updateTime);
 		updateStatusBar();
+		this.graphPaneController.updateTrainTableList();
+	}
+	
+	@Override
+	public void setSimulationManager(SimulationManager simulator) {
+		super.setSimulationManager(simulator);
+		this.graphPaneController.setTrainList(simulator.getTrainSimulators());
 	}
 
 	private void updateStatusBar() {
@@ -324,6 +331,7 @@ public class SimulationController extends AbstractSimulationController {
 	private StackPane networkPane;
 	private AnchorPane graphPane;
 	private NetworkPaneController networkPaneController;
+	private GraphPaneController graphPaneController;
 	private int UIPause = 100;
 	private int MAXSpeed = 20000; // 1 : 200
 }

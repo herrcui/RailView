@@ -1,5 +1,15 @@
 package railview.simulation.ui;
 
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+import railapp.infrastructure.path.dto.LinkEdge;
+import railapp.infrastructure.path.dto.LinkPath;
+import railapp.rollingstock.dto.SimpleTrain;
+import railapp.simulation.runingdynamics.sections.DiscretePoint;
+import railapp.simulation.train.AbstractTrainSimulator;
+import railapp.units.UnitUtility;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -40,52 +50,68 @@ public class GraphPaneController {
 		});
 	}
 	
-
-	// for the historgamm, go throught the sorted duration, and get the size:
-	//
-	// (double) entry.getKey().getTotalMilliSecond()/1000
-	// entry.getValue().size()
-	/*
-	private TreeMap<Duration, List<RequestResourceEvent>> getHistogrammData() {
-		TreeMap<Duration, List<RequestResourceEvent>> result = new TreeMap<Duration, List<RequestResourceEvent>>();
-		double currentLimit = interval.getTotalMilliSecond();
-		List<RequestResourceEvent> list = new ArrayList<RequestResourceEvent>();
-		for (Entry<Duration, List<RequestResourceEvent>> entry : durationMap.entrySet()) {
-			if (entry.getKey().getTotalMilliSecond() <= currentLimit) {
-				list.addAll(entry.getValue());
-			} else {
-				// increase the currentLimit, until currentLimit is bigger than the current duration
-				while (entry.getKey().getTotalMilliSecond() > currentLimit) {
-					result.put(Duration.fromTotalMilliSecond(currentLimit), list);
-					currentLimit += interval.getTotalMilliSecond();
-					list = new ArrayList<RequestResourceEvent>();
-				}
-								
-				list = entry.getValue();
+	public void setTrainList(List<AbstractTrainSimulator> trainList) {
+        this.trainList = trainList;
+	}
+	
+	public void updateTrainTableList() {
+		// TODO
+		for (AbstractTrainSimulator trainSimulator : trainList) {
+			String trainNumber = trainSimulator.getTrain().getNumber();
+		}
+	}
+	
+	public void drawRunningDynamics(AbstractTrainSimulator train) {
+		// TODO
+		if (train.getTrain().getStatus() != SimpleTrain.INACTIVE) {
+			// draw
+		}
+	}
+	
+	private Map<Double, Double> getCourseForVelocity(AbstractTrainSimulator train) {
+		// Velocity
+		Map<Double, Double> velocityMap = new LinkedHashMap<Double, Double>();
+		double meter = 0; // x
+		double velocityInKmH = 0; // y
+		for (DiscretePoint point : train.getCourse().getPoints()) {
+			velocityInKmH = point.getVelocity().getKilometerPerHour();
+			meter += point.getDistance().getMeter();
+			velocityMap.put(meter, velocityInKmH);
+		}
+		return velocityMap;
+	}
+	
+	private Map<Double, Double> getSpeedLimit(AbstractTrainSimulator train) {
+		// Velocity
+		Map<Double, Double> speedLimitMap = new LinkedHashMap<Double, Double>();
+		
+		LinkPath path = train.getTripSection().getFullPath();
+		
+		double maxTrainKmH = train.getTrainDefinition().getMaxVelocity().getKilometerPerHour();
+		double maxKmH = Math.min(maxTrainKmH, 
+			path.getLinkEdges().get(0).getLink().getGeometry().getMaxVelocity().getKilometerPerHour());
+		double lastMeter = 0;
+		double meter = 0;
+		
+		for (LinkEdge edge : path.getLinkEdges()) {
+			if (edge.getLength().getMeter() == 0) {
+				continue;
 			}
+			
+			double linkKmH = edge.getLink().getGeometry().getMaxVelocity().getKilometerPerHour();
+			
+			if (Math.abs(Math.min(maxTrainKmH, linkKmH) - maxKmH) >= UnitUtility.ERROR) {
+				speedLimitMap.put(lastMeter, maxKmH);
+				speedLimitMap.put(meter, maxKmH);
+				
+				maxKmH = Math.min(maxTrainKmH, linkKmH);
+				lastMeter = meter;
+			}
+			
+			meter += edge.getLength().getMeter();
 		}
-		result.put(Duration.fromTotalMilliSecond(currentLimit), list);
-		return result;
+		return speedLimitMap;
 	}
 	
-	private List<RequestResourceEvent> getAllRequests(
-			TreeMap<Duration, List<RequestResourceEvent>> histogramm, Duration duration) {
-		Entry<Duration, List<RequestResourceEvent>> floorEntry = histogramm.floorEntry(duration);
-		if (floorEntry != null) {
-			return floorEntry.getValue();
-		} else {
-			return null;
-		}
-	}
-	
-	private LinkedHashMap<Time, RequestResult> getResultMap(RequestResourceEvent event) {
-		return event.getResultMap();
-	}
-	
-	
-	private TreeMap<Duration, List<RequestResourceEvent>> durationMap;
-	
-	private Duration interval = Duration.fromSecond(120);
-	*/
-	
+	private List<AbstractTrainSimulator> trainList;
 }
