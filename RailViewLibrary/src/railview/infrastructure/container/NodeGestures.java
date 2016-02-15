@@ -1,17 +1,13 @@
 package railview.infrastructure.container;
 
 import javafx.event.EventHandler;
-import javafx.scene.Node;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
-import railview.infrastructure.container.DragContext;
 import railview.infrastructure.container.PannablePane;
 
 class NodeGestures {
 
     private static final double MAX_SCALE = 100.0d;
     private static final double MIN_SCALE = .1d;
-    private DragContext nodeDragContext = new DragContext();
     double zoomFactor = 1.2;
 
     PannablePane canvas;

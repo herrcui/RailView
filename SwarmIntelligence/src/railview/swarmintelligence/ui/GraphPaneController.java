@@ -1,17 +1,11 @@
 package railview.swarmintelligence.ui;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Set;
 import java.util.TreeMap;
 
-import railapp.simulation.events.toinfrastructure.RequestResourceEvent;
-import railapp.simulation.events.toinfrastructure.RequestResult;
 import railapp.swarmintelligence.Swarm;
 import railapp.swarmintelligence.SwarmLogger;
 import railapp.swarmintelligence.SwarmManager;
@@ -38,7 +32,7 @@ public class GraphPaneController {
 	
 	private Time lastUpdateTime = null;
 	
-	private Duration timeInterval = Duration.fromSecond(60);
+	private Duration timeInterval = Duration.fromTotalSecond(60);
 	
 	@FXML
 	public void initialize() {

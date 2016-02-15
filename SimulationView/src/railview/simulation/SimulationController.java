@@ -11,7 +11,6 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
-import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
@@ -322,12 +321,9 @@ public class SimulationController extends AbstractSimulationController {
 		}
 	}
 	   
-    
-    private DialogPane fileChooserPane;
 	private StackPane networkPane;
 	private AnchorPane graphPane;
 	private NetworkPaneController networkPaneController;
-	private Duration updateInterval = Duration.fromSecond(60);
 	private int UIPause = 100;
 	private int MAXSpeed = 20000; // 1 : 200
 }

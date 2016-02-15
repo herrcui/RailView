@@ -33,7 +33,6 @@ public class SwarmPane extends PannablePane {
 			Time time) {
 		this.trainCoordinates = coordinates;
 		this.swarms = swarms;
-		this.currentTime = time;
 		this.draw();
 	}
 
@@ -115,7 +114,6 @@ public class SwarmPane extends PannablePane {
 
 	private Set<Color> usedColors = new HashSet<Color>();
 	private Map<Swarm, Color> swarmColorMap = new HashMap<Swarm, Color>();
-	private Time currentTime;
 
 	private Color COLOR_SINGLETRAIN = Color.WHITESMOKE;
 }
