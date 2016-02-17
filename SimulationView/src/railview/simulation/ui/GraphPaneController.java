@@ -1,8 +1,10 @@
 package railview.simulation.ui;
 
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import railapp.infrastructure.path.dto.LinkEdge;
 import railapp.infrastructure.path.dto.LinkPath;
@@ -51,7 +53,7 @@ public class GraphPaneController {
 	}
 	
 	public void setTrainList(List<AbstractTrainSimulator> trainList) {
-        this.trainList = trainList;
+        this.trainList.addAll(trainList);
 	}
 	
 	public void updateTrainTableList() {
@@ -113,5 +115,6 @@ public class GraphPaneController {
 		return speedLimitMap;
 	}
 	
-	private List<AbstractTrainSimulator> trainList;
+	private CopyOnWriteArrayList<AbstractTrainSimulator> trainList =
+			new CopyOnWriteArrayList<AbstractTrainSimulator>();
 }
