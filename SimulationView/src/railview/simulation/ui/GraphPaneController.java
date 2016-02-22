@@ -56,9 +56,11 @@ public class GraphPaneController {
         this.trainList.addAll(trainList);
 	}
 	
-	public void updateTrainTableList() {
+	public void updateTrainTableList(List<AbstractTrainSimulator> trainList) {
 		// TODO
-		for (AbstractTrainSimulator trainSimulator : trainList) {
+		this.trainList.clear();
+		this.trainList.addAll(trainList);
+		for (AbstractTrainSimulator trainSimulator : this.trainList) {
 			String trainNumber = trainSimulator.getTrain().getNumber();
 		}
 	}

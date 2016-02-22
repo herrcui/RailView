@@ -256,7 +256,7 @@ public class SimulationController extends AbstractSimulationController {
 		networkPaneController.updateTrainCoordinates(
 			simulator.getTrainCoordinates(this.updateTime), this.updateTime);
 		updateStatusBar();
-		this.graphPaneController.updateTrainTableList();
+		this.graphPaneController.updateTrainTableList(this.simulator.getTrainSimulators());
 	}
 	
 	@Override
