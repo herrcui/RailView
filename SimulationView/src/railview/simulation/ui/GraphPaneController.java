@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import railapp.infrastructure.path.dto.LinkEdge;
@@ -53,16 +54,22 @@ public class GraphPaneController {
 	}
 	
 	public void setTrainList(List<AbstractTrainSimulator> trainList) {
-        this.trainList.addAll(trainList);
+        this.updateTrainMap(trainList);
 	}
 	
-	public void updateTrainTableList(List<AbstractTrainSimulator> trainList) {
+	public void updateTrainMap(List<AbstractTrainSimulator> trainList) {
 		// TODO
-		this.trainList.clear();
-		this.trainList.addAll(trainList);
-		for (AbstractTrainSimulator trainSimulator : this.trainList) {
-			String trainNumber = trainSimulator.getTrain().getNumber();
+		CopyOnWriteArrayList<AbstractTrainSimulator> tempList = new
+			CopyOnWriteArrayList<AbstractTrainSimulator>();
+		tempList.addAll(trainList);
+		
+		for (AbstractTrainSimulator trainSimulator : tempList) {
+			this.trainMap.put(trainSimulator.getTrain().getNumber(), trainSimulator);
 		}
+	}
+	
+	public AbstractTrainSimulator getTrain(String trainNumber) {
+		return this.trainMap.get(trainNumber);
 	}
 	
 	public void drawRunningDynamics(AbstractTrainSimulator train) {
@@ -116,7 +123,7 @@ public class GraphPaneController {
 		}
 		return speedLimitMap;
 	}
-	
-	private CopyOnWriteArrayList<AbstractTrainSimulator> trainList =
-			new CopyOnWriteArrayList<AbstractTrainSimulator>();
+
+	private ConcurrentHashMap<String, AbstractTrainSimulator> trainMap =
+			new ConcurrentHashMap<String, AbstractTrainSimulator>();
 }
