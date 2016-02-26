@@ -3,7 +3,7 @@ package railview.simulation;
 import railapp.infrastructure.dto.Network;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.rollingstock.service.IRollingStockServiceUtility;
-import railapp.simulation.SimulationManager;
+import railapp.simulation.SingleSimulationManager;
 import railapp.timetable.service.ITimetableServiceUtility;
 import railview.railmodel.infrastructure.railsys7.InfrastructureReader;
 import railview.railmodel.infrastructure.railsys7.RollingStockReader;
@@ -21,7 +21,7 @@ public class DoSimConsole {
 		ITimetableServiceUtility timeTableServiceUtility = TimetableReader.getInstance(
 				infraServiceUtility, rollingStockServiceUtility, network).initialize();
 		
-		SimulationManager simulator = SimulationManager.getInstance(infraServiceUtility,
+		SingleSimulationManager simulator = SingleSimulationManager.getInstance(infraServiceUtility,
 				rollingStockServiceUtility,
 				timeTableServiceUtility);
 		

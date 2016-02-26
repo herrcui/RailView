@@ -17,7 +17,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
-import railapp.simulation.SimulationManager;
+import railapp.simulation.SingleSimulationManager;
 import railapp.simulation.events.EventListener;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.units.Duration;
@@ -260,7 +260,7 @@ public class SimulationController extends AbstractSimulationController {
 	}
 	
 	@Override
-	public void setSimulationManager(SimulationManager simulator) {
+	public void setSimulationManager(SingleSimulationManager simulator) {
 		super.setSimulationManager(simulator);
 		this.graphPaneController.setTrainList(simulator.getTrainSimulators());
 	}
@@ -271,7 +271,7 @@ public class SimulationController extends AbstractSimulationController {
 		int numActive = 0;
 		int numTerminate = 0;
 
-		if (simulator.getStatus() != SimulationManager.INACTIVE) {
+		if (simulator.getStatus() != SingleSimulationManager.INACTIVE) {
 			for (EventListener listener : simulator.getListeners()) {
 				if (listener instanceof AbstractTrainSimulator) {
 					AbstractTrainSimulator trainSimulator = (AbstractTrainSimulator) listener;
@@ -301,7 +301,7 @@ public class SimulationController extends AbstractSimulationController {
 	@Override
 	protected void setTime(boolean isReplay) {
 		Duration updateInterval = Duration.fromTotalMilliSecond(UIPause);
-		if (simulator.getStatus() != SimulationManager.INACTIVE) {
+		if (simulator.getStatus() != SingleSimulationManager.INACTIVE) {
 			updateInterval = Duration.fromTotalMilliSecond(MAXSpeed * speedBar.getValue()/100);
 			if (speedBar.getValue() == speedBar.getMin()) {
 				updateInterval = Duration.fromTotalMilliSecond(UIPause);
@@ -309,7 +309,7 @@ public class SimulationController extends AbstractSimulationController {
 
 			if (speedBar.getValue() == speedBar.getMax() &&
 				simulator.getTime() != null &&
-				simulator.getStatus() != SimulationManager.TERMINATED) {
+				simulator.getStatus() != SingleSimulationManager.TERMINATED) {
 
 				updateInterval = simulator.getTime().getDifference(updateTime);
 			}
@@ -317,7 +317,7 @@ public class SimulationController extends AbstractSimulationController {
 		if (isReplay) {
 			this.updateTime = this.updateTime.add(updateInterval);
 		} else {
-			if (simulator.getStatus() == SimulationManager.RUNNING) { // not terminated yet
+			if (simulator.getStatus() == SingleSimulationManager.RUNNING) { // not terminated yet
 				this.updateTime = this.updateTime.add(updateInterval);
 				if (this.updateTime.compareTo(simulator.getTime()) > 0) {
 					this.updateTime = simulator.getTime(); // if update too fast, slow down

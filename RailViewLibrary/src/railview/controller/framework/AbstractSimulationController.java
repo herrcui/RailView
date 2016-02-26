@@ -1,7 +1,7 @@
 package railview.controller.framework;
 
 import javafx.application.Platform;
-import railapp.simulation.SimulationManager;
+import railapp.simulation.SingleSimulationManager;
 import railapp.units.Time;
 
 public abstract class AbstractSimulationController {
@@ -50,7 +50,7 @@ public abstract class AbstractSimulationController {
 		};
 	}
 
-	public void setSimulationManager(SimulationManager simulator) {
+	public void setSimulationManager(SingleSimulationManager simulator) {
 		this.simulator = simulator;
 	}
 
@@ -61,7 +61,7 @@ public abstract class AbstractSimulationController {
 	protected int UIPause = 100;
 	protected Time updateTime = Time.getInstance(0, 0, 0);
 
-	protected SimulationManager simulator;
+	protected SingleSimulationManager simulator;
 
 	private boolean isOnPauseCommand = false;
 	private boolean isOnStopCommand = false;
@@ -84,7 +84,8 @@ public abstract class AbstractSimulationController {
 					break;
 				}
 
-				if (simulator.getStatus() == SimulationManager.TERMINATED && updateTime.compareTo(simulator.getTime()) > 0) {
+				if (simulator.getStatus() == SingleSimulationManager.TERMINATED && 
+						updateTime.compareTo(simulator.getTime()) > 0) {
 					isUpdating = false;
 					break;
 				}

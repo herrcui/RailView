@@ -18,5 +18,6 @@
 	<classpathentry kind="lib" path="/Library/RailModel/RailSimulator.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/SwarmIntelligence"/>
 	<classpathentry kind="lib" path="/Library/RailModel/SwarmIntelligence.jar"/>
+	<classpathentry kind="lib" path="/Library/RailModel/BasicDefinition.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

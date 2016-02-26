@@ -6,7 +6,7 @@ import java.net.URL;
 import railapp.infrastructure.dto.Network;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.rollingstock.service.IRollingStockServiceUtility;
-import railapp.simulation.SimulationManager;
+import railapp.simulation.SingleSimulationManager;
 import railapp.timetable.service.ITimetableServiceUtility;
 import railview.railmodel.infrastructure.railsys7.InfrastructureReader;
 import railview.railmodel.infrastructure.railsys7.RollingStockReader;
@@ -37,7 +37,7 @@ public class DoSim extends Application {
 		timeTableServiceUtility = TimetableReader.getInstance(
 				infraServiceUtility, rollingStockServiceUtility, network).initialize();
 
-		simulator = SimulationManager.getInstance(infraServiceUtility,
+		simulator = SingleSimulationManager.getInstance(infraServiceUtility,
 				rollingStockServiceUtility,
 				timeTableServiceUtility);
 
@@ -77,7 +77,7 @@ public class DoSim extends Application {
 	private Stage primaryStage;
 	private AnchorPane rootLayout;
 
-	private static SimulationManager simulator;
+	private static SingleSimulationManager simulator;
 	private static IInfrastructureServiceUtility infraServiceUtility;
 	private static IRollingStockServiceUtility rollingStockServiceUtility;
 	private static ITimetableServiceUtility timeTableServiceUtility;
