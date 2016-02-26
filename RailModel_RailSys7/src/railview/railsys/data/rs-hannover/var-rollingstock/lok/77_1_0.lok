@@ -1,0 +1,52 @@
+? Stromart: ohne Stromart
+? Rutkommentar: SNCB HLD 77, DH, SG
+? Eisenbahnunternehmen: SNCB
+? TriebfahrzeugBaureiheTyp: S
+? Triebfahrzeugart: Brennkraftlokomotiven
+? Achslast: 21.9 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 60 t in Bremsstellung druckluftbediente Güterzugbremse (bel. Gwg.)
+? Bremsgewicht: 95 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          100.000
+TraktionsTyp Diesel
+Loklaenge [m]         16.000
+Lokmasse [t]          87.400
+Reibmasse [t]         87.400
+Haftreibungswert       1.000
+Rholok (-)            10.000
+Rutkommentar        SNCB HLD 77, DH, SG
+ST      ge     0.000 210.000    4.000 196.960    0.000   0.000
+ST      ge     4.000 196.960    8.000 182.640    0.000   0.000
+ST      ge     8.000 182.640   12.000 167.040    0.000   0.000
+ST      ge    12.000 167.040   16.000 150.160    0.000   0.000
+ST      ge    16.000 150.160   20.000 132.000    0.000   0.000
+ST      ge    20.000 132.000   24.000 117.320    0.000   0.000
+ST      ge    24.000 117.320   28.000 104.080    0.000   0.000
+ST      ge    28.000 104.080   32.000  92.280    0.000   0.000
+ST      ge    32.000  92.280   36.000  81.920    0.000   0.000
+ST      ge    36.000  81.920   40.000  73.000    0.000   0.000
+ST      ge    40.000  73.000   44.000  66.520    0.000   0.000
+ST      ge    44.000  66.520   48.000  60.680    0.000   0.000
+ST      ge    48.000  60.680   52.000  55.480    0.000   0.000
+ST      ge    52.000  55.480   56.000  50.920    0.000   0.000
+ST      ge    56.000  50.920   60.000  47.000    0.000   0.000
+ST      ge    60.000  47.000   68.000  43.400    0.000   0.000
+ST      ge    68.000  43.400   76.000  39.800    0.000   0.000
+ST      ge    76.000  39.800   84.000  36.200    0.000   0.000
+ST      ge    84.000  36.200   92.000  32.600    0.000   0.000
+ST      ge    92.000  32.600  100.000  29.000    0.000   0.000
+LW  vplus15        3069.470459       9.002637       0.300186       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

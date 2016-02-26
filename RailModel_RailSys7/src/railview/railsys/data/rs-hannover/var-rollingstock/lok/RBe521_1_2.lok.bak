@@ -1,0 +1,67 @@
+? Stromart: Wechselstrom 16,7 Hz,15kV, 600A
+? Rutkommentar: SBB RABe 521
+? Eisenbahnunternehmen: SBB
+? TriebfahrzeugBaureiheTyp: S
+? Triebfahrzeugart: Elektrische Triebwagen mit  Fremdstromzuführung(ET)
+? Achslast: 18 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: ja
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 185 t in Bremsstellung druckluftbediente Hochleistungsbremse  mit höherem Bremsgewicht als <R>-(R)
+? Bremsgewicht: 185 t in Bremsstellung druckluftbediente Hochleistungsbremse mit elektrischer Zusatzbremse
+Vmax [km/h]          160.000
+TraktionsTyp elektrisch
+Loklaenge [m]         74.000
+Lokmasse [t]         137.800
+Reibmasse [t]        137.800
+Haftreibungswert       1.000
+Rholok (-)             6.750
+Rutkommentar        SBB RABe 521
+ST      ge     0.000 200.000    9.360 200.000    0.000   0.000
+ST      ge     9.360 200.000   18.720 200.000    0.000   0.000
+ST      ge    18.720 200.000   28.080 200.000    0.000   0.000
+ST      ge    28.080 200.000   37.440 200.000    0.000   0.000
+ST      ge    37.440 200.000   46.800 200.000    0.000   0.000
+ST      ge    46.800 200.000   49.040 190.955    0.000   0.000
+ST      ge    49.040 190.955   51.280 182.571    0.000   0.000
+ST      ge    51.280 182.571   53.520 174.846    0.000   0.000
+ST      ge    53.520 174.846   55.760 167.783    0.000   0.000
+ST      ge    55.760 167.783   58.000 161.379    0.000   0.000
+ST      ge    58.000 161.379   60.400 155.016    0.000   0.000
+ST      ge    60.400 155.016   62.800 149.068    0.000   0.000
+ST      ge    62.800 149.068   65.200 143.535    0.000   0.000
+ST      ge    65.200 143.535   67.600 138.417    0.000   0.000
+ST      ge    67.600 138.417   70.000 133.714    0.000   0.000
+ST      ge    70.000 133.714   74.000 126.583    0.000   0.000
+ST      ge    74.000 126.583   78.000 120.046    0.000   0.000
+ST      ge    78.000 120.046   82.000 114.103    0.000   0.000
+ST      ge    82.000 114.103   86.000 108.754    0.000   0.000
+ST      ge    86.000 108.754   90.000 104.000    0.000   0.000
+ST      ge    90.000 104.000   94.000  99.613    0.000   0.000
+ST      ge    94.000  99.613   98.000  95.529    0.000   0.000
+ST      ge    98.000  95.529  102.000  91.747    0.000   0.000
+ST      ge   102.000  91.747  106.000  88.268    0.000   0.000
+ST      ge   106.000  88.268  110.000  85.091    0.000   0.000
+ST      ge   110.000  85.091  116.000  80.744    0.000   0.000
+ST      ge   116.000  80.744  122.000  76.747    0.000   0.000
+ST      ge   122.000  76.747  128.000  73.100    0.000   0.000
+ST      ge   128.000  73.100  134.000  69.804    0.000   0.000
+ST      ge   134.000  69.804  140.000  66.857    0.000   0.000
+ST      ge   140.000  66.857  144.000  65.007    0.000   0.000
+ST      ge   144.000  65.007  148.000  63.247    0.000   0.000
+ST      ge   148.000  63.247  152.000  61.575    0.000   0.000
+ST      ge   152.000  61.575  156.000  59.993    0.000   0.000
+ST      ge   156.000  59.993  160.000  58.500    0.000   0.000
+LW  vplus15        5677.635742       9.003108       0.300186       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

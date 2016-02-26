@@ -1,0 +1,47 @@
+? Stromart: ohne Stromart
+? Rutkommentar: SNCB HLD 77, DH, LG
+? Eisenbahnunternehmen: SNCB
+? TriebfahrzeugBaureiheTyp: S
+? Triebfahrzeugart: Brennkraftlokomotiven
+? Achslast: 21.9 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 60 t in Bremsstellung druckluftbediente Güterzugbremse (bel. Gwg.)
+? Bremsgewicht: 95 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]           60.000
+TraktionsTyp Diesel
+Loklaenge [m]         16.000
+Lokmasse [t]          87.400
+Reibmasse [t]         87.400
+Haftreibungswert       1.000
+Rholok (-)            10.000
+Rutkommentar        SNCB HLD 77, DH, LG
+ST      ge     0.000 215.000    2.540 215.000    0.000   0.000
+ST      ge     2.540 215.000    5.080 215.000    0.000   0.000
+ST      ge     5.080 215.000    7.620 215.000    0.000   0.000
+ST      ge     7.620 215.000   10.160 215.000    0.000   0.000
+ST      ge    10.160 215.000   12.700 215.000    0.000   0.000
+ST      ge    12.700 215.001   16.760 173.572    0.000   0.000
+ST      ge    16.760 173.572   20.820 139.797    0.000   0.000
+ST      ge    20.820 139.797   24.880 113.677    0.000   0.000
+ST      ge    24.880 113.677   28.940  95.213    0.000   0.000
+ST      ge    28.940  95.213   33.000  84.403    0.000   0.000
+ST      ge    33.000  84.401   38.400  75.419    0.000   0.000
+ST      ge    38.400  75.419   43.800  67.288    0.000   0.000
+ST      ge    43.800  67.288   49.200  60.008    0.000   0.000
+ST      ge    49.200  60.008   54.600  53.580    0.000   0.000
+ST      ge    54.600  53.580   60.000  48.003    0.000   0.000
+LW  vplus15        3069.470459       9.002637       0.300186       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

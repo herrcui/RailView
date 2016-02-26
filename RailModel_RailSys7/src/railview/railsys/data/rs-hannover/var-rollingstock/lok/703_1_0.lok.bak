@@ -1,0 +1,57 @@
+? Stromart: ohne Stromart
+? Rutkommentar: Schotterplaniermaschine SSP
+? Eisenbahnunternehmen: DB
+? TriebfahrzeugBaureiheTyp: D
+? Triebfahrzeugart: Schienenomnibusse und Bahndiensttriebfahrzeuge
+? Achslast: 15 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 38 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+? Bremsgewicht: 37 t in Bremsstellung druckluftbediente Güterzugbremse (bel. Gwg.)
+Vmax [km/h]          100.000
+TraktionsTyp Diesel
+Loklaenge [m]         19.000
+Lokmasse [t]          54.000
+Reibmasse [t]         54.000
+Haftreibungswert       1.000
+Rholok (-)             5.560
+Rutkommentar        Schotterplaniermaschine SSP
+ST      ge     0.000  80.000    4.200  82.196    0.000   0.000
+ST      ge     4.200  82.196    8.400  83.094    0.000   0.000
+ST      ge     8.400  83.094   12.600  82.693    0.000   0.000
+ST      ge    12.600  82.693   16.800  80.995    0.000   0.000
+ST      ge    16.800  80.995   21.000  77.998    0.000   0.000
+ST      ge    21.000  78.001   23.000  71.135    0.000   0.000
+ST      ge    23.000  71.135   25.000  65.002    0.000   0.000
+ST      ge    25.000  65.002   27.000  59.602    0.000   0.000
+ST      ge    27.000  59.602   29.000  54.935    0.000   0.000
+ST      ge    29.000  54.935   31.000  51.002    0.000   0.000
+ST      ge    31.000  51.000   35.000  44.280    0.000   0.000
+ST      ge    35.000  44.280   39.000  38.520    0.000   0.000
+ST      ge    39.000  38.520   43.000  33.720    0.000   0.000
+ST      ge    43.000  33.720   47.000  29.880    0.000   0.000
+ST      ge    47.000  29.880   51.000  27.000    0.000   0.000
+ST      ge    51.000  27.000   55.000  24.080    0.000   0.000
+ST      ge    55.000  24.080   59.000  21.320    0.000   0.000
+ST      ge    59.000  21.320   63.000  18.720    0.000   0.000
+ST      ge    63.000  18.720   67.000  16.280    0.000   0.000
+ST      ge    67.000  16.280   71.000  14.000    0.000   0.000
+ST      ge    71.000  14.001   76.800  10.992    0.000   0.000
+ST      ge    76.800  10.992   82.600   8.137    0.000   0.000
+ST      ge    82.600   8.137   88.400   5.437    0.000   0.000
+ST      ge    88.400   5.437   94.200   2.892    0.000   0.000
+ST      ge    94.200   2.892  100.000   0.502    0.000   0.000
+LW  vplus15        1652.788818       8.507625       0.283509       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

@@ -1,0 +1,46 @@
+? Stromart: Wechselstrom 16,7 Hz,15kV, 600A
+? Rutkommentar: SBB Re 4/4 II
+? Eisenbahnunternehmen: SBB
+? TriebfahrzeugBaureiheTyp: S
+? Triebfahrzeugart: Elektrische Lokomotiven
+? Achslast: 0 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: nein
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 0 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          140.000
+TraktionsTyp elektrisch
+Loklaenge [m]         14.800
+Lokmasse [t]          80.000
+Reibmasse [t]         80.000
+Haftreibungswert       1.000
+Rholok (-)            20.000
+Rutkommentar        SBB Re 4/4 II
+ST      ge     0.000 254.913   17.940 254.913    0.000   0.000
+ST      ge    17.940 254.913   35.880 254.913    0.000   0.000
+ST      ge    35.880 254.913   53.820 254.913    0.000   0.000
+ST      ge    53.820 254.913   71.760 254.913    0.000   0.000
+ST      ge    71.760 254.913   89.700 254.913    0.000   0.000
+ST      ge    89.700 254.902   95.760 217.795    0.000   0.000
+ST      ge    95.760 217.795  101.820 186.516    0.000   0.000
+ST      ge   101.820 186.516  107.880 161.064    0.000   0.000
+ST      ge   107.880 161.064  113.940 141.441    0.000   0.000
+ST      ge   113.940 141.441  120.000 127.645    0.000   0.000
+ST      ge   120.000 127.653  124.000 119.672    0.000   0.000
+ST      ge   124.000 119.672  128.000 112.203    0.000   0.000
+ST      ge   128.000 112.203  132.000 105.245    0.000   0.000
+ST      ge   132.000 105.245  136.000  98.800    0.000   0.000
+ST      ge   136.000  98.800  140.000  92.866    0.000   0.000
+LW  vplus15        1962.000000       0.000000       0.319806       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

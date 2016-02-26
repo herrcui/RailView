@@ -1,0 +1,66 @@
+? Stromart: ohne Stromart
+? Rutkommentar: GTW 2-2/6 (120C) mit Kondensatorbatterie
+? Eisenbahnunternehmen: EVU
+? TriebfahrzeugBaureiheTyp: N
+? Triebfahrzeugart: Brennkrafttriebwagen(ohne Schienenomnibusse)(VT)
+? Achslast: 22 t
+? Ausrüstung mit automatischer Kupplung: ja
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: nein
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: ja
+? Wendezugfähigkeit: ja
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 0 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          140.000
+TraktionsTyp Diesel
+Loklaenge [m]         43.000
+Lokmasse [t]          79.400
+Reibmasse [t]         79.400
+Haftreibungswert       1.000
+Rholok (-)             6.490
+Rutkommentar        GTW 2-2/6 (120C) mit Kondensatorbatterie
+ST      ge     0.000  80.000    9.000  80.000    0.000   0.000
+ST      ge     9.000  80.000   18.000  80.000    0.000   0.000
+ST      ge    18.000  80.000   27.000  80.000    0.000   0.000
+ST      ge    27.000  80.000   36.000  80.000    0.000   0.000
+ST      ge    36.000  80.000   45.000  80.000    0.000   0.000
+ST      ge    45.000  80.002   48.000  75.042    0.000   0.000
+ST      ge    48.000  75.042   51.000  70.562    0.000   0.000
+ST      ge    51.000  70.562   54.000  66.562    0.000   0.000
+ST      ge    54.000  66.562   57.000  63.042    0.000   0.000
+ST      ge    57.000  63.042   60.000  60.002    0.000   0.000
+ST      ge    60.000  60.000   62.000  58.136    0.000   0.000
+ST      ge    62.000  58.136   64.000  56.304    0.000   0.000
+ST      ge    64.000  56.304   66.000  54.504    0.000   0.000
+ST      ge    66.000  54.504   68.000  52.736    0.000   0.000
+ST      ge    68.000  52.736   70.000  51.000    0.000   0.000
+ST      ge    70.000  51.000   71.000  46.560    0.000   0.000
+ST      ge    71.000  46.560   72.000  42.120    0.000   0.000
+ST      ge    72.000  42.120   73.000  37.680    0.000   0.000
+ST      ge    73.000  37.680   74.000  33.240    0.000   0.000
+ST      ge    74.000  33.240   75.000  28.800    0.000   0.000
+ST      ge    75.000  28.800   80.000  26.960    0.000   0.000
+ST      ge    80.000  26.960   85.000  25.360    0.000   0.000
+ST      ge    85.000  25.360   90.000  24.000    0.000   0.000
+ST      ge    90.000  24.000   95.000  22.880    0.000   0.000
+ST      ge    95.000  22.880  100.000  22.000    0.000   0.000
+ST      ge   100.000  22.000  104.000  21.200    0.000   0.000
+ST      ge   104.000  21.200  108.000  20.400    0.000   0.000
+ST      ge   108.000  20.400  112.000  19.600    0.000   0.000
+ST      ge   112.000  19.600  116.000  18.800    0.000   0.000
+ST      ge   116.000  18.800  120.000  18.000    0.000   0.000
+ST      ge   120.000  18.000  124.000  17.720    0.000   0.000
+ST      ge   124.000  17.720  128.000  17.280    0.000   0.000
+ST      ge   128.000  17.280  132.000  16.680    0.000   0.000
+ST      ge   132.000  16.680  136.000  15.920    0.000   0.000
+ST      ge   136.000  15.920  140.000  15.000    0.000   0.000
+LW  vplus15        2009.598145      18.382370       0.269775       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

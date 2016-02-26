@@ -27,6 +27,18 @@ public class RollingStockReader {
 		}
 	}
 	
+	public static RollingStockReader getInstanceHannover() {
+		URL url = RailsysData.class.getResource("\\rs-hannover\\var-rollingstock");
+		Path path;
+		try {
+			path = Paths.get(url.toURI());
+			return new RollingStockReader(path);
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
 	private RollingStockReader(Path path) {
 		this.path = path;
 	}

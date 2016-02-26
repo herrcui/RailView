@@ -1,0 +1,46 @@
+? Stromart: Wechselstrom 16,7 Hz,15kV, 600A
+? Rutkommentar: Vollzug (Aluversion)
+? Eisenbahnunternehmen: DB
+? TriebfahrzeugBaureiheTyp: D
+? Triebfahrzeugart: Elektrische Triebwagen mit  Fremdstromzuführung(ET)
+? Achslast: 0 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: ja
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 0 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          120.000
+TraktionsTyp elektrisch
+Loklaenge [m]        135.000
+Lokmasse [t]         288.000
+Reibmasse [t]        288.000
+Haftreibungswert       1.000
+Rholok (-)             8.300
+Rutkommentar        Vollzug (Aluversion)
+ST      ge     0.000 344.449   12.800 344.449    0.000   0.000
+ST      ge    12.800 344.449   25.600 344.449    0.000   0.000
+ST      ge    25.600 344.449   38.400 344.449    0.000   0.000
+ST      ge    38.400 344.449   51.200 344.449    0.000   0.000
+ST      ge    51.200 344.449   64.000 344.449    0.000   0.000
+ST      ge    64.000 344.449   69.600 315.669    0.000   0.000
+ST      ge    69.600 315.669   75.200 290.370    0.000   0.000
+ST      ge    75.200 290.370   80.800 268.553    0.000   0.000
+ST      ge    80.800 268.553   86.400 250.217    0.000   0.000
+ST      ge    86.400 250.217   92.000 235.363    0.000   0.000
+ST      ge    92.000 235.363   97.600 213.732    0.000   0.000
+ST      ge    97.600 213.732  103.200 194.020    0.000   0.000
+ST      ge   103.200 194.020  108.800 176.226    0.000   0.000
+ST      ge   108.800 176.226  114.400 160.352    0.000   0.000
+ST      ge   114.400 160.352  120.000 146.396    0.000   0.000
+LW  vplus15        4661.711914      28.252800       0.686700       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

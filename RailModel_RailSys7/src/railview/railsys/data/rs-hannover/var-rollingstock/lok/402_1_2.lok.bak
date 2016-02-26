@@ -1,0 +1,71 @@
+? Stromart: Wechselstrom 16,7 Hz,15kV, 600A
+? Rutkommentar: 2(TK+6Mw+ST) 8,4MW;  800A+600A
+? Eisenbahnunternehmen: DB
+? TriebfahrzeugBaureiheTyp: D
+? Triebfahrzeugart: Elektrische Triebwagen mit  Fremdstromzuführung(ET)
+? Achslast: 19.5 t
+? Ausrüstung mit automatischer Kupplung: ja
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: ja
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: ja
+? Wendezugfähigkeit: ja
+? Druckertüchtigt: ja
+? Neigungstechnik: Überhöhungsfehlbetrag <= 150mm
+? Bremsgewicht: 0 t in Bremsstellung druckluftbediente Hochleistungsbremse mit elektrischer Zusatzbremse (nur bei Tfz) bei Hgmax > 160 km/h
+Vmax [km/h]          300.000
+TraktionsTyp elektrisch
+Loklaenge [m]        411.000
+Lokmasse [t]         879.000
+Reibmasse [t]        879.000
+Haftreibungswert       1.000
+Rholok (-)             7.000
+Rutkommentar        2(TK+6Mw+ST) 8,4MW;  800A+600A
+ST      ge     0.000 400.000   11.600 396.520    0.000   0.000
+ST      ge    11.600 396.520   23.200 393.040    0.000   0.000
+ST      ge    23.200 393.040   34.800 389.561    0.000   0.000
+ST      ge    34.800 389.561   46.400 386.082    0.000   0.000
+ST      ge    46.400 386.082   58.000 382.603    0.000   0.000
+ST      ge    58.000 382.741   66.400 337.095    0.000   0.000
+ST      ge    66.400 337.095   74.800 298.198    0.000   0.000
+ST      ge    74.800 298.198   83.200 266.050    0.000   0.000
+ST      ge    83.200 266.050   91.600 240.651    0.000   0.000
+ST      ge    91.600 240.651  100.000 222.001    0.000   0.000
+ST      ge   100.000 222.003  108.000 205.934    0.000   0.000
+ST      ge   108.000 205.934  116.000 191.557    0.000   0.000
+ST      ge   116.000 191.557  124.000 178.872    0.000   0.000
+ST      ge   124.000 178.872  132.000 167.877    0.000   0.000
+ST      ge   132.000 167.877  140.000 158.574    0.000   0.000
+ST      ge   140.000 158.578  148.000 150.122    0.000   0.000
+ST      ge   148.000 150.122  156.000 142.370    0.000   0.000
+ST      ge   156.000 142.370  164.000 135.322    0.000   0.000
+ST      ge   164.000 135.322  172.000 128.980    0.000   0.000
+ST      ge   172.000 128.980  180.000 123.342    0.000   0.000
+ST      ge   180.000 123.333  188.000 118.131    0.000   0.000
+ST      ge   188.000 118.131  196.000 113.287    0.000   0.000
+ST      ge   196.000 113.287  204.000 108.802    0.000   0.000
+ST      ge   204.000 108.802  212.000 104.676    0.000   0.000
+ST      ge   212.000 104.676  220.000 100.909    0.000   0.000
+ST      ge   220.000 100.913  226.000  98.249    0.000   0.000
+ST      ge   226.000  98.249  232.000  95.706    0.000   0.000
+ST      ge   232.000  95.706  238.000  93.284    0.000   0.000
+ST      ge   238.000  93.284  244.000  90.984    0.000   0.000
+ST      ge   244.000  90.984  250.000  88.804    0.000   0.000
+ST      ge   250.000  88.800  254.000  87.416    0.000   0.000
+ST      ge   254.000  87.416  258.000  86.064    0.000   0.000
+ST      ge   258.000  86.064  262.000  84.744    0.000   0.000
+ST      ge   262.000  84.744  266.000  83.456    0.000   0.000
+ST      ge   266.000  83.456  270.000  82.200    0.000   0.000
+ST      ge   270.000  82.200  276.000  80.432    0.000   0.000
+ST      ge   276.000  80.432  282.000  78.728    0.000   0.000
+ST      ge   282.000  78.728  288.000  77.088    0.000   0.000
+ST      ge   288.000  77.088  294.000  75.512    0.000   0.000
+ST      ge   294.000  75.512  300.000  74.000    0.000   0.000
+LW  vplus15        6467.242676      71.570816       1.094796       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

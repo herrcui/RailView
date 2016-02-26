@@ -35,6 +35,20 @@ public class TimetableReader {
 		}
 	}
 	
+	public static TimetableReader getInstanceHannover(IInfrastructureServiceUtility infraServiceUtility,
+			IRollingStockServiceUtility rollingStockServiceUtility,
+			Network network) {
+		URL url = RailsysData.class.getResource("\\rs-hannover\\var-2011-hannover");
+		Path path;
+		try {
+			path = Paths.get(url.toURI());
+			return new TimetableReader(path, infraServiceUtility, rollingStockServiceUtility, network);
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
 	private TimetableReader(Path path,
 			IInfrastructureServiceUtility infraServiceUtility,
 			IRollingStockServiceUtility rollingStockServiceUtility,

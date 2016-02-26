@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<railsys>
+	<version major="1" minor="2" patchlevel="0" comment="Erzeugt von RailSys\Simu/7.6.12 am Mo 22. Okt 10:45:24 2012"/>
+	<timetable>
+		<train number="1090" class="FRz" pattern="/FRz/ICE-A/MH-BHF L 3/H815M-HHML/rück" name="ICE-A/1090/3/mu" description="1090/4" comment="MH-BHF&#13;&#10;L 3 - Sprinter" typeNumber="55" line="MH-BHF L 3" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="H993R" RTMargin2="0" type="begin" relevantInNet="false" lineID="1733"/>
+				<entry stationID="HWU" trackID="G-415" bstfahrweg="HORX-415-HLER" departure="20:16:00" regularRunningTime="154" requestedDeparture="20:16:00" requestedTrackID="G-415" requestedBstFahrweg="HORX-415-HLER" type="pass" trainTypeNumber="55" lineID="1754" timingPoint="true" zuggattung="ICE-A 14.4"/>
+				<entry stationID="HWAM" trackID="G-1002" bstfahrweg="HWU-HMI" departure="20:18:34" regularRunningTime="81" requestedDeparture="20:18:34" requestedTrackID="G-1002" requestedBstFahrweg="HWU-HMI" type="pass" trainTypeNumber="55" timingPoint="true" zuggattung="ICE-A 14.4"/>
+				<entry stationID="H814W" stationName="Auto1" RTMargin2="0" type="end" relevantInNet="false" lineID="1750"/>
+			</timetableentries>
+		</train>
+		<train number="1091" class="FRz" pattern="/FRz/ICE-A/BHF-MH L3 -/HHML-HWAM/rück" name="ICE-A/1091/3/mu" description="1091/3" comment="BHF-MH&#13;&#10;L3 - Sprinter&#13;&#10;RV" typeNumber="55" line="BHF-MH L3 -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="H814W" stationName="Auto1" RTMargin2="0" type="begin" relevantInNet="false" lineID="1754"/>
+				<entry stationID="HWAM" trackID="G-1002" bstfahrweg="HMI-HWU" departure="07:37:56" regularRunningTime="155" requestedDeparture="07:37:56" requestedTrackID="G-1002" requestedBstFahrweg="HMI-HWU" type="pass" trainTypeNumber="55" lineID="1754" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.4"/>
+				<entry stationID="HWU" trackID="G-414" bstfahrweg="HLER-414-HORX(1733-1)" departure="07:40:31" regularRunningTime="62" requestedDeparture="07:40:31" requestedTrackID="G-414" requestedBstFahrweg="HLER-414-HORX(1733-1)" type="pass" trainTypeNumber="55" timingPoint="true" zuggattung="ICE-A 14.4"/>
+				<entry stationID="H993R" RTMargin2="0" type="end" relevantInNet="false" lineID="1733"/>
+			</timetableentries>
+		</train>
+		<train number="1092" class="FRz" pattern="/FRz/ICE-A/FD -/H815M-HHML/rück" name="ICE-A/1092/30/DS" description="1092/2" comment="FD - BHF&#13;&#10;L 3 - Sprinter&#13;&#10;RV" typeNumber="55" line="FD -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="H993R" RTMargin2="0" type="begin" relevantInNet="false" lineID="1733"/>
+				<entry stationID="HWU" trackID="G-415" bstfahrweg="HORX-415-HLER" departure="08:16:06" regularRunningTime="154" requestedDeparture="08:16:06" requestedTrackID="G-415" requestedBstFahrweg="HORX-415-HLER" type="pass" trainTypeNumber="55" lineID="1754" timingPoint="true" zuggattung="ICE-A 14.4"/>
+				<entry stationID="HWAM" trackID="G-1002" bstfahrweg="HWU-HMI" departure="08:18:40" regularRunningTime="81" requestedDeparture="08:18:40" requestedTrackID="G-1002" requestedBstFahrweg="HWU-HMI" type="pass" trainTypeNumber="55" timingPoint="true" zuggattung="ICE-A 14.4"/>
+				<entry stationID="H814W" stationName="Auto1" RTMargin2="0" type="end" relevantInNet="false" lineID="1750"/>
+			</timetableentries>
+		</train>
+		<train number="1093" class="FRz" pattern="/FRz/ICE-A/BHF -/HHML-HWAM/rück" name="ICE-A/1093/3/DS" description="1093/3+" comment="BHF - TS&#13;&#10;L3 - Sprinter" typeNumber="55" line="BHF -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="H814W" stationName="Auto1" RTMargin2="0" type="begin" relevantInNet="false" lineID="1754"/>
+				<entry stationID="HWAM" trackID="G-1002" bstfahrweg="HMI-HWU" departure="19:38:12" regularRunningTime="155" requestedDeparture="19:38:12" requestedTrackID="G-1002" requestedBstFahrweg="HMI-HWU" type="pass" trainTypeNumber="55" lineID="1754" timingPoint="true" departureFix="true" zuggattung="ICE-A 14.4"/>
+				<entry stationID="HWU" trackID="G-414" bstfahrweg="HLER-414-HORX(1733-1)" departure="19:40:47" regularRunningTime="57" requestedDeparture="19:40:47" requestedTrackID="G-414" requestedBstFahrweg="HLER-414-HORX(1733-1)" type="pass" trainTypeNumber="55" timingPoint="true" zuggattung="ICE-A 14.4"/>
+				<entry stationID="H993R" RTMargin2="0" type="end" relevantInNet="false" lineID="1733"/>
+			</timetableentries>
+		</train>
+		<train number="40008" class="FGz" pattern="/FGz/TEC/XIGA -/H815M-HHML/rück" name="TEC/40008/81/Hü" description="40008/4+" comment="XIGA - XDTA" typeNumber="5433" line="XIGA -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HHML" stationName="Han Mess/Laatzen" trackID="G-16" bstfahrweg="HRTN-716-HWU(1732-2)" departure="15:25:34" regularRunningTime="125" requestedDeparture="15:25:34" requestedTrackID="G-16" requestedBstFahrweg="HRTN-716-HWU(1732-2)" type="begin" lineID="1732" timingPoint="true" departureFix="true" zuggattung="TEC 52.9"/>
+				<entry stationID="HWU" trackID="Z-417" bstfahrweg="HHML(1732-2)-417-HLER" trackIDForNotConditional="G-416" bstFahrwegBeiAusfallBetriebsHalt="HHML(1732-2)-416-HLER" departure="15:29:03" minStopTime="60" stopTime="84" regularRunningTime="183" requestedArrival="15:27:39" requestedDeparture="15:29:03" requestedTrackID="Z-417" requestedBstFahrweg="HHML(1732-2)-417-HLER" type="conditional1" trainTypeNumber="5433" lineID="1754" timingPoint="true" departureFix="true" zuggattung="TEC 52.9"/>
+				<entry stationID="HWAM" trackID="G-1002" bstfahrweg="HWU-HMI" departure="15:32:06" regularRunningTime="97" requestedDeparture="15:32:06" requestedTrackID="G-1002" requestedBstFahrweg="HWU-HMI" type="pass" trainTypeNumber="5433" timingPoint="true" zuggattung="TEC 52.9"/>
+				<entry stationID="H814W" stationName="Auto1" RTMargin2="0" type="end" relevantInNet="false" lineID="1750"/>
+			</timetableentries>
+		</train>
+		<train number="40010" class="FGz" pattern="/FGz/TEC/XIGA -/H815M-HHML/rück" name="TEC/40010/222/Hü" description="40010/4++" comment="XIGA - XDTA&#13;&#10;Dauer-Lü KV P/C 50, P/C 380" typeNumber="5413" line="XIGA -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HHML" stationName="Han Mess/Laatzen" trackID="G-17" bstfahrweg="HRTN-717-HWU(1732-9)" departure="07:24:07" regularRunningTime="61" requestedDeparture="07:24:07" requestedTrackID="G-17" requestedBstFahrweg="HRTN-717-HWU(1732-9)" type="begin" lineID="1732" timingPoint="true" departureFix="true" zuggattung="TEC 52.9"/>
+				<entry stationID="HWU" trackID="G-417" bstfahrweg="HHML-717/417-HLER U1" departure="07:25:08" regularRunningTime="188" requestedDeparture="07:25:08" requestedTrackID="G-417" requestedBstFahrweg="HHML-717/417-HLER U1" type="pass" trainTypeNumber="5413" lineID="1754" timingPoint="true" zuggattung="TEC 52.9"/>
+				<entry stationID="HWAM" trackID="G-1002" bstfahrweg="HWU-HMI" departure="07:28:16" regularRunningTime="95" requestedDeparture="07:28:16" requestedTrackID="G-1002" requestedBstFahrweg="HWU-HMI" type="pass" trainTypeNumber="5413" timingPoint="true" zuggattung="TEC 52.9"/>
+				<entry stationID="H814W" stationName="Auto1" RTMargin2="0" type="end" relevantInNet="false" lineID="1750"/>
+			</timetableentries>
+		</train>
+		<train number="42903" class="FGz" pattern="/FGz/TEC/AWHOS -/HHML-HWAM/rück" name="TEC/42903/222/Hü" description="42903/1++++++" comment="AWHOS - XAWU&#13;&#10;Dauer-Lü KV P/C 70, P/C 400" typeNumber="5420" line="AWHOS -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="H814W" stationName="Auto1" RTMargin2="0" type="begin" relevantInNet="false" lineID="1754"/>
+				<entry stationID="HWAM" trackID="G-1002" bstfahrweg="HMI-HWU" departure="10:51:42" regularRunningTime="159" requestedDeparture="10:51:42" requestedTrackID="G-1002" requestedBstFahrweg="HMI-HWU" type="pass" trainTypeNumber="5420" lineID="1754" timingPoint="true" departureFix="true" zuggattung="TEC 52.1"/>
+				<entry stationID="HWU" trackID="G-417" bstfahrweg="HLER-417-HHML(1732-2)" departure="10:54:21" regularRunningTime="62" requestedDeparture="10:54:21" requestedTrackID="G-417" requestedBstFahrweg="HLER-417-HHML(1732-2)" type="pass" trainTypeNumber="5420" timingPoint="true" zuggattung="TEC 52.1"/>
+				<entry stationID="HHML" stationName="Han Mess/Laatzen" trackID="G-15" bstfahrweg="HWU(1732-2)-715/714-HRTN" departure="10:55:23" RTMargin2="0" requestedDeparture="10:55:23" requestedTrackID="G-15" requestedBstFahrweg="HWU(1732-2)-715/714-HRTN" type="end" lineID="1732" timingPoint="true" zuggattung="TEC 52.1"/>
+			</timetableentries>
+		</train>
+		<train number="43161" class="FGz" pattern="/FGz/TEC/AM /HHML-HWAM/rück" name="TEC/43161/90/Hü" description="43161/1+++" comment="AM  W - XAWT" typeNumber="5425" line="AM " lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="H814W" stationName="Auto1" RTMargin2="0" type="begin" relevantInNet="false" lineID="1754"/>
+				<entry stationID="HWAM" trackID="G-1002" bstfahrweg="HMI-HWU" departure="07:07:22" regularRunningTime="159" requestedDeparture="07:07:22" requestedTrackID="G-1002" requestedBstFahrweg="HMI-HWU" type="pass" trainTypeNumber="5425" lineID="1754" timingPoint="true" departureFix="true" zuggattung="TEC 52.1"/>
+				<entry stationID="HWU" trackID="G-414" bstfahrweg="HLER-414-HORX(1733-1)" departure="07:10:01" regularRunningTime="83" requestedDeparture="07:10:01" requestedTrackID="G-414" requestedBstFahrweg="HLER-414-HORX(1733-1)" type="pass" trainTypeNumber="5425" timingPoint="true" zuggattung="TEC 52.1"/>
+				<entry stationID="HHML" stationName="Han Mess/Laatzen" trackID="G-14" bstfahrweg="HWU(1733-1)-714-HRTN" departure="07:11:24" RTMargin2="0" requestedDeparture="07:11:24" requestedTrackID="G-14" requestedBstFahrweg="HWU(1733-1)-714-HRTN" type="end" lineID="1733" timingPoint="true" zuggattung="TEC 52.1"/>
+			</timetableentries>
+		</train>
+		<train number="50000" class="FRz" pattern="/FRz/PIC/MRIU -/H815M-HHML/rück" name="PIC/50000/60/Hü" description="50000/3" comment="MRIU - AHBIU&#13;&#10;&#13;&#10;PIC" typeNumber="89" line="MRIU -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="H993R" RTMargin2="0" type="begin" relevantInNet="false" lineID="1733"/>
+				<entry stationID="HWU" trackID="G-415" bstfahrweg="HORX-415-HLER" departure="02:22:06" regularRunningTime="162" requestedDeparture="02:22:06" requestedTrackID="G-415" requestedBstFahrweg="HORX-415-HLER" type="pass" trainTypeNumber="89" lineID="1754" timingPoint="true" zuggattung="PIC 50.1"/>
+				<entry stationID="HWAM" trackID="G-1002" bstfahrweg="HWU-HMI" departure="02:24:48" regularRunningTime="84" requestedDeparture="02:24:48" requestedTrackID="G-1002" requestedBstFahrweg="HWU-HMI" type="pass" trainTypeNumber="89" timingPoint="true" zuggattung="PIC 50.1"/>
+				<entry stationID="H814W" stationName="Auto1" RTMargin2="0" type="end" relevantInNet="false" lineID="1750"/>
+			</timetableentries>
+		</train>
+		<train number="50084" class="FGz" pattern="/FGz/IKE/RMR K/H815M-HHML/rück" name="IKE/50084/80/Hü" description="50084/3" comment="RMR K - AM S" typeNumber="5358" line="RMR K" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="H993R" RTMargin2="0" type="begin" relevantInNet="false" lineID="1732"/>
+				<entry stationID="HWU" trackID="A-417" bstfahrweg="HHML(1732-2)-417-HLER" dwegName="1-1000" departure="05:30:24" minStopTime="156" stopTime="156" regularRunningTime="206" requestedArrival="05:27:48" requestedDeparture="05:30:24" requestedTrackID="A-417" requestedBstFahrweg="HHML(1732-2)-417-HLER" type="stop" trainTypeNumber="5358" lineID="1754" timingPoint="true" departureFix="true" zuggattung="IKE 53.1"/>
+				<entry stationID="HWAM" trackID="X-1002" bstfahrweg="HWU-HMI" trackIDForNotConditional="G-1001" bstFahrwegBeiAusfallBetriebsHalt="HWU-HMI" departure="05:37:50" minStopTime="60" stopTime="240" regularRunningTime="200" requestedArrival="05:33:50" requestedDeparture="05:37:50" requestedTrackID="X-1002" requestedBstFahrweg="HWU-HMI" type="conditional1" trainTypeNumber="5358" timingPoint="true" departureFix="true" zuggattung="IKE 53.1"/>
+				<entry stationID="H814W" stationName="Auto1" RTMargin2="0" type="end" relevantInNet="false" lineID="1750"/>
+			</timetableentries>
+		</train>
+		<train number="50109" numbervar="1" class="FGz" pattern="/Bedarfszuege/FGz/IKE/AWHOS -/HHML-HWAM/rück" name="IKE/50109/92/Hü" description="50109/1" comment="AWHOS - TBS" typeNumber="5391" line="AWHOS -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="H814W" stationName="Auto1" RTMargin2="0" type="begin" relevantInNet="false" lineID="1754"/>
+				<entry stationID="HWAM" trackID="G-1002" bstfahrweg="HMI-HWU" departure="25:53:11" regularRunningTime="165" requestedDeparture="25:53:11" requestedTrackID="G-1002" requestedBstFahrweg="HMI-HWU" type="pass" trainTypeNumber="5391" lineID="1754" timingPoint="true" departureFix="true" zuggattung="IKE 53.9"/>
+				<entry stationID="HWU" trackID="G-414" bstfahrweg="HLER-414-HORX(1733-1)" departure="25:55:56" regularRunningTime="61" requestedDeparture="25:55:56" requestedTrackID="G-414" requestedBstFahrweg="HLER-414-HORX(1733-1)" type="pass" trainTypeNumber="5391" timingPoint="true" zuggattung="IKE 53.9"/>
+				<entry stationID="H993R" RTMargin2="0" type="end" relevantInNet="false" lineID="1733"/>
+			</timetableentries>
+		</train>
+		<train number="50110" class="FGz" pattern="/FGz/IKE/RMF -/H815M-HHML/rück" name="IKE/50110/524/Hü" description="50110/3+++" comment="RMF - AWHOS&#13;&#10;&#13;&#10;BauKo 24" typeNumber="5354" line="RMF -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HHML" stationName="Han Mess/Laatzen" trackID="G-16" bstfahrweg="HRTN-716-HWU(1732-2)" departure="10:25:23" regularRunningTime="62" requestedDeparture="10:25:23" requestedTrackID="G-16" requestedBstFahrweg="HRTN-716-HWU(1732-2)" type="begin" lineID="1732" timingPoint="true" departureFix="true" zuggattung="IKE 53.1"/>
+				<entry stationID="HWU" trackID="G-417" bstfahrweg="HHML(1732-2)-417-HLER" departure="10:26:25" regularRunningTime="170" requestedDeparture="10:26:25" requestedTrackID="G-417" requestedBstFahrweg="HHML(1732-2)-417-HLER" type="pass" trainTypeNumber="5354" lineID="1754" timingPoint="true" zuggattung="IKE 53.1"/>
+				<entry stationID="HWAM" trackID="G-1002" bstfahrweg="HWU-HMI" departure="10:29:15" regularRunningTime="92" requestedDeparture="10:29:15" requestedTrackID="G-1002" requestedBstFahrweg="HWU-HMI" type="pass" trainTypeNumber="5354" timingPoint="true" zuggattung="IKE 53.1"/>
+				<entry stationID="H814W" stationName="Auto1" RTMargin2="0" type="end" relevantInNet="false" lineID="1750"/>
+			</timetableentries>
+		</train>
+		<train number="50250" class="NGz" pattern="/NGz/IKE/RMR K/H815M-HHML/rück" name="IKE/50250/624/Hü" description="50250/3++++++++++" comment="RMR K - ALSK&#13;&#10;&#13;&#10;BauKo 24" typeNumber="11371" line="RMR K" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HHML" stationName="Han Mess/Laatzen" trackID="G-16" bstfahrweg="HRTN-716-HWU(1732-2)" departure="03:42:54" regularRunningTime="62" requestedDeparture="03:42:54" requestedTrackID="G-16" requestedBstFahrweg="HRTN-716-HWU(1732-2)" type="begin" lineID="1732" timingPoint="true" departureFix="true" zuggattung="IKE 53.2"/>
+				<entry stationID="HWU" trackID="G-417" bstfahrweg="HHML(1732-2)-417-HLER" departure="03:43:56" regularRunningTime="172" requestedDeparture="03:43:56" requestedTrackID="G-417" requestedBstFahrweg="HHML(1732-2)-417-HLER" type="pass" trainTypeNumber="11371" lineID="1754" timingPoint="true" zuggattung="IKE 53.2"/>
+				<entry stationID="HWAM" trackID="X-1002" bstfahrweg="HWU-HMI" trackIDForNotConditional="G-1001" bstFahrwegBeiAusfallBetriebsHalt="HWU-HMI" departure="03:47:48" minStopTime="60" stopTime="60" regularRunningTime="214" requestedArrival="03:46:48" requestedDeparture="03:47:48" requestedTrackID="X-1002" requestedBstFahrweg="HWU-HMI" type="conditional1" trainTypeNumber="11371" timingPoint="true" zuggattung="IKE 53.2"/>
+				<entry stationID="H814W" stationName="Auto1" RTMargin2="0" type="end" relevantInNet="false" lineID="1750"/>
+			</timetableentries>
+		</train>
+		<train number="50525" class="FGz" pattern="/FGz/IKL/AM /HHML-HWAM/rück" name="IKL/50525/222/Hü" description="50525/1+" comment="AM  W - FHBH" typeNumber="5399" line="AM " lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="H814W" stationName="Auto1" RTMargin2="0" type="begin" relevantInNet="false" lineID="1754"/>
+				<entry stationID="HWAM" trackID="G-1002" bstfahrweg="HMI-HWU" departure="12:07:17" regularRunningTime="157" requestedDeparture="12:07:17" requestedTrackID="G-1002" requestedBstFahrweg="HMI-HWU" type="pass" trainTypeNumber="5399" lineID="1754" timingPoint="true" departureFix="true" zuggattung="IKL 55.8"/>
+				<entry stationID="HWU" trackID="G-413" bstfahrweg="HLER-413-HHML(1732-1)" departure="12:09:54" regularRunningTime="63" requestedDeparture="12:09:54" requestedTrackID="G-413" requestedBstFahrweg="HLER-413-HHML(1732-1)" type="pass" trainTypeNumber="5399" timingPoint="true" zuggattung="IKL 55.8"/>
+				<entry stationID="HHML" stationName="Han Mess/Laatzen" trackID="G-13" bstfahrweg="HWU(1732-1)-713-HRTN" departure="12:10:57" RTMargin2="0" requestedDeparture="12:10:57" requestedTrackID="G-13" requestedBstFahrweg="HWU(1732-1)-713-HRTN" type="end" lineID="1732" timingPoint="true" zuggattung="IKL 55.8"/>
+			</timetableentries>
+		</train>
+		<train number="50563" class="FGz" pattern="/FGz/IKE/AM W/HHML-HWAM/rück" name="IKE/50563/90/Hü" description="50563/1" comment="AM W - MIN&#13;&#10;&#13;&#10;19.09.11 - 30.10.11 nur 550 m" typeNumber="5330" line="AM W" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="H814W" stationName="Auto1" RTMargin2="0" type="begin" relevantInNet="false" lineID="1754"/>
+				<entry stationID="HWAM" trackID="G-1002" bstfahrweg="HMI-HWU" departure="13:16:35" regularRunningTime="158" requestedDeparture="13:16:35" requestedTrackID="G-1002" requestedBstFahrweg="HMI-HWU" type="pass" trainTypeNumber="5330" lineID="1754" timingPoint="true" departureFix="true" zuggattung="IKE 53.8"/>
+				<entry stationID="HWU" trackID="G-414" bstfahrweg="HLER-414-HORX(1733-1)" departure="13:19:13" regularRunningTime="61" requestedDeparture="13:19:13" requestedTrackID="G-414" requestedBstFahrweg="HLER-414-HORX(1733-1)" type="pass" trainTypeNumber="5330" timingPoint="true" zuggattung="IKE 53.8"/>
+				<entry stationID="HHML" stationName="Han Mess/Laatzen" trackID="G-14" bstfahrweg="HWU(1733-1)-714-HRTN" departure="13:20:14" RTMargin2="0" requestedDeparture="13:20:14" requestedTrackID="G-14" requestedBstFahrweg="HWU(1733-1)-714-HRTN" type="end" lineID="1733" timingPoint="true" zuggattung="IKE 53.8"/>
+			</timetableentries>
+		</train>
+		<train number="51642" class="FGz" pattern="/FGz/FIR/NNR A/H815M-HHML/rück" name="FIR/51642/624/Hü" description="51642/3++" comment="NNR A - AM S&#13;&#10;&#13;&#10;BauKo 24" typeNumber="5296" line="NNR A" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HHML" stationName="Han Mess/Laatzen" trackID="G-16" bstfahrweg="HRTN-716-HWU(1732-2)" departure="20:52:47" regularRunningTime="62" requestedDeparture="20:52:47" requestedTrackID="G-16" requestedBstFahrweg="HRTN-716-HWU(1732-2)" type="begin" lineID="1732" timingPoint="true" departureFix="true" zuggattung="FIR 57.1"/>
+				<entry stationID="HWU" trackID="G-417" bstfahrweg="HHML(1732-2)-417-HLER" departure="20:53:49" regularRunningTime="169" requestedDeparture="20:53:49" requestedTrackID="G-417" requestedBstFahrweg="HHML(1732-2)-417-HLER" type="pass" trainTypeNumber="5296" lineID="1754" timingPoint="true" zuggattung="FIR 57.1"/>
+				<entry stationID="HWAM" trackID="G-1002" bstfahrweg="HWU-HMI" departure="20:56:38" regularRunningTime="90" requestedDeparture="20:56:38" requestedTrackID="G-1002" requestedBstFahrweg="HWU-HMI" type="pass" trainTypeNumber="5296" timingPoint="true" zuggattung="FIR 57.1"/>
+				<entry stationID="H814W" stationName="Auto1" RTMargin2="0" type="end" relevantInNet="false" lineID="1750"/>
+			</timetableentries>
+		</train>
+		<train number="60803" class="FGz" pattern="/FGz/CSQ/AHOSS -/HHML-HWAM/rück" name="CSQ/60803/101/Hü" description="60803/1+" comment="AHOSS - FHRG" typeNumber="5144" line="AHOSS -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="H814W" stationName="Auto1" RTMargin2="0" type="begin" relevantInNet="false" lineID="1754"/>
+				<entry stationID="HWAM" trackID="G-1002" bstfahrweg="HMI-HWU" departure="19:02:09" regularRunningTime="158" requestedDeparture="19:02:09" requestedTrackID="G-1002" requestedBstFahrweg="HMI-HWU" type="pass" trainTypeNumber="5144" lineID="1754" timingPoint="true" departureFix="true" zuggattung="CSQ 68.3"/>
+				<entry stationID="HWU" trackID="G-413" bstfahrweg="HLER-413-HHML(1732-1)" departure="19:04:47" regularRunningTime="63" requestedDeparture="19:04:47" requestedTrackID="G-413" requestedBstFahrweg="HLER-413-HHML(1732-1)" type="pass" trainTypeNumber="5144" timingPoint="true" zuggattung="CSQ 68.3"/>
+				<entry stationID="HHML" stationName="Han Mess/Laatzen" trackID="G-13" bstfahrweg="HWU(1732-1)-713-HRTN" departure="19:05:50" RTMargin2="0" requestedDeparture="19:05:50" requestedTrackID="G-13" requestedBstFahrweg="HWU(1732-1)-713-HRTN" type="end" lineID="1732" timingPoint="true" zuggattung="CSQ 68.3"/>
+			</timetableentries>
+		</train>
+		<train number="60807" class="FGz" pattern="/FGz/CS/AHOSS -/HHML-HWAM/rück" name="CS/60807/222/Hü" description="60807/1" comment="AHOSS - FHRG" typeNumber="5089" line="AHOSS -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="H814W" stationName="Auto1" RTMargin2="0" type="begin" relevantInNet="false" lineID="1754"/>
+				<entry stationID="HWAM" trackID="G-1002" bstfahrweg="HMI-HWU" departure="24:45:22" regularRunningTime="203" requestedDeparture="24:45:22" requestedTrackID="G-1002" requestedBstFahrweg="HMI-HWU" type="pass" trainTypeNumber="5089" lineID="1754" timingPoint="true" departureFix="true" zuggattung="CS 69.3"/>
+				<entry stationID="HWU" trackID="B-417" bstfahrweg="HLER-417-HHML(1732-2)" dwegName="1-1000" departure="24:52:33" minStopTime="228" stopTime="228" regularRunningTime="100" requestedArrival="24:48:45" requestedDeparture="24:52:33" requestedTrackID="B-417" requestedBstFahrweg="HLER-417-HHML(1732-2)" type="stop" trainTypeNumber="5089" timingPoint="true" departureFix="true" zuggattung="CS 69.3"/>
+				<entry stationID="H993R" RTMargin2="0" type="end" relevantInNet="false" lineID="1732"/>
+			</timetableentries>
+		</train>
+		<train number="60832" class="FGz" pattern="/Bedarfszuege/FGz/CS/FNF -/H815M-HHML/rück" name="CS/60832/0/Hü" description="60832/2" comment="FNF - HSEN" typeNumber="5019" line="FNF -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HHML" stationName="Han Mess/Laatzen" trackID="G-16" bstfahrweg="HRTN-716-HWU(1732-2)" departure="15:40:42" regularRunningTime="110" requestedDeparture="15:40:42" requestedTrackID="G-16" requestedBstFahrweg="HRTN-716-HWU(1732-2)" type="begin" lineID="1732" timingPoint="true" departureFix="true" zuggattung="CS 69.8"/>
+				<entry stationID="HWU" trackID="A-417" bstfahrweg="HHML(1732-2)-417-HLER" dwegName="1-1000" departure="15:44:32" minStopTime="120" stopTime="120" regularRunningTime="196" requestedArrival="15:42:32" requestedDeparture="15:44:32" requestedTrackID="A-417" requestedBstFahrweg="HHML(1732-2)-417-HLER" type="stop" trainTypeNumber="5019" lineID="1754" timingPoint="true" departureFix="true" zuggattung="CS 69.8"/>
+				<entry stationID="HWAM" trackID="G-1002" bstfahrweg="HWU-HMI" departure="15:47:48" regularRunningTime="113" requestedDeparture="15:47:48" requestedTrackID="G-1002" requestedBstFahrweg="HWU-HMI" type="pass" trainTypeNumber="5019" timingPoint="true" zuggattung="CS 69.8"/>
+				<entry stationID="H814W" stationName="Auto1" RTMargin2="0" type="end" relevantInNet="false" lineID="1750"/>
+			</timetableentries>
+		</train>
+		<train number="60984" class="FGz" pattern="/FGz/CS/MA N-/H815M-HHML/rück" name="CS/60984/424/Hü" description="60984/3++" comment="MA N- AHO&#13;&#10;RID Kl 3&#13;&#10;nicht über SFS GGVE!" typeNumber="5050" line="MA N-" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="0" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HHML" stationName="Han Mess/Laatzen" trackID="G-16" bstfahrweg="HRTN-716-HWU(1732-2)" departure="03:57:49" regularRunningTime="63" requestedDeparture="03:57:49" requestedTrackID="G-16" requestedBstFahrweg="HRTN-716-HWU(1732-2)" type="begin" lineID="1732" timingPoint="true" departureFix="true" zuggattung="CS 69.3"/>
+				<entry stationID="HWU" trackID="G-416" bstfahrweg="HHML(1732-2)-416-HLER" departure="03:58:52" regularRunningTime="162" requestedDeparture="03:58:52" requestedTrackID="G-416" requestedBstFahrweg="HHML(1732-2)-416-HLER" type="pass" trainTypeNumber="5050" lineID="1754" timingPoint="true" zuggattung="CS 69.3"/>
+				<entry stationID="HWAM" trackID="G-1002" bstfahrweg="HWU-HMI" departure="04:01:34" regularRunningTime="83" requestedDeparture="04:01:34" requestedTrackID="G-1002" requestedBstFahrweg="HWU-HMI" type="pass" trainTypeNumber="5050" timingPoint="true" zuggattung="CS 69.3"/>
+				<entry stationID="H814W" stationName="Auto1" RTMargin2="0" type="end" relevantInNet="false" lineID="1750"/>
+			</timetableentries>
+		</train>
+		<train number="69062" class="FGz" pattern="/Bedarfszuege/FGz/DGS/UVI -/H815M-HHML/rück" name="DGS/69062/0/Hü" description="69062/3" comment="UVI - AWHOS" typeNumber="5213" line="UVI -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HHML" stationName="Han Mess/Laatzen" trackID="G-17" bstfahrweg="HRTN-717-HWU(1732-9)" departure="07:31:58" regularRunningTime="61" requestedDeparture="07:31:58" requestedTrackID="G-17" requestedBstFahrweg="HRTN-717-HWU(1732-9)" type="begin" lineID="1732" timingPoint="true" departureFix="true" zuggattung="DGS 36.9"/>
+				<entry stationID="HWU" trackID="G-417" bstfahrweg="HHML-717/417-HLER U1" departure="07:32:59" regularRunningTime="175" requestedDeparture="07:32:59" requestedTrackID="G-417" requestedBstFahrweg="HHML-717/417-HLER U1" type="pass" trainTypeNumber="5213" lineID="1754" timingPoint="true" zuggattung="DGS 36.9"/>
+				<entry stationID="HWAM" trackID="G-1002" bstfahrweg="HWU-HMI" departure="07:35:54" regularRunningTime="93" requestedDeparture="07:35:54" requestedTrackID="G-1002" requestedBstFahrweg="HWU-HMI" type="pass" trainTypeNumber="5213" timingPoint="true" zuggattung="DGS 36.9"/>
+				<entry stationID="H814W" stationName="Auto1" RTMargin2="0" type="end" relevantInNet="false" lineID="1750"/>
+			</timetableentries>
+		</train>
+		<train number="69063" class="FGz" pattern="/Bedarfszuege/FGz/DGS/AWHOS-UVI EVB H4352/HHML-HWAM/rück" name="DGS/69063/222/Hü" description="69063/1" comment="AWHOS-UVI&#13;&#10;EVB (H4352)" typeNumber="5214" line="AWHOS-UVI EVB H4352" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="H814W" stationName="Auto1" RTMargin2="0" type="begin" relevantInNet="false" lineID="1754"/>
+				<entry stationID="HWAM" trackID="G-1002" bstfahrweg="HMI-HWU" departure="15:40:29" regularRunningTime="158" requestedDeparture="15:40:29" requestedTrackID="G-1002" requestedBstFahrweg="HMI-HWU" type="pass" trainTypeNumber="5214" lineID="1754" timingPoint="true" departureFix="true" zuggattung="DGS 36.9"/>
+				<entry stationID="HWU" trackID="G-414" bstfahrweg="HLER-414-HORX(1733-1)" departure="15:43:07" regularRunningTime="62" requestedDeparture="15:43:07" requestedTrackID="G-414" requestedBstFahrweg="HLER-414-HORX(1733-1)" type="pass" trainTypeNumber="5214" timingPoint="true" zuggattung="DGS 36.9"/>
+				<entry stationID="HHML" stationName="Han Mess/Laatzen" trackID="G-14" bstfahrweg="HWU(1733-1)-714-HRTN" departure="15:44:09" RTMargin2="0" requestedDeparture="15:44:09" requestedTrackID="G-14" requestedBstFahrweg="HWU(1733-1)-714-HRTN" type="end" lineID="1733" timingPoint="true" zuggattung="DGS 36.9"/>
+			</timetableentries>
+		</train>
+		<train number="69388" class="FGz" pattern="/FGz/DGS/NRHF -/H815M-HHML/rück" name="DGS/69388/10/Hü" description="69388/3" comment="NRHF - AWHO" typeNumber="5239" line="NRHF -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="0" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HHML" stationName="Han Mess/Laatzen" trackID="G-16" bstfahrweg="HRTN-716-HWU(1732-2)" departure="03:17:42" regularRunningTime="112" requestedDeparture="03:17:42" requestedTrackID="G-16" requestedBstFahrweg="HRTN-716-HWU(1732-2)" type="begin" lineID="1732" timingPoint="true" departureFix="true" zuggattung="DGS 36.1"/>
+				<entry stationID="HWU" trackID="A-417" bstfahrweg="HHML(1732-2)-417-HLER" dwegName="1-1000" departure="03:23:34" minStopTime="240" stopTime="240" regularRunningTime="194" requestedArrival="03:19:34" requestedDeparture="03:23:34" requestedTrackID="A-417" requestedBstFahrweg="HHML(1732-2)-417-HLER" type="stop" trainTypeNumber="5239" lineID="1754" timingPoint="true" departureFix="true" zuggattung="DGS 36.1"/>
+				<entry stationID="HWAM" trackID="G-1002" bstfahrweg="HWU-HMI" departure="03:26:48" regularRunningTime="110" requestedDeparture="03:26:48" requestedTrackID="G-1002" requestedBstFahrweg="HWU-HMI" type="pass" trainTypeNumber="5239" timingPoint="true" zuggattung="DGS 36.1"/>
+				<entry stationID="H814W" stationName="Auto1" RTMargin2="0" type="end" relevantInNet="false" lineID="1750"/>
+			</timetableentries>
+		</train>
+	</timetable>
+</railsys>

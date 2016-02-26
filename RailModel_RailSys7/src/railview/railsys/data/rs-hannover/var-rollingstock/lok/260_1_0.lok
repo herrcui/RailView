@@ -1,0 +1,46 @@
+? Stromart: ohne Stromart
+? Rutkommentar: Voith Gravita 15BB DH LG
+? Eisenbahnunternehmen: DB
+? TriebfahrzeugBaureiheTyp: D
+? Triebfahrzeugart: Brennkraftlokomotiven
+? Achslast: 21 t
+? Ausrüstung mit automatischer Kupplung: ja
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 50 t in Bremsstellung druckluftbediente Güterzugbremse (bel. Gwg.)
+Vmax [km/h]           60.000
+TraktionsTyp Diesel
+Loklaenge [m]         17.000
+Lokmasse [t]          84.000
+Reibmasse [t]         84.000
+Haftreibungswert       1.000
+Rholok (-)             4.760
+Rutkommentar        Voith Gravita 15BB DH LG
+ST      ge     0.000 272.000    3.340 261.817    0.000   0.000
+ST      ge     3.340 261.817    6.680 252.926    0.000   0.000
+ST      ge     6.680 252.926   10.020 245.327    0.000   0.000
+ST      ge    10.020 245.327   13.360 239.018    0.000   0.000
+ST      ge    13.360 239.018   16.700 234.001    0.000   0.000
+ST      ge    16.700 234.001   19.560 205.149    0.000   0.000
+ST      ge    19.560 205.149   22.420 179.823    0.000   0.000
+ST      ge    22.420 179.823   25.280 158.023    0.000   0.000
+ST      ge    25.280 158.023   28.140 139.750    0.000   0.000
+ST      ge    28.140 139.750   31.000 125.002    0.000   0.000
+ST      ge    31.000 125.002   36.800 109.681    0.000   0.000
+ST      ge    36.800 109.681   42.600  96.021    0.000   0.000
+ST      ge    42.600  96.021   48.400  84.021    0.000   0.000
+ST      ge    48.400  84.021   54.200  73.682    0.000   0.000
+ST      ge    54.200  73.682   60.000  65.004    0.000   0.000
+LW  vplus15        2809.976318       9.006757       0.300186       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

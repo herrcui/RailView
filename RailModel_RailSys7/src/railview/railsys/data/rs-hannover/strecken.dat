@@ -1,0 +1,58 @@
+STRECKEN
+TYP=hahm      0     0   Ahlem
+TYP=hema      0     0   Empelde Abzw
+TYP=hh        0     0   Hannover Burg
+TYP=hhn       0     0   Han-Nordstadt
+TYP=hkwa      0     0   Han K-Wiechert-A
+TYP=hlea      0     0   Han-Ledebg Abzw
+TYP=hli       0     0   Hannover-Linden
+TYP=hlih      0     0   Han-Linden Hafen
+TYP=hlt       0     0   Letter
+TYP=hlta      0     0   Letter Abzw
+TYP=hs        0     0   Seelze Pbf
+TYP=hvin      0     0   Han-Vinnhorst
+TYP=hwam      0     0   Sbk817
+TYP=hwhn      0     0   Waldhausen
+TYP=hwu       0     0   Han Mess/Laatzen
+STR=1700  Hannover Hbf  - Hamm (Westf)
+       hh  hlta    hs
+STR=1701  Han Hainholz - Seelze Rbf
+     hahm    hh  hlta    hs
+STR=1702  Han-Hainholz - Han-Leinhausen
+       hh
+STR=1703  Han-Hainholz - Nordhafen
+       hh  hlea
+STR=1705  Hannover Hbf - Seelze Pbf
+       hh   hhn   hlt    hs
+STR=1710  Hannover - Celle
+       hh  hvin
+STR=1711  Han, Nordst - Bremervörde
+      hhn  hlea  hvin
+STR=1730  Hannover Hbf- Braunschweig Hbf
+       hh  hkwa
+STR=1732  Hannover - Kassel
+       hh   hwu
+STR=1733  Hannover - Kassel - Würzburg
+       hh   hwu
+STR=1734  Hannover Hbf - Lehrte West
+       hh  hkwa
+STR=1750  Wunstorf - Lehrte
+     hahm   hli  hlih    hs  hwhn  hwam   hwu
+STR=1752  Han-Linden Hafen- Abzw Empelde
+     hema  hlih
+STR=1754  Han-Wülfel -Abzw Waldheim
+     hwam   hwu
+STR=1756  Bft Bismarckstr - Han-Wülfel
+       hh   hwu
+STR=1760  Hannover Hbf - Soest
+     hema    hh   hli  hwhn
+STR=7601  Seelze Rbf - Seelze Pbf
+       hs
+STR=7602  Seelze Pbf - Seelze Rbf
+       hs
+STR=7603  Seelze Pbf - Seelze Rbf
+       hs
+STR=7636  Seelze Rbf W - Seelze Rbf Sof
+       hs
+STR=7652  Seelze Rbf W - Seelze Rbf Sob
+       hs

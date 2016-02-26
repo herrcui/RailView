@@ -1,0 +1,51 @@
+? Stromart: 2-Systemstrom 16,7 Hz, 15kV+3kV
+? Rutkommentar: FS Cisalpino,9tlg
+? Eisenbahnunternehmen: FS
+? TriebfahrzeugBaureiheTyp: S
+? Triebfahrzeugart: Elektrische Triebwagen mit  Fremdstromzuführung(ET)
+? Achslast: 0 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: ja
+? Druckertüchtigt: ja
+? Neigungstechnik: aktive Neigetechnik
+? Bremsgewicht: 0 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          160.000
+TraktionsTyp elektrisch
+Loklaenge [m]        237.000
+Lokmasse [t]         499.000
+Reibmasse [t]        499.000
+Haftreibungswert       1.000
+Rholok (-)            13.900
+Rutkommentar        FS Cisalpino,9tlg
+ST      ge     0.000 260.089   16.280 260.089    0.000   0.000
+ST      ge    16.280 260.089   32.560 260.089    0.000   0.000
+ST      ge    32.560 260.089   48.840 260.089    0.000   0.000
+ST      ge    48.840 260.089   65.120 260.089    0.000   0.000
+ST      ge    65.120 260.089   81.400 260.089    0.000   0.000
+ST      ge    81.400 260.089   87.120 243.330    0.000   0.000
+ST      ge    87.120 243.330   92.840 228.192    0.000   0.000
+ST      ge    92.840 228.192   98.560 214.675    0.000   0.000
+ST      ge    98.560 214.675  104.280 202.778    0.000   0.000
+ST      ge   104.280 202.778  110.000 192.502    0.000   0.000
+ST      ge   110.000 192.502  116.000 182.668    0.000   0.000
+ST      ge   116.000 182.668  122.000 173.626    0.000   0.000
+ST      ge   122.000 173.626  128.000 165.376    0.000   0.000
+ST      ge   128.000 165.376  134.000 157.918    0.000   0.000
+ST      ge   134.000 157.918  140.000 151.252    0.000   0.000
+ST      ge   140.000 151.252  144.000 147.096    0.000   0.000
+ST      ge   144.000 147.096  148.000 143.124    0.000   0.000
+ST      ge   148.000 143.124  152.000 139.335    0.000   0.000
+ST      ge   152.000 139.335  156.000 135.731    0.000   0.000
+ST      ge   156.000 135.731  160.000 132.310    0.000   0.000
+LW  vplus15        3867.200195      53.210716       0.679833       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

@@ -1,0 +1,67 @@
+? Stromart: ohne Stromart
+? Rutkommentar: Schotterstopfmaschine WSM/GSM/USM
+? Eisenbahnunternehmen: DB
+? TriebfahrzeugBaureiheTyp: D
+? Triebfahrzeugart: Schienenomnibusse und Bahndiensttriebfahrzeuge
+? Achslast: 18.2 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 84 t in Bremsstellung druckluftbediente Güterzugbremse (bel. Gwg.)
+? Bremsgewicht: 89 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          100.000
+TraktionsTyp Diesel
+Loklaenge [m]         34.000
+Lokmasse [t]         126.000
+Reibmasse [t]        126.000
+Haftreibungswert       1.000
+Rholok (-)             5.710
+Rutkommentar        Schotterstopfmaschine WSM/GSM/USM
+ST      ge     0.000  70.000    2.400  69.800    0.000   0.000
+ST      ge     2.400  69.800    4.800  69.600    0.000   0.000
+ST      ge     4.800  69.600    7.200  69.400    0.000   0.000
+ST      ge     7.200  69.400    9.600  69.200    0.000   0.000
+ST      ge     9.600  69.200   12.000  69.000    0.000   0.000
+ST      ge    12.000  69.000   12.400  64.200    0.000   0.000
+ST      ge    12.400  64.200   12.800  59.400    0.000   0.000
+ST      ge    12.800  59.400   13.200  54.600    0.000   0.000
+ST      ge    13.200  54.600   13.600  49.800    0.000   0.000
+ST      ge    13.600  49.800   14.000  45.000    0.000   0.000
+ST      ge    14.000  45.000   15.600  44.000    0.000   0.000
+ST      ge    15.600  44.000   17.200  43.000    0.000   0.000
+ST      ge    17.200  43.000   18.800  42.000    0.000   0.000
+ST      ge    18.800  42.000   20.400  41.000    0.000   0.000
+ST      ge    20.400  41.000   22.000  40.000    0.000   0.000
+ST      ge    22.000  29.000   24.400  28.200    0.000   0.000
+ST      ge    24.400  28.200   26.800  27.401    0.000   0.000
+ST      ge    26.800  27.401   29.200  26.601    0.000   0.000
+ST      ge    29.200  26.601   31.600  25.801    0.000   0.000
+ST      ge    31.600  25.801   34.000  25.001    0.000   0.000
+ST      ge    34.000  17.002   37.600  16.402    0.000   0.000
+ST      ge    37.600  16.402   41.200  15.802    0.000   0.000
+ST      ge    41.200  15.802   44.800  15.202    0.000   0.000
+ST      ge    44.800  15.202   48.400  14.603    0.000   0.000
+ST      ge    48.400  14.603   52.000  14.003    0.000   0.000
+ST      ge    52.000   9.001   56.600   8.701    0.000   0.000
+ST      ge    56.600   8.701   61.200   8.401    0.000   0.000
+ST      ge    61.200   8.401   65.800   8.101    0.000   0.000
+ST      ge    65.800   8.101   70.400   7.801    0.000   0.000
+ST      ge    70.400   7.801   75.000   7.501    0.000   0.000
+ST      ge    75.000   4.000   80.000   3.400    0.000   0.000
+ST      ge    80.000   3.400   85.000   2.800    0.000   0.000
+ST      ge    85.000   2.800   90.000   2.200    0.000   0.000
+ST      ge    90.000   2.200   95.000   1.600    0.000   0.000
+ST      ge    95.000   1.600  100.000   1.000    0.000   0.000
+LW  vplus15        3769.982910       8.504093       0.283509       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

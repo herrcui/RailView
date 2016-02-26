@@ -1,0 +1,1663 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<railsys>
+	<version major="1" minor="0" patchlevel="0" comment="Erzeugt von RailSys\Simu/7.6.12 am Mo 22. Okt 10:45:24 2012"/>
+	<trainpatterns>
+		<trainpattern name="FRz" parenttrainpattern=""/>
+		<trainpattern name="NRz" parenttrainpattern=""/>
+		<trainpattern name="NGz" parenttrainpattern=""/>
+		<trainpattern name="S" parenttrainpattern=""/>
+		<trainpattern name="FGz" parenttrainpattern=""/>
+		<trainpattern name="Bedarfszuege" parenttrainpattern=""/>
+		<trainpattern name="Gz" parenttrainpattern=""/>
+		<trainpattern name="Lz" parenttrainpattern=""/>
+		<trainpattern name="ICE-A" parenttrainpattern="/FRz"/>
+		<trainpattern name="ICE-T" parenttrainpattern="/FRz"/>
+		<trainpattern name="IC" parenttrainpattern="/FRz"/>
+		<trainpattern name="EN" parenttrainpattern="/FRz"/>
+		<trainpattern name="CNL" parenttrainpattern="/FRz"/>
+		<trainpattern name="ICE-W" parenttrainpattern="/FRz"/>
+		<trainpattern name="PIC" parenttrainpattern="/FRz"/>
+		<trainpattern name="Tfzf (F)" parenttrainpattern="/FRz"/>
+		<trainpattern name="Lr" parenttrainpattern="/FRz"/>
+		<trainpattern name="LICE-A" parenttrainpattern="/FRz"/>
+		<trainpattern name="XSB-AA L 20 RV" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="AA-XSB L 20 RV" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="XSZH-AA L 20 RV" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="AK-XSZH L 20 RV" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="XSZH-AK L 20 RV" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="AA-XSZH L 20 RV" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="XSZH-AA L 20 RV GLW" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="XSZH -" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="HOLD -" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="MH -" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="HB -" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="BHF-KFKB L101 RV" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="KB -" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="BHF-KKB L 102 RV" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="BHF-KA L 102 RV" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="BHF-KFKB L 102 RV" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="KKO -" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="STR -" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="TS-AA L 22 RV" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="AA-TS L 22 RV" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="AA -" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="AA-MH L 252l" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="MH-AA L 25 RV" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="AL-MH, Sa" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="MH-AL L 25 RV Mo-Do" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="AA-MH L 25 RV" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="AH-)HH-MH Sa" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="BHF-KDA L 102 RV" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="HHZ " parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="KKB -" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="RK -AA," parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="AA-RK, So" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="AK-RK, Fr" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="MH-ALA L 25 RV" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="AA-TS L 22" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="FF-HOLD So " parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="MH-AA L 25" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="AA-MH Alternativ BR" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="HH -" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="KDA -" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="BHF-KKB L101 RV" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="AA-MH L 25" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="ALA -" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="BHF-KDA L101 RV" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="BHF-KFKB L101" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="AK-TS L 22 RV" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="TS-AK L 22" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="FF-AA L 25 RV" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="MH-BHF L 3" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="BHF-MH L3 -" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="FD -" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="BHF -" parenttrainpattern="/FRz/ICE-A"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/XSB-AA L 20 RV"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/XSB-AA L 20 RV/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/AA-XSB L 20 RV"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/AA-XSB L 20 RV/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/XSZH-AA L 20 RV"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/XSZH-AA L 20 RV/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/AK-XSZH L 20 RV"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/AK-XSZH L 20 RV/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/XSZH-AK L 20 RV"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/XSZH-AK L 20 RV/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/AA-XSZH L 20 RV"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/AA-XSZH L 20 RV/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/XSZH-AA L 20 RV GLW"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/XSZH-AA L 20 RV GLW/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/XSZH -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/XSZH -/HHML-HVIN"/>
+		<trainpattern name="HHML-HS" parenttrainpattern="/FRz/ICE-A/HOLD -"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/FRz/ICE-A/HOLD -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/HOLD -/HHML-HS"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/HOLD -/HH-HS"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/FRz/ICE-A/MH -"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/MH -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/MH -/HH-HS"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/MH -/HHML-HVIN"/>
+		<trainpattern name="HHML-HS" parenttrainpattern="/FRz/ICE-A/HB -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/HB -/HHML-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/ICE-A/BHF-KFKB L101 RV"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/BHF-KFKB L101 RV/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/ICE-A/KB -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/KB -/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/ICE-A/BHF-KKB L 102 RV"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/BHF-KKB L 102 RV/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/ICE-A/BHF-KA L 102 RV"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/BHF-KA L 102 RV/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/ICE-A/BHF-KFKB L 102 RV"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/BHF-KFKB L 102 RV/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/ICE-A/KKO -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/KKO -/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/ICE-A/STR -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/STR -/HKWA-HS"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/TS-AA L 22 RV"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/TS-AA L 22 RV/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/AA-TS L 22 RV"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/AA-TS L 22 RV/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/AA -"/>
+		<trainpattern name="HH-HVIN" parenttrainpattern="/FRz/ICE-A/AA -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/AA -/HHML-HVIN"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/AA -/HH-HVIN"/>
+		<trainpattern name="HH-HVIN" parenttrainpattern="/FRz/ICE-A/AA-MH L 252l"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/AA-MH L 252l/HH-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/MH-AA L 25 RV"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/MH-AA L 25 RV/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/AL-MH, Sa"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/AL-MH, Sa/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/MH-AL L 25 RV Mo-Do"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/MH-AL L 25 RV Mo-Do/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/AA-MH L 25 RV"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/AA-MH L 25 RV/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/AH-)HH-MH Sa"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/AH-)HH-MH Sa/HHML-HVIN"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/ICE-A/BHF-KDA L 102 RV"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/BHF-KDA L 102 RV/HKWA-HS"/>
+		<trainpattern name="HHZ-HKWA" parenttrainpattern="/FRz/ICE-A/HHZ "/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/HHZ /HHZ-HKWA"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/ICE-A/KKB -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/KKB -/HKWA-HS"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/RK -AA,"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/RK -AA,/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/AA-RK, So"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/AA-RK, So/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/AK-RK, Fr"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/AK-RK, Fr/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/MH-ALA L 25 RV"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/MH-ALA L 25 RV/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/AA-TS L 22"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/AA-TS L 22/HHML-HVIN"/>
+		<trainpattern name="HHML-HS" parenttrainpattern="/FRz/ICE-A/FF-HOLD So "/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/FF-HOLD So /HHML-HS"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/MH-AA L 25"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/MH-AA L 25/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/AA-MH Alternativ BR"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/AA-MH Alternativ BR/HHML-HVIN"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/FRz/ICE-A/HH -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/HH -/HH-HS"/>
+		<trainpattern name="HH-HKWA" parenttrainpattern="/FRz/ICE-A/KDA -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/KDA -/HH-HKWA"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/ICE-A/BHF-KKB L101 RV"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/BHF-KKB L101 RV/HKWA-HS"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/AA-MH L 25"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/AA-MH L 25/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/ALA -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/ALA -/HHML-HVIN"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/ICE-A/BHF-KDA L101 RV"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/BHF-KDA L101 RV/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/ICE-A/BHF-KFKB L101"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/BHF-KFKB L101/HKWA-HS"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/AK-TS L 22 RV"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/AK-TS L 22 RV/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/TS-AK L 22"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/TS-AK L 22/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-A/FF-AA L 25 RV"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-A/FF-AA L 25 RV/HHML-HVIN"/>
+		<trainpattern name="H815M-HHML" parenttrainpattern="/FRz/ICE-A/MH-BHF L 3"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/MH-BHF L 3/H815M-HHML"/>
+		<trainpattern name="HHML-HWAM" parenttrainpattern="/FRz/ICE-A/BHF-MH L3 -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/BHF-MH L3 -/HHML-HWAM"/>
+		<trainpattern name="H815M-HHML" parenttrainpattern="/FRz/ICE-A/FD -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/FD -/H815M-HHML"/>
+		<trainpattern name="HHML-HWAM" parenttrainpattern="/FRz/ICE-A/BHF -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-A/BHF -/HHML-HWAM"/>
+		<trainpattern name="XAW-AA L 91" parenttrainpattern="/FRz/ICE-T"/>
+		<trainpattern name="AA-XAW L 91 RV" parenttrainpattern="/FRz/ICE-T"/>
+		<trainpattern name="MH-AA L 25 RV" parenttrainpattern="/FRz/ICE-T"/>
+		<trainpattern name="MH -" parenttrainpattern="/FRz/ICE-T"/>
+		<trainpattern name="HB -" parenttrainpattern="/FRz/ICE-T"/>
+		<trainpattern name="AA-HH L25" parenttrainpattern="/FRz/ICE-T"/>
+		<trainpattern name="AA-MH L 252l" parenttrainpattern="/FRz/ICE-T"/>
+		<trainpattern name="Linie 50" parenttrainpattern="/FRz/ICE-T"/>
+		<trainpattern name="HHZ-HH-HHI-DH L 50" parenttrainpattern="/FRz/ICE-T"/>
+		<trainpattern name="HOLD-DH L 50 RV" parenttrainpattern="/FRz/ICE-T"/>
+		<trainpattern name="DH-HOLD L50" parenttrainpattern="/FRz/ICE-T"/>
+		<trainpattern name="AA -" parenttrainpattern="/FRz/ICE-T"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-T/XAW-AA L 91"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-T/XAW-AA L 91/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-T/AA-XAW L 91 RV"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-T/AA-XAW L 91 RV/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-T/MH-AA L 25 RV"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-T/MH-AA L 25 RV/HHML-HVIN"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/FRz/ICE-T/MH -"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-T/MH -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-T/MH -/HH-HS"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-T/MH -/HHML-HVIN"/>
+		<trainpattern name="HHML-HS" parenttrainpattern="/FRz/ICE-T/HB -"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/FRz/ICE-T/HB -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-T/HB -/HHML-HS"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-T/HB -/HH-HS"/>
+		<trainpattern name="HH-HVIN" parenttrainpattern="/FRz/ICE-T/AA-HH L25"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-T/AA-HH L25/HH-HVIN"/>
+		<trainpattern name="HH-HVIN" parenttrainpattern="/FRz/ICE-T/AA-MH L 252l"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-T/AA-MH L 252l/HH-HVIN"/>
+		<trainpattern name="HHZ-HKWA" parenttrainpattern="/FRz/ICE-T/Linie 50"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-T/Linie 50/HHZ-HKWA"/>
+		<trainpattern name="HHML-HHZ" parenttrainpattern="/FRz/ICE-T/HHZ-HH-HHI-DH L 50"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-T/HHZ-HH-HHI-DH L 50/HHML-HHZ"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/ICE-T/HOLD-DH L 50 RV"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-T/HOLD-DH L 50 RV/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/ICE-T/DH-HOLD L50"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-T/DH-HOLD L50/HKWA-HS"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/ICE-T/AA -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-T/AA -/HHML-HVIN"/>
+		<trainpattern name="BHF-XNSP L " parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="XNSP-BRGBA L 77 Halt" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="XNSP -" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="XNSP-BHF L 77 Halt" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="HH-XNSP L " parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="AA -" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="TS -" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="KK- BPAF L" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="FF-BHF L16" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="MOF -" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="LL-MOF L55 RV" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="DH-HOLD L56 RV" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="HOLD-LL L 56 RV" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="LL-HNDM L56 RV" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="HNDM -" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="LL-HOLD L56 RV" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="KKB -" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="LL-KK L55 RV" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="MBG-AA L 26" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="AA-MOF L 26 RV" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="FF-ALA L 26 RV" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="AA-HH L 26" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="HG-AA L 26" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="HH-AA L 26 RV An" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="FK-WSR L 26" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="HH-WBI L 26 RV" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="AWLA-HG L 26" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="HB-HH Bahnsteigwende aus" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="HH-HB L 56 Bahnsteigwende" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="EMST-BHF L 77 Halt" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="BHF -" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="HBTH -" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="AA- RK L" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="RK-AA L 26" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="AA-FF, Sa" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="WSR-RK L 26 RV" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="RKO-AA L 26 RV" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="AA-RKO L 26 RV" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="FF-WSR, " parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="AA-RK, So" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="RK-WSR,So von" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="WBI-FF, So" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="FF-AA L 26 RV" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="WSR-HH, Fr" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="HEA-BCS, Sa" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="BCS -" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="LL-HEA, Sa" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="HNDM-DH L 56 RV" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="LM-HOLD L56 RV" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="HOLD-LM L 56" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="KKD -" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="HH -" parenttrainpattern="/FRz/IC"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/IC/BHF-XNSP L "/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/BHF-XNSP L /HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/IC/XNSP-BRGBA L 77 Halt"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/XNSP-BRGBA L 77 Halt/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/IC/XNSP -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/XNSP -/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/IC/XNSP-BHF L 77 Halt"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/FRz/IC/XNSP-BHF L 77 Halt"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/XNSP-BHF L 77 Halt/HKWA-HS"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/XNSP-BHF L 77 Halt/HH-HS"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/FRz/IC/HH-XNSP L "/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/HH-XNSP L /HH-HS"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/IC/AA -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/AA -/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/IC/TS -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/TS -/HHML-HVIN"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/IC/KK- BPAF L"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/KK- BPAF L/HKWA-HS"/>
+		<trainpattern name="HHML-HKWA" parenttrainpattern="/FRz/IC/FF-BHF L16"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/FF-BHF L16/HHML-HKWA"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/FRz/IC/MOF -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/MOF -/HH-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/IC/LL-MOF L55 RV"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/LL-MOF L55 RV/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/IC/DH-HOLD L56 RV"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/DH-HOLD L56 RV/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/IC/HOLD-LL L 56 RV"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/HOLD-LL L 56 RV/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/IC/LL-HNDM L56 RV"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/LL-HNDM L56 RV/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/IC/HNDM -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/HNDM -/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/IC/LL-HOLD L56 RV"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/LL-HOLD L56 RV/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/IC/KKB -"/>
+		<trainpattern name="HH-HKWA" parenttrainpattern="/FRz/IC/KKB -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/KKB -/HKWA-HS"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/KKB -/HH-HKWA"/>
+		<trainpattern name="HH-HKWA" parenttrainpattern="/FRz/IC/LL-KK L55 RV"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/IC/LL-KK L55 RV"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/LL-KK L55 RV/HH-HKWA"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/LL-KK L55 RV/HKWA-HS"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/IC/MBG-AA L 26"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/MBG-AA L 26/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/IC/AA-MOF L 26 RV"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/AA-MOF L 26 RV/HHML-HVIN"/>
+		<trainpattern name="HH-HVIN" parenttrainpattern="/FRz/IC/FF-ALA L 26 RV"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/FF-ALA L 26 RV/HH-HVIN"/>
+		<trainpattern name="HH-HVIN" parenttrainpattern="/FRz/IC/AA-HH L 26"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/AA-HH L 26/HH-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/IC/HG-AA L 26"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/HG-AA L 26/HHML-HVIN"/>
+		<trainpattern name="HH-HVIN" parenttrainpattern="/FRz/IC/HH-AA L 26 RV An"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/HH-AA L 26 RV An/HH-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/IC/FK-WSR L 26"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/FK-WSR L 26/HHML-HVIN"/>
+		<trainpattern name="HH-HVIN" parenttrainpattern="/FRz/IC/HH-WBI L 26 RV"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/HH-WBI L 26 RV/HH-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/IC/AWLA-HG L 26"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/AWLA-HG L 26/HHML-HVIN"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/FRz/IC/HB-HH Bahnsteigwende aus"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/HB-HH Bahnsteigwende aus/HH-HS"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/FRz/IC/HH-HB L 56 Bahnsteigwende"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/HH-HB L 56 Bahnsteigwende/HH-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/IC/EMST-BHF L 77 Halt"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/EMST-BHF L 77 Halt/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/IC/BHF -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/BHF -/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/IC/HBTH -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/HBTH -/HKWA-HS"/>
+		<trainpattern name="HH-HHML" parenttrainpattern="/FRz/IC/AA- RK L"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/AA- RK L/HH-HHML"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/IC/RK-AA L 26"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/RK-AA L 26/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/IC/AA-FF, Sa"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/AA-FF, Sa/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/IC/WSR-RK L 26 RV"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/WSR-RK L 26 RV/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/IC/RKO-AA L 26 RV"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/RKO-AA L 26 RV/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/IC/AA-RKO L 26 RV"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/AA-RKO L 26 RV/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/IC/FF-WSR, "/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/FF-WSR, /HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/IC/AA-RK, So"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/AA-RK, So/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/IC/RK-WSR,So von"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/RK-WSR,So von/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/IC/WBI-FF, So"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/WBI-FF, So/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/IC/FF-AA L 26 RV"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/FF-AA L 26 RV/HHML-HVIN"/>
+		<trainpattern name="HH-HVIN" parenttrainpattern="/FRz/IC/WSR-HH, Fr"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/WSR-HH, Fr/HH-HVIN"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/IC/HEA-BCS, Sa"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/HEA-BCS, Sa/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/IC/BCS -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/BCS -/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/IC/LL-HEA, Sa"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/LL-HEA, Sa/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/IC/HNDM-DH L 56 RV"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/HNDM-DH L 56 RV/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/IC/LM-HOLD L56 RV"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/LM-HOLD L56 RV/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/IC/HOLD-LM L 56"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/HOLD-LM L 56/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/IC/KKD -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/IC/KKD -/HKWA-HS"/>
+		<trainpattern name="HH-HKWA" parenttrainpattern="/FRz/IC/HH -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/IC/HH -/HH-HKWA"/>
+		<trainpattern name="XPWW-XNAC in HH" parenttrainpattern="/FRz/EN"/>
+		<trainpattern name="XNHD-XPWW KW aus" parenttrainpattern="/FRz/EN"/>
+		<trainpattern name="XAWW-ALA" parenttrainpattern="/FRz/EN"/>
+		<trainpattern name="ALA -" parenttrainpattern="/FRz/EN"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/EN/XPWW-XNAC in HH"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/EN/XPWW-XNAC in HH/HKWA-HS"/>
+		<trainpattern name="in" parenttrainpattern="/FRz/EN/XNHD-XPWW KW aus"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/EN/XNHD-XPWW KW aus/in"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/EN/XNHD-XPWW KW aus/in/HKWA-HS"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/EN/XAWW-ALA"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/EN/XAWW-ALA/HHML-HVIN"/>
+		<trainpattern name="HHML-HSR W" parenttrainpattern="/FRz/EN/ALA -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/EN/ALA -/HHML-HSR W"/>
+		<trainpattern name="BLO-HH-FFU-XFPO RV" parenttrainpattern="/FRz/CNL"/>
+		<trainpattern name="XFPO-HH- BLO RV" parenttrainpattern="/FRz/CNL"/>
+		<trainpattern name="MH -" parenttrainpattern="/FRz/CNL"/>
+		<trainpattern name="XDKH -" parenttrainpattern="/FRz/CNL"/>
+		<trainpattern name="HH -" parenttrainpattern="/FRz/CNL"/>
+		<trainpattern name="AA-HH Gleisänderung HH Infrastrukturänderung" parenttrainpattern="/FRz/CNL"/>
+		<trainpattern name="HHI G" parenttrainpattern="/FRz/CNL"/>
+		<trainpattern name="AA-MOP" parenttrainpattern="/FRz/CNL"/>
+		<trainpattern name="HHML-HKWA" parenttrainpattern="/FRz/CNL/BLO-HH-FFU-XFPO RV"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/CNL/BLO-HH-FFU-XFPO RV/HHML-HKWA"/>
+		<trainpattern name="HHML-HKWA" parenttrainpattern="/FRz/CNL/XFPO-HH- BLO RV"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/CNL/XFPO-HH- BLO RV/HHML-HKWA"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/CNL/MH -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/CNL/MH -/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FRz/CNL/XDKH -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/CNL/XDKH -/HHML-HVIN"/>
+		<trainpattern name="HH-HVIN" parenttrainpattern="/FRz/CNL/HH -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/CNL/HH -/HH-HVIN"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/FRz/CNL/AA-HH Gleisänderung HH Infrastrukturänderung"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/CNL/AA-HH Gleisänderung HH Infrastrukturänderung/HH-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FRz/CNL/HHI G"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/CNL/HHI G/HKWA-HS"/>
+		<trainpattern name="HH-HVIN" parenttrainpattern="/FRz/CNL/AA-MOP"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/CNL/AA-MOP/HH-HVIN"/>
+		<trainpattern name="XSB -" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="HH -" parenttrainpattern="/FRz/ICE-W"/>
+		<trainpattern name="HHZ-HS" parenttrainpattern="/FRz/ICE-W/XSB -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/ICE-W/XSB -/HHZ-HS"/>
+		<trainpattern name="HHZ-HS" parenttrainpattern="/FRz/ICE-W/HH -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/ICE-W/HH -/HHZ-HS"/>
+		<trainpattern name="MRIU -" parenttrainpattern="/FRz/PIC"/>
+		<trainpattern name="H815M-HHML" parenttrainpattern="/FRz/PIC/MRIU -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/PIC/MRIU -/H815M-HHML"/>
+		<trainpattern name="HH -" parenttrainpattern="/FRz/Tfzf (F)"/>
+		<trainpattern name="HHZ -" parenttrainpattern="/FRz/Tfzf (F)"/>
+		<trainpattern name="HH-HHZ" parenttrainpattern="/FRz/Tfzf (F)/HH -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/Tfzf (F)/HH -/HH-HHZ"/>
+		<trainpattern name="HH-HHZ" parenttrainpattern="/FRz/Tfzf (F)/HHZ -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/Tfzf (F)/HHZ -/HH-HHZ"/>
+		<trainpattern name="HH P" parenttrainpattern="/FRz/Lr"/>
+		<trainpattern name="HH -" parenttrainpattern="/FRz/Lr"/>
+		<trainpattern name="HH  P-HKWA" parenttrainpattern="/FRz/Lr/HH P"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/Lr/HH P/HH  P-HKWA"/>
+		<trainpattern name="HH-HH  P" parenttrainpattern="/FRz/Lr/HH -"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/Lr/HH -/HH-HH  P"/>
+		<trainpattern name="HHZ -" parenttrainpattern="/FRz/LICE-A"/>
+		<trainpattern name="HH " parenttrainpattern="/FRz/LICE-A"/>
+		<trainpattern name="HH P -) HH - HHZ  HH P - HH als Rf aus 78113" parenttrainpattern="/FRz/LICE-A"/>
+		<trainpattern name="HH-HHZ" parenttrainpattern="/FRz/LICE-A/HHZ -"/>
+		<trainpattern name="rück" parenttrainpattern="/FRz/LICE-A/HHZ -/HH-HHZ"/>
+		<trainpattern name="HH-HHZ" parenttrainpattern="/FRz/LICE-A/HH "/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/LICE-A/HH /HH-HHZ"/>
+		<trainpattern name="540 2ZT" parenttrainpattern="/FRz/LICE-A/HH P -) HH - HHZ  HH P - HH als Rf aus 78113"/>
+		<trainpattern name="584 2ZT für 78112" parenttrainpattern="/FRz/LICE-A/HH P -) HH - HHZ  HH P - HH als Rf aus 78113/540 2ZT"/>
+		<trainpattern name="649 Alternativ: 1xBR 401" parenttrainpattern="/FRz/LICE-A/HH P -) HH - HHZ  HH P - HH als Rf aus 78113/540 2ZT/584 2ZT für 78112"/>
+		<trainpattern name="HH-HHZ" parenttrainpattern="/FRz/LICE-A/HH P -) HH - HHZ  HH P - HH als Rf aus 78113/540 2ZT/584 2ZT für 78112/649 Alternativ: 1xBR 401"/>
+		<trainpattern name="hin" parenttrainpattern="/FRz/LICE-A/HH P -) HH - HHZ  HH P - HH als Rf aus 78113/540 2ZT/584 2ZT für 78112/649 Alternativ: 1xBR 401/HH-HHZ"/>
+		<trainpattern name="PbZ-D" parenttrainpattern="/NRz"/>
+		<trainpattern name="RE" parenttrainpattern="/NRz"/>
+		<trainpattern name="RE-D" parenttrainpattern="/NRz"/>
+		<trainpattern name="RB" parenttrainpattern="/NRz"/>
+		<trainpattern name="Lr-D" parenttrainpattern="/NRz"/>
+		<trainpattern name="Lr" parenttrainpattern="/NRz"/>
+		<trainpattern name="Lt" parenttrainpattern="/NRz"/>
+		<trainpattern name="DPN-D" parenttrainpattern="/NRz"/>
+		<trainpattern name="ALA -" parenttrainpattern="/NRz/PbZ-D"/>
+		<trainpattern name="HKWA-HVIN" parenttrainpattern="/NRz/PbZ-D/ALA -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/PbZ-D/ALA -/HKWA-HVIN"/>
+		<trainpattern name="LH -" parenttrainpattern="/NRz/RE"/>
+		<trainpattern name="HH -" parenttrainpattern="/NRz/RE"/>
+		<trainpattern name="HM -" parenttrainpattern="/NRz/RE"/>
+		<trainpattern name="HWOB -" parenttrainpattern="/NRz/RE"/>
+		<trainpattern name="HH - HHGI RE 300 Alternativ: 2xBR425" parenttrainpattern="/NRz/RE"/>
+		<trainpattern name="HH - HWOB RE 300 Alternativ: 2xBR425" parenttrainpattern="/NRz/RE"/>
+		<trainpattern name="HH - HGI RE 300 Alternativ: 2xBR425" parenttrainpattern="/NRz/RE"/>
+		<trainpattern name="HGS -" parenttrainpattern="/NRz/RE"/>
+		<trainpattern name="HBHA -" parenttrainpattern="/NRz/RE"/>
+		<trainpattern name="HNBG -" parenttrainpattern="/NRz/RE"/>
+		<trainpattern name="HBS-HH RV ab" parenttrainpattern="/NRz/RE"/>
+		<trainpattern name="HH-HBS Verstärker RV bis" parenttrainpattern="/NRz/RE"/>
+		<trainpattern name="HH-HHML" parenttrainpattern="/NRz/RE/LH -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE/LH -/HH-HHML"/>
+		<trainpattern name="HH-HHML" parenttrainpattern="/NRz/RE/HH -"/>
+		<trainpattern name="HH-HKWA" parenttrainpattern="/NRz/RE/HH -"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/NRz/RE/HH -"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE/HH -/HH-HHML"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE/HH -/HH-HKWA"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE/HH -/HH-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/NRz/RE/HM -"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/NRz/RE/HM -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE/HM -/HKWA-HS"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE/HM -/HH-HS"/>
+		<trainpattern name="HH-HKWA" parenttrainpattern="/NRz/RE/HWOB -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE/HWOB -/HH-HKWA"/>
+		<trainpattern name="HH-HKWA" parenttrainpattern="/NRz/RE/HH - HHGI RE 300 Alternativ: 2xBR425"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE/HH - HHGI RE 300 Alternativ: 2xBR425/HH-HKWA"/>
+		<trainpattern name="HH-HKWA" parenttrainpattern="/NRz/RE/HH - HWOB RE 300 Alternativ: 2xBR425"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE/HH - HWOB RE 300 Alternativ: 2xBR425/HH-HKWA"/>
+		<trainpattern name="HH-HKWA" parenttrainpattern="/NRz/RE/HH - HGI RE 300 Alternativ: 2xBR425"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE/HH - HGI RE 300 Alternativ: 2xBR425/HH-HKWA"/>
+		<trainpattern name="HH-HHML" parenttrainpattern="/NRz/RE/HGS -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE/HGS -/HH-HHML"/>
+		<trainpattern name="HH-HHML" parenttrainpattern="/NRz/RE/HBHA -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE/HBHA -/HH-HHML"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/NRz/RE/HNBG -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE/HNBG -/HH-HS"/>
+		<trainpattern name="HH-HKWA" parenttrainpattern="/NRz/RE/HBS-HH RV ab"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE/HBS-HH RV ab/HH-HKWA"/>
+		<trainpattern name="HH-HKWA" parenttrainpattern="/NRz/RE/HH-HBS Verstärker RV bis"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE/HH-HBS Verstärker RV bis/HH-HKWA"/>
+		<trainpattern name="HH -" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="HB-HH" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="HE-HH" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="HND-HH" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="HNDM-HH" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="HNDM-HH GLW HH" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="HB-HH (nachträgl HH" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="HB-HH GLW HH" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="HBS-HR RV ab" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="HO O" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="HR -" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="HBS-HR (BK 2) GLW" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="EBIL -" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="HBS-EBIL" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="HHLM-EBIL RV ab" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="HBS-EBIL RV ab" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="HBS-HH RV ab" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="HH-HBS RV bis" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="HH-HBS Verstärker RV bis" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="HBS-HH" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="HH-HBS Verstärker Bfo HH" parenttrainpattern="/NRz/RE-D"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/NRz/RE-D/HH -"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE-D/HH -/HH-HS"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/NRz/RE-D/HB-HH"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE-D/HB-HH/HH-HS"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/NRz/RE-D/HE-HH"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE-D/HE-HH/HH-HS"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/NRz/RE-D/HND-HH"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE-D/HND-HH/HH-HS"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/NRz/RE-D/HNDM-HH"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE-D/HNDM-HH/HH-HS"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/NRz/RE-D/HNDM-HH GLW HH"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE-D/HNDM-HH GLW HH/HH-HS"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/NRz/RE-D/HB-HH (nachträgl HH"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE-D/HB-HH (nachträgl HH/HH-HS"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/NRz/RE-D/HB-HH GLW HH"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE-D/HB-HH GLW HH/HH-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/NRz/RE-D/HBS-HR RV ab"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE-D/HBS-HR RV ab/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/NRz/RE-D/HO O"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE-D/HO O/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/NRz/RE-D/HR -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE-D/HR -/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/NRz/RE-D/HBS-HR (BK 2) GLW"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE-D/HBS-HR (BK 2) GLW/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/NRz/RE-D/EBIL -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE-D/EBIL -/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/NRz/RE-D/HBS-EBIL"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE-D/HBS-EBIL/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/NRz/RE-D/HHLM-EBIL RV ab"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE-D/HHLM-EBIL RV ab/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/NRz/RE-D/HBS-EBIL RV ab"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE-D/HBS-EBIL RV ab/HKWA-HS"/>
+		<trainpattern name="HH-HKWA" parenttrainpattern="/NRz/RE-D/HBS-HH RV ab"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE-D/HBS-HH RV ab/HH-HKWA"/>
+		<trainpattern name="HH-HKWA" parenttrainpattern="/NRz/RE-D/HH-HBS RV bis"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE-D/HH-HBS RV bis/HH-HKWA"/>
+		<trainpattern name="HH-HKWA" parenttrainpattern="/NRz/RE-D/HH-HBS Verstärker RV bis"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE-D/HH-HBS Verstärker RV bis/HH-HKWA"/>
+		<trainpattern name="HH-HKWA" parenttrainpattern="/NRz/RE-D/HBS-HH"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RE-D/HBS-HH/HH-HKWA"/>
+		<trainpattern name="HH-HKWA" parenttrainpattern="/NRz/RE-D/HH-HBS Verstärker Bfo HH"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RE-D/HH-HBS Verstärker Bfo HH/HH-HKWA"/>
+		<trainpattern name="ABLZ-HH" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="HSO-HH" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="HH-HSO" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="HH-ABLZ" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="HH-HSO +2 min" parenttrainpattern="/NRz/RB"/>
+		<trainpattern name="HH-HVIN" parenttrainpattern="/NRz/RB/ABLZ-HH"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/ABLZ-HH/HH-HVIN"/>
+		<trainpattern name="HH-HVIN" parenttrainpattern="/NRz/RB/HSO-HH"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/RB/HSO-HH/HH-HVIN"/>
+		<trainpattern name="HH-HVIN" parenttrainpattern="/NRz/RB/HH-HSO"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/HH-HSO/HH-HVIN"/>
+		<trainpattern name="HH-HVIN" parenttrainpattern="/NRz/RB/HH-ABLZ"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/HH-ABLZ/HH-HVIN"/>
+		<trainpattern name="HH-HVIN" parenttrainpattern="/NRz/RB/HH-HSO +2 min"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/RB/HH-HSO +2 min/HH-HVIN"/>
+		<trainpattern name="HBS -" parenttrainpattern="/NRz/Lr-D"/>
+		<trainpattern name="HH  P-HKWA" parenttrainpattern="/NRz/Lr-D/HBS -"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/NRz/Lr-D/HBS -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/Lr-D/HBS -/HH  P-HKWA"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/Lr-D/HBS -/HH-HS"/>
+		<trainpattern name="HH -" parenttrainpattern="/NRz/Lr"/>
+		<trainpattern name="HHZ -" parenttrainpattern="/NRz/Lr"/>
+		<trainpattern name="HH - HVIN -" parenttrainpattern="/NRz/Lr"/>
+		<trainpattern name="HM -" parenttrainpattern="/NRz/Lr"/>
+		<trainpattern name="HH-HHZ" parenttrainpattern="/NRz/Lr/HH -"/>
+		<trainpattern name="HH-HHML" parenttrainpattern="/NRz/Lr/HH -"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/NRz/Lr/HH -"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/Lr/HH -/HH-HHZ"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/Lr/HH -/HH-HHML"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/Lr/HH -/HH-HS"/>
+		<trainpattern name="HH-HHZ" parenttrainpattern="/NRz/Lr/HHZ -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/Lr/HHZ -/HH-HHZ"/>
+		<trainpattern name="HH-HHZ" parenttrainpattern="/NRz/Lr/HH - HVIN -"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/Lr/HH - HVIN -/HH-HHZ"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/NRz/Lr/HM -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/Lr/HM -/HH-HS"/>
+		<trainpattern name="HBML -" parenttrainpattern="/NRz/Lt"/>
+		<trainpattern name="HBML-HH aus 14731" parenttrainpattern="/NRz/Lt"/>
+		<trainpattern name="HH-HVIN" parenttrainpattern="/NRz/Lt/HBML -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/Lt/HBML -/HH-HVIN"/>
+		<trainpattern name="HH-HVIN" parenttrainpattern="/NRz/Lt/HBML-HH aus 14731"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/Lt/HBML-HH aus 14731/HH-HVIN"/>
+		<trainpattern name="HU -" parenttrainpattern="/NRz/DPN-D"/>
+		<trainpattern name="HG -" parenttrainpattern="/NRz/DPN-D"/>
+		<trainpattern name="HH -" parenttrainpattern="/NRz/DPN-D"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/NRz/DPN-D/HU -"/>
+		<trainpattern name="HH-HVIN" parenttrainpattern="/NRz/DPN-D/HU -"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN-D/HU -/HHML-HVIN"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN-D/HU -/HH-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/NRz/DPN-D/HG -"/>
+		<trainpattern name="HH-HHML" parenttrainpattern="/NRz/DPN-D/HG -"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/DPN-D/HG -/HHML-HVIN"/>
+		<trainpattern name="rück" parenttrainpattern="/NRz/DPN-D/HG -/HH-HHML"/>
+		<trainpattern name="HH-HHML" parenttrainpattern="/NRz/DPN-D/HH -"/>
+		<trainpattern name="HH-HVIN" parenttrainpattern="/NRz/DPN-D/HH -"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/DPN-D/HH -/HH-HHML"/>
+		<trainpattern name="hin" parenttrainpattern="/NRz/DPN-D/HH -/HH-HVIN"/>
+		<trainpattern name="DGS" parenttrainpattern="/NGz"/>
+		<trainpattern name="TEC" parenttrainpattern="/NGz"/>
+		<trainpattern name="IKE" parenttrainpattern="/NGz"/>
+		<trainpattern name="FIR" parenttrainpattern="/NGz"/>
+		<trainpattern name="FZT" parenttrainpattern="/NGz"/>
+		<trainpattern name="FZ" parenttrainpattern="/NGz"/>
+		<trainpattern name="CFN" parenttrainpattern="/NGz"/>
+		<trainpattern name="Tfzf (RaS)" parenttrainpattern="/NGz"/>
+		<trainpattern name="DBV" parenttrainpattern="/NGz"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/NGz/DGS"/>
+		<trainpattern name="NGM -" parenttrainpattern="/NGz/DGS"/>
+		<trainpattern name="HNH-HSR A" parenttrainpattern="/NGz/DGS/Ohne Linie"/>
+		<trainpattern name="HNH-HS" parenttrainpattern="/NGz/DGS/Ohne Linie"/>
+		<trainpattern name="HNH-HSR W" parenttrainpattern="/NGz/DGS/Ohne Linie"/>
+		<trainpattern name="HNH-HWAM" parenttrainpattern="/NGz/DGS/Ohne Linie"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/DGS/Ohne Linie/HNH-HSR A"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/DGS/Ohne Linie/HNH-HS"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/DGS/Ohne Linie/HNH-HSR W"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/DGS/Ohne Linie/HNH-HWAM"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/NGz/DGS/NGM -"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/DGS/NGM -/HHML-HVIN"/>
+		<trainpattern name="HLI -" parenttrainpattern="/NGz/TEC"/>
+		<trainpattern name="HLIH -" parenttrainpattern="/NGz/TEC"/>
+		<trainpattern name="HLI-HLIH" parenttrainpattern="/NGz/TEC/HLI -"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/TEC/HLI -/HLI-HLIH"/>
+		<trainpattern name="HLI-HLIH" parenttrainpattern="/NGz/TEC/HLIH -"/>
+		<trainpattern name="HLIH-HSR W" parenttrainpattern="/NGz/TEC/HLIH -"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/TEC/HLIH -/HLI-HLIH"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/TEC/HLIH -/HLIH-HSR W"/>
+		<trainpattern name="RMR K" parenttrainpattern="/NGz/IKE"/>
+		<trainpattern name="H815M-HHML" parenttrainpattern="/NGz/IKE/RMR K"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/IKE/RMR K/H815M-HHML"/>
+		<trainpattern name="HSR N" parenttrainpattern="/NGz/FIR"/>
+		<trainpattern name="HSR N-HSR W" parenttrainpattern="/NGz/FIR/HSR N"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/FIR/HSR N/HSR N-HSR W"/>
+		<trainpattern name="HBI-HSR A Z" parenttrainpattern="/NGz/FZT"/>
+		<trainpattern name="HLI -" parenttrainpattern="/NGz/FZT"/>
+		<trainpattern name="HALF -" parenttrainpattern="/NGz/FZT"/>
+		<trainpattern name="HMI -" parenttrainpattern="/NGz/FZT"/>
+		<trainpattern name="HLIH -" parenttrainpattern="/NGz/FZT"/>
+		<trainpattern name="HC G" parenttrainpattern="/NGz/FZT"/>
+		<trainpattern name="HLI " parenttrainpattern="/NGz/FZT"/>
+		<trainpattern name="HSR W-HBRS" parenttrainpattern="/NGz/FZT"/>
+		<trainpattern name="HWSR-HLI" parenttrainpattern="/NGz/FZT"/>
+		<trainpattern name="HLI-HWSR" parenttrainpattern="/NGz/FZT"/>
+		<trainpattern name="HSR O" parenttrainpattern="/NGz/FZT"/>
+		<trainpattern name="HNH -" parenttrainpattern="/NGz/FZT"/>
+		<trainpattern name="HHZ -" parenttrainpattern="/NGz/FZT"/>
+		<trainpattern name="HSR S" parenttrainpattern="/NGz/FZT"/>
+		<trainpattern name="HBSR -" parenttrainpattern="/NGz/FZT"/>
+		<trainpattern name="HP " parenttrainpattern="/NGz/FZT"/>
+		<trainpattern name="HBDD -" parenttrainpattern="/NGz/FZT"/>
+		<trainpattern name="HS-HSR A" parenttrainpattern="/NGz/FZT/HBI-HSR A Z"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/FZT/HBI-HSR A Z/HS-HSR A"/>
+		<trainpattern name="HHML-HLI" parenttrainpattern="/NGz/FZT/HLI -"/>
+		<trainpattern name="H815M-HLI" parenttrainpattern="/NGz/FZT/HLI -"/>
+		<trainpattern name="HLI-HLIH" parenttrainpattern="/NGz/FZT/HLI -"/>
+		<trainpattern name="HLI-HSR B" parenttrainpattern="/NGz/FZT/HLI -"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZT/HLI -/HHML-HLI"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZT/HLI -/H815M-HLI"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/FZT/HLI -/HLI-HLIH"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/FZT/HLI -/HLI-HSR B"/>
+		<trainpattern name="HHML-HLI" parenttrainpattern="/NGz/FZT/HALF -"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/FZT/HALF -/HHML-HLI"/>
+		<trainpattern name="HLI-HWAM" parenttrainpattern="/NGz/FZT/HMI -"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZT/HMI -/HLI-HWAM"/>
+		<trainpattern name="HLI-HLIH" parenttrainpattern="/NGz/FZT/HLIH -"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZT/HLIH -/HLI-HLIH"/>
+		<trainpattern name="HLI-HWAM" parenttrainpattern="/NGz/FZT/HC G"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZT/HC G/HLI-HWAM"/>
+		<trainpattern name="HLI-HSR B" parenttrainpattern="/NGz/FZT/HLI "/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/FZT/HLI /HLI-HSR B"/>
+		<trainpattern name="HSR A-HSR W" parenttrainpattern="/NGz/FZT/HSR W-HBRS"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/FZT/HSR W-HBRS/HSR A-HSR W"/>
+		<trainpattern name="HLI-HVIN" parenttrainpattern="/NGz/FZT/HWSR-HLI"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZT/HWSR-HLI/HLI-HVIN"/>
+		<trainpattern name="HLI-HVIN" parenttrainpattern="/NGz/FZT/HLI-HWSR"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/FZT/HLI-HWSR/HLI-HVIN"/>
+		<trainpattern name="HNH-HSR O" parenttrainpattern="/NGz/FZT/HSR O"/>
+		<trainpattern name="HHAW-HSR O" parenttrainpattern="/NGz/FZT/HSR O"/>
+		<trainpattern name="H815M-HSR O" parenttrainpattern="/NGz/FZT/HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZT/HSR O/HNH-HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZT/HSR O/HHAW-HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZT/HSR O/H815M-HSR O"/>
+		<trainpattern name="HNH-HSR B" parenttrainpattern="/NGz/FZT/HNH -"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/FZT/HNH -/HNH-HSR B"/>
+		<trainpattern name="HHAW-HSR B" parenttrainpattern="/NGz/FZT/HHZ -"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/FZT/HHZ -/HHAW-HSR B"/>
+		<trainpattern name="H815M-HSR S" parenttrainpattern="/NGz/FZT/HSR S"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZT/HSR S/H815M-HSR S"/>
+		<trainpattern name="HKWA-HSR B" parenttrainpattern="/NGz/FZT/HBSR -"/>
+		<trainpattern name="HSR B-HWAM" parenttrainpattern="/NGz/FZT/HBSR -"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/FZT/HBSR -/HKWA-HSR B"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZT/HBSR -/HSR B-HWAM"/>
+		<trainpattern name="HSR B-HWAM" parenttrainpattern="/NGz/FZT/HP "/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZT/HP /HSR B-HWAM"/>
+		<trainpattern name="HSR B-HWAM" parenttrainpattern="/NGz/FZT/HBDD -"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZT/HBDD -/HSR B-HWAM"/>
+		<trainpattern name="HG N" parenttrainpattern="/NGz/FZ"/>
+		<trainpattern name="HLI -" parenttrainpattern="/NGz/FZ"/>
+		<trainpattern name="HELZ -" parenttrainpattern="/NGz/FZ"/>
+		<trainpattern name="HVOL -" parenttrainpattern="/NGz/FZ"/>
+		<trainpattern name="HBSA -" parenttrainpattern="/NGz/FZ"/>
+		<trainpattern name="HDOG -" parenttrainpattern="/NGz/FZ"/>
+		<trainpattern name="HHM -" parenttrainpattern="/NGz/FZ"/>
+		<trainpattern name="HBGH -" parenttrainpattern="/NGz/FZ"/>
+		<trainpattern name="HC G" parenttrainpattern="/NGz/FZ"/>
+		<trainpattern name="HSR S" parenttrainpattern="/NGz/FZ"/>
+		<trainpattern name="HSR O" parenttrainpattern="/NGz/FZ"/>
+		<trainpattern name="HLI-HWSR" parenttrainpattern="/NGz/FZ"/>
+		<trainpattern name="HVIN -" parenttrainpattern="/NGz/FZ"/>
+		<trainpattern name="HHML-HLI" parenttrainpattern="/NGz/FZ/HG N"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/FZ/HG N/HHML-HLI"/>
+		<trainpattern name="HHML-HLI" parenttrainpattern="/NGz/FZ/HLI -"/>
+		<trainpattern name="H815M-HLI" parenttrainpattern="/NGz/FZ/HLI -"/>
+		<trainpattern name="HLI-HRBG" parenttrainpattern="/NGz/FZ/HLI -"/>
+		<trainpattern name="HLI-HSR B" parenttrainpattern="/NGz/FZ/HLI -"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZ/HLI -/HHML-HLI"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZ/HLI -/H815M-HLI"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/FZ/HLI -/HLI-HRBG"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/FZ/HLI -/HLI-HSR B"/>
+		<trainpattern name="HHML-HLI" parenttrainpattern="/NGz/FZ/HELZ -"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/FZ/HELZ -/HHML-HLI"/>
+		<trainpattern name="HHML-HLI" parenttrainpattern="/NGz/FZ/HVOL -"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/FZ/HVOL -/HHML-HLI"/>
+		<trainpattern name="HHML-HLI" parenttrainpattern="/NGz/FZ/HBSA -"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/FZ/HBSA -/HHML-HLI"/>
+		<trainpattern name="HLI-HWAM" parenttrainpattern="/NGz/FZ/HDOG -"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZ/HDOG -/HLI-HWAM"/>
+		<trainpattern name="HLI-HRBG" parenttrainpattern="/NGz/FZ/HHM -"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZ/HHM -/HLI-HRBG"/>
+		<trainpattern name="HLI-HRBG" parenttrainpattern="/NGz/FZ/HBGH -"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZ/HBGH -/HLI-HRBG"/>
+		<trainpattern name="HLI-HWAM" parenttrainpattern="/NGz/FZ/HC G"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZ/HC G/HLI-HWAM"/>
+		<trainpattern name="HLI-HSR S" parenttrainpattern="/NGz/FZ/HSR S"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZ/HSR S/HLI-HSR S"/>
+		<trainpattern name="HLI-HSR O" parenttrainpattern="/NGz/FZ/HSR O"/>
+		<trainpattern name="H815M-HSR O" parenttrainpattern="/NGz/FZ/HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZ/HSR O/HLI-HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZ/HSR O/H815M-HSR O"/>
+		<trainpattern name="HLI-HVIN" parenttrainpattern="/NGz/FZ/HLI-HWSR"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/FZ/HLI-HWSR/HLI-HVIN"/>
+		<trainpattern name="HLI-HVIN" parenttrainpattern="/NGz/FZ/HVIN -"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/FZ/HVIN -/HLI-HVIN"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/NGz/CFN"/>
+		<trainpattern name="HNH-HSR W" parenttrainpattern="/NGz/CFN/Ohne Linie"/>
+		<trainpattern name="hin" parenttrainpattern="/NGz/CFN/Ohne Linie/HNH-HSR W"/>
+		<trainpattern name="HSR O" parenttrainpattern="/NGz/Tfzf (RaS)"/>
+		<trainpattern name="HHZ-HSR O" parenttrainpattern="/NGz/Tfzf (RaS)/HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/Tfzf (RaS)/HSR O/HHZ-HSR O"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/NGz/DBV"/>
+		<trainpattern name="HH-HLI" parenttrainpattern="/NGz/DBV/Ohne Linie"/>
+		<trainpattern name="HHAW-HKWA" parenttrainpattern="/NGz/DBV/Ohne Linie"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/DBV/Ohne Linie/HH-HLI"/>
+		<trainpattern name="rück" parenttrainpattern="/NGz/DBV/Ohne Linie/HHAW-HKWA"/>
+		<trainpattern name="S" parenttrainpattern="/S"/>
+		<trainpattern name="Lt" parenttrainpattern="/S"/>
+		<trainpattern name="HH -" parenttrainpattern="/S/S"/>
+		<trainpattern name="HC -" parenttrainpattern="/S/S"/>
+		<trainpattern name="HM -" parenttrainpattern="/S/S"/>
+		<trainpattern name="HHAS -" parenttrainpattern="/S/S"/>
+		<trainpattern name="HNBG -" parenttrainpattern="/S/S"/>
+		<trainpattern name="HHAS - HNBG S2 RV erst ab HWEZ" parenttrainpattern="/S/S"/>
+		<trainpattern name="HHI -" parenttrainpattern="/S/S"/>
+		<trainpattern name="HBML -" parenttrainpattern="/S/S"/>
+		<trainpattern name="HLGF -" parenttrainpattern="/S/S"/>
+		<trainpattern name="HHM -" parenttrainpattern="/S/S"/>
+		<trainpattern name="HHM - HLGF S5" parenttrainpattern="/S/S"/>
+		<trainpattern name="HPRT -" parenttrainpattern="/S/S"/>
+		<trainpattern name="EPD -" parenttrainpattern="/S/S"/>
+		<trainpattern name="HH-HKWA" parenttrainpattern="/S/S/HH -"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/S/S/HH -"/>
+		<trainpattern name="HH-HRBG" parenttrainpattern="/S/S/HH -"/>
+		<trainpattern name="HH-HVIN" parenttrainpattern="/S/S/HH -"/>
+		<trainpattern name="HH-HHML" parenttrainpattern="/S/S/HH -"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/HH -/HH-HKWA"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/HH -/HH-HS"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/HH -/HH-HRBG"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/HH -/HH-HVIN"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/HH -/HH-HHML"/>
+		<trainpattern name="HH-HKWA" parenttrainpattern="/S/S/HC -"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/HC -/HH-HKWA"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/S/S/HM -"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/HM -/HH-HS"/>
+		<trainpattern name="HH-HRBG" parenttrainpattern="/S/S/HHAS -"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/HHAS -/HH-HRBG"/>
+		<trainpattern name="HRBG-HS" parenttrainpattern="/S/S/HNBG -"/>
+		<trainpattern name="HH-HS" parenttrainpattern="/S/S/HNBG -"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/HNBG -/HRBG-HS"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/HNBG -/HH-HS"/>
+		<trainpattern name="HRBG-HS" parenttrainpattern="/S/S/HHAS - HNBG S2 RV erst ab HWEZ"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/HHAS - HNBG S2 RV erst ab HWEZ/HRBG-HS"/>
+		<trainpattern name="HH-HKWA" parenttrainpattern="/S/S/HHI -"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/S/S/HHI -"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/HHI -/HH-HKWA"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/HHI -/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/S/S/HBML -"/>
+		<trainpattern name="HH-HVIN" parenttrainpattern="/S/S/HBML -"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/HBML -/HHML-HVIN"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/HBML -/HH-HVIN"/>
+		<trainpattern name="HH-HVIN" parenttrainpattern="/S/S/HLGF -"/>
+		<trainpattern name="HRBG-HVIN" parenttrainpattern="/S/S/HLGF -"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/HLGF -/HH-HVIN"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/HLGF -/HRBG-HVIN"/>
+		<trainpattern name="HRBG-HVIN" parenttrainpattern="/S/S/HHM -"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/HHM -/HRBG-HVIN"/>
+		<trainpattern name="HRBG-HVIN" parenttrainpattern="/S/S/HHM - HLGF S5"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/HHM - HLGF S5/HRBG-HVIN"/>
+		<trainpattern name="HRBG-HVIN" parenttrainpattern="/S/S/HPRT -"/>
+		<trainpattern name="HH-HRBG" parenttrainpattern="/S/S/HPRT -"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/HPRT -/HRBG-HVIN"/>
+		<trainpattern name="rück" parenttrainpattern="/S/S/HPRT -/HH-HRBG"/>
+		<trainpattern name="HRBG-HVIN" parenttrainpattern="/S/S/EPD -"/>
+		<trainpattern name="hin" parenttrainpattern="/S/S/EPD -/HRBG-HVIN"/>
+		<trainpattern name="HH -" parenttrainpattern="/S/Lt"/>
+		<trainpattern name="HHZ -" parenttrainpattern="/S/Lt"/>
+		<trainpattern name="HHAS - HHZ Aus 34338" parenttrainpattern="/S/Lt"/>
+		<trainpattern name="HHZ - HHAS Aus Abstellung Für 34158" parenttrainpattern="/S/Lt"/>
+		<trainpattern name="HBML -" parenttrainpattern="/S/Lt"/>
+		<trainpattern name="HH - HHZ Aus 34417 2ZT" parenttrainpattern="/S/Lt"/>
+		<trainpattern name="HH - HHZ W(Sa) aus 34467 2ZT" parenttrainpattern="/S/Lt"/>
+		<trainpattern name="HH - HHZ Aus 34469 Für Abstellung" parenttrainpattern="/S/Lt"/>
+		<trainpattern name="HH - HHZ Aus 34501 Reserve Für Abstellung" parenttrainpattern="/S/Lt"/>
+		<trainpattern name="HHAW -" parenttrainpattern="/S/Lt"/>
+		<trainpattern name="HH-HHZ" parenttrainpattern="/S/Lt/HH -"/>
+		<trainpattern name="HH-HHAW" parenttrainpattern="/S/Lt/HH -"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lt/HH -/HH-HHZ"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lt/HH -/HH-HHAW"/>
+		<trainpattern name="HH-HHZ" parenttrainpattern="/S/Lt/HHZ -"/>
+		<trainpattern name="HHZ-HVIN" parenttrainpattern="/S/Lt/HHZ -"/>
+		<trainpattern name="HHAW-HHZ" parenttrainpattern="/S/Lt/HHZ -"/>
+		<trainpattern name="rück" parenttrainpattern="/S/Lt/HHZ -/HH-HHZ"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lt/HHZ -/HHZ-HVIN"/>
+		<trainpattern name="rück" parenttrainpattern="/S/Lt/HHZ -/HHAW-HHZ"/>
+		<trainpattern name=" 34197 Für Abstellung" parenttrainpattern="/S/Lt/HHAS - HHZ Aus 34338"/>
+		<trainpattern name="HHZ-HSR A" parenttrainpattern="/S/Lt/HHAS - HHZ Aus 34338/ 34197 Für Abstellung"/>
+		<trainpattern name="rück" parenttrainpattern="/S/Lt/HHAS - HHZ Aus 34338/ 34197 Für Abstellung/HHZ-HSR A"/>
+		<trainpattern name=" 34204" parenttrainpattern="/S/Lt/HHZ - HHAS Aus Abstellung Für 34158"/>
+		<trainpattern name="HHZ-HSR W" parenttrainpattern="/S/Lt/HHZ - HHAS Aus Abstellung Für 34158/ 34204"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lt/HHZ - HHAS Aus Abstellung Für 34158/ 34204/HHZ-HSR W"/>
+		<trainpattern name="HHZ-HVIN" parenttrainpattern="/S/Lt/HBML -"/>
+		<trainpattern name="rück" parenttrainpattern="/S/Lt/HBML -/HHZ-HVIN"/>
+		<trainpattern name=" 34419" parenttrainpattern="/S/Lt/HH - HHZ Aus 34417 2ZT"/>
+		<trainpattern name="HH-HHZ" parenttrainpattern="/S/Lt/HH - HHZ Aus 34417 2ZT/ 34419"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lt/HH - HHZ Aus 34417 2ZT/ 34419/HH-HHZ"/>
+		<trainpattern name="HH-HHZ" parenttrainpattern="/S/Lt/HH - HHZ W(Sa) aus 34467 2ZT"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lt/HH - HHZ W(Sa) aus 34467 2ZT/HH-HHZ"/>
+		<trainpattern name="HH-HHZ" parenttrainpattern="/S/Lt/HH - HHZ Aus 34469 Für Abstellung"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lt/HH - HHZ Aus 34469 Für Abstellung/HH-HHZ"/>
+		<trainpattern name="HH-HHZ" parenttrainpattern="/S/Lt/HH - HHZ Aus 34501 Reserve Für Abstellung"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lt/HH - HHZ Aus 34501 Reserve Für Abstellung/HH-HHZ"/>
+		<trainpattern name="HHAW-HHZ" parenttrainpattern="/S/Lt/HHAW -"/>
+		<trainpattern name="HH-HHAW" parenttrainpattern="/S/Lt/HHAW -"/>
+		<trainpattern name="hin" parenttrainpattern="/S/Lt/HHAW -/HHAW-HHZ"/>
+		<trainpattern name="rück" parenttrainpattern="/S/Lt/HHAW -/HH-HHAW"/>
+		<trainpattern name="TEC" parenttrainpattern="/FGz"/>
+		<trainpattern name="DGS" parenttrainpattern="/FGz"/>
+		<trainpattern name="FE" parenttrainpattern="/FGz"/>
+		<trainpattern name="CS" parenttrainpattern="/FGz"/>
+		<trainpattern name="CSQ" parenttrainpattern="/FGz"/>
+		<trainpattern name="CT" parenttrainpattern="/FGz"/>
+		<trainpattern name="IKE" parenttrainpattern="/FGz"/>
+		<trainpattern name="IKL" parenttrainpattern="/FGz"/>
+		<trainpattern name="FX" parenttrainpattern="/FGz"/>
+		<trainpattern name="FIR" parenttrainpattern="/FGz"/>
+		<trainpattern name="FR" parenttrainpattern="/FGz"/>
+		<trainpattern name="FZT" parenttrainpattern="/FGz"/>
+		<trainpattern name="XDTA -" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="XIGA -" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="XIVQ -" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="HBHSK -" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="XMBSR -" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="XYBP -" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="XTLO -" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="EDRH -" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="DF -" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="AWHOS -" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="XAWK -" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="XAEN -" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="XIVQ -AHBIU Bauko" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="XIVQ-HBG" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="HBG -" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="XPPR -" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="XSBR -" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="AM W" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="XVM-HLIH" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="AM " parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="AHBIU -" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="MOR -" parenttrainpattern="/FGz/TEC"/>
+		<trainpattern name="HRBG-HSR A" parenttrainpattern="/FGz/TEC/XDTA -"/>
+		<trainpattern name="HRBG-HWAM" parenttrainpattern="/FGz/TEC/XDTA -"/>
+		<trainpattern name="HHML-HSR A" parenttrainpattern="/FGz/TEC/XDTA -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/TEC/XDTA -/HRBG-HSR A"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/TEC/XDTA -/HRBG-HWAM"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/TEC/XDTA -/HHML-HSR A"/>
+		<trainpattern name="H815M-HHML" parenttrainpattern="/FGz/TEC/XIGA -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/TEC/XIGA -/H815M-HHML"/>
+		<trainpattern name="HHML-HSR W" parenttrainpattern="/FGz/TEC/XIVQ -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/TEC/XIVQ -/HHML-HSR W"/>
+		<trainpattern name="H815M-HSR A" parenttrainpattern="/FGz/TEC/HBHSK -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/TEC/HBHSK -/H815M-HSR A"/>
+		<trainpattern name="HSR W-HWAM" parenttrainpattern="/FGz/TEC/XMBSR -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/TEC/XMBSR -/HSR W-HWAM"/>
+		<trainpattern name="HSR W-HWAM" parenttrainpattern="/FGz/TEC/XYBP -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/TEC/XYBP -/HSR W-HWAM"/>
+		<trainpattern name="HSR W-HWAM" parenttrainpattern="/FGz/TEC/XTLO -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/TEC/XTLO -/HSR W-HWAM"/>
+		<trainpattern name="H815M-HRBG" parenttrainpattern="/FGz/TEC/EDRH -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/TEC/EDRH -/H815M-HRBG"/>
+		<trainpattern name="HRBG-HWAM" parenttrainpattern="/FGz/TEC/DF -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/TEC/DF -/HRBG-HWAM"/>
+		<trainpattern name="HHML-HSR A" parenttrainpattern="/FGz/TEC/AWHOS -"/>
+		<trainpattern name="HHML-HWAM" parenttrainpattern="/FGz/TEC/AWHOS -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/TEC/AWHOS -/HHML-HSR A"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/TEC/AWHOS -/HHML-HWAM"/>
+		<trainpattern name="HHML-HSR W" parenttrainpattern="/FGz/TEC/XAWK -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/TEC/XAWK -/HHML-HSR W"/>
+		<trainpattern name="HLI-HWAM" parenttrainpattern="/FGz/TEC/XAEN -"/>
+		<trainpattern name="HLI-HSR W" parenttrainpattern="/FGz/TEC/XAEN -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/TEC/XAEN -/HLI-HWAM"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/TEC/XAEN -/HLI-HSR W"/>
+		<trainpattern name="HHML-HSR W" parenttrainpattern="/FGz/TEC/XIVQ -AHBIU Bauko"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/TEC/XIVQ -AHBIU Bauko/HHML-HSR W"/>
+		<trainpattern name="HHML-HSR W" parenttrainpattern="/FGz/TEC/XIVQ-HBG"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/TEC/XIVQ-HBG/HHML-HSR W"/>
+		<trainpattern name="HRBG-HSR A" parenttrainpattern="/FGz/TEC/HBG -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/TEC/HBG -/HRBG-HSR A"/>
+		<trainpattern name="HRBG-HWAM" parenttrainpattern="/FGz/TEC/XPPR -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/TEC/XPPR -/HRBG-HWAM"/>
+		<trainpattern name="HRBG-HSR W" parenttrainpattern="/FGz/TEC/XSBR -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/TEC/XSBR -/HRBG-HSR W"/>
+		<trainpattern name="HHML-HSR A" parenttrainpattern="/FGz/TEC/AM W"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/TEC/AM W/HHML-HSR A"/>
+		<trainpattern name="HLIH-HSR A" parenttrainpattern="/FGz/TEC/XVM-HLIH"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/TEC/XVM-HLIH/HLIH-HSR A"/>
+		<trainpattern name="HHML-HWAM" parenttrainpattern="/FGz/TEC/AM "/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/TEC/AM /HHML-HWAM"/>
+		<trainpattern name="HLI-HWAM" parenttrainpattern="/FGz/TEC/AHBIU -"/>
+		<trainpattern name="HHML-HWAM" parenttrainpattern="/FGz/TEC/AHBIU -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/TEC/AHBIU -/HLI-HWAM"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/TEC/AHBIU -/HHML-HWAM"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FGz/TEC/MOR -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/TEC/MOR -/HHML-HVIN"/>
+		<trainpattern name="AWHO -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="NNR A" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="AWHO -XAEN BoxXpress" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="XIGA -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="AHBIU -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="XTPU -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="XNRW -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="BRU -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="XAWU -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="EOBRT-XPDGO EVU: Pressnitztalbahn" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="XDF-ELPPG CFL Cargo" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="UVI -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="TSH -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="HBG -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="HBHSK -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="DGL - HBG EVU: EVB" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="AWHO-MRIU BoxXpress H" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="MRIU -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="AWHO " parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="TBS -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="TK S" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="FFO G - AWHOS BauKo 23" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="NRHF -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="HF -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="MDIF -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="HBR A" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="MMBH -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="NROB -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="HABZ -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="BZW -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="NWH -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="LGC -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="HBDD -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="ESRT -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="BGSB -" parenttrainpattern="/FGz/DGS"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FGz/DGS/AWHO -"/>
+		<trainpattern name="HHML-HSR A" parenttrainpattern="/FGz/DGS/AWHO -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/AWHO -/HHML-HVIN"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/AWHO -/HHML-HSR A"/>
+		<trainpattern name="HHML-HSR W" parenttrainpattern="/FGz/DGS/NNR A"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/NNR A/HHML-HSR W"/>
+		<trainpattern name="HHML-HSR A" parenttrainpattern="/FGz/DGS/AWHO -XAEN BoxXpress"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/AWHO -XAEN BoxXpress/HHML-HSR A"/>
+		<trainpattern name="HHML-HSR W" parenttrainpattern="/FGz/DGS/XIGA -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/XIGA -/HHML-HSR W"/>
+		<trainpattern name="HHML-HSR A" parenttrainpattern="/FGz/DGS/AHBIU -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/AHBIU -/HHML-HSR A"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FGz/DGS/XTPU -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/XTPU -/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FGz/DGS/XNRW -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/XNRW -/HKWA-HS"/>
+		<trainpattern name="HRBG-HWAM" parenttrainpattern="/FGz/DGS/BRU -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/BRU -/HRBG-HWAM"/>
+		<trainpattern name="HHML-HSR W" parenttrainpattern="/FGz/DGS/XAWU -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/XAWU -/HHML-HSR W"/>
+		<trainpattern name="H815M-HSR A" parenttrainpattern="/FGz/DGS/EOBRT-XPDGO EVU: Pressnitztalbahn"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/EOBRT-XPDGO EVU: Pressnitztalbahn/H815M-HSR A"/>
+		<trainpattern name="HRBG-HVIN" parenttrainpattern="/FGz/DGS/XDF-ELPPG CFL Cargo"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/XDF-ELPPG CFL Cargo/HRBG-HVIN"/>
+		<trainpattern name="HHML-HSR W" parenttrainpattern="/FGz/DGS/UVI -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/UVI -/HHML-HSR W"/>
+		<trainpattern name="HHML-HSR W" parenttrainpattern="/FGz/DGS/TSH -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/TSH -/HHML-HSR W"/>
+		<trainpattern name="HHML-HSR A" parenttrainpattern="/FGz/DGS/HBG -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/HBG -/HHML-HSR A"/>
+		<trainpattern name="HHML-HSR A" parenttrainpattern="/FGz/DGS/HBHSK -"/>
+		<trainpattern name="H815M-HSR A" parenttrainpattern="/FGz/DGS/HBHSK -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/HBHSK -/HHML-HSR A"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/HBHSK -/H815M-HSR A"/>
+		<trainpattern name="HSR W-HWAM" parenttrainpattern="/FGz/DGS/DGL - HBG EVU: EVB"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/DGL - HBG EVU: EVB/HSR W-HWAM"/>
+		<trainpattern name="HHML-HSR A" parenttrainpattern="/FGz/DGS/AWHO-MRIU BoxXpress H"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/AWHO-MRIU BoxXpress H/HHML-HSR A"/>
+		<trainpattern name="HHML-HS" parenttrainpattern="/FGz/DGS/MRIU -"/>
+		<trainpattern name="HHML-HSR W" parenttrainpattern="/FGz/DGS/MRIU -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/MRIU -/HHML-HS"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/MRIU -/HHML-HSR W"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FGz/DGS/AWHO "/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/AWHO /HHML-HVIN"/>
+		<trainpattern name="HHML-HSR W" parenttrainpattern="/FGz/DGS/TBS -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/TBS -/HHML-HSR W"/>
+		<trainpattern name="HRBG-HSR W" parenttrainpattern="/FGz/DGS/TK S"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FGz/DGS/TK S"/>
+		<trainpattern name="HHML-HSR W" parenttrainpattern="/FGz/DGS/TK S"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/TK S/HRBG-HSR W"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/TK S/HHML-HVIN"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/TK S/HHML-HSR W"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FGz/DGS/FFO G - AWHOS BauKo 23"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/FFO G - AWHOS BauKo 23/HHML-HVIN"/>
+		<trainpattern name="H815M-HHML" parenttrainpattern="/FGz/DGS/NRHF -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/NRHF -/H815M-HHML"/>
+		<trainpattern name="HSR W-HWAM" parenttrainpattern="/FGz/DGS/HF -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/HF -/HSR W-HWAM"/>
+		<trainpattern name="HHML-HSR W" parenttrainpattern="/FGz/DGS/MDIF -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/MDIF -/HHML-HSR W"/>
+		<trainpattern name="HHML-HSR A" parenttrainpattern="/FGz/DGS/HBR A"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/HBR A/HHML-HSR A"/>
+		<trainpattern name="HHML-HSR W" parenttrainpattern="/FGz/DGS/MMBH -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/MMBH -/HHML-HSR W"/>
+		<trainpattern name="HHML-HSR W" parenttrainpattern="/FGz/DGS/NROB -"/>
+		<trainpattern name="H815M-HRBG" parenttrainpattern="/FGz/DGS/NROB -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/NROB -/HHML-HSR W"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/NROB -/H815M-HRBG"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FGz/DGS/HABZ -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/HABZ -/HKWA-HS"/>
+		<trainpattern name="HSR W-HWAM" parenttrainpattern="/FGz/DGS/BZW -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/BZW -/HSR W-HWAM"/>
+		<trainpattern name="HHML-HS" parenttrainpattern="/FGz/DGS/NWH -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/NWH -/HHML-HS"/>
+		<trainpattern name="HRBG-HWAM" parenttrainpattern="/FGz/DGS/LGC -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/LGC -/HRBG-HWAM"/>
+		<trainpattern name="HHML-HSR W" parenttrainpattern="/FGz/DGS/HBDD -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/DGS/HBDD -/HHML-HSR W"/>
+		<trainpattern name="H815M-HSR A" parenttrainpattern="/FGz/DGS/ESRT -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/ESRT -/H815M-HSR A"/>
+		<trainpattern name="HRBG-HWAM" parenttrainpattern="/FGz/DGS/BGSB -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/DGS/BGSB -/HRBG-HWAM"/>
+		<trainpattern name="HLI -" parenttrainpattern="/FGz/FE"/>
+		<trainpattern name="XVGB-HLI" parenttrainpattern="/FGz/FE"/>
+		<trainpattern name="XPSWZ -" parenttrainpattern="/FGz/FE"/>
+		<trainpattern name="BSE W" parenttrainpattern="/FGz/FE"/>
+		<trainpattern name="HLI-HSR W" parenttrainpattern="/FGz/FE/HLI -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/FE/HLI -/HLI-HSR W"/>
+		<trainpattern name="HLI-HSR A" parenttrainpattern="/FGz/FE/XVGB-HLI"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FE/XVGB-HLI/HLI-HSR A"/>
+		<trainpattern name="HSR B-HWAM" parenttrainpattern="/FGz/FE/XPSWZ -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FE/XPSWZ -/HSR B-HWAM"/>
+		<trainpattern name="HRBG-HWAM" parenttrainpattern="/FGz/FE/BSE W"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FE/BSE W/HRBG-HWAM"/>
+		<trainpattern name="XTN -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="HSR O" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="HLI -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="XDTV -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="LSAD -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="XAKB -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="XABL -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="HEVW -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="HF -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="HBHSK -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="HBDD -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="KRWE -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="LBA -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="HM G-AWHOH" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="HBTH -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="ABVD -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="LFG -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="HESH -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="LMUK -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="FHRG -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="AHOSS -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="AST -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="HWUN-HSR A-KT" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="NSCH -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="MA N-" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="HMI -" parenttrainpattern="/FGz/CS"/>
+		<trainpattern name="HRBG-HWAM" parenttrainpattern="/FGz/CS/XTN -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/XTN -/HRBG-HWAM"/>
+		<trainpattern name="H815M-HSR O" parenttrainpattern="/FGz/CS/HSR O"/>
+		<trainpattern name="HHML-HSR O" parenttrainpattern="/FGz/CS/HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/HSR O/H815M-HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/HSR O/HHML-HSR O"/>
+		<trainpattern name="H815M-HLI" parenttrainpattern="/FGz/CS/HLI -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/HLI -/H815M-HLI"/>
+		<trainpattern name="HLI-HWAM" parenttrainpattern="/FGz/CS/XDTV -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/XDTV -/HLI-HWAM"/>
+		<trainpattern name="HSR W-HWAM" parenttrainpattern="/FGz/CS/LSAD -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/LSAD -/HSR W-HWAM"/>
+		<trainpattern name="HHML-HSR W" parenttrainpattern="/FGz/CS/XAKB -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/CS/XAKB -/HHML-HSR W"/>
+		<trainpattern name="HHML-HSR W" parenttrainpattern="/FGz/CS/XABL -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/CS/XABL -/HHML-HSR W"/>
+		<trainpattern name="H815M-HSR A" parenttrainpattern="/FGz/CS/HEVW -"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FGz/CS/HEVW -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/HEVW -/H815M-HSR A"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/HEVW -/HKWA-HS"/>
+		<trainpattern name="HSR W-HWAM" parenttrainpattern="/FGz/CS/HF -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/HF -/HSR W-HWAM"/>
+		<trainpattern name="HHML-HSR A" parenttrainpattern="/FGz/CS/HBHSK -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/HBHSK -/HHML-HSR A"/>
+		<trainpattern name="HSR W-HWAM" parenttrainpattern="/FGz/CS/HBDD -"/>
+		<trainpattern name="HRBG-HWAM" parenttrainpattern="/FGz/CS/HBDD -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/HBDD -/HSR W-HWAM"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/HBDD -/HRBG-HWAM"/>
+		<trainpattern name="H815M-HRBG" parenttrainpattern="/FGz/CS/KRWE -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/KRWE -/H815M-HRBG"/>
+		<trainpattern name="HRBG-HWAM" parenttrainpattern="/FGz/CS/LBA -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/LBA -/HRBG-HWAM"/>
+		<trainpattern name="H815M-HSR A" parenttrainpattern="/FGz/CS/HM G-AWHOH"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/HM G-AWHOH/H815M-HSR A"/>
+		<trainpattern name="H815M-HSR A" parenttrainpattern="/FGz/CS/HBTH -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/HBTH -/H815M-HSR A"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FGz/CS/ABVD -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/ABVD -/HKWA-HS"/>
+		<trainpattern name="HSR W-HWAM" parenttrainpattern="/FGz/CS/LFG -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/LFG -/HSR W-HWAM"/>
+		<trainpattern name="H815M-HSR A" parenttrainpattern="/FGz/CS/HESH -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/HESH -/H815M-HSR A"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FGz/CS/LMUK -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/CS/LMUK -/HKWA-HS"/>
+		<trainpattern name="HRBG-HSR W" parenttrainpattern="/FGz/CS/FHRG -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/CS/FHRG -/HRBG-HSR W"/>
+		<trainpattern name="HHML-HWAM" parenttrainpattern="/FGz/CS/AHOSS -"/>
+		<trainpattern name="HLIH-HSR A" parenttrainpattern="/FGz/CS/AHOSS -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/AHOSS -/HHML-HWAM"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/AHOSS -/HLIH-HSR A"/>
+		<trainpattern name="HHML-HSR A" parenttrainpattern="/FGz/CS/AST -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/AST -/HHML-HSR A"/>
+		<trainpattern name="HSR A-HSR W" parenttrainpattern="/FGz/CS/HWUN-HSR A-KT"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/CS/HWUN-HSR A-KT/HSR A-HSR W"/>
+		<trainpattern name="H815M-HRBG" parenttrainpattern="/FGz/CS/NSCH -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/NSCH -/H815M-HRBG"/>
+		<trainpattern name="H815M-HHML" parenttrainpattern="/FGz/CS/MA N-"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/MA N-/H815M-HHML"/>
+		<trainpattern name="HSR W-HWAM" parenttrainpattern="/FGz/CS/HMI -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CS/HMI -/HSR W-HWAM"/>
+		<trainpattern name="HSR O" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="XNRB -" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="HBHSK -" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="HNH -" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="LLW U" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="HEVW -" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="HBSR -" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="HER -" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="HF -" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="TSI -" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="HBHSK-TK " parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="AHBIU -" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="EDRH -" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="ALBGG -" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="BLIW -" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="HG " parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="LMR F" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="ESRT -" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="LMUK -" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="HOR O" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="LKS -" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="AHOSS -" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="FHRG -" parenttrainpattern="/FGz/CSQ"/>
+		<trainpattern name="H815M-HSR O" parenttrainpattern="/FGz/CSQ/HSR O"/>
+		<trainpattern name="HHML-HSR O" parenttrainpattern="/FGz/CSQ/HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CSQ/HSR O/H815M-HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CSQ/HSR O/HHML-HSR O"/>
+		<trainpattern name="H815M-HSR A" parenttrainpattern="/FGz/CSQ/XNRB -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CSQ/XNRB -/H815M-HSR A"/>
+		<trainpattern name="HHML-HSR A" parenttrainpattern="/FGz/CSQ/HBHSK -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CSQ/HBHSK -/HHML-HSR A"/>
+		<trainpattern name="H815M-HNH" parenttrainpattern="/FGz/CSQ/HNH -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CSQ/HNH -/H815M-HNH"/>
+		<trainpattern name="HNH-HWAM" parenttrainpattern="/FGz/CSQ/LLW U"/>
+		<trainpattern name="HSR W-HWAM" parenttrainpattern="/FGz/CSQ/LLW U"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CSQ/LLW U/HNH-HWAM"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CSQ/LLW U/HSR W-HWAM"/>
+		<trainpattern name="H815M-HSR A" parenttrainpattern="/FGz/CSQ/HEVW -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CSQ/HEVW -/H815M-HSR A"/>
+		<trainpattern name="HSR W-HWAM" parenttrainpattern="/FGz/CSQ/HBSR -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CSQ/HBSR -/HSR W-HWAM"/>
+		<trainpattern name="HRBG-HSR B" parenttrainpattern="/FGz/CSQ/HER -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/CSQ/HER -/HRBG-HSR B"/>
+		<trainpattern name="HRBG-HWAM" parenttrainpattern="/FGz/CSQ/HF -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CSQ/HF -/HRBG-HWAM"/>
+		<trainpattern name="HHML-HSR W" parenttrainpattern="/FGz/CSQ/TSI -"/>
+		<trainpattern name="HHML-HSR B" parenttrainpattern="/FGz/CSQ/TSI -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/CSQ/TSI -/HHML-HSR W"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/CSQ/TSI -/HHML-HSR B"/>
+		<trainpattern name="HHML-HSR A" parenttrainpattern="/FGz/CSQ/HBHSK-TK "/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CSQ/HBHSK-TK /HHML-HSR A"/>
+		<trainpattern name="HHML-HSR A" parenttrainpattern="/FGz/CSQ/AHBIU -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CSQ/AHBIU -/HHML-HSR A"/>
+		<trainpattern name="H815M-HSR A" parenttrainpattern="/FGz/CSQ/EDRH -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CSQ/EDRH -/H815M-HSR A"/>
+		<trainpattern name="HRBG-HWAM" parenttrainpattern="/FGz/CSQ/ALBGG -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CSQ/ALBGG -/HRBG-HWAM"/>
+		<trainpattern name="HSR B-HWAM" parenttrainpattern="/FGz/CSQ/BLIW -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CSQ/BLIW -/HSR B-HWAM"/>
+		<trainpattern name="HHML-HSR W" parenttrainpattern="/FGz/CSQ/HG "/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/CSQ/HG /HHML-HSR W"/>
+		<trainpattern name="HLI-HWAM" parenttrainpattern="/FGz/CSQ/LMR F"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CSQ/LMR F/HLI-HWAM"/>
+		<trainpattern name="H815M-HSR A" parenttrainpattern="/FGz/CSQ/ESRT -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CSQ/ESRT -/H815M-HSR A"/>
+		<trainpattern name="HSR W-HWAM" parenttrainpattern="/FGz/CSQ/LMUK -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CSQ/LMUK -/HSR W-HWAM"/>
+		<trainpattern name="H815M-HRBG" parenttrainpattern="/FGz/CSQ/HOR O"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CSQ/HOR O/H815M-HRBG"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FGz/CSQ/LKS -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/CSQ/LKS -/HKWA-HS"/>
+		<trainpattern name="HHML-HSR A" parenttrainpattern="/FGz/CSQ/AHOSS -"/>
+		<trainpattern name="HHML-HWAM" parenttrainpattern="/FGz/CSQ/AHOSS -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CSQ/AHOSS -/HHML-HSR A"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CSQ/AHOSS -/HHML-HWAM"/>
+		<trainpattern name="HRBG-HS" parenttrainpattern="/FGz/CSQ/FHRG -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/CSQ/FHRG -/HRBG-HS"/>
+		<trainpattern name="LBW -" parenttrainpattern="/FGz/CT"/>
+		<trainpattern name="HBDD -" parenttrainpattern="/FGz/CT"/>
+		<trainpattern name="HSR W-HWAM" parenttrainpattern="/FGz/CT/LBW -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CT/LBW -/HSR W-HWAM"/>
+		<trainpattern name="HSR W-HWAM" parenttrainpattern="/FGz/CT/HBDD -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/CT/HBDD -/HSR W-HWAM"/>
+		<trainpattern name="EUK -" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="BWUN -" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="NNR A" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="HLI -" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="AHBIU -" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="NNEH -" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="HO U" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="AWHOS-RMG Dauer-Lü KV" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="RMR K" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="HBHP -" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="AM W" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="RMF -" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="TBS -" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="TK " parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="AWHO-NNEH" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="NROB -" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="AWHOS -" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="MRIU -" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="HBG -" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="LLW U" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="RLB U" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="ALSK -" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="RKR -" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="AHBS-MIN" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="MINU -" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="HBSR -" parenttrainpattern="/FGz/IKE"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FGz/IKE/EUK -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKE/EUK -/HKWA-HS"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/FGz/IKE/BWUN -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/IKE/BWUN -/HKWA-HS"/>
+		<trainpattern name="HHML-HLI" parenttrainpattern="/FGz/IKE/NNR A"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/IKE/NNR A/HHML-HLI"/>
+		<trainpattern name="HHML-HLI" parenttrainpattern="/FGz/IKE/HLI -"/>
+		<trainpattern name="HLI-HSR W" parenttrainpattern="/FGz/IKE/HLI -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKE/HLI -/HHML-HLI"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/IKE/HLI -/HLI-HSR W"/>
+		<trainpattern name="HHML-HWAM" parenttrainpattern="/FGz/IKE/AHBIU -"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FGz/IKE/AHBIU -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKE/AHBIU -/HHML-HWAM"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKE/AHBIU -/HHML-HVIN"/>
+		<trainpattern name="H815M-HHML" parenttrainpattern="/FGz/IKE/NNEH -"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FGz/IKE/NNEH -"/>
+		<trainpattern name="HSR B-HSR W" parenttrainpattern="/FGz/IKE/NNEH -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKE/NNEH -/H815M-HHML"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/IKE/NNEH -/HHML-HVIN"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/IKE/NNEH -/HSR B-HSR W"/>
+		<trainpattern name="HLI-HS" parenttrainpattern="/FGz/IKE/HO U"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKE/HO U/HLI-HS"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FGz/IKE/AWHOS-RMG Dauer-Lü KV"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKE/AWHOS-RMG Dauer-Lü KV/HHML-HVIN"/>
+		<trainpattern name="H815M-HHML" parenttrainpattern="/FGz/IKE/RMR K"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKE/RMR K/H815M-HHML"/>
+		<trainpattern name="HHML-HSR A" parenttrainpattern="/FGz/IKE/HBHP -"/>
+		<trainpattern name="HRBG-HSR A" parenttrainpattern="/FGz/IKE/HBHP -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKE/HBHP -/HHML-HSR A"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKE/HBHP -/HRBG-HSR A"/>
+		<trainpattern name="HHML-HSR A" parenttrainpattern="/FGz/IKE/AM W"/>
+		<trainpattern name="HHML-HWAM" parenttrainpattern="/FGz/IKE/AM W"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKE/AM W/HHML-HSR A"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKE/AM W/HHML-HWAM"/>
+		<trainpattern name="H815M-HHML" parenttrainpattern="/FGz/IKE/RMF -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKE/RMF -/H815M-HHML"/>
+		<trainpattern name="HHML-HSR W" parenttrainpattern="/FGz/IKE/TBS -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/IKE/TBS -/HHML-HSR W"/>
+		<trainpattern name="HHML-HSR W" parenttrainpattern="/FGz/IKE/TK "/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/IKE/TK /HHML-HSR W"/>
+		<trainpattern name="HHML-HSR A" parenttrainpattern="/FGz/IKE/AWHO-NNEH"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKE/AWHO-NNEH/HHML-HSR A"/>
+		<trainpattern name="HHML-HSR W" parenttrainpattern="/FGz/IKE/NROB -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/IKE/NROB -/HHML-HSR W"/>
+		<trainpattern name="HHML-HSR A" parenttrainpattern="/FGz/IKE/AWHOS -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKE/AWHOS -/HHML-HSR A"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FGz/IKE/MRIU -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/IKE/MRIU -/HHML-HVIN"/>
+		<trainpattern name="HHML-HSR A" parenttrainpattern="/FGz/IKE/HBG -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKE/HBG -/HHML-HSR A"/>
+		<trainpattern name="HRBG-HWAM" parenttrainpattern="/FGz/IKE/LLW U"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKE/LLW U/HRBG-HWAM"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FGz/IKE/RLB U"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/IKE/RLB U/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FGz/IKE/ALSK -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKE/ALSK -/HHML-HVIN"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FGz/IKE/RKR -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/IKE/RKR -/HHML-HVIN"/>
+		<trainpattern name="HHML-HSR O" parenttrainpattern="/FGz/IKE/AHBS-MIN"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKE/AHBS-MIN/HHML-HSR O"/>
+		<trainpattern name="HHML-HS" parenttrainpattern="/FGz/IKE/MINU -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/IKE/MINU -/HHML-HS"/>
+		<trainpattern name="HSR W-HWAM" parenttrainpattern="/FGz/IKE/HBSR -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKE/HBSR -/HSR W-HWAM"/>
+		<trainpattern name="AM " parenttrainpattern="/FGz/IKL"/>
+		<trainpattern name="AM W-MWCK Uml" parenttrainpattern="/FGz/IKL"/>
+		<trainpattern name="HHML-HWAM" parenttrainpattern="/FGz/IKL/AM "/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKL/AM /HHML-HWAM"/>
+		<trainpattern name="HHML-HSR A" parenttrainpattern="/FGz/IKL/AM W-MWCK Uml"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/IKL/AM W-MWCK Uml/HHML-HSR A"/>
+		<trainpattern name="LGC -" parenttrainpattern="/FGz/FX"/>
+		<trainpattern name="ALR -" parenttrainpattern="/FGz/FX"/>
+		<trainpattern name="HSR B-HWAM" parenttrainpattern="/FGz/FX/LGC -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FX/LGC -/HSR B-HWAM"/>
+		<trainpattern name="HHML-HVIN" parenttrainpattern="/FGz/FX/ALR -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FX/ALR -/HHML-HVIN"/>
+		<trainpattern name="EHGVF -HSR" parenttrainpattern="/FGz/FIR"/>
+		<trainpattern name="HSR O" parenttrainpattern="/FGz/FIR"/>
+		<trainpattern name="EHGV F" parenttrainpattern="/FGz/FIR"/>
+		<trainpattern name="EHGVF-HSR B KV" parenttrainpattern="/FGz/FIR"/>
+		<trainpattern name="HSR O-" parenttrainpattern="/FGz/FIR"/>
+		<trainpattern name="KG " parenttrainpattern="/FGz/FIR"/>
+		<trainpattern name="HSR N" parenttrainpattern="/FGz/FIR"/>
+		<trainpattern name="LE -" parenttrainpattern="/FGz/FIR"/>
+		<trainpattern name="BSE W" parenttrainpattern="/FGz/FIR"/>
+		<trainpattern name="HSR S" parenttrainpattern="/FGz/FIR"/>
+		<trainpattern name="NNR A" parenttrainpattern="/FGz/FIR"/>
+		<trainpattern name="RMR K" parenttrainpattern="/FGz/FIR"/>
+		<trainpattern name="RMR E" parenttrainpattern="/FGz/FIR"/>
+		<trainpattern name="AM " parenttrainpattern="/FGz/FIR"/>
+		<trainpattern name="HRBG-HSR B" parenttrainpattern="/FGz/FIR/EHGVF -HSR"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/FIR/EHGVF -HSR/HRBG-HSR B"/>
+		<trainpattern name="HRBG-HSR O" parenttrainpattern="/FGz/FIR/HSR O"/>
+		<trainpattern name="H815M-HSR O" parenttrainpattern="/FGz/FIR/HSR O"/>
+		<trainpattern name="HHML-HSR O" parenttrainpattern="/FGz/FIR/HSR O"/>
+		<trainpattern name="HHML-HSR S" parenttrainpattern="/FGz/FIR/HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FIR/HSR O/HRBG-HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FIR/HSR O/H815M-HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FIR/HSR O/HHML-HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FIR/HSR O/HHML-HSR S"/>
+		<trainpattern name="HRBG-HSR B" parenttrainpattern="/FGz/FIR/EHGV F"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/FIR/EHGV F/HRBG-HSR B"/>
+		<trainpattern name="HRBG-HSR B" parenttrainpattern="/FGz/FIR/EHGVF-HSR B KV"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/FIR/EHGVF-HSR B KV/HRBG-HSR B"/>
+		<trainpattern name="HRBG-HSR O" parenttrainpattern="/FGz/FIR/HSR O-"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FIR/HSR O-/HRBG-HSR O"/>
+		<trainpattern name="HRBG-HSR B" parenttrainpattern="/FGz/FIR/KG "/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/FIR/KG /HRBG-HSR B"/>
+		<trainpattern name="HSR N-HSR W" parenttrainpattern="/FGz/FIR/HSR N"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/FIR/HSR N/HSR N-HSR W"/>
+		<trainpattern name="HSR B-HWAM" parenttrainpattern="/FGz/FIR/LE -"/>
+		<trainpattern name="HKWA-HSR B" parenttrainpattern="/FGz/FIR/LE -"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FIR/LE -/HSR B-HWAM"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/FIR/LE -/HKWA-HSR B"/>
+		<trainpattern name="HSR B-HWAM" parenttrainpattern="/FGz/FIR/BSE W"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FIR/BSE W/HSR B-HWAM"/>
+		<trainpattern name="HHML-HSR S" parenttrainpattern="/FGz/FIR/HSR S"/>
+		<trainpattern name="H815M-HSR S" parenttrainpattern="/FGz/FIR/HSR S"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FIR/HSR S/HHML-HSR S"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FIR/HSR S/H815M-HSR S"/>
+		<trainpattern name="HHML-HSR W" parenttrainpattern="/FGz/FIR/NNR A"/>
+		<trainpattern name="HHML-HSR B" parenttrainpattern="/FGz/FIR/NNR A"/>
+		<trainpattern name="H815M-HHML" parenttrainpattern="/FGz/FIR/NNR A"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/FIR/NNR A/HHML-HSR W"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/FIR/NNR A/HHML-HSR B"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FIR/NNR A/H815M-HHML"/>
+		<trainpattern name="HHML-HSR B" parenttrainpattern="/FGz/FIR/RMR K"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/FIR/RMR K/HHML-HSR B"/>
+		<trainpattern name="HRBG-HSR B" parenttrainpattern="/FGz/FIR/RMR E"/>
+		<trainpattern name="HHML-HSR B" parenttrainpattern="/FGz/FIR/RMR E"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/FIR/RMR E/HRBG-HSR B"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/FIR/RMR E/HHML-HSR B"/>
+		<trainpattern name="HHML-HSR A" parenttrainpattern="/FGz/FIR/AM "/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FIR/AM /HHML-HSR A"/>
+		<trainpattern name="FKR -" parenttrainpattern="/FGz/FR"/>
+		<trainpattern name="FKR " parenttrainpattern="/FGz/FR"/>
+		<trainpattern name="HSR W" parenttrainpattern="/FGz/FR"/>
+		<trainpattern name="HSR O" parenttrainpattern="/FGz/FR"/>
+		<trainpattern name="LMR F" parenttrainpattern="/FGz/FR"/>
+		<trainpattern name="HHML-HSR B" parenttrainpattern="/FGz/FR/FKR -"/>
+		<trainpattern name="HRBG-HSR B" parenttrainpattern="/FGz/FR/FKR -"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/FR/FKR -/HHML-HSR B"/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/FR/FKR -/HRBG-HSR B"/>
+		<trainpattern name="HHML-HSR B" parenttrainpattern="/FGz/FR/FKR "/>
+		<trainpattern name="hin" parenttrainpattern="/FGz/FR/FKR /HHML-HSR B"/>
+		<trainpattern name="HS-HSR W" parenttrainpattern="/FGz/FR/HSR W"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FR/HSR W/HS-HSR W"/>
+		<trainpattern name="H815M-HSR O" parenttrainpattern="/FGz/FR/HSR O"/>
+		<trainpattern name="HHML-HSR O" parenttrainpattern="/FGz/FR/HSR O"/>
+		<trainpattern name="HRBG-HSR O" parenttrainpattern="/FGz/FR/HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FR/HSR O/H815M-HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FR/HSR O/HHML-HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FR/HSR O/HRBG-HSR O"/>
+		<trainpattern name="HSR B-HWAM" parenttrainpattern="/FGz/FR/LMR F"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FR/LMR F/HSR B-HWAM"/>
+		<trainpattern name="HSR S" parenttrainpattern="/FGz/FZT"/>
+		<trainpattern name="HLI-HSR S" parenttrainpattern="/FGz/FZT/HSR S"/>
+		<trainpattern name="rück" parenttrainpattern="/FGz/FZT/HSR S/HLI-HSR S"/>
+		<trainpattern name="FGz" parenttrainpattern="/Bedarfszuege"/>
+		<trainpattern name="NGz" parenttrainpattern="/Bedarfszuege"/>
+		<trainpattern name="NRz" parenttrainpattern="/Bedarfszuege"/>
+		<trainpattern name="DGS" parenttrainpattern="/Bedarfszuege/FGz"/>
+		<trainpattern name="CS" parenttrainpattern="/Bedarfszuege/FGz"/>
+		<trainpattern name="IKE" parenttrainpattern="/Bedarfszuege/FGz"/>
+		<trainpattern name="FIR" parenttrainpattern="/Bedarfszuege/FGz"/>
+		<trainpattern name="CSQ" parenttrainpattern="/Bedarfszuege/FGz"/>
+		<trainpattern name="XNRW -" parenttrainpattern="/Bedarfszuege/FGz/DGS"/>
+		<trainpattern name="XPKI -" parenttrainpattern="/Bedarfszuege/FGz/DGS"/>
+		<trainpattern name="XTN -" parenttrainpattern="/Bedarfszuege/FGz/DGS"/>
+		<trainpattern name="XYDN -" parenttrainpattern="/Bedarfszuege/FGz/DGS"/>
+		<trainpattern name="HBR -" parenttrainpattern="/Bedarfszuege/FGz/DGS"/>
+		<trainpattern name="XPWE -" parenttrainpattern="/Bedarfszuege/FGz/DGS"/>
+		<trainpattern name="UVI -" parenttrainpattern="/Bedarfszuege/FGz/DGS"/>
+		<trainpattern name="AWHOS-UVI EVB H4352" parenttrainpattern="/Bedarfszuege/FGz/DGS"/>
+		<trainpattern name="LGC -" parenttrainpattern="/Bedarfszuege/FGz/DGS"/>
+		<trainpattern name="H815M-HSR A" parenttrainpattern="/Bedarfszuege/FGz/DGS/XNRW -"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/FGz/DGS/XNRW -/H815M-HSR A"/>
+		<trainpattern name="HRBG-HWAM" parenttrainpattern="/Bedarfszuege/FGz/DGS/XPKI -"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/FGz/DGS/XPKI -/HRBG-HWAM"/>
+		<trainpattern name="HSR W-HWAM" parenttrainpattern="/Bedarfszuege/FGz/DGS/XTN -"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/FGz/DGS/XTN -/HSR W-HWAM"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/Bedarfszuege/FGz/DGS/XYDN -"/>
+		<trainpattern name="hin" parenttrainpattern="/Bedarfszuege/FGz/DGS/XYDN -/HKWA-HS"/>
+		<trainpattern name="H815M-HSR A" parenttrainpattern="/Bedarfszuege/FGz/DGS/HBR -"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/FGz/DGS/HBR -/H815M-HSR A"/>
+		<trainpattern name="HSR W-HWAM" parenttrainpattern="/Bedarfszuege/FGz/DGS/XPWE -"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/FGz/DGS/XPWE -/HSR W-HWAM"/>
+		<trainpattern name="H815M-HHML" parenttrainpattern="/Bedarfszuege/FGz/DGS/UVI -"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/FGz/DGS/UVI -/H815M-HHML"/>
+		<trainpattern name="HHML-HWAM" parenttrainpattern="/Bedarfszuege/FGz/DGS/AWHOS-UVI EVB H4352"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/FGz/DGS/AWHOS-UVI EVB H4352/HHML-HWAM"/>
+		<trainpattern name="HSR W-HWAM" parenttrainpattern="/Bedarfszuege/FGz/DGS/LGC -"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/FGz/DGS/LGC -/HSR W-HWAM"/>
+		<trainpattern name="XPZM -" parenttrainpattern="/Bedarfszuege/FGz/CS"/>
+		<trainpattern name="HEVW -" parenttrainpattern="/Bedarfszuege/FGz/CS"/>
+		<trainpattern name="HF -" parenttrainpattern="/Bedarfszuege/FGz/CS"/>
+		<trainpattern name="FHRG -" parenttrainpattern="/Bedarfszuege/FGz/CS"/>
+		<trainpattern name="FNF -" parenttrainpattern="/Bedarfszuege/FGz/CS"/>
+		<trainpattern name="HLIH -" parenttrainpattern="/Bedarfszuege/FGz/CS"/>
+		<trainpattern name="HSR W-HWAM" parenttrainpattern="/Bedarfszuege/FGz/CS/XPZM -"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/FGz/CS/XPZM -/HSR W-HWAM"/>
+		<trainpattern name="H815M-HSR A" parenttrainpattern="/Bedarfszuege/FGz/CS/HEVW -"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/FGz/CS/HEVW -/H815M-HSR A"/>
+		<trainpattern name="HRBG-HWAM" parenttrainpattern="/Bedarfszuege/FGz/CS/HF -"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/FGz/CS/HF -/HRBG-HWAM"/>
+		<trainpattern name="H815M-HRBG" parenttrainpattern="/Bedarfszuege/FGz/CS/FHRG -"/>
+		<trainpattern name="HRBG-HSR W" parenttrainpattern="/Bedarfszuege/FGz/CS/FHRG -"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/FGz/CS/FHRG -/H815M-HRBG"/>
+		<trainpattern name="hin" parenttrainpattern="/Bedarfszuege/FGz/CS/FHRG -/HRBG-HSR W"/>
+		<trainpattern name="H815M-HHML" parenttrainpattern="/Bedarfszuege/FGz/CS/FNF -"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/FGz/CS/FNF -/H815M-HHML"/>
+		<trainpattern name="HLIH-HSR W" parenttrainpattern="/Bedarfszuege/FGz/CS/HLIH -"/>
+		<trainpattern name="hin" parenttrainpattern="/Bedarfszuege/FGz/CS/HLIH -/HLIH-HSR W"/>
+		<trainpattern name="RMF -" parenttrainpattern="/Bedarfszuege/FGz/IKE"/>
+		<trainpattern name="AWHOS -" parenttrainpattern="/Bedarfszuege/FGz/IKE"/>
+		<trainpattern name="HHML-HSR W" parenttrainpattern="/Bedarfszuege/FGz/IKE/RMF -"/>
+		<trainpattern name="hin" parenttrainpattern="/Bedarfszuege/FGz/IKE/RMF -/HHML-HSR W"/>
+		<trainpattern name="HHML-HWAM" parenttrainpattern="/Bedarfszuege/FGz/IKE/AWHOS -"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/FGz/IKE/AWHOS -/HHML-HWAM"/>
+		<trainpattern name="HSR S" parenttrainpattern="/Bedarfszuege/FGz/FIR"/>
+		<trainpattern name="H815M-HSR O" parenttrainpattern="/Bedarfszuege/FGz/FIR/HSR S"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/FGz/FIR/HSR S/H815M-HSR O"/>
+		<trainpattern name="HBSR -" parenttrainpattern="/Bedarfszuege/FGz/CSQ"/>
+		<trainpattern name="LSAD -" parenttrainpattern="/Bedarfszuege/FGz/CSQ"/>
+		<trainpattern name="HSR W-HWAM" parenttrainpattern="/Bedarfszuege/FGz/CSQ/HBSR -"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/FGz/CSQ/HBSR -/HSR W-HWAM"/>
+		<trainpattern name="HSR W-HWAM" parenttrainpattern="/Bedarfszuege/FGz/CSQ/LSAD -"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/FGz/CSQ/LSAD -/HSR W-HWAM"/>
+		<trainpattern name="FIR" parenttrainpattern="/Bedarfszuege/NGz"/>
+		<trainpattern name="FZ" parenttrainpattern="/Bedarfszuege/NGz"/>
+		<trainpattern name="CSQ" parenttrainpattern="/Bedarfszuege/NGz"/>
+		<trainpattern name="HSR N" parenttrainpattern="/Bedarfszuege/NGz/FIR"/>
+		<trainpattern name="HSR N-HSR W" parenttrainpattern="/Bedarfszuege/NGz/FIR/HSR N"/>
+		<trainpattern name="hin" parenttrainpattern="/Bedarfszuege/NGz/FIR/HSR N/HSR N-HSR W"/>
+		<trainpattern name="HNH -" parenttrainpattern="/Bedarfszuege/NGz/FZ"/>
+		<trainpattern name="HSR O" parenttrainpattern="/Bedarfszuege/NGz/FZ"/>
+		<trainpattern name="HNH-HSR B" parenttrainpattern="/Bedarfszuege/NGz/FZ/HNH -"/>
+		<trainpattern name="hin" parenttrainpattern="/Bedarfszuege/NGz/FZ/HNH -/HNH-HSR B"/>
+		<trainpattern name="HNH-HSR O" parenttrainpattern="/Bedarfszuege/NGz/FZ/HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/NGz/FZ/HSR O/HNH-HSR O"/>
+		<trainpattern name="HSR O" parenttrainpattern="/Bedarfszuege/NGz/CSQ"/>
+		<trainpattern name="HHML-HSR O" parenttrainpattern="/Bedarfszuege/NGz/CSQ/HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/NGz/CSQ/HSR O/HHML-HSR O"/>
+		<trainpattern name="Lr-D" parenttrainpattern="/Bedarfszuege/NRz"/>
+		<trainpattern name="HH-HHAW," parenttrainpattern="/Bedarfszuege/NRz/Lr-D"/>
+		<trainpattern name="HHAW-HH" parenttrainpattern="/Bedarfszuege/NRz/Lr-D"/>
+		<trainpattern name="HH-HHAW" parenttrainpattern="/Bedarfszuege/NRz/Lr-D/HH-HHAW,"/>
+		<trainpattern name="hin" parenttrainpattern="/Bedarfszuege/NRz/Lr-D/HH-HHAW,/HH-HHAW"/>
+		<trainpattern name="HH-HHAW" parenttrainpattern="/Bedarfszuege/NRz/Lr-D/HHAW-HH"/>
+		<trainpattern name="rück" parenttrainpattern="/Bedarfszuege/NRz/Lr-D/HHAW-HH/HH-HHAW"/>
+		<trainpattern name="DGS" parenttrainpattern="/Gz"/>
+		<trainpattern name="CSQ" parenttrainpattern="/Gz"/>
+		<trainpattern name="CT" parenttrainpattern="/Gz"/>
+		<trainpattern name="IKE" parenttrainpattern="/Gz"/>
+		<trainpattern name="FX" parenttrainpattern="/Gz"/>
+		<trainpattern name="FIR" parenttrainpattern="/Gz"/>
+		<trainpattern name="FZ" parenttrainpattern="/Gz"/>
+		<trainpattern name="FZT" parenttrainpattern="/Gz"/>
+		<trainpattern name="XBAN -" parenttrainpattern="/Gz/DGS"/>
+		<trainpattern name="NPA G" parenttrainpattern="/Gz/DGS"/>
+		<trainpattern name="H815M-HSR A" parenttrainpattern="/Gz/DGS/XBAN -"/>
+		<trainpattern name="rück" parenttrainpattern="/Gz/DGS/XBAN -/H815M-HSR A"/>
+		<trainpattern name="HHML-HSR W" parenttrainpattern="/Gz/DGS/NPA G"/>
+		<trainpattern name="hin" parenttrainpattern="/Gz/DGS/NPA G/HHML-HSR W"/>
+		<trainpattern name="LBA -" parenttrainpattern="/Gz/CSQ"/>
+		<trainpattern name="KNIV -" parenttrainpattern="/Gz/CSQ"/>
+		<trainpattern name="HLI -" parenttrainpattern="/Gz/CSQ"/>
+		<trainpattern name="HSR W-HWAM" parenttrainpattern="/Gz/CSQ/LBA -"/>
+		<trainpattern name="rück" parenttrainpattern="/Gz/CSQ/LBA -/HSR W-HWAM"/>
+		<trainpattern name="HHML-HSR A" parenttrainpattern="/Gz/CSQ/KNIV -"/>
+		<trainpattern name="rück" parenttrainpattern="/Gz/CSQ/KNIV -/HHML-HSR A"/>
+		<trainpattern name="H815M-HLI" parenttrainpattern="/Gz/CSQ/HLI -"/>
+		<trainpattern name="rück" parenttrainpattern="/Gz/CSQ/HLI -/H815M-HLI"/>
+		<trainpattern name="XNSL -" parenttrainpattern="/Gz/CT"/>
+		<trainpattern name="HKWA-HS" parenttrainpattern="/Gz/CT/XNSL -"/>
+		<trainpattern name="rück" parenttrainpattern="/Gz/CT/XNSL -/HKWA-HS"/>
+		<trainpattern name="EDRH -" parenttrainpattern="/Gz/IKE"/>
+		<trainpattern name="H815M-HRBG" parenttrainpattern="/Gz/IKE/EDRH -"/>
+		<trainpattern name="rück" parenttrainpattern="/Gz/IKE/EDRH -/H815M-HRBG"/>
+		<trainpattern name="EWAN -" parenttrainpattern="/Gz/FX"/>
+		<trainpattern name="HHML-HSR A" parenttrainpattern="/Gz/FX/EWAN -"/>
+		<trainpattern name="rück" parenttrainpattern="/Gz/FX/EWAN -/HHML-HSR A"/>
+		<trainpattern name="HSR N" parenttrainpattern="/Gz/FIR"/>
+		<trainpattern name="HSR W-" parenttrainpattern="/Gz/FIR"/>
+		<trainpattern name="HSR N-HSR W" parenttrainpattern="/Gz/FIR/HSR N"/>
+		<trainpattern name="hin" parenttrainpattern="/Gz/FIR/HSR N/HSR N-HSR W"/>
+		<trainpattern name="HSR N-HSR W" parenttrainpattern="/Gz/FIR/HSR W-"/>
+		<trainpattern name="hin" parenttrainpattern="/Gz/FIR/HSR W-/HSR N-HSR W"/>
+		<trainpattern name="HSR S" parenttrainpattern="/Gz/FZ"/>
+		<trainpattern name="HSR W" parenttrainpattern="/Gz/FZ"/>
+		<trainpattern name="HP " parenttrainpattern="/Gz/FZ"/>
+		<trainpattern name="HBDD -" parenttrainpattern="/Gz/FZ"/>
+		<trainpattern name="HSR A" parenttrainpattern="/Gz/FZ"/>
+		<trainpattern name="HLI-HSR O" parenttrainpattern="/Gz/FZ/HSR S"/>
+		<trainpattern name="HLI-HSR S" parenttrainpattern="/Gz/FZ/HSR S"/>
+		<trainpattern name="rück" parenttrainpattern="/Gz/FZ/HSR S/HLI-HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/Gz/FZ/HSR S/HLI-HSR S"/>
+		<trainpattern name="HSR A-HSR W" parenttrainpattern="/Gz/FZ/HSR W"/>
+		<trainpattern name="hin" parenttrainpattern="/Gz/FZ/HSR W/HSR A-HSR W"/>
+		<trainpattern name="HSR B-HWAM" parenttrainpattern="/Gz/FZ/HP "/>
+		<trainpattern name="HKWA-HSR B" parenttrainpattern="/Gz/FZ/HP "/>
+		<trainpattern name="rück" parenttrainpattern="/Gz/FZ/HP /HSR B-HWAM"/>
+		<trainpattern name="hin" parenttrainpattern="/Gz/FZ/HP /HKWA-HSR B"/>
+		<trainpattern name="HSR B-HWAM" parenttrainpattern="/Gz/FZ/HBDD -"/>
+		<trainpattern name="rück" parenttrainpattern="/Gz/FZ/HBDD -/HSR B-HWAM"/>
+		<trainpattern name="HSR A-HSR W" parenttrainpattern="/Gz/FZ/HSR A"/>
+		<trainpattern name="hin" parenttrainpattern="/Gz/FZ/HSR A/HSR A-HSR W"/>
+		<trainpattern name="HLI -" parenttrainpattern="/Gz/FZT"/>
+		<trainpattern name="HSR S" parenttrainpattern="/Gz/FZT"/>
+		<trainpattern name="HLI-HSR B" parenttrainpattern="/Gz/FZT/HLI -"/>
+		<trainpattern name="hin" parenttrainpattern="/Gz/FZT/HLI -/HLI-HSR B"/>
+		<trainpattern name="HLI-HSR S" parenttrainpattern="/Gz/FZT/HSR S"/>
+		<trainpattern name="rück" parenttrainpattern="/Gz/FZT/HSR S/HLI-HSR S"/>
+		<trainpattern name="Tfzf (RaS)" parenttrainpattern="/Lz"/>
+		<trainpattern name="Tfzf (RaR)" parenttrainpattern="/Lz"/>
+		<trainpattern name="DLt" parenttrainpattern="/Lz"/>
+		<trainpattern name="HBSR -" parenttrainpattern="/Lz/Tfzf (RaS)"/>
+		<trainpattern name="HSR O" parenttrainpattern="/Lz/Tfzf (RaS)"/>
+		<trainpattern name="HMI -" parenttrainpattern="/Lz/Tfzf (RaS)"/>
+		<trainpattern name="HLI -" parenttrainpattern="/Lz/Tfzf (RaS)"/>
+		<trainpattern name="HLERW -" parenttrainpattern="/Lz/Tfzf (RaS)"/>
+		<trainpattern name="HSR B-HWAM" parenttrainpattern="/Lz/Tfzf (RaS)/HBSR -"/>
+		<trainpattern name="rück" parenttrainpattern="/Lz/Tfzf (RaS)/HBSR -/HSR B-HWAM"/>
+		<trainpattern name="HHML-HSR O" parenttrainpattern="/Lz/Tfzf (RaS)/HSR O"/>
+		<trainpattern name="H815M-HSR O" parenttrainpattern="/Lz/Tfzf (RaS)/HSR O"/>
+		<trainpattern name="HLI-HSR O" parenttrainpattern="/Lz/Tfzf (RaS)/HSR O"/>
+		<trainpattern name="HLIH-HSR O" parenttrainpattern="/Lz/Tfzf (RaS)/HSR O"/>
+		<trainpattern name="HH-HSR O" parenttrainpattern="/Lz/Tfzf (RaS)/HSR O"/>
+		<trainpattern name="HHZ-HSR O" parenttrainpattern="/Lz/Tfzf (RaS)/HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/Lz/Tfzf (RaS)/HSR O/HHML-HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/Lz/Tfzf (RaS)/HSR O/H815M-HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/Lz/Tfzf (RaS)/HSR O/HLI-HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/Lz/Tfzf (RaS)/HSR O/HLIH-HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/Lz/Tfzf (RaS)/HSR O/HH-HSR O"/>
+		<trainpattern name="rück" parenttrainpattern="/Lz/Tfzf (RaS)/HSR O/HHZ-HSR O"/>
+		<trainpattern name="HLIH-HSR B" parenttrainpattern="/Lz/Tfzf (RaS)/HMI -"/>
+		<trainpattern name="hin" parenttrainpattern="/Lz/Tfzf (RaS)/HMI -/HLIH-HSR B"/>
+		<trainpattern name="HLI-HSR B" parenttrainpattern="/Lz/Tfzf (RaS)/HLI -"/>
+		<trainpattern name="hin" parenttrainpattern="/Lz/Tfzf (RaS)/HLI -/HLI-HSR B"/>
+		<trainpattern name="HKWA-HSR B" parenttrainpattern="/Lz/Tfzf (RaS)/HLERW -"/>
+		<trainpattern name="hin" parenttrainpattern="/Lz/Tfzf (RaS)/HLERW -/HKWA-HSR B"/>
+		<trainpattern name="HHZ-HNH, aus" parenttrainpattern="/Lz/Tfzf (RaR)"/>
+		<trainpattern name="HLI -" parenttrainpattern="/Lz/Tfzf (RaR)"/>
+		<trainpattern name="HLI H" parenttrainpattern="/Lz/Tfzf (RaR)"/>
+		<trainpattern name="HSR B" parenttrainpattern="/Lz/Tfzf (RaR)"/>
+		<trainpattern name="HHZ-HNH" parenttrainpattern="/Lz/Tfzf (RaR)/HHZ-HNH, aus"/>
+		<trainpattern name="hin" parenttrainpattern="/Lz/Tfzf (RaR)/HHZ-HNH, aus/HHZ-HNH"/>
+		<trainpattern name="HLI-HLIH" parenttrainpattern="/Lz/Tfzf (RaR)/HLI -"/>
+		<trainpattern name="H815M-HLI" parenttrainpattern="/Lz/Tfzf (RaR)/HLI -"/>
+		<trainpattern name="HHML-HLI" parenttrainpattern="/Lz/Tfzf (RaR)/HLI -"/>
+		<trainpattern name="hin" parenttrainpattern="/Lz/Tfzf (RaR)/HLI -/HLI-HLIH"/>
+		<trainpattern name="rück" parenttrainpattern="/Lz/Tfzf (RaR)/HLI -/H815M-HLI"/>
+		<trainpattern name="rück" parenttrainpattern="/Lz/Tfzf (RaR)/HLI -/HHML-HLI"/>
+		<trainpattern name="HLI-HLIH" parenttrainpattern="/Lz/Tfzf (RaR)/HLI H"/>
+		<trainpattern name="rück" parenttrainpattern="/Lz/Tfzf (RaR)/HLI H/HLI-HLIH"/>
+		<trainpattern name="HLI-HSR B" parenttrainpattern="/Lz/Tfzf (RaR)/HSR B"/>
+		<trainpattern name="rück" parenttrainpattern="/Lz/Tfzf (RaR)/HSR B/HLI-HSR B"/>
+		<trainpattern name="Ohne Linie" parenttrainpattern="/Lz/DLt"/>
+		<trainpattern name="HHAW-HS" parenttrainpattern="/Lz/DLt/Ohne Linie"/>
+		<trainpattern name="HH-HVIN" parenttrainpattern="/Lz/DLt/Ohne Linie"/>
+		<trainpattern name="rück" parenttrainpattern="/Lz/DLt/Ohne Linie/HHAW-HS"/>
+		<trainpattern name="hin" parenttrainpattern="/Lz/DLt/Ohne Linie/HHAW-HS"/>
+		<trainpattern name="rück" parenttrainpattern="/Lz/DLt/Ohne Linie/HH-HVIN"/>
+		<trainpattern name="hin" parenttrainpattern="/Lz/DLt/Ohne Linie/HH-HVIN"/>
+	</trainpatterns>
+</railsys>

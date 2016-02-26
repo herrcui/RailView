@@ -1,0 +1,78 @@
+? Stromart: ohne Stromart
+? Rutkommentar: EuroRunner, DE, 2MW, 200kW Heizl., 160km/h
+? Eisenbahnunternehmen: EVU
+? TriebfahrzeugBaureiheTyp: N
+? Triebfahrzeugart: Brennkraftlokomotiven
+? Achslast: 20 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: ja
+? Wendezugfähigkeit: ja
+? Druckertüchtigt: ja
+? Neigungstechnik: keine
+? Bremsgewicht: 65 t in Bremsstellung druckluftbediente Güterzugbremse (bel. Gwg.)
+? Bremsgewicht: 72 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+? Bremsgewicht: 120 t in Bremsstellung druckluftbediente Hochleistungsbremse  mit höherem Bremsgewicht als <R>-(R)
+Vmax [km/h]          160.000
+TraktionsTyp Diesel
+Loklaenge [m]         19.000
+Lokmasse [t]          80.000
+Reibmasse [t]         80.000
+Haftreibungswert       1.000
+Rholok (-)            10.000
+Rutkommentar        EuroRunner, DE, 2MW, 200kW Heizl., 160km/h
+ST      ge     0.000 235.000    4.740 235.000    0.000   0.000
+ST      ge     4.740 235.000    9.480 235.000    0.000   0.000
+ST      ge     9.480 235.000   14.220 235.000    0.000   0.000
+ST      ge    14.220 235.000   18.960 235.000    0.000   0.000
+ST      ge    18.960 235.000   23.700 235.000    0.000   0.000
+ST      ge    23.700 235.435   24.760 225.450    0.000   0.000
+ST      ge    24.760 225.450   25.820 216.155    0.000   0.000
+ST      ge    25.820 216.155   26.880 207.551    0.000   0.000
+ST      ge    26.880 207.551   27.940 199.637    0.000   0.000
+ST      ge    27.940 199.637   29.000 192.414    0.000   0.000
+ST      ge    29.000 192.414   30.400 183.642    0.000   0.000
+ST      ge    30.400 183.642   31.800 175.514    0.000   0.000
+ST      ge    31.800 175.514   33.200 168.032    0.000   0.000
+ST      ge    33.200 168.032   34.600 161.193    0.000   0.000
+ST      ge    34.600 161.193   36.000 155.000    0.000   0.000
+ST      ge    36.000 155.000   37.800 147.698    0.000   0.000
+ST      ge    37.800 147.698   39.600 140.947    0.000   0.000
+ST      ge    39.600 140.947   41.400 134.747    0.000   0.000
+ST      ge    41.400 134.747   43.200 129.098    0.000   0.000
+ST      ge    43.200 129.098   45.000 124.000    0.000   0.000
+ST      ge    45.000 124.000   47.600 117.319    0.000   0.000
+ST      ge    47.600 117.319   50.200 111.199    0.000   0.000
+ST      ge    50.200 111.199   52.800 105.640    0.000   0.000
+ST      ge    52.800 105.640   55.400 100.643    0.000   0.000
+ST      ge    55.400 100.643   58.000  96.207    0.000   0.000
+ST      ge    58.000  96.207   60.400  92.414    0.000   0.000
+ST      ge    60.400  92.414   62.800  88.868    0.000   0.000
+ST      ge    62.800  88.868   65.200  85.569    0.000   0.000
+ST      ge    65.200  85.569   67.600  82.518    0.000   0.000
+ST      ge    67.600  82.518   70.000  79.714    0.000   0.000
+ST      ge    70.000  79.714   74.000  75.463    0.000   0.000
+ST      ge    74.000  75.463   78.000  71.566    0.000   0.000
+ST      ge    78.000  71.566   82.000  68.023    0.000   0.000
+ST      ge    82.000  68.023   86.000  64.834    0.000   0.000
+ST      ge    86.000  64.834   90.000  62.000    0.000   0.000
+ST      ge    90.000  62.000   96.000  58.191    0.000   0.000
+ST      ge    96.000  58.191  102.000  54.737    0.000   0.000
+ST      ge   102.000  54.737  108.000  51.637    0.000   0.000
+ST      ge   108.000  51.637  114.000  48.891    0.000   0.000
+ST      ge   114.000  48.891  120.000  46.500    0.000   0.000
+ST      ge   120.000  46.500  128.000  43.644    0.000   0.000
+ST      ge   128.000  43.644  136.000  41.053    0.000   0.000
+ST      ge   136.000  41.053  144.000  38.728    0.000   0.000
+ST      ge   144.000  38.728  152.000  36.669    0.000   0.000
+ST      ge   152.000  36.669  160.000  34.875    0.000   0.000
+LW  vplus15        1035.936035      15.735240       0.246231       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

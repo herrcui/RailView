@@ -1,0 +1,47 @@
+? Stromart: ohne Stromart
+? Rutkommentar: - nur für Gz - ; MAXIMA 40 CC (Voith), DH
+? Eisenbahnunternehmen: EVU
+? TriebfahrzeugBaureiheTyp: N
+? Triebfahrzeugart: Brennkraftlokomotiven
+? Achslast: 21 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 117 t in Bremsstellung druckluftbediente Güterzugbremse (bel. Gwg.)
+? Bremsgewicht: 142 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          120.000
+TraktionsTyp Diesel
+Loklaenge [m]         23.000
+Lokmasse [t]         126.000
+Reibmasse [t]        126.000
+Haftreibungswert       1.000
+Rholok (-)             6.980
+Rutkommentar        - nur für Gz - ; MAXIMA 40 CC (Voith), DH
+ST      ge     0.000 408.000    5.860 384.671    0.000   0.000
+ST      ge     5.860 384.671   11.720 364.707    0.000   0.000
+ST      ge    11.720 364.707   17.580 348.108    0.000   0.000
+ST      ge    17.580 348.108   23.440 334.873    0.000   0.000
+ST      ge    23.440 334.873   29.300 325.003    0.000   0.000
+ST      ge    29.300 325.002   35.440 279.763    0.000   0.000
+ST      ge    35.440 279.763   41.580 241.144    0.000   0.000
+ST      ge    41.580 241.144   47.720 209.144    0.000   0.000
+ST      ge    47.720 209.144   53.860 183.765    0.000   0.000
+ST      ge    53.860 183.765   60.000 165.005    0.000   0.000
+ST      ge    60.000 165.000   72.000 138.640    0.000   0.000
+ST      ge    72.000 138.640   84.000 116.760    0.000   0.000
+ST      ge    84.000 116.760   96.000  99.360    0.000   0.000
+ST      ge    96.000  99.360  108.000  86.440    0.000   0.000
+ST      ge   108.000  86.440  120.000  78.000    0.000   0.000
+LW  vplus15        4388.013184       8.998517       0.300186       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

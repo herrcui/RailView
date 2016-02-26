@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<line lineID="1734" name="Hannover Hbf - Lehrte West" trafficRouting="on_the_right" type="local" dependentLines="hh hkwa">
+	<version major="1" minor="2" patchlevel="0" comment=""/>
+	<stations>
+		<station stationID="HKL" name="Han-Kleefeld" xNet="3.4931e+06" yNet="1.00959e+07" xWGS84="0" yWGS84="0"/>
+	</stations>
+	<nodes>
+		<node nodeID="55781" description="Betriebsstellengrenze Partner: HKL Strecke: 1734 Gleis: 0 Id:55781 Str:1734 Bild (0.0000 / 0.0000)" kilometre="4.006" x="0" y="0" xNet="3497931.7" yNet="10092888" xWGS84="0" yWGS84="0"/>
+		<node nodeID="55782" name="Vf166" description="VorsignalF FstrBildezeit: 9s Id:55782 Str:1734" kilometre="4.014" x="50.538359" y="0" xNet="3497977.1" yNet="10092866" xWGS84="50.538359" yWGS84="0" referenceNode="55783" presignal="true" with1000HzMagnet="true"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="55783" name="06650" description="HauptsignalF DwegAuflösezeit: 3s Id:55783 Str:1734" kilometre="4.014" x="176.88426" y="0" xNet="3498090.6" yNet="10092811" xWGS84="0" yWGS84="0" referenceNode="55784"/>
+		<node nodeID="55784" description="Neigung S: -3.17 F: 2.00 Id:55784 Str:1734" kilometre="4.019" x="208.47073" y="0" xNet="3498119" yNet="10092797" xWGS84="208.47073" yWGS84="0"/>
+		<node nodeID="55785" name="650B51" description="Gleisbezeichnung  Id:55785 Str:1734" kilometre="4.019" x="334.81663" y="0" xNet="3498300" yNet="10092700" xWGS84="334.81663" yWGS84="0"/>
+		<node nodeID="55786" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:55786 Str:1734" kilometre="4.128" x="1023.4018" y="0" xNet="3498872" yNet="10092393" xWGS84="1023.4018" yWGS84="0"/>
+		<node nodeID="55787" description="FstrZugschlussstelleF FstrAuflösezeit: 3s Id:55787 Str:1734" kilometre="4.276" x="1958.3614" y="0" xNet="3499213" yNet="10092204" xWGS84="1958.3614" yWGS84="0" referenceNode="55788" releaseContact="true"/>
+		<node nodeID="55788" description="Betriebsstellengrenze Partner: HKWA Strecke: 1734 Gleis: 0 Id:55788 Str:1734 Bild (20.7839 / 0.0000)" kilometre="4.295" x="2078.39" y="0" xNet="3499675" yNet="10091824" xWGS84="2078.39" yWGS84="0"/>
+		<node nodeID="93018" name="." description="KmSprungAnfang  Id:93018 Str:1734 Bild (23.2490 / 0.0000)" kilometre="3.960" x="-215.51" y="0" xNet="3494246.2" yNet="10095922" xWGS84="2324.9" yWGS84="0"/>
+		<node nodeID="93020" description="Bildpunkt  Id:93020 Str:1734 Bild (24.2490 / 0.0000)" kilometre="4.006" x="-115.51" y="0" xNet="3494346.2" yNet="10095922" xWGS84="2424.9" yWGS84="0"/>
+		<node nodeID="93022" description="Betriebsstellengrenze Partner: HH  P Strecke: 1734 Gleis: 0 Id:93022 Str:1734 Bild (0.5761 / 0.0000)" kilometre="3.000" x="-2482.7989" y="0" xNet="3491979" yNet="10095922" xWGS84="57.6111" yWGS84="0"/>
+		<track trackID="B-650" stationID="HKL" length="212" type="stopBoardPass" nodeID="93023" name="650A" description="HalteplatzRzRechtsF Länge: 212m Id:93023 Str:1734" kilometre="3.458" x="-1454.662" y="0" xNet="3493007.1" yNet="10095922" xWGS84="0" yWGS84="0" referenceNode="93024">
+			<platform startPos="-5" endPos="-212" width="60" left="false" open="true"/>
+		</track>
+		<track trackID="G-650" stationID="HKL" type="timingPoint" nodeID="93024" name="650A" description="Fahrzeitmesspunkt  Id:93024 Str:1734" kilometre="3.500" x="-1360.3787" y="0" xNet="3493101.4" yNet="10095922" xWGS84="0" yWGS84="0" referenceNode="93025"/>
+		<track trackID="A-650" stationID="HKL" length="212" type="stopBoardPass" nodeID="93025" name="650A" description="HalteplatzRzLinksS Länge: 212m Id:93025 Str:1734" kilometre="3.669" x="-981.00061" y="0" xNet="3493480.8" yNet="10095922" xWGS84="0" yWGS84="0" referenceNode="93024">
+			<platform startPos="-5" endPos="-212" width="60" left="true" open="true"/>
+		</track>
+		<node nodeID="93026" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:93026 Str:1734" kilometre="3.814" x="-655.49874" y="0" xNet="3493806.3" yNet="10095922" xWGS84="1884.9113" yWGS84="0"/>
+		<node nodeID="93027" description="Neigung S: -2.00 F: 0.00 Id:93027 Str:1734" kilometre="3.869" x="-532.03251" y="0" xNet="3493929.7" yNet="10095922" xWGS84="2008.3775" yWGS84="0"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="93028" name="06A651" description="HauptsignalS DwegAuflösezeit: 3s Id:93028 Str:1734" kilometre="3.928" x="-399.58692" y="0" xNet="3494062.2" yNet="10095922" xWGS84="0" yWGS84="0" referenceNode="93027"/>
+		<node nodeID="93029" name="Vn" description="VorsignalS FstrBildezeit: 9s Id:93029 Str:1734" kilometre="3.928" x="-354.69011" y="0" xNet="3494107.1" yNet="10095922" xWGS84="2185.7199" yWGS84="0" referenceNode="93028" presignal="true" with1000HzMagnet="true"/>
+		<speedIndicator nodeID="93030" description="GeschwZulaessigS V: 100 Wirkungsort: hier Zugbeeinflussung: Alle Id:93030 Str:1734" kilometre="3.928" x="-309.7933" y="0" xNet="3494152" yNet="10095922" xWGS84="0" yWGS84="0" referenceNode="93029"/>
+		<kilometreInconsistency newKilometre="3.95" nodeID="93019" description="KmSprungEnde  Id:93019 Str:1734" kilometre="3.960" x="-260.40681" y="0" xNet="3494201.3" yNet="10095922" xWGS84="0" yWGS84="0" referenceNode="93018"/>
+		<stationBorder exitType="regular" stationID="HKL" lineID="1734" trackNumber="1" nodeID="93031" description="Betriebsstellengrenze Partner: HH  P Strecke: 1734 Gleis: 0 Id:93022 Str:1734 Bild (0.5761 / 0.0000)" kilometre="3.458" x="-1968.7304" y="0" xNet="3492493" yNet="10095922" xWGS84="0" yWGS84="0" referenceNode="93023"/>
+		<stationBorder exitType="regular" stationID="HKL" lineID="1734" trackNumber="1" nodeID="93032" description="Betriebsstellengrenze Partner: H650K Strecke: 1734 Gleis: 0 Id:93021 Str:1734 Bild (25.4041 / 0.0000)" kilometre="3.960" x="-165.51" y="0" xNet="3494296.2" yNet="10095922" xWGS84="2324.9" yWGS84="0" referenceNode="93018"/>
+		<signal type="entry" interlockingMachine="sppAuto" nodeID="93021" description="Betriebsstellengrenze Partner: H650K Strecke: 1734 Gleis: 0 Id:93021 Str:1734 Bild (25.4041 / 0.0000)" kilometre="4.006" x="0" y="0" xNet="3494461.8" yNet="10095922" xWGS84="2540.41" yWGS84="0" referenceNode="93020"/>
+	</nodes>
+	<links>
+		<link source="55781" target="55782" length="8" gradient="-2" vmax="100" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="55782" target="55783" gradient="-2" vmax="100" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="55783" target="55784" length="5" gradient="-2" vmax="100" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="55784" target="55785" gradient="-3.17" vmax="100" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="55785" target="55786" length="109" gradient="-3.17" vmax="100" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="55786" target="55787" length="148" gradient="-3.17" vmax="100" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="55787" target="55788" length="19" gradient="-3.17" vmax="100" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="93032" target="93020" length="46" gradient="-2" vmax="100" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="93020" target="93021" gradient="-2" vmax="100" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="93022" target="93031" length="458" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="93023" target="93024" length="42" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="93024" target="93025" length="169" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="93025" target="93026" length="145" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="93026" target="93027" length="55" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="93027" target="93028" length="59" gradient="-2" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="93028" target="93029" gradient="-2" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="93029" target="93030" gradient="-2" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="93030" target="93019" length="22" gradient="-2" vmax="100" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="93019" target="93018" gradient="-2" vmax="100" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="93021" target="55781" gradient="-2" vmax="100" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="55788" target="93549.hkwa" gradient="-3.17" vmax="100" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="84127.hh" target="93022" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="93031" target="93023" vmax="120" vmaxr="120" bidirectional="true" electrified="true"/>
+		<link source="93018" target="93032" gradient="-2" vmax="100" vmaxr="120" bidirectional="true" electrified="true"/>
+	</links>
+	<dependentLinks/>
+	<blockSections>
+		<blockSection presignal="84122.hh" nodes="83973.hh 83974.hh 83975.hh 83976.hh 83977.hh 84075.hh 83929.hh 83927.hh 83930.hh 83931.hh 83932.hh 83934.hh 84053.hh 84054.hh 84055.hh 83996.hh 83994.hh 83942.hh 83997.hh 84095.hh 84096.hh 84097.hh 84118.hh 84119.hh 84120.hh 84121.hh 84258.hh 84122.hh 84123.hh 84124.hh 84125.hh 84126.hh 84127.hh 93022 93031 93023 93024 93025 93026 93027 93028" speedIndicators="83975.hh 84119.hh"/>
+		<blockSection presignal="84122.hh" nodes="84039.hh 84040.hh 84041.hh 84042.hh 83992.hh 84072.hh 84073.hh 83977.hh 84075.hh 83929.hh 83927.hh 83930.hh 83931.hh 83932.hh 83934.hh 84053.hh 84054.hh 84055.hh 83996.hh 83994.hh 83942.hh 83997.hh 84095.hh 84096.hh 84097.hh 84118.hh 84119.hh 84120.hh 84121.hh 84258.hh 84122.hh 84123.hh 84124.hh 84125.hh 84126.hh 84127.hh 93022 93031 93023 93024 93025 93026 93027 93028" speedIndicators="84041.hh 84119.hh"/>
+		<blockSection presignal="84122.hh" nodes="84138.hh 84139.hh 84140.hh 84141.hh 84154.hh 83928.hh 83927.hh 83930.hh 83931.hh 83932.hh 83934.hh 84053.hh 84054.hh 84055.hh 83996.hh 83994.hh 83942.hh 83997.hh 84095.hh 84096.hh 84097.hh 84118.hh 84119.hh 84120.hh 84121.hh 84258.hh 84122.hh 84123.hh 84124.hh 84125.hh 84126.hh 84127.hh 93022 93031 93023 93024 93025 93026 93027 93028" speedIndicators="84119.hh"/>
+		<blockSection presignal="84122.hh" nodes="84188.hh 84189.hh 84190.hh 84117.hh 84097.hh 84118.hh 84119.hh 84120.hh 84121.hh 84258.hh 84122.hh 84123.hh 84124.hh 84125.hh 84126.hh 84127.hh 93022 93031 93023 93024 93025 93026 93027 93028" speedIndicators="84119.hh"/>
+		<blockSection presignal="84122.hh" nodes="84198.hh 84199.hh 84151.hh 84162.hh 84163.hh 84164.hh 84165.hh 83995.hh 83994.hh 83942.hh 83997.hh 84095.hh 84096.hh 84097.hh 84118.hh 84119.hh 84120.hh 84121.hh 84258.hh 84122.hh 84123.hh 84124.hh 84125.hh 84126.hh 84127.hh 93022 93031 93023 93024 93025 93026 93027 93028" speedIndicators="84119.hh"/>
+		<blockSection presignal="93029" nodes="93028 93029 93030 93019 93018 93032 93020 93021 55781 55782 55783 55784 55785 55786 55787 55788 93549.hkwa 93550.hkwa 93684.hkwa 93551.hkwa 93553.hkwa 93636.hkwa 93637.hkwa 93638.hkwa 93639.hkwa 93640.hkwa 93641.hkwa 93642.hkwa 93643.hkwa 93644.hkwa 93645.hkwa 93646.hkwa 93647.hkwa 93648.hkwa 93649.hkwa" speedIndicators="93030"/>
+		<blockSection nodes="93021 93020 93032 93018 93019 93030 93029 93028 93027 93026 93025 93024 93023 93031 93022 84127.hh 84126.hh 84125.hh"/>
+		<blockSection presignal="55782" nodes="55783 55782 55781 93021 93020 93032 93018 93019 93030 93029 93028 93027 93026 93025 93024 93023 93031 93022 84127.hh 84126.hh 84125.hh"/>
+		<blockSection presignal="93571.hkwa" nodes="93572.hkwa 93571.hkwa 93570.hkwa 93569.hkwa 93568.hkwa 93567.hkwa 93552.hkwa 93551.hkwa 93684.hkwa 93550.hkwa 93549.hkwa 55788 55787 55786 55785 55784 55783" speedIndicators="93550.hkwa 93570.hkwa"/>
+	</blockSections>
+	<slipDistances>
+		<slipDistance signal="55783" name="29.8.55781.1734.0" publicName="1-1000" description="06650" complete="true" warnerroute="false" nodes="55783 55782 55781"/>
+		<slipDistance signal="93028" name="39.68.93021.1734.0" publicName="1-1000" description="06A651" complete="true" warnerroute="false" nodes="93028 93029 93030 93019 93018 93032 93020 93021"/>
+	</slipDistances>
+	<approachControlRoutes/>
+	<stationRoutes>
+		<stationRoute stationID="HKL" name="HH  P-HKWA" description="HH  P-HKWA" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="93031 93023 93024 93025 93026 93027 93028 93029 93030 93019 93018 93032"/>
+		<stationRoute stationID="HKL" name="HKWA-HH  P" description="HKWA-HH  P" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="93032 93018 93019 93030 93029 93028 93027 93026 93025 93024 93023 93031"/>
+	</stationRoutes>
+	<evzg/>
+	<evzg-katalog/>
+</line>

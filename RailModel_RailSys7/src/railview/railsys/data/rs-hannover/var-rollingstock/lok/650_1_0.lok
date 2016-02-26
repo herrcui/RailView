@@ -1,0 +1,51 @@
+? Stromart: ohne Stromart
+? Rutkommentar: RS 1  RAB  514kW
+? Eisenbahnunternehmen: DB
+? TriebfahrzeugBaureiheTyp: D
+? Triebfahrzeugart: Brennkrafttriebwagen(ohne Schienenomnibusse)(VT)
+? Achslast: 0 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: ja
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 0 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          120.000
+TraktionsTyp Diesel
+Loklaenge [m]         25.500
+Lokmasse [t]          47.000
+Reibmasse [t]         47.000
+Haftreibungswert       1.000
+Rholok (-)             6.000
+Rutkommentar        RS 1  RAB  514kW
+ST      ge     0.000  99.964    7.180  79.649    0.000   0.000
+ST      ge     7.180  79.649   14.360  62.794    0.000   0.000
+ST      ge    14.360  62.794   21.540  49.399    0.000   0.000
+ST      ge    21.540  49.399   28.720  39.463    0.000   0.000
+ST      ge    28.720  39.463   35.900  32.987    0.000   0.000
+ST      ge    35.900  26.094   41.140  26.028    0.000   0.000
+ST      ge    41.140  26.028   46.380  25.644    0.000   0.000
+ST      ge    46.380  25.644   51.620  24.944    0.000   0.000
+ST      ge    51.620  24.944   56.860  23.928    0.000   0.000
+ST      ge    56.860  23.928   62.100  22.595    0.000   0.000
+ST      ge    62.100  19.194   66.480  18.734    0.000   0.000
+ST      ge    66.480  18.734   70.860  18.274    0.000   0.000
+ST      ge    70.860  18.274   75.240  17.814    0.000   0.000
+ST      ge    75.240  17.814   79.620  17.355    0.000   0.000
+ST      ge    79.620  17.355   84.000  16.895    0.000   0.000
+ST      ge    84.000  13.700   91.200  13.646    0.000   0.000
+ST      ge    91.200  13.646   98.400  13.460    0.000   0.000
+ST      ge    98.400  13.460  105.600  13.140    0.000   0.000
+ST      ge   105.600  13.140  112.800  12.688    0.000   0.000
+ST      ge   112.800  12.688  120.000  12.102    0.000   0.000
+LW  vplus15         991.300476      10.138929       0.312939       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

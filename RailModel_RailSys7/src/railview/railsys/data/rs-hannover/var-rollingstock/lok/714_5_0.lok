@@ -1,0 +1,56 @@
+? Stromart: ohne Stromart
+? Rutkommentar: Rettungszug Fulda
+? Eisenbahnunternehmen: DB
+? TriebfahrzeugBaureiheTyp: D
+? Triebfahrzeugart: Schienenomnibusse und Bahndiensttriebfahrzeuge
+? Achslast: 0 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: nein
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 0 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          100.000
+TraktionsTyp Diesel
+Loklaenge [m]        188.000
+Lokmasse [t]         497.000
+Reibmasse [t]        497.000
+Haftreibungswert       1.000
+Rholok (-)             6.140
+Rutkommentar        Rettungszug Fulda
+ST      ge     0.000 309.010    1.500 306.775    0.000   0.000
+ST      ge     1.500 306.775    3.000 304.558    0.000   0.000
+ST      ge     3.000 304.558    4.500 302.361    0.000   0.000
+ST      ge     4.500 302.361    6.000 300.182    0.000   0.000
+ST      ge     6.000 300.182    7.500 298.022    0.000   0.000
+ST      ge     7.500 298.023   14.000 254.637    0.000   0.000
+ST      ge    14.000 254.637   20.500 215.506    0.000   0.000
+ST      ge    20.500 215.506   27.000 180.630    0.000   0.000
+ST      ge    27.000 180.630   33.500 150.008    0.000   0.000
+ST      ge    33.500 150.008   40.000 123.641    0.000   0.000
+ST      ge    40.000 123.644   44.740 112.238    0.000   0.000
+ST      ge    44.740 112.238   49.480 102.096    0.000   0.000
+ST      ge    49.480 102.096   54.220  93.220    0.000   0.000
+ST      ge    54.220  93.220   58.960  85.609    0.000   0.000
+ST      ge    58.960  85.609   63.700  79.264    0.000   0.000
+ST      ge    63.700  79.265   70.740  73.042    0.000   0.000
+ST      ge    70.740  73.042   77.780  67.067    0.000   0.000
+ST      ge    77.780  67.067   84.820  61.338    0.000   0.000
+ST      ge    84.820  61.338   91.860  55.856    0.000   0.000
+ST      ge    91.860  55.856   98.900  50.621    0.000   0.000
+ST      ge    98.900  53.750   99.120  53.750    0.000   0.000
+ST      ge    99.120  53.750   99.340  53.750    0.000   0.000
+ST      ge    99.340  53.750   99.560  53.750    0.000   0.000
+ST      ge    99.560  53.750   99.780  53.750    0.000   0.000
+ST      ge    99.780  53.750  100.000  53.750    0.000   0.000
+LW  vplus15        7410.866211      64.162498       2.138580       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

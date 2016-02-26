@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<railsys>
+	<version major="1" minor="2" patchlevel="0" comment="Erzeugt von RailSys\Simu/7.6.12 am Mo 22. Okt 10:45:24 2012"/>
+	<timetable>
+		<train number="491" class="FRz" pattern="/FRz/EN/ALA -/HHML-HSR W/rück" name="EN/491/600/mu + EN/491/601/mu" description="491/1" comment="ALA-XAWW + ALA - XAWW" typeNumber="11" line="ALA -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HSR W" trackID="G-25" bstfahrweg="HGUE-005-HS" departure="22:16:27" regularRunningTime="64" requestedDeparture="22:16:27" requestedTrackID="G-25" requestedBstFahrweg="HGUE-005-HS" type="pass" trainTypeNumber="11" lineID="7601" timingPoint="true" departureFix="true" zuggattung="EN 21.9"/>
+				<entry stationID="HS" trackID="G-4" bstfahrweg="HSR W(7601)-4-HH(1700)" departure="22:17:31" regularRunningTime="165" requestedDeparture="22:17:31" requestedTrackID="G-4" requestedBstFahrweg="HSR W(7601)-4-HH(1700)" type="pass" trainTypeNumber="11" timingPoint="true" zuggattung="EN 21.9"/>
+				<entry stationID="HHML" stationName="Han Mess/Laatzen" trackID="G-14" bstfahrweg="HWU(1733-1)-714-HRTN" departure="22:32:24" RTMargin2="0" requestedDeparture="22:32:24" requestedTrackID="G-14" requestedBstFahrweg="HWU(1733-1)-714-HRTN" type="end" lineID="1733" timingPoint="true" zuggattung="EN 21.9"/>
+			</timetableentries>
+		</train>
+	</timetable>
+</railsys>

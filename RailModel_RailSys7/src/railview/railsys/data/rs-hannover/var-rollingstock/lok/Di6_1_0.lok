@@ -1,0 +1,74 @@
+? Stromart: ohne Stromart
+? Rutkommentar: NSB Di6 (DE 26) Lokleerfahrt
+? Eisenbahnunternehmen: NSB
+? TriebfahrzeugBaureiheTyp: S
+? Triebfahrzeugart: Brennkraftlokomotiven
+? Achslast: 20 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 85 t in Bremsstellung druckluftbediente Güterzugbremse (bel. Gwg.)
+? Bremsgewicht: 135 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+? Bremsgewicht: 202 t in Bremsstellung druckluftbediente Hochleistungsbremse mit elektrischer Zusatzbremse
+? Bremsgewicht: 161 t in Bremsstellung druckluftbediente Hochleistungsbremse  mit höherem Bremsgewicht als <R>-(R)
+Vmax [km/h]          160.000
+TraktionsTyp Diesel
+Loklaenge [m]         21.000
+Lokmasse [t]         122.000
+Reibmasse [t]        122.000
+Haftreibungswert       1.000
+Rholok (-)            12.500
+Rutkommentar        NSB Di6 (DE 26) Lokleerfahrt
+ST      ge     0.000 400.137    4.000 394.135    0.000   0.000
+ST      ge     4.000 394.135    8.000 388.133    0.000   0.000
+ST      ge     8.000 388.133   12.000 382.130    0.000   0.000
+ST      ge    12.000 382.130   16.000 376.128    0.000   0.000
+ST      ge    16.000 376.128   20.000 370.126    0.000   0.000
+ST      ge    20.000 370.126   24.000 326.151    0.000   0.000
+ST      ge    24.000 326.151   28.000 287.458    0.000   0.000
+ST      ge    28.000 287.458   32.000 254.047    0.000   0.000
+ST      ge    32.000 254.047   36.000 225.917    0.000   0.000
+ST      ge    36.000 225.917   40.000 203.069    0.000   0.000
+ST      ge    40.000 203.069   44.000 184.983    0.000   0.000
+ST      ge    44.000 184.983   48.000 169.138    0.000   0.000
+ST      ge    48.000 169.138   52.000 155.533    0.000   0.000
+ST      ge    52.000 155.533   56.000 144.169    0.000   0.000
+ST      ge    56.000 144.169   60.000 135.046    0.000   0.000
+ST      ge    60.000 135.046   64.000 126.963    0.000   0.000
+ST      ge    64.000 126.963   68.000 119.521    0.000   0.000
+ST      ge    68.000 119.521   72.000 112.719    0.000   0.000
+ST      ge    72.000 112.719   76.000 106.556    0.000   0.000
+ST      ge    76.000 106.556   80.000 101.035    0.000   0.000
+ST      ge    80.000 101.035   84.000  96.393    0.000   0.000
+ST      ge    84.000  96.393   88.000  92.071    0.000   0.000
+ST      ge    88.000  92.071   92.000  88.070    0.000   0.000
+ST      ge    92.000  88.070   96.000  84.389    0.000   0.000
+ST      ge    96.000  84.389  100.000  81.028    0.000   0.000
+ST      ge   100.000  81.028  104.000  78.107    0.000   0.000
+ST      ge   104.000  78.107  108.000  75.346    0.000   0.000
+ST      ge   108.000  75.346  112.000  72.745    0.000   0.000
+ST      ge   112.000  72.745  116.000  70.304    0.000   0.000
+ST      ge   116.000  70.304  120.000  68.023    0.000   0.000
+ST      ge   120.000  68.023  124.000  65.382    0.000   0.000
+ST      ge   124.000  65.382  128.000  63.062    0.000   0.000
+ST      ge   128.000  63.062  132.000  61.061    0.000   0.000
+ST      ge   132.000  61.061  136.000  59.380    0.000   0.000
+ST      ge   136.000  59.380  140.000  58.020    0.000   0.000
+ST      ge   140.000  58.020  144.000  56.299    0.000   0.000
+ST      ge   144.000  56.299  148.000  54.739    0.000   0.000
+ST      ge   148.000  54.739  152.000  53.338    0.000   0.000
+ST      ge   152.000  53.338  156.000  52.098    0.000   0.000
+ST      ge   156.000  52.098  160.000  51.018    0.000   0.000
+LW  vplus15        1448.152222      43.336853       0.609201       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

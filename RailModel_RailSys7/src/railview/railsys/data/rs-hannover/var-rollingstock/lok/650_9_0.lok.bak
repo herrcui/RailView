@@ -1,0 +1,71 @@
+? Stromart: ohne Stromart
+? Rutkommentar: Regio Shuttle, RS 1.3-120-101 Sitzpl, 1tlg, 2x265kW
+? Eisenbahnunternehmen: DB
+? TriebfahrzeugBaureiheTyp: D
+? Triebfahrzeugart: Brennkrafttriebwagen(ohne Schienenomnibusse)(VT)
+? Achslast: 14 t
+? Ausrüstung mit automatischer Kupplung: ja
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 0 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          120.000
+TraktionsTyp Diesel
+Loklaenge [m]         26.000
+Lokmasse [t]          51.000
+Reibmasse [t]         51.000
+Haftreibungswert       1.000
+Rholok (-)             6.470
+Rutkommentar        Regio Shuttle, RS 1.3-120-101 Sitzpl, 1tlg, 2x265kW
+ST      ge     0.000  70.500    2.400  70.500    0.000   0.000
+ST      ge     2.400  70.500    4.800  70.500    0.000   0.000
+ST      ge     4.800  70.500    7.200  70.500    0.000   0.000
+ST      ge     7.200  70.500    9.600  70.500    0.000   0.000
+ST      ge     9.600  70.500   12.000  70.500    0.000   0.000
+ST      ge    12.000  70.500   15.600  64.820    0.000   0.000
+ST      ge    15.600  64.820   19.200  59.230    0.000   0.000
+ST      ge    19.200  59.230   22.800  53.730    0.000   0.000
+ST      ge    22.800  53.730   26.400  48.320    0.000   0.000
+ST      ge    26.400  48.320   30.000  43.000    0.000   0.000
+ST      ge    30.000  43.002   33.000  40.162    0.000   0.000
+ST      ge    33.000  40.162   36.000  37.442    0.000   0.000
+ST      ge    36.000  37.442   39.000  34.843    0.000   0.000
+ST      ge    39.000  34.843   42.000  32.363    0.000   0.000
+ST      ge    42.000  32.363   45.000  30.003    0.000   0.000
+ST      ge    45.000  30.000   47.000  30.120    0.000   0.000
+ST      ge    47.000  30.120   49.000  30.080    0.000   0.000
+ST      ge    49.000  30.080   51.000  29.880    0.000   0.000
+ST      ge    51.000  29.880   53.000  29.520    0.000   0.000
+ST      ge    53.000  29.520   55.000  29.000    0.000   0.000
+ST      ge    55.000  28.999   58.000  27.939    0.000   0.000
+ST      ge    58.000  27.939   61.000  26.759    0.000   0.000
+ST      ge    61.000  26.759   64.000  25.459    0.000   0.000
+ST      ge    64.000  25.459   67.000  24.039    0.000   0.000
+ST      ge    67.000  24.039   70.000  22.499    0.000   0.000
+ST      ge    70.000  22.500   72.000  22.360    0.000   0.000
+ST      ge    72.000  22.360   74.000  22.140    0.000   0.000
+ST      ge    74.000  22.140   76.000  21.840    0.000   0.000
+ST      ge    76.000  21.840   78.000  21.460    0.000   0.000
+ST      ge    78.000  21.460   80.000  21.000    0.000   0.000
+ST      ge    80.000  21.000   84.000  19.680    0.000   0.000
+ST      ge    84.000  19.680   88.000  18.520    0.000   0.000
+ST      ge    88.000  18.520   92.000  17.520    0.000   0.000
+ST      ge    92.000  17.520   96.000  16.680    0.000   0.000
+ST      ge    96.000  16.680  100.000  16.000    0.000   0.000
+ST      ge   100.000  16.000  104.000  15.400    0.000   0.000
+ST      ge   104.000  15.400  108.000  14.800    0.000   0.000
+ST      ge   108.000  14.800  112.000  14.200    0.000   0.000
+ST      ge   112.000  14.200  116.000  13.600    0.000   0.000
+ST      ge   116.000  13.600  120.000  13.000    0.000   0.000
+LW  vplus15         865.536316      10.251352       0.300186       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

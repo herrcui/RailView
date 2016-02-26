@@ -1,0 +1,75 @@
+? Stromart: Wechselstrom 16,7 Hz,15kV, 600A
+? Rutkommentar: ÖBB  BR 1042
+? Eisenbahnunternehmen: ÖBB
+? TriebfahrzeugBaureiheTyp: S
+? Triebfahrzeugart: Elektrische Lokomotiven
+? Achslast: 0 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 123 t in Bremsstellung druckluftbediente Hochleistungsbremse mit elektrischer Zusatzbremse
+? Bremsgewicht: 123 t in Bremsstellung druckluftbediente Personenzugbremse mit elektrischer Zusatzbremse
+? Bremsgewicht: 111 t in Bremsstellung druckluftbediente Hochleistungsbremse  mit höherem Bremsgewicht als <R>-(R)
+? Bremsgewicht: 54 t in Bremsstellung druckluftbediente Güterzugbremse (bel. Gwg.)
+? Bremsgewicht: 70 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          150.000
+TraktionsTyp elektrisch
+Loklaenge [m]         16.000
+Lokmasse [t]          83.000
+Reibmasse [t]         83.000
+Haftreibungswert       1.000
+Rholok (-)            17.000
+Rutkommentar        ÖBB  BR 1042
+ST      ge     0.000 154.020    0.200 154.020    0.000   0.000
+ST      ge     0.200 154.020    0.400 154.020    0.000   0.000
+ST      ge     0.400 154.020    0.600 154.020    0.000   0.000
+ST      ge     0.600 154.020    0.800 154.020    0.000   0.000
+ST      ge     0.800 154.020    1.000 154.020    0.000   0.000
+ST      ge     1.000 154.020    1.200 154.020    0.000   0.000
+ST      ge     1.200 154.020    1.400 154.020    0.000   0.000
+ST      ge     1.400 154.020    1.600 154.020    0.000   0.000
+ST      ge     1.600 154.020    1.800 154.020    0.000   0.000
+ST      ge     1.800 154.020    2.000 154.020    0.000   0.000
+ST      ge     2.000 154.020    2.200 154.020    0.000   0.000
+ST      ge     2.200 154.020    2.400 154.020    0.000   0.000
+ST      ge     2.400 154.020    2.600 154.020    0.000   0.000
+ST      ge     2.600 154.020    2.800 154.020    0.000   0.000
+ST      ge     2.800 154.020    3.000 154.020    0.000   0.000
+ST      ge     3.000 154.020    8.400 154.020    0.000   0.000
+ST      ge     8.400 154.020   13.800 154.020    0.000   0.000
+ST      ge    13.800 154.020   19.200 154.020    0.000   0.000
+ST      ge    19.200 154.020   24.600 154.020    0.000   0.000
+ST      ge    24.600 154.020   30.000 154.020    0.000   0.000
+ST      ge    30.000 154.017   45.000 150.866    0.000   0.000
+ST      ge    45.000 150.866   60.000 147.526    0.000   0.000
+ST      ge    60.000 147.526   75.000 143.997    0.000   0.000
+ST      ge    75.000 143.997   90.000 140.279    0.000   0.000
+ST      ge    90.000 140.279  105.000 136.371    0.000   0.000
+ST      ge   105.000 136.370  108.000 126.594    0.000   0.000
+ST      ge   108.000 126.594  111.000 117.879    0.000   0.000
+ST      ge   111.000 117.879  114.000 110.225    0.000   0.000
+ST      ge   114.000 110.225  117.000 103.632    0.000   0.000
+ST      ge   117.000 103.632  120.000  98.100    0.000   0.000
+ST      ge   120.000  98.103  123.000  92.766    0.000   0.000
+ST      ge   123.000  92.766  126.000  87.841    0.000   0.000
+ST      ge   126.000  87.841  129.000  83.328    0.000   0.000
+ST      ge   129.000  83.328  132.000  79.228    0.000   0.000
+ST      ge   132.000  79.228  135.000  75.539    0.000   0.000
+ST      ge   135.000  75.538  138.000  72.242    0.000   0.000
+ST      ge   138.000  72.242  141.000  69.123    0.000   0.000
+ST      ge   141.000  69.123  144.000  66.181    0.000   0.000
+ST      ge   144.000  66.181  147.000  63.414    0.000   0.000
+ST      ge   147.000  63.414  150.000  60.825    0.000   0.000
+LW  vplus15        2312.413086       8.394711       0.279585       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

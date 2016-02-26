@@ -27,14 +27,14 @@ import railview.railmodel.infrastructure.railsys7.TimetableReader;
 public class CalibrationConsole {
 
 	public static void main(String[] args) {
-		IInfrastructureServiceUtility infraServiceUtility = InfrastructureReader.getInstance().initialize();
+		IInfrastructureServiceUtility infraServiceUtility = InfrastructureReader.getInstanceHannover().initialize();
 		Network network = infraServiceUtility.getNetworkService().allNetworks().iterator().next();
 		
 		// Rollilngstock
-		IRollingStockServiceUtility rollingStockServiceUtility = RollingStockReader.getInstance().initialize();
+		IRollingStockServiceUtility rollingStockServiceUtility = RollingStockReader.getInstanceHannover().initialize();
 		
 		// Timetable
-		ITimetableServiceUtility timeTableServiceUtility = TimetableReader.getInstance(
+		ITimetableServiceUtility timeTableServiceUtility = TimetableReader.getInstanceHannover(
 				infraServiceUtility, rollingStockServiceUtility, network).initialize();
 		
 		Time from = Time.getInstance(7, 0, 0);

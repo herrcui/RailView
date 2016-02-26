@@ -1,0 +1,61 @@
+? Stromart: ohne Stromart
+? Rutkommentar: NE Jenbach Integral,5tlg,3x315kW
+? Eisenbahnunternehmen: EVU
+? TriebfahrzeugBaureiheTyp: N
+? Triebfahrzeugart: Brennkrafttriebwagen(ohne Schienenomnibusse)(VT)
+? Achslast: 0 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: ja
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 0 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          140.000
+TraktionsTyp Diesel
+Loklaenge [m]         53.000
+Lokmasse [t]          94.300
+Reibmasse [t]         94.300
+Haftreibungswert       1.000
+Rholok (-)             5.090
+Rutkommentar        NE Jenbach Integral,5tlg,3x315kW
+ST      ge     0.000 109.340    3.440 105.687    0.000   0.000
+ST      ge     3.440 105.687    6.880 102.034    0.000   0.000
+ST      ge     6.880 102.034   10.320  98.380    0.000   0.000
+ST      ge    10.320  98.380   13.760  94.726    0.000   0.000
+ST      ge    13.760  94.726   17.200  91.070    0.000   0.000
+ST      ge    17.200  91.071   20.760  85.750    0.000   0.000
+ST      ge    20.760  85.750   24.320  80.581    0.000   0.000
+ST      ge    24.320  80.581   27.880  75.565    0.000   0.000
+ST      ge    27.880  75.565   31.440  70.702    0.000   0.000
+ST      ge    31.440  70.702   35.000  65.992    0.000   0.000
+ST      ge    35.000  65.989   44.000  56.367    0.000   0.000
+ST      ge    44.000  56.367   53.000  48.080    0.000   0.000
+ST      ge    53.000  48.080   62.000  41.128    0.000   0.000
+ST      ge    62.000  41.128   71.000  35.511    0.000   0.000
+ST      ge    71.000  35.511   80.000  31.229    0.000   0.000
+ST      ge    80.000  31.227   83.000  30.116    0.000   0.000
+ST      ge    83.000  30.116   86.000  28.931    0.000   0.000
+ST      ge    86.000  28.931   89.000  27.673    0.000   0.000
+ST      ge    89.000  27.673   92.000  26.341    0.000   0.000
+ST      ge    92.000  26.341   95.000  24.937    0.000   0.000
+ST      ge    95.000  24.940  100.000  24.940    0.000   0.000
+ST      ge   100.000  24.940  105.000  24.733    0.000   0.000
+ST      ge   105.000  24.733  110.000  24.319    0.000   0.000
+ST      ge   110.000  24.319  115.000  23.698    0.000   0.000
+ST      ge   115.000  23.698  120.000  22.870    0.000   0.000
+ST      ge   120.000  22.870  124.000  22.488    0.000   0.000
+ST      ge   124.000  22.488  128.000  22.082    0.000   0.000
+ST      ge   128.000  22.082  132.000  21.652    0.000   0.000
+ST      ge   132.000  21.652  136.000  21.198    0.000   0.000
+ST      ge   136.000  21.198  140.000  20.720    0.000   0.000
+LW  vplus15        1489.383667      32.636929       0.317844       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

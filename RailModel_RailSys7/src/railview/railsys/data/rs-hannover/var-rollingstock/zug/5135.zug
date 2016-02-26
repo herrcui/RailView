@@ -1,0 +1,33 @@
+* Dateiname 5135.zug
+* Geändert/erzeugt am 2012-03-02
+* von RailSys 7.6.11
+Zugnummer               5135
+Regelzuschlag          4.000
+Vmax (km/h)          100.000
+Bremsen (m/s^2)        0.200
+Stutzen (m/s^2)        0.500
+Widerstand (Wagen)    Strahl
+Widerstand (Kurve)    ohnebw
+Bezeichnung                       CSQ 140_1_2
+Kuerzel                           CSQ
+Klasse                            FGz
+VzG                               4
+SpitzEin                          120
+SpitzAus                          60
+FarbeDarstellung                  0
+Wertigkeit                        2800
+WertigkeitDelta                   1
+WertigkeitVerspaetung             9900
+WertigkeitDelta2                  1
+WertigkeitVerspaetung2            9999
+LZB               F
+MovingBlock       aus
+Vorreservierungszeit              0
+Bloeckezureservieren              0
+MaximaleZugkraft                  500000
+ZugkraftBeschraenken              N
+MaximaleBeschleunigung              1.000
+PZB90-Modus                       Auto
+Tfz      140_1_2       1.000   1.000
+Wg 1 620.000 1200.000   0.000   1.400   0.050    1    1    2
+End                

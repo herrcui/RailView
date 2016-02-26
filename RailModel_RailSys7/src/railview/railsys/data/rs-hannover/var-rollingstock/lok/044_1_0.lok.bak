@@ -1,0 +1,47 @@
+? Stromart: ohne Stromart
+? Rutkommentar: Reisezug
+? Eisenbahnunternehmen: DB
+? TriebfahrzeugBaureiheTyp: D
+? Triebfahrzeugart: Dampflokomotiven
+? Achslast: 0 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: nein
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Heizungsart: V-Dampfheizung
+? Bremsgewicht: 0 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]           80.000
+TraktionsTyp Diesel
+Loklaenge [m]         20.000
+Lokmasse [t]         169.200
+Reibmasse [t]        169.200
+Haftreibungswert       1.000
+Rholok (-)             7.000
+Rutkommentar        Reisezug
+ST      ge     0.000 196.946    4.640 196.946    0.000   0.000
+ST      ge     4.640 196.946    9.280 196.946    0.000   0.000
+ST      ge     9.280 196.946   13.920 196.946    0.000   0.000
+ST      ge    13.920 196.946   18.560 196.946    0.000   0.000
+ST      ge    18.560 196.946   23.200 196.946    0.000   0.000
+ST      ge    23.200 196.946   28.560 170.562    0.000   0.000
+ST      ge    28.560 170.562   33.920 148.168    0.000   0.000
+ST      ge    33.920 148.168   39.280 129.761    0.000   0.000
+ST      ge    39.280 129.761   44.640 115.343    0.000   0.000
+ST      ge    44.640 115.343   50.000 104.913    0.000   0.000
+ST      ge    50.000 104.918   56.000  94.451    0.000   0.000
+ST      ge    56.000  94.451   62.000  85.367    0.000   0.000
+ST      ge    62.000  85.367   68.000  77.666    0.000   0.000
+ST      ge    68.000  77.666   74.000  71.348    0.000   0.000
+ST      ge    74.000  71.348   80.000  66.413    0.000   0.000
+LW  vplus15       11818.146484       0.000000       0.674928       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

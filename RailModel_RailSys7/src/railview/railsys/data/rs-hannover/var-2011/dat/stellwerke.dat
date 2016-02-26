@@ -1,0 +1,66 @@
+# ---------------------------------------------------------------------
+# RailSys\Sted Version 7.6.11: Eingabedatei Stellwerkdatei
+# Dateiname           D:/NONBKU/Railsys Daten/Knoten Hannover 2011_Grundzustand_020311/var-2011/dat/Temp/stellwerke.dat
+# erzeugt am          7 Mar 2012 16:57:55
+# ---------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------
+# Stellwerktyp Tbilde:009_Tloese:003_NTA
+# ---------------------------------------------------------------------
+
+stellwerk Tbilde:009_Tloese:003_NTA
+ kuerzel  Tb:9_Tl:3_NTA
+ stwz-kuerzel 
+ stwz-name 
+ id       0
+ tbilden  9
+ tloesen  3
+ teilaufloesung_kontakt
+endstellwerk
+
+
+# ---------------------------------------------------------------------
+# Stellwerktyp Tbilde:000_Tloese:003_NTA
+# ---------------------------------------------------------------------
+
+stellwerk Tbilde:000_Tloese:003_NTA
+ kuerzel  Tb:0_Tl:3_NTA
+ stwz-kuerzel 
+ stwz-name 
+ id       1
+ tbilden  0
+ tloesen  3
+ teilaufloesung_kontakt
+endstellwerk
+
+
+# ---------------------------------------------------------------------
+# Stellwerktyp Tbilde:000_Tloese:000_NTA
+# ---------------------------------------------------------------------
+
+stellwerk Tbilde:000_Tloese:000_NTA
+ kuerzel  Tb:0_Tl:0_NTA
+ stwz-kuerzel 
+ stwz-name 
+ id       2
+ tbilden  0
+ tloesen  0
+ teilaufloesung_kontakt
+endstellwerk
+
+
+# ---------------------------------------------------------------------
+# Stellwerktyp sppAuto_do_not_touch
+# ---------------------------------------------------------------------
+
+stellwerk sppAuto_do_not_touch
+ kuerzel  sppAuto
+ stwz-kuerzel 
+ stwz-name 
+ id       3
+ tbilden  0
+ tloesen  0
+ teilaufloesung_kontakt
+endstellwerk
+

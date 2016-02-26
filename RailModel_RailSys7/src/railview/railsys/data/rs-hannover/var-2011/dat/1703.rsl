@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<line lineID="1703" name="Han-Hainholz - Nordhafen" trafficRouting="on_the_right" type="local" dependentLines="hh hlea">
+	<version major="1" minor="2" patchlevel="0" comment=""/>
+	<stations>
+		<station stationID="HNHG" name="Han Nordhf DB-Gr" xNet="3.4366e+06" yNet="1.01065e+07" xWGS84="0" yWGS84="0"/>
+		<station stationID="HNH" name="Han Nordhafen" xNet="3.4328e+06" yNet="1.01079e+07" xWGS84="0" yWGS84="0"/>
+	</stations>
+	<nodes>
+		<node nodeID="4026" description="Weichenstamm  Id:104026 Str:1703" kilometre="7.546" x="-1753.4613" y="2800" xNet="3433767.3" yNet="10108038" xWGS84="-54465.517" yWGS84="-4400"/>
+		<node nodeID="4028" description="FstrZugschlussstelleS FstrAuflösezeit: 3s Id:104028 Str:1703" kilometre="7.596" x="-1807.0046" y="2800" xNet="3433713.9" yNet="10108041" xWGS84="-54519.061" yWGS84="-4400" referenceNode="4026" releaseContact="true"/>
+		<track trackID="A-5" stationID="HNH" length="665" type="stopBoardFreight" nodeID="4029" name="5" description="HalteplatzGzS Länge: 665m Id:104029 Str:1703" kilometre="8.261" x="-2519.1302" y="2800" xNet="3433003.5" yNet="10108091" xWGS84="0" yWGS84="0" referenceNode="4028"/>
+		<track trackID="G-5" stationID="HNH" type="timingPoint" nodeID="4030" name="5" description="Fahrzeitmesspunkt  Id:104030 Str:1703" kilometre="8.767" x="-3060.9881" y="2800" xNet="3432463" yNet="10108129" xWGS84="0" yWGS84="0" referenceNode="4031"/>
+		<node nodeID="4031" description="Neigung S: 0.00 F: 0.00 Id:104031 Str:1703" kilometre="8.800" x="-3096.3267" y="2800" xNet="3432427.7" yNet="10108131" xWGS84="-55808.383" yWGS84="-4400"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" nodeID="4032" name="1703Einf" description="Gleisende  Id:104032 Str:1703 Bild (-558.2980 / -44.0000)" kilometre="8.800" x="-3117.744" y="2800" xNet="3432406.3" yNet="10108133" xWGS84="0" yWGS84="0" referenceNode="4031"/>
+		<node nodeID="4033" description="Betriebsstellengrenze Partner: HNHG Strecke: 1703 Gleis: 0 Id:104033 Str:1703 Bild (-522.5020 / -40.0000)" kilometre="6.138" x="461.856" y="3200" xNet="3436005.1" yNet="10108282" xWGS84="-52250.2" yWGS84="-4000"/>
+		<node nodeID="4034" description="Neigung S: 1.00 F: 9.23 Id:104034 Str:1703" kilometre="6.163" x="426.75228" y="3200" xNet="3435970.1" yNet="10108285" xWGS84="-52285.304" yWGS84="-4000"/>
+		<node nodeID="4035" name="Va" description="VorsignalS FstrBildezeit: 9s Id:104035 Str:1703" kilometre="6.442" x="34.99477" y="3200" xNet="3435579.3" yNet="10108312" xWGS84="-52677.061" yWGS84="-4000" referenceNode="4034" presignal="true" with1000HzMagnet="false"/>
+		<node nodeID="4036" description="Neigung S: -2.75 F: -1.00 Id:104036 Str:1703" kilometre="6.594" x="-178.43585" y="3200" xNet="3435366.4" yNet="10108327" xWGS84="-52890.492" yWGS84="-4000"/>
+		<node nodeID="4037" name="V3172" description="VorsignalF FstrBildezeit: 9s Id:104037 Str:1703" kilometre="6.836" x="-518.23985" y="3200" xNet="3435027.4" yNet="10108351" xWGS84="-53230.296" yWGS84="-4000" referenceNode="4038" presignal="true" with1000HzMagnet="true"/>
+		<speedIndicator nodeID="4038" description="GeschwZulaessigF V: 40 Wirkungsort: hier Zugbeeinflussung: Alle Id:104038 Str:1703" kilometre="6.846" x="-532.28134" y="3200" xNet="3435013.4" yNet="10108352" xWGS84="0" yWGS84="0" referenceNode="4039"/>
+		<signal interlockingMachine="Tb:0_Tl:3_NTA" indusi500HzLocation="none" nodeID="4039" name="A" description="HauptsignalS DwegAuflösezeit: 3s Id:104039 Str:1703" kilometre="6.862" x="-554.74772" y="3200" xNet="3434991" yNet="10108353" xWGS84="0" yWGS84="0" referenceNode="4038"/>
+		<speedIndicator nodeID="4040" description="GeschwZulaessigS V: 20 Wirkungsort: hier Zugbeeinflussung: Alle Id:104040 Str:1703" kilometre="6.862" x="-582.8307" y="3200" xNet="3434963" yNet="10108355" xWGS84="0" yWGS84="0" referenceNode="4039"/>
+		<node nodeID="4041" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:104041 Str:1703" kilometre="6.912" x="-653.03813" y="3200" xNet="3434892.9" yNet="10108360" xWGS84="-53365.094" yWGS84="-4000"/>
+		<node nodeID="4042" description="Neigung S: 0.00 F: 2.75 Id:104042 Str:1703" kilometre="7.394" x="-1329.8378" y="3200" xNet="3434217.8" yNet="10108407" xWGS84="-54041.894" yWGS84="-4000"/>
+		<node nodeID="4043" description="FstrZugschlussstelleF FstrAuflösezeit: 3s Id:104043 Str:1703" kilometre="7.446" x="-1402.8536" y="3200" xNet="3434145" yNet="10108412" xWGS84="-54114.91" yWGS84="-4000" referenceNode="4044" releaseContact="true"/>
+		<node nodeID="4044" description="BremswegF  Id:104044 Str:1703" kilometre="7.496" x="-1473.061" y="3200" xNet="3434074.9" yNet="10108417" xWGS84="-54185.117" yWGS84="-4000"/>
+		<switch start="4044" endOfMainTrack="4046" endOfBranchTrack="4047" nodeID="4045" name="62" description="Weichenanfang  Id:104045 Str:1703 Bild (-542.1320 / -40.0000)" kilometre="7.496" x="-1501.144" y="3200" xNet="3434046.9" yNet="10108419" xWGS84="0" yWGS84="0"/>
+		<node nodeID="4048" description="WeichenabzweigLinks  Id:104048 Str:1703" kilometre="7.546" x="-1798.044" y="2685.7143" xNet="3433714.9" yNet="10107927" xWGS84="-54510.1" yWGS84="-4514.2857"/>
+		<node nodeID="4049" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:104049 Str:1703" kilometre="7.546" x="-1864.044" y="2571.4286" xNet="3433641" yNet="10107817" xWGS84="-54576.1" yWGS84="-4628.5714"/>
+		<switch start="4049" endOfMainTrack="4051" endOfBranchTrack="4052" nodeID="4050" name="61" description="Weichenanfang  Id:104050 Str:1703 Bild (-546.7510 / -48.0000)" kilometre="7.576" x="-1963.044" y="2400" xNet="3433530.3" yNet="10107653" xWGS84="0" yWGS84="0"/>
+		<node nodeID="4052" description="WeichenabzweigLinks  Id:104052 Str:1703" kilometre="7.576" x="-2020.7773" y="2300" xNet="3433465.8" yNet="10107558" xWGS84="-54732.833" yWGS84="-4900"/>
+		<node nodeID="4053" description="Neigung S: 0.00 F: 0.00 Id:104053 Str:1703" kilometre="7.576" x="-2078.5107" y="2200" xNet="3433401.2" yNet="10107462" xWGS84="-54790.567" yWGS84="-5000"/>
+		<signal interlockingMachine="sppAuto" nodeID="4054" name="Ausf-Gl" description="Gleisende  Id:104054 Str:1703 Bild (-548.4830 / -51.0000)" kilometre="7.576" x="-2136.244" y="2100" xNet="3433336.6" yNet="10107366" xWGS84="0" yWGS84="0" referenceNode="4053"/>
+		<node nodeID="4047" description="WeichenabzweigRechts  Id:104047 Str:1703" kilometre="7.496" x="-2040.0107" y="3200" xNet="3433509.3" yNet="10108457" xWGS84="-54752.067" yWGS84="-4000"/>
+		<node nodeID="4055" description="Neigung S: 0.00 F: 0.00 Id:104055 Str:1703" kilometre="7.496" x="-2578.8773" y="3200" xNet="3432971.8" yNet="10108494" xWGS84="-55290.933" yWGS84="-4000"/>
+		<signal interlockingMachine="sppAuto" nodeID="4056" name="Einf-Gl" description="Gleisende  Id:104056 Str:1703 Bild (-558.2980 / -40.0000)" kilometre="7.496" x="-3117.744" y="3200" xNet="3432434.2" yNet="10108532" xWGS84="0" yWGS84="0" referenceNode="4055"/>
+		<node nodeID="4046" description="Weichenstamm  Id:104046 Str:1703" kilometre="7.496" x="-1567.1154" y="3085.7143" xNet="3433973.1" yNet="10108310" xWGS84="-54279.171" yWGS84="-4114.2857"/>
+		<switch start="4046" endOfMainTrack="4026" endOfBranchTrack="4048" nodeID="4027" name="64" description="Weichenanfang  Id:104027 Str:1703 Bild (-544.4410 / -44.0000)" kilometre="7.546" x="-1732.044" y="2800" xNet="3433788.7" yNet="10108036" xWGS84="0" yWGS84="0"/>
+		<node nodeID="4051" description="Weichenstamm  Id:104051 Str:1703" kilometre="7.576" x="-1981.03" y="2400" xNet="3433512.4" yNet="10107655" xWGS84="-54693.086" yWGS84="-4800"/>
+		<speedIndicator nodeID="4057" description="GeschwZulaessigF V: 20 Wirkungsort: hier Zugbeeinflussung: Alle Id:104057 Str:1703" kilometre="7.596" x="-1999.016" y="2400" xNet="3433494.4" yNet="10107656" xWGS84="0" yWGS84="0" referenceNode="4058"/>
+		<signal interlockingMachine="sppAuto" nodeID="4058" name="B" description="HauptsignalF DwegAuflösezeit: 3s Id:104058 Str:1703" kilometre="7.596" x="-2017.0019" y="2400" xNet="3433476.5" yNet="10107657" xWGS84="0" yWGS84="0" referenceNode="4059"/>
+		<track trackID="B-6" stationID="HNH" length="625" type="stopBoardFreight" nodeID="4059" name="6" description="HalteplatzGzF Länge: 625m Id:104059 Str:1703" kilometre="7.601" x="-2021.4984" y="2400" xNet="3433472" yNet="10107657" xWGS84="0" yWGS84="0" referenceNode="4060"/>
+		<node nodeID="4060" description="FstrZugschlussstelleF FstrAuflösezeit: 3s Id:104060 Str:1703" kilometre="8.226" x="-2583.5604" y="2400" xNet="3432911.3" yNet="10107697" xWGS84="-55295.616" yWGS84="-4800" referenceNode="4061" releaseContact="true"/>
+		<track trackID="G-6" stationID="HNH" type="timingPoint" nodeID="4061" name="6" description="Fahrzeitmesspunkt  Id:104061 Str:1703" kilometre="8.767" x="-3070.0811" y="2400" xNet="3432426" yNet="10107731" xWGS84="0" yWGS84="0" referenceNode="4062"/>
+		<node nodeID="4062" description="Neigung S: 0.00 F: 0.00 Id:104062 Str:1703" kilometre="8.800" x="-3099.758" y="2400" xNet="3432396.4" yNet="10107733" xWGS84="-55811.814" yWGS84="-4800"/>
+		<signal interlockingMachine="sppAuto" nodeID="4063" name="1703Ausf" description="Gleisende  Id:104063 Str:1703 Bild (-558.2980 / -48.0000)" kilometre="8.800" x="-3117.744" y="2400" xNet="3432378.4" yNet="10107734" xWGS84="0" yWGS84="0" referenceNode="4062"/>
+		<node nodeID="4207" description="Betriebsstellengrenze Partner: HLEA Strecke: 1703 Gleis: 0 Id:104207 Str:1703 Bild (156.8940 / -44.0000)" kilometre="5.940" x="1070.356" y="3200" xNet="3436707.1" yNet="10106514" xWGS84="15689.4" yWGS84="-4400"/>
+		<track trackID="G-1000" stationID="HNHG" type="timingPoint" nodeID="4208" name="HNHG" description="Fahrzeitmesspunkt  Id:104208 Str:1703" kilometre="5.950" x="1039.6237" y="3200" xNet="3436697.1" yNet="10106543" xWGS84="0" yWGS84="0" referenceNode="4209"/>
+		<node nodeID="4209" description="Neigung S: -9.23 F: 10.14 Id:104209 Str:1703" kilometre="6.063" x="692.34842" y="3200" xNet="3436584.1" yNet="10106871" xWGS84="16067.408" yWGS84="-4400"/>
+		<node nodeID="4210" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:104210 Str:1703" kilometre="6.086" x="621.66408" y="3200" xNet="3436561.1" yNet="10106938" xWGS84="16138.092" yWGS84="-4400"/>
+		<signal interlockingMachine="Tb:0_Tl:3_NTA" indusi500HzLocation="none" nodeID="4211" name="3172" description="HauptsignalF DwegAuflösezeit: 3s Id:104211 Str:1703" kilometre="6.136" x="468.00246" y="3200" xNet="3436511" yNet="10107083" xWGS84="0" yWGS84="0" referenceNode="4212"/>
+		<node nodeID="4212" description="Betriebsstellengrenze Partner: HNH Strecke: 1703 Gleis: 0 Id:104212 Str:1703 Bild (162.9790 / -44.0000)" kilometre="6.138" x="461.856" y="3200" xNet="3436509" yNet="10107089" xWGS84="16297.9" yWGS84="-4400"/>
+		<node nodeID="90725" description="Verbindungs-Knoten" kilometre="5.580" x="2309.406" y="3200" xNet="3441040.7" yNet="10098708" xWGS84="577.466" yWGS84="-500"/>
+		<stationBorder exitType="regular" stationID="HNH" lineID="1703" trackNumber="1" nodeID="4064" description="Betriebsstellengrenze Partner: HNHG Strecke: 1703 Gleis: 0 Id:104033 Str:1703 Bild (-522.5020 / -40.0000)" kilometre="6.912" x="-617.93441" y="3200" xNet="3434928" yNet="10108358" xWGS84="-53365.094" yWGS84="-4000" referenceNode="4041"/>
+		<stationBorder exitType="regular" stationID="HNH" lineID="1703" trackNumber="1703" netBorder="true" nodeID="4065" name="1703Einf" description="Gleisende  Id:104032 Str:1703 Bild (-558.2980 / -44.0000)" kilometre="8.800" x="-3119.8857" y="2800" xNet="3432404.2" yNet="10108133" xWGS84="0" yWGS84="0" referenceNode="4032"/>
+		<stationBorder exitType="regular" stationID="HNH" lineID="1703" trackNumber="1000" netBorder="true" nodeID="4066" name="Ausf-Gl" description="Gleisende  Id:104054 Str:1703 Bild (-548.4830 / -51.0000)" kilometre="7.576" x="-2142.0173" y="2090" xNet="3433330.2" yNet="10107357" xWGS84="0" yWGS84="0" referenceNode="4054"/>
+		<stationBorder exitType="regular" stationID="HNH" lineID="1703" trackNumber="1000" netBorder="true" nodeID="4067" name="Einf-Gl" description="Gleisende  Id:104056 Str:1703 Bild (-558.2980 / -40.0000)" kilometre="7.496" x="-3171.6307" y="3200" xNet="3432380.5" yNet="10108536" xWGS84="0" yWGS84="0" referenceNode="4056"/>
+		<stationBorder exitType="regular" stationID="HNH" lineID="1703" trackNumber="1703" netBorder="true" nodeID="4068" name="1703Ausf" description="Gleisende  Id:104063 Str:1703 Bild (-558.2980 / -48.0000)" kilometre="8.800" x="-3119.5426" y="2400" xNet="3432376.6" yNet="10107734" xWGS84="0" yWGS84="0" referenceNode="4063"/>
+		<stationBorder exitType="regular" stationID="HNHG" lineID="1703" trackNumber="1" nodeID="4213" description="Betriebsstellengrenze Partner: HLEA Strecke: 1703 Gleis: 0 Id:104207 Str:1703 Bild (156.8940 / -44.0000)" kilometre="5.950" x="1054.9898" y="3200" xNet="3436702.1" yNet="10106528" xWGS84="0" yWGS84="0" referenceNode="4208"/>
+		<stationBorder exitType="regular" stationID="HNHG" lineID="1703" trackNumber="1" nodeID="4214" description="Betriebsstellengrenze Partner: HNH Strecke: 1703 Gleis: 0 Id:104212 Str:1703 Bild (162.9790 / -44.0000)" kilometre="6.086" x="544.83327" y="3200" xNet="3436536.1" yNet="10107011" xWGS84="16138.092" yWGS84="-4400" referenceNode="4210"/>
+	</nodes>
+	<links>
+		<link source="4026" target="4028" length="50" vmax="20"/>
+		<link source="4028" target="4029" length="665" vmax="20"/>
+		<link source="4029" target="4030" length="506" vmax="20"/>
+		<link source="4030" target="4031" length="33" vmax="20"/>
+		<link source="4031" target="4032" vmax="20"/>
+		<link source="4033" target="4034" length="25" gradient="-9.23" vmax="40" vmaxr="40" bidirectional="true"/>
+		<link source="4034" target="4035" length="279" gradient="1" vmax="40" vmaxr="40" bidirectional="true"/>
+		<link source="4035" target="4036" length="152" gradient="1" vmax="40" vmaxr="40" bidirectional="true"/>
+		<link source="4036" target="4037" length="242" gradient="-2.75" vmax="40" vmaxr="40" bidirectional="true"/>
+		<link source="4037" target="4038" length="10" gradient="-2.75" vmax="40" vmaxr="40" bidirectional="true"/>
+		<link source="4038" target="4039" length="16" gradient="-2.75" vmax="40" vmaxr="20" bidirectional="true"/>
+		<link source="4039" target="4040" gradient="-2.75" vmax="40" vmaxr="20" bidirectional="true"/>
+		<link source="4040" target="4064" length="50" gradient="-2.75" vmax="20" vmaxr="20" bidirectional="true"/>
+		<link source="4041" target="4042" length="482" gradient="-2.75" vmax="20" vmaxr="20" bidirectional="true"/>
+		<link source="4042" target="4043" length="52" vmax="20" vmaxr="20" bidirectional="true"/>
+		<link source="4043" target="4044" length="50" vmax="20" vmaxr="20" bidirectional="true"/>
+		<link source="4044" target="4045" vmax="20" vmaxr="20" bidirectional="true"/>
+		<link source="4048" target="4049" vmaxr="20"/>
+		<link source="4049" target="4050" length="30" vmaxr="20"/>
+		<link source="4052" target="4053"/>
+		<link source="4053" target="4054"/>
+		<link source="4047" target="4055"/>
+		<link source="4055" target="4056"/>
+		<link source="4046" target="4027" length="50" vmax="20" vmaxr="20"/>
+		<link source="4051" target="4057" length="20" vmaxr="20"/>
+		<link source="4057" target="4058" vmaxr="20"/>
+		<link source="4058" target="4059" length="5" vmaxr="20"/>
+		<link source="4059" target="4060" length="625" vmaxr="20"/>
+		<link source="4060" target="4061" length="541" vmaxr="20"/>
+		<link source="4061" target="4062" length="33" vmaxr="20"/>
+		<link source="4062" target="4063" vmaxr="20"/>
+		<link source="4045" target="4046" vmax="20" vmaxr="20"/>
+		<link source="4045" target="4047"/>
+		<link source="4050" target="4051" vmaxr="20"/>
+		<link source="4050" target="4052"/>
+		<link source="4027" target="4026" vmax="20"/>
+		<link source="4027" target="4048" vmaxr="20"/>
+		<link source="4207" target="4213" length="10" gradient="-10.14" vmax="40" vmaxr="40" bidirectional="true" electrified="true"/>
+		<link source="4208" target="4209" length="113" gradient="-10.14" vmax="40" vmaxr="40" bidirectional="true" electrified="true"/>
+		<link source="4209" target="4210" length="23" gradient="-9.23" vmax="40" vmaxr="40" bidirectional="true" electrified="true"/>
+		<link source="4214" target="4211" length="50" gradient="-9.23" vmax="40" vmaxr="40" bidirectional="true" electrified="true"/>
+		<link source="4211" target="4212" length="2" gradient="-9.23" vmax="40" vmaxr="40" bidirectional="true" electrified="true"/>
+		<link source="90640.hh" target="90725" vmax="80" vmaxr="80" bidirectional="true" electrified="true"/>
+		<link source="90725" target="95103.hlea" vmax="80" vmaxr="80" bidirectional="true" electrified="true"/>
+		<link source="95102.hlea" target="4207" gradient="-10.14" vmax="40" vmaxr="40" bidirectional="true" electrified="true"/>
+		<link source="4212" target="4033" gradient="-9.23" vmax="40" vmaxr="40" bidirectional="true" electrified="true"/>
+		<link source="4064" target="4041" gradient="-2.75" vmax="20" vmaxr="20" bidirectional="true"/>
+		<link source="4032" target="4065"/>
+		<link source="4054" target="4066"/>
+		<link source="4056" target="4067"/>
+		<link source="4063" target="4068"/>
+		<link source="4213" target="4208" gradient="-10.14" vmax="40" vmaxr="40" bidirectional="true" electrified="true"/>
+		<link source="4210" target="4214" gradient="-9.23" vmax="40" vmaxr="40" bidirectional="true" electrified="true"/>
+	</links>
+	<dependentLinks/>
+	<blockSections>
+		<blockSection presignal="90634.hh" nodes="90133.hh 90134.hh 90135.hh 90136.hh 90137.hh 90138.hh 90139.hh 90621.hh 90622.hh 90623.hh 90624.hh 90104.hh 90230.hh 90231.hh 90232.hh 90233.hh 90234.hh 90235.hh 90236.hh 90237.hh 90238.hh 90239.hh 90240.hh 90242.hh 90625.hh 90626.hh 90627.hh 90628.hh 90629.hh 90630.hh 90631.hh 90632.hh 90633.hh 90732.hh 90634.hh 90635.hh 90636.hh 90637.hh 90638.hh 90639.hh 90640.hh 90725 95103.hlea 95140.hlea 95104.hlea" speedIndicators="90135.hh 90625.hh 90635.hh"/>
+		<blockSection presignal="90634.hh" nodes="90152.hh 90153.hh 90154.hh 90155.hh 90156.hh 90157.hh 90466.hh 90436.hh 90336.hh 90337.hh 90378.hh 90211.hh 90212.hh 90379.hh 90139.hh 90621.hh 90622.hh 90623.hh 90624.hh 90104.hh 90230.hh 90231.hh 90232.hh 90233.hh 90234.hh 90235.hh 90236.hh 90237.hh 90238.hh 90239.hh 90240.hh 90242.hh 90625.hh 90626.hh 90627.hh 90628.hh 90629.hh 90630.hh 90631.hh 90632.hh 90633.hh 90732.hh 90634.hh 90635.hh 90636.hh 90637.hh 90638.hh 90639.hh 90640.hh 90725 95103.hlea 95140.hlea 95104.hlea" speedIndicators="90154.hh 90625.hh 90635.hh"/>
+		<blockSection presignal="90634.hh" nodes="90205.hh 90206.hh 90207.hh 90208.hh 90209.hh 90210.hh 90211.hh 90212.hh 90379.hh 90139.hh 90621.hh 90622.hh 90623.hh 90624.hh 90104.hh 90230.hh 90231.hh 90232.hh 90233.hh 90234.hh 90235.hh 90236.hh 90237.hh 90238.hh 90239.hh 90240.hh 90242.hh 90625.hh 90626.hh 90627.hh 90628.hh 90629.hh 90630.hh 90631.hh 90632.hh 90633.hh 90732.hh 90634.hh 90635.hh 90636.hh 90637.hh 90638.hh 90639.hh 90640.hh 90725 95103.hlea 95140.hlea 95104.hlea" speedIndicators="90207.hh 90625.hh 90635.hh"/>
+		<blockSection presignal="90634.hh" nodes="90311.hh 90312.hh 90313.hh 90314.hh 90315.hh 90157.hh 90466.hh 90436.hh 90336.hh 90337.hh 90378.hh 90211.hh 90212.hh 90379.hh 90139.hh 90621.hh 90622.hh 90623.hh 90624.hh 90104.hh 90230.hh 90231.hh 90232.hh 90233.hh 90234.hh 90235.hh 90236.hh 90237.hh 90238.hh 90239.hh 90240.hh 90242.hh 90625.hh 90626.hh 90627.hh 90628.hh 90629.hh 90630.hh 90631.hh 90632.hh 90633.hh 90732.hh 90634.hh 90635.hh 90636.hh 90637.hh 90638.hh 90639.hh 90640.hh 90725 95103.hlea 95140.hlea 95104.hlea" speedIndicators="90313.hh 90625.hh 90635.hh"/>
+		<blockSection presignal="90634.hh" nodes="90330.hh 90331.hh 90332.hh 90333.hh 90334.hh 90335.hh 90336.hh 90337.hh 90378.hh 90211.hh 90212.hh 90379.hh 90139.hh 90621.hh 90622.hh 90623.hh 90624.hh 90104.hh 90230.hh 90231.hh 90232.hh 90233.hh 90234.hh 90235.hh 90236.hh 90237.hh 90238.hh 90239.hh 90240.hh 90242.hh 90625.hh 90626.hh 90627.hh 90628.hh 90629.hh 90630.hh 90631.hh 90632.hh 90633.hh 90732.hh 90634.hh 90635.hh 90636.hh 90637.hh 90638.hh 90639.hh 90640.hh 90725 95103.hlea 95140.hlea 95104.hlea" speedIndicators="90332.hh 90625.hh 90635.hh"/>
+		<blockSection presignal="4035" nodes="95104.hlea 95105.hlea 95106.hlea 95107.hlea 95096.hlea 95095.hlea 95097.hlea 95098.hlea 95099.hlea 95100.hlea 95101.hlea 95142.hlea 95102.hlea 4207 4213 4208 4209 4210 4214 4211 4212 4033 4034 4035 4036 4037 4038 4039"/>
+		<blockSection nodes="4039 4040 4064 4041 4042 4043 4044 4045 4046 4027 4026 4028 4029 4030 4031 4032" speedIndicators="4040"/>
+		<blockSection presignal="90639.hh" nodes="95119.hlea 95118.hlea 95117.hlea 95116.hlea 95115.hlea 95085.hlea 95084.hlea 95083.hlea 95082.hlea 95081.hlea 95079.hlea 95080.hlea 95123.hlea 95122.hlea 95094.hlea 95114.hlea 95113.hlea 95112.hlea 95111.hlea 95110.hlea 95109.hlea 95108.hlea 95096.hlea 95107.hlea 95106.hlea 95105.hlea 95104.hlea 95140.hlea 95103.hlea 90725 90640.hh 90639.hh 90638.hh 90637.hh 90636.hh 90635.hh 90634.hh 90732.hh 90633.hh" speedIndicators="95107.hlea"/>
+		<blockSection nodes="4063 4062 4061 4060 4059 4058"/>
+		<blockSection presignal="4037" nodes="4058 4057 4051 4050 4049 4048 4027 4046 4045 4044 4043 4042 4041 4064 4040 4039 4038 4037 4036 4035 4034 4033 4212 4211" speedIndicators="4038 4057"/>
+		<blockSection presignal="90639.hh" nodes="4211 4214 4210 4209 4208 4213 4207 95102.hlea 95142.hlea 95101.hlea 95100.hlea 95099.hlea 95098.hlea 95097.hlea 95095.hlea 95096.hlea 95107.hlea 95106.hlea 95105.hlea 95104.hlea 95140.hlea 95103.hlea 90725 90640.hh 90639.hh 90638.hh 90637.hh 90636.hh 90635.hh 90634.hh 90732.hh 90633.hh" speedIndicators="95107.hlea"/>
+	</blockSections>
+	<slipDistances>
+		<slipDistance signal="4039" name="39.50.4041.1703.0" publicName="1-1000" description="A" complete="true" warnerroute="false" nodes="4039 4040 4064 4041"/>
+		<slipDistance signal="4058" name="39.50.4049.1703.0" publicName="1-1000" description="B" complete="true" warnerroute="false" nodes="4058 4057 4051 4050 4049"/>
+		<slipDistance signal="4211" name="39.50.4210.1703.0" publicName="1-1000" description="3172" complete="true" warnerroute="false" nodes="4211 4214 4210"/>
+	</slipDistances>
+	<approachControlRoutes/>
+	<stationRoutes>
+		<stationRoute stationID="HNHG" name="HHZ-HNH" description="HHZ-HNH" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="4213 4208 4209 4210 4214"/>
+		<stationRoute stationID="HNHG" name="HNH-HHZ" description="HNH-HHZ" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="4214 4210 4209 4208 4213"/>
+		<stationRoute stationID="HNH" name="HHZ-HNH5" description="HHZ-HNH5" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=10;NRz=10;S=100;Rz=10;FGz=100;NGz=100;Gz=100;Lz=100" nodes="4064 4041 4042 4043 4044 4045 4046 4027 4026 4028 4029 4030 4031 4032 4065"/>
+		<stationRoute stationID="HNH" name="HNH6-HHZ" description="HNH6-HHZ" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=10;NRz=10;S=100;Rz=10;FGz=100;NGz=100;Gz=100;Lz=100" nodes="4068 4063 4062 4061 4060 4059 4058 4057 4051 4050 4049 4048 4027 4046 4045 4044 4043 4042 4041 4064"/>
+	</stationRoutes>
+	<evzg/>
+	<evzg-katalog/>
+</line>

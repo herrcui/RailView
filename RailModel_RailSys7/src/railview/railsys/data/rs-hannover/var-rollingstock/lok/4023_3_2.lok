@@ -1,0 +1,56 @@
+? Stromart: Wechselstrom 16,7 Hz,15kV, 600A
+? Rutkommentar: ÖBB ET4023, 3tlg., 1444kW  (Talent)
+? Eisenbahnunternehmen: ÖBB
+? TriebfahrzeugBaureiheTyp: S
+? Triebfahrzeugart: Elektrische Triebwagen mit  Fremdstromzuführung(ET)
+? Achslast: 15.8 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 144 t in Bremsstellung druckluftbediente Hochleistungsbremse  mit höherem Bremsgewicht als <R>-(R)
+Vmax [km/h]          140.000
+TraktionsTyp elektrisch
+Loklaenge [m]         52.000
+Lokmasse [t]         106.200
+Reibmasse [t]        106.200
+Haftreibungswert       1.000
+Rholok (-)             7.160
+Rutkommentar        ÖBB ET4023, 3tlg., 1444kW  (Talent)
+ST      ge     0.000 104.000   10.000 104.000    0.000   0.000
+ST      ge    10.000 104.000   20.000 104.000    0.000   0.000
+ST      ge    20.000 104.000   30.000 104.000    0.000   0.000
+ST      ge    30.000 104.000   40.000 104.000    0.000   0.000
+ST      ge    40.000 104.000   50.000 104.000    0.000   0.000
+ST      ge    50.000 104.000   54.000  96.720    0.000   0.000
+ST      ge    54.000  96.720   58.000  90.080    0.000   0.000
+ST      ge    58.000  90.080   62.000  84.080    0.000   0.000
+ST      ge    62.000  84.080   66.000  78.720    0.000   0.000
+ST      ge    66.000  78.720   70.000  74.000    0.000   0.000
+ST      ge    70.000  74.000   74.000  70.160    0.000   0.000
+ST      ge    74.000  70.160   78.000  66.640    0.000   0.000
+ST      ge    78.000  66.640   82.000  63.440    0.000   0.000
+ST      ge    82.000  63.440   86.000  60.560    0.000   0.000
+ST      ge    86.000  60.560   90.000  58.000    0.000   0.000
+ST      ge    90.000  58.000   96.000  54.280    0.000   0.000
+ST      ge    96.000  54.280  102.000  50.920    0.000   0.000
+ST      ge   102.000  50.920  108.000  47.920    0.000   0.000
+ST      ge   108.000  47.920  114.000  45.280    0.000   0.000
+ST      ge   114.000  45.280  120.000  43.000    0.000   0.000
+ST      ge   120.000  43.000  124.000  41.120    0.000   0.000
+ST      ge   124.000  41.120  128.000  39.080    0.000   0.000
+ST      ge   128.000  39.080  132.000  36.880    0.000   0.000
+ST      ge   132.000  36.880  136.000  34.520    0.000   0.000
+ST      ge   136.000  34.520  140.000  32.000    0.000   0.000
+LW  vplus15        1135.585938      14.408399       0.479709       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

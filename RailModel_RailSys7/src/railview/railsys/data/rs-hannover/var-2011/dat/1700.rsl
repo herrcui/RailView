@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<line lineID="1700" name="Hannover Hbf  - Hamm (Westf)" trafficRouting="on_the_right" type="local" dependentLines="hh hlta hs">
+	<version major="1" minor="2" patchlevel="0" comment=""/>
+	<stations>
+		<station stationID="H439L" name="Sbk439 (1700)" xNet="3.402e+06" yNet="1.00916e+07" xWGS84="0" yWGS84="0"/>
+		<station stationID="H433L" name="Sbk433 (1700)" xNet="3.4191e+06" yNet="1.00916e+07" xWGS84="0" yWGS84="0"/>
+	</stations>
+	<nodes>
+		<node nodeID="54455" description="Betriebsstellengrenze Partner: HBUG Strecke: 1700 Gleis: 2 Id:54455 Str:1700 Bild (64.0853 / 48.0000)" kilometre="4.100" x="6408.53" y="4800" xNet="3437335.2" yNet="10096312" xWGS84="6408.53" yWGS84="4800"/>
+		<node nodeID="54456" description="Bildpunkt  Id:54456 Str:1700 Bild (57.1576 / 48.0000)" kilometre="4.101" x="5715.76" y="4800" xNet="3436850.4" yNet="10096464" xWGS84="5715.76" yWGS84="4800"/>
+		<node nodeID="54457" description="Neigung S: 0.00 F: -4.57 Id:54457 Str:1700" kilometre="4.265" x="5277.0944" y="4040.2098" xNet="3436490.4" yNet="10096272" xWGS84="5277.0944" yWGS84="4040.2098"/>
+		<node nodeID="54458" description="Neigung S: -5.65 F: 0.00 Id:54458 Str:1700" kilometre="4.390" x="4942.7456" y="3461.1014" xNet="3436216" yNet="10096126" xWGS84="4942.7456" yWGS84="3461.1014"/>
+		<node nodeID="54459" description="LZBAnfangS  Id:54459 Str:1700" kilometre="4.400" x="4915.9977" y="3414.7727" xNet="3436194" yNet="10096114" xWGS84="4915.9977" yWGS84="3414.7727"/>
+		<speedIndicator nodeID="54460" description="GeschwZulaessigS V: 160 Wirkungsort: hier Zugbeeinflussung: Alle Id:54460 Str:1700" kilometre="4.400" x="4862.5019" y="3322.1154" xNet="3436150.1" yNet="10096091" xWGS84="0" yWGS84="0" referenceNode="54459"/>
+		<speedIndicator nodeID="54461" description="GeschwZulaessigF V: 110 Wirkungsort: hier Zugbeeinflussung: Alle Id:54461 Str:1700" kilometre="4.400" x="4809.0061" y="3229.458" xNet="3436106.2" yNet="10096067" xWGS84="0" yWGS84="0" referenceNode="54462"/>
+		<node nodeID="54462" description="LZBEndeF  Id:54462 Str:1700" kilometre="4.400" x="4755.5103" y="3136.8007" xNet="3436062.3" yNet="10096044" xWGS84="4755.5103" yWGS84="3136.8007"/>
+		<node nodeID="54463" name="06Va934" description="VorsignalF FstrBildezeit: 9s Id:54463 Str:1700" kilometre="4.799" x="3688.269" y="1288.2867" xNet="3435186.4" yNet="10095577" xWGS84="3688.269" yWGS84="1288.2867" referenceNode="54464" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="54464" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:54464 Str:1700" kilometre="5.135" x="2789.5395" y="-268.35664" xNet="3434448.8" yNet="10095184" xWGS84="2789.5395" yWGS84="-268.35664"/>
+		<node nodeID="54465" description="Bildpunkt  Id:54465 Str:1700 Bild (26.5580 / -5.0000)" kilometre="5.185" x="2655.8" y="-500" xNet="3434339" yNet="10095125" xWGS84="2655.8" yWGS84="-500"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="54466" name="432" description="HauptsignalF DwegAuflösezeit: 3s Id:54466 Str:1700" kilometre="5.185" x="1666.0571" y="-500" xNet="3433646.4" yNet="10095342" xWGS84="0" yWGS84="0" referenceNode="54467"/>
+		<node nodeID="54467" description="Betriebsstellengrenze Partner: H433L Strecke: 1700 Gleis: 2 Id:54467 Str:1700 Bild (16.1657 / -5.0000)" kilometre="5.186" x="1616.57" y="-500" xNet="3433611.7" yNet="10095353" xWGS84="1616.57" yWGS84="-500"/>
+		<node nodeID="54468" description="Betriebsstellengrenze Partner: HBUG Strecke: 1700 Gleis: 1 Id:54468 Str:1700 Bild (64.0853 / 52.0000)" kilometre="4.100" x="6408.53" y="5200" xNet="3437363.1" yNet="10096464" xWGS84="6408.53" yWGS84="5200"/>
+		<node nodeID="54469" description="Bildpunkt  Id:54469 Str:1700 Bild (54.8482 / 52.0000)" kilometre="4.101" x="5484.82" y="5200" xNet="3436716.7" yNet="10096666" xWGS84="5484.82" yWGS84="5200"/>
+		<node nodeID="54470" name="V433" description="VorsignalS FstrBildezeit: 9s Id:54470 Str:1700" kilometre="4.190" x="4960.0887" y="4291.1368" xNet="3436286" yNet="10096437" xWGS84="4960.0887" yWGS84="4291.1368" referenceNode="54469" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="54471" description="Neigung S: 0.00 F: -4.57 Id:54471 Str:1700" kilometre="4.265" x="4517.8994" y="3525.2408" xNet="3435923.1" yNet="10096243" xWGS84="4517.8994" yWGS84="3525.2408"/>
+		<node nodeID="54472" description="Neigung S: -5.65 F: 0.00 Id:54472 Str:1700" kilometre="4.390" x="3780.9172" y="2248.7476" xNet="3435318.3" yNet="10095921" xWGS84="3780.9172" yWGS84="2248.7476"/>
+		<node nodeID="54473" description="LZBAnfangS  Id:54473 Str:1700" kilometre="4.400" x="3721.9586" y="2146.6281" xNet="3435269.9" yNet="10095895" xWGS84="3721.9586" yWGS84="2146.6281"/>
+		<speedIndicator nodeID="54474" description="GeschwZulaessigS V: 160 Wirkungsort: hier Zugbeeinflussung: Alle Id:54474 Str:1700" kilometre="4.400" x="3604.0415" y="1942.3892" xNet="3435173.1" yNet="10095844" xWGS84="0" yWGS84="0" referenceNode="54473"/>
+		<speedIndicator nodeID="54475" description="GeschwZulaessigF V: 110 Wirkungsort: hier Zugbeeinflussung: Alle Id:54475 Str:1700" kilometre="4.400" x="3486.1243" y="1738.1503" xNet="3435076.3" yNet="10095792" xWGS84="0" yWGS84="0" referenceNode="54476"/>
+		<node nodeID="54476" description="LZBEndeF  Id:54476 Str:1700" kilometre="4.400" x="3368.2072" y="1533.9114" xNet="3434979.5" yNet="10095740" xWGS84="3368.2072" yWGS84="1533.9114"/>
+		<node nodeID="54477" description="Bildpunkt  Id:54477 Str:1700 Bild (24.2487 / -1.0000)" kilometre="4.560" x="2424.87" y="-100" xNet="3434205.3" yNet="10095328" xWGS84="2424.87" yWGS84="-100"/>
+		<node nodeID="54478" name="06Va944" description="VorsignalF FstrBildezeit: 9s Partner: HBUG Id:54478 Str:1700" kilometre="4.799" x="2116.2698" y="-100" xNet="3433989.3" yNet="10095395" xWGS84="2116.2698" yWGS84="-100" referenceNode="54479" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="54479" description="Betriebsstellengrenze Partner: H433L Strecke: 1700 Gleis: 1 Id:54479 Str:1700 Bild (16.1657 / -1.0000)" kilometre="5.186" x="1616.57" y="-100" xNet="3433639.6" yNet="10095505" xWGS84="1616.57" yWGS84="-100"/>
+		<node nodeID="54480" description="Betriebsstellengrenze Partner: H432H Strecke: 1700 Gleis: 1 Id:54480 Str:1700 Bild (21.9402 / 0.0000)" kilometre="5.186" x="1616.57" y="-100" xNet="3419684.4" yNet="10091782" xWGS84="2194.02" yWGS84="0"/>
+		<node nodeID="54481" description="Neigung S: -2.66 F: 5.65 Id:54481 Str:1700" kilometre="5.200" x="1576.9267" y="-100" xNet="3419644.8" yNet="10091781" xWGS84="2154.3767" yWGS84="0"/>
+		<node nodeID="54483" name="V435" description="VorsignalS FstrBildezeit: 9s Id:54483 Str:1700" kilometre="5.478" x="733.09142" y="-100" xNet="3418801.4" yNet="10091752" xWGS84="1310.5414" yWGS84="0" referenceNode="54482" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="54484" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:54484 Str:1700" kilometre="5.528" x="591.50831" y="-100" xNet="3418659.9" yNet="10091747" xWGS84="1168.9583" yWGS84="0"/>
+		<node nodeID="54485" description="Betriebsstellengrenze Partner: HLTA Strecke: 1700 Gleis: 1 Id:54485 Str:1700 Bild (11.5480 / 0.0000)" kilometre="5.533" x="577.35" y="-100" xNet="3418645.8" yNet="10091746" xWGS84="1154.8" yWGS84="0"/>
+		<node nodeID="54486" description="Betriebsstellengrenze Partner: H432H Strecke: 1700 Gleis: 2 Id:54486 Str:1700 Bild (21.9402 / -4.0000)" kilometre="5.186" x="1616.57" y="-500" xNet="3419698.3" yNet="10091383" xWGS84="2194.02" yWGS84="-400"/>
+		<node nodeID="54487" description="Neigung S: -2.66 F: 5.65 Id:54487 Str:1700" kilometre="5.200" x="1574.6418" y="-500" xNet="3419656.4" yNet="10091381" xWGS84="2152.0918" yWGS84="-400"/>
+		<node nodeID="54488" name="V434" description="VorsignalS FstrBildezeit: 9s Id:54488 Str:1700" kilometre="5.482" x="730.08839" y="-500" xNet="3418812.4" yNet="10091352" xWGS84="1307.5384" yWGS84="-400" referenceNode="54487" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="54489" description="Betriebsstellengrenze Partner: HLTA Strecke: 1700 Gleis: 2 Id:54489 Str:1700 Bild (11.5480 / -4.0000)" kilometre="5.533" x="577.35" y="-500" xNet="3418659.7" yNet="10091346" xWGS84="1154.8" yWGS84="-400"/>
+		<node nodeID="54490" description="Betriebsstellengrenze Partner: H439L Strecke: 1700 Gleis: 2 Id:54490 Str:1700 Bild (11.5480 / -4.0000)" kilometre="8.821" x="-6350.8576" y="-500" xNet="3400433.9" yNet="10091354" xWGS84="1154.8" yWGS84="-400"/>
+		<speedIndicator nodeID="54491" description="GeschwZulaessigS V: 160 Wirkungsort: hier Zugbeeinflussung: Alle Id:54491 Str:1700" kilometre="9.300" x="-10463.491" y="-500" xNet="3396321.3" yNet="10091354" xWGS84="0" yWGS84="0" referenceNode="54490"/>
+		<node nodeID="54492" description="Neigung S: 0.00 F: 0.19 Id:54492 Str:1700" kilometre="9.309" x="-10540.763" y="-500" xNet="3396244" yNet="10091354" xWGS84="-3035.1058" yWGS84="-400"/>
+		<node nodeID="54493" name="km 9,335" description="Bahnuebergang  Id:54493 Str:1700" kilometre="9.335" x="-10763.996" y="-500" xNet="3396020.8" yNet="10091354" xWGS84="-3258.3385" yWGS84="-400"/>
+		<speedIndicator nodeID="54494" description="GeschwZulaessigS V: 200 Wirkungsort: hier Zugbeeinflussung: Alle Id:54494 Str:1700" kilometre="9.400" x="-11322.078" y="-500" xNet="3395462.7" yNet="10091354" xWGS84="0" yWGS84="0" referenceNode="54493"/>
+		<speedIndicator nodeID="54495" description="GeschwZulaessigF V: 160 Wirkungsort: hier Zugbeeinflussung: Alle Id:54495 Str:1700" kilometre="9.400" x="-11493.795" y="-500" xNet="3395291" yNet="10091354" xWGS84="0" yWGS84="0" referenceNode="54496"/>
+		<node nodeID="54496" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:54496 Str:1700" kilometre="9.409" x="-11571.068" y="-500" xNet="3395213.7" yNet="10091354" xWGS84="-4065.4105" yWGS84="-400"/>
+		<signal interlockingMachine="Tb:0_Tl:3_NTA" indusi500HzLocation="none" nodeID="54497" name="438" description="HauptsignalF DwegAuflösezeit: 3s Id:54497 Str:1700" kilometre="9.459" x="-12000.362" y="-500" xNet="3394784.4" yNet="10091354" xWGS84="0" yWGS84="0" referenceNode="54498"/>
+		<node nodeID="54498" description="Betriebsstellengrenze Partner: HS Strecke: 1700 Gleis: 2 Id:54498 Str:1700 Bild (-45.0329 / -4.0000)" kilometre="9.460" x="-12008.948" y="-500" xNet="3394775.8" yNet="10091354" xWGS84="-4503.29" yWGS84="-400"/>
+		<node nodeID="54499" description="Betriebsstellengrenze Partner: H439L Strecke: 1700 Gleis: 1 Id:54499 Str:1700 Bild (11.5484 / -0.0000)" kilometre="8.821" x="-6350.8176" y="-100.00019" xNet="3400433.9" yNet="10091754" xWGS84="1154.84" yWGS84="-0.000190735"/>
+		<speedIndicator nodeID="54500" description="GeschwZulaessigS V: 160 Wirkungsort: hier Zugbeeinflussung: Alle Id:54500 Str:1700" kilometre="9.300" x="-10463.48" y="-100.00005" xNet="3396321.3" yNet="10091754" xWGS84="0" yWGS84="0" referenceNode="54499"/>
+		<node nodeID="54501" description="Neigung S: 0.00 F: 0.19 Id:54501 Str:1700" kilometre="9.309" x="-10540.753" y="-100.00005" xNet="3396244" yNet="10091754" xWGS84="-3035.0954" yWGS84="-4.9492693e-05"/>
+		<node nodeID="54502" name="km 9,335" description="Bahnuebergang  Id:54502 Str:1700" kilometre="9.335" x="-10763.987" y="-100.00004" xNet="3396020.8" yNet="10091754" xWGS84="-3258.3297" yWGS84="-4.1967489e-05"/>
+		<speedIndicator nodeID="54503" description="GeschwZulaessigS V: 200 Wirkungsort: hier Zugbeeinflussung: Alle Id:54503 Str:1700" kilometre="9.400" x="-11322.073" y="-100.00002" xNet="3395462.7" yNet="10091754" xWGS84="0" yWGS84="0" referenceNode="54502"/>
+		<speedIndicator nodeID="54504" description="GeschwZulaessigF V: 160 Wirkungsort: hier Zugbeeinflussung: Alle Id:54504 Str:1700" kilometre="9.400" x="-11493.792" y="-100.00002" xNet="3395291" yNet="10091754" xWGS84="0" yWGS84="0" referenceNode="54505"/>
+		<node nodeID="54505" description="Betriebsstellengrenze Partner: HS Strecke: 1700 Gleis: 1 Id:54505 Str:1700 Bild (-45.0329 / 0.0000)" kilometre="9.460" x="-12008.948" y="-100" xNet="3394775.8" yNet="10091754" xWGS84="-4503.29" yWGS84="0"/>
+		<node nodeID="54506" description="Betriebsstellengrenze Partner: HLTA Strecke: 1700 Gleis: 2 Id:54506 Str:1700 Bild (9.2394 / -4.0000)" kilometre="8.769" x="-5427.02" y="-500" xNet="3402139.5" yNet="10091354" xWGS84="923.938" yWGS84="-400"/>
+		<node nodeID="54507" name="Vg54" description="VorsignalS FstrBildezeit: 9s Partner: HS Id:54507 Str:1700" kilometre="8.770" x="-5444.7848" y="-500" xNet="3402121.7" yNet="10091354" xWGS84="906.17325" yWGS84="-400" referenceNode="54521" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="54508" description="Betriebsstellengrenze Partner: H438S Strecke: 1700 Gleis: 2 Id:54508 Str:1700 Bild (0.0017 / -4.0000)" kilometre="8.821" x="-6350.7871" y="-500" xNet="3401215.7" yNet="10091354" xWGS84="0.170898" yWGS84="-400"/>
+		<node nodeID="54509" description="Betriebsstellengrenze Partner: HLTA Strecke: 1700 Gleis: 1 Id:54509 Str:1700 Bild (9.2390 / -0.0000)" kilometre="8.769" x="-5427.057" y="-100.00019" xNet="3402139.4" yNet="10091754" xWGS84="923.901" yWGS84="-0.000190735"/>
+		<node nodeID="54511" name="Vf53" description="VorsignalS FstrBildezeit: 9s Partner: HS Id:54511 Str:1700" kilometre="8.769" x="-5828.6921" y="-100.00019" xNet="3401737.8" yNet="10091754" xWGS84="522.26595" yWGS84="-0.000190735" referenceNode="54510" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="54512" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:54512 Str:1700" kilometre="8.819" x="-6330.7359" y="-100.00019" xNet="3401235.8" yNet="10091754" xWGS84="20.222134" yWGS84="-0.000190735"/>
+		<node nodeID="54513" description="Betriebsstellengrenze Partner: H438S Strecke: 1700 Gleis: 1 Id:54513 Str:1700 Bild (0.0014 / -0.0000)" kilometre="8.821" x="-6350.8176" y="-100.00019" xNet="3401215.7" yNet="10091754" xWGS84="0.140381" yWGS84="-0.000190735"/>
+		<track trackID="Z-9000" stationID="H433L" length="0" interlockingMachine="Tb:0_Tl:3_NTA" indusi500HzLocation="none" nodeID="54482" name="433" description="HauptsignalS DwegAuflösezeit: 3s Id:54482 Str:1700" kilometre="5.478" x="789.72466" y="-100" xNet="3418858" yNet="10091754" xWGS84="0" yWGS84="0" referenceNode="54522"/>
+		<track trackID="Z-9000" stationID="H439L" length="0" interlockingMachine="Tb:0_Tl:3_NTA" indusi500HzLocation="none" nodeID="54510" name="439" description="HauptsignalS DwegAuflösezeit: 3s Id:54510 Str:1700" kilometre="8.769" x="-5627.8745" y="-100.00019" xNet="3401938.6" yNet="10091754" xWGS84="0" yWGS84="0" referenceNode="54524"/>
+		<stationBorder exitType="alternative" stationID="H433L" lineID="1700" trackNumber="1" nodeID="54514" description="Betriebsstellengrenze Partner: H432H Strecke: 1700 Gleis: 1 Id:54480 Str:1700 Bild (21.9402 / 0.0000)" kilometre="5.478" x="1183.3257" y="-100" xNet="3419251.4" yNet="10091767" xWGS84="0" yWGS84="0" referenceNode="54522"/>
+		<stationBorder exitType="regular" stationID="H433L" lineID="1700" trackNumber="1" nodeID="54515" description="Betriebsstellengrenze Partner: HLTA Strecke: 1700 Gleis: 1 Id:54485 Str:1700 Bild (11.5480 / 0.0000)" kilometre="5.528" x="584.42916" y="-100" xNet="3418652.9" yNet="10091746" xWGS84="1168.9583" yWGS84="0" referenceNode="54484"/>
+		<stationBorder exitType="regular" stationID="H433L" lineID="1700" trackNumber="2" nodeID="54516" description="Betriebsstellengrenze Partner: H432H Strecke: 1700 Gleis: 2 Id:54486 Str:1700 Bild (21.9402 / -4.0000)" kilometre="5.200" x="1595.6059" y="-500" xNet="3419677.4" yNet="10091382" xWGS84="2152.0918" yWGS84="-400" referenceNode="54523"/>
+		<stationBorder exitType="alternative" stationID="H433L" lineID="1700" trackNumber="2" nodeID="54517" description="Betriebsstellengrenze Partner: HLTA Strecke: 1700 Gleis: 2 Id:54489 Str:1700 Bild (11.5480 / -4.0000)" kilometre="5.200" x="1585.1239" y="-500" xNet="3419666.9" yNet="10091382" xWGS84="2152.0918" yWGS84="-400" referenceNode="54523"/>
+		<stationBorder exitType="alternative" stationID="H439L" lineID="1700" trackNumber="1" nodeID="54518" description="Betriebsstellengrenze Partner: HLTA Strecke: 1700 Gleis: 1 Id:54509 Str:1700 Bild (9.2390 / -0.0000)" kilometre="8.769" x="-5527.4658" y="-100.00019" xNet="3402039" yNet="10091754" xWGS84="0" yWGS84="0" referenceNode="54524"/>
+		<stationBorder exitType="regular" stationID="H439L" lineID="1700" trackNumber="1" nodeID="54519" description="Betriebsstellengrenze Partner: H438S Strecke: 1700 Gleis: 1 Id:54513 Str:1700 Bild (0.0014 / -0.0000)" kilometre="8.819" x="-6340.7767" y="-100.00019" xNet="3401225.7" yNet="10091754" xWGS84="20.222134" yWGS84="-0.000190735" referenceNode="54512"/>
+		<stationBorder exitType="regular" stationID="H439L" lineID="1700" trackNumber="2" nodeID="54520" description="Betriebsstellengrenze Partner: HLTA Strecke: 1700 Gleis: 2 Id:54506 Str:1700 Bild (9.2394 / -4.0000)" kilometre="8.770" x="-5435.9024" y="-500" xNet="3402130.6" yNet="10091354" xWGS84="906.17325" yWGS84="-400" referenceNode="54525"/>
+		<stationBorder exitType="alternative" stationID="H439L" lineID="1700" trackNumber="2" nodeID="54521" description="Betriebsstellengrenze Partner: H438S Strecke: 1700 Gleis: 2 Id:54508 Str:1700 Bild (0.0017 / -4.0000)" kilometre="8.770" x="-5440.3436" y="-500" xNet="3402126.2" yNet="10091354" xWGS84="906.17325" yWGS84="-400" referenceNode="54525"/>
+		<track trackID="X-1" stationID="H433L" type="timingPoint" nodeID="54522" kilometre="5.478" x="986.52518" y="-100" xNet="3419054.7" yNet="10091760" xWGS84="0" yWGS84="0" referenceNode="54482"/>
+		<track trackID="X-2" stationID="H433L" type="timingPoint" nodeID="54523" kilometre="5.200" x="1590.3649" y="-500" xNet="3419672.1" yNet="10091382" xWGS84="0" yWGS84="0" referenceNode="54517"/>
+		<track trackID="X-1" stationID="H439L" type="timingPoint" nodeID="54524" kilometre="8.769" x="-5577.6701" y="-100.00019" xNet="3401988.8" yNet="10091754" xWGS84="0" yWGS84="0" referenceNode="54510"/>
+		<track trackID="X-2" stationID="H439L" type="timingPoint" nodeID="54525" kilometre="8.770" x="-5438.123" y="-500" xNet="3402128.4" yNet="10091354" xWGS84="0" yWGS84="0" referenceNode="54521"/>
+	</nodes>
+	<links>
+		<link source="54455" target="54456" length="1" gradient="4.57" vmax="110" vmaxr="110" electrified="true"/>
+		<link source="54456" target="54457" length="164" gradient="4.57" vmax="110" vmaxr="110" electrified="true"/>
+		<link source="54457" target="54458" length="125" vmax="110" vmaxr="110" electrified="true"/>
+		<link source="54458" target="54459" length="10" gradient="-5.65" vmax="110" vmaxr="110" electrified="true"/>
+		<link source="54459" target="54460" gradient="-5.65" vmax="110" vmaxr="110" electrified="true"/>
+		<link source="54460" target="54461" gradient="-5.65" vmax="160" vmaxr="110" electrified="true"/>
+		<link source="54461" target="54462" gradient="-5.65" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54462" target="54463" length="399" gradient="-5.65" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54463" target="54464" length="336" gradient="-5.65" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54464" target="54465" length="50" gradient="-5.65" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54465" target="54466" gradient="-5.65" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54466" target="54467" length="1" gradient="-5.65" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54468" target="54469" length="1" gradient="4.57" vmax="110" vmaxr="110" electrified="true"/>
+		<link source="54469" target="54470" length="89" gradient="4.57" vmax="110" vmaxr="110" electrified="true"/>
+		<link source="54470" target="54471" length="75" gradient="4.57" vmax="110" vmaxr="110" electrified="true"/>
+		<link source="54471" target="54472" length="125" vmax="110" vmaxr="110" electrified="true"/>
+		<link source="54472" target="54473" length="10" gradient="-5.65" vmax="110" vmaxr="110" electrified="true"/>
+		<link source="54473" target="54474" gradient="-5.65" vmax="110" vmaxr="110" electrified="true"/>
+		<link source="54474" target="54475" gradient="-5.65" vmax="160" vmaxr="110" electrified="true"/>
+		<link source="54475" target="54476" gradient="-5.65" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54476" target="54477" length="160" gradient="-5.65" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54477" target="54478" length="239" gradient="-5.65" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54478" target="54479" length="387" gradient="-5.65" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54480" target="54481" length="14" gradient="-5.65" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54481" target="54514" length="278" gradient="-2.66" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54482" target="54483" gradient="-2.66" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54483" target="54484" length="50" gradient="-2.66" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54515" target="54485" length="5" gradient="-2.66" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54486" target="54516" length="14" gradient="-5.65" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54487" target="54488" length="282" gradient="-2.66" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54488" target="54489" length="51" gradient="-2.66" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54490" target="54491" length="479" gradient="-0.19" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54491" target="54492" length="9" gradient="-0.19" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54492" target="54493" length="26" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54493" target="54494" length="65" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54494" target="54495" vmax="200" vmaxr="160" electrified="true"/>
+		<link source="54495" target="54496" length="9" vmax="200" vmaxr="200" electrified="true"/>
+		<link source="54496" target="54497" length="50" vmax="200" vmaxr="200" electrified="true"/>
+		<link source="54497" target="54498" length="1" vmax="200" vmaxr="200" electrified="true"/>
+		<link source="54499" target="54500" length="479" gradient="-0.19" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54500" target="54501" length="9" gradient="-0.19" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54501" target="54502" length="26" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54502" target="54503" length="65" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54503" target="54504" vmax="200" vmaxr="160" electrified="true"/>
+		<link source="54504" target="54505" length="60" vmax="200" vmaxr="200" electrified="true"/>
+		<link source="54506" target="54520" length="1" gradient="-0.19" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54507" target="54508" length="51" gradient="-0.19" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54509" target="54518" gradient="-0.19" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54510" target="54511" gradient="-0.19" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54511" target="54512" length="50" gradient="-0.19" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54519" target="54513" length="2" gradient="-0.19" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54479" target="54480" gradient="-5.65" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54467" target="54486" gradient="-5.65" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="69895.hh" target="54468" gradient="4.57" vmax="110" vmaxr="110" electrified="true"/>
+		<link source="69871.hh" target="54455" gradient="4.57" vmax="110" vmaxr="110" electrified="true"/>
+		<link source="54485" target="676.hlta" gradient="-2.66" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54489" target="662.hlta" gradient="-2.66" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54513" target="54499" gradient="-0.19" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54508" target="54490" gradient="-0.19" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54505" target="13012.hs" vmax="200" vmaxr="200" electrified="true"/>
+		<link source="54498" target="13021.hs" vmax="200" vmaxr="200" electrified="true"/>
+		<link source="661.hlta" target="54509" gradient="-0.19" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="593.hlta" target="54506" gradient="-0.19" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54514" target="54522" gradient="-2.66" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54484" target="54515" gradient="-2.66" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54517" target="54487" gradient="-5.65" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54516" target="54523" gradient="-5.65" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54518" target="54524" gradient="-0.19" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54512" target="54519" gradient="-0.19" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54521" target="54507" gradient="-0.19" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54520" target="54525" gradient="-0.19" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54522" target="54482" length="1" gradient="-2.66" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54523" target="54517" gradient="-5.65" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54524" target="54510" length="1" gradient="-0.19" vmax="160" vmaxr="160" electrified="true"/>
+		<link source="54525" target="54521" gradient="-0.19" vmax="160" vmaxr="160" electrified="true"/>
+	</links>
+	<dependentLinks/>
+	<blockSections>
+		<blockSection signallingSystem="lzb" presignal="54470" nodes="69806.hh 69807.hh 69808.hh 69809.hh 69810.hh 69900.hh 69901.hh 69902.hh 69903.hh 69813.hh 69812.hh 69815.hh 69816.hh 69817.hh 69818.hh 69819.hh 69820.hh 69821.hh 69822.hh 69942.hh 69895.hh 54468 54469 54470 54471 54472 54473 54474 54475 54476 54477 54478 54479 54480 54481 54514 54522 54482" speedIndicators="54474 69817.hh"/>
+		<blockSection signallingSystem="lzb" presignal="54470" nodes="69824.hh 69825.hh 69826.hh 69945.hh 69827.hh 69828.hh 69829.hh 69830.hh 69831.hh 69833.hh 69908.hh 69909.hh 69802.hh 69800.hh 69803.hh 69804.hh 69873.hh 69874.hh 69875.hh 69877.hh 69891.hh 69892.hh 69893.hh 69894.hh 69841.hh 69897.hh 69896.hh 69898.hh 69899.hh 69814.hh 69812.hh 69815.hh 69816.hh 69817.hh 69818.hh 69819.hh 69820.hh 69821.hh 69822.hh 69942.hh 69895.hh 54468 54469 54470 54471 54472 54473 54474 54475 54476 54477 54478 54479 54480 54481 54514 54522 54482" speedIndicators="54474 69817.hh"/>
+		<blockSection signallingSystem="lzb" presignal="54470" nodes="69843.hh 69844.hh 69940.hh 69845.hh 69846.hh 69847.hh 69848.hh 69912.hh 69913.hh 69835.hh 69834.hh 69836.hh 69837.hh 69838.hh 69839.hh 69840.hh 69841.hh 69897.hh 69896.hh 69898.hh 69899.hh 69814.hh 69812.hh 69815.hh 69816.hh 69817.hh 69818.hh 69819.hh 69820.hh 69821.hh 69822.hh 69942.hh 69895.hh 54468 54469 54470 54471 54472 54473 54474 54475 54476 54477 54478 54479 54480 54481 54514 54522 54482" speedIndicators="54474 69817.hh"/>
+		<blockSection signallingSystem="lzb" presignal="54470" nodes="69923.hh 69924.hh 69925.hh 69926.hh 69927.hh 69928.hh 69801.hh 69800.hh 69803.hh 69804.hh 69873.hh 69874.hh 69875.hh 69877.hh 69891.hh 69892.hh 69893.hh 69894.hh 69841.hh 69897.hh 69896.hh 69898.hh 69899.hh 69814.hh 69812.hh 69815.hh 69816.hh 69817.hh 69818.hh 69819.hh 69820.hh 69821.hh 69822.hh 69942.hh 69895.hh 54468 54469 54470 54471 54472 54473 54474 54475 54476 54477 54478 54479 54480 54481 54514 54522 54482" speedIndicators="54474 69817.hh"/>
+		<blockSection signallingSystem="lzb" presignal="659.hlta" nodes="578.hlta 579.hlta 573.hlta 572.hlta 566.hlta 575.hlta 606.hlta 607.hlta 608.hlta 609.hlta 610.hlta 611.hlta 612.hlta 613.hlta 621.hlta 623.hlta 634.hlta 635.hlta 636.hlta 637.hlta 638.hlta 689.hlta 640.hlta 651.hlta 652.hlta 653.hlta 654.hlta 655.hlta 656.hlta 695.hlta 657.hlta 658.hlta 659.hlta 660.hlta 661.hlta 54509 54518 54524 54510" speedIndicators="652.hlta"/>
+		<blockSection signallingSystem="lzb" presignal="54488" nodes="69806.hh 69807.hh 69808.hh 69809.hh 69811.hh 69929.hh 69930.hh 69911.hh 69848.hh 69912.hh 69913.hh 69835.hh 69834.hh 69836.hh 69837.hh 69838.hh 69839.hh 69840.hh 69841.hh 69897.hh 69910.hh 69931.hh 69932.hh 69933.hh 69934.hh 69935.hh 69936.hh 69870.hh 69869.hh 69943.hh 69871.hh 54455 54456 54457 54458 54459 54460 54461 54462 54463 54464 54465 54466 54467 54486 54516 54523 54517 54487 54488 54489 662.hlta 663.hlta 664.hlta 665.hlta 666.hlta 667.hlta 668.hlta 694.hlta 669.hlta" speedIndicators="666.hlta 54460 69933.hh"/>
+		<blockSection signallingSystem="lzb" presignal="54488" nodes="69824.hh 69825.hh 69826.hh 69945.hh 69827.hh 69828.hh 69829.hh 69830.hh 69831.hh 69833.hh 69908.hh 69909.hh 69802.hh 69800.hh 69803.hh 69804.hh 69873.hh 69874.hh 69875.hh 69877.hh 69891.hh 69892.hh 69893.hh 69894.hh 69841.hh 69897.hh 69910.hh 69931.hh 69932.hh 69933.hh 69934.hh 69935.hh 69936.hh 69870.hh 69869.hh 69943.hh 69871.hh 54455 54456 54457 54458 54459 54460 54461 54462 54463 54464 54465 54466 54467 54486 54516 54523 54517 54487 54488 54489 662.hlta 663.hlta 664.hlta 665.hlta 666.hlta 667.hlta 668.hlta 694.hlta 669.hlta" speedIndicators="666.hlta 54460 69933.hh"/>
+		<blockSection signallingSystem="lzb" presignal="54488" nodes="69843.hh 69844.hh 69940.hh 69845.hh 69846.hh 69847.hh 69848.hh 69912.hh 69913.hh 69835.hh 69834.hh 69836.hh 69837.hh 69838.hh 69839.hh 69840.hh 69841.hh 69897.hh 69910.hh 69931.hh 69932.hh 69933.hh 69934.hh 69935.hh 69936.hh 69870.hh 69869.hh 69943.hh 69871.hh 54455 54456 54457 54458 54459 54460 54461 54462 54463 54464 54465 54466 54467 54486 54516 54523 54517 54487 54488 54489 662.hlta 663.hlta 664.hlta 665.hlta 666.hlta 667.hlta 668.hlta 694.hlta 669.hlta" speedIndicators="666.hlta 54460 69933.hh"/>
+		<blockSection signallingSystem="lzb" presignal="54488" nodes="69923.hh 69924.hh 69925.hh 69926.hh 69927.hh 69928.hh 69801.hh 69800.hh 69803.hh 69804.hh 69873.hh 69874.hh 69875.hh 69877.hh 69891.hh 69892.hh 69893.hh 69894.hh 69841.hh 69897.hh 69910.hh 69931.hh 69932.hh 69933.hh 69934.hh 69935.hh 69936.hh 69870.hh 69869.hh 69943.hh 69871.hh 54455 54456 54457 54458 54459 54460 54461 54462 54463 54464 54465 54466 54467 54486 54516 54523 54517 54487 54488 54489 662.hlta 663.hlta 664.hlta 665.hlta 666.hlta 667.hlta 668.hlta 694.hlta 669.hlta" speedIndicators="666.hlta 54460 69933.hh"/>
+		<blockSection signallingSystem="lzb" presignal="54483" nodes="54482 54483 54484 54515 54485 676.hlta 677.hlta 678.hlta 679.hlta 680.hlta 692.hlta 681.hlta 682.hlta"/>
+		<blockSection signallingSystem="lzb" presignal="54507" nodes="578.hlta 579.hlta 573.hlta 572.hlta 566.hlta 575.hlta 606.hlta 607.hlta 608.hlta 609.hlta 610.hlta 611.hlta 612.hlta 613.hlta 621.hlta 622.hlta 648.hlta 649.hlta 650.hlta 581.hlta 580.hlta 583.hlta 585.hlta 586.hlta 587.hlta 588.hlta 589.hlta 696.hlta 590.hlta 591.hlta 592.hlta 593.hlta 54506 54520 54525 54521 54507 54508 54490 54491 54492 54493 54494 54495 54496 54497 54498 13021.hs 13022.hs 13023.hs 13024.hs 13025.hs" speedIndicators="586.hlta 54491 54494"/>
+		<blockSection signallingSystem="lzb" presignal="54511" nodes="54510 54511 54512 54519 54513 54499 54500 54501 54502 54503 54504 54505 13012.hs 13013.hs 13014.hs 13015.hs 13159.hs 13016.hs" speedIndicators="54500 54503"/>
+		<blockSection signallingSystem="lzb" presignal="13028.hs" nodes="13043.hs 13042.hs 13041.hs 12987.hs 13002.hs 13001.hs 13000.hs 12999.hs 12997.hs 12998.hs 13032.hs 13031.hs 13030.hs 13029.hs 13028.hs 13027.hs 13160.hs 13026.hs 13025.hs 13024.hs 13023.hs 13022.hs 13021.hs 54498 54497" speedIndicators="13032.hs 13042.hs"/>
+		<blockSection signallingSystem="lzb" presignal="13028.hs" nodes="13118.hs 13117.hs 13033.hs 12998.hs 13032.hs 13031.hs 13030.hs 13029.hs 13028.hs 13027.hs 13160.hs 13026.hs 13025.hs 13024.hs 13023.hs 13022.hs 13021.hs 54498 54497" speedIndicators="13032.hs"/>
+		<blockSection signallingSystem="lzb" presignal="660.hlta" nodes="13043.hs 13042.hs 13041.hs 12987.hs 12986.hs 12985.hs 12982.hs 12983.hs 13104.hs 13103.hs 13102.hs 13101.hs 13099.hs 13098.hs 13097.hs 13096.hs 12961.hs 13020.hs 13019.hs 13018.hs 13017.hs 13016.hs 13159.hs 13015.hs 13014.hs 13013.hs 13012.hs 54505 54504 54503 54502 54501 54500 54499 54513 54519 54512 54511 54510 54524 54518 54509 661.hlta 660.hlta 659.hlta 658.hlta 657.hlta 695.hlta 656.hlta" speedIndicators="13019.hs 13042.hs 54504"/>
+		<blockSection signallingSystem="lzb" presignal="660.hlta" nodes="13130.hs 13129.hs 13128.hs 13100.hs 13098.hs 13097.hs 13096.hs 12961.hs 13020.hs 13019.hs 13018.hs 13017.hs 13016.hs 13159.hs 13015.hs 13014.hs 13013.hs 13012.hs 54505 54504 54503 54502 54501 54500 54499 54513 54519 54512 54511 54510 54524 54518 54509 661.hlta 660.hlta 659.hlta 658.hlta 657.hlta 695.hlta 656.hlta" speedIndicators="13019.hs 54504"/>
+		<blockSection presignal="592.hlta" nodes="54497 54496 54495 54494 54493 54492 54491 54490 54508 54507 54521 54525 54520 54506 593.hlta 592.hlta 591.hlta 590.hlta 696.hlta 589.hlta" speedIndicators="54495"/>
+		<blockSection presignal="671.hlta" nodes="589.hlta 588.hlta 587.hlta 586.hlta 585.hlta 583.hlta 580.hlta 581.hlta 650.hlta 649.hlta 648.hlta 622.hlta 621.hlta 613.hlta 620.hlta 675.hlta 674.hlta 673.hlta 672.hlta 671.hlta 670.hlta 669.hlta 694.hlta 668.hlta 667.hlta 666.hlta 665.hlta 664.hlta 663.hlta 662.hlta 54489 54488 54487 54517 54523 54516 54486 54467 54466" speedIndicators="667.hlta 673.hlta"/>
+		<blockSection presignal="671.hlta" nodes="656.hlta 655.hlta 654.hlta 653.hlta 652.hlta 651.hlta 640.hlta 689.hlta 638.hlta 637.hlta 636.hlta 635.hlta 634.hlta 623.hlta 621.hlta 613.hlta 620.hlta 675.hlta 674.hlta 673.hlta 672.hlta 671.hlta 670.hlta 669.hlta 694.hlta 668.hlta 667.hlta 666.hlta 665.hlta 664.hlta 663.hlta 662.hlta 54489 54488 54487 54517 54523 54516 54486 54467 54466" speedIndicators="667.hlta 673.hlta"/>
+		<blockSection presignal="54463" nodes="54466 54465 54464 54463 54462 54461 54460 54459 54458 54457 54456 54455 69871.hh 69943.hh 69869.hh 69870.hh 69936.hh" speedIndicators="54461"/>
+		<blockSection presignal="54478" nodes="589.hlta 588.hlta 587.hlta 586.hlta 585.hlta 583.hlta 580.hlta 582.hlta 642.hlta 641.hlta 639.hlta 640.hlta 689.hlta 638.hlta 688.hlta 687.hlta 686.hlta 685.hlta 684.hlta 683.hlta 682.hlta 681.hlta 692.hlta 680.hlta 679.hlta 678.hlta 677.hlta 676.hlta 54485 54515 54484 54483 54482 54522 54514 54481 54480 54479 54478 54477 54476 54475 54474 54473 54472 54471 54470 54469 54468 69895.hh 69942.hh 69822.hh 69821.hh 69820.hh" speedIndicators="679.hlta 686.hlta 54475"/>
+		<blockSection presignal="54478" nodes="656.hlta 655.hlta 654.hlta 653.hlta 652.hlta 651.hlta 640.hlta 689.hlta 638.hlta 688.hlta 687.hlta 686.hlta 685.hlta 684.hlta 683.hlta 682.hlta 681.hlta 692.hlta 680.hlta 679.hlta 678.hlta 677.hlta 676.hlta 54485 54515 54484 54483 54482 54522 54514 54481 54480 54479 54478 54477 54476 54475 54474 54473 54472 54471 54470 54469 54468 69895.hh 69942.hh 69822.hh 69821.hh 69820.hh" speedIndicators="679.hlta 686.hlta 54475"/>
+		<blockSection signallingSystem="lzb" presignal="659.hlta" nodes="669.hlta 670.hlta 671.hlta 672.hlta 673.hlta 674.hlta 675.hlta 620.hlta 613.hlta 621.hlta 623.hlta 634.hlta 635.hlta 636.hlta 637.hlta 638.hlta 689.hlta 640.hlta 651.hlta 652.hlta 653.hlta 654.hlta 655.hlta 656.hlta 695.hlta 657.hlta 658.hlta 659.hlta 660.hlta 661.hlta 54509 54518 54524 54510" speedIndicators="652.hlta"/>
+		<blockSection signallingSystem="lzb" presignal="659.hlta" nodes="682.hlta 683.hlta 684.hlta 685.hlta 686.hlta 687.hlta 688.hlta 638.hlta 689.hlta 640.hlta 651.hlta 652.hlta 653.hlta 654.hlta 655.hlta 656.hlta 695.hlta 657.hlta 658.hlta 659.hlta 660.hlta 661.hlta 54509 54518 54524 54510" speedIndicators="652.hlta"/>
+		<blockSection signallingSystem="lzb" presignal="54507" nodes="669.hlta 670.hlta 671.hlta 672.hlta 673.hlta 674.hlta 675.hlta 620.hlta 613.hlta 621.hlta 622.hlta 648.hlta 649.hlta 650.hlta 581.hlta 580.hlta 583.hlta 585.hlta 586.hlta 587.hlta 588.hlta 589.hlta 696.hlta 590.hlta 591.hlta 592.hlta 593.hlta 54506 54520 54525 54521 54507 54508 54490 54491 54492 54493 54494 54495 54496 54497 54498 13021.hs 13022.hs 13023.hs 13024.hs 13025.hs" speedIndicators="586.hlta 54491 54494"/>
+		<blockSection signallingSystem="lzb" presignal="54507" nodes="682.hlta 683.hlta 684.hlta 685.hlta 686.hlta 687.hlta 688.hlta 638.hlta 689.hlta 640.hlta 639.hlta 641.hlta 642.hlta 582.hlta 580.hlta 583.hlta 585.hlta 586.hlta 587.hlta 588.hlta 589.hlta 696.hlta 590.hlta 591.hlta 592.hlta 593.hlta 54506 54520 54525 54521 54507 54508 54490 54491 54492 54493 54494 54495 54496 54497 54498 13021.hs 13022.hs 13023.hs 13024.hs 13025.hs" speedIndicators="586.hlta 54491 54494"/>
+	</blockSections>
+	<slipDistances>
+		<slipDistance signal="54466" name="39.50.54464.1700.0" publicName="1-1000" description="432" complete="true" warnerroute="false" nodes="54466 54465 54464"/>
+		<slipDistance signal="54497" name="39.50.54496.1700.0" publicName="1-1000" description="438" complete="true" warnerroute="false" nodes="54497 54496"/>
+		<slipDistance signal="54482" name="39.50.54484.1700.0" publicName="1-1000" description="433" complete="true" warnerroute="false" nodes="54482 54483 54484"/>
+		<slipDistance signal="54510" name="39.50.54512.1700.0" publicName="1-1000" description="439" complete="true" warnerroute="false" nodes="54510 54511 54512"/>
+	</slipDistances>
+	<approachControlRoutes/>
+	<stationRoutes>
+		<stationRoute stationID="H439L" name="HH-HWUN GG" description="HH-HWUN GG" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=20;NRz=20;S=20;Rz=20;FGz=20;NGz=20;Gz=20;Lz=20" nodes="54520 54525 54521"/>
+		<stationRoute stationID="H439L" name="HH-HWUN" description="HH-HWUN" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="54518 54524 54510 54511 54512 54519"/>
+		<stationRoute stationID="H439L" name="HWUN-HH" description="HWUN-HH" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="54521 54525 54520"/>
+		<stationRoute stationID="H439L" name="HWUN-HH GG" description="HWUN-HH GG" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=20;NRz=20;S=20;Rz=20;FGz=20;NGz=20;Gz=20;Lz=20" nodes="54519 54512 54511 54510 54524 54518"/>
+		<stationRoute stationID="H433L" name="HLTA-HH GG" description="HLTA-HH GG" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=20;NRz=20;S=20;Rz=20;FGz=20;NGz=20;Gz=20;Lz=20" nodes="54515 54484 54483 54482 54522 54514"/>
+		<stationRoute stationID="H433L" name="HLTA-HH" description="HLTA-HH" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="54517 54523 54516"/>
+		<stationRoute stationID="H433L" name="HH-HLTA GG" description="HH-HLTA GG" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=20;NRz=20;S=20;Rz=20;FGz=20;NGz=20;Gz=20;Lz=20" nodes="54516 54523 54517"/>
+		<stationRoute stationID="H433L" name="HH-HLTA" description="HH-HLTA" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="54514 54522 54482 54483 54484 54515"/>
+	</stationRoutes>
+	<evzg/>
+	<evzg-katalog/>
+</line>

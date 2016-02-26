@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<railsys>
+	<version major="1" minor="2" patchlevel="0" comment="Erzeugt von RailSys\Simu/7.6.12 am Mo 22. Okt 10:45:24 2012"/>
+	<timetable>
+		<train number="40001" class="FGz" pattern="/FGz/TEC/XDTA -/HRBG-HSR A/rück" name="TEC/40001/223/RM + TEC/40001/80/Hü" description="40001/2++" comment="XDTA - XIGA&#13;&#10;Z 1472 + XDTA - XIGA&#13;&#10;Dauer-Lü KV P/C 50, P/C 380&#13;&#10;&#13;&#10;BauKo 25" typeNumber="5414" line="XDTA -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HSR A" stationName="Seelze Rbf Swf" trackID="G-6" bstfahrweg="HSR W-308-HSR S" departure="21:10:24" regularRunningTime="145" requestedDeparture="21:10:24" requestedTrackID="G-6" requestedBstFahrweg="HSR W-308-HSR S" type="begin" lineID="7636" timingPoint="true" departureFix="true" zuggattung="TEC 52.9"/>
+				<entry stationID="HLIH" trackID="G-545" bstfahrweg="HAHM-HEMA" departure="21:24:07" regularRunningTime="107" requestedDeparture="21:24:07" requestedTrackID="G-545" requestedBstFahrweg="HAHM-HEMA" type="pass" trainTypeNumber="5414" lineID="1752" timingPoint="true" zuggattung="TEC 52.9"/>
+				<entry stationID="HEMA" trackID="G-1000" bstfahrweg="HLIH(1752)-HWEZ(1760)" departure="21:25:54" regularRunningTime="51" requestedDeparture="21:25:54" requestedTrackID="G-1000" requestedBstFahrweg="HLIH(1752)-HWEZ(1760)" type="pass" trainTypeNumber="5414" timingPoint="true" zuggattung="TEC 52.9"/>
+				<entry stationID="HRBG" stationName="Ronnenberg" trackID="G-733" bstfahrweg="HLI-3-HHM" departure="21:28:22" RTMargin2="0" requestedDeparture="21:28:22" requestedTrackID="G-733" requestedBstFahrweg="HLI-3-HHM" type="end" lineID="1760" timingPoint="true" zuggattung="TEC 52.9"/>
+			</timetableentries>
+		</train>
+		<train number="42179" class="FGz" pattern="/FGz/TEC/HBG -/HRBG-HSR A/rück" name="TEC/42179/60/RM + TEC/42179/223/Hü" description="42179/1" comment="HBG - XIVQ&#13;&#10;Z 1472 + HBG - XIVQ&#13;&#10;Dauer-Lü KV P/C 70, P/C 400&#13;&#10;&#13;&#10;BauKo 49" typeNumber="5432" line="HBG -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HSR A" stationName="Seelze Rbf Swf" trackID="G-6" bstfahrweg="HSR W-006-HSR S" departure="22:39:19" regularRunningTime="97" requestedDeparture="22:39:19" requestedTrackID="G-6" requestedBstFahrweg="HSR W-006-HSR S" type="begin" lineID="1750" timingPoint="true" departureFix="true" zuggattung="TEC 52.1"/>
+				<entry stationID="HLIH" trackID="G-545" bstfahrweg="HAHM-HEMA" departure="22:50:07" regularRunningTime="108" requestedDeparture="22:50:07" requestedTrackID="G-545" requestedBstFahrweg="HAHM-HEMA" type="pass" trainTypeNumber="5432" lineID="1752" timingPoint="true" zuggattung="TEC 52.1"/>
+				<entry stationID="HEMA" trackID="G-1000" bstfahrweg="HLIH(1752)-HWEZ(1760)" departure="22:51:55" regularRunningTime="31" requestedDeparture="22:51:55" requestedTrackID="G-1000" requestedBstFahrweg="HLIH(1752)-HWEZ(1760)" type="pass" trainTypeNumber="5432" timingPoint="true" zuggattung="TEC 52.1"/>
+				<entry stationID="HRBG" stationName="Ronnenberg" trackID="G-733" bstfahrweg="HLI-3-HHM" departure="22:54:06" RTMargin2="0" requestedDeparture="22:54:06" requestedTrackID="G-733" requestedBstFahrweg="HLI-3-HHM" type="end" lineID="1760" timingPoint="true" zuggattung="TEC 52.1"/>
+			</timetableentries>
+		</train>
+		<train number="42644" class="FGz" pattern="/FGz/TEC/XSBR -/HRBG-HSR W/hin" name="TEC/42644/223/Hü + TEC/42644/201/RM" description="42644/1" comment="XSBR - AM S&#13;&#10;&#13;&#10;BauKo 1" typeNumber="5441" line="XSBR -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HRBG" stationName="Ronnenberg" trackID="B-732" bstfahrweg="HHM-2-HLI" dwegName="1-1000" departure="03:44:14" minStopTime="60" stopTime="60" regularRunningTime="154" requestedArrival="03:43:14" requestedDeparture="03:44:14" requestedTrackID="B-732" requestedBstFahrweg="HHM-2-HLI" type="begin" lineID="1760" timingPoint="true" departureFix="true" zuggattung="TEC 52.1"/>
+				<entry stationID="HEMA" trackID="G-1000" bstfahrweg="HWEZ(1760)-HLIH(1752)" departure="03:47:17" regularRunningTime="103" requestedDeparture="03:47:17" requestedTrackID="G-1000" requestedBstFahrweg="HWEZ(1760)-HLIH(1752)" type="pass" trainTypeNumber="5441" lineID="1752" timingPoint="true" zuggattung="TEC 52.1"/>
+				<entry stationID="HLIH" trackID="G-544" bstfahrweg="HEMA-544-HAHM" departure="03:49:00" regularRunningTime="169" requestedDeparture="03:49:00" requestedTrackID="G-544" requestedBstFahrweg="HEMA-544-HAHM" type="pass" trainTypeNumber="5441" timingPoint="true" zuggattung="TEC 52.1"/>
+				<entry stationID="HSR W" stationName="Seelze Rbf W" trackID="G-5" bstfahrweg="HSR N-005-HGUE" departure="04:07:17" RTMargin2="0" requestedDeparture="04:07:17" requestedTrackID="G-5" requestedBstFahrweg="HSR N-005-HGUE" type="end" lineID="1750" timingPoint="true" zuggattung="TEC 52.1"/>
+			</timetableentries>
+		</train>
+		<train number="50179" class="FGz" pattern="/FGz/IKE/HBHP -/HRBG-HSR A/rück" name="IKE/50179/40/RM + IKE/50179/222/Hü" description="50179/1" comment="HBHP - NROB&#13;&#10;Z 1472" typeNumber="5377" line="HBHP -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HSR A" stationName="Seelze Rbf Swf" trackID="G-6" bstfahrweg="HSR W-307-HSR W" departure="15:18:35" regularRunningTime="145" requestedDeparture="15:18:35" requestedTrackID="G-6" requestedBstFahrweg="HSR W-307-HSR W" type="begin" lineID="7636" timingPoint="true" departureFix="true" zuggattung="IKE 53.1"/>
+				<entry stationID="HLIH" trackID="G-545" bstfahrweg="HAHM-HEMA" departure="15:49:00" regularRunningTime="121" requestedDeparture="15:49:00" requestedTrackID="G-545" requestedBstFahrweg="HAHM-HEMA" type="pass" trainTypeNumber="5377" lineID="1752" timingPoint="true" zuggattung="IKE 53.1"/>
+				<entry stationID="HEMA" trackID="G-1000" bstfahrweg="HLIH(1752)-HWEZ(1760)" departure="15:51:01" regularRunningTime="36" requestedDeparture="15:51:01" requestedTrackID="G-1000" requestedBstFahrweg="HLIH(1752)-HWEZ(1760)" type="pass" trainTypeNumber="5377" timingPoint="true" zuggattung="IKE 53.1"/>
+				<entry stationID="HRBG" stationName="Ronnenberg" trackID="G-733" bstfahrweg="HLI-3-HHM" departure="15:53:17" RTMargin2="0" requestedDeparture="15:53:17" requestedTrackID="G-733" requestedBstFahrweg="HLI-3-HHM" type="end" lineID="1760" timingPoint="true" zuggattung="IKE 53.1"/>
+			</timetableentries>
+		</train>
+		<train number="51123" class="FGz" pattern="/FGz/FIR/EHGVF -HSR/HRBG-HSR B/hin" name="FIR/51123/303/Hü" description="51123/2+" comment="EHGVF -HSR B&#13;&#10;KV P/C 70, P/C 400&#13;&#10;ggf nach 34915" typeNumber="5293" line="EHGVF -HSR" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HRBG" stationName="Ronnenberg" trackID="Z-9000" bstfahrweg="HHM-1-HLI" trackIDForNotConditional="G-731" bstFahrwegBeiAusfallBetriebsHalt="HHM-1-HLI" departure="06:13:51" minStopTime="60" stopTime="96" regularRunningTime="202" requestedArrival="06:12:15" requestedDeparture="06:13:51" requestedTrackID="Z-9000" requestedBstFahrweg="HHM-1-HLI" type="begin" lineID="1760" timingPoint="true" departureFix="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HEMA" trackID="G-1000" bstfahrweg="HWEZ(1760)-HLIH(1752)" departure="06:17:41" regularRunningTime="103" requestedDeparture="06:17:41" requestedTrackID="G-1000" requestedBstFahrweg="HWEZ(1760)-HLIH(1752)" type="pass" trainTypeNumber="5293" lineID="1752" timingPoint="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HLIH" trackID="G-544" bstfahrweg="HEMA-544-HAHM" departure="06:19:24" regularRunningTime="173" requestedDeparture="06:19:24" requestedTrackID="G-544" requestedBstFahrweg="HEMA-544-HAHM" type="pass" trainTypeNumber="5293" timingPoint="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HSR B" stationName="Seelze Rbf Sob" trackID="A-814" bstfahrweg="HSR O-814-HSR A" dwegName="1-40" departure="06:31:21" minStopTime="300" stopTime="300" RTMargin2="0" requestedArrival="06:26:21" requestedDeparture="06:31:21" requestedTrackID="A-814" requestedBstFahrweg="HSR O-814-HSR A" type="end" lineID="1701" timingPoint="true" zuggattung="FIR 57.5"/>
+			</timetableentries>
+		</train>
+		<train number="51132" class="FGz" pattern="/FGz/FIR/HSR O/HRBG-HSR O/rück" name="FIR/51132/302/Hü" description="51132/1+" comment="HSR O - EHGVE&#13;&#10;ohne Alternative" typeNumber="5293" line="HSR O" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HSR O" stationName="Seelze Rbf Sof" trackID="A-101" bstfahrweg="HSR O101-HAHM" dwegName="2-40" departure="21:57:48" minStopTime="300" stopTime="300" regularRunningTime="251" requestedArrival="21:52:48" requestedDeparture="21:57:48" requestedTrackID="A-101" requestedBstFahrweg="HSR O101-HAHM" type="begin" lineID="1750" timingPoint="true" departureFix="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HLIH" trackID="G-545" bstfahrweg="HAHM-HEMA" departure="22:04:38" regularRunningTime="110" requestedDeparture="22:04:38" requestedTrackID="G-545" requestedBstFahrweg="HAHM-HEMA" type="pass" trainTypeNumber="5293" lineID="1752" timingPoint="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HEMA" trackID="X-661" bstfahrweg="HLIH(1752)-HWEZ(1760)" trackIDForNotConditional="G-1000" bstFahrwegBeiAusfallBetriebsHalt="HLIH(1752)-HWEZ(1760)" departure="22:07:40" minStopTime="60" stopTime="72" regularRunningTime="139" requestedArrival="22:06:28" requestedDeparture="22:07:40" requestedTrackID="X-661" requestedBstFahrweg="HLIH(1752)-HWEZ(1760)" type="conditional1" trainTypeNumber="5293" timingPoint="true" departureFix="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HRBG" stationName="Ronnenberg" trackID="G-733" bstfahrweg="HLI-3-HHM" departure="22:13:08" RTMargin2="0" requestedDeparture="22:13:08" requestedTrackID="G-733" requestedBstFahrweg="HLI-3-HHM" type="end" lineID="1760" timingPoint="true" zuggattung="FIR 57.5"/>
+			</timetableentries>
+		</train>
+		<train number="51133" class="FGz" pattern="/FGz/FIR/EHGV F/HRBG-HSR B/hin" name="FIR/51133/303/Hü" description="51133/2+" comment="EHGV F -HSR B&#13;&#10;KV P/C 70, P/C 400&#13;&#10;nach 50187" typeNumber="5293" line="EHGV F" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HRBG" stationName="Ronnenberg" trackID="G-731" bstfahrweg="HHM-1-HLI" departure="22:29:17" regularRunningTime="81" requestedDeparture="22:29:17" requestedTrackID="G-731" requestedBstFahrweg="HHM-1-HLI" type="begin" lineID="1760" timingPoint="true" departureFix="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HEMA" trackID="G-1000" bstfahrweg="HWEZ(1760)-HLIH(1752)" departure="22:31:07" regularRunningTime="102" requestedDeparture="22:31:07" requestedTrackID="G-1000" requestedBstFahrweg="HWEZ(1760)-HLIH(1752)" type="pass" trainTypeNumber="5293" lineID="1752" timingPoint="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HLIH" trackID="G-544" bstfahrweg="HEMA-544-HAHM" departure="22:32:49" regularRunningTime="173" requestedDeparture="22:32:49" requestedTrackID="G-544" requestedBstFahrweg="HEMA-544-HAHM" type="pass" trainTypeNumber="5293" timingPoint="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HSR B" stationName="Seelze Rbf Sob" trackID="A-815" bstfahrweg="HSR O-815-HSR A" dwegName="1-40" departure="22:44:45" minStopTime="300" stopTime="300" RTMargin2="0" requestedArrival="22:39:45" requestedDeparture="22:44:45" requestedTrackID="A-815" requestedBstFahrweg="HSR O-815-HSR A" type="end" lineID="1701" timingPoint="true" zuggattung="FIR 57.5"/>
+			</timetableentries>
+		</train>
+		<train number="51135" class="FGz" pattern="/FGz/FIR/EHGVF-HSR B KV/HRBG-HSR B/hin" name="FIR/51135/312/Hü" description="51135/2+" comment="EHGVF-HSR B&#13;&#10;KV P/C 70, P/C 400" typeNumber="5293" line="EHGVF-HSR B KV" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HRBG" stationName="Ronnenberg" trackID="B-731" bstfahrweg="HHM-1-HLI" dwegName="1-1000" departure="01:53:34" minStopTime="402" stopTime="402" regularRunningTime="162" requestedArrival="01:46:52" requestedDeparture="01:53:34" requestedTrackID="B-731" requestedBstFahrweg="HHM-1-HLI" type="begin" lineID="1760" timingPoint="true" departureFix="true" zuggattung="FIR 57.4"/>
+				<entry stationID="HEMA" trackID="G-1000" bstfahrweg="HWEZ(1760)-HLIH(1752)" departure="01:56:49" regularRunningTime="103" requestedDeparture="01:56:49" requestedTrackID="G-1000" requestedBstFahrweg="HWEZ(1760)-HLIH(1752)" type="pass" trainTypeNumber="5293" lineID="1752" timingPoint="true" zuggattung="FIR 57.4"/>
+				<entry stationID="HLIH" trackID="G-544" bstfahrweg="HEMA-544-HAHM" departure="01:58:32" regularRunningTime="174" requestedDeparture="01:58:32" requestedTrackID="G-544" requestedBstFahrweg="HEMA-544-HAHM" type="pass" trainTypeNumber="5293" timingPoint="true" zuggattung="FIR 57.4"/>
+				<entry stationID="HSR B" stationName="Seelze Rbf Sob" trackID="A-815" bstfahrweg="HSR O-815-HSR A" dwegName="1-40" departure="02:07:29" minStopTime="60" stopTime="120" RTMargin2="0" requestedArrival="02:05:29" requestedDeparture="02:07:29" requestedTrackID="A-815" requestedBstFahrweg="HSR O-815-HSR A" type="end" lineID="1701" timingPoint="true" departureFix="true" zuggattung="FIR 57.4"/>
+			</timetableentries>
+		</train>
+		<train number="51220" class="FGz" pattern="/FGz/FIR/HSR O-/HRBG-HSR O/rück" name="FIR/51220/302/Hü" description="51220/1+" comment="HSR O- KG G" typeNumber="5309" line="HSR O-" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HSR O" stationName="Seelze Rbf Sof" trackID="A-102" bstfahrweg="HSR O102-HAHM" dwegName="2-40" departure="24:06:24" minStopTime="300" stopTime="300" regularRunningTime="254" requestedArrival="24:01:24" requestedDeparture="24:06:24" requestedTrackID="A-102" requestedBstFahrweg="HSR O102-HAHM" type="begin" lineID="1750" timingPoint="true" departureFix="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HLIH" trackID="G-545" bstfahrweg="HAHM-HEMA" departure="24:13:20" regularRunningTime="112" requestedDeparture="24:13:20" requestedTrackID="G-545" requestedBstFahrweg="HAHM-HEMA" type="pass" trainTypeNumber="5309" lineID="1752" timingPoint="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HEMA" trackID="G-1000" bstfahrweg="HLIH(1752)-HWEZ(1760)" departure="24:15:12" regularRunningTime="35" requestedDeparture="24:15:12" requestedTrackID="G-1000" requestedBstFahrweg="HLIH(1752)-HWEZ(1760)" type="pass" trainTypeNumber="5309" timingPoint="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HRBG" stationName="Ronnenberg" trackID="G-733" bstfahrweg="HLI-3-HHM" departure="24:17:27" RTMargin2="0" requestedDeparture="24:17:27" requestedTrackID="G-733" requestedBstFahrweg="HLI-3-HHM" type="end" lineID="1760" timingPoint="true" zuggattung="FIR 57.5"/>
+			</timetableentries>
+		</train>
+		<train number="51252" class="FGz" pattern="/FGz/FIR/HSR O/HRBG-HSR O/rück" name="FIR/51252/302/Hü" description="51252/1++" comment="HSR O - KG C&#13;&#10;während Bk 2 ohne Alternative" typeNumber="5293" line="HSR O" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HSR O" stationName="Seelze Rbf Sof" trackID="A-101" bstfahrweg="HSR O101-HAHM" dwegName="2-40" departure="05:16:36" minStopTime="300" stopTime="300" regularRunningTime="250" requestedArrival="05:11:36" requestedDeparture="05:16:36" requestedTrackID="A-101" requestedBstFahrweg="HSR O101-HAHM" type="begin" lineID="1750" timingPoint="true" departureFix="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HLIH" trackID="G-545" bstfahrweg="HAHM-HEMA" departure="05:23:25" regularRunningTime="108" requestedDeparture="05:23:25" requestedTrackID="G-545" requestedBstFahrweg="HAHM-HEMA" type="pass" trainTypeNumber="5293" lineID="1752" timingPoint="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HEMA" trackID="G-1000" bstfahrweg="HLIH(1752)-HWEZ(1760)" departure="05:25:13" regularRunningTime="34" requestedDeparture="05:25:13" requestedTrackID="G-1000" requestedBstFahrweg="HLIH(1752)-HWEZ(1760)" type="pass" trainTypeNumber="5293" timingPoint="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HRBG" stationName="Ronnenberg" trackID="G-733" bstfahrweg="HLI-3-HHM" departure="05:27:26" RTMargin2="0" requestedDeparture="05:27:26" requestedTrackID="G-733" requestedBstFahrweg="HLI-3-HHM" type="end" lineID="1760" timingPoint="true" zuggattung="FIR 57.5"/>
+			</timetableentries>
+		</train>
+		<train number="51257" class="FGz" pattern="/FGz/FIR/KG /HRBG-HSR B/hin" name="FIR/51257/302/Hü" description="51257/2+" comment="KG  G-HSR B&#13;&#10;HSR B-HSR A als Rf&#13;&#10;KV P/C 70, P/C 400" typeNumber="5293" line="KG " lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HRBG" stationName="Ronnenberg" trackID="G-731" bstfahrweg="HHM-1-HLI" departure="04:57:20" regularRunningTime="151" requestedDeparture="04:57:20" requestedTrackID="G-731" requestedBstFahrweg="HHM-1-HLI" type="begin" lineID="1760" timingPoint="true" departureFix="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HEMA" trackID="G-1000" bstfahrweg="HWEZ(1760)-HLIH(1752)" departure="05:00:19" regularRunningTime="96" requestedDeparture="05:00:19" requestedTrackID="G-1000" requestedBstFahrweg="HWEZ(1760)-HLIH(1752)" type="pass" trainTypeNumber="5293" lineID="1752" timingPoint="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HLIH" trackID="Z-9000" bstfahrweg="HEMA-544-HAHM" trackIDForNotConditional="G-544" bstFahrwegBeiAusfallBetriebsHalt="HEMA-544-HAHM" departure="05:07:25" minStopTime="60" stopTime="330" regularRunningTime="286" requestedArrival="05:01:55" requestedDeparture="05:07:25" requestedTrackID="Z-9000" requestedBstFahrweg="HEMA-544-HAHM" type="conditional1" trainTypeNumber="5293" timingPoint="true" departureFix="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HSR B" stationName="Seelze Rbf Sob" trackID="A-815" bstfahrweg="HSR O-815-HSR A" dwegName="1-40" departure="05:21:15" minStopTime="180" stopTime="300" RTMargin2="0" requestedArrival="05:16:15" requestedDeparture="05:21:15" requestedTrackID="A-815" requestedBstFahrweg="HSR O-815-HSR A" type="end" lineID="1701" timingPoint="true" departureFix="true" zuggattung="FIR 57.5"/>
+			</timetableentries>
+		</train>
+		<train number="51258" class="FGz" pattern="/FGz/FIR/HSR O/HRBG-HSR O/rück" name="FIR/51258/302/Hü" description="51258/1" comment="HSR O - KG C&#13;&#10;während Bk 2 ohne Alternative" typeNumber="5293" line="HSR O" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HSR O" stationName="Seelze Rbf Sof" trackID="A-101" bstfahrweg="HSR O101-HAHM" dwegName="2-40" departure="19:31:54" minStopTime="300" stopTime="300" regularRunningTime="250" requestedArrival="19:26:54" requestedDeparture="19:31:54" requestedTrackID="A-101" requestedBstFahrweg="HSR O101-HAHM" type="begin" lineID="1750" timingPoint="true" departureFix="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HLIH" trackID="G-545" bstfahrweg="HAHM-HEMA" departure="19:38:43" regularRunningTime="108" requestedDeparture="19:38:43" requestedTrackID="G-545" requestedBstFahrweg="HAHM-HEMA" type="pass" trainTypeNumber="5293" lineID="1752" timingPoint="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HEMA" trackID="G-1000" bstfahrweg="HLIH(1752)-HWEZ(1760)" departure="19:40:31" regularRunningTime="34" requestedDeparture="19:40:31" requestedTrackID="G-1000" requestedBstFahrweg="HLIH(1752)-HWEZ(1760)" type="pass" trainTypeNumber="5293" timingPoint="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HRBG" stationName="Ronnenberg" trackID="G-733" bstfahrweg="HLI-3-HHM" departure="19:42:44" RTMargin2="0" requestedDeparture="19:42:44" requestedTrackID="G-733" requestedBstFahrweg="HLI-3-HHM" type="end" lineID="1760" timingPoint="true" zuggattung="FIR 57.5"/>
+			</timetableentries>
+		</train>
+		<train number="51579" class="FGz" pattern="/FGz/FIR/HSR O/HRBG-HSR O/rück" name="FIR/51579/80/Hü" description="51579/1" comment="HSR O - RMR K&#13;&#10;Bza-Nr. &lt;A1 8350, 8351, 8368, 8371 /09&gt;&#13;&#10;Bef Ano 1017,1022&#13;&#10;&#13;&#10;(RV)" typeNumber="5292" line="HSR O" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HSR O" stationName="Seelze Rbf Sof" trackID="A-109" bstfahrweg="HSR S-109-HAHM" dwegName="1-1000" departure="20:13:57" minStopTime="300" stopTime="300" regularRunningTime="280" requestedArrival="20:08:57" requestedDeparture="20:13:57" requestedTrackID="A-109" requestedBstFahrweg="HSR S-109-HAHM" type="begin" lineID="1750" timingPoint="true" departureFix="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HLIH" trackID="G-545" bstfahrweg="HAHM-HEMA" departure="20:21:11" regularRunningTime="108" requestedDeparture="20:21:11" requestedTrackID="G-545" requestedBstFahrweg="HAHM-HEMA" type="pass" trainTypeNumber="5292" lineID="1752" timingPoint="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HEMA" trackID="G-1000" bstfahrweg="HLIH(1752)-HWEZ(1760)" departure="20:22:59" regularRunningTime="33" requestedDeparture="20:22:59" requestedTrackID="G-1000" requestedBstFahrweg="HLIH(1752)-HWEZ(1760)" type="pass" trainTypeNumber="5292" timingPoint="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HRBG" stationName="Ronnenberg" trackID="G-733" bstfahrweg="HLI-3-HHM" departure="20:25:05" RTMargin2="0" requestedDeparture="20:25:05" requestedTrackID="G-733" requestedBstFahrweg="HLI-3-HHM" type="end" lineID="1760" timingPoint="true" zuggattung="FIR 57.5"/>
+			</timetableentries>
+		</train>
+		<train number="51824" class="FGz" pattern="/FGz/FIR/RMR E/HRBG-HSR B/hin" name="FIR/51824/90/hÜ" description="51824/4" comment="RMR E - HSR B&#13;&#10;&#13;&#10;Dauer Lü KV P/C 70, P/C 400" typeNumber="5287" line="RMR E" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HRBG" stationName="Ronnenberg" trackID="G-731" bstfahrweg="HHM-1-HLI" departure="10:59:43" regularRunningTime="82" requestedDeparture="10:59:43" requestedTrackID="G-731" requestedBstFahrweg="HHM-1-HLI" type="begin" lineID="1760" timingPoint="true" departureFix="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HEMA" trackID="G-1000" bstfahrweg="HWEZ(1760)-HLIH(1752)" departure="11:01:33" regularRunningTime="102" requestedDeparture="11:01:33" requestedTrackID="G-1000" requestedBstFahrweg="HWEZ(1760)-HLIH(1752)" type="pass" trainTypeNumber="5287" lineID="1752" timingPoint="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HLIH" trackID="G-544" bstfahrweg="HEMA-544-HAHM" departure="11:03:15" regularRunningTime="171" requestedDeparture="11:03:15" requestedTrackID="G-544" requestedBstFahrweg="HEMA-544-HAHM" type="pass" trainTypeNumber="5287" timingPoint="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HSR B" stationName="Seelze Rbf Sob" trackID="A-814" bstfahrweg="HSR O-814-HSR A" dwegName="1-40" departure="11:15:09" minStopTime="300" stopTime="300" RTMargin2="0" requestedArrival="11:10:09" requestedDeparture="11:15:09" requestedTrackID="A-814" requestedBstFahrweg="HSR O-814-HSR A" type="end" lineID="1701" timingPoint="true" zuggattung="FIR 57.5"/>
+			</timetableentries>
+		</train>
+		<train number="51830" class="FGz" pattern="/FGz/FIR/RMR E/HRBG-HSR B/hin" name="FIR/51830/80/Hü" description="51830/4" comment="RMR E - HSR B&#13;&#10;KV P/C 70 P/C 400" typeNumber="5287" line="RMR E" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HRBG" stationName="Ronnenberg" trackID="B-731" bstfahrweg="HHM-1-HLI" dwegName="1-1000" departure="20:15:08" minStopTime="120" stopTime="120" regularRunningTime="150" requestedArrival="20:13:08" requestedDeparture="20:15:08" requestedTrackID="B-731" requestedBstFahrweg="HHM-1-HLI" type="begin" lineID="1760" timingPoint="true" departureFix="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HEMA" trackID="G-1000" bstfahrweg="HWEZ(1760)-HLIH(1752)" departure="20:18:07" regularRunningTime="144" requestedDeparture="20:18:07" requestedTrackID="G-1000" requestedBstFahrweg="HWEZ(1760)-HLIH(1752)" type="pass" trainTypeNumber="5287" lineID="1752" timingPoint="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HLIH" trackID="Z-544" bstfahrweg="HEMA-544-HAHM" trackIDForNotConditional="G-544" bstFahrwegBeiAusfallBetriebsHalt="HEMA-544-HAHM" departure="20:20:32" minStopTime="1" stopTime="1" regularRunningTime="200" requestedArrival="20:20:31" requestedDeparture="20:20:32" requestedTrackID="Z-544" requestedBstFahrweg="HEMA-544-HAHM" type="conditional1" trainTypeNumber="5287" timingPoint="true" zuggattung="FIR 57.5"/>
+				<entry stationID="HSR B" stationName="Seelze Rbf Sob" trackID="A-814" bstfahrweg="HSR O-814-HSR A" dwegName="1-40" departure="20:33:01" minStopTime="300" stopTime="300" RTMargin2="0" requestedArrival="20:28:01" requestedDeparture="20:33:01" requestedTrackID="A-814" requestedBstFahrweg="HSR O-814-HSR A" type="end" lineID="1701" timingPoint="true" zuggattung="FIR 57.5"/>
+			</timetableentries>
+		</train>
+		<train number="52286" class="FGz" pattern="/FGz/FR/FKR -/HRBG-HSR B/hin" name="FR/52286/60/Hü" description="52286/3" comment="FKR - HSR B&#13;&#10;&#13;&#10;BauKo 23" typeNumber="5322" line="FKR -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HRBG" stationName="Ronnenberg" trackID="G-731" bstfahrweg="HHM-1-HLI" departure="07:00:27" regularRunningTime="81" requestedDeparture="07:00:27" requestedTrackID="G-731" requestedBstFahrweg="HHM-1-HLI" type="begin" lineID="1760" timingPoint="true" departureFix="true" zuggattung="FR 58.1"/>
+				<entry stationID="HEMA" trackID="G-1000" bstfahrweg="HWEZ(1760)-HLIH(1752)" departure="07:02:17" regularRunningTime="98" requestedDeparture="07:02:17" requestedTrackID="G-1000" requestedBstFahrweg="HWEZ(1760)-HLIH(1752)" type="pass" trainTypeNumber="5322" lineID="1752" timingPoint="true" zuggattung="FR 58.1"/>
+				<entry stationID="HLIH" trackID="Z-9000" bstfahrweg="HEMA-544-HAHM" trackIDForNotConditional="G-544" bstFahrwegBeiAusfallBetriebsHalt="HEMA-544-HAHM" departure="07:07:55" minStopTime="60" stopTime="240" regularRunningTime="288" requestedArrival="07:03:55" requestedDeparture="07:07:55" requestedTrackID="Z-9000" requestedBstFahrweg="HEMA-544-HAHM" type="conditional1" trainTypeNumber="5322" timingPoint="true" departureFix="true" zuggattung="FR 58.1"/>
+				<entry stationID="HSR B" stationName="Seelze Rbf Sob" trackID="A-814" bstfahrweg="HSR O-814-HSR A" dwegName="1-40" departure="07:31:46" minStopTime="900" stopTime="900" RTMargin2="0" requestedArrival="07:16:46" requestedDeparture="07:31:46" requestedTrackID="A-814" requestedBstFahrweg="HSR O-814-HSR A" type="end" lineID="1701" timingPoint="true" zuggattung="FR 58.1"/>
+			</timetableentries>
+		</train>
+		<train number="52509" class="FGz" pattern="/FGz/FR/HSR O/HRBG-HSR O/rück" name="FR/52509/0/Hü" description="52509/1" comment="HSR O - FKR&#13;&#10;Dauer-Lü KV P/C 70, P/C 400&#13;&#10;1022" typeNumber="5319" line="HSR O" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HSR O" stationName="Seelze Rbf Sof" trackID="A-108" bstfahrweg="HSR S-108-HAHM" dwegName="1-1000" departure="16:48:49" minStopTime="600" stopTime="600" regularRunningTime="220" requestedArrival="16:38:49" requestedDeparture="16:48:49" requestedTrackID="A-108" requestedBstFahrweg="HSR S-108-HAHM" type="begin" lineID="1750" timingPoint="true" departureFix="true" zuggattung="FR 58.1"/>
+				<entry stationID="HLIH" trackID="G-545" bstfahrweg="HAHM-HEMA" departure="16:55:36" regularRunningTime="109" requestedDeparture="16:55:36" requestedTrackID="G-545" requestedBstFahrweg="HAHM-HEMA" type="pass" trainTypeNumber="5319" lineID="1752" timingPoint="true" zuggattung="FR 58.1"/>
+				<entry stationID="HEMA" trackID="G-1000" bstfahrweg="HLIH(1752)-HWEZ(1760)" departure="16:57:25" regularRunningTime="33" requestedDeparture="16:57:25" requestedTrackID="G-1000" requestedBstFahrweg="HLIH(1752)-HWEZ(1760)" type="pass" trainTypeNumber="5319" timingPoint="true" zuggattung="FR 58.1"/>
+				<entry stationID="HRBG" stationName="Ronnenberg" trackID="G-733" bstfahrweg="HLI-3-HHM" departure="16:59:36" RTMargin2="0" requestedDeparture="16:59:36" requestedTrackID="G-733" requestedBstFahrweg="HLI-3-HHM" type="end" lineID="1760" timingPoint="true" zuggattung="FR 58.1"/>
+			</timetableentries>
+		</train>
+		<train number="60027" class="FGz" pattern="/FGz/CSQ/HER -/HRBG-HSR B/hin" name="CSQ/60027/40/Hü" description="60027/3+" comment="HER - HSR B" typeNumber="5123" line="HER -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HRBG" stationName="Ronnenberg" trackID="G-731" bstfahrweg="HHM-1-HLI" departure="01:12:12" regularRunningTime="81" requestedDeparture="01:12:12" requestedTrackID="G-731" requestedBstFahrweg="HHM-1-HLI" type="begin" lineID="1760" timingPoint="true" departureFix="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="HEMA" trackID="G-1000" bstfahrweg="HWEZ(1760)-HLIH(1752)" departure="01:14:01" regularRunningTime="103" requestedDeparture="01:14:01" requestedTrackID="G-1000" requestedBstFahrweg="HWEZ(1760)-HLIH(1752)" type="pass" trainTypeNumber="5123" lineID="1752" timingPoint="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="HLIH" trackID="G-544" bstfahrweg="HEMA-544-HAHM" departure="01:15:44" regularRunningTime="168" requestedDeparture="01:15:44" requestedTrackID="G-544" requestedBstFahrweg="HEMA-544-HAHM" type="pass" trainTypeNumber="5123" timingPoint="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="HSR B" stationName="Seelze Rbf Sob" trackID="A-814" bstfahrweg="HSR O-814-HSR A" dwegName="1-40" departure="01:32:34" minStopTime="600" stopTime="600" RTMargin2="0" requestedArrival="01:22:34" requestedDeparture="01:32:34" requestedTrackID="A-814" requestedBstFahrweg="HSR O-814-HSR A" type="end" lineID="1701" timingPoint="true" zuggattung="CSQ 68.4"/>
+			</timetableentries>
+		</train>
+		<train number="60802" class="FGz" pattern="/FGz/CS/FHRG -/HRBG-HSR W/hin" name="CS/60802/0/Hü" description="60802/3" comment="FHRG - AHOSS" typeNumber="5031" line="FHRG -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HRBG" stationName="Ronnenberg" trackID="B-732" bstfahrweg="HHM-2-HLI" dwegName="1-1000" departure="14:29:08" minStopTime="810" stopTime="810" regularRunningTime="169" requestedArrival="14:15:38" requestedDeparture="14:29:08" requestedTrackID="B-732" requestedBstFahrweg="HHM-2-HLI" type="begin" lineID="1760" timingPoint="true" departureFix="true" zuggattung="CS 69.3"/>
+				<entry stationID="HEMA" trackID="G-1000" bstfahrweg="HWEZ(1760)-HLIH(1752)" departure="14:32:29" regularRunningTime="104" requestedDeparture="14:32:29" requestedTrackID="G-1000" requestedBstFahrweg="HWEZ(1760)-HLIH(1752)" type="pass" trainTypeNumber="5031" lineID="1752" timingPoint="true" zuggattung="CS 69.3"/>
+				<entry stationID="HLIH" trackID="B-561" bstfahrweg="HEMA-544-HAHM" trackIDForNotConditional="G-544" bstFahrwegBeiAusfallBetriebsHalt="HEMA-544-HAHM" departure="14:41:43" minStopTime="60" stopTime="450" regularRunningTime="297" requestedArrival="14:34:13" requestedDeparture="14:41:43" requestedTrackID="B-561" requestedBstFahrweg="HEMA-544-HAHM" type="conditional1" trainTypeNumber="5031" timingPoint="true" departureFix="true" zuggattung="CS 69.3"/>
+				<entry stationID="HSR W" stationName="Seelze Rbf W" trackID="B-170" bstfahrweg="HSR N-170-HGUE" dwegName="1-1000" departure="14:58:43" minStopTime="180" stopTime="342" RTMargin2="0" requestedArrival="14:53:01" requestedDeparture="14:58:43" requestedTrackID="B-170" requestedBstFahrweg="HSR N-170-HGUE" type="end" lineID="1750" timingPoint="true" departureFix="true" zuggattung="CS 69.3"/>
+			</timetableentries>
+		</train>
+		<train number="60808" class="FGz" pattern="/FGz/CS/FHRG -/HRBG-HSR W/hin" name="CS/60808/452/Hü + CS/60808/251/RM" description="60808/3+" comment="FHRG - AHOSS&#13;&#10;&#13;&#10;BauKo 1" typeNumber="5032" line="FHRG -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HRBG" stationName="Ronnenberg" trackID="G-731" bstfahrweg="HHM-1-HLI" departure="23:42:53" regularRunningTime="145" requestedDeparture="23:42:53" requestedTrackID="G-731" requestedBstFahrweg="HHM-1-HLI" type="begin" lineID="1760" timingPoint="true" departureFix="true" zuggattung="CS 69.3"/>
+				<entry stationID="HEMA" trackID="G-1000" bstfahrweg="HWEZ(1760)-HLIH(1752)" departure="23:47:26" regularRunningTime="126" requestedDeparture="23:47:26" requestedTrackID="G-1000" requestedBstFahrweg="HWEZ(1760)-HLIH(1752)" type="pass" trainTypeNumber="5032" lineID="1752" timingPoint="true" zuggattung="CS 69.3"/>
+				<entry stationID="HLIH" trackID="G-544" bstfahrweg="HEMA-544-HAHM" departure="23:49:32" regularRunningTime="207" requestedDeparture="23:49:32" requestedTrackID="G-544" requestedBstFahrweg="HEMA-544-HAHM" type="pass" trainTypeNumber="5032" timingPoint="true" zuggattung="CS 69.3"/>
+				<entry stationID="HSR W" stationName="Seelze Rbf W" trackID="G-5" bstfahrweg="HSR N-005-HGUE" departure="24:17:08" RTMargin2="0" requestedDeparture="24:17:08" requestedTrackID="G-5" requestedBstFahrweg="HSR N-005-HGUE" type="end" lineID="1750" timingPoint="true" zuggattung="CS 69.3"/>
+			</timetableentries>
+		</train>
+		<train number="69284" class="FGz" pattern="/FGz/DGS/TK S/HRBG-HSR W/hin" name="DGS/69284/40/Hü + DGS/69284/222/RM" description="69284/4" comment="TK S - HBHSK" typeNumber="5262" line="TK S" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HRBG" stationName="Ronnenberg" trackID="G-731" bstfahrweg="HHM-1-HLI" departure="09:55:19" regularRunningTime="81" requestedDeparture="09:55:19" requestedTrackID="G-731" requestedBstFahrweg="HHM-1-HLI" type="begin" lineID="1760" timingPoint="true" departureFix="true" zuggattung="DGS 36.1"/>
+				<entry stationID="HEMA" trackID="G-1000" bstfahrweg="HWEZ(1760)-HLIH(1752)" departure="09:57:09" regularRunningTime="144" requestedDeparture="09:57:09" requestedTrackID="G-1000" requestedBstFahrweg="HWEZ(1760)-HLIH(1752)" type="pass" trainTypeNumber="5262" lineID="1752" timingPoint="true" zuggattung="DGS 36.1"/>
+				<entry stationID="HLIH" trackID="Z-544" bstfahrweg="HEMA-544-HAHM" trackIDForNotConditional="G-544" bstFahrwegBeiAusfallBetriebsHalt="HEMA-544-HAHM" departure="09:59:34" minStopTime="1" stopTime="1" regularRunningTime="225" requestedArrival="09:59:33" requestedDeparture="09:59:34" requestedTrackID="Z-544" requestedBstFahrweg="HEMA-544-HAHM" type="conditional1" trainTypeNumber="5262" timingPoint="true" zuggattung="DGS 36.1"/>
+				<entry stationID="HSR W" stationName="Seelze Rbf W" trackID="G-5" bstfahrweg="HSR N-005-HGUE" departure="10:13:06" RTMargin2="0" requestedDeparture="10:13:06" requestedTrackID="G-5" requestedBstFahrweg="HSR N-005-HGUE" type="end" lineID="1750" timingPoint="true" zuggattung="DGS 36.1"/>
+			</timetableentries>
+		</train>
+	</timetable>
+</railsys>

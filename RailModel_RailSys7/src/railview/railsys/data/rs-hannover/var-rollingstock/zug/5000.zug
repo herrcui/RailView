@@ -1,0 +1,32 @@
+* Dateiname 5000.zug
+* Geändert/erzeugt am 2012-03-02
+* von RailSys 7.6.11
+Zugnummer               5000
+Regelzuschlag          0.000
+Vmax (km/h)          120.000
+Bremsen (m/s^2)        0.700
+Stutzen (m/s^2)        1.000
+Widerstand (Wagen)   ohnewwk
+Widerstand (Kurve)    ohnebw
+Bezeichnung                       Dummy 0004_1_0
+Kuerzel                           Dummy
+Klasse                            Rz
+VzG                               0
+SpitzEin                          0
+SpitzAus                          0
+FarbeDarstellung                  0
+Wertigkeit                        1
+WertigkeitDelta                   1
+WertigkeitVerspaetung             1
+WertigkeitDelta2                  0
+WertigkeitVerspaetung2            0
+LZB               F
+MovingBlock       aus
+Vorreservierungszeit              0
+Bloeckezureservieren              0
+MaximaleZugkraft                  100000
+ZugkraftBeschraenken              J
+MaximaleBeschleunigung              1.000
+Tfz      0004_1_0      1.000   1.000
+Wg 1   0.010   0.010   0.010   0.000   0.000    1    1    2
+End                

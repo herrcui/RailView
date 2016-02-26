@@ -1,0 +1,76 @@
+? Stromart: ohne Stromart
+? Rutkommentar: SNCB
+? Eisenbahnunternehmen: SNCB
+? TriebfahrzeugBaureiheTyp: S
+? Triebfahrzeugart: Brennkraftlokomotiven
+? Achslast: 0 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 0 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          120.000
+TraktionsTyp Diesel
+Loklaenge [m]         20.000
+Lokmasse [t]         110.000
+Reibmasse [t]        110.000
+Haftreibungswert       1.000
+Rholok (-)            10.000
+Rutkommentar        SNCB
+ST      ge     0.000 268.794    0.120 268.597    0.000   0.000
+ST      ge     0.120 268.597    0.240 268.401    0.000   0.000
+ST      ge     0.240 268.401    0.360 268.205    0.000   0.000
+ST      ge     0.360 268.205    0.480 268.009    0.000   0.000
+ST      ge     0.480 268.009    0.600 267.813    0.000   0.000
+ST      ge     0.600 267.813    0.840 267.421    0.000   0.000
+ST      ge     0.840 267.421    1.080 267.028    0.000   0.000
+ST      ge     1.080 267.028    1.320 266.636    0.000   0.000
+ST      ge     1.320 266.636    1.560 266.243    0.000   0.000
+ST      ge     1.560 266.243    1.800 265.851    0.000   0.000
+ST      ge     1.800 265.851    2.040 265.458    0.000   0.000
+ST      ge     2.040 265.458    2.280 265.066    0.000   0.000
+ST      ge     2.280 265.066    2.520 264.673    0.000   0.000
+ST      ge     2.520 264.673    2.760 264.281    0.000   0.000
+ST      ge     2.760 264.281    3.000 263.889    0.000   0.000
+ST      ge     3.000 263.893    5.200 260.557    0.000   0.000
+ST      ge     5.200 260.557    7.400 257.222    0.000   0.000
+ST      ge     7.400 257.222    9.600 253.887    0.000   0.000
+ST      ge     9.600 253.887   11.800 250.552    0.000   0.000
+ST      ge    11.800 250.552   14.000 247.216    0.000   0.000
+ST      ge    14.000 247.216   15.200 226.062    0.000   0.000
+ST      ge    15.200 226.062   16.400 208.519    0.000   0.000
+ST      ge    16.400 208.519   17.600 194.587    0.000   0.000
+ST      ge    17.600 194.587   18.800 184.267    0.000   0.000
+ST      ge    18.800 184.267   20.000 177.558    0.000   0.000
+ST      ge    20.000 177.558   24.000 157.312    0.000   0.000
+ST      ge    24.000 157.312   28.000 139.733    0.000   0.000
+ST      ge    28.000 139.733   32.000 124.823    0.000   0.000
+ST      ge    32.000 124.823   36.000 112.580    0.000   0.000
+ST      ge    36.000 112.580   40.000 103.005    0.000   0.000
+ST      ge    40.000 103.005   44.000  94.568    0.000   0.000
+ST      ge    44.000  94.568   48.000  86.917    0.000   0.000
+ST      ge    48.000  86.917   52.000  80.050    0.000   0.000
+ST      ge    52.000  80.050   56.000  73.967    0.000   0.000
+ST      ge    56.000  73.967   60.000  68.670    0.000   0.000
+ST      ge    60.000  68.670   68.000  60.665    0.000   0.000
+ST      ge    68.000  60.665   76.000  53.916    0.000   0.000
+ST      ge    76.000  53.916   84.000  48.422    0.000   0.000
+ST      ge    84.000  48.422   92.000  44.184    0.000   0.000
+ST      ge    92.000  44.184  100.000  41.202    0.000   0.000
+ST      ge   100.000  41.202  104.000  39.456    0.000   0.000
+ST      ge   104.000  39.456  108.000  37.945    0.000   0.000
+ST      ge   108.000  37.945  112.000  36.670    0.000   0.000
+ST      ge   112.000  36.670  116.000  35.630    0.000   0.000
+ST      ge   116.000  35.630  120.000  34.826    0.000   0.000
+LW  vplus15         701.414978      15.107400       0.304110       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

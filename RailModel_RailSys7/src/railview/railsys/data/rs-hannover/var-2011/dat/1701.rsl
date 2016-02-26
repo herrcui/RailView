@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<line lineID="1701" name="Han Hainholz - Seelze Rbf" trafficRouting="on_the_right" type="local" dependentLines="hahm hh hlta hs">
+	<version major="1" minor="2" patchlevel="0" comment=""/>
+	<stations/>
+	<nodes>
+		<node nodeID="90725" description="Verbindungs-Knoten" kilometre="5.800" x="2309.33" y="600" xNet="3434800" yNet="10090200" xWGS84="-865.942" yWGS84="-4200"/>
+		<node nodeID="90726" description="Verbindungs-Knoten" kilometre="5.800" x="2309.33" y="200" xNet="3434800" yNet="10089800" xWGS84="-865.942" yWGS84="-4600"/>
+		<node nodeID="93549" description="Verbindungs-Knoten" kilometre="6.500" x="-0.09" y="600" xNet="3417300" yNet="10090800" xWGS84="4618.87" yWGS84="-400"/>
+		<node nodeID="93550" description="Verbindungs-Knoten" kilometre="6.500" x="-0.09" y="200" xNet="3411797" yNet="10090400" xWGS84="4618.87" yWGS84="-800"/>
+		<node nodeID="690" description="Verbindungs-Knoten" kilometre="7.735" x="-3117.78" y="600" xNet="3407534" yNet="10090809" xWGS84="4099.25" yWGS84="-700"/>
+		<node nodeID="691" description="Verbindungs-Knoten" kilometre="7.735" x="-3117.78" y="200" xNet="3407534" yNet="10090409" xWGS84="4099.25" yWGS84="-1100"/>
+	</nodes>
+	<links>
+		<link source="90229.hh" target="90725" vmax="80" electrified="true"/>
+		<link source="90725" target="93545.hahm" vmax="80" electrified="true"/>
+		<link source="90536.hh" target="90726" gradient="-2.4" vmaxr="80" electrified="true"/>
+		<link source="90726" target="93509.hahm" gradient="-2.4" vmaxr="80" electrified="true"/>
+		<link source="93522.hahm" target="93549" gradient="-3.23" vmax="80" electrified="true"/>
+		<link source="93549" target="576.hlta" gradient="-3.23" vmax="80" electrified="true"/>
+		<link source="93526.hahm" target="93550" vmaxr="80" electrified="true"/>
+		<link source="93550" target="643.hlta" vmaxr="80" electrified="true"/>
+		<link source="633.hlta" target="690" vmax="80" electrified="true"/>
+		<link source="690" target="16429.hs" vmax="80" electrified="true"/>
+		<link source="605.hlta" target="691" gradient="2.77" vmax="80" vmaxr="80" electrified="true"/>
+		<link source="691" target="16392.hs" gradient="2.77" vmax="80" vmaxr="80" electrified="true"/>
+	</links>
+	<dependentLinks/>
+	<blockSections>
+		<blockSection presignal="90228.hh" nodes="90227.hh 90228.hh 90229.hh 90725 93545.hahm 93546.hahm 93553.hahm 93547.hahm 93548.hahm 93518.hahm 93517.hahm 93519.hahm 93520.hahm 93521.hahm 93554.hahm 93522.hahm 93549 576.hlta 577.hlta 697.hlta 578.hlta"/>
+		<blockSection presignal="90228.hh" nodes="90227.hh 90228.hh 90229.hh 90725 93545.hahm 93546.hahm 93553.hahm 93547.hahm 93548.hahm 93518.hahm 93527.hahm 93528.hahm 93529.hahm 93530.hahm 93516.hahm 93544.hahm 93524.hahm 93543.hahm 93542.hahm 93541.hahm 93540.hahm 93539.hahm 93538.hahm 93537.hahm 93536.hahm 93535.hahm 93551.hahm 93534.hahm 93533.hahm 93532.hahm 93531.hahm 57930.hahm 57929.hahm 57928.hahm 57927.hahm" speedIndicators="57929.hahm"/>
+		<blockSection presignal="628.hlta" nodes="578.hlta 579.hlta 573.hlta 572.hlta 566.hlta 565.hlta 567.hlta 568.hlta 569.hlta 570.hlta 571.hlta 625.hlta 626.hlta 693.hlta 627.hlta 628.hlta 629.hlta 630.hlta 631.hlta 632.hlta 633.hlta 690 16429.hs 16430.hs 16431.hs 17177.hs 16432.hs" speedIndicators="627.hlta"/>
+		<blockSection presignal="604.hlta" nodes="15960.hs 15959.hs 15958.hs 15957.hs 15956.hs 15954.hs 15955.hs 16012.hs 16013.hs 17140.hs 16099.hs 16639.hs 16638.hs 17172.hs 16636.hs 16637.hs 16655.hs 16380.hs 16379.hs 16378.hs 16377.hs 16323.hs 16376.hs 16592.hs 16590.hs 16335.hs 16591.hs 16635.hs 16283.hs 16282.hs 16281.hs 16279.hs 16280.hs 16398.hs 16397.hs 16396.hs 16395.hs 17178.hs 16394.hs 16393.hs 16392.hs 691 605.hlta 604.hlta 603.hlta 602.hlta 601.hlta 600.hlta 699.hlta 599.hlta 598.hlta" speedIndicators="15959.hs 16394.hs"/>
+		<blockSection presignal="604.hlta" nodes="16032.hs 16031.hs 16030.hs 16029.hs 17142.hs 16028.hs 16634.hs 16633.hs 17173.hs 16632.hs 16344.hs 16487.hs 16486.hs 16485.hs 16484.hs 16482.hs 16483.hs 16654.hs 16653.hs 16335.hs 16591.hs 16635.hs 16283.hs 16282.hs 16281.hs 16279.hs 16280.hs 16398.hs 16397.hs 16396.hs 16395.hs 17178.hs 16394.hs 16393.hs 16392.hs 691 605.hlta 604.hlta 603.hlta 602.hlta 601.hlta 600.hlta 699.hlta 599.hlta 598.hlta" speedIndicators="16031.hs 16394.hs"/>
+		<blockSection presignal="93511.hahm" nodes="93535.hahm 93536.hahm 93537.hahm 93538.hahm 93539.hahm 93540.hahm 93541.hahm 93542.hahm 93543.hahm 93524.hahm 93544.hahm 93516.hahm 93515.hahm 93514.hahm 93513.hahm 93552.hahm 93512.hahm 93511.hahm 93510.hahm 93509.hahm 90726 90536.hh 90535.hh 90534.hh 90533.hh 90532.hh" speedIndicators="93512.hahm"/>
+		<blockSection presignal="628.hlta" nodes="669.hlta 670.hlta 671.hlta 672.hlta 673.hlta 674.hlta 675.hlta 620.hlta 613.hlta 621.hlta 622.hlta 648.hlta 649.hlta 650.hlta 581.hlta 580.hlta 583.hlta 584.hlta 614.hlta 615.hlta 616.hlta 617.hlta 618.hlta 619.hlta 571.hlta 625.hlta 626.hlta 693.hlta 627.hlta 628.hlta 629.hlta 630.hlta 631.hlta 632.hlta 633.hlta 690 16429.hs 16430.hs 16431.hs 17177.hs 16432.hs"/>
+		<blockSection presignal="628.hlta" nodes="682.hlta 683.hlta 684.hlta 685.hlta 686.hlta 687.hlta 688.hlta 638.hlta 689.hlta 640.hlta 639.hlta 641.hlta 642.hlta 582.hlta 580.hlta 583.hlta 584.hlta 614.hlta 615.hlta 616.hlta 617.hlta 618.hlta 619.hlta 571.hlta 625.hlta 626.hlta 693.hlta 627.hlta 628.hlta 629.hlta 630.hlta 631.hlta 632.hlta 633.hlta 690 16429.hs 16430.hs 16431.hs 17177.hs 16432.hs"/>
+		<blockSection presignal="604.hlta" nodes="16161.hs 16160.hs 16159.hs 16158.hs 16157.hs 16100.hs 16013.hs 17140.hs 16099.hs 16639.hs 16638.hs 17172.hs 16636.hs 16637.hs 16655.hs 16380.hs 16379.hs 16378.hs 16377.hs 16323.hs 16376.hs 16592.hs 16590.hs 16335.hs 16591.hs 16635.hs 16283.hs 16282.hs 16281.hs 16279.hs 16280.hs 16398.hs 16397.hs 16396.hs 16395.hs 17178.hs 16394.hs 16393.hs 16392.hs 691 605.hlta 604.hlta 603.hlta 602.hlta 601.hlta 600.hlta 699.hlta 599.hlta 598.hlta" speedIndicators="16160.hs 16394.hs"/>
+		<blockSection presignal="604.hlta" nodes="16328.hs 16329.hs 16330.hs 16331.hs 16523.hs 16524.hs 16367.hs 16597.hs 16598.hs 16531.hs 16530.hs 16399.hs 16280.hs 16398.hs 16397.hs 16396.hs 16395.hs 17178.hs 16394.hs 16393.hs 16392.hs 691 605.hlta 604.hlta 603.hlta 602.hlta 601.hlta 600.hlta 699.hlta 599.hlta 598.hlta" speedIndicators="16329.hs 16394.hs"/>
+		<blockSection presignal="604.hlta" nodes="16476.hs 16477.hs 16478.hs 16480.hs 16546.hs 16274.hs 16656.hs 16538.hs 16628.hs 16629.hs 16630.hs 16483.hs 16654.hs 16653.hs 16335.hs 16591.hs 16635.hs 16283.hs 16282.hs 16281.hs 16279.hs 16280.hs 16398.hs 16397.hs 16396.hs 16395.hs 17178.hs 16394.hs 16393.hs 16392.hs 691 605.hlta 604.hlta 603.hlta 602.hlta 601.hlta 600.hlta 699.hlta 599.hlta 598.hlta" speedIndicators="16394.hs 16477.hs"/>
+		<blockSection presignal="604.hlta" nodes="16556.hs 16557.hs 16558.hs 16559.hs 16364.hs 16363.hs 16365.hs 16366.hs 16367.hs 16597.hs 16598.hs 16531.hs 16530.hs 16399.hs 16280.hs 16398.hs 16397.hs 16396.hs 16395.hs 17178.hs 16394.hs 16393.hs 16392.hs 691 605.hlta 604.hlta 603.hlta 602.hlta 601.hlta 600.hlta 699.hlta 599.hlta 598.hlta" speedIndicators="16394.hs"/>
+		<blockSection presignal="604.hlta" nodes="16567.hs 16568.hs 16569.hs 16455.hs 16576.hs 16272.hs 16270.hs 16273.hs 16274.hs 16656.hs 16538.hs 16537.hs 16539.hs 16525.hs 16387.hs 16492.hs 16491.hs 16494.hs 16470.hs 16631.hs 16301.hs 16621.hs 16598.hs 16531.hs 16530.hs 16399.hs 16280.hs 16398.hs 16397.hs 16396.hs 16395.hs 17178.hs 16394.hs 16393.hs 16392.hs 691 605.hlta 604.hlta 603.hlta 602.hlta 601.hlta 600.hlta 699.hlta 599.hlta 598.hlta" speedIndicators="16394.hs"/>
+		<blockSection presignal="604.hlta" nodes="16518.hs 16519.hs 16520.hs 16466.hs 16465.hs 16468.hs 16469.hs 16470.hs 16631.hs 16301.hs 16621.hs 16598.hs 16531.hs 16530.hs 16399.hs 16280.hs 16398.hs 16397.hs 16396.hs 16395.hs 17178.hs 16394.hs 16393.hs 16392.hs 691 605.hlta 604.hlta 603.hlta 602.hlta 601.hlta 600.hlta 699.hlta 599.hlta 598.hlta" speedIndicators="16394.hs 16519.hs"/>
+		<blockSection presignal="604.hlta" nodes="16543.hs 16544.hs 16545.hs 16522.hs 16331.hs 16523.hs 16524.hs 16367.hs 16597.hs 16598.hs 16531.hs 16530.hs 16399.hs 16280.hs 16398.hs 16397.hs 16396.hs 16395.hs 17178.hs 16394.hs 16393.hs 16392.hs 691 605.hlta 604.hlta 603.hlta 602.hlta 601.hlta 600.hlta 699.hlta 599.hlta 598.hlta" speedIndicators="16394.hs 16544.hs"/>
+		<blockSection presignal="604.hlta" nodes="16581.hs 16582.hs 16583.hs 16481.hs 16480.hs 16546.hs 16274.hs 16656.hs 16538.hs 16628.hs 16629.hs 16630.hs 16483.hs 16654.hs 16653.hs 16335.hs 16591.hs 16635.hs 16283.hs 16282.hs 16281.hs 16279.hs 16280.hs 16398.hs 16397.hs 16396.hs 16395.hs 17178.hs 16394.hs 16393.hs 16392.hs 691 605.hlta 604.hlta 603.hlta 602.hlta 601.hlta 600.hlta 699.hlta 599.hlta 598.hlta" speedIndicators="16394.hs 16582.hs"/>
+		<blockSection presignal="604.hlta" nodes="16618.hs 16619.hs 16620.hs 16561.hs 16560.hs 16563.hs 16493.hs 16491.hs 16494.hs 16470.hs 16631.hs 16301.hs 16621.hs 16598.hs 16531.hs 16530.hs 16399.hs 16280.hs 16398.hs 16397.hs 16396.hs 16395.hs 17178.hs 16394.hs 16393.hs 16392.hs 691 605.hlta 604.hlta 603.hlta 602.hlta 601.hlta 600.hlta 699.hlta 599.hlta 598.hlta" speedIndicators="16394.hs 16619.hs"/>
+		<blockSection presignal="604.hlta" nodes="16661.hs 16662.hs 16467.hs 16465.hs 16468.hs 16469.hs 16470.hs 16631.hs 16301.hs 16621.hs 16598.hs 16531.hs 16530.hs 16399.hs 16280.hs 16398.hs 16397.hs 16396.hs 16395.hs 17178.hs 16394.hs 16393.hs 16392.hs 691 605.hlta 604.hlta 603.hlta 602.hlta 601.hlta 600.hlta 699.hlta 599.hlta 598.hlta" speedIndicators="16394.hs 16662.hs"/>
+		<blockSection presignal="93511.hahm" nodes="598.hlta 597.hlta 596.hlta 594.hlta 595.hlta 647.hlta 646.hlta 645.hlta 644.hlta 698.hlta 643.hlta 93550 93526.hahm 93555.hahm 93525.hahm 93523.hahm 93524.hahm 93544.hahm 93516.hahm 93515.hahm 93514.hahm 93513.hahm 93552.hahm 93512.hahm 93511.hahm 93510.hahm 93509.hahm 90726 90536.hh 90535.hh 90534.hh 90533.hh 90532.hh" speedIndicators="646.hlta 93512.hahm"/>
+		<blockSection presignal="93511.hahm" nodes="589.hlta 588.hlta 587.hlta 586.hlta 585.hlta 583.hlta 580.hlta 581.hlta 650.hlta 649.hlta 648.hlta 622.hlta 621.hlta 613.hlta 612.hlta 611.hlta 610.hlta 609.hlta 608.hlta 607.hlta 606.hlta 575.hlta 566.hlta 572.hlta 574.hlta 624.hlta 595.hlta 647.hlta 646.hlta 645.hlta 644.hlta 698.hlta 643.hlta 93550 93526.hahm 93555.hahm 93525.hahm 93523.hahm 93524.hahm 93544.hahm 93516.hahm 93515.hahm 93514.hahm 93513.hahm 93552.hahm 93512.hahm 93511.hahm 93510.hahm 93509.hahm 90726 90536.hh 90535.hh 90534.hh 90533.hh 90532.hh" speedIndicators="646.hlta 93512.hahm"/>
+	</blockSections>
+	<slipDistances/>
+	<approachControlRoutes/>
+	<stationRoutes/>
+	<evzg/>
+	<evzg-katalog/>
+</line>

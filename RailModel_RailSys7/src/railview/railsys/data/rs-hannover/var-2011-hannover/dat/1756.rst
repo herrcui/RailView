@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<railsys>
+	<version major="1" minor="2" patchlevel="0" comment="Erzeugt von RailSys\Simu/7.6.12 am Mo 22. Okt 10:45:24 2012"/>
+	<timetable>
+		<train number="1741" class="FRz" pattern="/FRz/ICE-T/HHZ-HH-HHI-DH L 50/HHML-HHZ/rück" name="LICE-T/1741/60/DS + ICE-T/1741/61/DS" description="1741/1++" comment="HHZ-HH-HHI-DH&#13;&#10;L 50" typeNumber="58" line="HHZ-HH-HHI-DH L 50" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HHZ" stationName="Han-Hainholz" trackID="B-811" bstfahrweg="HHZ811-HH(1705-3)" dwegName="1-1000" departure="04:54:43" minStopTime="300" stopTime="300" regularRunningTime="383" requestedArrival="04:49:43" requestedDeparture="04:54:43" requestedTrackID="B-811" requestedBstFahrweg="HHZ811-HH(1705-3)" type="begin" lineID="1705" timingPoint="true" departureFix="true" zuggattung="LICE-T 14.2"/>
+				<entry stationID="HHBI" trackID="G-701" bstfahrweg="HH(1760)-701E-HHML(1756) U1" departure="05:10:48" regularRunningTime="139" requestedDeparture="05:10:48" requestedTrackID="G-701" requestedBstFahrweg="HH(1760)-701E-HHML(1756) U1" type="pass" trainTypeNumber="58" lineID="1756" timingPoint="true" zuggattung="ICE-T 14.1"/>
+				<entry stationID="HWU" trackID="G-412" bstfahrweg="HH(1756)-412-HHML(1732-3)" departure="05:13:07" regularRunningTime="49" requestedDeparture="05:13:07" requestedTrackID="G-412" requestedBstFahrweg="HH(1756)-412-HHML(1732-3)" type="pass" trainTypeNumber="58" timingPoint="true" zuggattung="ICE-T 14.1"/>
+				<entry stationID="HHML" stationName="Han Mess/Laatzen" trackID="G-12" bstfahrweg="HWU(1732-3)-712-HRTN" departure="05:13:56" RTMargin2="0" requestedDeparture="05:13:56" requestedTrackID="G-12" requestedBstFahrweg="HWU(1732-3)-712-HRTN" type="end" lineID="1732" timingPoint="true" zuggattung="ICE-T 14.1"/>
+			</timetableentries>
+		</train>
+		<train number="50121" class="FGz" pattern="/FGz/IKE/AWHO-NNEH/HHML-HSR A/rück" name="IKE/50121/324/Mü + IKE/50121/323/Hü" description="50121/1" comment="AWHO-NNEH + AWHO-NNEH&#13;&#10;Bk 24 + 23" typeNumber="5390" line="AWHO-NNEH" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HSR A" stationName="Seelze Rbf Swf" trackID="G-6" bstfahrweg="HSR W-006-HSR S" departure="22:27:24" regularRunningTime="97" requestedDeparture="22:27:24" requestedTrackID="G-6" requestedBstFahrweg="HSR W-006-HSR S" type="begin" lineID="1750" timingPoint="true" departureFix="true" zuggattung="IKE 53.1"/>
+				<entry stationID="HHBI" trackID="G-701" bstfahrweg="HH(1760)-701E-HHML(1756) U1" departure="22:51:47" regularRunningTime="197" requestedDeparture="22:51:47" requestedTrackID="G-701" requestedBstFahrweg="HH(1760)-701E-HHML(1756) U1" type="pass" trainTypeNumber="5390" lineID="1756" timingPoint="true" zuggattung="IKE 53.1"/>
+				<entry stationID="HWU" trackID="A-412" bstfahrweg="HH(1756)-412-HHML(1732-1)" dwegName="1-1000" departure="23:42:16" minStopTime="2832" stopTime="2832" regularRunningTime="123" requestedArrival="22:55:04" requestedDeparture="23:42:16" requestedTrackID="A-412" requestedBstFahrweg="HH(1756)-412-HHML(1732-1)" type="stop" trainTypeNumber="5390" timingPoint="true" departureFix="true" zuggattung="IKE 53.1"/>
+				<entry stationID="H993R" RTMargin2="0" type="end" relevantInNet="false" lineID="1732"/>
+			</timetableentries>
+		</train>
+		<train number="60076" class="FGz" pattern="/FGz/CSQ/HSR O/HHML-HSR O/rück" name="CSQ/60076/20/Hü" description="60076/1" comment="HSR O - MIN" typeNumber="5153" line="HSR O" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HSR O" stationName="Seelze Rbf Sof" trackID="A-107" bstfahrweg="HSR O107-HLTA" dwegName="1-40" departure="01:35:58" minStopTime="600" stopTime="600" regularRunningTime="106" requestedArrival="01:25:58" requestedDeparture="01:35:58" requestedTrackID="A-107" requestedBstFahrweg="HSR O107-HLTA" type="begin" lineID="1701" timingPoint="true" departureFix="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="HHBI" trackID="G-701" bstfahrweg="HH(1760)-701E-HHML(1756) U1" departure="01:49:47" regularRunningTime="165" requestedDeparture="01:49:47" requestedTrackID="G-701" requestedBstFahrweg="HH(1760)-701E-HHML(1756) U1" type="pass" trainTypeNumber="5153" lineID="1756" timingPoint="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="HWU" trackID="G-412" bstfahrweg="HH(1756)-412-HHML(1732-1)" departure="01:52:32" regularRunningTime="63" requestedDeparture="01:52:32" requestedTrackID="G-412" requestedBstFahrweg="HH(1756)-412-HHML(1732-1)" type="pass" trainTypeNumber="5153" timingPoint="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="H993R" RTMargin2="0" type="end" relevantInNet="false" lineID="1732"/>
+			</timetableentries>
+		</train>
+		<train number="63964" class="Lz" pattern="/Lz/Tfzf (RaS)/HSR O/HHML-HSR O/rück" name="Tfzf (/63964/0/Hü" description="63964/1" comment="HSR O - HG N&#13;&#10;&#13;&#10;für 53692" typeNumber="16564" line="HSR O" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HSR O" stationName="Seelze Rbf Sof" trackID="A-102" bstfahrweg="HSR O102-HLTA" dwegName="1-40" departure="14:32:23" minStopTime="300" stopTime="300" regularRunningTime="81" requestedArrival="14:27:23" requestedDeparture="14:32:23" requestedTrackID="A-102" requestedBstFahrweg="HSR O102-HLTA" type="begin" lineID="1701" timingPoint="true" departureFix="true" zuggattung="Tfzf (RaS) 02.1"/>
+				<entry stationID="HHBI" trackID="G-701" bstfahrweg="HH(1760)-701E-HHML(1756) U1" departure="14:45:41" regularRunningTime="146" requestedDeparture="14:45:41" requestedTrackID="G-701" requestedBstFahrweg="HH(1760)-701E-HHML(1756) U1" type="pass" trainTypeNumber="16564" lineID="1756" timingPoint="true" zuggattung="Tfzf (RaS) 02.1"/>
+				<entry stationID="HWU" trackID="G-412" bstfahrweg="HH(1756)-412-HHML(1732-3)" departure="14:48:07" regularRunningTime="72" requestedDeparture="14:48:07" requestedTrackID="G-412" requestedBstFahrweg="HH(1756)-412-HHML(1732-3)" type="pass" trainTypeNumber="16564" timingPoint="true" zuggattung="Tfzf (RaS) 02.1"/>
+				<entry stationID="HHML" stationName="Han Mess/Laatzen" trackID="C-712" bstfahrweg="HWU(1732-3)-712-HRTN" dwegName="1-1000" departure="14:57:01" minStopTime="462" stopTime="462" RTMargin2="0" requestedArrival="14:49:19" requestedDeparture="14:57:01" requestedTrackID="C-712" requestedBstFahrweg="HWU(1732-3)-712-HRTN" type="end" lineID="1732" timingPoint="true" departureFix="true" zuggattung="Tfzf (RaS) 02.1"/>
+			</timetableentries>
+		</train>
+	</timetable>
+</railsys>

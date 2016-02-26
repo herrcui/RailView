@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<line lineID="hvin" name="Han-Vinnhorst" trafficRouting="on_the_right" type="global" dependentLines="1710 1711">
+	<transformations>
+		<transformation line="1710" m11="1" m12="0" m21="0" m22="1" dx="6812.63" dy="600"/>
+		<transformation line="1711" m11="-1" m12="0" m21="0" m22="-1" dx="-11316.1" dy="2400"/>
+	</transformations>
+	<version major="1" minor="2" patchlevel="0" comment=""/>
+	<stations>
+		<station stationID="HVIN" name="Han-Vinnhorst" xNet="3.4508e+06" yNet="1.01283e+07" xWGS84="0" yWGS84="0"/>
+	</stations>
+	<nodes>
+		<switch start="21686" endOfMainTrack="21684" endOfBranchTrack="21685" nodeID="21683" name="32W12" description="Weichenanfang  Id:121683 Str:1710 Bild (58.8895 / -10.0000)" kilometre="7.909" x="5888.95" y="-1000" xNet="3448888.6" yNet="10127788" xWGS84="0" yWGS84="0"/>
+		<node nodeID="21686" description="LZBAnfangS  Id:121686 Str:1710" kilometre="7.915" x="5904.0113" y="-1000" xNet="3448903.7" yNet="10127788" xWGS84="5904.0113" yWGS84="-1000"/>
+		<node nodeID="21687" description="FstrZugschlussstelleS FstrAuflösezeit: 3s Id:121687 Str:1710" kilometre="7.959" x="6014.4609" y="-1000" xNet="3449014.1" yNet="10127788" xWGS84="6014.4609" yWGS84="-1000" referenceNode="21686" releaseContact="true"/>
+		<node nodeID="21688" description="Neigung S: 1.37 F: 2.03 Id:121688 Str:1710" kilometre="7.981" x="6069.6857" y="-1000" xNet="3449069.4" yNet="10127788" xWGS84="6069.6857" yWGS84="-1000"/>
+		<node nodeID="21689" description="FstrZugschlussstelleF FstrAuflösezeit: 3s Id:121689 Str:1710" kilometre="8.043" x="6225.3191" y="-1000" xNet="3449225" yNet="10127788" xWGS84="6225.3191" yWGS84="-1000" referenceNode="21690" releaseContact="true"/>
+		<switch start="21689" endOfMainTrack="21691" endOfBranchTrack="21692" nodeID="21690" name="32W13" description="Weichenanfang  Id:121690 Str:1710 Bild (63.5083 / -10.0000)" kilometre="8.093" x="6350.83" y="-1000" xNet="3449350.5" yNet="10127788" xWGS84="0" yWGS84="0"/>
+		<signal interlockingMachine="sppAuto" nodeID="21693" description="Prellbock  Id:121693 Str:1710 Bild (60.0442 / -14.0000)" kilometre="8.079" x="6004.42" y="-1400" xNet="3449004.1" yNet="10127388" xWGS84="0" yWGS84="0" referenceNode="21694"/>
+		<node nodeID="21694" description="WeichenabzweigLinks  Id:121694 Str:1710" kilometre="8.128" x="6414.4222" y="-1400" xNet="3449414.1" yNet="10127388" xWGS84="6414.4222" yWGS84="-1400"/>
+		<node nodeID="21696" description="WeichenabzweigLinks  Id:121696 Str:1710" kilometre="8.924" x="12041.886" y="-942.85714" xNet="3455041.6" yNet="10127845" xWGS84="12041.886" yWGS84="-942.85714"/>
+		<node nodeID="21698" description="GeschwZulaessigF V: 80 Wirkungsort: signal Zugbeeinflussung: Alle Id:121698 Str:1710" kilometre="9.004" x="12173.829" y="-714.28571" xNet="3455173.5" yNet="10128074" xWGS84="12173.829" yWGS84="-714.28571"/>
+		<node nodeID="21699" description="WeichenabzweigLinks  Id:121699 Str:1710" kilometre="9.004" x="12206.814" y="-657.14286" xNet="3455206.5" yNet="10128131" xWGS84="12206.814" yWGS84="-657.14286"/>
+		<node nodeID="21701" description="Weichenstamm  Id:121701 Str:1711" kilometre="7.449" x="4358.0193" y="200" xNet="3447357.7" yNet="10128988" xWGS84="4358.0193" yWGS84="200"/>
+		<node nodeID="21703" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:121703 Str:1711" kilometre="7.450" x="4362.3018" y="200" xNet="3447362" yNet="10128988" xWGS84="4362.3018" yWGS84="200"/>
+		<node nodeID="21704" description="FstrZugschlussstelleS FstrAuflösezeit: 3s Id:121704 Str:1711" kilometre="7.499" x="4572.1425" y="200" xNet="3447571.8" yNet="10128988" xWGS84="4572.1425" yWGS84="200" referenceNode="21703" releaseContact="true"/>
+		<node nodeID="21705" description="Neigung S: 1.44 F: 2.42 Id:121705 Str:1711" kilometre="7.556" x="4816.243" y="200" xNet="3447815.9" yNet="10128988" xWGS84="4816.243" yWGS84="200"/>
+		<node nodeID="21706" name="3184" description="VorsignalF FstrBildezeit: 9s Id:121706 Str:1711" kilometre="7.642" x="5184.535" y="200" xNet="3448184.2" yNet="10128988" xWGS84="5184.535" yWGS84="200" referenceNode="21707" presignal="true" with1000HzMagnet="true"/>
+		<track trackID="B-31" stationID="HVIN" length="950" type="stopBoardFreight" nodeID="21708" name="31" description="HalteplatzGzF Länge: 950m Id:121708 Str:1711" kilometre="7.647" x="5291.5967" y="200" xNet="3448291.3" yNet="10128988" xWGS84="0" yWGS84="0" referenceNode="21709"/>
+		<track trackID="D-31" stationID="HVIN" length="207" type="stopBoardPass" nodeID="21709" name="31" description="HalteplatzRzLinksF Länge: 207m Id:121709 Str:1711" kilometre="7.700" x="5518.5673" y="200" xNet="3448518.2" yNet="10128988" xWGS84="0" yWGS84="0" referenceNode="21710">
+			<platform startPos="-5" endPos="-207" width="60" left="true" open="true"/>
+		</track>
+		<track trackID="G-31" stationID="HVIN" type="timingPoint" nodeID="21710" name="31" description="Fahrzeitmesspunkt  Id:121710 Str:1711" kilometre="7.800" x="5946.8138" y="200" xNet="3448946.5" yNet="10128988" xWGS84="0" yWGS84="0" referenceNode="21711"/>
+		<node nodeID="21711" description="Neigung S: -2.50 F: -1.44 Id:121711 Str:1711" kilometre="7.812" x="5998.2034" y="200" xNet="3448997.9" yNet="10128988" xWGS84="5998.2034" yWGS84="200"/>
+		<track trackID="A-31" stationID="HVIN" length="205" type="stopBoardPass" nodeID="21712" name="31" description="HalteplatzRzRechtsS Länge: 205m Id:121712 Str:1711" kilometre="7.910" x="6417.8849" y="200" xNet="3449417.6" yNet="10128988" xWGS84="0" yWGS84="0" referenceNode="21711">
+			<platform startPos="-5" endPos="-205" width="60" left="false" open="true"/>
+		</track>
+		<node nodeID="21713" description="Neigung S: 0.77 F: 2.50 Id:121713 Str:1711" kilometre="7.972" x="6683.3978" y="200" xNet="3449683.1" yNet="10128988" xWGS84="6683.3978" yWGS84="200"/>
+		<node nodeID="21714" description="Neigung S: 2.29 F: -0.77 Id:121714 Str:1711" kilometre="8.128" x="7351.4623" y="200" xNet="3450351.1" yNet="10128988" xWGS84="7351.4623" yWGS84="200"/>
+		<node nodeID="21715" description="Neigung S: -2.36 F: -2.29 Id:121715 Str:1711" kilometre="8.490" x="8901.7146" y="200" xNet="3451901.4" yNet="10128988" xWGS84="8901.7146" yWGS84="200"/>
+		<track trackID="C-31" stationID="HVIN" length="1056" type="stopBoardFreight" nodeID="21716" name="31" description="HalteplatzGzS Länge: 1056m Id:121716 Str:1711" kilometre="8.555" x="9180.0748" y="200" xNet="3452179.7" yNet="10128988" xWGS84="0" yWGS84="0" referenceNode="21715"/>
+		<node nodeID="21718" name="32N1" description="VorsignalS FstrBildezeit: 9s Id:121718 Str:1711" kilometre="8.560" x="9287.1365" y="200" xNet="3452286.8" yNet="10128988" xWGS84="9287.1365" yWGS84="200" referenceNode="21717" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="21719" name="32Vp1" description="VorsignalF FstrBildezeit: 9s Id:121719 Str:1711" kilometre="8.610" x="9501.2597" y="200" xNet="3452500.9" yNet="10128988" xWGS84="9501.2597" yWGS84="200" referenceNode="21720" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="21720" description="Neigung S: -1.24 F: 2.36 Id:121720 Str:1711" kilometre="8.630" x="9586.909" y="200" xNet="3452586.6" yNet="10128988" xWGS84="9586.909" yWGS84="200"/>
+		<node nodeID="21721" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:121721 Str:1711" kilometre="8.760" x="10143.629" y="200" xNet="3453143.3" yNet="10128988" xWGS84="10143.629" yWGS84="200"/>
+		<node nodeID="21722" description="Neigung S: 0.00 F: 1.24 Id:121722 Str:1711" kilometre="8.921" x="10833.106" y="200" xNet="3453832.8" yNet="10128988" xWGS84="10833.106" yWGS84="200"/>
+		<node nodeID="21723" description="Neigung S: 0.97 F: 0.00 Id:121723 Str:1711" kilometre="9.138" x="11762.401" y="200" xNet="3454762.1" yNet="10128988" xWGS84="11762.401" yWGS84="200"/>
+		<node nodeID="21724" description="Neigung S: 4.64 F: -0.97 Id:121724 Str:1711" kilometre="9.292" x="12421.901" y="200" xNet="3455421.6" yNet="10128988" xWGS84="12421.901" yWGS84="200"/>
+		<node nodeID="21725" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:121725 Str:1711" kilometre="9.305" x="12477.573" y="200" xNet="3455477.2" yNet="10128988" xWGS84="12477.573" yWGS84="200"/>
+		<node nodeID="21726" description="Neigung S: -3.75 F: -4.64 Id:121726 Str:1711" kilometre="9.430" x="13012.881" y="200" xNet="3456012.5" yNet="10128988" xWGS84="13012.881" yWGS84="200"/>
+		<signal interlockingMachine="sppAuto" indusi500HzLocation="none" nodeID="21727" name="32G" description="HauptsignalF DwegAuflösezeit: 3s Id:121727 Str:1711" kilometre="9.505" x="13334.066" y="200" xNet="3456333.7" yNet="10128988" xWGS84="0" yWGS84="0" referenceNode="21728"/>
+		<node nodeID="21728" description="Neigung S: 0.74 F: 3.75 Id:121728 Str:1711" kilometre="9.523" x="13411.15" y="200" xNet="3456410.8" yNet="10128988" xWGS84="13411.15" yWGS84="200"/>
+		<node nodeID="21730" description="Weichenstamm  Id:121730 Str:1710" kilometre="8.776" x="11351.538" y="-1338.4615" xNet="3454351.2" yNet="10127450" xWGS84="11351.538" yWGS84="-1338.4615"/>
+		<node nodeID="21732" description="Neigung S: -0.82 F: 1.35 Id:121732 Str:1710" kilometre="8.827" x="11442.162" y="-1181.5385" xNet="3454441.8" yNet="10127607" xWGS84="11442.162" yWGS84="-1181.5385"/>
+		<node nodeID="21733" description="GeschwZulaessigF V: 60 Wirkungsort: signal Zugbeeinflussung: Alle Id:121733 Str:1710" kilometre="8.860" x="11500.8" y="-1080" xNet="3454500.5" yNet="10127708" xWGS84="11500.8" yWGS84="-1080"/>
+		<node nodeID="21734" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:121734 Str:1710" kilometre="8.865" x="11509.685" y="-1064.6154" xNet="3454509.4" yNet="10127724" xWGS84="11509.685" yWGS84="-1064.6154"/>
+		<node nodeID="21735" description="WeichenabzweigLinks  Id:121735 Str:1710" kilometre="8.866" x="11511.462" y="-1061.5385" xNet="3454511.1" yNet="10127727" xWGS84="11511.462" yWGS84="-1061.5385"/>
+		<switch start="21740" endOfMainTrack="21738" endOfBranchTrack="21739" nodeID="21737" name="32W04" description="Weichenanfang  Id:121737 Str:1710 Bild (51.9620 / -6.0000)" kilometre="7.675" x="5196.2" y="-600" xNet="3448195.9" yNet="10128188" xWGS84="0" yWGS84="0"/>
+		<node nodeID="21740" name="31V84" description="VorsignalF FstrBildezeit: 9s Id:121740 Str:1710" kilometre="7.715" x="5311.65" y="-600" xNet="3448311.3" yNet="10128188" xWGS84="5311.65" yWGS84="-600" referenceNode="21741" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="21741" description="FstrZugschlussstelleS FstrAuflösezeit: 3s Id:121741 Str:1710" kilometre="7.725" x="5340.5125" y="-600" xNet="3448340.2" yNet="10128188" xWGS84="5340.5125" yWGS84="-600" referenceNode="21740" releaseContact="true"/>
+		<node nodeID="21742" description="Neigung S: -2.03 F: -1.62 Id:121742 Str:1710" kilometre="7.784" x="5510.8013" y="-600" xNet="3448510.5" yNet="10128188" xWGS84="5510.8013" yWGS84="-600"/>
+		<node nodeID="21743" description="FstrZugschlussstelleF FstrAuflösezeit: 3s Id:121743 Str:1710" kilometre="7.785" x="5513.6875" y="-600" xNet="3448513.4" yNet="10128188" xWGS84="5513.6875" yWGS84="-600" referenceNode="21744" releaseContact="true"/>
+		<switch start="21743" endOfMainTrack="21745" endOfBranchTrack="21746" nodeID="21744" name="32W11" description="Weichenanfang  Id:121744 Str:1710 Bild (56.5800 / -6.0000)" kilometre="7.835" x="5658" y="-600" xNet="3448657.7" yNet="10128188" xWGS84="0" yWGS84="0"/>
+		<switch start="21750" endOfMainTrack="21748" endOfBranchTrack="21749" nodeID="21747" name="32W02" description="Weichenanfang  Id:121747 Str:1711 Bild (45.0331 / -2.0000)" kilometre="7.519" x="4503.31" y="-200" xNet="3447503" yNet="10128588" xWGS84="0" yWGS84="0"/>
+		<node nodeID="21750" description="Neigung S: 1.44 F: 2.42 Id:121750 Str:1711" kilometre="7.556" x="4719.6382" y="-200" xNet="3447719.3" yNet="10128588" xWGS84="4719.6382" yWGS84="-200"/>
+		<switch start="21750" endOfMainTrack="21752" endOfBranchTrack="21753" nodeID="21751" name="32W03" description="Weichenanfang  Id:121751 Str:1711 Bild (49.6520 / -2.0000)" kilometre="7.598" x="4965.2" y="-200" xNet="3447964.9" yNet="10128588" xWGS84="0" yWGS84="0"/>
+		<node nodeID="21692" description="WeichenabzweigRechts  Id:121692 Str:1710" kilometre="8.093" x="6399.4489" y="-1084.2105" xNet="3449399.1" yNet="10127704" xWGS84="6399.4489" yWGS84="-1084.2105"/>
+		<node nodeID="21754" description="GeschwZulaessigS V: 60 Wirkungsort: signal Zugbeeinflussung: Alle Id:121754 Str:1710" kilometre="8.093" x="6448.0679" y="-1168.4211" xNet="3449447.7" yNet="10127620" xWGS84="6448.0679" yWGS84="-1168.4211"/>
+		<node nodeID="21755" description="Weichenstamm  Id:121755 Str:1710" kilometre="8.128" x="6533.1511" y="-1315.7895" xNet="3449532.8" yNet="10127472" xWGS84="6533.1511" yWGS84="-1315.7895"/>
+		<node nodeID="21756" description="WeichenabzweigRechts  Id:121756 Str:1711" kilometre="7.449" x="4314.3591" y="127.27273" xNet="3447314" yNet="10128915" xWGS84="4314.3591" yWGS84="127.27273"/>
+		<node nodeID="21749" description="WeichenabzweigRechts  Id:121749 Str:1711" kilometre="7.519" x="4461.3209" y="-127.27273" xNet="3447461" yNet="10128661" xWGS84="4461.3209" yWGS84="-127.27273"/>
+		<node nodeID="21691" description="Weichenstamm  Id:121691 Str:1710" kilometre="8.093" x="6472.6628" y="-1000" xNet="3449472.3" yNet="10127788" xWGS84="6472.6628" yWGS84="-1000"/>
+		<speedIndicator nodeID="21757" description="GeschwZulaessigS V: 180 Wirkungsort: hier Zugbeeinflussung: Alle Id:121757 Str:1710" kilometre="8.093" x="6594.4957" y="-1000" xNet="3449594.2" yNet="10127788" xWGS84="0" yWGS84="0" referenceNode="21691"/>
+		<node nodeID="21758" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:121758 Str:1710" kilometre="8.100" x="6637.1371" y="-1000" xNet="3449636.8" yNet="10127788" xWGS84="6637.1371" yWGS84="-1000"/>
+		<node nodeID="21759" description="FstrZugschlussstelleS FstrAuflösezeit: 3s Id:121759 Str:1710" kilometre="8.143" x="6899.0777" y="-1000" xNet="3449898.7" yNet="10127788" xWGS84="6899.0777" yWGS84="-1000" referenceNode="21758" releaseContact="true"/>
+		<node nodeID="21760" description="Neigung S: 2.25 F: -1.37 Id:121760 Str:1710" kilometre="8.201" x="7252.3929" y="-1000" xNet="3450252.1" yNet="10127788" xWGS84="7252.3929" yWGS84="-1000"/>
+		<track trackID="B-44" stationID="HVIN" length="511" type="stopBoardFreight" nodeID="21762" name="44" description="HalteplatzGzF Länge: 511m Id:121762 Str:1710" kilometre="8.305" x="7885.9236" y="-1000" xNet="3450885.6" yNet="10127788" xWGS84="0" yWGS84="0" referenceNode="21763"/>
+		<node nodeID="21763" description="Neigung S: -2.36 F: -2.25 Id:121763 Str:1710" kilometre="8.490" x="9012.8772" y="-1000" xNet="3452012.5" yNet="10127788" xWGS84="9012.8772" yWGS84="-1000"/>
+		<track trackID="G-44" stationID="HVIN" type="timingPoint" nodeID="21764" name="44" description="Fahrzeitmesspunkt  Id:121764 Str:1710" kilometre="8.540" x="9317.4593" y="-1000" xNet="3452317.1" yNet="10127788" xWGS84="0" yWGS84="0" referenceNode="21765"/>
+		<node nodeID="21765" description="Neigung S: -1.35 F: 2.36 Id:121765 Str:1710" kilometre="8.667" x="10091.098" y="-1000" xNet="3453090.8" yNet="10127788" xWGS84="10091.098" yWGS84="-1000"/>
+		<track trackID="A-44" stationID="HVIN" length="590" type="stopBoardFreight" nodeID="21766" name="44" description="HalteplatzGzS Länge: 590m Id:121766 Str:1710" kilometre="8.731" x="10480.963" y="-1000" xNet="3453480.6" yNet="10127788" xWGS84="0" yWGS84="0" referenceNode="21765"/>
+		<node nodeID="21768" name="32N4" description="VorsignalS FstrBildezeit: 9s Id:121768 Str:1710" kilometre="8.736" x="10633.254" y="-1000" xNet="3453632.9" yNet="10127788" xWGS84="10633.254" yWGS84="-1000" referenceNode="21767" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="21769" description="FstrZugschlussstelleF FstrAuflösezeit: 3s Id:121769 Str:1710" kilometre="8.816" x="11120.585" y="-1000" xNet="3454120.3" yNet="10127788" xWGS84="11120.585" yWGS84="-1000" referenceNode="21770" releaseContact="true"/>
+		<node nodeID="21770" description="Neigung S: -0.82 F: 1.35 Id:121770 Str:1710" kilometre="8.827" x="11187.593" y="-1000" xNet="3454187.3" yNet="10127788" xWGS84="11187.593" yWGS84="-1000"/>
+		<node nodeID="21771" description="Weichenstamm  Id:121771 Str:1710" kilometre="8.866" x="11425.167" y="-1000" xNet="3454424.8" yNet="10127788" xWGS84="11425.167" yWGS84="-1000"/>
+		<switch start="21772" endOfMainTrack="21755" endOfBranchTrack="21694" nodeID="21695" name="32W14" description="Weichenanfang  Id:121695 Str:1710 Bild (65.8177 / -14.0000)" kilometre="8.128" x="6581.77" y="-1400" xNet="3449581.4" yNet="10127388" xWGS84="0" yWGS84="0"/>
+		<node nodeID="21772" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:121772 Str:1710" kilometre="8.145" x="6695.445" y="-1400" xNet="3449695.1" yNet="10127388" xWGS84="6695.445" yWGS84="-1400"/>
+		<node nodeID="21773" description="FstrZugschlussstelleS FstrAuflösezeit: 3s Id:121773 Str:1710" kilometre="8.178" x="6916.1083" y="-1400" xNet="3449915.8" yNet="10127388" xWGS84="6916.1083" yWGS84="-1400" referenceNode="21772" releaseContact="true"/>
+		<node nodeID="21774" description="Neigung S: 2.25 F: -1.37 Id:121774 Str:1710" kilometre="8.201" x="7069.9039" y="-1400" xNet="3450069.6" yNet="10127388" xWGS84="7069.9039" yWGS84="-1400"/>
+		<speedIndicator nodeID="21775" description="GeschwZulaessigF V: 60 Wirkungsort: hier Zugbeeinflussung: Alle Id:121775 Str:1710" kilometre="8.245" x="7364.1216" y="-1400" xNet="3450363.8" yNet="10127388" xWGS84="0" yWGS84="0" referenceNode="21776"/>
+		<track trackID="B-25" stationID="HVIN" length="517" type="stopBoardFreight" nodeID="21777" name="25" description="HalteplatzGzF Länge: 517m Id:121777 Str:1710" kilometre="8.250" x="7531.2907" y="-1400" xNet="3450531" yNet="10127388" xWGS84="0" yWGS84="0" referenceNode="21778"/>
+		<node nodeID="21778" description="Neigung S: -2.36 F: -2.25 Id:121778 Str:1710" kilometre="8.490" x="9136.1144" y="-1400" xNet="3452135.8" yNet="10127388" xWGS84="9136.1144" yWGS84="-1400"/>
+		<track trackID="G-25" stationID="HVIN" type="timingPoint" nodeID="21779" name="25" description="Fahrzeitmesspunkt  Id:121779 Str:1710" kilometre="8.500" x="9202.9821" y="-1400" xNet="3452202.6" yNet="10127388" xWGS84="0" yWGS84="0" referenceNode="21780"/>
+		<node nodeID="21780" description="Neigung S: -1.35 F: 2.36 Id:121780 Str:1710" kilometre="8.667" x="10319.672" y="-1400" xNet="3453319.3" yNet="10127388" xWGS84="10319.672" yWGS84="-1400"/>
+		<node nodeID="21781" description="FstrZugschlussstelleF FstrAuflösezeit: 3s Id:121781 Str:1710" kilometre="8.726" x="10714.191" y="-1400" xNet="3453713.9" yNet="10127388" xWGS84="10714.191" yWGS84="-1400" referenceNode="21782" releaseContact="true"/>
+		<track trackID="A-25" stationID="HVIN" length="574" type="stopBoardFreight" nodeID="21782" name="25" description="HalteplatzGzS Länge: 574m Id:121782 Str:1710" kilometre="8.767" x="10988.348" y="-1400" xNet="3453988" yNet="10127388" xWGS84="0" yWGS84="0" referenceNode="21781"/>
+		<node nodeID="21784" name="33Va/1" description="VorsignalS FstrBildezeit: 9s Id:121784 Str:1710" kilometre="8.772" x="11155.518" y="-1400" xNet="3454155.2" yNet="10127388" xWGS84="11155.518" yWGS84="-1400" referenceNode="21783" presignal="true" with1000HzMagnet="true"/>
+		<speedIndicator nodeID="21785" description="GeschwZulaessigS V: 60 Wirkungsort: hier Zugbeeinflussung: Alle Id:121785 Str:1710" kilometre="8.772" x="11289.253" y="-1400" xNet="3454288.9" yNet="10127388" xWGS84="0" yWGS84="0" referenceNode="21784"/>
+		<switch start="21785" endOfMainTrack="21730" endOfBranchTrack="21786" nodeID="21731" name="32W31" description="Weichenanfang  Id:121731 Str:1710 Bild (113.1600 / -14.0000)" kilometre="8.776" x="11316" y="-1400" xNet="3454315.7" yNet="10127388" xWGS84="0" yWGS84="0"/>
+		<node nodeID="21745" description="Weichenstamm  Id:121745 Str:1710" kilometre="7.835" x="5765.1082" y="-600" xNet="3448764.8" yNet="10128188" xWGS84="5765.1082" yWGS84="-600"/>
+		<node nodeID="21787" description="LZBAnfangS  Id:121787 Str:1710" kilometre="7.840" x="5791.8853" y="-600" xNet="3448791.6" yNet="10128188" xWGS84="5791.8853" yWGS84="-600"/>
+		<node nodeID="21788" description="FstrZugschlussstelleS FstrAuflösezeit: 3s Id:121788 Str:1710" kilometre="7.885" x="6032.8788" y="-600" xNet="3449032.5" yNet="10128188" xWGS84="6032.8788" yWGS84="-600" referenceNode="21787" releaseContact="true"/>
+		<node nodeID="21789" description="Neigung S: 1.37 F: 2.03 Id:121789 Str:1710" kilometre="7.981" x="6546.9982" y="-600" xNet="3449546.7" yNet="10128188" xWGS84="6546.9982" yWGS84="-600"/>
+		<node nodeID="21790" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:121790 Str:1710" kilometre="8.050" x="6916.5216" y="-600" xNet="3449916.2" yNet="10128188" xWGS84="6916.5216" yWGS84="-600"/>
+		<node nodeID="21791" description="Neigung S: 2.25 F: -1.37 Id:121791 Str:1710" kilometre="8.201" x="7725.1886" y="-600" xNet="3450724.9" yNet="10128188" xWGS84="7725.1886" yWGS84="-600"/>
+		<track trackID="B-23" stationID="HVIN" length="699" type="stopBoardFreight" nodeID="21793" name="23" description="HalteplatzGzF Länge: 699m Id:121793 Str:1710" kilometre="8.255" x="8014.3808" y="-600" xNet="3451014" yNet="10128188" xWGS84="0" yWGS84="0" referenceNode="21794"/>
+		<node nodeID="21794" description="Neigung S: -2.36 F: -2.25 Id:121794 Str:1710" kilometre="8.490" x="9272.9024" y="-600" xNet="3452272.6" yNet="10128188" xWGS84="9272.9024" yWGS84="-600"/>
+		<track trackID="G-23" stationID="HVIN" type="timingPoint" nodeID="21795" name="23" description="Fahrzeitmesspunkt  Id:121795 Str:1710" kilometre="8.500" x="9326.4565" y="-600" xNet="3452326.1" yNet="10128188" xWGS84="0" yWGS84="0" referenceNode="21796"/>
+		<node nodeID="21796" description="Neigung S: -1.35 F: 2.36 Id:121796 Str:1710" kilometre="8.667" x="10220.81" y="-600" xNet="3453220.5" yNet="10128188" xWGS84="10220.81" yWGS84="-600"/>
+		<track trackID="A-23" stationID="HVIN" length="896" type="stopBoardFreight" nodeID="21797" name="23" description="HalteplatzGzS Länge: 896m Id:121797 Str:1710" kilometre="8.731" x="10563.556" y="-600" xNet="3453563.2" yNet="10128188" xWGS84="0" yWGS84="0" referenceNode="21796"/>
+		<node nodeID="21799" name="32N3" description="VorsignalS FstrBildezeit: 9s Id:121799 Str:1710" kilometre="8.736" x="10697.442" y="-600" xNet="3453697.1" yNet="10128188" xWGS84="10697.442" yWGS84="-600" referenceNode="21798" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="21800" description="Neigung S: -0.82 F: 1.35 Id:121800 Str:1710" kilometre="8.827" x="11184.784" y="-600" xNet="3454184.5" yNet="10128188" xWGS84="11184.784" yWGS84="-600"/>
+		<node nodeID="21801" description="Neigung S: 0.00 F: 0.82 Id:121801 Str:1710" kilometre="8.894" x="11543.597" y="-600" xNet="3454543.3" yNet="10128188" xWGS84="11543.597" yWGS84="-600"/>
+		<node nodeID="21802" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:121802 Str:1710" kilometre="8.936" x="11768.524" y="-600" xNet="3454768.2" yNet="10128188" xWGS84="11768.524" yWGS84="-600"/>
+		<node nodeID="21803" description="FstrZugschlussstelleF FstrAuflösezeit: 3s Id:121803 Str:1710" kilometre="8.954" x="11864.921" y="-600" xNet="3454864.6" yNet="10128188" xWGS84="11864.921" yWGS84="-600" referenceNode="21804" releaseContact="true"/>
+		<node nodeID="21804" description="Weichenstamm  Id:121804 Str:1710" kilometre="9.004" x="12132.692" y="-600" xNet="3455132.4" yNet="10128188" xWGS84="12132.692" yWGS84="-600"/>
+		<node nodeID="21752" description="Weichenstamm  Id:121752 Str:1711" kilometre="7.598" x="5049.5007" y="-200" xNet="3448049.2" yNet="10128588" xWGS84="5049.5007" yWGS84="-200"/>
+		<speedIndicator nodeID="21805" description="GeschwZulaessigS V: 120 Wirkungsort: hier Zugbeeinflussung: Alle Id:121805 Str:1711" kilometre="7.598" x="5133.8013" y="-200" xNet="3448133.5" yNet="10128588" xWGS84="0" yWGS84="0" referenceNode="21752"/>
+		<node nodeID="21806" description="FstrZugschlussstelleS FstrAuflösezeit: 3s Id:121806 Str:1711" kilometre="7.648" x="5344.553" y="-200" xNet="3448344.2" yNet="10128588" xWGS84="5344.553" yWGS84="-200" referenceNode="21805" releaseContact="true"/>
+		<node nodeID="21807" name="3183" description="VorsignalF FstrBildezeit: 9s Id:121807 Str:1711" kilometre="7.657" x="5382.4883" y="-200" xNet="3448382.2" yNet="10128588" xWGS84="5382.4883" yWGS84="-200" referenceNode="21808" presignal="true" with1000HzMagnet="true"/>
+		<track trackID="B-12" stationID="HVIN" length="950" type="stopBoardFreight" nodeID="21809" name="12" description="HalteplatzGzF Länge: 950m Id:121809 Str:1711" kilometre="7.662" x="5487.8642" y="-200" xNet="3448487.5" yNet="10128588" xWGS84="0" yWGS84="0" referenceNode="21810"/>
+		<track trackID="D-12" stationID="HVIN" length="200" type="stopBoardPass" nodeID="21810" name="12" description="HalteplatzRzRechtsF Länge: 200m Id:121810 Str:1711" kilometre="7.696" x="5631.1753" y="-200" xNet="3448630.8" yNet="10128588" xWGS84="0" yWGS84="0" referenceNode="21811">
+			<platform startPos="-5" endPos="-200" width="60" left="false" open="true"/>
+		</track>
+		<track trackID="G-12" stationID="HVIN" type="timingPoint" nodeID="21811" name="12" description="Fahrzeitmesspunkt  Id:121811 Str:1711" kilometre="7.800" x="6069.5388" y="-200" xNet="3449069.2" yNet="10128588" xWGS84="0" yWGS84="0" referenceNode="21812"/>
+		<node nodeID="21812" description="Neigung S: -2.50 F: -1.44 Id:121812 Str:1711" kilometre="7.812" x="6120.1192" y="-200" xNet="3449119.8" yNet="10128588" xWGS84="6120.1192" yWGS84="-200"/>
+		<track trackID="A-12" stationID="HVIN" length="203" type="stopBoardPass" nodeID="21813" name="12" description="HalteplatzRzLinksS Länge: 203m Id:121813 Str:1711" kilometre="7.901" x="6495.2572" y="-200" xNet="3449494.9" yNet="10128588" xWGS84="0" yWGS84="0" referenceNode="21812">
+			<platform startPos="-5" endPos="-203" width="60" left="true" open="true"/>
+		</track>
+		<node nodeID="21814" description="Neigung S: 0.77 F: 2.50 Id:121814 Str:1711" kilometre="7.972" x="6794.5246" y="-200" xNet="3449794.2" yNet="10128588" xWGS84="6794.5246" yWGS84="-200"/>
+		<node nodeID="21815" description="Neigung S: 2.29 F: -0.77 Id:121815 Str:1711" kilometre="8.128" x="7452.0698" y="-200" xNet="3450451.7" yNet="10128588" xWGS84="7452.0698" yWGS84="-200"/>
+		<node nodeID="21816" description="Neigung S: -2.36 F: -2.29 Id:121816 Str:1711" kilometre="8.490" x="8977.912" y="-200" xNet="3451977.6" yNet="10128588" xWGS84="8977.912" yWGS84="-200"/>
+		<track trackID="C-12" stationID="HVIN" length="907" type="stopBoardFreight" nodeID="21817" name="12" description="HalteplatzGzS Länge: 907m Id:121817 Str:1711" kilometre="8.555" x="9251.8892" y="-200" xNet="3452251.6" yNet="10128588" xWGS84="0" yWGS84="0" referenceNode="21816"/>
+		<node nodeID="21819" name="32N2" description="VorsignalS FstrBildezeit: 9s Id:121819 Str:1711" kilometre="8.560" x="9357.265" y="-200" xNet="3452356.9" yNet="10128588" xWGS84="9357.265" yWGS84="-200" referenceNode="21818" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="21820" name="32Vp2" description="VorsignalF FstrBildezeit: 9s Id:121820 Str:1711" kilometre="8.610" x="9568.0167" y="-200" xNet="3452567.7" yNet="10128588" xWGS84="9568.0167" yWGS84="-200" referenceNode="21821" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="21821" description="Neigung S: -1.24 F: 2.36 Id:121821 Str:1711" kilometre="8.630" x="9652.3174" y="-200" xNet="3452652" yNet="10128588" xWGS84="9652.3174" yWGS84="-200"/>
+		<node nodeID="21822" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:121822 Str:1711" kilometre="8.760" x="10200.272" y="-200" xNet="3453199.9" yNet="10128588" xWGS84="10200.272" yWGS84="-200"/>
+		<node nodeID="21823" description="Neigung S: 0.00 F: 1.24 Id:121823 Str:1711" kilometre="8.921" x="10878.892" y="-200" xNet="3453878.6" yNet="10128588" xWGS84="10878.892" yWGS84="-200"/>
+		<node nodeID="21824" description="Neigung S: 0.97 F: 0.00 Id:121824 Str:1711" kilometre="9.138" x="11793.554" y="-200" xNet="3454793.2" yNet="10128588" xWGS84="11793.554" yWGS84="-200"/>
+		<node nodeID="21825" description="Neigung S: 4.64 F: -0.97 Id:121825 Str:1711" kilometre="9.292" x="12442.67" y="-200" xNet="3455442.3" yNet="10128588" xWGS84="12442.67" yWGS84="-200"/>
+		<node nodeID="21826" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:121826 Str:1711" kilometre="9.305" x="12497.465" y="-200" xNet="3455497.1" yNet="10128588" xWGS84="12497.465" yWGS84="-200"/>
+		<node nodeID="21827" description="Neigung S: -3.75 F: -4.64 Id:121827 Str:1711" kilometre="9.430" x="13024.344" y="-200" xNet="3456024" yNet="10128588" xWGS84="13024.344" yWGS84="-200"/>
+		<signal interlockingMachine="sppAuto" indusi500HzLocation="none" nodeID="21828" name="32GG" description="HauptsignalF DwegAuflösezeit: 3s Id:121828 Str:1711" kilometre="9.505" x="13340.472" y="-200" xNet="3456340.1" yNet="10128588" xWGS84="0" yWGS84="0" referenceNode="21829"/>
+		<node nodeID="21829" description="Neigung S: 0.74 F: 3.75 Id:121829 Str:1711" kilometre="9.523" x="13416.342" y="-200" xNet="3456416" yNet="10128588" xWGS84="13416.342" yWGS84="-200"/>
+		<node nodeID="21753" description="WeichenabzweigRechts  Id:121753 Str:1711" kilometre="7.598" x="4991.3017" y="-245.19774" xNet="3447991" yNet="10128543" xWGS84="4991.3017" yWGS84="-245.19774"/>
+		<node nodeID="21831" description="GeschwZulaessigS V: 60 Wirkungsort: signal Zugbeeinflussung: Alle Id:121831 Str:1711" kilometre="7.598" x="5017.4034" y="-290.39548" xNet="3448017.1" yNet="10128498" xWGS84="5017.4034" yWGS84="-290.39548"/>
+		<node nodeID="21832" description="Neigung S: 1.62 F: -1.44 Id:121832 Str:1711" kilometre="7.600" x="5020.0136" y="-294.91525" xNet="3448019.7" yNet="10128493" xWGS84="5020.0136" yWGS84="-294.91525"/>
+		<node nodeID="21833" description="GeschwZulaessigF V: 60 Wirkungsort: signal Zugbeeinflussung: Alle Id:121833 Str:1711" kilometre="7.675" x="5117.8949" y="-464.40678" xNet="3448117.6" yNet="10128324" xWGS84="5117.8949" yWGS84="-464.40678"/>
+		<node nodeID="21834" description="LZBEndeF  Id:121834 Str:1711" kilometre="7.675" x="5143.9966" y="-509.60452" xNet="3448143.7" yNet="10128279" xWGS84="5143.9966" yWGS84="-509.60452"/>
+		<node nodeID="21738" description="Weichenstamm  Id:121738 Str:1711" kilometre="7.675" x="5170.0983" y="-554.80226" xNet="3448169.8" yNet="10128233" xWGS84="5170.0983" yWGS84="-554.80226"/>
+		<node nodeID="21835" description="Betriebsstellengrenze Partner: H3192 Strecke: 1710 Gleis: 2 Id:121835 Str:1710 Bild (25.4040 / -6.0000)" kilometre="7.300" x="2540.4" y="-600" xNet="3445540.1" yNet="10128188" xWGS84="2540.4" yWGS84="-600">
+			<netLimitInfo lineID="1710" stationID="HBUG" stationName="Hannover Burg"/>
+		</node>
+		<signal interlockingMachine="Tb:0_Tl:3_NTA" indusi500HzLocation="none" nodeID="21836" name="32AA" description="HauptsignalS DwegAuflösezeit: 3s Id:121836 Str:1710" kilometre="7.348" x="2847.5769" y="-600" xNet="3445847.2" yNet="10128188" xWGS84="0" yWGS84="0" referenceNode="21835"/>
+		<node nodeID="21837" name="32Vn3/4" description="VorsignalS FstrBildezeit: 9s Id:121837 Str:1710" kilometre="7.348" x="2975.5672" y="-600" xNet="3445975.2" yNet="10128188" xWGS84="2975.5672" yWGS84="-600" referenceNode="21836" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="21838" description="Neigung S: -2.42 F: 0.00 Id:121838 Str:1710" kilometre="7.376" x="3154.7537" y="-600" xNet="3446154.4" yNet="10128188" xWGS84="3154.7537" yWGS84="-600"/>
+		<node nodeID="21839" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:121839 Str:1710" kilometre="7.548" x="4255.4708" y="-600" xNet="3447255.1" yNet="10128188" xWGS84="4255.4708" yWGS84="-600"/>
+		<node nodeID="21840" description="Neigung S: 1.62 F: 2.42 Id:121840 Str:1710" kilometre="7.556" x="4306.667" y="-600" xNet="3447306.3" yNet="10128188" xWGS84="4306.667" yWGS84="-600"/>
+		<node nodeID="21841" description="FstrZugschlussstelleF FstrAuflösezeit: 3s Id:121841 Str:1710" kilometre="7.625" x="4748.2337" y="-600" xNet="3447747.9" yNet="10128188" xWGS84="4748.2337" yWGS84="-600" referenceNode="21842" releaseContact="true"/>
+		<speedIndicator nodeID="21842" description="GeschwZulaessigF V: 180 Wirkungsort: hier Zugbeeinflussung: Alle Id:121842 Str:1710" kilometre="7.627" x="4761.0328" y="-600" xNet="3447760.7" yNet="10128188" xWGS84="0" yWGS84="0" referenceNode="21739"/>
+		<node nodeID="21739" description="WeichenabzweigLinks  Id:121739 Str:1710" kilometre="7.675" x="5068.2096" y="-600" xNet="3448067.9" yNet="10128188" xWGS84="5068.2096" yWGS84="-600"/>
+		<switch start="21843" endOfMainTrack="21804" endOfBranchTrack="21699" nodeID="21700" name="32W35" description="Weichenanfang  Id:121700 Str:1710 Bild (122.3980 / -6.0000)" kilometre="9.004" x="12239.8" y="-600" xNet="3455239.5" yNet="10128188" xWGS84="0" yWGS84="0"/>
+		<speedIndicator nodeID="21843" description="GeschwZulaessigS V: 180 Wirkungsort: hier Zugbeeinflussung: Alle Id:121843 Str:1710" kilometre="9.024" x="12287.008" y="-600" xNet="3455286.7" yNet="10128188" xWGS84="0" yWGS84="0" referenceNode="21700"/>
+		<node nodeID="21844" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:121844 Str:1710" kilometre="9.054" x="12357.819" y="-600" xNet="3455357.5" yNet="10128188" xWGS84="12357.819" yWGS84="-600"/>
+		<node nodeID="21845" description="FstrZugschlussstelleS FstrAuflösezeit: 3s Id:121845 Str:1710" kilometre="9.054" x="12405.026" y="-600" xNet="3455404.7" yNet="10128188" xWGS84="12405.026" yWGS84="-600" referenceNode="21844" releaseContact="true"/>
+		<node nodeID="21846" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:121846 Str:1710" kilometre="9.100" x="12513.604" y="-600" xNet="3455513.3" yNet="10128188" xWGS84="12513.604" yWGS84="-600"/>
+		<node nodeID="21847" description="Neigung S: 1.26 F: 0.00 Id:121847 Str:1710" kilometre="9.138" x="12603.298" y="-600" xNet="3455603" yNet="10128188" xWGS84="12603.298" yWGS84="-600"/>
+		<node nodeID="21848" name="32F" description="VorsignalF FstrBildezeit: 9s Id:121848 Str:1710" kilometre="9.300" x="12985.679" y="-600" xNet="3455985.3" yNet="10128188" xWGS84="12985.679" yWGS84="-600" referenceNode="21849" presignal="true" with1000HzMagnet="true"/>
+		<signal interlockingMachine="sppAuto" indusi500HzLocation="none" nodeID="21849" name="32F" description="HauptsignalF DwegAuflösezeit: 3s Id:121849 Str:1710" kilometre="9.300" x="13032.887" y="-600" xNet="3456032.6" yNet="10128188" xWGS84="0" yWGS84="0" referenceNode="21850"/>
+		<node nodeID="21850" description="Neigung S: 0.84 F: -1.26 Id:121850 Str:1710" kilometre="9.368" x="13193.392" y="-600" xNet="3456193.1" yNet="10128188" xWGS84="13193.392" yWGS84="-600"/>
+		<switch start="21852" endOfMainTrack="21771" endOfBranchTrack="21735" nodeID="21736" name="32W33" description="Weichenanfang  Id:121736 Str:1710 Bild (115.4700 / -10.0000)" kilometre="8.866" x="11547" y="-1000" xNet="3454546.7" yNet="10127788" xWGS84="0" yWGS84="0"/>
+		<node nodeID="21852" description="Neigung S: 0.00 F: 0.82 Id:121852 Str:1710" kilometre="8.894" x="11769.986" y="-1000" xNet="3454769.7" yNet="10127788" xWGS84="11769.986" yWGS84="-1000"/>
+		<switch start="21852" endOfMainTrack="21853" endOfBranchTrack="21696" nodeID="21697" name="32W34" description="Weichenanfang  Id:121697 Str:1710 Bild (120.0890 / -10.0000)" kilometre="8.924" x="12008.9" y="-1000" xNet="3455008.6" yNet="10127788" xWGS84="0" yWGS84="0"/>
+		<node nodeID="21854" description="Betriebsstellengrenze Partner: HLEA Strecke: 1711 Gleis: 2 Id:121854 Str:1711 Bild (12.7018 / 2.0000)" kilometre="6.800" x="1270.18" y="200" xNet="3444269.8" yNet="10128988" xWGS84="1270.18" yWGS84="200">
+			<netLimitInfo lineID="1711" stationID="HLEA" stationName="Han-Ledebg Abzw"/>
+		</node>
+		<node nodeID="21855" description="Neigung S: -1.03 F: 0.16 Id:121855 Str:1711" kilometre="6.868" x="1575.3353" y="200" xNet="3444575" yNet="10128988" xWGS84="1575.3353" yWGS84="200"/>
+		<node nodeID="21856" description="Neigung S: -2.53 F: 1.03 Id:121856 Str:1711" kilometre="7.042" x="2356.174" y="200" xNet="3445355.8" yNet="10128988" xWGS84="2356.174" yWGS84="200"/>
+		<node nodeID="21857" description="Neigung S: 0.00 F: 2.53 Id:121857 Str:1711" kilometre="7.143" x="2809.4194" y="200" xNet="3445809.1" yNet="10128988" xWGS84="2809.4194" yWGS84="200"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="21858" name="32BB" description="HauptsignalS DwegAuflösezeit: 3s Id:121858 Str:1711" kilometre="7.179" x="2970.9722" y="200" xNet="3445970.6" yNet="10128988" xWGS84="0" yWGS84="0" referenceNode="21857"/>
+		<node nodeID="21859" name="32Vn" description="VorsignalS FstrBildezeit: 9s Id:121859 Str:1711" kilometre="7.179" x="3060.7238" y="200" xNet="3446060.4" yNet="10128988" xWGS84="3060.7238" yWGS84="200" referenceNode="21858" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="21860" description="Neigung S: -2.42 F: 0.00 Id:121860 Str:1711" kilometre="7.376" x="3944.7768" y="200" xNet="3446944.4" yNet="10128988" xWGS84="3944.7768" yWGS84="200"/>
+		<node nodeID="21861" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:121861 Str:1711" kilometre="7.379" x="3958.2395" y="200" xNet="3446957.9" yNet="10128988" xWGS84="3958.2395" yWGS84="200"/>
+		<node nodeID="21862" description="FstrZugschlussstelleF FstrAuflösezeit: 3s Id:121862 Str:1711" kilometre="7.399" x="4047.9911" y="200" xNet="3447047.7" yNet="10128988" xWGS84="4047.9911" yWGS84="200" referenceNode="21863" releaseContact="true"/>
+		<speedIndicator nodeID="21863" description="GeschwZulaessigF V: 120 Wirkungsort: hier Zugbeeinflussung: Alle Id:121863 Str:1711" kilometre="7.400" x="4052.4787" y="200" xNet="3447052.1" yNet="10128988" xWGS84="0" yWGS84="0" referenceNode="21702"/>
+		<switch start="21863" endOfMainTrack="21701" endOfBranchTrack="21756" nodeID="21702" name="32W01" description="Weichenanfang  Id:121702 Str:1711 Bild (42.7237 / 2.0000)" kilometre="7.449" x="4272.37" y="200" xNet="3447272" yNet="10128988" xWGS84="0" yWGS84="0"/>
+		<node nodeID="21786" description="WeichenabzweigRechts  Id:121786 Str:1710" kilometre="8.776" x="11343.576" y="-1400" xNet="3454343.2" yNet="10127388" xWGS84="11343.576" yWGS84="-1400"/>
+		<signal type="shunting" interlockingMachine="sppAuto" indusi500HzLocation="none" nodeID="21864" name="32LW31Y" description="SchutzsignalF DwegAuflösezeit: 3s Id:121864 Str:1710" kilometre="8.830" x="11418.032" y="-1400" xNet="3454417.7" yNet="10127388" xWGS84="0" yWGS84="0" referenceNode="21865"/>
+		<signal interlockingMachine="sppAuto" nodeID="21865" description="Prellbock  Id:121865 Str:1710 Bild (117.7790 / -14.0000)" kilometre="9.091" x="11777.9" y="-1400" xNet="3454777.6" yNet="10127388" xWGS84="0" yWGS84="0" referenceNode="21864"/>
+		<node nodeID="21866" description="Betriebsstellengrenze Partner: HLEA Strecke: 1711 Gleis: 1 Id:121866 Str:1711 Bild (12.7014 / -2.0000)" kilometre="6.800" x="1270.14" y="-200" xNet="3444269.8" yNet="10128588" xWGS84="1270.14" yWGS84="-200">
+			<netLimitInfo lineID="1711" stationID="HLEA" stationName="Han-Ledebg Abzw"/>
+		</node>
+		<node nodeID="21867" description="Neigung S: -1.03 F: 0.16 Id:121867 Str:1711" kilometre="6.868" x="1552.3679" y="-200" xNet="3444552" yNet="10128588" xWGS84="1552.3679" yWGS84="-200"/>
+		<node nodeID="21868" description="Neigung S: -2.53 F: 1.03 Id:121868 Str:1711" kilometre="7.042" x="2274.5394" y="-200" xNet="3445274.2" yNet="10128588" xWGS84="2274.5394" yWGS84="-200"/>
+		<node nodeID="21869" description="Neigung S: 0.00 F: 2.53 Id:121869 Str:1711" kilometre="7.143" x="2693.7309" y="-200" xNet="3445693.4" yNet="10128588" xWGS84="2693.7309" yWGS84="-200"/>
+		<node nodeID="21871" name="32Vn2" description="VorsignalS FstrBildezeit: 9s Id:121871 Str:1711" kilometre="7.179" x="2926.1539" y="-200" xNet="3445925.8" yNet="10128588" xWGS84="2926.1539" yWGS84="-200" referenceNode="21870" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="21872" description="Neigung S: -2.42 F: 0.00 Id:121872 Str:1711" kilometre="7.376" x="3743.7848" y="-200" xNet="3446743.5" yNet="10128588" xWGS84="3743.7848" yWGS84="-200"/>
+		<node nodeID="21873" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:121873 Str:1711" kilometre="7.379" x="3756.2361" y="-200" xNet="3446755.9" yNet="10128588" xWGS84="3756.2361" yWGS84="-200"/>
+		<node nodeID="21874" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:121874 Str:1711" kilometre="7.457" x="4079.9681" y="-200" xNet="3447079.6" yNet="10128588" xWGS84="4079.9681" yWGS84="-200"/>
+		<speedIndicator nodeID="21875" description="GeschwZulaessigF V: 120 Wirkungsort: hier Zugbeeinflussung: Alle Id:121875 Str:1711" kilometre="7.519" x="4337.2936" y="-200" xNet="3447337" yNet="10128588" xWGS84="0" yWGS84="0" referenceNode="21748"/>
+		<node nodeID="21748" description="Weichenstamm  Id:121748 Str:1711" kilometre="7.519" x="4420.3018" y="-200" xNet="3447420" yNet="10128588" xWGS84="4420.3018" yWGS84="-200"/>
+		<node nodeID="21746" description="WeichenabzweigRechts  Id:121746 Str:1710" kilometre="7.835" x="5692.4701" y="-659.70149" xNet="3448692.1" yNet="10128128" xWGS84="5692.4701" yWGS84="-659.70149"/>
+		<node nodeID="21876" description="GeschwZulaessigF V: 80 Wirkungsort: signal Zugbeeinflussung: Alle Id:121876 Str:1710" kilometre="7.909" x="5820.0097" y="-880.59701" xNet="3448819.7" yNet="10127908" xWGS84="5820.0097" yWGS84="-880.59701"/>
+		<node nodeID="21684" description="Weichenstamm  Id:121684 Str:1710" kilometre="7.909" x="5854.4799" y="-940.29851" xNet="3448854.1" yNet="10127848" xWGS84="5854.4799" yWGS84="-940.29851"/>
+		<node nodeID="21853" description="Weichenstamm  Id:121853 Str:1710" kilometre="8.924" x="12057.28" y="-1000" xNet="3455056.9" yNet="10127788" xWGS84="12057.28" yWGS84="-1000"/>
+		<node nodeID="21877" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:121877 Str:1710" kilometre="8.938" x="12091.146" y="-1000" xNet="3455090.8" yNet="10127788" xWGS84="12091.146" yWGS84="-1000"/>
+		<node nodeID="21878" description="FstrZugschlussstelleS FstrAuflösezeit: 3s Id:121878 Str:1710" kilometre="8.974" x="12178.23" y="-1000" xNet="3455177.9" yNet="10127788" xWGS84="12178.23" yWGS84="-1000" referenceNode="21877" releaseContact="true"/>
+		<speedIndicator nodeID="21879" description="GeschwZulaessigS V: 180 Wirkungsort: hier Zugbeeinflussung: Alle Id:121879 Str:1710" kilometre="9.000" x="12241.123" y="-1000" xNet="3455240.8" yNet="10127788" xWGS84="0" yWGS84="0" referenceNode="21878"/>
+		<node nodeID="21880" description="SignalZugschlussstelleF FstrAuflösezeit: 3s Id:121880 Str:1710" kilometre="9.100" x="12483.023" y="-1000" xNet="3455482.7" yNet="10127788" xWGS84="12483.023" yWGS84="-1000"/>
+		<node nodeID="21881" description="Neigung S: 1.26 F: 0.00 Id:121881 Str:1710" kilometre="9.138" x="12574.945" y="-1000" xNet="3455574.6" yNet="10127788" xWGS84="12574.945" yWGS84="-1000"/>
+		<node nodeID="21882" name="32FF" description="VorsignalF FstrBildezeit: 9s Id:121882 Str:1710" kilometre="9.300" x="12966.822" y="-1000" xNet="3455966.5" yNet="10127788" xWGS84="12966.822" yWGS84="-1000" referenceNode="21883" presignal="true" with1000HzMagnet="true"/>
+		<signal interlockingMachine="sppAuto" indusi500HzLocation="none" nodeID="21883" name="32FF" description="HauptsignalF DwegAuflösezeit: 3s Id:121883 Str:1710" kilometre="9.300" x="13015.202" y="-1000" xNet="3456014.9" yNet="10127788" xWGS84="0" yWGS84="0" referenceNode="21884"/>
+		<node nodeID="21884" description="Neigung S: 0.84 F: -1.26 Id:121884 Str:1710" kilometre="9.368" x="13179.693" y="-1000" xNet="3456179.4" yNet="10127788" xWGS84="13179.693" yWGS84="-1000"/>
+		<node nodeID="21886" description="Betriebsstellengrenze Partner: H3192 Strecke: 1710 Gleis: 1 Id:121886 Str:1710 Bild (25.4032 / -10.0000)" kilometre="7.300" x="2540.32" y="-1000" xNet="3445540" yNet="10127788" xWGS84="2540.32" yWGS84="-1000">
+			<netLimitInfo lineID="1710" stationID="HBUG" stationName="Hannover Burg"/>
+		</node>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="21887" name="32A" description="HauptsignalS DwegAuflösezeit: 3s Id:121887 Str:1710" kilometre="7.348" x="2787.9845" y="-1000" xNet="3445787.7" yNet="10127788" xWGS84="0" yWGS84="0" referenceNode="21886"/>
+		<node nodeID="21888" name="32Vn4/5" description="VorsignalS FstrBildezeit: 9s Id:121888 Str:1710" kilometre="7.348" x="2891.178" y="-1000" xNet="3445890.8" yNet="10127788" xWGS84="2891.178" yWGS84="-1000" referenceNode="21887" presignal="true" with1000HzMagnet="true"/>
+		<node nodeID="21889" description="Neigung S: -2.42 F: 0.00 Id:121889 Str:1710" kilometre="7.376" x="3035.6489" y="-1000" xNet="3446035.3" yNet="10127788" xWGS84="3035.6489" yWGS84="-1000"/>
+		<node nodeID="21890" description="SignalZugschlussstelleS FstrAuflösezeit: 3s Id:121890 Str:1710" kilometre="7.548" x="3923.1133" y="-1000" xNet="3446922.8" yNet="10127788" xWGS84="3923.1133" yWGS84="-1000"/>
+		<node nodeID="21891" description="Neigung S: 1.62 F: 2.42 Id:121891 Str:1710" kilometre="7.556" x="3964.3907" y="-1000" xNet="3446964.1" yNet="10127788" xWGS84="3964.3907" yWGS84="-1000"/>
+		<node nodeID="21892" description="Neigung S: -2.03 F: -1.62 Id:121892 Str:1710" kilometre="7.784" x="5140.7969" y="-1000" xNet="3448140.5" yNet="10127788" xWGS84="5140.7969" yWGS84="-1000"/>
+		<speedIndicator nodeID="21893" description="GeschwZulaessigF V: 180 Wirkungsort: hier Zugbeeinflussung: Alle Id:121893 Str:1710" kilometre="7.800" x="5223.3517" y="-1000" xNet="3448223" yNet="10127788" xWGS84="0" yWGS84="0" referenceNode="21685"/>
+		<node nodeID="21685" description="WeichenabzweigLinks  Id:121685 Str:1710" kilometre="7.909" x="5785.7565" y="-1000" xNet="3448785.4" yNet="10127788" xWGS84="5785.7565" yWGS84="-1000"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" nodeID="21885" description="Betriebsstellengrenze Partner: HLGM Strecke: 1710 Gleis: 1 Id:121885 Str:1710 Bild (137.4090 / -10.0000)" kilometre="9.600" x="13740.9" y="-1000" xNet="3456740.6" yNet="10127788" xWGS84="13740.9" yWGS84="-1000" referenceNode="21884"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" nodeID="21851" description="Betriebsstellengrenze Partner: HLGM Strecke: 1710 Gleis: 2 Id:121851 Str:1710 Bild (137.4100 / -6.0000)" kilometre="9.600" x="13741" y="-600" xNet="3456740.7" yNet="10128188" xWGS84="13741" yWGS84="-600" referenceNode="21850"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" nodeID="21830" description="Betriebsstellengrenze Partner: HLGM Strecke: 1711 Gleis: 1 Id:121830 Str:1711 Bild (137.4090 / -2.0000)" kilometre="9.600" x="13740.9" y="-200" xNet="3456740.6" yNet="10128588" xWGS84="13740.9" yWGS84="-200" referenceNode="21829"/>
+		<signal interlockingMachine="Tb:9_Tl:3_NTA" nodeID="21729" description="Betriebsstellengrenze Partner: HLGM Strecke: 1711 Gleis: 2 Id:121729 Str:1711 Bild (137.4090 / 2.0000)" kilometre="9.600" x="13740.9" y="200" xNet="3456740.6" yNet="10128988" xWGS84="13740.9" yWGS84="200" referenceNode="21728"/>
+		<track trackID="Z-9000" stationID="HVIN" length="0" interlockingMachine="Tb:0_Tl:3_NTA" indusi500HzLocation="none" nodeID="21870" name="32B" description="HauptsignalS DwegAuflösezeit: 3s Id:121870 Str:1711" kilometre="7.179" x="2843.1457" y="-200" xNet="3445842.8" yNet="10128588" xWGS84="0" yWGS84="0" referenceNode="21898"/>
+		<track trackID="X-25" stationID="HVIN" length="574" interlockingMachine="Tb:9_Tl:3_NTA" nodeID="21783" name="32N5" description="HauptsignalS DwegAuflösezeit: 3s Id:121783 Str:1710" kilometre="8.772" x="11021.782" y="-1400" xNet="3454021.4" yNet="10127388" xWGS84="0" yWGS84="0" referenceNode="21782"/>
+		<track trackID="Y-25" stationID="HVIN" length="517" interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="21776" name="32P5" description="HauptsignalF DwegAuflösezeit: 3s Id:121776 Str:1710" kilometre="8.245" x="7497.8569" y="-1400" xNet="3450497.5" yNet="10127388" xWGS84="0" yWGS84="0" referenceNode="21777"/>
+		<track trackID="X-23" stationID="HVIN" length="896" interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="21798" name="32N3" description="HauptsignalS DwegAuflösezeit: 3s Id:121798 Str:1710" kilometre="8.736" x="10590.333" y="-600" xNet="3453590" yNet="10128188" xWGS84="0" yWGS84="0" referenceNode="21797"/>
+		<track trackID="Y-23" stationID="HVIN" length="699" interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="21792" name="32P3" description="HauptsignalF DwegAuflösezeit: 3s Id:121792 Str:1710" kilometre="8.250" x="7987.6037" y="-600" xNet="3450987.3" yNet="10128188" xWGS84="0" yWGS84="0" referenceNode="21793"/>
+		<track trackID="X-44" stationID="HVIN" length="590" interlockingMachine="Tb:9_Tl:3_NTA" nodeID="21767" name="32N4" description="HauptsignalS DwegAuflösezeit: 3s Id:121767 Str:1710" kilometre="8.736" x="10511.421" y="-1000" xNet="3453511.1" yNet="10127788" xWGS84="0" yWGS84="0" referenceNode="21766"/>
+		<track trackID="Y-44" stationID="HVIN" length="511" interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="21761" name="32P4" description="HauptsignalF DwegAuflösezeit: 3s Id:121761 Str:1710" kilometre="8.300" x="7855.4654" y="-1000" xNet="3450855.1" yNet="10127788" xWGS84="0" yWGS84="0" referenceNode="21762"/>
+		<track trackID="X-12" stationID="HVIN" length="907" interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="21818" name="32N2" description="HauptsignalS DwegAuflösezeit: 3s Id:121818 Str:1711" kilometre="8.560" x="9272.9644" y="-200" xNet="3452272.6" yNet="10128588" xWGS84="0" yWGS84="0" referenceNode="21817"/>
+		<track trackID="Y-12" stationID="HVIN" length="950" interlockingMachine="Tb:0_Tl:3_NTA" nodeID="21808" name="32P2" description="HauptsignalF DwegAuflösezeit: 3s Id:121808 Str:1711" kilometre="7.657" x="5466.789" y="-200" xNet="3448466.5" yNet="10128588" xWGS84="0" yWGS84="0" referenceNode="21809"/>
+		<track trackID="X-31" stationID="HVIN" length="1056" interlockingMachine="Tb:9_Tl:3_NTA" indusi500HzLocation="none" nodeID="21717" name="32N1" description="HauptsignalS DwegAuflösezeit: 3s Id:121717 Str:1711" kilometre="8.560" x="9201.4872" y="200" xNet="3452201.2" yNet="10128988" xWGS84="0" yWGS84="0" referenceNode="21716"/>
+		<track trackID="Y-31" stationID="HVIN" length="950" interlockingMachine="Tb:0_Tl:3_NTA" indusi500HzLocation="none" nodeID="21707" name="32P1" description="HauptsignalF DwegAuflösezeit: 3s Id:121707 Str:1711" kilometre="7.642" x="5270.1843" y="200" xNet="3448269.9" yNet="10128988" xWGS84="0" yWGS84="0" referenceNode="21708"/>
+		<stationBorder exitType="regular" stationID="HVIN" lineID="1710" trackNumber="2" nodeID="21894" description="Betriebsstellengrenze Partner: H3192 Strecke: 1710 Gleis: 2 Id:121835 Str:1710 Bild (25.4040 / -6.0000)" kilometre="7.548" x="3705.1123" y="-600" xNet="3446704.8" yNet="10128188" xWGS84="4255.4708" yWGS84="-600" referenceNode="21839"/>
+		<stationBorder exitType="alternative" stationID="HVIN" lineID="1710" trackNumber="2" nodeID="21895" description="Betriebsstellengrenze Partner: HLGM Strecke: 1710 Gleis: 2 Id:121851 Str:1710 Bild (137.4100 / -6.0000)" kilometre="9.100" x="12558.451" y="-600" xNet="3455558.1" yNet="10128188" xWGS84="12513.604" yWGS84="-600" referenceNode="21846"/>
+		<stationBorder exitType="alternative" stationID="HVIN" lineID="1710" trackNumber="1" nodeID="21896" description="Betriebsstellengrenze Partner: H3192 Strecke: 1710 Gleis: 1 Id:121886 Str:1710 Bild (25.4032 / -10.0000)" kilometre="7.548" x="3479.3811" y="-1000" xNet="3446479" yNet="10127788" xWGS84="3923.1133" yWGS84="-1000" referenceNode="21890"/>
+		<stationBorder exitType="regular" stationID="HVIN" lineID="1710" trackNumber="1" nodeID="21897" description="Betriebsstellengrenze Partner: HLGM Strecke: 1710 Gleis: 1 Id:121885 Str:1710 Bild (137.4090 / -10.0000)" kilometre="9.100" x="12528.984" y="-1000" xNet="3455528.6" yNet="10127788" xWGS84="12483.023" yWGS84="-1000" referenceNode="21880"/>
+		<stationBorder exitType="alternative" stationID="HVIN" lineID="1711" trackNumber="1" nodeID="21898" description="Betriebsstellengrenze Partner: HLEA Strecke: 1711 Gleis: 1 Id:121866 Str:1711 Bild (12.7014 / -2.0000)" kilometre="7.179" x="2768.4383" y="-200" xNet="3445768.1" yNet="10128588" xWGS84="0" yWGS84="0" referenceNode="21870"/>
+		<stationBorder exitType="regular" stationID="HVIN" lineID="1711" trackNumber="1" nodeID="21899" description="Betriebsstellengrenze Partner: HLGM Strecke: 1711 Gleis: 1 Id:121830 Str:1711 Bild (137.4090 / -2.0000)" kilometre="9.305" x="12760.905" y="-200" xNet="3455760.6" yNet="10128588" xWGS84="12497.465" yWGS84="-200" referenceNode="21826"/>
+		<stationBorder exitType="regular" stationID="HVIN" lineID="1711" trackNumber="2" nodeID="21900" description="Betriebsstellengrenze Partner: HLEA Strecke: 1711 Gleis: 2 Id:121854 Str:1711 Bild (12.7018 / 2.0000)" kilometre="7.379" x="3951.5081" y="200" xNet="3446951.2" yNet="10128988" xWGS84="3958.2395" yWGS84="200" referenceNode="21861"/>
+		<stationBorder exitType="alternative" stationID="HVIN" lineID="1711" trackNumber="2" nodeID="21901" description="Betriebsstellengrenze Partner: HLGM Strecke: 1711 Gleis: 2 Id:121729 Str:1711 Bild (137.4090 / 2.0000)" kilometre="9.305" x="12745.227" y="200" xNet="3455744.9" yNet="10128988" xWGS84="12477.573" yWGS84="200" referenceNode="21725"/>
+		<stationBorder exitType="locked" stationID="HVIN" lineID="1710" trackNumber="" netBorder="true" nodeID="21902" description="Prellbock  Id:121693 Str:1710 Bild (60.0442 / -14.0000)" kilometre="8.079" x="5963.4198" y="-1400" xNet="3448963.1" yNet="10127388" xWGS84="0" yWGS84="0" referenceNode="21693"/>
+		<stationBorder exitType="locked" stationID="HVIN" lineID="1710" trackNumber="" netBorder="true" nodeID="21903" description="Prellbock  Id:121865 Str:1710 Bild (117.7790 / -14.0000)" kilometre="9.091" x="11813.887" y="-1400" xNet="3454813.6" yNet="10127388" xWGS84="0" yWGS84="0" referenceNode="21865"/>
+	</nodes>
+	<links>
+		<link source="21683" target="21686" length="6" gradient="-2.03" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21686" target="21687" length="44" gradient="-2.03" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21687" target="21688" length="22" gradient="-2.03" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21688" target="21689" length="62" gradient="1.37" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21689" target="21690" length="50" gradient="1.37" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21693" target="21694" length="49"/>
+		<link source="21696" target="21698" length="80" vmax="180" vmaxr="60" electrified="true"/>
+		<link source="21698" target="21699" vmax="180" vmaxr="80" electrified="true"/>
+		<link source="21701" target="21703" length="1" gradient="-2.42" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21703" target="21704" length="49" gradient="-2.42" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21704" target="21705" length="57" gradient="-2.42" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21705" target="21706" length="86" gradient="1.44" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21706" target="21707" gradient="1.44" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21707" target="21708" length="5" gradient="1.44" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21708" target="21709" length="53" gradient="1.44" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21709" target="21710" length="100" gradient="1.44" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21710" target="21711" length="12" gradient="1.44" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21711" target="21712" length="98" gradient="-2.5" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21712" target="21713" length="62" gradient="-2.5" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21713" target="21714" length="156" gradient="0.77" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21714" target="21715" length="362" gradient="2.29" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21715" target="21716" length="65" gradient="-2.36" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21716" target="21717" length="5" gradient="-2.36" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21717" target="21718" gradient="-2.36" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21718" target="21719" length="50" gradient="-2.36" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21719" target="21720" length="20" gradient="-2.36" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21720" target="21721" length="130" gradient="-1.24" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21721" target="21722" length="161" gradient="-1.24" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21722" target="21723" length="217" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21723" target="21724" length="154" gradient="0.97" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21724" target="21725" length="13" gradient="4.64" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21901" target="21726" length="125" gradient="4.64" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21726" target="21727" length="75" gradient="-3.75" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21727" target="21728" length="18" gradient="-3.75" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21728" target="21729" length="77" gradient="0.74" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21730" target="21732" length="51" gradient="-1.35" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="21732" target="21733" length="33" gradient="-0.82" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="21733" target="21734" length="5" gradient="-0.82" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="21734" target="21735" length="1" gradient="-0.82" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="21737" target="21740" length="40" gradient="1.62" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21740" target="21741" length="10" gradient="1.62" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21741" target="21742" length="59" gradient="1.62" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21742" target="21743" length="1" gradient="-2.03" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21743" target="21744" length="50" gradient="-2.03" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21747" target="21750" length="37" gradient="-2.42" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21750" target="21751" length="42" gradient="1.44" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21692" target="21754" gradient="1.37" vmax="60" vmaxr="80" electrified="true"/>
+		<link source="21754" target="21755" length="35" gradient="1.37" vmax="60" vmaxr="80" electrified="true"/>
+		<link source="21756" target="21749" length="70" gradient="-2.42" vmaxr="60" electrified="true"/>
+		<link source="21691" target="21757" gradient="1.37" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21757" target="21758" length="7" gradient="1.37" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21758" target="21759" length="43" gradient="1.37" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21759" target="21760" length="58" gradient="1.37" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21760" target="21761" length="99" gradient="2.25" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21761" target="21762" length="5" gradient="2.25" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21762" target="21763" length="185" gradient="2.25" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21763" target="21764" length="50" gradient="-2.36" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21764" target="21765" length="127" gradient="-2.36" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21765" target="21766" length="64" gradient="-1.35" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21766" target="21767" length="5" gradient="-1.35" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21767" target="21768" gradient="-1.35" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21768" target="21769" length="80" gradient="-1.35" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21769" target="21770" length="11" gradient="-1.35" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21770" target="21771" length="39" gradient="-0.82" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21695" target="21772" length="17" gradient="1.37" vmax="60" vmaxr="80" electrified="true"/>
+		<link source="21772" target="21773" length="33" gradient="1.37" vmax="60" vmaxr="80" electrified="true"/>
+		<link source="21773" target="21774" length="23" gradient="1.37" vmax="60" vmaxr="80" electrified="true"/>
+		<link source="21774" target="21775" length="44" gradient="2.25" vmax="60" vmaxr="80" electrified="true"/>
+		<link source="21775" target="21776" gradient="2.25" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="21776" target="21777" length="5" gradient="2.25" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="21777" target="21778" length="240" gradient="2.25" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="21778" target="21779" length="10" gradient="-2.36" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="21779" target="21780" length="167" gradient="-2.36" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="21780" target="21781" length="59" gradient="-1.35" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="21781" target="21782" length="41" gradient="-1.35" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="21782" target="21783" length="5" gradient="-1.35" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="21783" target="21784" gradient="-1.35" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="21784" target="21785" gradient="-1.35" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="21785" target="21731" length="4" gradient="-1.35" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="21745" target="21787" length="5" gradient="-2.03" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21787" target="21788" length="45" gradient="-2.03" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21788" target="21789" length="96" gradient="-2.03" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21789" target="21790" length="69" gradient="1.37" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21790" target="21791" length="151" gradient="1.37" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21791" target="21792" length="49" gradient="2.25" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21792" target="21793" length="5" gradient="2.25" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21793" target="21794" length="235" gradient="2.25" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21794" target="21795" length="10" gradient="-2.36" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21795" target="21796" length="167" gradient="-2.36" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21796" target="21797" length="64" gradient="-1.35" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21797" target="21798" length="5" gradient="-1.35" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21798" target="21799" gradient="-1.35" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21799" target="21800" length="91" gradient="-1.35" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21800" target="21801" length="67" gradient="-0.82" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21801" target="21802" length="42" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21802" target="21803" length="18" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21803" target="21804" length="50" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21752" target="21805" gradient="1.44" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21805" target="21806" length="50" gradient="1.44" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21806" target="21807" length="9" gradient="1.44" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21807" target="21808" gradient="1.44" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21808" target="21809" length="5" gradient="1.44" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21809" target="21810" length="34" gradient="1.44" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21810" target="21811" length="104" gradient="1.44" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21811" target="21812" length="12" gradient="1.44" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21812" target="21813" length="89" gradient="-2.5" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21813" target="21814" length="71" gradient="-2.5" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21814" target="21815" length="156" gradient="0.77" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21815" target="21816" length="362" gradient="2.29" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21816" target="21817" length="65" gradient="-2.36" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21817" target="21818" length="5" gradient="-2.36" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21818" target="21819" gradient="-2.36" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21819" target="21820" length="50" gradient="-2.36" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21820" target="21821" length="20" gradient="-2.36" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21821" target="21822" length="130" gradient="-1.24" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21822" target="21823" length="161" gradient="-1.24" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21823" target="21824" length="217" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21824" target="21825" length="154" gradient="0.97" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21825" target="21826" length="13" gradient="4.64" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21899" target="21827" length="125" gradient="4.64" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21827" target="21828" length="75" gradient="-3.75" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21828" target="21829" length="18" gradient="-3.75" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21829" target="21830" length="77" gradient="0.74" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21753" target="21831" gradient="1.44" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="21831" target="21832" length="2" gradient="1.44" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="21832" target="21833" length="75" gradient="1.62" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="21833" target="21834" gradient="1.62" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="21834" target="21738" gradient="1.62" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="21835" target="21836" length="48" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21836" target="21837" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21837" target="21838" length="28" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21838" target="21894" length="172" gradient="-2.42" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21839" target="21840" length="8" gradient="-2.42" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21840" target="21841" length="69" gradient="1.62" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21841" target="21842" length="2" gradient="1.62" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21842" target="21739" length="48" gradient="1.62" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21700" target="21843" length="20" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21843" target="21844" length="30" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21844" target="21845" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21845" target="21846" length="46" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21895" target="21847" length="38" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21847" target="21848" length="162" gradient="1.26" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21848" target="21849" gradient="1.26" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21849" target="21850" length="68" gradient="1.26" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21850" target="21851" length="232" gradient="0.84" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21736" target="21852" length="28" gradient="-0.82" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21852" target="21697" length="30" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21854" target="21855" length="68" gradient="-0.16" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21855" target="21856" length="174" gradient="-1.03" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21856" target="21857" length="101" gradient="-2.53" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21857" target="21858" length="36" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21858" target="21859" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21859" target="21860" length="197" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21860" target="21900" length="3" gradient="-2.42" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21861" target="21862" length="20" gradient="-2.42" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21862" target="21863" length="1" gradient="-2.42" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21863" target="21702" length="49" gradient="-2.42" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21786" target="21864" length="54"/>
+		<link source="21864" target="21865" length="261"/>
+		<link source="21866" target="21867" length="68" gradient="-0.16" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21867" target="21868" length="174" gradient="-1.03" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21868" target="21869" length="101" gradient="-2.53" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21869" target="21898" length="36" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21870" target="21871" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21871" target="21872" length="197" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21872" target="21873" length="3" gradient="-2.42" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21873" target="21874" length="78" gradient="-2.42" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21874" target="21875" length="62" gradient="-2.42" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21875" target="21748" gradient="-2.42" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21746" target="21876" length="74" gradient="-2.03" vmax="180" vmaxr="80" electrified="true"/>
+		<link source="21876" target="21684" gradient="-2.03" vmax="180" vmaxr="80" electrified="true"/>
+		<link source="21853" target="21877" length="14" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21877" target="21878" length="36" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21878" target="21879" length="26" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21879" target="21880" length="100" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21897" target="21881" length="38" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21881" target="21882" length="162" gradient="1.26" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21882" target="21883" gradient="1.26" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21883" target="21884" length="68" gradient="1.26" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21884" target="21885" length="232" gradient="0.84" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21886" target="21887" length="48" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21887" target="21888" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21888" target="21889" length="28" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21889" target="21896" length="172" gradient="-2.42" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21890" target="21891" length="8" gradient="-2.42" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21891" target="21892" length="228" gradient="1.62" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21892" target="21893" length="16" gradient="-2.03" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21893" target="21685" length="109" gradient="-2.03" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21684" target="21683" gradient="-2.03" vmax="180" vmaxr="80" electrified="true"/>
+		<link source="21685" target="21683" gradient="-2.03" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21690" target="21691" gradient="1.37" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21690" target="21692" gradient="1.37" vmax="60" vmaxr="80" electrified="true"/>
+		<link source="21738" target="21737" gradient="1.62" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="21739" target="21737" gradient="1.62" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21744" target="21745" gradient="-2.03" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21744" target="21746" gradient="-2.03" vmax="180" vmaxr="80" electrified="true"/>
+		<link source="21748" target="21747" gradient="-2.42" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21749" target="21747" gradient="-2.42" vmaxr="60" electrified="true"/>
+		<link source="21751" target="21752" gradient="1.44" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21751" target="21753" gradient="1.44" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="21755" target="21695" gradient="1.37" vmax="60" vmaxr="80" electrified="true"/>
+		<link source="21694" target="21695"/>
+		<link source="21731" target="21730" gradient="-1.35" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="21731" target="21786"/>
+		<link source="21804" target="21700" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21699" target="21700" vmax="180" vmaxr="80" electrified="true"/>
+		<link source="21771" target="21736" gradient="-0.82" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21735" target="21736" gradient="-0.82" vmax="60" vmaxr="60" electrified="true"/>
+		<link source="21697" target="21853" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21697" target="21696" vmax="180" vmaxr="60" electrified="true"/>
+		<link source="21702" target="21701" gradient="-2.42" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21702" target="21756" gradient="-2.42" vmaxr="60" electrified="true"/>
+		<link source="21894" target="21839" gradient="-2.42" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21846" target="21895" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21896" target="21890" gradient="-2.42" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21880" target="21897" vmax="180" vmaxr="180" electrified="true"/>
+		<link source="21898" target="21870" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21826" target="21899" gradient="4.64" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21900" target="21861" gradient="-2.42" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21725" target="21901" gradient="4.64" vmax="120" vmaxr="120" electrified="true"/>
+		<link source="21902" target="21693"/>
+		<link source="21865" target="21903"/>
+	</links>
+	<dependentLinks/>
+	<blockSections>
+		<blockSection nodes="21792 21793 21794 21795 21796 21797 21798"/>
+		<blockSection nodes="21798 21797 21796 21795 21794 21793 21792"/>
+		<blockSection nodes="21776 21777 21778 21779 21780 21781 21782 21783"/>
+		<blockSection nodes="21783 21782 21781 21780 21779 21778 21777 21776"/>
+		<blockSection nodes="21761 21762 21763 21764 21765 21766 21767"/>
+		<blockSection nodes="21767 21766 21765 21764 21763 21762 21761"/>
+		<blockSection nodes="21808 21809 21810 21811 21812 21813 21814 21815 21816 21817 21818"/>
+		<blockSection nodes="21818 21817 21816 21815 21814 21813 21812 21811 21810 21809 21808"/>
+		<blockSection nodes="21707 21708 21709 21710 21711 21712 21713 21714 21715 21716 21717"/>
+		<blockSection nodes="21717 21716 21715 21714 21713 21712 21711 21710 21709 21708 21707"/>
+		<blockSection presignal="21871" nodes="21870 21871 21872 21873 21874 21875 21748 21747 21750 21751 21752 21805 21806 21807 21808 21809 21810 21811 21812 21813 21814 21815 21816 21817 21818" speedIndicators="21805"/>
+		<blockSection presignal="21819" nodes="21818 21819 21820 21821 21822 21823 21824 21825 21826 21899 21827 21828 21829 21830"/>
+		<blockSection signallingSystem="lzb" presignal="21871" nodes="21870 21871 21872 21873 21874 21875 21748 21747 21750 21751 21753 21831 21832 21833 21834 21738 21737 21740 21741 21742 21743 21744 21746 21876 21684 21683 21686 21687 21688 21689 21690 21691 21757 21758 21759 21760 21761 21762 21763 21764 21765 21766 21767" speedIndicators="21757"/>
+		<blockSection signallingSystem="lzb" presignal="21768" nodes="21767 21768 21769 21770 21771 21736 21852 21697 21853 21877 21878 21879 21880 21897 21881 21882 21883 21884 21885" speedIndicators="21879"/>
+		<blockSection signallingSystem="lzb" presignal="21871" nodes="21870 21871 21872 21873 21874 21875 21748 21747 21750 21751 21753 21831 21832 21833 21834 21738 21737 21740 21741 21742 21743 21744 21746 21876 21684 21683 21686 21687 21688 21689 21690 21692 21754 21755 21695 21772 21773 21774 21775 21776 21777 21778 21779 21780 21781 21782 21783"/>
+		<blockSection signallingSystem="lzb" presignal="21784" nodes="21783 21784 21785 21731 21730 21732 21733 21734 21735 21736 21852 21697 21853 21877 21878 21879 21880 21897 21881 21882 21883 21884 21885" speedIndicators="21785 21879"/>
+		<blockSection nodes="21830 21829 21828"/>
+		<blockSection presignal="21820" nodes="21828 21827 21899 21826 21825 21824 21823 21822 21821 21820 21819 21818 21817 21816 21815 21814 21813 21812 21811 21810 21809 21808"/>
+		<blockSection signallingSystem="lzb" nodes="21885 21884 21883"/>
+		<blockSection signallingSystem="lzb" presignal="21882" nodes="21883 21882 21881 21897 21880 21879 21878 21877 21853 21697 21852 21736 21771 21770 21769 21768 21767 21766 21765 21764 21763 21762 21761"/>
+		<blockSection signallingSystem="lzb" presignal="21882" nodes="21883 21882 21881 21897 21880 21879 21878 21877 21853 21697 21852 21736 21735 21734 21733 21732 21730 21731 21785 21784 21783 21782 21781 21780 21779 21778 21777 21776"/>
+		<blockSection presignal="21859" nodes="21858 21859 21860 21900 21861 21862 21863 21702 21701 21703 21704 21705 21706 21707 21708 21709 21710 21711 21712 21713 21714 21715 21716 21717"/>
+		<blockSection presignal="21718" nodes="21717 21718 21719 21720 21721 21722 21723 21724 21725 21901 21726 21727 21728 21729"/>
+		<blockSection signallingSystem="lzb" presignal="21837" nodes="21836 21837 21838 21894 21839 21840 21841 21842 21739 21737 21740 21741 21742 21743 21744 21745 21787 21788 21789 21790 21791 21792 21793 21794 21795 21796 21797 21798"/>
+		<blockSection signallingSystem="lzb" presignal="21799" nodes="21798 21799 21800 21801 21802 21803 21804 21700 21843 21844 21845 21846 21895 21847 21848 21849 21850 21851" speedIndicators="21843"/>
+		<blockSection signallingSystem="lzb" presignal="21837" nodes="21836 21837 21838 21894 21839 21840 21841 21842 21739 21737 21740 21741 21742 21743 21744 21746 21876 21684 21683 21686 21687 21688 21689 21690 21691 21757 21758 21759 21760 21761 21762 21763 21764 21765 21766 21767" speedIndicators="21757"/>
+		<blockSection signallingSystem="lzb" presignal="21888" nodes="21887 21888 21889 21896 21890 21891 21892 21893 21685 21683 21686 21687 21688 21689 21690 21691 21757 21758 21759 21760 21761 21762 21763 21764 21765 21766 21767" speedIndicators="21757"/>
+		<blockSection signallingSystem="lzb" presignal="21768" nodes="21767 21768 21769 21770 21771 21736 21852 21697 21696 21698 21699 21700 21843 21844 21845 21846 21895 21847 21848 21849 21850 21851" speedIndicators="21843"/>
+		<blockSection signallingSystem="lzb" presignal="21888" nodes="21887 21888 21889 21896 21890 21891 21892 21893 21685 21683 21686 21687 21688 21689 21690 21692 21754 21755 21695 21772 21773 21774 21775 21776 21777 21778 21779 21780 21781 21782 21783"/>
+		<blockSection signallingSystem="lzb" presignal="21784" nodes="21783 21784 21785 21731 21730 21732 21733 21734 21735 21736 21852 21697 21696 21698 21699 21700 21843 21844 21845 21846 21895 21847 21848 21849 21850 21851" speedIndicators="21785 21843"/>
+		<blockSection nodes="21729 21728 21727"/>
+		<blockSection presignal="21719" nodes="21727 21726 21901 21725 21724 21723 21722 21721 21720 21719 21718 21717 21716 21715 21714 21713 21712 21711 21710 21709 21708 21707"/>
+		<blockSection signallingSystem="lzb" nodes="21851 21850 21849"/>
+		<blockSection signallingSystem="lzb" presignal="21848" nodes="21849 21848 21847 21895 21846 21845 21844 21843 21700 21804 21803 21802 21801 21800 21799 21798 21797 21796 21795 21794 21793 21792"/>
+		<blockSection signallingSystem="lzb" presignal="21848" nodes="21849 21848 21847 21895 21846 21845 21844 21843 21700 21699 21698 21696 21697 21852 21736 21735 21734 21733 21732 21730 21731 21785 21784 21783 21782 21781 21780 21779 21778 21777 21776"/>
+	</blockSections>
+	<slipDistances>
+		<slipDistance signal="21727" name="999.200.21725.hvin.0" publicName="1-1000" description="32G" complete="true" warnerroute="false" nodes="21727 21726 21901 21725"/>
+		<slipDistance signal="21828" name="999.200.21826.hvin.0" publicName="1-1000" description="32GG" complete="true" warnerroute="false" nodes="21828 21827 21899 21826"/>
+		<slipDistance signal="21836" name="999.200.21839.hvin.0" publicName="1-1000" description="32AA" complete="true" warnerroute="false" nodes="21836 21837 21838 21894 21839"/>
+		<slipDistance signal="21849" name="999.200.21846.hvin.0" publicName="1-1000" description="32F" complete="true" warnerroute="false" nodes="21849 21848 21847 21895 21846"/>
+		<slipDistance signal="21858" name="999.200.21861.hvin.0" publicName="1-1000" description="32BB" complete="true" warnerroute="false" nodes="21858 21859 21860 21900 21861"/>
+		<slipDistance signal="21883" name="999.200.21880.hvin.0" publicName="1-1000" description="32FF" complete="true" warnerroute="false" nodes="21883 21882 21881 21897 21880"/>
+		<slipDistance signal="21887" name="999.200.21890.hvin.0" publicName="1-1000" description="32A" complete="true" warnerroute="false" nodes="21887 21888 21889 21896 21890"/>
+		<slipDistance signal="21870" name="999.200.21873.hvin.0" publicName="1-1000" description="32B" complete="true" warnerroute="false" nodes="21870 21871 21872 21873"/>
+		<slipDistance signal="21783" name="39.93.21734.hvin.0" publicName="1-1000" description="32N5" complete="true" warnerroute="false" nodes="21783 21784 21785 21731 21730 21732 21733 21734"/>
+		<slipDistance signal="21776" name="59.100.21772.hvin.0" publicName="1-1000" description="32P5" complete="true" warnerroute="false" nodes="21776 21775 21774 21773 21772"/>
+		<slipDistance signal="21798" name="999.200.21802.hvin.0" publicName="1-1000" description="32N3" complete="true" warnerroute="false" nodes="21798 21799 21800 21801 21802"/>
+		<slipDistance signal="21792" name="999.200.21790.hvin.0" publicName="1-1000" description="32P3" complete="true" warnerroute="false" nodes="21792 21791 21790"/>
+		<slipDistance signal="21767" name="999.318.21844.hvin.0" publicName="1-1000" description="32N4" complete="true" warnerroute="false" nodes="21767 21768 21769 21770 21771 21736 21852 21697 21696 21698 21699 21700 21843 21844"/>
+		<slipDistance signal="21767" name="999.202.21877.hvin.0" publicName="2-1000" description="32N4" complete="true" warnerroute="false" nodes="21767 21768 21769 21770 21771 21736 21852 21697 21853 21877"/>
+		<slipDistance signal="21761" name="999.200.21758.hvin.0" publicName="1-1000" description="32P4" complete="true" warnerroute="false" nodes="21761 21760 21759 21758"/>
+		<slipDistance signal="21818" name="999.200.21822.hvin.0" publicName="1-1000" description="32N2" complete="true" warnerroute="false" nodes="21818 21819 21820 21821 21822"/>
+		<slipDistance signal="21808" name="999.200.21874.hvin.0" publicName="1-1000" description="32P2" complete="true" warnerroute="false" nodes="21808 21807 21806 21805 21752 21751 21750 21747 21748 21875 21874"/>
+		<slipDistance signal="21717" name="999.200.21721.hvin.0" publicName="1-1000" description="32N1" complete="true" warnerroute="false" nodes="21717 21718 21719 21720 21721"/>
+		<slipDistance signal="21707" name="999.192.21703.hvin.0" publicName="1-1000" description="32P1" complete="true" warnerroute="false" nodes="21707 21706 21705 21704 21703"/>
+	</slipDistances>
+	<approachControlRoutes/>
+	<stationRoutes>
+		<stationRoute stationID="HVIN" name="HH(1710)-23-HLGH GG" description="HH(1710)-23-HLGH GG" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=20;NRz=20;S=20;Rz=20;FGz=20;NGz=20;Gz=20;Lz=20" nodes="21894 21839 21840 21841 21842 21739 21737 21740 21741 21742 21743 21744 21745 21787 21788 21789 21790 21791 21792 21793 21794 21795 21796 21797 21798 21799 21800 21801 21802 21803 21804 21700 21843 21844 21845 21846 21895"/>
+		<stationRoute stationID="HVIN" name="HH(1710)-25-HLGH" description="HH(1710)-25-HLGH" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=80;NRz=80;S=80;Rz=80;FGz=80;NGz=80;Gz=80;Lz=80" nodes="21896 21890 21891 21892 21893 21685 21683 21686 21687 21688 21689 21690 21692 21754 21755 21695 21772 21773 21774 21775 21776 21777 21778 21779 21780 21781 21782 21783 21784 21785 21731 21730 21732 21733 21734 21735 21736 21852 21697 21853 21877 21878 21879 21880 21897"/>
+		<stationRoute stationID="HVIN" name="HH(1710)-25-HLGH RG" description="HH(1710)-25-HLGH RG" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=20;NRz=20;S=20;Rz=20;FGz=20;NGz=20;Gz=20;Lz=20" nodes="21896 21890 21891 21892 21893 21685 21683 21686 21687 21688 21689 21690 21692 21754 21755 21695 21772 21773 21774 21775 21776 21777 21778 21779 21780 21781 21782 21783 21784 21785 21731 21730 21732 21733 21734 21735 21736 21852 21697 21696 21698 21699 21700 21843 21844 21845 21846 21895"/>
+		<stationRoute stationID="HVIN" name="HH(1710)-44-HLGH" description="HH(1710)-44-HLGH" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="21896 21890 21891 21892 21893 21685 21683 21686 21687 21688 21689 21690 21691 21757 21758 21759 21760 21761 21762 21763 21764 21765 21766 21767 21768 21769 21770 21771 21736 21852 21697 21853 21877 21878 21879 21880 21897"/>
+		<stationRoute stationID="HVIN" name="HH(1710)-44-HLGH GR" description="HH(1710)-44-HLGH GR" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=25;NRz=25;S=25;Rz=25;FGz=25;NGz=25;Gz=25;Lz=25" nodes="21894 21839 21840 21841 21842 21739 21737 21740 21741 21742 21743 21744 21746 21876 21684 21683 21686 21687 21688 21689 21690 21691 21757 21758 21759 21760 21761 21762 21763 21764 21765 21766 21767 21768 21769 21770 21771 21736 21852 21697 21853 21877 21878 21879 21880 21897"/>
+		<stationRoute stationID="HVIN" name="HH(1710)-44-HLGH RG" description="HH(1710)-44-HLGH RG" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=20;NRz=20;S=20;Rz=20;FGz=20;NGz=20;Gz=20;Lz=20" nodes="21896 21890 21891 21892 21893 21685 21683 21686 21687 21688 21689 21690 21691 21757 21758 21759 21760 21761 21762 21763 21764 21765 21766 21767 21768 21769 21770 21771 21736 21852 21697 21696 21698 21699 21700 21843 21844 21845 21846 21895"/>
+		<stationRoute stationID="HVIN" name="HLEA(1711)-12-HLGH" description="HLEA(1711)-12-HLGH" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="21898 21870 21871 21872 21873 21874 21875 21748 21747 21750 21751 21752 21805 21806 21807 21808 21809 21810 21811 21812 21813 21814 21815 21816 21817 21818 21819 21820 21821 21822 21823 21824 21825 21826 21899"/>
+		<stationRoute stationID="HVIN" name="HLEA(1711)-24-HLGH(1710)" description="HLEA(1711)-24-HLGH(1710)" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=80;NRz=80;S=80;Rz=80;FGz=80;NGz=80;Gz=80;Lz=80" nodes="21898 21870 21871 21872 21873 21874 21875 21748 21747 21750 21751 21753 21831 21832 21833 21834 21738 21737 21740 21741 21742 21743 21744 21746 21876 21684 21683 21686 21687 21688 21689 21690 21691 21757 21758 21759 21760 21761 21762 21763 21764 21765 21766 21767 21768 21769 21770 21771 21736 21852 21697 21853 21877 21878 21879 21880 21897"/>
+		<stationRoute stationID="HVIN" name="HLEA(1711)-25-HLGH(1710)" description="HLEA(1711)-25-HLGH(1710)" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=80;NRz=80;S=80;Rz=80;FGz=80;NGz=80;Gz=80;Lz=80" nodes="21898 21870 21871 21872 21873 21874 21875 21748 21747 21750 21751 21753 21831 21832 21833 21834 21738 21737 21740 21741 21742 21743 21744 21746 21876 21684 21683 21686 21687 21688 21689 21690 21692 21754 21755 21695 21772 21773 21774 21775 21776 21777 21778 21779 21780 21781 21782 21783 21784 21785 21731 21730 21732 21733 21734 21735 21736 21852 21697 21853 21877 21878 21879 21880 21897"/>
+		<stationRoute stationID="HVIN" name="HLEA-HLGM GG" description="HLEA-HLGM GG" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=20;NRz=20;S=20;Rz=20;FGz=20;NGz=20;Gz=20;Lz=20" nodes="21900 21861 21862 21863 21702 21701 21703 21704 21705 21706 21707 21708 21709 21710 21711 21712 21713 21714 21715 21716 21717 21718 21719 21720 21721 21722 21723 21724 21725 21901"/>
+		<stationRoute stationID="HVIN" name="HLGH(1710)-23-HH" description="HLGH(1710)-23-HH" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="21895 21846 21845 21844 21843 21700 21804 21803 21802 21801 21800 21799 21798 21797 21796 21795 21794 21793 21792 21791 21790 21789 21788 21787 21745 21744 21743 21742 21741 21740 21737 21739 21842 21841 21840 21839 21894"/>
+		<stationRoute stationID="HVIN" name="HLGH(1710)-23-HLEA(1711)" description="HLGH(1710)-23-HLEA(1711)" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=80;NRz=80;S=80;Rz=80;FGz=80;NGz=80;Gz=80;Lz=80" nodes="21895 21846 21845 21844 21843 21700 21804 21803 21802 21801 21800 21799 21798 21797 21796 21795 21794 21793 21792 21791 21790 21789 21788 21787 21745 21744 21743 21742 21741 21740 21737 21738 21834 21833 21832 21831 21753 21751 21750 21747 21749 21756 21702 21863 21862 21861 21900"/>
+		<stationRoute stationID="HVIN" name="HLGH(1710)-25-HH" description="HLGH(1710)-25-HH" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=40;NRz=40;S=40;Rz=40;FGz=40;NGz=40;Gz=40;Lz=40" nodes="21895 21846 21845 21844 21843 21700 21699 21698 21696 21697 21852 21736 21735 21734 21733 21732 21730 21731 21785 21784 21783 21782 21781 21780 21779 21778 21777 21776 21775 21774 21773 21772 21695 21755 21754 21692 21690 21689 21688 21687 21686 21683 21684 21876 21746 21744 21743 21742 21741 21740 21737 21739 21842 21841 21840 21839 21894"/>
+		<stationRoute stationID="HVIN" name="HLGH(1710)-25-HH GG" description="HLGH(1710)-25-HH GG" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=20;NRz=20;S=20;Rz=20;FGz=20;NGz=20;Gz=20;Lz=20" nodes="21897 21880 21879 21878 21877 21853 21697 21852 21736 21735 21734 21733 21732 21730 21731 21785 21784 21783 21782 21781 21780 21779 21778 21777 21776 21775 21774 21773 21772 21695 21755 21754 21692 21690 21689 21688 21687 21686 21683 21685 21893 21892 21891 21890 21896"/>
+		<stationRoute stationID="HVIN" name="HLGH(1710)-25-HH GR" description="HLGH(1710)-25-HH GR" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=25;NRz=25;S=25;Rz=25;FGz=25;NGz=25;Gz=25;Lz=25" nodes="21897 21880 21879 21878 21877 21853 21697 21852 21736 21735 21734 21733 21732 21730 21731 21785 21784 21783 21782 21781 21780 21779 21778 21777 21776 21775 21774 21773 21772 21695 21755 21754 21692 21690 21689 21688 21687 21686 21683 21684 21876 21746 21744 21743 21742 21741 21740 21737 21739 21842 21841 21840 21839 21894"/>
+		<stationRoute stationID="HVIN" name="HLGH(1710)-25-HLEA(1711)" description="HLGH(1710)-25-HLEA(1711)" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=40;NRz=40;S=40;Rz=40;FGz=40;NGz=40;Gz=40;Lz=40" nodes="21895 21846 21845 21844 21843 21700 21699 21698 21696 21697 21852 21736 21735 21734 21733 21732 21730 21731 21785 21784 21783 21782 21781 21780 21779 21778 21777 21776 21775 21774 21773 21772 21695 21755 21754 21692 21690 21689 21688 21687 21686 21683 21684 21876 21746 21744 21743 21742 21741 21740 21737 21738 21834 21833 21832 21831 21753 21751 21750 21747 21749 21756 21702 21863 21862 21861 21900"/>
+		<stationRoute stationID="HVIN" name="HLGH(1710)-44-HH GG" description="HLGH(1710)-44-HH GG" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=20;NRz=20;S=20;Rz=20;FGz=20;NGz=20;Gz=20;Lz=20" nodes="21897 21880 21879 21878 21877 21853 21697 21852 21736 21771 21770 21769 21768 21767 21766 21765 21764 21763 21762 21761 21760 21759 21758 21757 21691 21690 21689 21688 21687 21686 21683 21685 21893 21892 21891 21890 21896"/>
+		<stationRoute stationID="HVIN" name="HLGH(1710)-44-HH GR" description="HLGH(1710)-44-HH GR" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=25;NRz=25;S=25;Rz=25;FGz=25;NGz=25;Gz=25;Lz=25" nodes="21897 21880 21879 21878 21877 21853 21697 21852 21736 21771 21770 21769 21768 21767 21766 21765 21764 21763 21762 21761 21760 21759 21758 21757 21691 21690 21689 21688 21687 21686 21683 21684 21876 21746 21744 21743 21742 21741 21740 21737 21739 21842 21841 21840 21839 21894"/>
+		<stationRoute stationID="HVIN" name="HLGH(1711)-12-HLEA GG" description="HLGH(1711)-12-HLEA GG" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=20;NRz=20;S=20;Rz=20;FGz=20;NGz=20;Gz=20;Lz=20" nodes="21899 21826 21825 21824 21823 21822 21821 21820 21819 21818 21817 21816 21815 21814 21813 21812 21811 21810 21809 21808 21807 21806 21805 21752 21751 21750 21747 21748 21875 21874 21873 21872 21871 21870 21898"/>
+		<stationRoute stationID="HVIN" name="HLGH(1711)-31-HLEA" description="HLGH(1711)-31-HLEA" continuousMainTrack="true" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="21901 21725 21724 21723 21722 21721 21720 21719 21718 21717 21716 21715 21714 21713 21712 21711 21710 21709 21708 21707 21706 21705 21704 21703 21701 21702 21863 21862 21861 21900"/>
+		<stationRoute stationID="HVIN" name="HH(1710)-23-HLGH GG &lt;-&gt; HLGH(1710)-23-HH" description="HH(1710)-23-HLGH GG &lt;-&gt; HLGH(1710)-23-HH" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="21894 21839 21840 21841 21842 21739 21737 21740 21741 21742 21743 21744 21745 21787 21788 21789 21790 21791 21792 21793 21794 21795 21796 21797 21798 21797 21796 21795 21794 21793 21792 21791 21790 21789 21788 21787 21745 21744 21743 21742 21741 21740 21737 21739 21842 21841 21840 21839 21894"/>
+		<stationRoute stationID="HVIN" name="HH(1710)-23-HLGH GG &lt;-&gt; HLGH(1710)-23-HLEA(1711)" description="HH(1710)-23-HLGH GG &lt;-&gt; HLGH(1710)-23-HLEA(1711)" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=80;NRz=80;S=80;Rz=80;FGz=80;NGz=80;Gz=80;Lz=80" nodes="21894 21839 21840 21841 21842 21739 21737 21740 21741 21742 21743 21744 21745 21787 21788 21789 21790 21791 21792 21793 21794 21795 21796 21797 21798 21797 21796 21795 21794 21793 21792 21791 21790 21789 21788 21787 21745 21744 21743 21742 21741 21740 21737 21738 21834 21833 21832 21831 21753 21751 21750 21747 21749 21756 21702 21863 21862 21861 21900"/>
+		<stationRoute stationID="HVIN" name="HH(1710)-25-HLGH &lt;-&gt; HLGH(1710)-25-HH" description="HH(1710)-25-HLGH &lt;-&gt; HLGH(1710)-25-HH;HH(1710)-25-HLGH &lt;-&gt; HLGH(1710)-25-HH GR;HH(1710)-25-HLGH RG &lt;-&gt; HLGH(1710)-25-HH;HH(1710)-25-HLGH RG &lt;-&gt; HLGH(1710)-25-HH GR;HH(1710)-25-HLGH &lt;-&gt; HLGH(1710)-25-HH GR;HH(1710)-25-HLGH RG &lt;-&gt; HLGH(1710)-25-HH" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=38;NRz=38;S=38;Rz=38;FGz=38;NGz=38;Gz=38;Lz=38" nodes="21896 21890 21891 21892 21893 21685 21683 21686 21687 21688 21689 21690 21692 21754 21755 21695 21772 21773 21774 21775 21776 21777 21778 21779 21780 21781 21782 21783 21782 21781 21780 21779 21778 21777 21776 21775 21774 21773 21772 21695 21755 21754 21692 21690 21689 21688 21687 21686 21683 21684 21876 21746 21744 21743 21742 21741 21740 21737 21739 21842 21841 21840 21839 21894"/>
+		<stationRoute stationID="HVIN" name="HH(1710)-25-HLGH &lt;-&gt; HLGH(1710)-25-HH GG" description="HH(1710)-25-HLGH &lt;-&gt; HLGH(1710)-25-HH GG;HH(1710)-25-HLGH RG &lt;-&gt; HLGH(1710)-25-HH GG;HH(1710)-25-HLGH RG &lt;-&gt; HLGH(1710)-25-HH GG" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=35;NRz=35;S=35;Rz=35;FGz=35;NGz=35;Gz=35;Lz=35" nodes="21896 21890 21891 21892 21893 21685 21683 21686 21687 21688 21689 21690 21692 21754 21755 21695 21772 21773 21774 21775 21776 21777 21778 21779 21780 21781 21782 21783 21782 21781 21780 21779 21778 21777 21776 21775 21774 21773 21772 21695 21755 21754 21692 21690 21689 21688 21687 21686 21683 21685 21893 21892 21891 21890 21896"/>
+		<stationRoute stationID="HVIN" name="HH(1710)-25-HLGH &lt;-&gt; HLGH(1710)-25-HLEA(1711)" description="HH(1710)-25-HLGH &lt;-&gt; HLGH(1710)-25-HLEA(1711);HH(1710)-25-HLGH RG &lt;-&gt; HLGH(1710)-25-HLEA(1711);HH(1710)-25-HLGH RG &lt;-&gt; HLGH(1710)-25-HLEA(1711)" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=50;NRz=50;S=50;Rz=50;FGz=50;NGz=50;Gz=50;Lz=50" nodes="21896 21890 21891 21892 21893 21685 21683 21686 21687 21688 21689 21690 21692 21754 21755 21695 21772 21773 21774 21775 21776 21777 21778 21779 21780 21781 21782 21783 21782 21781 21780 21779 21778 21777 21776 21775 21774 21773 21772 21695 21755 21754 21692 21690 21689 21688 21687 21686 21683 21684 21876 21746 21744 21743 21742 21741 21740 21737 21738 21834 21833 21832 21831 21753 21751 21750 21747 21749 21756 21702 21863 21862 21861 21900"/>
+		<stationRoute stationID="HVIN" name="HH(1710)-44-HLGH &lt;-&gt; HLGH(1710)-44-HH GG" description="HH(1710)-44-HLGH &lt;-&gt; HLGH(1710)-44-HH GG;HH(1710)-44-HLGH RG &lt;-&gt; HLGH(1710)-44-HH GG;HH(1710)-44-HLGH RG &lt;-&gt; HLGH(1710)-44-HH GG" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=40;NRz=40;S=40;Rz=40;FGz=40;NGz=40;Gz=40;Lz=40" nodes="21896 21890 21891 21892 21893 21685 21683 21686 21687 21688 21689 21690 21691 21757 21758 21759 21760 21761 21762 21763 21764 21765 21766 21767 21766 21765 21764 21763 21762 21761 21760 21759 21758 21757 21691 21690 21689 21688 21687 21686 21683 21685 21893 21892 21891 21890 21896"/>
+		<stationRoute stationID="HVIN" name="HH(1710)-44-HLGH &lt;-&gt; HLGH(1710)-44-HH GR" description="HH(1710)-44-HLGH &lt;-&gt; HLGH(1710)-44-HH GR;HH(1710)-44-HLGH RG &lt;-&gt; HLGH(1710)-44-HH GR;HH(1710)-44-HLGH RG &lt;-&gt; HLGH(1710)-44-HH GR" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=44;NRz=44;S=44;Rz=44;FGz=44;NGz=44;Gz=44;Lz=44" nodes="21896 21890 21891 21892 21893 21685 21683 21686 21687 21688 21689 21690 21691 21757 21758 21759 21760 21761 21762 21763 21764 21765 21766 21767 21766 21765 21764 21763 21762 21761 21760 21759 21758 21757 21691 21690 21689 21688 21687 21686 21683 21684 21876 21746 21744 21743 21742 21741 21740 21737 21739 21842 21841 21840 21839 21894"/>
+		<stationRoute stationID="HVIN" name="HH(1710)-44-HLGH GR &lt;-&gt; HLGH(1710)-44-HH GG" description="HH(1710)-44-HLGH GR &lt;-&gt; HLGH(1710)-44-HH GG" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=25;NRz=25;S=25;Rz=25;FGz=25;NGz=25;Gz=25;Lz=25" nodes="21894 21839 21840 21841 21842 21739 21737 21740 21741 21742 21743 21744 21746 21876 21684 21683 21686 21687 21688 21689 21690 21691 21757 21758 21759 21760 21761 21762 21763 21764 21765 21766 21767 21766 21765 21764 21763 21762 21761 21760 21759 21758 21757 21691 21690 21689 21688 21687 21686 21683 21685 21893 21892 21891 21890 21896"/>
+		<stationRoute stationID="HVIN" name="HH(1710)-44-HLGH GR &lt;-&gt; HLGH(1710)-44-HH GR" description="HH(1710)-44-HLGH GR &lt;-&gt; HLGH(1710)-44-HH GR" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=25;NRz=25;S=25;Rz=25;FGz=25;NGz=25;Gz=25;Lz=25" nodes="21894 21839 21840 21841 21842 21739 21737 21740 21741 21742 21743 21744 21746 21876 21684 21683 21686 21687 21688 21689 21690 21691 21757 21758 21759 21760 21761 21762 21763 21764 21765 21766 21767 21766 21765 21764 21763 21762 21761 21760 21759 21758 21757 21691 21690 21689 21688 21687 21686 21683 21684 21876 21746 21744 21743 21742 21741 21740 21737 21739 21842 21841 21840 21839 21894"/>
+		<stationRoute stationID="HVIN" name="HLEA(1711)-12-HLGH &lt;-&gt; HLGH(1711)-12-HLEA GG" description="HLEA(1711)-12-HLGH &lt;-&gt; HLGH(1711)-12-HLEA GG" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="21898 21870 21871 21872 21873 21874 21875 21748 21747 21750 21751 21752 21805 21806 21807 21808 21809 21810 21811 21812 21813 21814 21815 21816 21817 21818 21817 21816 21815 21814 21813 21812 21811 21810 21809 21808 21807 21806 21805 21752 21751 21750 21747 21748 21875 21874 21873 21872 21871 21870 21898"/>
+		<stationRoute stationID="HVIN" name="HLEA(1711)-24-HLGH(1710) &lt;-&gt; HLGH(1710)-44-HH GG" description="HLEA(1711)-24-HLGH(1710) &lt;-&gt; HLGH(1710)-44-HH GG" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=80;NRz=80;S=80;Rz=80;FGz=80;NGz=80;Gz=80;Lz=80" nodes="21898 21870 21871 21872 21873 21874 21875 21748 21747 21750 21751 21753 21831 21832 21833 21834 21738 21737 21740 21741 21742 21743 21744 21746 21876 21684 21683 21686 21687 21688 21689 21690 21691 21757 21758 21759 21760 21761 21762 21763 21764 21765 21766 21767 21766 21765 21764 21763 21762 21761 21760 21759 21758 21757 21691 21690 21689 21688 21687 21686 21683 21685 21893 21892 21891 21890 21896"/>
+		<stationRoute stationID="HVIN" name="HLEA(1711)-24-HLGH(1710) &lt;-&gt; HLGH(1710)-44-HH GR" description="HLEA(1711)-24-HLGH(1710) &lt;-&gt; HLGH(1710)-44-HH GR" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=80;NRz=80;S=80;Rz=80;FGz=80;NGz=80;Gz=80;Lz=80" nodes="21898 21870 21871 21872 21873 21874 21875 21748 21747 21750 21751 21753 21831 21832 21833 21834 21738 21737 21740 21741 21742 21743 21744 21746 21876 21684 21683 21686 21687 21688 21689 21690 21691 21757 21758 21759 21760 21761 21762 21763 21764 21765 21766 21767 21766 21765 21764 21763 21762 21761 21760 21759 21758 21757 21691 21690 21689 21688 21687 21686 21683 21684 21876 21746 21744 21743 21742 21741 21740 21737 21739 21842 21841 21840 21839 21894"/>
+		<stationRoute stationID="HVIN" name="HLEA(1711)-25-HLGH(1710) &lt;-&gt; HLGH(1710)-25-HH" description="HLEA(1711)-25-HLGH(1710) &lt;-&gt; HLGH(1710)-25-HH;HLEA(1711)-25-HLGH(1710) &lt;-&gt; HLGH(1710)-25-HH GR;HLEA(1711)-25-HLGH(1710) &lt;-&gt; HLGH(1710)-25-HH GR" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=80;NRz=80;S=80;Rz=80;FGz=80;NGz=80;Gz=80;Lz=80" nodes="21898 21870 21871 21872 21873 21874 21875 21748 21747 21750 21751 21753 21831 21832 21833 21834 21738 21737 21740 21741 21742 21743 21744 21746 21876 21684 21683 21686 21687 21688 21689 21690 21692 21754 21755 21695 21772 21773 21774 21775 21776 21777 21778 21779 21780 21781 21782 21783 21782 21781 21780 21779 21778 21777 21776 21775 21774 21773 21772 21695 21755 21754 21692 21690 21689 21688 21687 21686 21683 21684 21876 21746 21744 21743 21742 21741 21740 21737 21739 21842 21841 21840 21839 21894"/>
+		<stationRoute stationID="HVIN" name="HLEA(1711)-25-HLGH(1710) &lt;-&gt; HLGH(1710)-25-HH GG" description="HLEA(1711)-25-HLGH(1710) &lt;-&gt; HLGH(1710)-25-HH GG" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=80;NRz=80;S=80;Rz=80;FGz=80;NGz=80;Gz=80;Lz=80" nodes="21898 21870 21871 21872 21873 21874 21875 21748 21747 21750 21751 21753 21831 21832 21833 21834 21738 21737 21740 21741 21742 21743 21744 21746 21876 21684 21683 21686 21687 21688 21689 21690 21692 21754 21755 21695 21772 21773 21774 21775 21776 21777 21778 21779 21780 21781 21782 21783 21782 21781 21780 21779 21778 21777 21776 21775 21774 21773 21772 21695 21755 21754 21692 21690 21689 21688 21687 21686 21683 21685 21893 21892 21891 21890 21896"/>
+		<stationRoute stationID="HVIN" name="HLEA(1711)-25-HLGH(1710) &lt;-&gt; HLGH(1710)-25-HLEA(1711)" description="HLEA(1711)-25-HLGH(1710) &lt;-&gt; HLGH(1710)-25-HLEA(1711)" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=80;NRz=80;S=80;Rz=80;FGz=80;NGz=80;Gz=80;Lz=80" nodes="21898 21870 21871 21872 21873 21874 21875 21748 21747 21750 21751 21753 21831 21832 21833 21834 21738 21737 21740 21741 21742 21743 21744 21746 21876 21684 21683 21686 21687 21688 21689 21690 21692 21754 21755 21695 21772 21773 21774 21775 21776 21777 21778 21779 21780 21781 21782 21783 21782 21781 21780 21779 21778 21777 21776 21775 21774 21773 21772 21695 21755 21754 21692 21690 21689 21688 21687 21686 21683 21684 21876 21746 21744 21743 21742 21741 21740 21737 21738 21834 21833 21832 21831 21753 21751 21750 21747 21749 21756 21702 21863 21862 21861 21900"/>
+		<stationRoute stationID="HVIN" name="HLEA-HLGM GG &lt;-&gt; HLGH(1711)-31-HLEA" description="HLEA-HLGM GG &lt;-&gt; HLGH(1711)-31-HLEA" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="21900 21861 21862 21863 21702 21701 21703 21704 21705 21706 21707 21708 21709 21710 21711 21712 21713 21714 21715 21716 21717 21716 21715 21714 21713 21712 21711 21710 21709 21708 21707 21706 21705 21704 21703 21701 21702 21863 21862 21861 21900"/>
+		<stationRoute stationID="HVIN" name="HLGH(1710)-23-HH &lt;-&gt; HH(1710)-23-HLGH GG" description="HLGH(1710)-23-HH &lt;-&gt; HH(1710)-23-HLGH GG;HLGH(1710)-23-HLEA(1711) &lt;-&gt; HH(1710)-23-HLGH GG;HLGH(1710)-23-HLEA(1711) &lt;-&gt; HH(1710)-23-HLGH GG" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=85;NRz=85;S=85;Rz=85;FGz=85;NGz=85;Gz=85;Lz=85" nodes="21895 21846 21845 21844 21843 21700 21804 21803 21802 21801 21800 21799 21798 21797 21796 21795 21794 21793 21792 21793 21794 21795 21796 21797 21798 21799 21800 21801 21802 21803 21804 21700 21843 21844 21845 21846 21895"/>
+		<stationRoute stationID="HVIN" name="HLGH(1710)-25-HH &lt;-&gt; HH(1710)-25-HLGH" description="HLGH(1710)-25-HH &lt;-&gt; HH(1710)-25-HLGH;HLGH(1710)-25-HH &lt;-&gt; HLEA(1711)-25-HLGH(1710);HLGH(1710)-25-HLEA(1711) &lt;-&gt; HH(1710)-25-HLGH;HLGH(1710)-25-HLEA(1711) &lt;-&gt; HLEA(1711)-25-HLGH(1710);HLGH(1710)-25-HH &lt;-&gt; HLEA(1711)-25-HLGH(1710)" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=80;NRz=80;S=80;Rz=80;FGz=80;NGz=80;Gz=80;Lz=80" nodes="21895 21846 21845 21844 21843 21700 21699 21698 21696 21697 21852 21736 21735 21734 21733 21732 21730 21731 21785 21784 21783 21782 21781 21780 21779 21778 21777 21776 21777 21778 21779 21780 21781 21782 21783 21784 21785 21731 21730 21732 21733 21734 21735 21736 21852 21697 21853 21877 21878 21879 21880 21897"/>
+		<stationRoute stationID="HVIN" name="HLGH(1710)-25-HH &lt;-&gt; HH(1710)-25-HLGH RG" description="HLGH(1710)-25-HH &lt;-&gt; HH(1710)-25-HLGH RG;HLGH(1710)-25-HLEA(1711) &lt;-&gt; HH(1710)-25-HLGH RG;HLGH(1710)-25-HLEA(1711) &lt;-&gt; HH(1710)-25-HLGH RG" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=40;NRz=40;S=40;Rz=40;FGz=40;NGz=40;Gz=40;Lz=40" nodes="21895 21846 21845 21844 21843 21700 21699 21698 21696 21697 21852 21736 21735 21734 21733 21732 21730 21731 21785 21784 21783 21782 21781 21780 21779 21778 21777 21776 21777 21778 21779 21780 21781 21782 21783 21784 21785 21731 21730 21732 21733 21734 21735 21736 21852 21697 21696 21698 21699 21700 21843 21844 21845 21846 21895"/>
+		<stationRoute stationID="HVIN" name="HLGH(1710)-25-HH GG &lt;-&gt; HH(1710)-25-HLGH" description="HLGH(1710)-25-HH GG &lt;-&gt; HH(1710)-25-HLGH;HLGH(1710)-25-HH GG &lt;-&gt; HLEA(1711)-25-HLGH(1710);HLGH(1710)-25-HH GR &lt;-&gt; HH(1710)-25-HLGH;HLGH(1710)-25-HH GR &lt;-&gt; HLEA(1711)-25-HLGH(1710);HLGH(1710)-25-HH GG &lt;-&gt; HLEA(1711)-25-HLGH(1710)" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=80;NRz=80;S=80;Rz=80;FGz=80;NGz=80;Gz=80;Lz=80" nodes="21897 21880 21879 21878 21877 21853 21697 21852 21736 21735 21734 21733 21732 21730 21731 21785 21784 21783 21782 21781 21780 21779 21778 21777 21776 21777 21778 21779 21780 21781 21782 21783 21784 21785 21731 21730 21732 21733 21734 21735 21736 21852 21697 21853 21877 21878 21879 21880 21897"/>
+		<stationRoute stationID="HVIN" name="HLGH(1710)-25-HH GG &lt;-&gt; HH(1710)-25-HLGH RG" description="HLGH(1710)-25-HH GG &lt;-&gt; HH(1710)-25-HLGH RG;HLGH(1710)-25-HH GR &lt;-&gt; HH(1710)-25-HLGH RG;HLGH(1710)-25-HH GR &lt;-&gt; HH(1710)-25-HLGH RG" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=24;NRz=24;S=24;Rz=24;FGz=24;NGz=24;Gz=24;Lz=24" nodes="21897 21880 21879 21878 21877 21853 21697 21852 21736 21735 21734 21733 21732 21730 21731 21785 21784 21783 21782 21781 21780 21779 21778 21777 21776 21777 21778 21779 21780 21781 21782 21783 21784 21785 21731 21730 21732 21733 21734 21735 21736 21852 21697 21696 21698 21699 21700 21843 21844 21845 21846 21895"/>
+		<stationRoute stationID="HVIN" name="HLGH(1710)-44-HH GG &lt;-&gt; HH(1710)-44-HLGH" description="HLGH(1710)-44-HH GG &lt;-&gt; HH(1710)-44-HLGH;HLGH(1710)-44-HH GG &lt;-&gt; HH(1710)-44-HLGH GR;HLGH(1710)-44-HH GG &lt;-&gt; HLEA(1711)-24-HLGH(1710);HLGH(1710)-44-HH GR &lt;-&gt; HH(1710)-44-HLGH;HLGH(1710)-44-HH GR &lt;-&gt; HH(1710)-44-HLGH GR" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=67;NRz=67;S=67;Rz=67;FGz=67;NGz=67;Gz=67;Lz=67" nodes="21897 21880 21879 21878 21877 21853 21697 21852 21736 21771 21770 21769 21768 21767 21766 21765 21764 21763 21762 21761 21762 21763 21764 21765 21766 21767 21768 21769 21770 21771 21736 21852 21697 21853 21877 21878 21879 21880 21897"/>
+		<stationRoute stationID="HVIN" name="HLGH(1710)-44-HH GG &lt;-&gt; HH(1710)-44-HLGH RG" description="HLGH(1710)-44-HH GG &lt;-&gt; HH(1710)-44-HLGH RG;HLGH(1710)-44-HH GR &lt;-&gt; HH(1710)-44-HLGH RG;HLGH(1710)-44-HH GR &lt;-&gt; HH(1710)-44-HLGH RG" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=24;NRz=24;S=24;Rz=24;FGz=24;NGz=24;Gz=24;Lz=24" nodes="21897 21880 21879 21878 21877 21853 21697 21852 21736 21771 21770 21769 21768 21767 21766 21765 21764 21763 21762 21761 21762 21763 21764 21765 21766 21767 21768 21769 21770 21771 21736 21852 21697 21696 21698 21699 21700 21843 21844 21845 21846 21895"/>
+		<stationRoute stationID="HVIN" name="HLGH(1711)-12-HLEA GG &lt;-&gt; HLEA(1711)-12-HLGH" description="HLGH(1711)-12-HLEA GG &lt;-&gt; HLEA(1711)-12-HLGH" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="21899 21826 21825 21824 21823 21822 21821 21820 21819 21818 21817 21816 21815 21814 21813 21812 21811 21810 21809 21808 21809 21810 21811 21812 21813 21814 21815 21816 21817 21818 21819 21820 21821 21822 21823 21824 21825 21826 21899"/>
+		<stationRoute stationID="HVIN" name="HLGH(1711)-31-HLEA &lt;-&gt; HLEA-HLGM GG" description="HLGH(1711)-31-HLEA &lt;-&gt; HLEA-HLGM GG" usableBy="FRz;NRz;S;Rz;FGz;NGz;Gz;Lz;Unbekannt" priorities="FRz=100;NRz=100;S=100;Rz=100;FGz=100;NGz=100;Gz=100;Lz=100" nodes="21901 21725 21724 21723 21722 21721 21720 21719 21718 21717 21716 21715 21714 21713 21712 21711 21710 21709 21708 21707 21708 21709 21710 21711 21712 21713 21714 21715 21716 21717 21718 21719 21720 21721 21722 21723 21724 21725 21901"/>
+	</stationRoutes>
+	<evzg/>
+	<evzg-katalog/>
+</line>

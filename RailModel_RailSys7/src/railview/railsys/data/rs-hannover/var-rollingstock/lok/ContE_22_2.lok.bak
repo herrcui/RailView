@@ -1,0 +1,66 @@
+? Stromart: Wechselstrom 16,7 Hz,15kV, 600A
+? Rutkommentar: Coradia Continental, 5tlg, HB54, E, 2900kW, 297Sitzpl, NWB
+? Eisenbahnunternehmen: EVU
+? TriebfahrzeugBaureiheTyp: N
+? Triebfahrzeugart: Elektrische Triebwagen mit  Fremdstromzuführung(ET)
+? Achslast: 20 t
+? Ausrüstung mit automatischer Kupplung: ja
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: ja
+? Wendezugfähigkeit: ja
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 0 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          160.000
+TraktionsTyp elektrisch
+Loklaenge [m]         87.000
+Lokmasse [t]         185.300
+Reibmasse [t]        185.300
+Haftreibungswert       1.000
+Rholok (-)             4.210
+Rutkommentar        Coradia Continental, 5tlg, HB54, E, 2900kW, 297Sitzpl, NWB
+ST      ge     0.000 190.000    9.900 190.000    0.000   0.000
+ST      ge     9.900 190.000   19.800 190.000    0.000   0.000
+ST      ge    19.800 190.000   29.700 190.000    0.000   0.000
+ST      ge    29.700 190.000   39.600 190.000    0.000   0.000
+ST      ge    39.600 190.000   49.500 190.000    0.000   0.000
+ST      ge    49.500 189.822   51.920 181.062    0.000   0.000
+ST      ge    51.920 181.062   54.340 172.953    0.000   0.000
+ST      ge    54.340 172.953   56.760 165.496    0.000   0.000
+ST      ge    56.760 165.496   59.180 158.690    0.000   0.000
+ST      ge    59.180 158.690   61.600 152.535    0.000   0.000
+ST      ge    61.600 152.535   64.400 145.961    0.000   0.000
+ST      ge    64.400 145.961   67.200 139.849    0.000   0.000
+ST      ge    67.200 139.849   70.000 134.200    0.000   0.000
+ST      ge    70.000 134.200   72.800 129.013    0.000   0.000
+ST      ge    72.800 129.013   75.600 124.287    0.000   0.000
+ST      ge    75.600 124.287   79.600 118.114    0.000   0.000
+ST      ge    79.600 118.114   83.600 112.427    0.000   0.000
+ST      ge    83.600 112.427   87.600 107.226    0.000   0.000
+ST      ge    87.600 107.226   91.600 102.513    0.000   0.000
+ST      ge    91.600 102.513   95.600  98.286    0.000   0.000
+ST      ge    95.600  98.286  101.600  92.571    0.000   0.000
+ST      ge   101.600  92.571  107.600  87.366    0.000   0.000
+ST      ge   107.600  87.366  113.600  82.670    0.000   0.000
+ST      ge   113.600  82.670  119.600  78.485    0.000   0.000
+ST      ge   119.600  78.485  125.600  74.810    0.000   0.000
+ST      ge   125.600  74.784  130.480  69.366    0.000   0.000
+ST      ge   130.480  69.366  135.360  64.421    0.000   0.000
+ST      ge   135.360  64.421  140.240  59.951    0.000   0.000
+ST      ge   140.240  59.951  145.120  55.954    0.000   0.000
+ST      ge   145.120  55.954  150.000  52.432    0.000   0.000
+ST      ge   150.000  52.432  152.000  51.064    0.000   0.000
+ST      ge   152.000  51.064  154.000  49.745    0.000   0.000
+ST      ge   154.000  49.745  156.000  48.475    0.000   0.000
+ST      ge   156.000  48.475  158.000  47.254    0.000   0.000
+ST      ge   158.000  47.254  160.000  46.083    0.000   0.000
+LW  vplus15        2181.351562      19.959368       0.495405       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

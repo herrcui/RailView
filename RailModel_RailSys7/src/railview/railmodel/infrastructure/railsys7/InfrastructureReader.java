@@ -28,6 +28,18 @@ public class InfrastructureReader {
 		}
 	}
 	
+	public static InfrastructureReader getInstanceHannover() {
+		URL url = RailsysData.class.getResource("\\rs-hannover\\var-2011");
+		Path path;
+		try {
+			path = Paths.get(url.toURI());
+			return new InfrastructureReader(path);
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
 	private InfrastructureReader(Path path) {
 		this.path = path;
 	}

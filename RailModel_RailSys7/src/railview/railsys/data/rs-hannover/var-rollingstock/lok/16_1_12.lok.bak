@@ -1,0 +1,76 @@
+? Stromart: 2-Systemstrom 16,7 Hz, 15kV+3kV
+? Rutkommentar: SNCB
+? Eisenbahnunternehmen: SNCB
+? TriebfahrzeugBaureiheTyp: S
+? Triebfahrzeugart: Elektrische Lokomotiven
+? Achslast: 0 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 0 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          160.000
+TraktionsTyp elektrisch
+Loklaenge [m]         20.000
+Lokmasse [t]          82.600
+Reibmasse [t]         82.600
+Haftreibungswert       1.000
+Rholok (-)            12.000
+Rutkommentar        SNCB
+ST      ge     0.000 162.601    0.120 162.601    0.000   0.000
+ST      ge     0.120 162.601    0.240 162.601    0.000   0.000
+ST      ge     0.240 162.601    0.360 162.601    0.000   0.000
+ST      ge     0.360 162.601    0.480 162.601    0.000   0.000
+ST      ge     0.480 162.601    0.600 162.601    0.000   0.000
+ST      ge     0.600 162.601    0.840 162.601    0.000   0.000
+ST      ge     0.840 162.601    1.080 162.601    0.000   0.000
+ST      ge     1.080 162.601    1.320 162.601    0.000   0.000
+ST      ge     1.320 162.601    1.560 162.601    0.000   0.000
+ST      ge     1.560 162.601    1.800 162.601    0.000   0.000
+ST      ge     1.800 162.601    2.040 162.601    0.000   0.000
+ST      ge     2.040 162.601    2.280 162.601    0.000   0.000
+ST      ge     2.280 162.601    2.520 162.601    0.000   0.000
+ST      ge     2.520 162.601    2.760 162.601    0.000   0.000
+ST      ge     2.760 162.601    3.000 162.601    0.000   0.000
+ST      ge     3.000 162.601   17.600 162.601    0.000   0.000
+ST      ge    17.600 162.601   32.200 162.601    0.000   0.000
+ST      ge    32.200 162.601   46.800 162.601    0.000   0.000
+ST      ge    46.800 162.601   61.400 162.601    0.000   0.000
+ST      ge    61.400 162.601   76.000 162.601    0.000   0.000
+ST      ge    76.000 162.601   78.800 144.235    0.000   0.000
+ST      ge    78.800 144.235   81.600 127.401    0.000   0.000
+ST      ge    81.600 127.401   84.400 112.098    0.000   0.000
+ST      ge    84.400 112.098   87.200  98.326    0.000   0.000
+ST      ge    87.200  98.326   90.000  86.086    0.000   0.000
+ST      ge    90.000 114.777   92.800 101.537    0.000   0.000
+ST      ge    92.800 101.537   95.600  90.135    0.000   0.000
+ST      ge    95.600  90.135   98.400  80.570    0.000   0.000
+ST      ge    98.400  80.570  101.200  72.843    0.000   0.000
+ST      ge   101.200  72.843  104.000  66.954    0.000   0.000
+ST      ge   104.000 100.425  108.000  88.679    0.000   0.000
+ST      ge   108.000  88.679  112.000  78.311    0.000   0.000
+ST      ge   112.000  78.311  116.000  69.321    0.000   0.000
+ST      ge   116.000  69.321  120.000  61.709    0.000   0.000
+ST      ge   120.000  61.709  124.000  55.474    0.000   0.000
+ST      ge   124.000  73.644  128.000  66.315    0.000   0.000
+ST      ge   128.000  66.315  132.000  59.828    0.000   0.000
+ST      ge   132.000  59.828  136.000  54.184    0.000   0.000
+ST      ge   136.000  54.184  140.000  49.381    0.000   0.000
+ST      ge   140.000  49.381  144.000  45.421    0.000   0.000
+ST      ge   144.000  55.946  147.200  52.829    0.000   0.000
+ST      ge   147.200  52.829  150.400  49.787    0.000   0.000
+ST      ge   150.400  49.787  153.600  46.823    0.000   0.000
+ST      ge   153.600  46.823  156.800  43.935    0.000   0.000
+ST      ge   156.800  43.935  160.000  41.124    0.000   0.000
+LW  vplus15         526.698914      11.344284       0.304110       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<railsys>
+	<version major="1" minor="2" patchlevel="0" comment="Erzeugt von RailSys\Simu/7.6.12 am Mo 22. Okt 10:45:24 2012"/>
+	<timetable>
+		<train number="24304" class="NGz" pattern="/NGz/DGS/Ohne Linie/HNH-HSR A/rück" name="DGS/24304/0/ab + DGS/24304/1/ab" description="24304/1" typeNumber="11138" line="Ohne Linie" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HSR A" stationName="Seelze Rbf Swf" trackID="G-6" bstfahrweg="HSR W-006-HSR S" departure="24:27:09" regularRunningTime="30" requestedDeparture="24:27:09" requestedTrackID="G-6" requestedBstFahrweg="HSR W-006-HSR S" type="begin" lineID="1750" timingPoint="true" departureFix="true" zuggattung="DGS 36.5"/>
+				<entry stationID="HHZ" trackID="Y-803" bstfahrweg="HKUR(1701)-803D/803E/149A-HH(1705) &lt;-&gt; HH(1705)-302F/803E-HNH(1703)" departure="29:04:09" minStopTime="1800" stopTime="16081" regularRunningTime="504" requestedArrival="24:36:08" requestedDeparture="29:04:09" requestedTrackID="Y-803" requestedBstFahrweg="HKUR(1701)-803D/803E/149A-HH(1705) &lt;-&gt; HH(1705)-302F/803E-HNH(1703)" type="stop" trainTypeNumber="11138" lineID="1703" timingPoint="true" departureFix="true" zuggattung="DGS 36.5"/>
+				<entry stationID="HLEA" trackID="G-1000" bstfahrweg="HHZ-HNH" departure="29:12:33" regularRunningTime="8" requestedDeparture="29:12:33" requestedTrackID="G-1000" requestedBstFahrweg="HHZ-HNH" type="pass" trainTypeNumber="11138" timingPoint="true" zuggattung="DGS 36.5"/>
+				<entry stationID="HNHG" trackID="G-1000" bstfahrweg="HHZ-HNH" departure="29:12:41" regularRunningTime="358" requestedDeparture="29:12:41" requestedTrackID="G-1000" requestedBstFahrweg="HHZ-HNH" type="pass" trainTypeNumber="11138" timingPoint="true" zuggattung="DGS 36.5"/>
+				<entry stationID="HNH" trackID="A-5" bstfahrweg="HHZ-HNH5" departure="29:18:51" minStopTime="12" stopTime="12" RTMargin2="0" requestedArrival="29:18:39" requestedDeparture="29:18:51" requestedTrackID="A-5" requestedBstFahrweg="HHZ-HNH5" type="stop" trainTypeNumber="11138" timingPoint="true" zuggattung="DGS 36.5"/>
+			</timetableentries>
+		</train>
+		<train number="49409" class="FGz" pattern="/FGz/CSQ/HNH -/H815M-HNH/rück" name="CSQ/49409/100/AH + CSQ/49409/101/AH" description="49409/1+" comment="HNH - XPSWZ&#13;&#10;Dauerbeförderungsanordnung 1022" typeNumber="5097" line="HNH -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HNH" trackID="B-6" bstfahrweg="HNH6-HHZ" dwegName="1-1000" departure="13:57:11" minStopTime="900" stopTime="900" regularRunningTime="342" requestedArrival="13:42:11" requestedDeparture="13:57:11" requestedTrackID="B-6" requestedBstFahrweg="HNH6-HHZ" type="stop" trainTypeNumber="5097" lineID="1703" timingPoint="true" departureFix="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="HNHG" trackID="G-1000" bstfahrweg="HNH-HHZ" departure="14:02:53" regularRunningTime="10" requestedDeparture="14:02:53" requestedTrackID="G-1000" requestedBstFahrweg="HNH-HHZ" type="pass" trainTypeNumber="5097" timingPoint="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="HLEA" trackID="G-1000" bstfahrweg="HNH-HHZ" departure="14:03:03" regularRunningTime="357" requestedDeparture="14:03:03" requestedTrackID="G-1000" requestedBstFahrweg="HNH-HHZ" type="pass" trainTypeNumber="5097" timingPoint="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="HHZ" trackID="Y-803" bstfahrweg="HNH(1703)-803E/149A-HH(1705) &lt;-&gt; HH(1705)-302F/803E/801C-HKUR" departure="14:46:48" minStopTime="2100" stopTime="2268" regularRunningTime="257" requestedArrival="14:09:00" requestedDeparture="14:46:48" requestedTrackID="Y-803" requestedBstFahrweg="HNH(1703)-803E/149A-HH(1705) &lt;-&gt; HH(1705)-302F/803E/801C-HKUR" type="stop" trainTypeNumber="5133" timingPoint="true" departureFix="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="H814W" stationName="Auto1" RTMargin2="0" type="end" relevantInNet="false" lineID="1750"/>
+			</timetableentries>
+		</train>
+		<train number="49703" class="FGz" pattern="/FGz/DGS/XDF-ELPPG CFL Cargo/HRBG-HVIN/rück" name="DGS/49703/0/Hü" description="49703/1+" comment="XDF-ELPPG&#13;&#10;CFL Cargo DE  (H 4342)&#13;&#10;RB Nord" typeNumber="5252" line="XDF-ELPPG CFL Cargo" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="0" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HVIN" stationName="Han-Vinnhorst" trackID="G-31" bstfahrweg="HLGH(1711)-31-HLEA" departure="03:56:40" regularRunningTime="140" requestedDeparture="03:56:40" requestedTrackID="G-31" requestedBstFahrweg="HLGH(1711)-31-HLEA" type="begin" lineID="1711" timingPoint="true" departureFix="true" zuggattung="DGS 36.2"/>
+				<entry stationID="HLEA" trackID="G-2" bstfahrweg="HVIN(1711)-HHZ(1703)" departure="03:59:00" regularRunningTime="185" requestedDeparture="03:59:00" requestedTrackID="G-2" requestedBstFahrweg="HVIN(1711)-HHZ(1703)" type="pass" trainTypeNumber="5252" lineID="1703" timingPoint="true" zuggattung="DGS 36.2"/>
+				<entry stationID="HHZ" trackID="G-802" bstfahrweg="HNH(1703)-802F/149A-HH(1705)" departure="04:02:05" regularRunningTime="169" requestedDeparture="04:02:05" requestedTrackID="G-802" requestedBstFahrweg="HNH(1703)-802F/149A-HH(1705)" type="pass" trainTypeNumber="5252" timingPoint="true" zuggattung="DGS 36.2"/>
+				<entry stationID="HRBG" stationName="Ronnenberg" trackID="G-733" bstfahrweg="HLI-3-HHM" departure="04:14:28" RTMargin2="0" requestedDeparture="04:14:28" requestedTrackID="G-733" requestedBstFahrweg="HLI-3-HHM" type="end" lineID="1760" timingPoint="true" zuggattung="DGS 36.2"/>
+			</timetableentries>
+		</train>
+		<train number="50226" class="FGz" pattern="/FGz/IKE/MRIU -/HHML-HVIN/hin" name="IKE/50226/222/Hü" description="50226/3+" comment="MRIU - AHBIU&#13;&#10;Dauer-Lü KV P/C 70, P/C 400" typeNumber="5384" line="MRIU -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="H993R" RTMargin2="0" type="begin" relevantInNet="false" lineID="1733"/>
+				<entry stationID="HHZ" trackID="C-803" bstfahrweg="HH(1705)-302F/803E-HNH(1703)" dwegName="1-1000" departure="03:51:38" minStopTime="90" stopTime="90" regularRunningTime="255" requestedArrival="03:50:08" requestedDeparture="03:51:38" requestedTrackID="C-803" requestedBstFahrweg="HH(1705)-302F/803E-HNH(1703)" type="stop" trainTypeNumber="5384" lineID="1703" timingPoint="true" departureFix="true" zuggattung="IKE 53.2"/>
+				<entry stationID="HLEA" trackID="G-1" bstfahrweg="HHZ(1703)-HVIN(1711)" departure="03:55:53" regularRunningTime="78" requestedDeparture="03:55:53" requestedTrackID="G-1" requestedBstFahrweg="HHZ(1703)-HVIN(1711)" type="pass" trainTypeNumber="5384" timingPoint="true" zuggattung="IKE 53.2"/>
+				<entry stationID="HVIN" stationName="Han-Vinnhorst" trackID="G-12" bstfahrweg="HLEA(1711)-12-HLGH" departure="03:57:11" RTMargin2="0" requestedDeparture="03:57:11" requestedTrackID="G-12" requestedBstFahrweg="HLEA(1711)-12-HLGH" type="end" lineID="1711" timingPoint="true" zuggattung="IKE 53.2"/>
+			</timetableentries>
+		</train>
+		<train number="53775" class="NGz" pattern="/NGz/FZT/HLI-HWSR/HLI-HVIN/hin" name="FZT/53775/91/km" description="53775/1+" comment="HLI-HWSR" typeNumber="11331" line="HLI-HWSR" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HLI" stationName="Hannover-Linden" trackID="B-251" bstfahrweg="HEMP(1760)-251/003-HLI R(1760) GR" dwegName="1-1000" departure="05:28:06" minStopTime="300" stopTime="300" regularRunningTime="171" requestedArrival="05:23:06" requestedDeparture="05:28:06" requestedTrackID="B-251" requestedBstFahrweg="HEMP(1760)-251/003-HLI R(1760) GR" type="begin" lineID="1760" timingPoint="true" departureFix="true" zuggattung="FZT 63.9"/>
+				<entry stationID="HHZ" trackID="G-801" bstfahrweg="HH(1705)-302F/801F-HNH(1703)" departure="05:47:52" regularRunningTime="259" requestedDeparture="05:47:52" requestedTrackID="G-801" requestedBstFahrweg="HH(1705)-302F/801F-HNH(1703)" type="pass" trainTypeNumber="11331" lineID="1703" timingPoint="true" zuggattung="FZT 63.9"/>
+				<entry stationID="HLEA" trackID="G-1" bstfahrweg="HHZ(1703)-HVIN(1711)" departure="05:52:11" regularRunningTime="105" requestedDeparture="05:52:11" requestedTrackID="G-1" requestedBstFahrweg="HHZ(1703)-HVIN(1711)" type="pass" trainTypeNumber="11331" timingPoint="true" zuggattung="FZT 63.9"/>
+				<entry stationID="HVIN" stationName="Han-Vinnhorst" trackID="G-12" bstfahrweg="HLEA(1711)-12-HLGH" departure="05:53:56" RTMargin2="0" requestedDeparture="05:53:56" requestedTrackID="G-12" requestedBstFahrweg="HLEA(1711)-12-HLGH" type="end" lineID="1711" timingPoint="true" zuggattung="FZT 63.9"/>
+			</timetableentries>
+		</train>
+		<train number="53780" class="NGz" pattern="/Bedarfszuege/NGz/FZ/HNH -/HNH-HSR B/hin" name="FZ/53780/4/DS + FZ/53780/5/DS" description="53780/1+" comment="HNH - HHZ&#13;&#10;Im Ausschluss mit 60001&#13;&#10;KV - Profil  &lt;P/C 70 P/C 400&gt;&#13;&#10;Beförderungsanordnung &lt;1022&gt; + HHZ - HSR B&#13;&#10;KV - Profil  &lt;P/C 70 P/C 400&gt;&#13;&#10;Beförderungsanordnung &lt;1022&gt;&#13;&#10;Im Ausschluss mit 60001" typeNumber="11315" line="HNH -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HNH" trackID="B-6" bstfahrweg="HNH6-HHZ" dwegName="1-1000" departure="07:01:00" minStopTime="120" stopTime="120" regularRunningTime="351" requestedArrival="06:59:00" requestedDeparture="07:01:00" requestedTrackID="B-6" requestedBstFahrweg="HNH6-HHZ" type="stop" trainTypeNumber="11315" lineID="1703" timingPoint="true" departureFix="true" zuggattung="FZ 64.0"/>
+				<entry stationID="HNHG" trackID="G-1000" bstfahrweg="HNH-HHZ" departure="07:06:51" regularRunningTime="11" requestedDeparture="07:06:51" requestedTrackID="G-1000" requestedBstFahrweg="HNH-HHZ" type="pass" trainTypeNumber="11315" timingPoint="true" zuggattung="FZ 64.0"/>
+				<entry stationID="HLEA" trackID="G-1000" bstfahrweg="HNH-HHZ" departure="07:07:02" regularRunningTime="334" requestedDeparture="07:07:02" requestedTrackID="G-1000" requestedBstFahrweg="HNH-HHZ" type="pass" trainTypeNumber="11315" timingPoint="true" zuggattung="FZ 64.0"/>
+				<entry stationID="HHZ" trackID="Y-803" bstfahrweg="HNH(1703)-803E/149A-HH(1705) &lt;-&gt; HH(1705)-302F/803E/803B-HKUR" departure="07:45:36" minStopTime="1800" stopTime="1980" regularRunningTime="391" requestedArrival="07:12:36" requestedDeparture="07:45:36" requestedTrackID="Y-803" requestedBstFahrweg="HNH(1703)-803E/149A-HH(1705) &lt;-&gt; HH(1705)-302F/803E/803B-HKUR" type="stop" trainTypeNumber="11315" timingPoint="true" departureFix="true" zuggattung="FZ 64.0"/>
+				<entry stationID="HSR B" stationName="Seelze Rbf Sob" trackID="A-814" bstfahrweg="HSR O-814-HSR A" dwegName="1-40" departure="08:06:50" minStopTime="600" stopTime="600" RTMargin2="0" requestedArrival="07:56:50" requestedDeparture="08:06:50" requestedTrackID="A-814" requestedBstFahrweg="HSR O-814-HSR A" type="end" lineID="1701" timingPoint="true" zuggattung="FZ 64.0"/>
+			</timetableentries>
+		</train>
+		<train number="53781" class="NGz" pattern="/NGz/FZT/HSR O/HNH-HSR O/rück" name="FZT/53781/0/DS + FZT/53781/1/DS" description="53781/1" comment="HSR O - HHZ&#13;&#10;KV - Profil  &lt;P/C 70 P/C 400&gt; + HHZ - HNH&#13;&#10;KV - Profil  &lt;P/C 70 P/C 400&gt;" typeNumber="11344" line="HSR O" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HSR O" stationName="Seelze Rbf Sof" trackID="A-101" bstfahrweg="HSR O101-HLTA" dwegName="1-40" departure="04:46:31" minStopTime="120" stopTime="300" regularRunningTime="197" requestedArrival="04:41:31" requestedDeparture="04:46:31" requestedTrackID="A-101" requestedBstFahrweg="HSR O101-HLTA" type="begin" lineID="1701" timingPoint="true" departureFix="true" zuggattung="FZT 63.9"/>
+				<entry stationID="HHZ" trackID="Z-802" bstfahrweg="HKUR(1701)-802D/802F/149A-HH(1705) &lt;-&gt; HH(1705)-302F/802F-HNH(1703)" departure="05:23:32" minStopTime="1500" stopTime="1550" regularRunningTime="398" requestedArrival="04:57:42" requestedDeparture="05:23:32" requestedTrackID="Z-802" requestedBstFahrweg="HKUR(1701)-802D/802F/149A-HH(1705) &lt;-&gt; HH(1705)-302F/802F-HNH(1703)" type="stop" trainTypeNumber="11344" lineID="1703" timingPoint="true" departureFix="true" zuggattung="FZT 63.9"/>
+				<entry stationID="HLEA" trackID="G-1000" bstfahrweg="HHZ-HNH" departure="05:30:10" regularRunningTime="7" requestedDeparture="05:30:10" requestedTrackID="G-1000" requestedBstFahrweg="HHZ-HNH" type="pass" trainTypeNumber="11344" timingPoint="true" zuggattung="FZT 63.9"/>
+				<entry stationID="HNHG" trackID="G-1000" bstfahrweg="HHZ-HNH" departure="05:30:17" regularRunningTime="358" requestedDeparture="05:30:17" requestedTrackID="G-1000" requestedBstFahrweg="HHZ-HNH" type="pass" trainTypeNumber="11344" timingPoint="true" zuggattung="FZT 63.9"/>
+				<entry stationID="HNH" trackID="A-5" bstfahrweg="HHZ-HNH5" departure="05:41:15" minStopTime="300" stopTime="300" RTMargin2="0" requestedArrival="05:36:15" requestedDeparture="05:41:15" requestedTrackID="A-5" requestedBstFahrweg="HHZ-HNH5" type="stop" trainTypeNumber="11344" timingPoint="true" zuggattung="FZT 63.9"/>
+			</timetableentries>
+		</train>
+		<train number="53782" class="NGz" pattern="/NGz/FZT/HNH -/HNH-HSR B/hin" name="FZT/53782/610/km + FZT/53782/611/km" description="53782/1" comment="HNH - HHZ&#13;&#10;KV - Profil  &lt;P/C 70 P/C 400&gt;&#13;&#10;Beförderungsanordnung &lt;1022&gt; + HHZ - HSR B&#13;&#10;KV - Profil  &lt;P/C 70 P/C 400&gt;&#13;&#10;Beförderungsanordnung &lt;1022&gt;" typeNumber="11352" line="HNH -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HNH" trackID="B-6" bstfahrweg="HNH6-HHZ" dwegName="1-1000" departure="10:40:00" minStopTime="1500" stopTime="1680" regularRunningTime="353" requestedArrival="10:12:00" requestedDeparture="10:40:00" requestedTrackID="B-6" requestedBstFahrweg="HNH6-HHZ" type="stop" trainTypeNumber="11352" lineID="1703" timingPoint="true" departureFix="true" zuggattung="FZT 63.9"/>
+				<entry stationID="HNHG" trackID="G-1000" bstfahrweg="HNH-HHZ" departure="10:45:53" regularRunningTime="11" requestedDeparture="10:45:53" requestedTrackID="G-1000" requestedBstFahrweg="HNH-HHZ" type="pass" trainTypeNumber="11352" timingPoint="true" zuggattung="FZT 63.9"/>
+				<entry stationID="HLEA" trackID="G-1000" bstfahrweg="HNH-HHZ" departure="10:46:04" regularRunningTime="374" requestedDeparture="10:46:04" requestedTrackID="G-1000" requestedBstFahrweg="HNH-HHZ" type="pass" trainTypeNumber="11352" timingPoint="true" zuggattung="FZT 63.9"/>
+				<entry stationID="HHZ" trackID="Y-581" bstfahrweg="HNH(1703)-581/149A-HH(1705) &lt;-&gt; HH(1705)-302F/582/801C-HKUR" departure="11:27:29" minStopTime="2100" stopTime="2111" regularRunningTime="399" requestedArrival="10:52:18" requestedDeparture="11:27:29" requestedTrackID="Y-581" requestedBstFahrweg="HNH(1703)-581/149A-HH(1705) &lt;-&gt; HH(1705)-302F/582/801C-HKUR" type="stop" trainTypeNumber="11352" timingPoint="true" departureFix="true" zuggattung="FZT 63.9"/>
+				<entry stationID="HSR B" stationName="Seelze Rbf Sob" trackID="A-815" bstfahrweg="HSR O-815-HSR A" dwegName="1-40" departure="11:53:50" minStopTime="900" stopTime="900" RTMargin2="0" requestedArrival="11:38:50" requestedDeparture="11:53:50" requestedTrackID="A-815" requestedBstFahrweg="HSR O-815-HSR A" type="end" lineID="1701" timingPoint="true" zuggattung="FZT 63.9"/>
+			</timetableentries>
+		</train>
+		<train number="53783" class="NGz" pattern="/NGz/FZT/HSR O/HNH-HSR O/rück" name="FZT/53783/600/DS + FZT/53783/601/DS" description="53783/1" comment="HSR O - HHZ&#13;&#10;KV - Profil  &lt;P/C 70 P/C 400&gt; + HSR O - HNH&#13;&#10;KV - Profil  &lt;P/C 70 P/C 400&gt;" typeNumber="11341" line="HSR O" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HSR O" stationName="Seelze Rbf Sof" trackID="A-102" bstfahrweg="HSR O102-HLTA" dwegName="1-40" departure="08:49:42" minStopTime="120" stopTime="660" regularRunningTime="214" requestedArrival="08:38:42" requestedDeparture="08:49:42" requestedTrackID="A-102" requestedBstFahrweg="HSR O102-HLTA" type="begin" lineID="1701" timingPoint="true" departureFix="true" zuggattung="FZT 63.9"/>
+				<entry stationID="HHZ" trackID="Y-803" bstfahrweg="HKUR(1701)-803D/803E/149A-HH(1705) &lt;-&gt; HH(1705)-302F/803E-HNH(1703)" departure="09:30:49" minStopTime="1800" stopTime="1831" regularRunningTime="391" requestedArrival="09:00:18" requestedDeparture="09:30:49" requestedTrackID="Y-803" requestedBstFahrweg="HKUR(1701)-803D/803E/149A-HH(1705) &lt;-&gt; HH(1705)-302F/803E-HNH(1703)" type="stop" trainTypeNumber="11341" lineID="1703" timingPoint="true" departureFix="true" zuggattung="FZT 63.9"/>
+				<entry stationID="HLEA" trackID="G-1000" bstfahrweg="HHZ-HNH" departure="09:37:20" regularRunningTime="8" requestedDeparture="09:37:20" requestedTrackID="G-1000" requestedBstFahrweg="HHZ-HNH" type="pass" trainTypeNumber="11341" timingPoint="true" zuggattung="FZT 63.9"/>
+				<entry stationID="HNHG" trackID="G-1000" bstfahrweg="HHZ-HNH" departure="09:37:28" regularRunningTime="391" requestedDeparture="09:37:28" requestedTrackID="G-1000" requestedBstFahrweg="HHZ-HNH" type="pass" trainTypeNumber="11341" timingPoint="true" zuggattung="FZT 63.9"/>
+				<entry stationID="HNH" trackID="A-5" bstfahrweg="HHZ-HNH5" departure="09:48:59" minStopTime="300" stopTime="300" RTMargin2="0" requestedArrival="09:43:59" requestedDeparture="09:48:59" requestedTrackID="A-5" requestedBstFahrweg="HHZ-HNH5" type="stop" trainTypeNumber="11341" timingPoint="true" zuggattung="FZT 63.9"/>
+			</timetableentries>
+		</train>
+		<train number="53785" numbervar="1" class="NGz" pattern="/Bedarfszuege/NGz/FZ/HSR O/HNH-HSR O/rück" name="FZ/53785/0/DS + FZ/53785/1/DS" description="53785/1++" comment="HSR O - HNH&#13;&#10;KV - Profil  &lt;P/C 70 P/C 400&gt;&#13;&#10;Ausschluss 60002 + HSR O - HNH&#13;&#10;KV - Profil  &lt;P/C 70 P/C 400&gt;&#13;&#10;Im Ausschluss mit 60002" typeNumber="11305" line="HSR O" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HSR O" stationName="Seelze Rbf Sof" trackID="A-102" bstfahrweg="HSR O102-HLTA" dwegName="1-40" departure="14:52:00" minStopTime="120" stopTime="300" regularRunningTime="213" requestedArrival="14:47:00" requestedDeparture="14:52:00" requestedTrackID="A-102" requestedBstFahrweg="HSR O102-HLTA" type="begin" lineID="1701" timingPoint="true" departureFix="true" zuggattung="FZ 64.0"/>
+				<entry stationID="HHZ" trackID="Y-803" bstfahrweg="HKUR(1701)-802D/803E/149A-HH(1705) &lt;-&gt; HH(1705)-302F/803E-HNH(1703)" departure="15:38:24" minStopTime="1800" stopTime="2143" regularRunningTime="359" requestedArrival="15:02:41" requestedDeparture="15:38:24" requestedTrackID="Y-803" requestedBstFahrweg="HKUR(1701)-802D/803E/149A-HH(1705) &lt;-&gt; HH(1705)-302F/803E-HNH(1703)" type="stop" trainTypeNumber="11305" lineID="1703" timingPoint="true" departureFix="true" zuggattung="FZ 64.0"/>
+				<entry stationID="HLEA" trackID="G-1000" bstfahrweg="HHZ-HNH" departure="15:44:23" regularRunningTime="8" requestedDeparture="15:44:23" requestedTrackID="G-1000" requestedBstFahrweg="HHZ-HNH" type="pass" trainTypeNumber="11305" timingPoint="true" zuggattung="FZ 64.0"/>
+				<entry stationID="HNHG" trackID="G-1000" bstfahrweg="HHZ-HNH" departure="15:44:31" regularRunningTime="390" requestedDeparture="15:44:31" requestedTrackID="G-1000" requestedBstFahrweg="HHZ-HNH" type="pass" trainTypeNumber="11305" timingPoint="true" zuggattung="FZ 64.0"/>
+				<entry stationID="HNH" trackID="A-5" bstfahrweg="HHZ-HNH5" departure="15:53:01" minStopTime="120" stopTime="120" RTMargin2="0" requestedArrival="15:51:01" requestedDeparture="15:53:01" requestedTrackID="A-5" requestedBstFahrweg="HHZ-HNH5" type="stop" trainTypeNumber="11305" timingPoint="true" zuggattung="FZ 64.0"/>
+			</timetableentries>
+		</train>
+		<train number="53786" class="NGz" pattern="/NGz/FZT/HNH -/HNH-HSR B/hin" name="FZT/53786/600/DS + FZT/53786/601/DS" description="53786/1" comment="HNH - HHZ&#13;&#10;KV - Profil  &lt;P/C 70 P/C 400&gt;&#13;&#10;Beförderungsanordnung &lt;1022&gt; + HHZ - HSR B&#13;&#10;KV - Profil  &lt;P/C 70 P/C 400&gt;&#13;&#10;Beförderungsanordnung &lt;1022&gt;" typeNumber="11352" line="HNH -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HNH" trackID="B-6" bstfahrweg="HNH6-HHZ" dwegName="1-1000" departure="16:37:09" minStopTime="120" stopTime="300" regularRunningTime="348" requestedArrival="16:32:09" requestedDeparture="16:37:09" requestedTrackID="B-6" requestedBstFahrweg="HNH6-HHZ" type="stop" trainTypeNumber="11352" lineID="1703" timingPoint="true" departureFix="true" zuggattung="FZT 63.9"/>
+				<entry stationID="HNHG" trackID="G-1000" bstfahrweg="HNH-HHZ" departure="16:42:57" regularRunningTime="11" requestedDeparture="16:42:57" requestedTrackID="G-1000" requestedBstFahrweg="HNH-HHZ" type="pass" trainTypeNumber="11352" timingPoint="true" zuggattung="FZT 63.9"/>
+				<entry stationID="HLEA" trackID="G-1000" bstfahrweg="HNH-HHZ" departure="16:43:08" regularRunningTime="364" requestedDeparture="16:43:08" requestedTrackID="G-1000" requestedBstFahrweg="HNH-HHZ" type="pass" trainTypeNumber="11352" timingPoint="true" zuggattung="FZT 63.9"/>
+				<entry stationID="HHZ" trackID="Y-803" bstfahrweg="HNH(1703)-803E/149A-HH(1705) &lt;-&gt; HH(1705)-302F/803E/801C-HKUR" departure="17:09:12" minStopTime="1200" stopTime="1200" regularRunningTime="396" requestedArrival="16:49:12" requestedDeparture="17:09:12" requestedTrackID="Y-803" requestedBstFahrweg="HNH(1703)-803E/149A-HH(1705) &lt;-&gt; HH(1705)-302F/803E/801C-HKUR" type="stop" trainTypeNumber="11352" timingPoint="true" zuggattung="FZT 63.9"/>
+				<entry stationID="HSR B" stationName="Seelze Rbf Sob" trackID="A-815" bstfahrweg="HSR O-815-HSR A" dwegName="1-40" departure="17:25:21" minStopTime="120" stopTime="300" RTMargin2="0" requestedArrival="17:20:21" requestedDeparture="17:25:21" requestedTrackID="A-815" requestedBstFahrweg="HSR O-815-HSR A" type="end" lineID="1701" timingPoint="true" departureFix="true" zuggattung="FZT 63.9"/>
+			</timetableentries>
+		</train>
+		<train number="53787" class="NGz" pattern="/NGz/FZT/HSR O/HNH-HSR O/rück" name="FZT/53787/600/DS + FZT/53787/601/DS" description="53787/1" comment="HSR O - HHZ&#13;&#10;KV - Profil  &lt;P/C 70 P/C 400&gt;&#13;&#10;RV-Kappanr.: 100317955573 + HHZ - HNH&#13;&#10;KV - Profil  &lt;P/C 70 P/C 400&gt;" typeNumber="11341" line="HSR O" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HSR O" stationName="Seelze Rbf Sof" trackID="A-102" bstfahrweg="HSR O102-HLTA" dwegName="1-40" departure="18:24:59" minStopTime="300" stopTime="300" regularRunningTime="184" requestedArrival="18:19:59" requestedDeparture="18:24:59" requestedTrackID="A-102" requestedBstFahrweg="HSR O102-HLTA" type="begin" lineID="1701" timingPoint="true" departureFix="true" zuggattung="FZT 63.9"/>
+				<entry stationID="HHZ" trackID="Z-802" bstfahrweg="HKUR(1701)-802D/802F/149A-HH(1705) &lt;-&gt; HH(1705)-302F/802F-HNH(1703)" departure="19:00:35" minStopTime="1500" stopTime="1508" regularRunningTime="368" requestedArrival="18:35:27" requestedDeparture="19:00:35" requestedTrackID="Z-802" requestedBstFahrweg="HKUR(1701)-802D/802F/149A-HH(1705) &lt;-&gt; HH(1705)-302F/802F-HNH(1703)" type="stop" trainTypeNumber="11341" lineID="1703" timingPoint="true" departureFix="true" zuggattung="FZT 63.9"/>
+				<entry stationID="HLEA" trackID="G-1000" bstfahrweg="HHZ-HNH" departure="19:06:43" regularRunningTime="8" requestedDeparture="19:06:43" requestedTrackID="G-1000" requestedBstFahrweg="HHZ-HNH" type="pass" trainTypeNumber="11341" timingPoint="true" zuggattung="FZT 63.9"/>
+				<entry stationID="HNHG" trackID="G-1000" bstfahrweg="HHZ-HNH" departure="19:06:51" regularRunningTime="371" requestedDeparture="19:06:51" requestedTrackID="G-1000" requestedBstFahrweg="HHZ-HNH" type="pass" trainTypeNumber="11341" timingPoint="true" zuggattung="FZT 63.9"/>
+				<entry stationID="HNH" trackID="A-5" bstfahrweg="HHZ-HNH5" departure="19:18:02" minStopTime="300" stopTime="300" RTMargin2="0" requestedArrival="19:13:02" requestedDeparture="19:18:02" requestedTrackID="A-5" requestedBstFahrweg="HHZ-HNH5" type="stop" trainTypeNumber="11341" timingPoint="true" zuggattung="FZT 63.9"/>
+			</timetableentries>
+		</train>
+		<train number="53788" class="NGz" pattern="/NGz/FZT/HNH -/HNH-HSR B/hin" name="FZT/53788/600/DS + FZT/53788/601/DS" description="53788/1" comment="HNH - HHZ&#13;&#10;KV - Profil  &lt;P/C 70 P/C 400&gt;&#13;&#10;Beförderungsanordnung &lt;1022&gt; + HHZ - HSR B&#13;&#10;KV - Profil  &lt;P/C 70 P/C 400&gt;&#13;&#10;Beförderungsanordnung &lt;1022&gt;" typeNumber="11352" line="HNH -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HNH" trackID="B-6" bstfahrweg="HNH6-HHZ" dwegName="1-1000" departure="21:26:47" minStopTime="300" stopTime="300" regularRunningTime="348" requestedArrival="21:21:47" requestedDeparture="21:26:47" requestedTrackID="B-6" requestedBstFahrweg="HNH6-HHZ" type="stop" trainTypeNumber="11352" lineID="1703" timingPoint="true" departureFix="true" zuggattung="FZT 63.9"/>
+				<entry stationID="HNHG" trackID="G-1000" bstfahrweg="HNH-HHZ" departure="21:32:35" regularRunningTime="11" requestedDeparture="21:32:35" requestedTrackID="G-1000" requestedBstFahrweg="HNH-HHZ" type="pass" trainTypeNumber="11352" timingPoint="true" zuggattung="FZT 63.9"/>
+				<entry stationID="HLEA" trackID="G-1000" bstfahrweg="HNH-HHZ" departure="21:32:46" regularRunningTime="361" requestedDeparture="21:32:46" requestedTrackID="G-1000" requestedBstFahrweg="HNH-HHZ" type="pass" trainTypeNumber="11352" timingPoint="true" zuggattung="FZT 63.9"/>
+				<entry stationID="HHZ" trackID="Y-801" bstfahrweg="HNH(1703)-801F/149A-HH(1705) &lt;-&gt; HH(1705)-302F/801F/801C-HKUR" departure="22:24:59" minStopTime="2700" stopTime="2772" regularRunningTime="400" requestedArrival="21:38:47" requestedDeparture="22:24:59" requestedTrackID="Y-801" requestedBstFahrweg="HNH(1703)-801F/149A-HH(1705) &lt;-&gt; HH(1705)-302F/801F/801C-HKUR" type="stop" trainTypeNumber="11352" timingPoint="true" departureFix="true" zuggattung="FZT 63.9"/>
+				<entry stationID="HSR B" stationName="Seelze Rbf Sob" trackID="A-814" bstfahrweg="HSR O-814-HSR A" dwegName="1-40" departure="22:45:57" minStopTime="600" stopTime="600" RTMargin2="0" requestedArrival="22:35:57" requestedDeparture="22:45:57" requestedTrackID="A-814" requestedBstFahrweg="HSR O-814-HSR A" type="end" lineID="1701" timingPoint="true" zuggattung="FZT 63.9"/>
+			</timetableentries>
+		</train>
+		<train number="60001" class="FGz" pattern="/FGz/CSQ/HNH -/H815M-HNH/rück" name="CSQ/60001/0/AH + CSQ/60001/1/AH + CSQ/60001/2/AH" description="60001/1++" comment="HNH - LLW U&#13;&#10;ggs Ausschluss mit 53780 B + HNH - LLW U" typeNumber="5098" line="HNH -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HNH" trackID="B-6" bstfahrweg="HNH6-HHZ" dwegName="1-1000" departure="07:01:14" minStopTime="900" stopTime="900" regularRunningTime="349" requestedArrival="06:46:14" requestedDeparture="07:01:14" requestedTrackID="B-6" requestedBstFahrweg="HNH6-HHZ" type="stop" trainTypeNumber="5098" lineID="1703" timingPoint="true" departureFix="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="HNHG" trackID="G-1000" bstfahrweg="HNH-HHZ" departure="07:07:03" regularRunningTime="10" requestedDeparture="07:07:03" requestedTrackID="G-1000" requestedBstFahrweg="HNH-HHZ" type="pass" trainTypeNumber="5098" timingPoint="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="HLEA" trackID="G-1000" bstfahrweg="HNH-HHZ" departure="07:07:13" regularRunningTime="317" requestedDeparture="07:07:13" requestedTrackID="G-1000" requestedBstFahrweg="HNH-HHZ" type="pass" trainTypeNumber="5098" timingPoint="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="HHZ" trackID="Y-803" bstfahrweg="HNH(1703)-803E/149A-HH(1705) &lt;-&gt; HH(1705)-302F/803E/803B-HKUR" departure="07:44:12" minStopTime="1800" stopTime="1902" regularRunningTime="350" requestedArrival="07:12:30" requestedDeparture="07:44:12" requestedTrackID="Y-803" requestedBstFahrweg="HNH(1703)-803E/149A-HH(1705) &lt;-&gt; HH(1705)-302F/803E/803B-HKUR" type="stop" trainTypeNumber="5098" timingPoint="true" departureFix="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="H814W" stationName="Auto1" RTMargin2="0" type="end" relevantInNet="false" lineID="1750"/>
+			</timetableentries>
+		</train>
+		<train number="60002" class="FGz" pattern="/FGz/CSQ/LLW U/HNH-HWAM/rück" name="CSQ/60002/0/AH + CSQ/60002/1/AH + CSQ/60002/2/AH" description="60002/2+" comment="LLW U - HNH" typeNumber="5098" line="LLW U" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="H814W" stationName="Auto1" RTMargin2="0" type="begin" relevantInNet="false" lineID="1750"/>
+				<entry stationID="HHZ" trackID="Y-801" bstfahrweg="HKUR(1701)-801C/801F(301F-HH(1705) &lt;-&gt; HH(1705)-302F/801F-HNH(1703)" departure="15:38:31" minStopTime="1800" stopTime="2166" regularRunningTime="350" requestedArrival="15:02:25" requestedDeparture="15:38:31" requestedTrackID="Y-801" requestedBstFahrweg="HKUR(1701)-801C/801F(301F-HH(1705) &lt;-&gt; HH(1705)-302F/801F-HNH(1703)" type="stop" trainTypeNumber="5098" lineID="1703" timingPoint="true" departureFix="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="HLEA" trackID="G-1000" bstfahrweg="HHZ-HNH" departure="15:44:21" regularRunningTime="8" requestedDeparture="15:44:21" requestedTrackID="G-1000" requestedBstFahrweg="HHZ-HNH" type="pass" trainTypeNumber="5098" timingPoint="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="HNHG" trackID="G-1000" bstfahrweg="HHZ-HNH" departure="15:44:29" regularRunningTime="389" requestedDeparture="15:44:29" requestedTrackID="G-1000" requestedBstFahrweg="HHZ-HNH" type="pass" trainTypeNumber="5098" timingPoint="true" zuggattung="CSQ 68.4"/>
+				<entry stationID="HNH" trackID="A-5" bstfahrweg="HHZ-HNH5" departure="16:00:58" minStopTime="600" stopTime="600" RTMargin2="0" requestedArrival="15:50:58" requestedDeparture="16:00:58" requestedTrackID="A-5" requestedBstFahrweg="HHZ-HNH5" type="stop" trainTypeNumber="5098" timingPoint="true" zuggattung="CSQ 68.4"/>
+			</timetableentries>
+		</train>
+		<train number="62130" class="NGz" pattern="/NGz/CFN/Ohne Linie/HNH-HSR W/hin" name="CFN/62130/200/ST + CFN/62130/201/ST" description="62130/1++++" typeNumber="11024" line="Ohne Linie" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HNH" trackID="G-6" bstfahrweg="HNH6-HHZ" departure="12:27:00" regularRunningTime="315" requestedDeparture="12:27:00" requestedTrackID="G-6" requestedBstFahrweg="HNH6-HHZ" type="pass" trainTypeNumber="11024" lineID="1703" timingPoint="true" departureFix="true" zuggattung="CFN 73.4"/>
+				<entry stationID="HNHG" trackID="G-1000" bstfahrweg="HNH-HHZ" departure="12:32:15" regularRunningTime="9" requestedDeparture="12:32:15" requestedTrackID="G-1000" requestedBstFahrweg="HNH-HHZ" type="pass" trainTypeNumber="11024" timingPoint="true" zuggattung="CFN 73.4"/>
+				<entry stationID="HLEA" trackID="G-1000" bstfahrweg="HNH-HHZ" departure="12:32:24" regularRunningTime="303" requestedDeparture="12:32:24" requestedTrackID="G-1000" requestedBstFahrweg="HNH-HHZ" type="pass" trainTypeNumber="11024" timingPoint="true" zuggattung="CFN 73.4"/>
+				<entry stationID="HHZ" trackID="Z-802" bstfahrweg="HNH(1703)-802F/149A-HH(1705) &lt;-&gt; HH(1705)-302F/802F/802D-HKUR" departure="12:55:00" minStopTime="900" stopTime="1053" regularRunningTime="239" requestedArrival="12:37:27" requestedDeparture="12:55:00" requestedTrackID="Z-802" requestedBstFahrweg="HNH(1703)-802F/149A-HH(1705) &lt;-&gt; HH(1705)-302F/802F/802D-HKUR" type="stop" trainTypeNumber="11068" timingPoint="true" departureFix="true" zuggattung="CFN 73.4"/>
+				<entry stationID="HSR W" stationName="Seelze Rbf W" trackID="G-5" bstfahrweg="HSR N-005-HGUE" departure="13:09:05" RTMargin2="0" requestedDeparture="13:09:05" requestedTrackID="G-5" requestedBstFahrweg="HSR N-005-HGUE" type="end" lineID="1750" timingPoint="true" zuggattung="CFN 73.4"/>
+			</timetableentries>
+		</train>
+		<train number="69279" class="FGz" pattern="/FGz/DGS/AWHO /HHML-HVIN/rück" name="DGS/69279/90/Hü" description="69279/1" comment="AWHO  - TBS&#13;&#10;EVU: boxxpress (H3330)" typeNumber="5260" line="AWHO " lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HVIN" stationName="Han-Vinnhorst" trackID="G-31" bstfahrweg="HLGH(1711)-31-HLEA" departure="20:49:51" regularRunningTime="95" requestedDeparture="20:49:51" requestedTrackID="G-31" requestedBstFahrweg="HLGH(1711)-31-HLEA" type="begin" lineID="1711" timingPoint="true" departureFix="true" zuggattung="DGS 36.1"/>
+				<entry stationID="HLEA" trackID="G-2" bstfahrweg="HVIN(1711)-HHZ(1703)" departure="20:51:26" regularRunningTime="282" requestedDeparture="20:51:26" requestedTrackID="G-2" requestedBstFahrweg="HVIN(1711)-HHZ(1703)" type="pass" trainTypeNumber="5260" lineID="1703" timingPoint="true" zuggattung="DGS 36.1"/>
+				<entry stationID="HHZ" trackID="B-803" bstfahrweg="HNH(1703)-803E/149A-HH(1705)" dwegName="1-1000" departure="21:06:50" minStopTime="642" stopTime="642" regularRunningTime="221" requestedArrival="20:56:08" requestedDeparture="21:06:50" requestedTrackID="B-803" requestedBstFahrweg="HNH(1703)-803E/149A-HH(1705)" type="stop" trainTypeNumber="5260" timingPoint="true" departureFix="true" zuggattung="DGS 36.1"/>
+				<entry stationID="HHML" stationName="Han Mess/Laatzen" trackID="G-13" bstfahrweg="HWU(1732-1)-713-HRTN" departure="21:15:59" RTMargin2="0" requestedDeparture="21:15:59" requestedTrackID="G-13" requestedBstFahrweg="HWU(1732-1)-713-HRTN" type="end" lineID="1732" timingPoint="true" zuggattung="DGS 36.1"/>
+			</timetableentries>
+		</train>
+		<train number="72440" class="NRz" pattern="/NRz/Lr/HH -/HH-HHZ/hin" name="Lr/72440/0/DS + Lr/72440/1/DS" description="72440/1+" comment="HH - HVIN - HHZ&#13;&#10;Aus 14036&#13;&#10;Für Abstellung" typeNumber="1112" line="HH -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HH" stationName="Hannover Hbf" trackID="C-12" bstfahrweg="HLER(1730)-12A/469-HBUG(1700) U1" dwegName="1-1000" departure="00:18:30" minStopTime="60" stopTime="300" regularRunningTime="164" requestedArrival="00:13:30" requestedDeparture="00:18:30" requestedTrackID="C-12" requestedBstFahrweg="HLER(1730)-12A/469-HBUG(1700) U1" type="begin" lineID="1700" timingPoint="true" departureFix="true" zuggattung="Lr 40.2"/>
+				<entry stationID="HLEA" trackID="X-2" bstfahrweg="HVIN(1711)-HHZ(1703)" trackIDForNotConditional="G-2" bstFahrwegBeiAusfallBetriebsHalt="HVIN(1711)-HHZ(1703)" departure="00:36:50" minStopTime="1" stopTime="1" regularRunningTime="258" requestedArrival="00:36:49" requestedDeparture="00:36:50" requestedTrackID="X-2" requestedBstFahrweg="HVIN(1711)-HHZ(1703)" type="conditional1" trainTypeNumber="1112" lineID="1703" timingPoint="true" zuggattung="Lr 40.2"/>
+				<entry stationID="HHZ" trackID="D-591" bstfahrweg="HNH(1703)-591/149A-HH(1705)" dwegName="2-1000" departure="00:46:08" minStopTime="60" stopTime="300" RTMargin2="0" requestedArrival="00:41:08" requestedDeparture="00:46:08" requestedTrackID="D-591" requestedBstFahrweg="HNH(1703)-591/149A-HH(1705)" type="stop" trainTypeNumber="1112" timingPoint="true" departureFix="true" zuggattung="Lr 40.2"/>
+			</timetableentries>
+		</train>
+		<train number="72441" class="NRz" pattern="/NRz/Lr/HHZ -/HH-HHZ/rück" name="Lr/72441/0/DS + Lr/72441/1/DS" description="72441/1" comment="HHZ - HVIN - HH&#13;&#10;Aus Abstellung" typeNumber="1111" line="HHZ -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HHZ" trackID="A-804" bstfahrweg="HH(1705-2)-301F/804-HNH(1703)" dwegName="1-1000" departure="04:37:53" minStopTime="60" stopTime="300" regularRunningTime="177" requestedArrival="04:32:53" requestedDeparture="04:37:53" requestedTrackID="A-804" requestedBstFahrweg="HH(1705-2)-301F/804-HNH(1703)" type="stop" trainTypeNumber="1111" lineID="1703" timingPoint="true" departureFix="true" zuggattung="Lr 40.2"/>
+				<entry stationID="HLEA" trackID="X-1" bstfahrweg="HHZ(1703)-HVIN(1711)" trackIDForNotConditional="G-1" bstFahrwegBeiAusfallBetriebsHalt="HHZ(1703)-HVIN(1711)" departure="04:44:44" minStopTime="60" stopTime="234" regularRunningTime="217" requestedArrival="04:40:50" requestedDeparture="04:44:44" requestedTrackID="X-1" requestedBstFahrweg="HHZ(1703)-HVIN(1711)" type="conditional1" trainTypeNumber="1111" timingPoint="true" departureFix="true" zuggattung="Lr 40.2"/>
+				<entry stationID="HH" stationName="Hannover Hbf" trackID="C-14" bstfahrweg="HBUG(1710)-447/14C-HKLE(1734)" dwegName="1-1000" departure="05:08:36" minStopTime="60" stopTime="300" RTMargin2="0" requestedArrival="05:03:36" requestedDeparture="05:08:36" requestedTrackID="C-14" requestedBstFahrweg="HBUG(1710)-447/14C-HKLE(1734)" type="end" lineID="1710" timingPoint="true" departureFix="true" zuggattung="Lr 40.2"/>
+			</timetableentries>
+		</train>
+		<train number="72442" class="NRz" pattern="/NRz/Lr/HH -/HH-HHZ/hin" name="Lr/72442/0/DS + Lr/72442/1/DS" description="72442/1" comment="HH - HVIN - HHZ&#13;&#10;Aus 14004 1.ZT&#13;&#10;Für Abstellung" typeNumber="1110" line="HH -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HH" stationName="Hannover Hbf" trackID="D-13" bstfahrweg="HHBI(1760)-13B/469-HBUG(1700) GR" dwegName="2-1000" departure="08:17:00" minStopTime="60" stopTime="300" regularRunningTime="164" requestedArrival="08:12:00" requestedDeparture="08:17:00" requestedTrackID="D-13" requestedBstFahrweg="HHBI(1760)-13B/469-HBUG(1700) GR" type="begin" lineID="1700" timingPoint="true" departureFix="true" zuggattung="Lr 40.2"/>
+				<entry stationID="HLEA" trackID="G-2" bstfahrweg="HVIN(1711)-HHZ(1703)" departure="08:31:49" regularRunningTime="219" requestedDeparture="08:31:49" requestedTrackID="G-2" requestedBstFahrweg="HVIN(1711)-HHZ(1703)" type="pass" trainTypeNumber="1110" lineID="1703" timingPoint="true" zuggattung="Lr 40.2"/>
+				<entry stationID="HHZ" trackID="D-802" bstfahrweg="HNH(1703)-802F/149A-HH(1705)" dwegName="1-1000" departure="08:40:58" minStopTime="60" stopTime="330" RTMargin2="0" requestedArrival="08:35:28" requestedDeparture="08:40:58" requestedTrackID="D-802" requestedBstFahrweg="HNH(1703)-802F/149A-HH(1705)" type="stop" trainTypeNumber="1110" timingPoint="true" departureFix="true" zuggattung="Lr 40.2"/>
+			</timetableentries>
+		</train>
+		<train number="72444" class="NRz" pattern="/NRz/Lr/HH - HVIN -/HH-HHZ/hin" name="Lr/72444/0/DS + Lr/72444/1/DS" description="72444/1" comment="HH - HVIN - HHZ&#13;&#10;Aus 14028 1.ZT&#13;&#10;Für Abstellung" typeNumber="1110" line="HH - HVIN -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HH" stationName="Hannover Hbf" trackID="D-13" bstfahrweg="HLER(1730)-13B/469-HBUG(1700)" dwegName="2-1000" departure="20:17:00" minStopTime="60" stopTime="300" regularRunningTime="168" requestedArrival="20:12:00" requestedDeparture="20:17:00" requestedTrackID="D-13" requestedBstFahrweg="HLER(1730)-13B/469-HBUG(1700)" type="begin" lineID="1700" timingPoint="true" departureFix="true" zuggattung="Lr 40.2"/>
+				<entry stationID="HLEA" trackID="G-2" bstfahrweg="HVIN(1711)-HHZ(1703)" departure="20:41:51" regularRunningTime="225" requestedDeparture="20:41:51" requestedTrackID="G-2" requestedBstFahrweg="HVIN(1711)-HHZ(1703)" type="pass" trainTypeNumber="1110" lineID="1703" timingPoint="true" zuggattung="Lr 40.2"/>
+				<entry stationID="HHZ" trackID="D-591" bstfahrweg="HNH(1703)-591/149A-HH(1705)" dwegName="2-1000" departure="20:52:00" minStopTime="60" stopTime="384" RTMargin2="0" requestedArrival="20:45:36" requestedDeparture="20:52:00" requestedTrackID="D-591" requestedBstFahrweg="HNH(1703)-591/149A-HH(1705)" type="stop" trainTypeNumber="1110" timingPoint="true" departureFix="true" zuggattung="Lr 40.2"/>
+			</timetableentries>
+		</train>
+		<train number="72529" class="S" pattern="/S/Lt/HHZ -/HH-HHZ/rück" name="Lt/72529/0/DS + Lt/72529/1/DS" description="72529/1" comment="HHZ - HH&#13;&#10;Aus Abstellung&#13;&#10;Für 34012 2.+3.ZT/ 34305 2.ZT" typeNumber="4008" line="HHZ -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HHZ" trackID="C-582" bstfahrweg="HHZ582-HNH(1703)" dwegName="1-1000" departure="04:51:48" minStopTime="60" stopTime="300" regularRunningTime="223" requestedArrival="04:46:48" requestedDeparture="04:51:48" requestedTrackID="C-582" requestedBstFahrweg="HHZ582-HNH(1703)" type="stop" trainTypeNumber="4008" lineID="1703" timingPoint="true" departureFix="true" zuggattung="Lt 47.3"/>
+				<entry stationID="HLEA" trackID="G-1" bstfahrweg="HHZ(1703)-HVIN(1711)" departure="04:55:31" regularRunningTime="228" requestedDeparture="04:55:31" requestedTrackID="G-1" requestedBstFahrweg="HHZ(1703)-HVIN(1711)" type="pass" trainTypeNumber="4008" timingPoint="true" zuggattung="Lt 47.3"/>
+				<entry stationID="HH" stationName="Hannover Hbf" trackID="E-13" bstfahrweg="HBUG(1700)-932/13C-HLER(1730)" dwegName="1-1000" departure="05:25:52" minStopTime="60" stopTime="300" RTMargin2="0" requestedArrival="05:20:52" requestedDeparture="05:25:52" requestedTrackID="E-13" requestedBstFahrweg="HBUG(1700)-932/13C-HLER(1730)" type="end" lineID="1700" timingPoint="true" departureFix="true" zuggattung="Lt 47.3"/>
+			</timetableentries>
+		</train>
+		<train number="72530" class="S" pattern="/S/Lt/HHZ -/HHZ-HVIN/hin" name="Lt/72530/0/DS" description="72530/1" comment="HHZ - HC&#13;&#10;Aus Abstellung&#13;&#10;Für 34011" typeNumber="4010" line="HHZ -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HHZ" trackID="C-591" bstfahrweg="HH(1705)-302F/591-HNH(1703)" dwegName="1-1000" departure="04:31:49" minStopTime="60" stopTime="300" regularRunningTime="217" requestedArrival="04:26:49" requestedDeparture="04:31:49" requestedTrackID="C-591" requestedBstFahrweg="HH(1705)-302F/591-HNH(1703)" type="stop" trainTypeNumber="4010" lineID="1703" timingPoint="true" departureFix="true" zuggattung="Lt 47.3"/>
+				<entry stationID="HLEA" trackID="G-1" bstfahrweg="HHZ(1703)-HVIN(1711)" departure="04:35:26" regularRunningTime="76" requestedDeparture="04:35:26" requestedTrackID="G-1" requestedBstFahrweg="HHZ(1703)-HVIN(1711)" type="pass" trainTypeNumber="4010" timingPoint="true" zuggattung="Lt 47.3"/>
+				<entry stationID="HVIN" stationName="Han-Vinnhorst" trackID="G-12" bstfahrweg="HLEA(1711)-12-HLGH" departure="04:36:42" RTMargin2="0" requestedDeparture="04:36:42" requestedTrackID="G-12" requestedBstFahrweg="HLEA(1711)-12-HLGH" type="end" lineID="1711" timingPoint="true" zuggattung="Lt 47.3"/>
+			</timetableentries>
+		</train>
+		<train number="72539" class="S" pattern="/S/Lt/HBML -/HHZ-HVIN/rück" name="Lt/72539/0/DS" description="72539/1" comment="HBML - HHZ&#13;&#10;Aus 34478&#13;&#10;Für Abstellung" typeNumber="4015" line="HBML -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HVIN" stationName="Han-Vinnhorst" trackID="G-31" bstfahrweg="HLGH(1711)-31-HLEA" departure="00:33:04" regularRunningTime="63" requestedDeparture="00:33:04" requestedTrackID="G-31" requestedBstFahrweg="HLGH(1711)-31-HLEA" type="begin" lineID="1711" timingPoint="true" departureFix="true" zuggattung="Lt 47.3"/>
+				<entry stationID="HLEA" trackID="G-2" bstfahrweg="HVIN(1711)-HHZ(1703)" departure="00:34:07" regularRunningTime="206" requestedDeparture="00:34:07" requestedTrackID="G-2" requestedBstFahrweg="HVIN(1711)-HHZ(1703)" type="pass" trainTypeNumber="4015" lineID="1703" timingPoint="true" zuggattung="Lt 47.3"/>
+				<entry stationID="HHZ" trackID="B-611" bstfahrweg="HNH(1703)-611/149A-HH(1705)" dwegName="1-1000" departure="00:42:33" minStopTime="60" stopTime="300" RTMargin2="0" requestedArrival="00:37:33" requestedDeparture="00:42:33" requestedTrackID="B-611" requestedBstFahrweg="HNH(1703)-611/149A-HH(1705)" type="stop" trainTypeNumber="4015" timingPoint="true" departureFix="true" zuggattung="Lt 47.3"/>
+			</timetableentries>
+		</train>
+		<train number="72540" class="S" pattern="/S/Lt/HHZ -/HHZ-HVIN/hin" name="Lt/72540/0/DS" description="72540/1" comment="HHZ - HBML&#13;&#10;Aus Abstellung&#13;&#10;Für 34403" typeNumber="4015" line="HHZ -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HHZ" trackID="C-591" bstfahrweg="HH(1705)-302F/591-HNH(1703)" dwegName="1-1000" departure="04:20:44" minStopTime="60" stopTime="300" regularRunningTime="214" requestedArrival="04:15:44" requestedDeparture="04:20:44" requestedTrackID="C-591" requestedBstFahrweg="HH(1705)-302F/591-HNH(1703)" type="stop" trainTypeNumber="4015" lineID="1703" timingPoint="true" departureFix="true" zuggattung="Lt 47.3"/>
+				<entry stationID="HLEA" trackID="G-1" bstfahrweg="HHZ(1703)-HVIN(1711)" departure="04:24:18" regularRunningTime="71" requestedDeparture="04:24:18" requestedTrackID="G-1" requestedBstFahrweg="HHZ(1703)-HVIN(1711)" type="pass" trainTypeNumber="4015" timingPoint="true" zuggattung="Lt 47.3"/>
+				<entry stationID="HVIN" stationName="Han-Vinnhorst" trackID="G-12" bstfahrweg="HLEA(1711)-12-HLGH" departure="04:25:29" RTMargin2="0" requestedDeparture="04:25:29" requestedTrackID="G-12" requestedBstFahrweg="HLEA(1711)-12-HLGH" type="end" lineID="1711" timingPoint="true" zuggattung="Lt 47.3"/>
+			</timetableentries>
+		</train>
+		<train number="72541" class="S" pattern="/S/Lt/HBML -/HHZ-HVIN/rück" name="Lt/72541/0/DS" description="72541/1" comment="HBML - HHZ&#13;&#10;Aus 34400&#13;&#10;Für Abstellung" typeNumber="4015" line="HBML -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HVIN" stationName="Han-Vinnhorst" trackID="G-31" bstfahrweg="HLGH(1711)-31-HLEA" departure="01:00:07" regularRunningTime="68" requestedDeparture="01:00:07" requestedTrackID="G-31" requestedBstFahrweg="HLGH(1711)-31-HLEA" type="begin" lineID="1711" timingPoint="true" departureFix="true" zuggattung="Lt 47.3"/>
+				<entry stationID="HLEA" trackID="G-2" bstfahrweg="HVIN(1711)-HHZ(1703)" departure="01:01:15" regularRunningTime="224" requestedDeparture="01:01:15" requestedTrackID="G-2" requestedBstFahrweg="HVIN(1711)-HHZ(1703)" type="pass" trainTypeNumber="4015" lineID="1703" timingPoint="true" zuggattung="Lt 47.3"/>
+				<entry stationID="HHZ" trackID="B-601" bstfahrweg="HNH(1703)-601/149A-HH(1705)" dwegName="1-1000" departure="01:09:59" minStopTime="60" stopTime="300" RTMargin2="0" requestedArrival="01:04:59" requestedDeparture="01:09:59" requestedTrackID="B-601" requestedBstFahrweg="HNH(1703)-601/149A-HH(1705)" type="stop" trainTypeNumber="4015" timingPoint="true" departureFix="true" zuggattung="Lt 47.3"/>
+			</timetableentries>
+		</train>
+		<train number="72542" class="S" pattern="/S/Lt/HHZ -/HHZ-HVIN/hin" name="Lt/72542/0/DS" description="72542/1" comment="HHZ - HBML&#13;&#10;Aus Abstellung&#13;&#10;Für 34405" typeNumber="4016" line="HHZ -" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HHZ" trackID="C-591" bstfahrweg="HH(1705)-302F/591-HNH(1703)" dwegName="1-1000" departure="04:58:12" minStopTime="60" stopTime="300" regularRunningTime="217" requestedArrival="04:53:12" requestedDeparture="04:58:12" requestedTrackID="C-591" requestedBstFahrweg="HH(1705)-302F/591-HNH(1703)" type="stop" trainTypeNumber="4016" lineID="1703" timingPoint="true" departureFix="true" zuggattung="Lt 47.3"/>
+				<entry stationID="HLEA" trackID="G-1" bstfahrweg="HHZ(1703)-HVIN(1711)" departure="05:01:49" regularRunningTime="61" requestedDeparture="05:01:49" requestedTrackID="G-1" requestedBstFahrweg="HHZ(1703)-HVIN(1711)" type="pass" trainTypeNumber="4016" timingPoint="true" zuggattung="Lt 47.3"/>
+				<entry stationID="HVIN" stationName="Han-Vinnhorst" trackID="G-12" bstfahrweg="HLEA(1711)-12-HLGH" departure="05:02:50" RTMargin2="0" requestedDeparture="05:02:50" requestedTrackID="G-12" requestedBstFahrweg="HLEA(1711)-12-HLGH" type="end" lineID="1711" timingPoint="true" zuggattung="Lt 47.3"/>
+			</timetableentries>
+		</train>
+		<train number="76195" class="Lz" pattern="/Lz/Tfzf (RaR)/HHZ-HNH, aus/HHZ-HNH/hin" name="Tfzf (/76195/0/DS" description="76195/1" comment="HHZ-HNH, &#13;&#10;aus 53790&#13;&#10;Füer 49409" typeNumber="16541" line="HHZ-HNH, aus" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HHZ" trackID="C-804" bstfahrweg="HH(1705)-302F/804-HNH" dwegName="1-1000" departure="12:47:00" minStopTime="300" stopTime="300" regularRunningTime="200" requestedArrival="12:42:00" requestedDeparture="12:47:00" requestedTrackID="C-804" requestedBstFahrweg="HH(1705)-302F/804-HNH" type="stop" trainTypeNumber="16541" lineID="1703" timingPoint="true" departureFix="true" zuggattung="Tfzf (RaR) 03.1"/>
+				<entry stationID="HLEA" trackID="G-1000" bstfahrweg="HHZ-HNH" departure="12:50:20" regularRunningTime="8" requestedDeparture="12:50:20" requestedTrackID="G-1000" requestedBstFahrweg="HHZ-HNH" type="pass" trainTypeNumber="16541" timingPoint="true" zuggattung="Tfzf (RaR) 03.1"/>
+				<entry stationID="HNHG" trackID="G-1000" bstfahrweg="HHZ-HNH" departure="12:50:28" regularRunningTime="369" requestedDeparture="12:50:28" requestedTrackID="G-1000" requestedBstFahrweg="HHZ-HNH" type="pass" trainTypeNumber="16541" timingPoint="true" zuggattung="Tfzf (RaR) 03.1"/>
+				<entry stationID="HNH" trackID="A-5" bstfahrweg="HHZ-HNH5" departure="13:01:37" minStopTime="300" stopTime="300" RTMargin2="0" requestedArrival="12:56:37" requestedDeparture="13:01:37" requestedTrackID="A-5" requestedBstFahrweg="HHZ-HNH5" type="stop" trainTypeNumber="16541" timingPoint="true" zuggattung="Tfzf (RaR) 03.1"/>
+			</timetableentries>
+		</train>
+		<train number="82042" class="NGz" pattern="/NGz/DGS/Ohne Linie/HNH-HS/rück" name="DGS/82042/0/gs + DGS/82042/1/gs" description="82042/1" typeNumber="11200" line="Ohne Linie" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HS" stationName="Seelze Pbf" trackID="G-4" bstfahrweg="HWUN-4-HH" departure="04:18:00" regularRunningTime="174" requestedDeparture="04:18:00" requestedTrackID="G-4" requestedBstFahrweg="HWUN-4-HH" type="begin" lineID="1700" timingPoint="true" departureFix="true" zuggattung="DGS 36.6"/>
+				<entry stationID="HHZ" trackID="Y-803" bstfahrweg="HKUR(1701)-803D/803E/149A-HH(1705) &lt;-&gt; HH(1705)-302F/803E-HNH(1703)" departure="05:03:41" minStopTime="900" stopTime="2250" regularRunningTime="241" requestedArrival="04:26:11" requestedDeparture="05:03:41" requestedTrackID="Y-803" requestedBstFahrweg="HKUR(1701)-803D/803E/149A-HH(1705) &lt;-&gt; HH(1705)-302F/803E-HNH(1703)" type="stop" trainTypeNumber="11200" lineID="1703" timingPoint="true" departureFix="true" zuggattung="DGS 36.6"/>
+				<entry stationID="HLEA" trackID="G-1000" bstfahrweg="HHZ-HNH" departure="05:07:42" regularRunningTime="7" requestedDeparture="05:07:42" requestedTrackID="G-1000" requestedBstFahrweg="HHZ-HNH" type="pass" trainTypeNumber="11200" timingPoint="true" zuggattung="DGS 36.6"/>
+				<entry stationID="HNHG" trackID="G-1000" bstfahrweg="HHZ-HNH" departure="05:07:49" regularRunningTime="357" requestedDeparture="05:07:49" requestedTrackID="G-1000" requestedBstFahrweg="HHZ-HNH" type="pass" trainTypeNumber="11200" timingPoint="true" zuggattung="DGS 36.6"/>
+				<entry stationID="HNH" trackID="A-5" bstfahrweg="HHZ-HNH5" departure="05:13:58" minStopTime="12" stopTime="12" RTMargin2="0" requestedArrival="05:13:46" requestedDeparture="05:13:58" requestedTrackID="A-5" requestedBstFahrweg="HHZ-HNH5" type="stop" trainTypeNumber="11200" timingPoint="true" zuggattung="DGS 36.6"/>
+			</timetableentries>
+		</train>
+		<train number="82045" class="NGz" pattern="/NGz/DGS/Ohne Linie/HNH-HSR W/hin" name="DGS/82045/0/PP + DGS/82045/1/PP" description="82045/1" typeNumber="11201" line="Ohne Linie" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="HNH" trackID="B-6" bstfahrweg="HNH6-HHZ" dwegName="1-1000" departure="12:00:00" minStopTime="12" stopTime="12" regularRunningTime="306" requestedArrival="11:59:48" requestedDeparture="12:00:00" requestedTrackID="B-6" requestedBstFahrweg="HNH6-HHZ" type="stop" trainTypeNumber="11201" lineID="1703" timingPoint="true" departureFix="true" zuggattung="DGS 36.5"/>
+				<entry stationID="HNHG" trackID="G-1000" bstfahrweg="HNH-HHZ" departure="12:05:06" regularRunningTime="8" requestedDeparture="12:05:06" requestedTrackID="G-1000" requestedBstFahrweg="HNH-HHZ" type="pass" trainTypeNumber="11201" timingPoint="true" zuggattung="DGS 36.5"/>
+				<entry stationID="HLEA" trackID="G-1000" bstfahrweg="HNH-HHZ" departure="12:05:14" regularRunningTime="246" requestedDeparture="12:05:14" requestedTrackID="G-1000" requestedBstFahrweg="HNH-HHZ" type="pass" trainTypeNumber="11201" timingPoint="true" zuggattung="DGS 36.5"/>
+				<entry stationID="HHZ" trackID="Y-801" bstfahrweg="HNH(1703)-801F/149A-HH(1705) &lt;-&gt; HH(1705)-302F/801F/801C-HKUR" departure="12:43:38" minStopTime="900" stopTime="2058" regularRunningTime="240" requestedArrival="12:09:20" requestedDeparture="12:43:38" requestedTrackID="Y-801" requestedBstFahrweg="HNH(1703)-801F/149A-HH(1705) &lt;-&gt; HH(1705)-302F/801F/801C-HKUR" type="stop" trainTypeNumber="11201" timingPoint="true" departureFix="true" zuggattung="DGS 36.5"/>
+				<entry stationID="HSR W" stationName="Seelze Rbf W" trackID="G-5" bstfahrweg="HSR N-005-HGUE" departure="12:52:08" RTMargin2="0" requestedDeparture="12:52:08" requestedTrackID="G-5" requestedBstFahrweg="HSR N-005-HGUE" type="end" lineID="1750" timingPoint="true" zuggattung="DGS 36.5"/>
+			</timetableentries>
+		</train>
+		<train number="95074" class="NGz" pattern="/NGz/DGS/Ohne Linie/HNH-HWAM/rück" name="DGS/95074/222/zi + DGS/95074/1/zi" description="95074/1+" typeNumber="11185" line="Ohne Linie" lineOp="unbekannt" constructionState="verkehrt">
+			<header>
+				<service opday="8" extOpday="0" from="2011-10-20" until="2011-10-20"/>
+			</header>
+			<timetableentries>
+				<entry stationID="H814W" stationName="Auto1" RTMargin2="0" type="begin" relevantInNet="false" lineID="1750"/>
+				<entry stationID="HHZ" trackID="Y-803" bstfahrweg="HKUR(1701)-803D/803E/149A-HH(1705) &lt;-&gt; HH(1705)-302F/803E-HNH(1703)" departure="16:19:48" minStopTime="1200" stopTime="1198" regularRunningTime="378" requestedArrival="15:59:50" requestedDeparture="16:19:48" requestedTrackID="Y-803" requestedBstFahrweg="HKUR(1701)-803D/803E/149A-HH(1705) &lt;-&gt; HH(1705)-302F/803E-HNH(1703)" type="stop" trainTypeNumber="11185" lineID="1703" timingPoint="true" zuggattung="DGS 36.5"/>
+				<entry stationID="HLEA" trackID="G-1000" bstfahrweg="HHZ-HNH" departure="16:26:06" regularRunningTime="7" requestedDeparture="16:26:06" requestedTrackID="G-1000" requestedBstFahrweg="HHZ-HNH" type="pass" trainTypeNumber="11185" timingPoint="true" zuggattung="DGS 36.5"/>
+				<entry stationID="HNHG" trackID="G-1000" bstfahrweg="HHZ-HNH" departure="16:26:13" regularRunningTime="356" requestedDeparture="16:26:13" requestedTrackID="G-1000" requestedBstFahrweg="HHZ-HNH" type="pass" trainTypeNumber="11185" timingPoint="true" zuggattung="DGS 36.5"/>
+				<entry stationID="HNH" trackID="A-5" bstfahrweg="HHZ-HNH5" departure="16:32:21" minStopTime="12" stopTime="12" RTMargin2="0" requestedArrival="16:32:09" requestedDeparture="16:32:21" requestedTrackID="A-5" requestedBstFahrweg="HHZ-HNH5" type="stop" trainTypeNumber="11185" timingPoint="true" zuggattung="DGS 36.5"/>
+			</timetableentries>
+		</train>
+	</timetable>
+</railsys>

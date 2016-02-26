@@ -1,0 +1,77 @@
+? Stromart: ohne Stromart
+? Rutkommentar: Regio Shuttle, RS 1.3 -120, 1tlg., 2x265kW
+? Eisenbahnunternehmen: DB
+? TriebfahrzeugBaureiheTyp: D
+? Triebfahrzeugart: Brennkrafttriebwagen(ohne Schienenomnibusse)(VT)
+? Achslast: 14 t
+? Ausrüstung mit automatischer Kupplung: ja
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 60 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+? Bremsgewicht: 81 t in Bremsstellung druckluftbediente Personenzugbremse mit zusätzlicher Magnetschienenbremse
+Vmax [km/h]          120.000
+TraktionsTyp Diesel
+Loklaenge [m]         26.000
+Lokmasse [t]          48.300
+Reibmasse [t]         48.300
+Haftreibungswert       1.000
+Rholok (-)             6.630
+Rutkommentar        Regio Shuttle, RS 1.3 -120, 1tlg., 2x265kW
+ST      ge     0.000  67.000    3.400  67.000    0.000   0.000
+ST      ge     3.400  67.000    6.800  67.000    0.000   0.000
+ST      ge     6.800  67.000   10.200  67.000    0.000   0.000
+ST      ge    10.200  67.000   13.600  67.000    0.000   0.000
+ST      ge    13.600  67.000   17.000  67.000    0.000   0.000
+ST      ge    17.000  67.001   19.600  61.769    0.000   0.000
+ST      ge    19.600  61.769   22.200  56.953    0.000   0.000
+ST      ge    22.200  56.953   24.800  52.553    0.000   0.000
+ST      ge    24.800  52.553   27.400  48.569    0.000   0.000
+ST      ge    27.400  48.569   30.000  45.001    0.000   0.000
+ST      ge    30.000  45.002   33.000  41.142    0.000   0.000
+ST      ge    33.000  41.142   36.000  37.762    0.000   0.000
+ST      ge    36.000  37.762   39.000  34.863    0.000   0.000
+ST      ge    39.000  34.863   42.000  32.443    0.000   0.000
+ST      ge    42.000  32.443   45.000  30.503    0.000   0.000
+ST      ge    45.000  30.500   47.000  30.368    0.000   0.000
+ST      ge    47.000  30.368   49.000  30.252    0.000   0.000
+ST      ge    49.000  30.252   51.000  30.152    0.000   0.000
+ST      ge    51.000  30.152   53.000  30.068    0.000   0.000
+ST      ge    53.000  30.068   55.000  30.000    0.000   0.000
+ST      ge    55.000  30.000   58.000  28.500    0.000   0.000
+ST      ge    58.000  28.500   61.000  27.000    0.000   0.000
+ST      ge    61.000  27.000   64.000  25.500    0.000   0.000
+ST      ge    64.000  25.500   67.000  24.000    0.000   0.000
+ST      ge    67.000  24.000   70.000  22.500    0.000   0.000
+ST      ge    70.000  22.499   72.000  22.266    0.000   0.000
+ST      ge    72.000  22.266   74.000  21.999    0.000   0.000
+ST      ge    74.000  21.999   76.000  21.699    0.000   0.000
+ST      ge    76.000  21.699   78.000  21.366    0.000   0.000
+ST      ge    78.000  21.366   80.000  20.999    0.000   0.000
+ST      ge    80.000  20.999   83.200  20.312    0.000   0.000
+ST      ge    83.200  20.312   86.400  19.519    0.000   0.000
+ST      ge    86.400  19.519   89.600  18.619    0.000   0.000
+ST      ge    89.600  18.619   92.800  17.612    0.000   0.000
+ST      ge    92.800  17.612   96.000  16.498    0.000   0.000
+ST      ge    96.000  16.500   97.400  16.500    0.000   0.000
+ST      ge    97.400  16.500   98.800  16.500    0.000   0.000
+ST      ge    98.800  16.500  100.200  16.500    0.000   0.000
+ST      ge   100.200  16.500  101.600  16.500    0.000   0.000
+ST      ge   101.600  16.500  103.000  16.500    0.000   0.000
+ST      ge   103.000  16.509  106.400  15.572    0.000   0.000
+ST      ge   106.400  15.572  109.800  14.754    0.000   0.000
+ST      ge   109.800  14.754  113.200  14.054    0.000   0.000
+ST      ge   113.200  14.054  116.600  13.473    0.000   0.000
+ST      ge   116.600  13.473  120.000  13.010    0.000   0.000
+LW  vplus15         345.890778       8.704128       0.290376       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

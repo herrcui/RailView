@@ -1,0 +1,48 @@
+? Stromart: Wechselstrom 16,7 Hz,15kV, 600A
+? Rutkommentar: SBB Re 421;   4,7 MW
+? Eisenbahnunternehmen: SBB
+? TriebfahrzeugBaureiheTyp: S
+? Triebfahrzeugart: Elektrische Lokomotiven
+? Achslast: 21.3 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 95 t in Bremsstellung druckluftbediente Hochleistungsbremse  mit höherem Bremsgewicht als <R>-(R)
+? Bremsgewicht: 64 t in Bremsstellung druckluftbediente Güterzugbremse (bel. Gwg.)
+? Bremsgewicht: 68 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          120.000
+TraktionsTyp elektrisch
+Loklaenge [m]         15.000
+Lokmasse [t]          85.000
+Reibmasse [t]         85.000
+Haftreibungswert       1.000
+Rholok (-)             9.240
+Rutkommentar        SBB Re 421;   4,7 MW
+ST      ge     0.000 255.000   18.000 255.000    0.000   0.000
+ST      ge    18.000 255.000   36.000 255.000    0.000   0.000
+ST      ge    36.000 255.000   54.000 255.000    0.000   0.000
+ST      ge    54.000 255.000   72.000 255.000    0.000   0.000
+ST      ge    72.000 255.000   90.000 255.000    0.000   0.000
+ST      ge    90.000 255.000   94.000 228.720    0.000   0.000
+ST      ge    94.000 228.720   98.000 205.480    0.000   0.000
+ST      ge    98.000 205.480  102.000 185.280    0.000   0.000
+ST      ge   102.000 185.280  106.000 168.120    0.000   0.000
+ST      ge   106.000 168.120  110.000 154.000    0.000   0.000
+ST      ge   110.000 154.000  112.000 147.776    0.000   0.000
+ST      ge   112.000 147.776  114.000 142.064    0.000   0.000
+ST      ge   114.000 142.064  116.000 136.864    0.000   0.000
+ST      ge   116.000 136.864  118.000 132.176    0.000   0.000
+ST      ge   118.000 132.176  120.000 128.000    0.000   0.000
+LW  vplus15        2676.658447       3.969126       0.132435       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

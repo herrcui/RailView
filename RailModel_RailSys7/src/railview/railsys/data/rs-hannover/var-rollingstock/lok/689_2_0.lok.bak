@@ -1,0 +1,61 @@
+? Stromart: ohne Stromart
+? Rutkommentar: Regio Citadis dieselhybrid; Nennleistung=588kW      neu
+? Eisenbahnunternehmen: DB
+? TriebfahrzeugBaureiheTyp: D
+? Triebfahrzeugart: Brennkrafttriebwagen(ohne Schienenomnibusse)(VT)
+? Achslast: 11 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: ja
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: ja
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 95 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          100.000
+TraktionsTyp Diesel
+Loklaenge [m]         38.000
+Lokmasse [t]          70.500
+Reibmasse [t]         70.500
+Haftreibungswert       1.000
+Rholok (-)             3.970
+Rutkommentar        Regio Citadis dieselhybrid; Nennleistung=588kW      neu
+ST      ge     0.000  79.100    5.000  79.100    0.000   0.000
+ST      ge     5.000  79.100   10.000  79.100    0.000   0.000
+ST      ge    10.000  79.100   15.000  79.100    0.000   0.000
+ST      ge    15.000  79.100   20.000  79.100    0.000   0.000
+ST      ge    20.000  79.100   25.000  79.100    0.000   0.000
+ST      ge    25.000  79.197   26.600  74.511    0.000   0.000
+ST      ge    26.600  74.511   28.200  70.249    0.000   0.000
+ST      ge    28.200  70.249   29.800  66.410    0.000   0.000
+ST      ge    29.800  66.410   31.400  62.993    0.000   0.000
+ST      ge    31.400  62.993   33.000  60.000    0.000   0.000
+ST      ge    33.000  60.000   35.400  56.012    0.000   0.000
+ST      ge    35.400  56.012   37.800  52.418    0.000   0.000
+ST      ge    37.800  52.418   40.200  49.218    0.000   0.000
+ST      ge    40.200  49.218   42.600  46.412    0.000   0.000
+ST      ge    42.600  46.412   45.000  44.000    0.000   0.000
+ST      ge    45.000  44.000   49.000  40.505    0.000   0.000
+ST      ge    49.000  40.505   53.000  37.403    0.000   0.000
+ST      ge    53.000  37.403   57.000  34.695    0.000   0.000
+ST      ge    57.000  34.695   61.000  32.382    0.000   0.000
+ST      ge    61.000  32.382   65.000  30.462    0.000   0.000
+ST      ge    65.000  30.462   68.000  27.879    0.000   0.000
+ST      ge    68.000  27.879   71.000  25.552    0.000   0.000
+ST      ge    71.000  25.552   74.000  23.482    0.000   0.000
+ST      ge    74.000  23.482   77.000  21.668    0.000   0.000
+ST      ge    77.000  21.668   80.000  20.109    0.000   0.000
+ST      ge    80.000  20.109   84.000  18.277    0.000   0.000
+ST      ge    84.000  18.277   88.000  16.637    0.000   0.000
+ST      ge    88.000  16.637   92.000  15.189    0.000   0.000
+ST      ge    92.000  15.189   96.000  13.933    0.000   0.000
+ST      ge    96.000  13.933  100.000  12.870    0.000   0.000
+LW  vplus15        2192.387939      10.159678       0.338445       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

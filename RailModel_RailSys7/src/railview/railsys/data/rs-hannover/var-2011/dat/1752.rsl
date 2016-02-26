@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<line lineID="1752" name="Han-Linden Hafen- Abzw Empelde" trafficRouting="on_the_right" type="local" dependentLines="hema hlih">
+	<version major="1" minor="2" patchlevel="0" comment=""/>
+	<stations/>
+	<nodes>
+		<node nodeID="99628" description="Verbindungs-Knoten" kilometre="20.510" x="4784.44" y="1500" xNet="3441100" yNet="10078500" xWGS84="2920.9" yWGS84="-1300"/>
+	</nodes>
+	<links>
+		<link source="99546.hlih" target="99628" gradient="-2.4" vmax="80" vmaxr="80" bidirectional="true" electrified="true"/>
+		<link source="99628" target="75522.hema" gradient="-2.4" vmax="80" vmaxr="80" bidirectional="true" electrified="true"/>
+	</links>
+	<dependentLinks/>
+	<blockSections>
+		<blockSection presignal="99423.hlih" nodes="99422.hlih 99423.hlih 99424.hlih 99425.hlih 99427.hlih 99502.hlih 99503.hlih 99457.hlih 99529.hlih 99528.hlih 99530.hlih 99531.hlih 99532.hlih 99533.hlih 99534.hlih 99535.hlih 99536.hlih 99537.hlih 99538.hlih 99539.hlih 99540.hlih 99541.hlih 99634.hlih 99542.hlih 99543.hlih 99544.hlih 99545.hlih 99546.hlih 99628 75522.hema 75557.hema 75523.hema 75524.hema" speedIndicators="99537.hlih"/>
+		<blockSection presignal="99453.hlih" nodes="99452.hlih 99453.hlih 99454.hlih 99455.hlih 99456.hlih 99457.hlih 99529.hlih 99528.hlih 99530.hlih 99531.hlih 99532.hlih 99533.hlih 99534.hlih 99535.hlih 99536.hlih 99537.hlih 99538.hlih 99539.hlih 99540.hlih 99541.hlih 99634.hlih 99542.hlih 99543.hlih 99544.hlih 99545.hlih 99546.hlih 99628 75522.hema 75557.hema 75523.hema 75524.hema" speedIndicators="99537.hlih"/>
+		<blockSection presignal="75550.hema" nodes="75551.hema 75550.hema 75549.hema 75548.hema 75545.hema 75547.hema 75546.hema 75521.hema 75519.hema 75518.hema 75517.hema 75514.hema 75516.hema 75530.hema 75529.hema 75528.hema 75527.hema 75526.hema 75525.hema 75524.hema 75523.hema 75557.hema 75522.hema 99628 99546.hlih 99545.hlih 99544.hlih 99543.hlih 99542.hlih 99634.hlih 99541.hlih 99540.hlih" speedIndicators="75530.hema"/>
+	</blockSections>
+	<slipDistances/>
+	<approachControlRoutes/>
+	<stationRoutes/>
+	<evzg/>
+	<evzg-katalog/>
+</line>

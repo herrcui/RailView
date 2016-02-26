@@ -1,0 +1,47 @@
+? Stromart: ohne Stromart
+? Rutkommentar: NE SWEG V102 u. 103
+? Eisenbahnunternehmen: EVU
+? TriebfahrzeugBaureiheTyp: N
+? Triebfahrzeugart: Brennkraftlokomotiven
+? Achslast: 0 t
+? Ausrüstung mit automatischer Kupplung: nein
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: nein
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: nein
+? Wendezugfähigkeit: nein
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 62 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+? Bremsgewicht: 48 t in Bremsstellung druckluftbediente Güterzugbremse (bel. Gwg.)
+Vmax [km/h]           80.000
+TraktionsTyp Diesel
+Loklaenge [m]         13.000
+Lokmasse [t]          66.000
+Reibmasse [t]         66.000
+Haftreibungswert       1.000
+Rholok (-)             6.000
+Rutkommentar        NE SWEG V102 u. 103
+ST      ge     0.000 161.920    1.880 160.317    0.000   0.000
+ST      ge     1.880 160.317    3.760 158.690    0.000   0.000
+ST      ge     3.760 158.690    5.640 157.039    0.000   0.000
+ST      ge     5.640 157.039    7.520 155.364    0.000   0.000
+ST      ge     7.520 155.364    9.400 153.665    0.000   0.000
+ST      ge     9.400 153.388   14.520 123.026    0.000   0.000
+ST      ge    14.520 123.026   19.640  97.954    0.000   0.000
+ST      ge    19.640  97.954   24.760  78.172    0.000   0.000
+ST      ge    24.760  78.172   29.880  63.681    0.000   0.000
+ST      ge    29.880  63.681   35.000  54.480    0.000   0.000
+ST      ge    35.000  54.480   44.000  44.188    0.000   0.000
+ST      ge    44.000  44.188   53.000  35.772    0.000   0.000
+ST      ge    53.000  35.772   62.000  29.229    0.000   0.000
+ST      ge    62.000  29.229   71.000  24.561    0.000   0.000
+ST      ge    71.000  24.561   80.000  21.767    0.000   0.000
+LW  vplus15        1553.904053       0.000000       0.495405       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end

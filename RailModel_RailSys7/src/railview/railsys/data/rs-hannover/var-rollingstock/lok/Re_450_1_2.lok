@@ -1,0 +1,61 @@
+? Stromart: Wechselstrom 16,7 Hz,15kV, 600A
+? Rutkommentar: SBB Re 450 (DPZ)  3,2MW
+? Eisenbahnunternehmen: SBB
+? TriebfahrzeugBaureiheTyp: S
+? Triebfahrzeugart: Elektrische Lokomotiven
+? Achslast: 18.5 t
+? Ausrüstung mit automatischer Kupplung: ja
+? Ausrüstung mit Scharfenbergkupplung: nein
+? Ausrüstung mit CIR-ELKE: nein
+? Ausrüstung mit linienförmiger Zugbeeinflussung: nein
+? Ausrüstung mit punktförmiger Zugbeeinflussung: nein
+? Ausrüstung mit EBuLa: nein
+? Ausrüstung mit Notbremsüberbrückung: ja
+? Wendezugfähigkeit: ja
+? Druckertüchtigt: nein
+? Neigungstechnik: keine
+? Bremsgewicht: 0 t in Bremsstellung druckluftbediente Personenzugbremse (bel. Pwg.)
+Vmax [km/h]          130.000
+TraktionsTyp elektrisch
+Loklaenge [m]         18.000
+Lokmasse [t]          74.000
+Reibmasse [t]         74.000
+Haftreibungswert       1.000
+Rholok (-)            12.000
+Rutkommentar        SBB Re 450 (DPZ)  3,2MW
+ST      ge     0.000 240.000    8.640 240.000    0.000   0.000
+ST      ge     8.640 240.000   17.280 240.000    0.000   0.000
+ST      ge    17.280 240.000   25.920 240.000    0.000   0.000
+ST      ge    25.920 240.000   34.560 240.000    0.000   0.000
+ST      ge    34.560 240.000   43.200 240.000    0.000   0.000
+ST      ge    43.200 240.000   45.160 229.678    0.000   0.000
+ST      ge    45.160 229.678   47.120 220.079    0.000   0.000
+ST      ge    47.120 220.079   49.080 211.204    0.000   0.000
+ST      ge    49.080 211.204   51.040 203.051    0.000   0.000
+ST      ge    51.040 203.051   53.000 195.623    0.000   0.000
+ST      ge    53.000 195.623   55.600 186.569    0.000   0.000
+ST      ge    55.600 186.569   58.200 178.189    0.000   0.000
+ST      ge    58.200 178.189   60.800 170.483    0.000   0.000
+ST      ge    60.800 170.483   63.400 163.450    0.000   0.000
+ST      ge    63.400 163.450   66.000 157.091    0.000   0.000
+ST      ge    66.000 157.091   68.800 150.749    0.000   0.000
+ST      ge    68.800 150.749   71.600 144.829    0.000   0.000
+ST      ge    71.600 144.829   74.400 139.331    0.000   0.000
+ST      ge    74.400 139.331   77.200 134.255    0.000   0.000
+ST      ge    77.200 134.255   80.000 129.600    0.000   0.000
+ST      ge    80.000 129.600   84.000 123.494    0.000   0.000
+ST      ge    84.000 123.494   88.000 117.850    0.000   0.000
+ST      ge    88.000 117.850   92.000 112.666    0.000   0.000
+ST      ge    92.000 112.666   96.000 107.942    0.000   0.000
+ST      ge    96.000 107.942  100.000 103.680    0.000   0.000
+ST      ge   100.000 103.680  106.000  97.896    0.000   0.000
+ST      ge   106.000  97.896  112.000  92.612    0.000   0.000
+ST      ge   112.000  92.612  118.000  87.826    0.000   0.000
+ST      ge   118.000  87.826  124.000  83.540    0.000   0.000
+ST      ge   124.000  83.540  130.000  79.754    0.000   0.000
+LW  vplus15         341.191803       1.277654       0.042183       0.000000       0.000000
+Rueckspeisen         0
+DecParametersatzA       0.000000000    0.000000000    0.000000000    0.000000000    0.000000000
+DecParametersatzB       0.000000000    0.000000000    0.000000000    0.000000000
+Grundlast                     0.000
+end
