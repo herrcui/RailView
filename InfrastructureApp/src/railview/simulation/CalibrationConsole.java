@@ -109,79 +109,77 @@ public class CalibrationConsole {
 	
 	private static List<DisturbanceDefinition> createDistributionDefinitions(List<TrainClassGroup> trainClassGroups) {
 		List<DisturbanceDefinition> distrubanceDefinitions = new ArrayList<DisturbanceDefinition>();
-		
 		for (TrainClassGroup trainClassGroup : trainClassGroups) {
 			if (trainClassGroup.getName().equals("S")) {
 				distrubanceDefinitions.add(new DisturbanceDefinition(DisturbanceType.RUNNINGTIME_EXTENSION,
-						DistributionDefinition.getExpotentialInstance(0.10, Duration.fromTotalSecond(30)),
-						trainClassGroup,
-						null));
+					DistributionDefinition.getExpotentialInstance(0.20, Duration.fromTotalSecond(30)),
+					trainClassGroup,
+					null));
 				
 				distrubanceDefinitions.add(new DisturbanceDefinition(DisturbanceType.DWELLTIME_EXTENSION,
 					DistributionDefinition.getExpotentialInstance(0.10, Duration.fromTotalSecond(15)),
 					trainClassGroup,
 					null));
 				
-				/*
+				
 				distrubanceDefinitions.add(new DisturbanceDefinition(DisturbanceType.ENTRY_DELAY,
-					DistributionDefinition.getExpotentialInstance(0.10, Duration.fromTotalSecond(15)),
-					trainClass,
+					DistributionDefinition.getExpotentialInstance(0.05, Duration.fromTotalSecond(15)),
+					trainClassGroup,
 					null));
-				*/
 			}
 			
 			if (trainClassGroup.equals("Gz")) {
 				distrubanceDefinitions.add(new DisturbanceDefinition(DisturbanceType.RUNNINGTIME_EXTENSION,
-						DistributionDefinition.getExpotentialInstance(0.10, Duration.fromTotalSecond(120)),
-						trainClassGroup,
-						null));
+					DistributionDefinition.getExpotentialInstance(0.30, Duration.fromTotalSecond(120)),
+					trainClassGroup,
+					null));
 					
 				distrubanceDefinitions.add(new DisturbanceDefinition(DisturbanceType.DWELLTIME_EXTENSION,
+					DistributionDefinition.getExpotentialInstance(0.20, Duration.fromTotalSecond(300)),
+					trainClassGroup,
+					null));
+				
+				distrubanceDefinitions.add(new DisturbanceDefinition(DisturbanceType.ENTRY_DELAY,
 					DistributionDefinition.getExpotentialInstance(0.10, Duration.fromTotalSecond(300)),
 					trainClassGroup,
 					null));
-				/*
-				distrubanceDefinitions.add(new DisturbanceDefinition(DisturbanceType.ENTRY_DELAY,
-					DistributionDefinition.getExpotentialInstance(0.10, Duration.fromTotalSecond(300)),
-					trainClass,
-					null));
-				*/
+				
 			}
 			
 			if (trainClassGroup.getName().equals("NRz")) {
 				distrubanceDefinitions.add(new DisturbanceDefinition(DisturbanceType.RUNNINGTIME_EXTENSION,
-						DistributionDefinition.getExpotentialInstance(0.10, Duration.fromTotalSecond(60)),
-						trainClassGroup,
-						null));
+					DistributionDefinition.getExpotentialInstance(0.15, Duration.fromTotalSecond(60)),
+					trainClassGroup,
+					null));
 					
 				distrubanceDefinitions.add(new DisturbanceDefinition(DisturbanceType.DWELLTIME_EXTENSION,
 					DistributionDefinition.getExpotentialInstance(0.10, Duration.fromTotalSecond(45)),
 					trainClassGroup,
 					null));
-				/*
+				
 				distrubanceDefinitions.add(new DisturbanceDefinition(DisturbanceType.ENTRY_DELAY,
-					DistributionDefinition.getExpotentialInstance(0.10, Duration.fromTotalSecond(60)),
-					trainClass,
+					DistributionDefinition.getExpotentialInstance(0.05, Duration.fromTotalSecond(60)),
+					trainClassGroup,
 					null));
-				*/
+				
 			}
 			
 			if (trainClassGroup.getName().equals("FRz")) {
 				distrubanceDefinitions.add(new DisturbanceDefinition(DisturbanceType.RUNNINGTIME_EXTENSION,
-						DistributionDefinition.getExpotentialInstance(0.10, Duration.fromTotalSecond(90)),
-						trainClassGroup,
-						null));
+					DistributionDefinition.getExpotentialInstance(0.10, Duration.fromTotalSecond(90)),
+					trainClassGroup,
+					null));
 					
 				distrubanceDefinitions.add(new DisturbanceDefinition(DisturbanceType.DWELLTIME_EXTENSION,
 					DistributionDefinition.getExpotentialInstance(0.10, Duration.fromTotalSecond(60)),
 					trainClassGroup,
 					null));
-				/*
+				
 				distrubanceDefinitions.add(new DisturbanceDefinition(DisturbanceType.ENTRY_DELAY,
 					DistributionDefinition.getExpotentialInstance(0.10, Duration.fromTotalSecond(60)),
-					trainClass,
+					trainClassGroup,
 					null));
-				*/
+				
 			}
 		}
 			
@@ -193,20 +191,20 @@ public class CalibrationConsole {
 
 		for (TrainClassGroup trainClassGroup : trainClassGroups) {
 			distrubanceDefinitions.add(new DisturbanceDefinition(DisturbanceType.RUNNINGTIME_EXTENSION,
-					DistributionDefinition.getExpotentialInstance(0.3, Duration.fromTotalSecond(600)),
+					DistributionDefinition.getExpotentialInstance(0.5, Duration.fromTotalSecond(600)),
 					trainClassGroup,
 					null));
 			
 			distrubanceDefinitions.add(new DisturbanceDefinition(DisturbanceType.DWELLTIME_EXTENSION,
-				DistributionDefinition.getExpotentialInstance(0.3, Duration.fromTotalSecond(600)),
+				DistributionDefinition.getExpotentialInstance(0.5, Duration.fromTotalSecond(600)),
 				trainClassGroup,
 				null));
-			/*
+			
 			distrubanceDefinitions.add(new DisturbanceDefinition(DisturbanceType.ENTRY_DELAY,
-				DistributionDefinition.getExpotentialInstance(0, Duration.fromTotalSecond(0)),
-				trainClass,
+				DistributionDefinition.getExpotentialInstance(0.5, Duration.fromTotalSecond(600)),
+				trainClassGroup,
 				null));
-			*/
+			
 		}
 			
 		return distrubanceDefinitions;
