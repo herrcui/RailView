@@ -128,7 +128,7 @@ public class CalibrationConsole {
 					null));
 			}
 			
-			if (trainClassGroup.equals("Gz")) {
+			if (trainClassGroup.getName().equals("Gz")) {
 				distrubanceDefinitions.add(new DisturbanceDefinition(DisturbanceType.RUNNINGTIME_EXTENSION,
 					DistributionDefinition.getExpotentialInstance(0.30, Duration.fromTotalSecond(120)),
 					trainClassGroup,
