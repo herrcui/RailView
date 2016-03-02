@@ -135,7 +135,7 @@ public class CalibrationConsole {
 					null));
 					
 				distrubanceDefinitions.add(new DisturbanceDefinition(DisturbanceType.DWELLTIME_EXTENSION,
-					DistributionDefinition.getExpotentialInstance(0.20, Duration.fromTotalSecond(300)),
+					DistributionDefinition.getExpotentialInstance(0.20, Duration.fromTotalSecond(600)),
 					trainClassGroup,
 					null));
 				
