@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.LineChart?>
-<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,14 +13,7 @@
             <content>
               <AnchorPane fx:id="runningPane" minHeight="0.0" minWidth="0.0">
                      <children>
-                        <LineChart fx:id="chart1" layoutX="422.0" layoutY="192.0">
-                          <xAxis>
-                            <CategoryAxis side="BOTTOM" />
-                          </xAxis>
-                          <yAxis>
-                            <NumberAxis side="LEFT" />
-                          </yAxis>
-                        </LineChart>
+                        <ListView fx:id="trainNumbers" layoutX="70.0" layoutY="151.0" prefHeight="404.0" prefWidth="200.0" />
                      </children></AnchorPane>
             </content>
           </Tab>

@@ -3,6 +3,7 @@ package railview.simulation;
 
 import java.io.IOException;
 import java.net.URL;
+
 import javafx.animation.FadeTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -21,6 +22,7 @@ import railapp.simulation.SingleSimulationManager;
 import railapp.simulation.events.EventListener;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.units.Duration;
+import railapp.units.Time;
 import railview.controller.framework.AbstractSimulationController;
 import railview.simulation.ui.GraphPaneController;
 import railview.simulation.ui.DialogPaneController;
@@ -257,6 +259,8 @@ public class SimulationController extends AbstractSimulationController {
 			simulator.getTrainCoordinates(this.updateTime), this.updateTime);
 		updateStatusBar();
 		this.graphPaneController.updateTrainMap(this.simulator.getTrainSimulators());
+//		this.graphPaneController.initialize();
+//		this.graphPaneController.updateChart(this.updateTime);
 	}
 	
 	@Override
