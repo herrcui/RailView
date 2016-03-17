@@ -1,7 +1,10 @@
 package railview.controller.framework;
 
 import javafx.application.Platform;
+import railapp.infrastructure.service.IInfrastructureServiceUtility;
+import railapp.rollingstock.service.IRollingStockServiceUtility;
 import railapp.simulation.SingleSimulationManager;
+import railapp.timetable.service.ITimetableServiceUtility;
 import railapp.units.Time;
 
 public abstract class AbstractSimulationController {
@@ -62,6 +65,10 @@ public abstract class AbstractSimulationController {
 	protected Time updateTime = Time.getInstance(0, 0, 0);
 
 	protected SingleSimulationManager simulator;
+
+	protected IInfrastructureServiceUtility infraServiceUtility;
+	protected IRollingStockServiceUtility rollingStockServiceUtility;
+	protected ITimetableServiceUtility timeTableServiceUtility;
 
 	private boolean isOnPauseCommand = false;
 	private boolean isOnStopCommand = false;

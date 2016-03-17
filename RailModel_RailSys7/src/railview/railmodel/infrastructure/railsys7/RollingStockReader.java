@@ -10,7 +10,7 @@ import railapp.rollingstock.service.IRollingStockServiceUtility;
 import railview.railsys.data.RailsysData;
 
 public class RollingStockReader {
-	public static RollingStockReader getInstance(Path path) {
+	public static RollingStockReader getRailSys7Instance(Path path) {
 		return new RollingStockReader(path);
 	}
 	

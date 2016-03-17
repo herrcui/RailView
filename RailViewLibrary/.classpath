@@ -8,5 +8,6 @@
 	<classpathentry kind="lib" path="/Library/RailModel/RollingstockDefinition.jar"/>
 	<classpathentry kind="lib" path="/Library/RailModel/RailSimulator.jar"/>
 	<classpathentry kind="lib" path="/Library/RailModel/SwarmIntelligence.jar"/>
+	<classpathentry kind="lib" path="/Library/RailModel/TimetableDefinition.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

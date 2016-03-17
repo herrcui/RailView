@@ -11,13 +11,11 @@ import railapp.parser.railsys7.infrastructure.InfrastructureParser;
 import railview.railsys.data.RailsysData;
 
 public class InfrastructureReader {
-	public static InfrastructureReader getInstance(Path path) {
+	public static InfrastructureReader getRailSys7Instance(Path path) {
 		return new InfrastructureReader(path);
 	}
 	
-	// Only used for testing
-	public static InfrastructureReader getInstance() {
-		URL url = RailsysData.class.getResource("\\var-2011");
+	public static InfrastructureReader getRailSys7Instance(URL url) {
 		Path path;
 		try {
 			path = Paths.get(url.toURI());

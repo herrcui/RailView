@@ -10,5 +10,6 @@
 	<classpathentry kind="lib" path="/Library/RailModel/BasicDefinition.jar"/>
 	<classpathentry kind="lib" path="/Library/RailModel/RollingstockDefinition.jar"/>
 	<classpathentry kind="lib" path="/Library/RailModel/TimetableDefinition.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/RailModel_RailSys7"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

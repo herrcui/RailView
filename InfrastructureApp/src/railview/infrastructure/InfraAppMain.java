@@ -6,6 +6,7 @@ import java.net.URL;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railview.infrastructure.editor.InfrastructureEditorController;
 import railview.railmodel.infrastructure.railsys7.InfrastructureReader;
+import railview.railsys.data.RailsysData;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -22,7 +23,8 @@ public class InfraAppMain extends Application {
 	}
 
 	public static void main(String[] args) {
-		infraServiceUtility = InfrastructureReader.getInstance().initialize();
+		infraServiceUtility = InfrastructureReader.getRailSys7Instance(
+			RailsysData.class.getResource("\\var-2011")).initialize();
 		
 		launch(args);
 	}

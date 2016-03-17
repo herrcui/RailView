@@ -8,10 +8,12 @@ import railapp.timetable.service.ITimetableServiceUtility;
 import railview.railmodel.infrastructure.railsys7.InfrastructureReader;
 import railview.railmodel.infrastructure.railsys7.RollingStockReader;
 import railview.railmodel.infrastructure.railsys7.TimetableReader;
+import railview.railsys.data.RailsysData;
 
 public class DoSimConsole {
 	public static void main(String[] args) {
-		IInfrastructureServiceUtility infraServiceUtility = InfrastructureReader.getInstance().initialize();
+		IInfrastructureServiceUtility infraServiceUtility = InfrastructureReader.getRailSys7Instance(
+				RailsysData.class.getResource("\\var-2011")).initialize();
 		Network network = infraServiceUtility.getNetworkService().allNetworks().iterator().next();
 		
 		// Rollilngstock

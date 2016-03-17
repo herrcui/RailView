@@ -3,6 +3,7 @@ package railview.simulation;
 
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Path;
 
 import javafx.animation.FadeTransition;
 import javafx.beans.value.ChangeListener;
@@ -17,13 +18,16 @@ import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import railapp.infrastructure.dto.Network;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.simulation.SingleSimulationManager;
 import railapp.simulation.events.EventListener;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.units.Duration;
-import railapp.units.Time;
 import railview.controller.framework.AbstractSimulationController;
+import railview.railmodel.infrastructure.railsys7.InfrastructureReader;
+import railview.railmodel.infrastructure.railsys7.RollingStockReader;
+import railview.railmodel.infrastructure.railsys7.TimetableReader;
 import railview.simulation.ui.GraphPaneController;
 import railview.simulation.ui.DialogPaneController;
 import railview.infrastructure.container.NetworkPaneController;
@@ -67,7 +71,6 @@ public class SimulationController extends AbstractSimulationController {
 	
 	@FXML
 	private Button unlockButton;
-	
 	
 	@FXML
 	private Slider speedBar;
@@ -236,11 +239,19 @@ public class SimulationController extends AbstractSimulationController {
 	}
 	
 	@FXML
-	    void onButtonAction(ActionEvent event)
-	    {
-	        DialogPaneController testDialog = new DialogPaneController(null);
-	        testDialog.showAndWait();
-	    }
+    public void onButtonAction(ActionEvent event)
+    {
+        DialogPaneController pathDialog = new DialogPaneController(null);
+        pathDialog.showAndWait();
+        this.initiateRailSys7Simulator(pathDialog.getInfrastructurePath(),
+        		pathDialog.getRollingStockPath(),
+        		pathDialog.getTimeTablePath());
+        
+        // TODO: check if it is successful
+        this.networkPaneController
+			.setInfrastructureServiceUtility(this.infraServiceUtility);
+        this.graphPaneController.setTrainList(simulator.getTrainSimulators());
+    }
 	
 
 	public NetworkPaneController getNetworkPaneController() {
@@ -259,8 +270,6 @@ public class SimulationController extends AbstractSimulationController {
 			simulator.getTrainCoordinates(this.updateTime), this.updateTime);
 		updateStatusBar();
 		this.graphPaneController.updateTrainMap(this.simulator.getTrainSimulators());
-//		this.graphPaneController.initialize();
-//		this.graphPaneController.updateChart(this.updateTime);
 	}
 	
 	@Override
@@ -330,6 +339,22 @@ public class SimulationController extends AbstractSimulationController {
 				this.updateTime = this.updateTime.add(updateInterval);
 			}
 		}
+	}
+	
+	private void initiateRailSys7Simulator(Path infraPath, Path rollingstockPath, Path timetablePath) {	
+		infraServiceUtility = InfrastructureReader.getRailSys7Instance(infraPath).initialize();
+		Network network = infraServiceUtility.getNetworkService().allNetworks().iterator().next();
+
+		// Rollilngstock
+		rollingStockServiceUtility = RollingStockReader.getRailSys7Instance(rollingstockPath).initialize();
+
+		// Timetable
+		timeTableServiceUtility = TimetableReader.getRailSys7Instance(timetablePath,
+				infraServiceUtility, rollingStockServiceUtility, network).initialize();
+
+		simulator = SingleSimulationManager.getInstance(infraServiceUtility,
+				rollingStockServiceUtility,
+				timeTableServiceUtility);
 	}
 	   
 	private StackPane networkPane;

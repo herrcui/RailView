@@ -21,7 +21,6 @@ public class NetworkPaneController {
 	@FXML
 	private StackPane stackPane;
 
-
 	final double SCALE_DELTA = 1.1;
 	private InfrastructureElementsPane elementPane;
 	private TrainPane trainPane;

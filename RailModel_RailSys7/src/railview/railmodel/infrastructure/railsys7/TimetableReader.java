@@ -13,7 +13,7 @@ import railapp.timetable.service.ITimetableServiceUtility;
 import railview.railsys.data.RailsysData;
 
 public class TimetableReader {
-	public static TimetableReader getInstance(Path path,
+	public static TimetableReader getRailSys7Instance(Path path,
 			IInfrastructureServiceUtility infraServiceUtility,
 			IRollingStockServiceUtility rollingStockServiceUtility,
 			Network network) {

@@ -11,6 +11,7 @@ import railapp.timetable.service.ITimetableServiceUtility;
 import railview.railmodel.infrastructure.railsys7.InfrastructureReader;
 import railview.railmodel.infrastructure.railsys7.RollingStockReader;
 import railview.railmodel.infrastructure.railsys7.TimetableReader;
+import railview.railsys.data.RailsysData;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -27,7 +28,8 @@ public class DoSim extends Application {
 	}
 
 	public static void main(String[] args) {
-		infraServiceUtility = InfrastructureReader.getInstance().initialize();
+		/*
+		infraServiceUtility = InfrastructureReader.getRailSys7Instance(RailsysData.class.getResource("\\var-2011")).initialize();
 		Network network = infraServiceUtility.getNetworkService().allNetworks().iterator().next();
 
 		// Rollilngstock
@@ -40,37 +42,25 @@ public class DoSim extends Application {
 		simulator = SingleSimulationManager.getInstance(infraServiceUtility,
 				rollingStockServiceUtility,
 				timeTableServiceUtility);
-
+		 */
 		launch(args);
 	}
 
 	private void initRootLayout() {
-		SimulationController controller = this.initializeSimulationController();
-
-		if (this.rootLayout != null) {
-			Scene scene = new Scene(rootLayout);
-			primaryStage.setScene(scene);
-
-			controller.setInfrastructureServiceUtility(infraServiceUtility);
-			controller.setSimulationManager(simulator);
-			primaryStage.show();
-		}
-	}
-
-	private SimulationController initializeSimulationController() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			URL location = SimulationController.class
 					.getResource("SimulationViewer.fxml");
 			loader.setLocation(location);
-
 			this.rootLayout = (AnchorPane) loader.load();
-
-			SimulationController controller = loader.getController();
-			return controller;
 		} catch (IOException e) {
 			e.printStackTrace();
-			return null;
+		}
+
+		if (this.rootLayout != null) {
+			Scene scene = new Scene(rootLayout);
+			primaryStage.setScene(scene);
+			primaryStage.show();
 		}
 	}
 

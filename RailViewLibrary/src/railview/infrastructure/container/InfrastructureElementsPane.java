@@ -26,6 +26,7 @@ public class InfrastructureElementsPane extends PannablePane {
 
 	void setElements(Collection<InfrastructureElement> elements) {
 		this.elements = elements;
+		this.draw();
 	}
 
 	private void draw() {

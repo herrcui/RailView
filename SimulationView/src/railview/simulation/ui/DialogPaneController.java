@@ -16,11 +16,11 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Path;
 import java.util.ResourceBundle;
 
 public class DialogPaneController extends Stage implements Initializable
 {
-	
 	@FXML
 	private AnchorPane anchorPane;
 	
@@ -50,6 +50,10 @@ public class DialogPaneController extends Stage implements Initializable
     
     @FXML
     private Button applyButton;
+    
+    private Path infraPath;
+    private Path rollingStockPath;
+    private Path timetablePath;
 
     public DialogPaneController(Parent parent)
     {
@@ -77,7 +81,19 @@ public class DialogPaneController extends Stage implements Initializable
     @FXML
     private void onApplyButtonAction(ActionEvent event)
     {
-    	
+    	close();
+    }
+    
+    public Path getInfrastructurePath() {
+    	return this.infraPath;
+    }
+    
+    public Path getRollingStockPath() {
+    	return this.rollingStockPath;
+    }
+    
+    public Path getTimeTablePath() {
+    	return this.timetablePath;
     }
     
     private void openInfrastructure() {
@@ -85,9 +101,6 @@ public class DialogPaneController extends Stage implements Initializable
                 new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(final ActionEvent e) {
-                    	
-                    //	configure FileChooser(fileChooser);
-                    //	File file = directoryChooser.showDialog(anchorPane.getScene().getWindows();
                         configureFileChooser(directoryChooser);
                         File file = directoryChooser.showDialog(anchorPane.getScene().getWindow());
                         if (file != null) {
@@ -113,47 +126,39 @@ public class DialogPaneController extends Stage implements Initializable
     
     private void openTimetable() {
     	timetableButton.setOnAction(
-                new EventHandler<ActionEvent>() {
-                    @Override
-                    public void handle(final ActionEvent e) {
-                        configureFileChooser(directoryChooser);
-                        File file = directoryChooser.showDialog(anchorPane.getScene().getWindow());
-                        if (file != null) {
-                            openTime(file);
-                        }
+           new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(final ActionEvent e) {
+                    configureFileChooser(directoryChooser);
+                    File file = directoryChooser.showDialog(anchorPane.getScene().getWindow());
+                    if (file != null) {
+                        openTime(file);
                     }
-                });
-    	}
+                }
+           }
+       );
+    }
     
 
     private static void configureFileChooser(DirectoryChooser directoryChooser){                           
     	directoryChooser.setTitle("Chose the directory");
-        }
+    }
     
     private void openInfra(File directory) {
-    		directory.getPath();    
+    		this.infraPath = directory.toPath();   
     		textOne.setText(directory.getAbsolutePath());
- //   		String idStr = new File(directory.getPath()).getName();
- //           textOne.setText("\\"+idStr);
     }
     
     private void openRolling(File directory) {
-		directory.getPath();    
+    	this.rollingStockPath = directory.toPath();   
 		textTwo.setText(directory.getAbsolutePath());
-}
+    }
     
     private void openTime(File directory) {
-  		directory.getPath();    
+    	this.timetablePath = directory.toPath(); 
   		textThree.setText(directory.getAbsolutePath());
-  }
-    
-    
- /**   private void openInfra(File file) {
-		file.getPath();    
-        textOne.setText(file.getAbsolutePath());
     }
-**/
-
+    
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
@@ -162,8 +167,5 @@ public class DialogPaneController extends Stage implements Initializable
     	openTimetable();
     }
     
-    
-
     DirectoryChooser directoryChooser = new DirectoryChooser();
-//	FileChooser fileChooser = new FileChooser();
 }
