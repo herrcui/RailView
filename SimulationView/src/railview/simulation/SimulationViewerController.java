@@ -19,7 +19,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import railapp.infrastructure.dto.Network;
-import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.simulation.SingleSimulationManager;
 import railapp.simulation.events.EventListener;
 import railapp.simulation.train.AbstractTrainSimulator;
@@ -32,7 +31,7 @@ import railview.simulation.ui.GraphPaneController;
 import railview.simulation.ui.DialogPaneController;
 import railview.infrastructure.container.NetworkPaneController;
 
-public class SimulationController extends AbstractSimulationController {
+public class SimulationViewerController extends AbstractSimulationController {
 	@FXML
 	private AnchorPane networkPaneRoot;
 
@@ -248,8 +247,7 @@ public class SimulationController extends AbstractSimulationController {
         		pathDialog.getTimeTablePath());
         
         // TODO: check if it is successful
-        this.networkPaneController
-			.setInfrastructureServiceUtility(this.infraServiceUtility);
+        this.networkPaneController.setInfrastructureServiceUtility(this.infraServiceUtility);
         this.graphPaneController.setTrainList(simulator.getTrainSimulators());
     }
 	
@@ -258,24 +256,12 @@ public class SimulationController extends AbstractSimulationController {
 		return this.networkPaneController;
 	}
 
-	public void setInfrastructureServiceUtility(
-			IInfrastructureServiceUtility serviceUtility) {
-		this.networkPaneController
-			.setInfrastructureServiceUtility(serviceUtility);
-	}
-
 	@Override
 	protected void updateUI() {
 		networkPaneController.updateTrainCoordinates(
 			simulator.getTrainCoordinates(this.updateTime), this.updateTime);
 		updateStatusBar();
 		this.graphPaneController.updateTrainMap(this.simulator.getTrainSimulators());
-	}
-	
-	@Override
-	public void setSimulationManager(SingleSimulationManager simulator) {
-		super.setSimulationManager(simulator);
-		this.graphPaneController.setTrainList(simulator.getTrainSimulators());
 	}
 
 	private void updateStatusBar() {
