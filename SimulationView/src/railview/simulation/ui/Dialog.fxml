@@ -4,15 +4,16 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="337.0" prefWidth="505.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="307.0" prefWidth="505.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TextField fx:id="textOne" layoutX="60.0" layoutY="70.0" prefHeight="25.0" prefWidth="180.0" />
-      <TextField fx:id="textTwo" layoutX="60.0" layoutY="130.0" prefHeight="25.0" prefWidth="180.0" />
-      <TextField fx:id="textThree" layoutX="60.0" layoutY="190.0" prefHeight="25.0" prefWidth="180.0" />
-      <Button fx:id="infraButton" layoutX="320.0" layoutY="70.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="110.0" text="Infrastructure" />
-      <Button fx:id="rollingstockButton" layoutX="320.0" layoutY="130.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="110.0" text="Rollingstock" />
-      <Button fx:id="timetableButton" layoutX="320.0" layoutY="190.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="110.0" text="Timetable" />
-      <Button layoutX="390.0" layoutY="287.0" mnemonicParsing="false" onAction="#onCancelButtonAction" prefWidth="80.0" text="Cancel" />
-      <Button fx:id="applyButton" layoutX="290.0" layoutY="287.0" mnemonicParsing="false" onAction="#onApplyButtonAction" prefWidth="80.0" text="Apply" />
+      <TextField fx:id="textOne" layoutX="213.0" layoutY="95.0" prefHeight="25.0" prefWidth="214.0" />
+      <TextField fx:id="textTwo" layoutX="213.0" layoutY="145.0" prefHeight="25.0" prefWidth="214.0" />
+      <TextField fx:id="textThree" layoutX="213.0" layoutY="195.0" prefHeight="25.0" prefWidth="214.0" />
+      <Button fx:id="infraButton" layoutX="60.0" layoutY="95.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="110.0" text="Infrastructure" />
+      <Button fx:id="rollingstockButton" layoutX="60.0" layoutY="145.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="110.0" text="Rollingstock" />
+      <Button fx:id="timetableButton" layoutX="60.0" layoutY="195.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="110.0" text="Timetable" />
+      <Button layoutX="385.0" layoutY="263.0" mnemonicParsing="false" onAction="#onCancelButtonAction" prefWidth="80.0" text="Cancel" />
+      <Button fx:id="applyButton" layoutX="280.0" layoutY="263.0" mnemonicParsing="false" onAction="#onApplyButtonAction" prefWidth="80.0" text="Apply" />
+      <Button fx:id="rootButton" layoutX="60.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="367.0" text="root directory" />
    </children>
 </AnchorPane>

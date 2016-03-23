@@ -88,7 +88,6 @@ public class GraphPaneController {
 	}
 	
 	public void updateTrainMap(List<AbstractTrainSimulator> trainList) {
-		// TODO
 		CopyOnWriteArrayList<AbstractTrainSimulator> tempList = new
 			CopyOnWriteArrayList<AbstractTrainSimulator>();
 		tempList.addAll(trainList);
@@ -131,17 +130,29 @@ public class GraphPaneController {
 		chart2 = new LineChart<>(xAxis, yAxisChart1);
 		xAxis.setLabel("Meter");
 		yAxisChart1.setLabel("maxKmH");
+		
+		LinkedHashMap<Double, Double> speedLimit = getSpeedLimit(train);
+
 		XYChart.Series<Number, Number> speedLimitSeries = new Series<Number, Number>();
-		for(Map.Entry<Double,Double> entry: getSpeedLimit(train).entrySet()) {
-			speedLimitSeries.getData().add(new Data<Number, Number>(entry.getKey(), entry.getValue()));
-		}
+		double y = -1;   
+		speedLimitSeries.getData().add(new Data<Number, Number>(0, y));   
+	    for(Map.Entry<Double,Double> entry: getSpeedLimit(train).entrySet()) {
+	        if (y >= 0) {
+	            speedLimitSeries.getData().add(new Data<Number, Number>(entry.getKey(), y));
+	        }
+	        speedLimitSeries.getData().add(new Data<Number, Number>(entry.getKey(), entry.getValue()));
+	        y = entry.getValue();
+	    }
+;
+	   
+	    // TODO last point
+		
 		chart2.getData().add(speedLimitSeries);
 		runningPane.getChildren().addAll(chart2);
 		chart2.setLayoutX(500);
 		chart2.setLayoutY(350);
 			
 	}
-	
 	
 	
 	private Map<Double, Double> getCourseForVelocity(AbstractTrainSimulator train) {
@@ -158,9 +169,9 @@ public class GraphPaneController {
 		return velocityMap;
 	}
 	
-	private Map<Double, Double> getSpeedLimit(AbstractTrainSimulator train) {
+	private LinkedHashMap<Double, Double> getSpeedLimit(AbstractTrainSimulator train) {
 		// Velocity
-		Map<Double, Double> speedLimitMap = new LinkedHashMap<Double, Double>();
+		LinkedHashMap<Double, Double> speedLimitMap = new LinkedHashMap<Double, Double>();
 		
 		LinkPath path = train.getTripSection().getFullPath();
 		

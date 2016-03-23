@@ -51,6 +51,9 @@ public class DialogPaneController extends Stage implements Initializable
     @FXML
     private Button applyButton;
     
+    @FXML
+    private Button rootButton;
+    
     private Path infraPath;
     private Path rollingStockPath;
     private Path timetablePath;
@@ -97,6 +100,16 @@ public class DialogPaneController extends Stage implements Initializable
     }
     
     private void openInfrastructure() {
+    	
+    	rootButton.setOnAction(
+                new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(final ActionEvent e) {
+                        File file = directoryChooser.showDialog(anchorPane.getScene().getWindow());
+                        directoryChooser.setInitialDirectory(file);
+                    }
+                });
+    	
     	infraButton.setOnAction(
                 new EventHandler<ActionEvent>() {
                     @Override
@@ -110,7 +123,17 @@ public class DialogPaneController extends Stage implements Initializable
                 });
     	}
      
-    private void openRollingstock() {
+    private void openRollingstock() {    	
+    	
+    	rootButton.setOnAction(
+                new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(final ActionEvent e) {
+                        File file = directoryChooser.showDialog(anchorPane.getScene().getWindow());
+                        directoryChooser.setInitialDirectory(file);
+                    }
+                });
+    	
     	rollingstockButton.setOnAction(
                 new EventHandler<ActionEvent>() {
                     @Override
@@ -125,6 +148,16 @@ public class DialogPaneController extends Stage implements Initializable
     	}
     
     private void openTimetable() {
+    	
+    	rootButton.setOnAction(
+                new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(final ActionEvent e) {
+                        File file = directoryChooser.showDialog(anchorPane.getScene().getWindow());
+                        directoryChooser.setInitialDirectory(file);
+                    }
+                });
+    	
     	timetableButton.setOnAction(
            new EventHandler<ActionEvent>() {
                 @Override

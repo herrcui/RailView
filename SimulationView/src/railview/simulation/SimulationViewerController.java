@@ -34,6 +34,9 @@ import railview.infrastructure.container.NetworkPaneController;
 public class SimulationViewerController extends AbstractSimulationController {
 	@FXML
 	private AnchorPane networkPaneRoot;
+	
+	@FXML 
+	private AnchorPane rootPane;
 
 	@FXML
 	private Label timeLabel;
@@ -119,6 +122,7 @@ public class SimulationViewerController extends AbstractSimulationController {
 	
 			graphPane.setVisible(false);
 			symbolPane.setOpacity(0.0);
+			menuPane.setOpacity(1.0);
 
 			
 		} catch (IOException e) {
@@ -229,12 +233,14 @@ public class SimulationViewerController extends AbstractSimulationController {
 	public void graphButtonClicked() {
 		graphPane.setVisible(true);
 		networkPane.setVisible(false);
+		menuPane.setVisible(false);
 	}
 
 	@FXML
 	public void swarmButtonClicked() {
 		graphPane.setVisible(false);
 		networkPane.setVisible(true);
+		menuPane.setVisible(true);
 	}
 	
 	@FXML
