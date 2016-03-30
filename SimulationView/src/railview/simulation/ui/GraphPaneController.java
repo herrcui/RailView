@@ -1,10 +1,8 @@
 package railview.simulation.ui;
 
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -13,8 +11,6 @@ import railapp.infrastructure.path.dto.LinkPath;
 import railapp.rollingstock.dto.SimpleTrain;
 import railapp.simulation.runingdynamics.sections.DiscretePoint;
 import railapp.simulation.train.AbstractTrainSimulator;
-import railapp.units.Duration;
-import railapp.units.Time;
 import railapp.units.UnitUtility;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -54,21 +50,7 @@ public class GraphPaneController {
 	@FXML
 	public void initialize() {
         tabPane.setSide(Side.BOTTOM);
-        
-/**        anchorPane.widthProperty().addListener(new ChangeListener<Number>() {
-		    @Override public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneWidth, Number newSceneWidth) {
-		    	chart1.setLayoutX((newSceneWidth.doubleValue() / 2)- (chart1.prefWidth(-1) / 2));
-		    }
-		});
-        
 
-        anchorPane.heightProperty().addListener(new ChangeListener<Number>() {
-		    @Override public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneHeight, Number newSceneHeight) {
-		    	chart1.setLayoutY((newSceneHeight.doubleValue() / 2)- (chart1.prefHeight(-1) / 2));
-		    }
-		});
- **/       
- 
         updateChart();
 	}
 	
@@ -130,8 +112,6 @@ public class GraphPaneController {
 		chart2 = new LineChart<>(xAxis, yAxisChart1);
 		xAxis.setLabel("Meter");
 		yAxisChart1.setLabel("maxKmH");
-		
-		LinkedHashMap<Double, Double> speedLimit = getSpeedLimit(train);
 
 		XYChart.Series<Number, Number> speedLimitSeries = new Series<Number, Number>();
 		double y = -1;   
@@ -143,9 +123,6 @@ public class GraphPaneController {
 	        speedLimitSeries.getData().add(new Data<Number, Number>(entry.getKey(), entry.getValue()));
 	        y = entry.getValue();
 	    }
-;
-	   
-	    // TODO last point
 		
 		chart2.getData().add(speedLimitSeries);
 		runningPane.getChildren().addAll(chart2);
