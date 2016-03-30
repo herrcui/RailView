@@ -154,10 +154,8 @@ public class GraphPaneController {
 			
 	}
 	
-	
+	// Map: Meter, VelocityInKmH
 	private Map<Double, Double> getCourseForVelocity(AbstractTrainSimulator train) {
-		// Velocity
-		
 		Map<Double, Double> velocityMap = new LinkedHashMap<Double, Double>();
 		double meter = 0; // x
 		double velocityInKmH = 0; // y
@@ -167,6 +165,20 @@ public class GraphPaneController {
 			velocityMap.put(meter, velocityInKmH);
 		}
 		return velocityMap;
+	}
+	
+	// Map: Meter, TimeInSecond
+	private Map<Double, Double> getCourseForTime(AbstractTrainSimulator train) {
+		Map<Double, Double> timeMap = new LinkedHashMap<Double, Double>();
+		double meter = 0; // x
+		double timeInSecond = 0; // y
+		
+		for (DiscretePoint point : train.getCourse().getPoints()) {
+			timeInSecond += point.getDuration().getTotalSecond();
+			meter += point.getDistance().getMeter();
+			timeMap.put(meter, timeInSecond);
+		}
+		return timeMap;
 	}
 	
 	private LinkedHashMap<Double, Double> getSpeedLimit(AbstractTrainSimulator train) {
