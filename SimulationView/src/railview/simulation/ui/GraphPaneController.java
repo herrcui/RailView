@@ -79,7 +79,7 @@ public class GraphPaneController {
 
         updateChart();
         
-        chart2 = createChart();
+/**     chart2 = createChart();
         
         final StackPane chartContainer = new StackPane();
 		chartContainer.getChildren().add(chart2);
@@ -123,7 +123,7 @@ public class GraphPaneController {
 		controls.getChildren().addAll(zoomButton, resetButton);
 		
 		runningPane.getChildren().add(controls);
-		
+		**/
 	}
 	
 	private LineChart<Number, Number> createChart() {
@@ -166,8 +166,9 @@ public class GraphPaneController {
 		for (AbstractTrainSimulator trainSimulator : tempList) {
 			this.trainMap.put(trainSimulator.getTrain().getNumber(), trainSimulator);
 			String trainNumber = trainSimulator.getTrain().getNumber();
-			if (trainSimulator.getTrain().getStatus() != SimpleTrain.INACTIVE) {
-			numbers.add(trainNumber);
+			if (trainSimulator.getTrain().getStatus() != SimpleTrain.INACTIVE &&
+					!numbers.contains(trainNumber)) {
+				numbers.add(trainNumber);
 			}
 		}
 		trainNumbers.setItems(numbers);
