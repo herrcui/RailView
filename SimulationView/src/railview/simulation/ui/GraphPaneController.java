@@ -173,6 +173,7 @@ public class GraphPaneController {
 	}
 		chart.getData().add(CourseForVelocitySeries);
 		XYChart.Series<Number, Number> speedLimitSeries = new Series<Number, Number>();
+		
 		speedLimitSeries.setName("speedlimit");
 		double y = -1;   
 		speedLimitSeries.getData().add(new Data<Number, Number>(0, y));   
@@ -262,6 +263,10 @@ public class GraphPaneController {
 			
 			meter += edge.getLength().getMeter();
 		}
+		
+		speedLimitMap.put(lastMeter, maxKmH);
+		speedLimitMap.put(meter, maxKmH);
+		
 		return speedLimitMap;
 	}
 
