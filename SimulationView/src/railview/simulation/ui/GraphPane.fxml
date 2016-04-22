@@ -13,7 +13,9 @@
             <content>
               <AnchorPane fx:id="runningPane" minHeight="0.0" minWidth="0.0">
                      <children>
-                        <ListView fx:id="trainNumbers" layoutX="70.0" layoutY="151.0" prefHeight="404.0" prefWidth="200.0" />
+                        <ListView fx:id="trainNumbers" layoutX="900.0" layoutY="200.0" prefHeight="404.0" prefWidth="200.0" />
+                        <AnchorPane fx:id="pane2" layoutX="30.0" layoutY="10.0" prefHeight="226.0" prefWidth="249.0" />
+                        <AnchorPane fx:id="pane1" layoutX="30.0" layoutY="410.0" prefHeight="229.0" prefWidth="257.0" />
                      </children></AnchorPane>
             </content>
           </Tab>

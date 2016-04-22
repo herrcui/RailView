@@ -5,52 +5,28 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
-
-
-
-
-
-
-
-
-
-
 import railapp.infrastructure.path.dto.LinkEdge;
 import railapp.infrastructure.path.dto.LinkPath;
 import railapp.rollingstock.dto.SimpleTrain;
 import railapp.simulation.runingdynamics.sections.DiscretePoint;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.units.UnitUtility;
-import javafx.beans.binding.BooleanBinding;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.geometry.Insets;
-import javafx.geometry.Point2D;
-import javafx.geometry.Pos;
 import javafx.geometry.Side;
-import javafx.scene.Node;
-import javafx.scene.chart.Chart;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Data;
 import javafx.scene.chart.XYChart.Series;
-import javafx.scene.control.Button;
+
 import javafx.scene.control.ListView;
 import javafx.scene.control.TabPane;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
+
 
 public class GraphPaneController {
 	
@@ -62,85 +38,92 @@ public class GraphPaneController {
 	
 	@FXML
 	private AnchorPane runningPane;
-
+	
+	@FXML
+	private AnchorPane pane1;
+	
+	@FXML
+	private AnchorPane pane2;
 	
 	@FXML
 	private ListView<String> trainNumbers;
 	
-	NumberAxis yAxisChart1 = new NumberAxis();
-	NumberAxis xAxis = new NumberAxis();	
-	NumberAxis yAxis = new NumberAxis();
-	NumberAxis xAxis2 = new NumberAxis();	
-	NumberAxis yAxis2 = new NumberAxis();
-	
 	@FXML
 	public void initialize() {
         tabPane.setSide(Side.BOTTOM);
+        
+        chart1 = createCourseForTimeChart();
+        chart2 = createVelocityChart();
+        
+        pane1.getChildren().add(chart1);
+        pane2.getChildren().add(chart2);
+  
+	    addZooming();
 
-        updateChart();
-        
-/**     chart2 = createChart();
-        
-        final StackPane chartContainer = new StackPane();
-		chartContainer.getChildren().add(chart2);
-		
-        final Rectangle zoomRect = new Rectangle();
-        zoomRect.setManaged(false);
-		zoomRect.setFill(Color.LIGHTSEAGREEN.deriveColor(0, 1, 1, 0.5));
-		chartContainer.getChildren().add(zoomRect);
-		
-		setUpZooming(zoomRect, chart2);
-		
-        final Button zoomButton = new Button("Zoom");
-		final Button resetButton = new Button("Reset");
-		zoomButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                doZoom(zoomRect, chart2);
-            }
-        });
-		resetButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                xAxis.setLowerBound(0);
-                xAxis.setUpperBound(1000);
-                yAxis.setLowerBound(0);
-                yAxis.setUpperBound(1000);
-                
-                zoomRect.setWidth(0);
-                zoomRect.setHeight(0);
-            }
-        });
-		
-		final HBox controls = new HBox(10);
-		controls.setPadding(new Insets(10));
-		controls.setAlignment(Pos.CENTER);
-		
-		final BooleanBinding disableControls = 
-		        zoomRect.widthProperty().lessThan(5)
-		        .or(zoomRect.heightProperty().lessThan(5));
-		zoomButton.disableProperty().bind(disableControls);
-		controls.getChildren().addAll(zoomButton, resetButton);
-		
-		runningPane.getChildren().add(controls);
-		**/
 	}
 	
-	private LineChart<Number, Number> createChart() {
-	   xAxis = createAxis();
-	    yAxis = createAxis();	    
-	    final LineChart<Number, Number> chart = new LineChart<>(xAxis, yAxis);
+	private void addZooming(){
+        Zoom zoom = new Zoom(chart1, pane1);
+        Zoom zoom2 = new Zoom(chart2, pane2);
+	}
+
+	private LineChart<Number, Number> createVelocityChart() {
+		NumberAxis xAxis = createXAxis();
+	    NumberAxis yAxis = createYAxis();   
+	    LineChart<Number, Number> chart = new LineChart<>(xAxis, yAxis);
+	    chart.setAnimated(false);
+	    chart.setCreateSymbols(false);
+	    trainNumbers.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) { 
+    			System.out.println(getTrain(newValue));		
+       		    drawVelocityTable(getTrain(newValue), chart); 
+
+            }
+        });
 	    return chart ;
 	}
 
-    private NumberAxis createAxis() {
-        final NumberAxis xAxis = new NumberAxis();
-	    xAxis.setAutoRanging(false);
+	private LineChart<Number, Number> createCourseForTimeChart() {
+		NumberAxis xAxis = createXAxis2();
+	    NumberAxis yAxis = createYAxis2();  
+	    LineChart<Number, Number> chart = new LineChart<>(xAxis, yAxis);
+	    chart.setAnimated(false);
+	    chart.setCreateSymbols(false);
+	    trainNumbers.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) { 
+    			System.out.println(getTrain(newValue));		
+    			drawCourseforTimeTable(getTrain(newValue), chart); 
+            }
+        });
+	    return chart ;
+	}
+	
 
+    private NumberAxis createXAxis() {
+        NumberAxis xAxis = new NumberAxis();
         return xAxis;
     }
     
+    private NumberAxis createYAxis() {
+    	NumberAxis yAxis = new NumberAxis();
 
+        return yAxis;
+    }
+    
+    private NumberAxis createXAxis2() {
+        NumberAxis xAxis = new NumberAxis();
+        return xAxis;
+    }
+    
+    private NumberAxis createYAxis2() {
+    	NumberAxis yAxis = new NumberAxis();
+        return yAxis;
+    }
+    
+    
+/**
 	
 	public void updateChart() {
 		  trainNumbers.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
@@ -153,7 +136,7 @@ public class GraphPaneController {
 	            }
 	        });   
 	}
-	
+**/	
 	public void setTrainList(List<AbstractTrainSimulator> trainList) {
         this.updateTrainMap(trainList);
 	}
@@ -162,7 +145,6 @@ public class GraphPaneController {
 		CopyOnWriteArrayList<AbstractTrainSimulator> tempList = new
 			CopyOnWriteArrayList<AbstractTrainSimulator>();
 		tempList.addAll(trainList);
-
 		for (AbstractTrainSimulator trainSimulator : tempList) {
 			this.trainMap.put(trainSimulator.getTrain().getNumber(), trainSimulator);
 			String trainNumber = trainSimulator.getTrain().getNumber();
@@ -181,21 +163,15 @@ public class GraphPaneController {
 	}
 	
 
-	public void drawVelocityTable(AbstractTrainSimulator train) {
-		
-		chart1 = new LineChart<>(xAxis, yAxis);
-//		xAxis.setLabel("Meter");
-		xAxis.setLabel("meter");
-		yAxis.setLabel("kmH");
+	public LineChart<Number, Number> drawVelocityTable(AbstractTrainSimulator train, LineChart<Number, Number> chart) {
+		chart.getData().clear(); 
 		XYChart.Series<Number, Number> CourseForVelocitySeries = new Series<Number, Number>();
 		CourseForVelocitySeries.setName("course for velocity");
 		if (train.getTrain().getStatus() != SimpleTrain.INACTIVE) {
 		for(Map.Entry<Double,Double> entry : getCourseForVelocity(train).entrySet()) {
 			CourseForVelocitySeries.getData().add(new Data<Number, Number>(entry.getKey(), entry.getValue()));
 	}
-		chart1.getData().add(CourseForVelocitySeries);
-		
-
+		chart.getData().add(CourseForVelocitySeries);
 		XYChart.Series<Number, Number> speedLimitSeries = new Series<Number, Number>();
 		speedLimitSeries.setName("speedlimit");
 		double y = -1;   
@@ -207,20 +183,15 @@ public class GraphPaneController {
 	        speedLimitSeries.getData().add(new Data<Number, Number>(entry.getKey(), entry.getValue()));
 	        y = entry.getValue();
 	    }
-	    chart1.getData().add(speedLimitSeries);
-	    
-		runningPane.getChildren().add(chart1);
-		chart1.setLayoutX(500);
-		chart1.setCreateSymbols(false);
+	    chart.getData().add(speedLimitSeries);
+
+		chart.setCreateSymbols(false);
 		}
+		return chart;
 	}
 
-	public void drawCourseforTimeTable(AbstractTrainSimulator train) {
-
-		chart2 = new LineChart<>(xAxis2, yAxis2);
-		xAxis2.setLabel("Meter");
-		yAxis2.setLabel("Time in second");
-
+	public LineChart<Number, Number> drawCourseforTimeTable(AbstractTrainSimulator train, LineChart<Number, Number> chart) {
+		chart.getData().clear(); 
 		XYChart.Series<Number, Number> courseForTimeSeries = new Series<Number, Number>();
 		double y = -1;   
 		courseForTimeSeries.getData().add(new Data<Number, Number>(0, y));   
@@ -228,18 +199,13 @@ public class GraphPaneController {
 			for(Map.Entry<Double,Double> entry : getCourseForTime(train).entrySet()) {
 				courseForTimeSeries.getData().add(new Data<Number, Number>(entry.getKey(), entry.getValue()));
 		}
-			chart2.getData().add(courseForTimeSeries);
-			runningPane.getChildren().add(chart2);
-			chart2.setLayoutX(500);
-			chart2.setLayoutY(400);
-			chart2.setLegendVisible(false);
-			chart2.setCreateSymbols(false);
+			chart.getData().add(courseForTimeSeries);
+			chart.setCreateSymbols(false);
 		}
-		
-		
+		return chart;	
 		
 	}
-	
+
 	// Map: Meter, VelocityInKmH
 	private Map<Double, Double> getCourseForVelocity(AbstractTrainSimulator train) {
 		Map<Double, Double> velocityMap = new LinkedHashMap<Double, Double>();
@@ -298,52 +264,7 @@ public class GraphPaneController {
 		}
 		return speedLimitMap;
 	}
-	
-	
-	
-	
-	private void setUpZooming(final Rectangle rect, final LineChart<Number, Number> zoomingNode) {
-        final ObjectProperty<Point2D> mouseAnchor = new SimpleObjectProperty<>();
-        zoomingNode.setOnMousePressed(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                mouseAnchor.set(new Point2D(event.getX(), event.getY()));
-                rect.setWidth(0);
-                rect.setHeight(0);
-            }
-        });
-        zoomingNode.setOnMouseDragged(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                double x = event.getX();
-                double y = event.getY();
-                rect.setX(Math.min(x, mouseAnchor.get().getX()));
-                rect.setY(Math.min(y, mouseAnchor.get().getY()));
-                rect.setWidth(Math.abs(x - mouseAnchor.get().getX()));
-                rect.setHeight(Math.abs(y - mouseAnchor.get().getY()));
-            }
-        });
-    }
-    
-    private void doZoom(Rectangle zoomRect, LineChart<Number, Number> chart) {
-        Point2D zoomTopLeft = new Point2D(zoomRect.getX(), zoomRect.getY());
-        Point2D zoomBottomRight = new Point2D(zoomRect.getX() + zoomRect.getWidth(), zoomRect.getY() + zoomRect.getHeight());
-        final NumberAxis yAxis = (NumberAxis) chart.getYAxis();
-        Point2D yAxisInScene = yAxis.localToScene(0, 0);
-        final NumberAxis xAxis = (NumberAxis) chart.getXAxis();
-        Point2D xAxisInScene = xAxis.localToScene(0, 0);
-        double xOffset = zoomTopLeft.getX() - yAxisInScene.getX() ;
-        double yOffset = zoomBottomRight.getY() - xAxisInScene.getY();
-        double xAxisScale = xAxis.getScale();
-        double yAxisScale = yAxis.getScale();
-        xAxis.setLowerBound(xAxis.getLowerBound() + xOffset / xAxisScale);
-        xAxis.setUpperBound(xAxis.getLowerBound() + zoomRect.getWidth() / xAxisScale);
-        yAxis.setLowerBound(yAxis.getLowerBound() + yOffset / yAxisScale);
-        yAxis.setUpperBound(yAxis.getLowerBound() - zoomRect.getHeight() / yAxisScale);
-        System.out.println(yAxis.getLowerBound() + " " + yAxis.getUpperBound());
-        zoomRect.setWidth(0);
-        zoomRect.setHeight(0);
-    }
+
 
 	
 
