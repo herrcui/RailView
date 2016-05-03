@@ -56,15 +56,25 @@ public class GraphPaneController {
         chart2 = createVelocityChart();
         
         pane1.getChildren().add(chart1);
-        pane2.getChildren().add(chart2);
+        pane2.getChildren().add(chart2);    
+        
+        AnchorPane.setTopAnchor(chart1, 0.0);
+        AnchorPane.setLeftAnchor(chart1, 0.0);
+        AnchorPane.setRightAnchor(chart1, 0.0);
+        AnchorPane.setBottomAnchor(chart1, 0.0);
+        
+        AnchorPane.setTopAnchor(chart2, 0.0);
+        AnchorPane.setLeftAnchor(chart2, 0.0);
+        AnchorPane.setRightAnchor(chart2, 0.0);
+        AnchorPane.setBottomAnchor(chart2, 0.0);
   
 	    addZooming();
 
 	}
 	
 	private void addZooming(){
-        Zoom zoom = new Zoom(chart1, pane1);
-        Zoom zoom2 = new Zoom(chart2, pane2);
+		Zoom zoom = new Zoom(chart1, pane1);
+		ZoomOnlyX zoom2 = new ZoomOnlyX(chart2, pane2);
 	}
 
 	private LineChart<Number, Number> createVelocityChart() {
@@ -93,10 +103,20 @@ public class GraphPaneController {
 	    trainNumbers.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) { 
-    			System.out.println(getTrain(newValue));		
+    			System.out.println(getTrain(newValue));
     			drawCourseforTimeTable(getTrain(newValue), chart); 
+    			yAxis.setTickLabelFormatter(new NumberAxis.DefaultFormatter(yAxis) {
+    			        @Override
+    			        public String toString(Number value) {
+    			        	while (value.doubleValue() != 0) {
+    			            return String.format("%7.0f", -value.doubleValue());
+    			        }
+    			        	 return String.format("%7.0f", value.doubleValue());
+    			        }
+    			    });
             }
         });
+	    xAxis.setSide(Side.TOP);
 	    return chart ;
 	}
 	
@@ -194,11 +214,12 @@ public class GraphPaneController {
 	public LineChart<Number, Number> drawCourseforTimeTable(AbstractTrainSimulator train, LineChart<Number, Number> chart) {
 		chart.getData().clear(); 
 		XYChart.Series<Number, Number> courseForTimeSeries = new Series<Number, Number>();
+		courseForTimeSeries.setName("course for time");
 		double y = -1;   
 		courseForTimeSeries.getData().add(new Data<Number, Number>(0, y));   
 		if (train.getTrain().getStatus() != SimpleTrain.INACTIVE) {
 			for(Map.Entry<Double,Double> entry : getCourseForTime(train).entrySet()) {
-				courseForTimeSeries.getData().add(new Data<Number, Number>(entry.getKey(), entry.getValue()));
+				courseForTimeSeries.getData().add(new Data<Number, Number>(entry.getKey(), (entry.getValue()*-1)));
 		}
 			chart.getData().add(courseForTimeSeries);
 			chart.setCreateSymbols(false);

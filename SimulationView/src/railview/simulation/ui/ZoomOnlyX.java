@@ -10,7 +10,8 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
-public class Zoom {
+
+public class ZoomOnlyX {
 
 	private final AnchorPane pane;
 	private final XYChart<Number, Number> chart;
@@ -22,7 +23,7 @@ public class Zoom {
 	private Point2D selectionRectangleStart;
 	private Point2D selectionRectangleEnd;
 
-	public Zoom(XYChart<Number, Number> chart, AnchorPane pane) {
+	public ZoomOnlyX(XYChart<Number, Number> chart, AnchorPane pane) {
 		this.pane = pane;
 		this.chart = chart;
 		this.xAxis = (NumberAxis) chart.getXAxis();
@@ -31,8 +32,6 @@ public class Zoom {
 		pane.getChildren().add(selectionRectangle);
 		addDragSelectionMechanism();
 	}
-	
-
 
 	private void addDragSelectionMechanism() {
 		pane.addEventHandler(MouseEvent.MOUSE_PRESSED, new MousePressedHandler());
@@ -152,7 +151,6 @@ public class Zoom {
 			double selectionMaxY = Math.max(selectionRectangleStart.getY(), selectionRectangleEnd.getY());
 
 			setHorizontalBounds(selectionMinX, selectionMaxX);
-			setVerticalBounds(selectionMinY, selectionMaxY);
 		}
 
 		private void disableAutoRanging() {
@@ -243,5 +241,4 @@ public class Zoom {
 	}
 
 }
-
 
