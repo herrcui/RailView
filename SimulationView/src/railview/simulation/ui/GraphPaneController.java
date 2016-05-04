@@ -76,7 +76,6 @@ public class GraphPaneController {
 	
 	@FXML
 	private void resetSpeedProfile(MouseEvent event) {
-
 		if (event.getButton().equals(MouseButton.PRIMARY)) {
 			if (event.getClickCount() == 2) {
 				speedProfileChart.getXAxis().setAutoRanging(true);
@@ -87,7 +86,6 @@ public class GraphPaneController {
 	
 	@FXML
 	private void resetTimeDistance(MouseEvent event) {
-
 		if (event.getButton().equals(MouseButton.PRIMARY)) {
 			if (event.getClickCount() == 2) {
 				timeDistanceChart.getXAxis().setAutoRanging(true);
