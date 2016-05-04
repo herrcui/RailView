@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
+
 import railapp.infrastructure.path.dto.LinkEdge;
 import railapp.infrastructure.path.dto.LinkPath;
 import railapp.rollingstock.dto.SimpleTrain;
@@ -22,9 +23,10 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Data;
 import javafx.scene.chart.XYChart.Series;
-
 import javafx.scene.control.ListView;
 import javafx.scene.control.TabPane;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 
@@ -40,10 +42,10 @@ public class GraphPaneController {
 	private AnchorPane runningPane;
 	
 	@FXML
-	private AnchorPane pane1;
+	private AnchorPane speedprofilePane;
 	
 	@FXML
-	private AnchorPane pane2;
+	private AnchorPane timeDistancePane;
 	
 	@FXML
 	private ListView<String> trainNumbers;
@@ -52,29 +54,46 @@ public class GraphPaneController {
 	public void initialize() {
         tabPane.setSide(Side.BOTTOM);
         
-        chart1 = createCourseForTimeChart();
-        chart2 = createVelocityChart();
+        timeDistanceChart = createCourseForTimeChart();
+        speedProfileChart = createVelocityChart();
         
-        pane1.getChildren().add(chart1);
-        pane2.getChildren().add(chart2);    
+        speedprofilePane.getChildren().add(speedProfileChart);
+        timeDistancePane.getChildren().add(timeDistanceChart);    
         
-        AnchorPane.setTopAnchor(chart1, 0.0);
-        AnchorPane.setLeftAnchor(chart1, 0.0);
-        AnchorPane.setRightAnchor(chart1, 0.0);
-        AnchorPane.setBottomAnchor(chart1, 0.0);
+        AnchorPane.setTopAnchor(timeDistanceChart, 0.0);
+        AnchorPane.setLeftAnchor(timeDistanceChart, 0.0);
+        AnchorPane.setRightAnchor(timeDistanceChart, 0.0);
+        AnchorPane.setBottomAnchor(timeDistanceChart, 0.0);
         
-        AnchorPane.setTopAnchor(chart2, 0.0);
-        AnchorPane.setLeftAnchor(chart2, 0.0);
-        AnchorPane.setRightAnchor(chart2, 0.0);
-        AnchorPane.setBottomAnchor(chart2, 0.0);
+        AnchorPane.setTopAnchor(speedProfileChart, 0.0);
+        AnchorPane.setLeftAnchor(speedProfileChart, 0.0);
+        AnchorPane.setRightAnchor(speedProfileChart, 0.0);
+        AnchorPane.setBottomAnchor(speedProfileChart, 0.0);
   
-	    addZooming();
-
+        new ZoomOnlyX(speedProfileChart, speedprofilePane);
+        new Zoom(timeDistanceChart, timeDistancePane);
 	}
 	
-	private void addZooming(){
-		Zoom zoom = new Zoom(chart1, pane1);
-		ZoomOnlyX zoom2 = new ZoomOnlyX(chart2, pane2);
+	@FXML
+	private void resetSpeedProfile(MouseEvent event) {
+
+		if (event.getButton().equals(MouseButton.PRIMARY)) {
+			if (event.getClickCount() == 2) {
+				speedProfileChart.getXAxis().setAutoRanging(true);
+				speedProfileChart.getYAxis().setAutoRanging(true);
+			}
+		}
+	}
+	
+	@FXML
+	private void resetTimeDistance(MouseEvent event) {
+
+		if (event.getButton().equals(MouseButton.PRIMARY)) {
+			if (event.getClickCount() == 2) {
+				timeDistanceChart.getXAxis().setAutoRanging(true);
+				timeDistanceChart.getYAxis().setAutoRanging(true);
+			}
+		}
 	}
 
 	private LineChart<Number, Number> createVelocityChart() {
@@ -294,8 +313,8 @@ public class GraphPaneController {
 
 	
 
-	LineChart<Number, Number> chart1;
-	LineChart<Number, Number> chart2;
+	LineChart<Number, Number> timeDistanceChart;
+	LineChart<Number, Number> speedProfileChart;
 	ObservableList<String> numbers = FXCollections.observableArrayList();
 	private ConcurrentHashMap<String, AbstractTrainSimulator> trainMap =
 			new ConcurrentHashMap<String, AbstractTrainSimulator>();

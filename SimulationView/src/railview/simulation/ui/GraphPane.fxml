@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="anchorPane" prefHeight="840" prefWidth="1320" styleClass="background-white" stylesheets="@../../../../../SimulationView/resources/CSS/Darktheme.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.ui.GraphPaneController">
+<AnchorPane fx:id="anchorPane" prefHeight="840" prefWidth="1320" styleClass="background-white" stylesheets="@../../../../../SimulationView/resources/CSS/Darktheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.ui.GraphPaneController">
    <children>
       <TabPane fx:id="tabPane" layoutX="224.0" layoutY="164.0" prefHeight="840.0" prefWidth="1320.0" stylesheets="@../../../../resources/CSS/Tabs.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
@@ -20,16 +23,8 @@
                                  <children>
                                     <SplitPane dividerPositions="0.5" layoutX="-38.0" layoutY="36.0" orientation="VERTICAL" prefHeight="801.0" prefWidth="390.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                       <items>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                                             <children>
-                                                <AnchorPane fx:id="pane2" prefHeight="397.0" prefWidth="997.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                             </children>
-                                          </AnchorPane>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                                             <children>
-                                                <AnchorPane fx:id="pane1" prefHeight="396.0" prefWidth="997.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                             </children>
-                                          </AnchorPane>
+                                        <AnchorPane fx:id="speedprofilePane" minHeight="0.0" minWidth="0.0" onMouseClicked="#resetSpeedProfile" prefHeight="100.0" prefWidth="160.0" />
+                                        <AnchorPane fx:id="timeDistancePane" minHeight="0.0" minWidth="0.0" onMouseClicked="#resetTimeDistance" prefHeight="100.0" prefWidth="160.0" />
                                       </items>
                                     </SplitPane>
                                  </children>
