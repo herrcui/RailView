@@ -37,7 +37,6 @@ public class ZoomOnlyX {
 		pane.addEventHandler(MouseEvent.MOUSE_PRESSED, new MousePressedHandler());
 		pane.addEventHandler(MouseEvent.MOUSE_DRAGGED, new MouseDraggedHandler());
 		pane.addEventHandler(MouseEvent.MOUSE_RELEASED, new MouseReleasedHandler());
-		pane.addEventHandler(KeyEvent.KEY_RELEASED, new EscapeKeyHandler());
 	}
 
 	private Point2D computeRectanglePoint(double eventX, double eventY) {
@@ -67,7 +66,7 @@ public class ZoomOnlyX {
 		@Override
 		public void handle(final MouseEvent event) {
 
-			if (event.isSecondaryButtonDown()) {
+			if (event.isPrimaryButtonDown()) {
 				return;
 			}
 
@@ -80,7 +79,7 @@ public class ZoomOnlyX {
 		@Override
 		public void handle(final MouseEvent event) {
 
-			if (event.isSecondaryButtonDown()) {
+			if (event.isPrimaryButtonDown()) {
 				return;
 			}
 
@@ -224,21 +223,6 @@ public class ZoomOnlyX {
 	}
 
 
-	private final class EscapeKeyHandler implements EventHandler<KeyEvent> {
-		@Override
-		public void handle(KeyEvent event) {
-
-			if (KeyCode.ESCAPE.equals(event.getCode())) {
-				resetAxisBounds();
-			}
-		}
-
-		private void resetAxisBounds() {
-			xAxis.setAutoRanging(true);
-			yAxis.setAutoRanging(true);
-		}
-
-	}
 
 }
 

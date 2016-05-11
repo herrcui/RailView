@@ -16,6 +16,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Side;
 import javafx.scene.chart.LineChart;
@@ -70,13 +71,42 @@ public class GraphPaneController {
         AnchorPane.setRightAnchor(speedProfileChart, 0.0);
         AnchorPane.setBottomAnchor(speedProfileChart, 0.0);
   
-        new ZoomOnlyX(speedProfileChart, speedprofilePane);
-        new Zoom(timeDistanceChart, timeDistancePane);
+      new ZoomOnlyX(speedProfileChart, speedprofilePane);
+      new Zoom(timeDistanceChart, timeDistancePane);
+ 
+		Panning speedprofilePanning = new Panning(speedProfileChart);
+		Panning timeDistancePanning = new Panning(timeDistanceChart);
+
+		speedprofilePanning.setMouseFilter(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent mouseEvent) {
+				if (mouseEvent.getButton() == MouseButton.PRIMARY) {
+				} else {
+					mouseEvent.consume();
+				}
+			}
+		});
+		speedprofilePanning.start();
+
+		timeDistancePanning.setMouseFilter(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent mouseEvent) {
+				if (mouseEvent.getButton() == MouseButton.PRIMARY) {
+
+				} else {
+					mouseEvent.consume();
+				}
+			}
+		});
+		timeDistancePanning.start();
+		
+
 	}
+	
 	
 	@FXML
 	private void resetSpeedProfile(MouseEvent event) {
-		if (event.getButton().equals(MouseButton.PRIMARY)) {
+		if (event.getButton().equals(MouseButton.SECONDARY)) {
 			if (event.getClickCount() == 2) {
 				speedProfileChart.getXAxis().setAutoRanging(true);
 				speedProfileChart.getYAxis().setAutoRanging(true);
@@ -86,7 +116,7 @@ public class GraphPaneController {
 	
 	@FXML
 	private void resetTimeDistance(MouseEvent event) {
-		if (event.getButton().equals(MouseButton.PRIMARY)) {
+		if (event.getButton().equals(MouseButton.SECONDARY)) {
 			if (event.getClickCount() == 2) {
 				timeDistanceChart.getXAxis().setAutoRanging(true);
 				timeDistanceChart.getYAxis().setAutoRanging(true);
@@ -222,6 +252,7 @@ public class GraphPaneController {
 	        y = entry.getValue();
 	    }
 	    chart.getData().add(speedLimitSeries);
+	    speedLimitSeries.nodeProperty().get().setStyle("-fx-stroke: #000000; -fx-stroke-dash-array: 0.1 5.0;");
 
 		chart.setCreateSymbols(false);
 		}
