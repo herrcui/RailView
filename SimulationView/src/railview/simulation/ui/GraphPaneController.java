@@ -1,5 +1,6 @@
 package railview.simulation.ui;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,8 +10,11 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import railapp.infrastructure.path.dto.LinkEdge;
 import railapp.infrastructure.path.dto.LinkPath;
 import railapp.rollingstock.dto.SimpleTrain;
+import railapp.simulation.infrastructure.PartialRouteResource;
 import railapp.simulation.runingdynamics.sections.DiscretePoint;
 import railapp.simulation.train.AbstractTrainSimulator;
+import railapp.simulation.train.TrainSimulator;
+import railapp.units.Time;
 import railapp.units.UnitUtility;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -189,21 +193,6 @@ public class GraphPaneController {
         return yAxis;
     }
     
-    
-/**
-	
-	public void updateChart() {
-		  trainNumbers.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-	            @Override
-	            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) { 
-        			System.out.println(getTrain(newValue));		
-//	            	drawSpeedLimitTable(getTrain(newValue));
-           		    drawVelocityTable(getTrain(newValue));  
-           		    drawCourseforTimeTable(getTrain(newValue));
-	            }
-	        });   
-	}
-**/	
 	public void setTrainList(List<AbstractTrainSimulator> trainList) {
         this.updateTrainMap(trainList);
 	}
@@ -272,6 +261,12 @@ public class GraphPaneController {
 			chart.getData().add(courseForTimeSeries);
 			chart.setCreateSymbols(false);
 		}
+		
+		List<BlockingTime> blockingTimes = this.getBlockingTimeStairway(train);
+		for (BlockingTime blockingTime : blockingTimes) {
+			blockingTime.getEndMeter();
+		}
+		
 		return chart;	
 		
 	}
@@ -281,7 +276,7 @@ public class GraphPaneController {
 		Map<Double, Double> velocityMap = new LinkedHashMap<Double, Double>();
 		double meter = 0; // x
 		double velocityInKmH = 0; // y
-		for (DiscretePoint point : train.getCourse().getPoints()) {
+		for (DiscretePoint point : train.getWholeCoursePoints()) {
 			velocityInKmH = point.getVelocity().getKilometerPerHour();
 			meter += point.getDistance().getMeter();
 			velocityMap.put(meter, velocityInKmH);
@@ -295,7 +290,7 @@ public class GraphPaneController {
 		double meter = 0; // x
 		double timeInSecond = 0; // y
 		
-		for (DiscretePoint point : train.getCourse().getPoints()) {
+		for (DiscretePoint point : train.getWholeCoursePoints()) {
 			timeInSecond += point.getDuration().getTotalSecond();
 			meter += point.getDistance().getMeter();
 			timeMap.put(meter, timeInSecond);
@@ -339,7 +334,27 @@ public class GraphPaneController {
 		return speedLimitMap;
 	}
 
-
+	private List<BlockingTime> getBlockingTimeStairway(AbstractTrainSimulator train) {
+		List<BlockingTime> blockingTimes = new ArrayList<BlockingTime>();
+		if (train instanceof TrainSimulator) {
+			double meter = 0;
+			List<PartialRouteResource> resources = ((TrainSimulator) train).getBlockingTimeStairWay();
+			Time trainStartTime = train.getTripSection().getStartTime();
+			for (PartialRouteResource resource : resources) {
+				double startMeter = meter;
+				double endMeter = meter + resource.getPartialRoute().getPath().getLength().getMeter();
+				double startTimeInSecond = resource.getGrantTime().getDifference(trainStartTime).getTotalSecond();
+				double endTimeInSecond = resource.getReleaseTime().getDifference(trainStartTime).getTotalSecond();
+				
+				blockingTimes.add(new BlockingTime(startMeter, endMeter, startTimeInSecond, endTimeInSecond));
+				
+				meter = endMeter;
+			}
+			
+		}
+		
+		return blockingTimes;
+	}
 	
 
 	LineChart<Number, Number> timeDistanceChart;
@@ -347,4 +362,36 @@ public class GraphPaneController {
 	ObservableList<String> numbers = FXCollections.observableArrayList();
 	private ConcurrentHashMap<String, AbstractTrainSimulator> trainMap =
 			new ConcurrentHashMap<String, AbstractTrainSimulator>();
+	
+	class BlockingTime {		
+		BlockingTime(double startMeter, double endMeter,
+				double startTimeInSecond, double endTimeInSecond) {
+			super();
+			this.startMeter = startMeter;
+			this.endMeter = endMeter;
+			this.startTimeInSecond = startTimeInSecond;
+			this.endTimeInSecond = endTimeInSecond;
+		}
+			
+		public double getStartMeter() {
+			return startMeter;
+		}
+		
+		public double getEndMeter() {
+			return endMeter;
+		}
+		
+		public double getStartTimeInSecond() {
+			return startTimeInSecond;
+		}
+		
+		public double getEndTimeInSecond() {
+			return endTimeInSecond;
+		}
+
+		private double startMeter;
+		private double endMeter;
+		private double startTimeInSecond;
+		private double endTimeInSecond;
+	}
 }
