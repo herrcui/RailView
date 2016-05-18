@@ -226,7 +226,7 @@ public class GraphPaneController {
 		if (train.getTrain().getStatus() != SimpleTrain.INACTIVE) {
 		for(Map.Entry<Double,Double> entry : getCourseForVelocity(train).entrySet()) {
 			CourseForVelocitySeries.getData().add(new Data<Number, Number>(entry.getKey(), entry.getValue()));
-	}
+		}
 		chart.getData().add(CourseForVelocitySeries);
 		XYChart.Series<Number, Number> speedLimitSeries = new Series<Number, Number>();
 		
@@ -268,7 +268,6 @@ public class GraphPaneController {
 		}
 		
 		return chart;	
-		
 	}
 
 	// Map: Meter, VelocityInKmH
@@ -302,7 +301,7 @@ public class GraphPaneController {
 		// Velocity
 		LinkedHashMap<Double, Double> speedLimitMap = new LinkedHashMap<Double, Double>();
 		
-		LinkPath path = train.getTripSection().getFullPath();
+		LinkPath path = train.getFullPath();
 		
 		double maxTrainKmH = train.getTrainDefinition().getMaxVelocity().getKilometerPerHour();
 		double maxKmH = Math.min(maxTrainKmH, 
