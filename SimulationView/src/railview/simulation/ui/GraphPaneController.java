@@ -23,6 +23,7 @@ import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Side;
+import javafx.scene.chart.Axis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
@@ -33,6 +34,7 @@ import javafx.scene.control.TabPane;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Rectangle;
 
 
 public class GraphPaneController {
@@ -63,7 +65,8 @@ public class GraphPaneController {
         speedProfileChart = createVelocityChart();
         
         speedprofilePane.getChildren().add(speedProfileChart);
-        timeDistancePane.getChildren().add(timeDistanceChart);    
+        timeDistancePane.getChildren().add(timeDistanceChart);
+        
         
         AnchorPane.setTopAnchor(timeDistanceChart, 0.0);
         AnchorPane.setLeftAnchor(timeDistanceChart, 0.0);
@@ -148,7 +151,7 @@ public class GraphPaneController {
 	private LineChart<Number, Number> createCourseForTimeChart() {
 		NumberAxis xAxis = createXAxis2();
 	    NumberAxis yAxis = createYAxis2();  
-	    LineChart<Number, Number> chart = new LineChart<>(xAxis, yAxis);
+	    BlockingTimeChart<Number, Number> chart = new BlockingTimeChart<>(xAxis, yAxis);
 	    chart.setAnimated(false);
 	    chart.setCreateSymbols(false);
 	    trainNumbers.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
@@ -169,8 +172,7 @@ public class GraphPaneController {
         });
 	    xAxis.setSide(Side.TOP);
 	    return chart ;
-	}
-	
+	}	
 
     private NumberAxis createXAxis() {
         NumberAxis xAxis = new NumberAxis();
@@ -358,6 +360,7 @@ public class GraphPaneController {
 
 	LineChart<Number, Number> timeDistanceChart;
 	LineChart<Number, Number> speedProfileChart;
+	
 	ObservableList<String> numbers = FXCollections.observableArrayList();
 	private ConcurrentHashMap<String, AbstractTrainSimulator> trainMap =
 			new ConcurrentHashMap<String, AbstractTrainSimulator>();
@@ -392,5 +395,27 @@ public class GraphPaneController {
 		private double endMeter;
 		private double startTimeInSecond;
 		private double endTimeInSecond;
+	}
+	
+	private class BlockingTimeChart<X,Y> extends LineChart {
+
+		public BlockingTimeChart(Axis xAxis, Axis yAxis) {
+			super(xAxis, yAxis);
+			// TODO Auto-generated constructor stub
+		}
+		
+		 @Override
+        protected void layoutPlotChildren() {
+            super.layoutPlotChildren();
+            
+            Rectangle r = new Rectangle();
+            this.getChildren().add(r);
+            
+            r.setX(10);
+            r.setY(10);
+            r.setWidth(200);
+            r.setHeight(100);
+            r.toFront(); 
+        }
 	}
 }
