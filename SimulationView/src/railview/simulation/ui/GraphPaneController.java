@@ -165,7 +165,7 @@ public class GraphPaneController {
     			        	while (value.doubleValue() != 0) {
     			            return String.format("%7.0f", -value.doubleValue());
     			        }
-    			        	 return String.format("%7.0f", value.doubleValue());
+    			        	return String.format("%7.0f", value.doubleValue());
     			        }
     			    });
             }
@@ -401,8 +401,8 @@ public class GraphPaneController {
 		private double endTimeInSecond;
 	}
 	
-	class BlockingTimeChart<X,Y> extends LineChart {
-		public BlockingTimeChart(Axis xAxis, Axis yAxis) {
+	class BlockingTimeChart<X,Y> extends LineChart<X,Y> {
+		public BlockingTimeChart(Axis<X> xAxis, Axis<Y> yAxis) {
 			super(xAxis, yAxis);
 			// TODO Auto-generated constructor stub
 		}
