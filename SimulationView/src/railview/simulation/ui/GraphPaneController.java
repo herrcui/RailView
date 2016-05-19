@@ -157,7 +157,7 @@ public class GraphPaneController {
 	    trainNumbers.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) { 
-    			System.out.println(getTrain(newValue));
+    			chart.setBlockingTime(getBlockingTimeStairway(getTrain(newValue)));
     			drawCourseforTimeTable(getTrain(newValue), chart); 
     			yAxis.setTickLabelFormatter(new NumberAxis.DefaultFormatter(yAxis) {
     			        @Override
@@ -342,9 +342,13 @@ public class GraphPaneController {
 			List<PartialRouteResource> resources = ((TrainSimulator) train).getBlockingTimeStairWay();
 			Time trainStartTime = train.getTripSection().getStartTime();
 			for (PartialRouteResource resource : resources) {
+				if (resource.getReleaseTime() == null) {
+					break;
+				}
+				
 				double startMeter = meter;
 				double endMeter = meter + resource.getPartialRoute().getPath().getLength().getMeter();
-				double startTimeInSecond = resource.getGrantTime().getDifference(trainStartTime).getTotalSecond();
+				double startTimeInSecond = resource.getGrantTime().getDifference(trainStartTime).getTotalSecond();			
 				double endTimeInSecond = resource.getReleaseTime().getDifference(trainStartTime).getTotalSecond();
 				
 				blockingTimes.add(new BlockingTime(startMeter, endMeter, startTimeInSecond, endTimeInSecond));
@@ -397,25 +401,37 @@ public class GraphPaneController {
 		private double endTimeInSecond;
 	}
 	
-	private class BlockingTimeChart<X,Y> extends LineChart {
-
+	class BlockingTimeChart<X,Y> extends LineChart {
 		public BlockingTimeChart(Axis xAxis, Axis yAxis) {
 			super(xAxis, yAxis);
 			// TODO Auto-generated constructor stub
+		}
+		
+		void setBlockingTime(List<BlockingTime> blockingTimes) {
+			this.blockingTimes = blockingTimes;
 		}
 		
 		 @Override
         protected void layoutPlotChildren() {
             super.layoutPlotChildren();
             
-            Rectangle r = new Rectangle();
-            this.getChildren().add(r);
-            
-            r.setX(10);
-            r.setY(10);
-            r.setWidth(200);
-            r.setHeight(100);
-            r.toFront(); 
+            if (this.blockingTimes != null) {
+            	int i = 0;
+            	for (BlockingTime blockingTime : this.blockingTimes) {
+            		 Rectangle r = new Rectangle();
+                     this.getChildren().add(r);
+                     
+                     r.setX(10 + i * 200);
+                     r.setY(10 + i * 100);
+                     r.setWidth(200);
+                     r.setHeight(100);
+                     r.toFront(); 
+                     
+                     i++;
+            	}
+            }
         }
+		 
+		private List<BlockingTime> blockingTimes;
 	}
 }
