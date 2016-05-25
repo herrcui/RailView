@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -16,6 +17,8 @@ import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.simulation.train.TrainSimulator;
 import railapp.units.Time;
 import railapp.units.UnitUtility;
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -34,6 +37,7 @@ import javafx.scene.control.TabPane;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 
@@ -136,7 +140,7 @@ public class GraphPaneController {
 	    NumberAxis yAxis = createYAxis();   
 	    LineChart<Number, Number> chart = new LineChart<>(xAxis, yAxis);
 	    chart.setAnimated(false);
-	    chart.setCreateSymbols(false);
+	    chart.setCreateSymbols(false);	    
 	    trainNumbers.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) { 
@@ -148,17 +152,38 @@ public class GraphPaneController {
 	    return chart ;
 	}
 
-	private LineChart<Number, Number> createCourseForTimeChart() {
+	private BlockingTimeChart<Number, Number> createCourseForTimeChart() {
 		NumberAxis xAxis = createXAxis2();
 	    NumberAxis yAxis = createYAxis2();  
-	    BlockingTimeChart<Number, Number> chart = new BlockingTimeChart<>(xAxis, yAxis);
-	    chart.setAnimated(false);
-	    chart.setCreateSymbols(false);
+	    BlockingTimeChart<Number,Number> chart = new BlockingTimeChart<Number,Number>(xAxis,yAxis);
+	    
+	    trainNumbers.setOnMouseClicked(new EventHandler<MouseEvent>() {
+	    
+
+	        @Override
+	        public void handle(MouseEvent event) {
+	            System.out.println("clicked on" + getTrain(trainNumbers.getSelectionModel().getSelectedItem().toString()));
+
+	        	List<BlockingTime> blockingTimes = getBlockingTimeStairway(getTrain(trainNumbers.getSelectionModel().getSelectedItem().toString()));
+	    		for (BlockingTime blockingTime : blockingTimes) {
+		            chart.addRectangle(blockingTime.getStartMeter(),blockingTime.getStartTimeInSecond(),
+		            		blockingTime.getEndMeter()-blockingTime.getStartMeter(), blockingTime.getEndTimeInSecond()-blockingTime.getStartTimeInSecond());
+	    		}
+	    		
+	          
+	        }
+	    });
+	    
 	    trainNumbers.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) { 
+            	chart.removeRectangle();
+                chart.getData().clear();
+    			drawCourseforTimeTable(getTrain(newValue), chart);
     			chart.setBlockingTime(getBlockingTimeStairway(getTrain(newValue)));
-    			drawCourseforTimeTable(getTrain(newValue), chart); 
+    //			chart.addRectangle(1000,1000,1000,1000);
+    		    chart.setAnimated(false);
+    		    chart.setCreateSymbols(false);
     			yAxis.setTickLabelFormatter(new NumberAxis.DefaultFormatter(yAxis) {
     			        @Override
     			        public String toString(Number value) {
@@ -250,7 +275,7 @@ public class GraphPaneController {
 		return chart;
 	}
 
-	public LineChart<Number, Number> drawCourseforTimeTable(AbstractTrainSimulator train, LineChart<Number, Number> chart) {
+	public BlockingTimeChart<Number, Number> drawCourseforTimeTable(AbstractTrainSimulator train, BlockingTimeChart<Number, Number> chart) {
 		chart.getData().clear(); 
 		XYChart.Series<Number, Number> courseForTimeSeries = new Series<Number, Number>();
 		courseForTimeSeries.setName("course for time");
@@ -402,8 +427,12 @@ public class GraphPaneController {
 	}
 	
 	class BlockingTimeChart<X,Y> extends LineChart<X,Y> {
+		
+
 		public BlockingTimeChart(Axis<X> xAxis, Axis<Y> yAxis) {
 			super(xAxis, yAxis);
+
+			
 			// TODO Auto-generated constructor stub
 		}
 		
@@ -411,27 +440,48 @@ public class GraphPaneController {
 			this.blockingTimes = blockingTimes;
 		}
 		
+		 public void addRectangle(double x, double y, double width, double height) {
+		        r = new Rectangle();	        
+		        r.setX(this.getXAxis().getDisplayPosition(this.getXAxis().toRealValue(x)));
+                r.setY(this.getYAxis().getDisplayPosition(this.getYAxis().toRealValue(-y)));
+                r.setWidth(this.getXAxis().getDisplayPosition(this.getXAxis().toRealValue(width)));
+                r.setHeight(this.getYAxis().getDisplayPosition(this.getYAxis().toRealValue(-height)));
+                r.setFill(Color.BLUE.deriveColor(0, 1, 1, 0.5));
+         		r.setMouseTransparent(true);
+                this.getPlotChildren().add(r);
+                
+		    }
+		 
+		 public void removeRectangle () {
+			 this.getPlotChildren().clear();
+		 }
+
+		
 		 @Override
         protected void layoutPlotChildren() {
             super.layoutPlotChildren();
-            
-            if (this.blockingTimes != null) {
+ /**           if (this.blockingTimes != null) {
             	int i = 0;
             	for (BlockingTime blockingTime : this.blockingTimes) {
             		 Rectangle r = new Rectangle();
-                     this.getChildren().add(r);
-                     
+ //           		 X startX = this.getXAxis().toRealValue(10);
+ //           		 Y startY = this.getYAxis().toRealValue(10);
                      r.setX(10 + i * 200);
                      r.setY(10 + i * 100);
                      r.setWidth(200);
                      r.setHeight(100);
-                     r.toFront(); 
-                     
+                    r.setFill(Color.GREEN.deriveColor(0, 1, 1, 0.5));
+             		r.setVisible(false);
+             		r.setMouseTransparent(true);
+                     this.getPlotChildren().add(r);
                      i++;
             	}
+            	 
             }
         }
-		 
+**/}		 
 		private List<BlockingTime> blockingTimes;
+		Rectangle r;
 	}
+	
 }
