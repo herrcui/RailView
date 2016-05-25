@@ -8,6 +8,7 @@ import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+import railapp.infrastructure.object.dto.InfrastructureObject;
 import railapp.infrastructure.path.dto.LinkEdge;
 import railapp.infrastructure.path.dto.LinkPath;
 import railapp.rollingstock.dto.SimpleTrain;
@@ -15,6 +16,7 @@ import railapp.simulation.infrastructure.PartialRouteResource;
 import railapp.simulation.runingdynamics.sections.DiscretePoint;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.simulation.train.TrainSimulator;
+import railapp.units.Length;
 import railapp.units.Time;
 import railapp.units.UnitUtility;
 import javafx.beans.InvalidationListener;
@@ -358,25 +360,41 @@ public class GraphPaneController {
 		List<BlockingTime> blockingTimes = new ArrayList<BlockingTime>();
 		if (train instanceof TrainSimulator) {
 			double meter = 0;
+			Length headDistanceInFirstResource = null;
+			
 			List<PartialRouteResource> resources = ((TrainSimulator) train).getBlockingTimeStairWay();
-			Time trainStartTime = train.getTripSection().getStartTime();
+			Time trainStartTime = null;
 			for (PartialRouteResource resource : resources) {
+				if (headDistanceInFirstResource == null) {
+					headDistanceInFirstResource = resource.getPath().findFirstDistance(
+						(InfrastructureObject) train.getTripSection().getTripElements().get(0).getOperationalPoint());
+					if (headDistanceInFirstResource == null) {
+						continue;
+					} else {
+						trainStartTime = resource.getGrantTime();
+					}
+				}
+				
 				if (resource.getReleaseTime() == null) {
 					break;
 				}
-
+				
 				double startMeter = meter;
 				double endMeter = meter + resource.getPartialRoute().getPath().getLength().getMeter();
-				double startTimeInSecond = resource.getGrantTime().getDifference(trainStartTime).getTotalSecond();
+				double startTimeInSecond = resource.getGrantTime().getDifference(trainStartTime).getTotalSecond();			
 				double endTimeInSecond = resource.getReleaseTime().getDifference(trainStartTime).getTotalSecond();
-
+				
+				if (meter == 0) { // for the first resource
+					endMeter = endMeter - headDistanceInFirstResource.getMeter();
+				}
+				
 				blockingTimes.add(new BlockingTime(startMeter, endMeter, startTimeInSecond, endTimeInSecond));
-
+				
 				meter = endMeter;
 			}
-
+			
 		}
-
+		
 		return blockingTimes;
 	}
 
@@ -459,19 +477,17 @@ public class GraphPaneController {
         protected void layoutPlotChildren() {
             super.layoutPlotChildren();
             if (this.blockingTimes != null) {
-            	int i = 0;
             	for (BlockingTime blockingTime : this.blockingTimes) {
             		 r = new Rectangle();
- //           		 X startX = this.getXAxis().toRealValue(10);
- //           		 Y startY = this.getYAxis().toRealValue(10);
+
                      r.setX(this.getXAxis().getDisplayPosition(this.getXAxis().toRealValue(blockingTime.getStartMeter())));
-                     r.setY(this.getYAxis().getDisplayPosition(this.getYAxis().toRealValue(blockingTime.getStartTimeInSecond())));
+                     r.setY(this.getYAxis().getDisplayPosition(this.getYAxis().toRealValue(-(blockingTime.getStartTimeInSecond()))));
                      r.setWidth(this.getXAxis().getDisplayPosition(this.getXAxis().toRealValue(blockingTime.getEndMeter()-blockingTime.getStartMeter())));
                      r.setHeight(this.getYAxis().getDisplayPosition(this.getYAxis().toRealValue(-(blockingTime.getEndTimeInSecond()-blockingTime.getStartTimeInSecond()))));
-                    r.setFill(Color.GREEN.deriveColor(0, 1, 1, 0.5));
-             		r.setMouseTransparent(true);
+                     
+                     r.setFill(Color.GREEN.deriveColor(0, 1, 1, 0.5));
+             		 r.setMouseTransparent(true);
                      this.getPlotChildren().add(r);
-                     i++;
             	}
 
             }
