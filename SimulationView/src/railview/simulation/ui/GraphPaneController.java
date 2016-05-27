@@ -278,8 +278,8 @@ public class GraphPaneController {
 		double y = -1;
 		courseForTimeSeries.getData().add(new Data<Number, Number>(0, y));
 		if (train.getTrain().getStatus() != SimpleTrain.INACTIVE) {
-			for(Map.Entry<Double,Double> entry : getCourseForTime(train).entrySet()) {
-				courseForTimeSeries.getData().add(new Data<Number, Number>(entry.getKey(), (entry.getValue()*-1)));
+			for(TimeDistance point : getTimeInDistance(train)) {
+				courseForTimeSeries.getData().add(new Data<Number, Number>(point.getMeter(), (point.getSecond() * -1)));
 		}
 			chart.getData().add(courseForTimeSeries);
 			chart.setCreateSymbols(false);
@@ -307,17 +307,17 @@ public class GraphPaneController {
 	}
 
 	// Map: Meter, TimeInSecond
-	private Map<Double, Double> getCourseForTime(AbstractTrainSimulator train) {
-		Map<Double, Double> timeMap = new LinkedHashMap<Double, Double>();
+	private List<TimeDistance> getTimeInDistance(AbstractTrainSimulator train) {
+		List<TimeDistance> pointList = new ArrayList<TimeDistance>();
 		double meter = 0; // x
 		double timeInSecond = 0; // y
 
 		for (DiscretePoint point : train.getWholeCoursePoints()) {
 			timeInSecond += point.getDuration().getTotalSecond();
 			meter += point.getDistance().getMeter();
-			timeMap.put(meter, timeInSecond);
+			pointList.add(new TimeDistance(meter, timeInSecond));
 		}
-		return timeMap;
+		return pointList;
 	}
 
 	private LinkedHashMap<Double, Double> getSpeedLimit(AbstractTrainSimulator train) {
@@ -406,6 +406,24 @@ public class GraphPaneController {
 	private ConcurrentHashMap<String, AbstractTrainSimulator> trainMap =
 			new ConcurrentHashMap<String, AbstractTrainSimulator>();
 
+	class TimeDistance {
+		TimeDistance(double meter, double second) {
+			this.meter = meter;
+			this.second = second;
+		}
+		
+		public double getMeter() {
+			return this.meter;
+		}
+		
+		public double getSecond() {
+			return this.second;
+		}
+		
+		private double meter;
+		private double second;
+	}
+	
 	class BlockingTime {
 		BlockingTime(double startMeter, double endMeter,
 				double startTimeInSecond, double endTimeInSecond) {
