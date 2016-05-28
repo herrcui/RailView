@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -19,8 +18,6 @@ import railapp.simulation.train.TrainSimulator;
 import railapp.units.Length;
 import railapp.units.Time;
 import railapp.units.UnitUtility;
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -159,14 +156,6 @@ public class GraphPaneController {
 	        @Override
 	        public void handle(MouseEvent event) {
 	            System.out.println("clicked on" + getTrain(trainNumbers.getSelectionModel().getSelectedItem().toString()));
-
-	        	List<BlockingTime> blockingTimes = getBlockingTimeStairway(getTrain(trainNumbers.getSelectionModel().getSelectedItem().toString()));
-	    		for (BlockingTime blockingTime : blockingTimes) {
-	//	            chart.addRectangle(blockingTime.getStartMeter(),blockingTime.getStartTimeInSecond(),
-	//	            		blockingTime.getEndMeter()-blockingTime.getStartMeter(), blockingTime.getEndTimeInSecond()-blockingTime.getStartTimeInSecond());
-	    		}
-
-
 	        }
 	    });
 
@@ -311,7 +300,7 @@ public class GraphPaneController {
 		List<TimeDistance> pointList = new ArrayList<TimeDistance>();
 		double meter = 0; // x
 		double timeInSecond = 0; // y
-
+		
 		for (DiscretePoint point : train.getWholeCoursePoints()) {
 			timeInSecond += point.getDuration().getTotalSecond();
 			meter += point.getDistance().getMeter();
@@ -363,15 +352,14 @@ public class GraphPaneController {
 			Length headDistanceInFirstResource = null;
 			
 			List<PartialRouteResource> resources = ((TrainSimulator) train).getBlockingTimeStairWay();
-			Time trainStartTime = null;
+			Time trainStartTime = train.getTripSection().getStartTime();
+			
 			for (PartialRouteResource resource : resources) {
 				if (headDistanceInFirstResource == null) {
 					headDistanceInFirstResource = resource.getPath().findFirstDistance(
 						(InfrastructureObject) train.getTripSection().getTripElements().get(0).getOperationalPoint());
 					if (headDistanceInFirstResource == null) {
 						continue;
-					} else {
-						trainStartTime = resource.getGrantTime();
 					}
 				}
 				
