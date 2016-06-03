@@ -29,6 +29,7 @@ import javafx.scene.Node;
 import javafx.scene.chart.Axis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.ValueAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Data;
 import javafx.scene.chart.XYChart.Series;
@@ -105,8 +106,8 @@ public class GraphPaneController {
 				}
 			}
 	  });
-      speedProfileChart.startEventHandlers();   
-      
+      speedProfileChart.startEventHandlers();
+
 	}
 
 
@@ -179,7 +180,7 @@ public class GraphPaneController {
     			        	return String.format("%7.0f", value.doubleValue());
     			        }
     			    });
-    			
+
     			chart.setOnMouseDragged(new EventHandler<MouseEvent>() {
     		          @Override
     		          public void handle(MouseEvent event) {
@@ -187,20 +188,26 @@ public class GraphPaneController {
     		        	 chart.getData().clear();
 
     		    		 drawCourseforTimeTable(getTrain(newValue), chart);
-    		        	 for (BlockingTime blockingTime : chart.blockingTimes) {
-    		        	 chart.addRectangle(blockingTime.getStartMeter(), blockingTime.getStartTimeInSecond(), blockingTime.getEndMeter()-blockingTime.getStartMeter(), blockingTime.getEndTimeInSecond()-blockingTime.getStartTimeInSecond());  
+
+    		    		 /*
+    		    		 for (BlockingTime blockingTime : chart.blockingTimes) {
+    		        	 chart.addRectangle(blockingTime.getStartMeter(),
+    		        			 blockingTime.getStartTimeInSecond(),
+    		        			 blockingTime.getEndMeter()-blockingTime.getStartMeter(),
+    		        			 blockingTime.getEndTimeInSecond()-blockingTime.getStartTimeInSecond());
     		          }
+    		          */
     		          }
     		          });
-    			
-    				
+
+
             }
         });
-	    
-	   
-	    
-	
-	    
+
+
+
+
+
 	    xAxis.setSide(Side.TOP);
 	    return chart ;
 	}
@@ -321,7 +328,7 @@ public class GraphPaneController {
 		List<TimeDistance> pointList = new ArrayList<TimeDistance>();
 		double meter = 0; // x
 		double timeInSecond = 0; // y
-		
+
 		for (DiscretePoint point : train.getWholeCoursePoints()) {
 			timeInSecond += point.getDuration().getTotalSecond();
 			meter += point.getDistance().getMeter();
@@ -371,10 +378,10 @@ public class GraphPaneController {
 		if (train instanceof TrainSimulator) {
 			double meter = 0;
 			Length headDistanceInFirstResource = null;
-			
+
 			List<PartialRouteResource> resources = ((TrainSimulator) train).getBlockingTimeStairWay();
 			Time trainStartTime = train.getTripSection().getStartTime();
-			
+
 			for (PartialRouteResource resource : resources) {
 				if (headDistanceInFirstResource == null) {
 					headDistanceInFirstResource = resource.getPath().findFirstDistance(
@@ -383,27 +390,27 @@ public class GraphPaneController {
 						continue;
 					}
 				}
-				
+
 				if (resource.getReleaseTime() == null) {
 					break;
 				}
-				
+
 				double startMeter = meter;
 				double endMeter = meter + resource.getPartialRoute().getPath().getLength().getMeter();
-				double startTimeInSecond = resource.getGrantTime().getDifference(trainStartTime).getTotalSecond();			
+				double startTimeInSecond = resource.getGrantTime().getDifference(trainStartTime).getTotalSecond();
 				double endTimeInSecond = resource.getReleaseTime().getDifference(trainStartTime).getTotalSecond();
-				
+
 				if (meter == 0) { // for the first resource
 					endMeter = endMeter - headDistanceInFirstResource.getMeter();
 				}
-				
+
 				blockingTimes.add(new BlockingTime(startMeter, endMeter, startTimeInSecond, endTimeInSecond));
-				
+
 				meter = endMeter;
 			}
-			
+
 		}
-		
+
 		return blockingTimes;
 	}
 
@@ -420,19 +427,19 @@ public class GraphPaneController {
 			this.meter = meter;
 			this.second = second;
 		}
-		
+
 		public double getMeter() {
 			return this.meter;
 		}
-		
+
 		public double getSecond() {
 			return this.second;
 		}
-		
+
 		private double meter;
 		private double second;
 	}
-	
+
 	class BlockingTime {
 		BlockingTime(double startMeter, double endMeter,
 				double startTimeInSecond, double endTimeInSecond) {
@@ -481,6 +488,10 @@ public class GraphPaneController {
 
 		 public void addRectangle(double x, double y, double width, double height) {
 		        r = new Rectangle();
+
+		        double dx = ((ValueAxis<?>) this.getXAxis()).getLowerBound();
+		        double dy = ((ValueAxis<?>) this.getYAxis()).getLowerBound();
+
 		        r.setX(this.getXAxis().getDisplayPosition(this.getXAxis().toRealValue(x)));
                 r.setY(this.getYAxis().getDisplayPosition(this.getYAxis().toRealValue(-y)));
                 r.setWidth(this.getXAxis().getDisplayPosition(this.getXAxis().toRealValue(width)));
@@ -509,9 +520,15 @@ public class GraphPaneController {
 
                      r.setX(this.getXAxis().getDisplayPosition(this.getXAxis().toRealValue(blockingTime.getStartMeter())));
                      r.setY(this.getYAxis().getDisplayPosition(this.getYAxis().toRealValue(-(blockingTime.getStartTimeInSecond()))));
-                     r.setWidth(this.getXAxis().getDisplayPosition(this.getXAxis().toRealValue(blockingTime.getEndMeter()-blockingTime.getStartMeter())));
-                     r.setHeight(this.getYAxis().getDisplayPosition(this.getYAxis().toRealValue(-(blockingTime.getEndTimeInSecond()-blockingTime.getStartTimeInSecond()))));
-                     
+                     r.setWidth(this.getXAxis().getDisplayPosition(
+                    		 		this.getXAxis().toRealValue(blockingTime.getEndMeter())) -
+                    		 this.getXAxis().getDisplayPosition(
+                    				this.getXAxis().toRealValue(blockingTime.getStartMeter())));
+                     r.setHeight(this.getYAxis().getDisplayPosition(
+                    		 		this.getYAxis().toRealValue(-(blockingTime.getEndTimeInSecond())))-
+                    		 	this.getYAxis().getDisplayPosition(
+                    		 		this.getYAxis().toRealValue(-(blockingTime.getStartTimeInSecond()))));
+
                      r.setFill(Color.GREEN.deriveColor(0, 1, 1, 0.5));
              		 r.setMouseTransparent(true);
                      this.getPlotChildren().add(r);
@@ -522,7 +539,7 @@ public class GraphPaneController {
 
 		private List<BlockingTime> blockingTimes;
 		Rectangle r;
-		
+
 	}
 
 }
