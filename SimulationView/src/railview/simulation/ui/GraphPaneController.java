@@ -105,7 +105,8 @@ public class GraphPaneController {
 				}
 			}
 	  });
-      speedProfileChart.startEventHandlers();
+      speedProfileChart.startEventHandlers();   
+      
 	}
 
 
@@ -178,8 +179,28 @@ public class GraphPaneController {
     			        	return String.format("%7.0f", value.doubleValue());
     			        }
     			    });
+    			
+    			chart.setOnMouseDragged(new EventHandler<MouseEvent>() {
+    		          @Override
+    		          public void handle(MouseEvent event) {
+    		        	 chart.getBlockingTimeChartPlotChildren().clear();
+    		        	 chart.getData().clear();
+
+    		    		 drawCourseforTimeTable(getTrain(newValue), chart);
+    		        	 for (BlockingTime blockingTime : chart.blockingTimes) {
+    		        	 chart.addRectangle(blockingTime.getStartMeter(), blockingTime.getStartTimeInSecond(), blockingTime.getEndMeter()-blockingTime.getStartMeter(), blockingTime.getEndTimeInSecond()-blockingTime.getStartTimeInSecond());  
+    		          }
+    		          }
+    		          });
+    			
+    				
             }
         });
+	    
+	   
+	    
+	
+	    
 	    xAxis.setSide(Side.TOP);
 	    return chart ;
 	}
@@ -464,7 +485,7 @@ public class GraphPaneController {
                 r.setY(this.getYAxis().getDisplayPosition(this.getYAxis().toRealValue(-y)));
                 r.setWidth(this.getXAxis().getDisplayPosition(this.getXAxis().toRealValue(width)));
                 r.setHeight(this.getYAxis().getDisplayPosition(this.getYAxis().toRealValue(-height)));
-                r.setFill(Color.BLUE.deriveColor(0, 1, 1, 0.5));
+                r.setFill(Color.GREEN.deriveColor(0, 1, 1, 0.5));
          		r.setMouseTransparent(true);
                 this.getPlotChildren().add(r);
 
@@ -501,6 +522,7 @@ public class GraphPaneController {
 
 		private List<BlockingTime> blockingTimes;
 		Rectangle r;
+		
 	}
 
 }

@@ -99,6 +99,8 @@ public class Panning {
 		if ( !dragging )
 			return;
 
+		
+		
 		double dX = ( event.getX() - lastX ) / -xAxis.getScale();
 		double dY = ( event.getY() - lastY ) / -yAxis.getScale();
 		lastX = event.getX();
