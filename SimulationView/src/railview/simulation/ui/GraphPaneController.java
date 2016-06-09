@@ -29,7 +29,6 @@ import javafx.scene.Node;
 import javafx.scene.chart.Axis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.ValueAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Data;
 import javafx.scene.chart.XYChart.Series;
@@ -40,6 +39,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.RectangleBuilder;
 
 
 public class GraphPaneController {
@@ -66,8 +66,8 @@ public class GraphPaneController {
 	public void initialize() {
         tabPane.setSide(Side.BOTTOM);
 
-        timeDistanceChart = createCourseForTimeChart();
         speedProfileChart = createVelocityChart();
+        timeDistanceChart = createCourseForTimeChart();
 
         speedprofilePane.getChildren().add(speedProfileChart);
         timeDistancePane.getChildren().add(timeDistanceChart);
@@ -141,6 +141,9 @@ public class GraphPaneController {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
     			System.out.println(getTrain(newValue));
+    			chart.getData().clear();
+    			speedProfileChart.getXAxis().setAutoRanging(true);
+				speedProfileChart.getYAxis().setAutoRanging(true);
        		    drawVelocityTable(getTrain(newValue), chart);
 
             }
@@ -149,26 +152,53 @@ public class GraphPaneController {
 	}
 
 	private BlockingTimeChart<Number, Number> createCourseForTimeChart() {
+	
 		NumberAxis xAxis = createXAxis2();
 	    NumberAxis yAxis = createYAxis2();
-	    BlockingTimeChart<Number,Number> chart = new BlockingTimeChart<Number,Number>(xAxis,yAxis);
-	    chart.getBlockingTimeChartPlotChildren();
+		BlockingTimeChart<Number,Number> chart = new BlockingTimeChart<Number,Number>(xAxis,yAxis);
+
 
 	    trainNumbers.setOnMouseClicked(new EventHandler<MouseEvent>() {
 	        @Override
 	        public void handle(MouseEvent event) {
-	            System.out.println("clicked on" + getTrain(trainNumbers.getSelectionModel().getSelectedItem().toString()));
-	        }
-	    });
-
-	    trainNumbers.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-            	chart.removeRectangle();
-                chart.getData().clear();
-    			drawCourseforTimeTable(getTrain(newValue), chart);
-    			chart.setBlockingTime(getBlockingTimeStairway(getTrain(newValue)));
-    //			chart.addRectangle(1000,1000,1000,1000);
+	        	if(chart.getData().isEmpty()) {
+	        		try {
+						
+						  chart.getData().clear();
+				            chart.getBlockingTimeChartPlotChildren().clear();
+			                timeDistanceChart.getXAxis().setAutoRanging(true);
+							timeDistanceChart.getYAxis().setAutoRanging(true);
+			    			drawCourseforTimeTable(getTrain(trainNumbers.getSelectionModel().getSelectedItem().toString()), chart);
+			    			chart.setBlockingTime(getBlockingTimeStairway(getTrain(trainNumbers.getSelectionModel().getSelectedItem().toString())));
+			    		    chart.setAnimated(false);
+			    		    chart.setCreateSymbols(false);
+			    			yAxis.setTickLabelFormatter(new NumberAxis.DefaultFormatter(yAxis) {
+			    			        @Override
+			    			        public String toString(Number value) {
+			    			        	while (value.doubleValue() != 0) {
+			    			            return String.format("%7.0f", -value.doubleValue());
+			    			        }
+			    			        	return String.format("%7.0f", value.doubleValue());
+			    			        }
+			    			    });
+			    			Thread.sleep(500);
+			    			chart.getBlockingTimeChartPlotChildren().clear();
+	     		        	chart.getData().clear();
+	     		    		drawCourseforTimeTable(getTrain(trainNumbers.getSelectionModel().getSelectedItem().toString()), chart);
+			    			
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+	        	}
+	        	
+	        	else {
+	            chart.getData().clear();
+	            chart.getBlockingTimeChartPlotChildren().clear();
+                timeDistanceChart.getXAxis().setAutoRanging(true);
+				timeDistanceChart.getYAxis().setAutoRanging(true);
+    			drawCourseforTimeTable(getTrain(trainNumbers.getSelectionModel().getSelectedItem().toString()), chart);
+    			chart.setBlockingTime(getBlockingTimeStairway(getTrain(trainNumbers.getSelectionModel().getSelectedItem().toString())));
     		    chart.setAnimated(false);
     		    chart.setCreateSymbols(false);
     			yAxis.setTickLabelFormatter(new NumberAxis.DefaultFormatter(yAxis) {
@@ -180,34 +210,34 @@ public class GraphPaneController {
     			        	return String.format("%7.0f", value.doubleValue());
     			        }
     			    });
+	        	}
 
     			chart.setOnMouseDragged(new EventHandler<MouseEvent>() {
     		          @Override
     		          public void handle(MouseEvent event) {
+    		        	  
+    		        	 if(event.getButton().equals(MouseButton.PRIMARY)){
+    		        		 
     		        	 chart.getBlockingTimeChartPlotChildren().clear();
     		        	 chart.getData().clear();
-
-    		    		 drawCourseforTimeTable(getTrain(newValue), chart);
-
-    		    		 /*
-    		    		 for (BlockingTime blockingTime : chart.blockingTimes) {
-    		        	 chart.addRectangle(blockingTime.getStartMeter(),
-    		        			 blockingTime.getStartTimeInSecond(),
-    		        			 blockingTime.getEndMeter()-blockingTime.getStartMeter(),
-    		        			 blockingTime.getEndTimeInSecond()-blockingTime.getStartTimeInSecond());
+    		        	 
+    		    		 drawCourseforTimeTable(getTrain(trainNumbers.getSelectionModel().getSelectedItem().toString()), chart);
+    		        	 }
+    		        	 
+    		    		 chart.setOnMouseReleased(new EventHandler<MouseEvent>(){
+    	    				  public void handle(MouseEvent event) {
+    	    					 if(event.getButton().equals(MouseButton.SECONDARY)){
+    	     		        	 chart.getBlockingTimeChartPlotChildren().clear();
+    	     		        	 chart.getData().clear();
+    	     		    		 drawCourseforTimeTable(getTrain(trainNumbers.getSelectionModel().getSelectedItem().toString()), chart);
+    	    					 }}
+    	     		          });
+    	    			
     		          }
-    		          */
-    		          }
-    		          });
-
-
-            }
-        });
-
-
-
-
-
+    		          });  		
+	        }
+	        
+	    });
 	    xAxis.setSide(Side.TOP);
 	    return chart ;
 	}
@@ -260,7 +290,6 @@ public class GraphPaneController {
 
 
 	public LineChart<Number, Number> drawVelocityTable(AbstractTrainSimulator train, LineChart<Number, Number> chart) {
-		chart.getData().clear();
 		XYChart.Series<Number, Number> CourseForVelocitySeries = new Series<Number, Number>();
 		CourseForVelocitySeries.setName("course for velocity");
 		if (train.getTrain().getStatus() != SimpleTrain.INACTIVE) {
@@ -289,7 +318,6 @@ public class GraphPaneController {
 	}
 
 	public BlockingTimeChart<Number, Number> drawCourseforTimeTable(AbstractTrainSimulator train, BlockingTimeChart<Number, Number> chart) {
-		chart.getData().clear();
 		XYChart.Series<Number, Number> courseForTimeSeries = new Series<Number, Number>();
 		courseForTimeSeries.setName("course for time");
 		double y = -1;
@@ -300,11 +328,6 @@ public class GraphPaneController {
 		}
 			chart.getData().add(courseForTimeSeries);
 			chart.setCreateSymbols(false);
-		}
-
-		List<BlockingTime> blockingTimes = this.getBlockingTimeStairway(train);
-		for (BlockingTime blockingTime : blockingTimes) {
-			blockingTime.getEndMeter();
 		}
 
 		return chart;
@@ -417,6 +440,7 @@ public class GraphPaneController {
 
 	DraggableChart<Number, Number> timeDistanceChart;
 	DraggableChart<Number, Number> speedProfileChart;
+	
 
 	ObservableList<String> numbers = FXCollections.observableArrayList();
 	private ConcurrentHashMap<String, AbstractTrainSimulator> trainMap =
@@ -477,39 +501,15 @@ public class GraphPaneController {
 
 		public BlockingTimeChart(Axis<X> xAxis, Axis<Y> yAxis) {
 			super(xAxis, yAxis);
-
-
-			// TODO Auto-generated constructor stub
 		}
 
 		void setBlockingTime(List<BlockingTime> blockingTimes) {
 			this.blockingTimes = blockingTimes;
 		}
 
-		 public void addRectangle(double x, double y, double width, double height) {
-		        r = new Rectangle();
-
-		        double dx = ((ValueAxis<?>) this.getXAxis()).getLowerBound();
-		        double dy = ((ValueAxis<?>) this.getYAxis()).getLowerBound();
-
-		        r.setX(this.getXAxis().getDisplayPosition(this.getXAxis().toRealValue(x)));
-                r.setY(this.getYAxis().getDisplayPosition(this.getYAxis().toRealValue(-y)));
-                r.setWidth(this.getXAxis().getDisplayPosition(this.getXAxis().toRealValue(width)));
-                r.setHeight(this.getYAxis().getDisplayPosition(this.getYAxis().toRealValue(-height)));
-                r.setFill(Color.GREEN.deriveColor(0, 1, 1, 0.5));
-         		r.setMouseTransparent(true);
-                this.getPlotChildren().add(r);
-
-		    }
-
-		 public void removeRectangle () {
-			 this.getPlotChildren().clear();
-		 }
-
 		public ObservableList<Node> getBlockingTimeChartPlotChildren() {
 			return this.getPlotChildren();
 		}
-
 
 		 @Override
         protected void layoutPlotChildren() {
@@ -517,7 +517,7 @@ public class GraphPaneController {
             if (this.blockingTimes != null) {
             	for (BlockingTime blockingTime : this.blockingTimes) {
             		 r = new Rectangle();
-
+	                     this.getPlotChildren().add(r);
                      r.setX(this.getXAxis().getDisplayPosition(this.getXAxis().toRealValue(blockingTime.getStartMeter())));
                      r.setY(this.getYAxis().getDisplayPosition(this.getYAxis().toRealValue(-(blockingTime.getStartTimeInSecond()))));
                      r.setWidth(this.getXAxis().getDisplayPosition(
@@ -528,14 +528,11 @@ public class GraphPaneController {
                     		 		this.getYAxis().toRealValue(-(blockingTime.getEndTimeInSecond())))-
                     		 	this.getYAxis().getDisplayPosition(
                     		 		this.getYAxis().toRealValue(-(blockingTime.getStartTimeInSecond()))));
+  //              	r.getStyleClass().add("rectangle");
+                    r.setFill(Color.BLUE.deriveColor(0, 1, 1, 0.5));
+            	}}
 
-                     r.setFill(Color.GREEN.deriveColor(0, 1, 1, 0.5));
-             		 r.setMouseTransparent(true);
-                     this.getPlotChildren().add(r);
-            	}
-
-            }
-        }
+          }
 
 		private List<BlockingTime> blockingTimes;
 		Rectangle r;

@@ -43,3 +43,7 @@
 .label-bright {
 	-fx-font-family: "Century Gothic";
 }
+
+.rectangle {
+	 -fx-fill: rgba(0,255,0,0.5);
+}
