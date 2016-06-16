@@ -1,6 +1,7 @@
 package railview.simulation.ui;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -450,12 +451,19 @@ public class GraphPaneController {
 		return blockingTimes;
 	}
 
-	private List<Event> getEvents() {
+	private Map<TimeDistance, List<Event>> getEvents() {
+		Map<TimeDistance, List<Event>> eventsMap = new HashMap<TimeDistance, List<Event>>();
+		
+		TimeDistance td = new TimeDistance(100, 60);
 		List<Event> events = new ArrayList<Event>();
-		events.add(new Event(100, 60, Event.IN, "An in event"));
-		events.add(new Event(100, 60, Event.OUT, "An out event"));
-		events.add(new Event(100, 60, Event.SELF, "A self event"));
-		return events;
+		
+		events.add(new Event(100, 60, Event.IN, "grant Movement authority from S1000000000"));
+		events.add(new Event(100, 60, Event.OUT, "request resource"));
+		events.add(new Event(100, 60, Event.SELF, "wait at ööööööö"));
+		
+		eventsMap.put(td, events);
+		
+		return eventsMap;
 	}
 	
 	DraggableChart<Number, Number> timeDistanceChart;
@@ -479,9 +487,45 @@ public class GraphPaneController {
 		public double getSecond() {
 			return this.second;
 		}
+		
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + getOuterType().hashCode();
+			long temp;
+			temp = Double.doubleToLongBits(meter);
+			result = prime * result + (int) (temp ^ (temp >>> 32));
+			temp = Double.doubleToLongBits(second);
+			result = prime * result + (int) (temp ^ (temp >>> 32));
+			return result;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			TimeDistance other = (TimeDistance) obj;
+			if (!getOuterType().equals(other.getOuterType()))
+				return false;
+			if (Double.doubleToLongBits(meter) != Double
+					.doubleToLongBits(other.meter))
+				return false;
+			if (Double.doubleToLongBits(second) != Double
+					.doubleToLongBits(other.second))
+				return false;
+			return true;
+		}
 
 		private double meter;
 		private double second;
+		private GraphPaneController getOuterType() {
+			return GraphPaneController.this;
+		}
 	}
 
 	class BlockingTime {
@@ -517,20 +561,22 @@ public class GraphPaneController {
 	}
 
 	class Event {
-		Event(double meter, double second, int type, String text) {
+		Event(TimeDistance timeDistance, int type, String text) {
 			super();
-			this.meter = meter;
-			this.second = second;
+			this.timeDistance = timeDistance;
 			this.type = type;
 			this.text = text;
 		}
 		
-		public double getMeter() {
-			return meter;
+		Event(double meter, double time, int type, String text) {
+			super();
+			this.timeDistance = new TimeDistance(meter, time);
+			this.type = type;
+			this.text = text;
 		}
 		
-		public double getSecond() {
-			return second;
+		public TimeDistance getTimeDistance() {
+			return timeDistance;
 		}
 		
 		public int getType() {
@@ -541,8 +587,7 @@ public class GraphPaneController {
 			return text;
 		}
 		
-		private double meter;
-		private double second;
+		TimeDistance timeDistance;
 		private int type;
 		private String text;
 		
