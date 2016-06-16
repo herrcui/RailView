@@ -15,6 +15,7 @@ import railapp.simulation.infrastructure.PartialRouteResource;
 import railapp.simulation.runingdynamics.sections.DiscretePoint;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.simulation.train.TrainSimulator;
+import railapp.units.Duration;
 import railapp.units.Length;
 import railapp.units.Time;
 import railapp.units.UnitUtility;
@@ -352,12 +353,24 @@ public class GraphPaneController {
 		double meter = 0; // x
 		double timeInSecond = 0; // y
 
+		Time startTime = train.getTripSection().getStartTime();
+		
+		double timeInSecondTest = 12;
+		Time testTime = startTime.add(Duration.fromTotalSecond(timeInSecondTest));
+		
+		double duration = testTime.getDifference(startTime).getTotalSecond();
+		
 		for (DiscretePoint point : train.getWholeCoursePoints()) {
 			timeInSecond += point.getDuration().getTotalSecond();
 			meter += point.getDistance().getMeter();
 			pointList.add(new TimeDistance(meter, timeInSecond));
 		}
 		return pointList;
+	}
+	
+	private String getTimeString(Time time) {
+		// TODO 3:2:1 -> 03:01:01
+		return time.getHour() + ":" + time.getMinute() + ":" + time.getSecond();
 	}
 
 	private LinkedHashMap<Double, Double> getSpeedLimit(AbstractTrainSimulator train) {
@@ -437,7 +450,14 @@ public class GraphPaneController {
 		return blockingTimes;
 	}
 
-
+	private List<Event> getEvents() {
+		List<Event> events = new ArrayList<Event>();
+		events.add(new Event(100, 60, Event.IN, "An in event"));
+		events.add(new Event(100, 60, Event.OUT, "An out event"));
+		events.add(new Event(100, 60, Event.SELF, "A self event"));
+		return events;
+	}
+	
 	DraggableChart<Number, Number> timeDistanceChart;
 	DraggableChart<Number, Number> speedProfileChart;
 	
@@ -496,8 +516,42 @@ public class GraphPaneController {
 		private double endTimeInSecond;
 	}
 
+	class Event {
+		Event(double meter, double second, int type, String text) {
+			super();
+			this.meter = meter;
+			this.second = second;
+			this.type = type;
+			this.text = text;
+		}
+		
+		public double getMeter() {
+			return meter;
+		}
+		
+		public double getSecond() {
+			return second;
+		}
+		
+		public int getType() {
+			return type;
+		}
+		
+		public String getText() {
+			return text;
+		}
+		
+		private double meter;
+		private double second;
+		private int type;
+		private String text;
+		
+		static final int SELF = 0;
+		static final int IN = 1;
+		static final int OUT = -1;
+	}
+	
 	class BlockingTimeChart<X,Y> extends DraggableChart<X,Y> {
-
 
 		public BlockingTimeChart(Axis<X> xAxis, Axis<Y> yAxis) {
 			super(xAxis, yAxis);
@@ -537,6 +591,5 @@ public class GraphPaneController {
 		private List<BlockingTime> blockingTimes;
 		Rectangle r;
 
-	}
-
+	}	
 }
