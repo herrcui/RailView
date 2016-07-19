@@ -49,6 +49,8 @@ import javafx.scene.shape.Path;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import javafx.util.StringConverter;
+import javafx.util.converter.TimeStringConverter;
 
 public class GraphPaneController {
 
@@ -191,16 +193,14 @@ public class GraphPaneController {
 								trainNumbers.getSelectionModel().getSelectedItem()
 										.toString()).getTripSection()
 								.getStartTime();
-						double timeInSecondTest = 12;
-						Time testTime = startTime.add(Duration
-								.fromTotalSecond(timeInSecondTest));
-/**
-						yAxis.setTickLabelFormatter(new StringConverter<Number>() {
-							TimeStringConverter tsc = new TimeStringConverter("HH:mm:ss");
 
+						yAxis.setTickLabelFormatter(new StringConverter<Number>() {
 							@Override
 							public String toString(Number t) {
-								return tsc.toString(new Date(-t.longValue()));
+								Time testTime = startTime.add(Duration.fromTotalSecond(
+									-t.doubleValue()));
+								return testTime.toString();
+							
 							}
 
 							@Override
@@ -208,21 +208,8 @@ public class GraphPaneController {
 								return 1;
 							}
 						});
-**/
-						   
-						yAxis.setTickLabelFormatter(new NumberAxis.DefaultFormatter(
-								yAxis) {
-							@Override
-							public String toString(Number value) {
-								while (value.doubleValue() != 0) {
-									return String.format("%7.0f",
-											-value.doubleValue());
-									
-								}
-								return String.format("%7.0f",
-										value.doubleValue());
-							}
-						});
+				
+						
 						Thread.sleep(500);
 						chart.getBlockingTimeChartPlotChildren().clear();
 						chart.getData().clear();
@@ -277,21 +264,19 @@ public class GraphPaneController {
 					 * }
 					 **/
 
-					yAxis.setTickLabelFormatter(new NumberAxis.DefaultFormatter(
-							yAxis) {
+					yAxis.setTickLabelFormatter(new StringConverter<Number>() {
+
 						@Override
-						public String toString(Number value) {
-							while (value.doubleValue() != 0) {
-								return String.format("%7.0f",
-										-value.doubleValue());
-							}
-							return String.format("%7.0f", value.doubleValue());
+						public String toString(Number t) {
+							Time testTime = startTime.add(Duration.fromTotalSecond(
+								-t.doubleValue()));
+							return testTime.toString();
+						
 						}
 
 						@Override
-						public Number fromString(String arg0) {
-							// TODO Auto-generated method stub
-							return null;
+						public Number fromString(String string) {
+							return 1;
 						}
 					});
 				}
@@ -803,6 +788,7 @@ public class GraphPaneController {
 					this.getYAxis().toRealValue(-radius)));
 			circle.setFill(value);
 			this.getPlotChildren().add(circle);
+			
 			circle.setOnMouseEntered(new EventHandler<MouseEvent>() {
 				@Override
 				public void handle(MouseEvent t) {
