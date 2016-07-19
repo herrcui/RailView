@@ -12,6 +12,9 @@ import railapp.infrastructure.object.dto.InfrastructureObject;
 import railapp.infrastructure.path.dto.LinkEdge;
 import railapp.infrastructure.path.dto.LinkPath;
 import railapp.rollingstock.dto.SimpleTrain;
+import railapp.simulation.events.ScheduledEvent;
+import railapp.simulation.events.totrain.AbstractEventToTrain;
+import railapp.simulation.events.totrain.UpdateLocationEvent;
 import railapp.simulation.infrastructure.PartialRouteResource;
 import railapp.simulation.runingdynamics.sections.DiscretePoint;
 import railapp.simulation.train.AbstractTrainSimulator;
@@ -169,13 +172,14 @@ public class GraphPaneController {
 		NumberAxis yAxis = createYAxis2();
 		BlockingTimeChart<Number, Number> chart = new BlockingTimeChart<Number, Number>(
 				xAxis, yAxis);
-
+		
 		trainNumbers.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
+				AbstractTrainSimulator train = getTrain(trainNumbers.getSelectionModel().getSelectedItem().toString());
+				
 				if (chart.getData().isEmpty()) {
-					try {
-
+					try {						
 						chart.getData().clear();
 						chart.getBlockingTimeChartPlotChildren().clear();
 						timeDistanceChart.getXAxis().setAutoRanging(true);
@@ -183,16 +187,15 @@ public class GraphPaneController {
 						drawCourseforTimeTable(getTrain(trainNumbers
 								.getSelectionModel().getSelectedItem()
 								.toString()), chart);
-						chart.setBlockingTime(getBlockingTimeStairway(getTrain(trainNumbers
-								.getSelectionModel().getSelectedItem()
-								.toString())));
+
+						chart.setBlockingTime(getBlockingTimeStairway(train));
+						
+						chart.setEventsMap(getEvents(train, getTimeInDistance(train)));
+						
 						chart.setAnimated(false);
 						chart.setCreateSymbols(false);
 						
-						Time startTime = getTrain(
-								trainNumbers.getSelectionModel().getSelectedItem()
-										.toString()).getTripSection()
-								.getStartTime();
+						Time startTime = train.getTripSection().getStartTime();
 
 						yAxis.setTickLabelFormatter(new StringConverter<Number>() {
 							@Override
@@ -232,7 +235,7 @@ public class GraphPaneController {
 					drawCourseforTimeTable(getTrain(trainNumbers
 							.getSelectionModel().getSelectedItem().toString()),
 							chart);
-					chart.setBlockingTime(getBlockingTimeStairway(getTrain(trainNumbers
+					chart.setBlockingTime(getBlockingTimeStairway( getTrain(trainNumbers
 							.getSelectionModel().getSelectedItem().toString())));
 					chart.setAnimated(false);
 					chart.setCreateSymbols(false);
@@ -240,10 +243,6 @@ public class GraphPaneController {
 							trainNumbers.getSelectionModel().getSelectedItem()
 									.toString()).getTripSection()
 							.getStartTime();
-
-					double timeInSecondTest = 12;
-					Time testTime = startTime.add(Duration
-							.fromTotalSecond(timeInSecondTest));
 
 					// TODO arrows for events
 					// chart.drawArrow(400, 400, 200, 1000);
@@ -415,7 +414,9 @@ public class GraphPaneController {
 		double y = -1;
 		courseForTimeSeries.getData().add(new Data<Number, Number>(0, y));
 		if (train.getTrain().getStatus() != SimpleTrain.INACTIVE) {
-			for (TimeDistance point : getTimeInDistance(train)) {
+			List<TimeDistance> timeDistances = this.getTimeInDistance(train);
+			
+			for (TimeDistance point : timeDistances) {
 				courseForTimeSeries.getData().add(
 						new Data<Number, Number>(point.getMeter(), (point
 								.getSecond() * -1)));
@@ -447,25 +448,12 @@ public class GraphPaneController {
 		double meter = 0; // x
 		double timeInSecond = 0; // y
 
-		Time startTime = train.getTripSection().getStartTime();
-
-		double timeInSecondTest = 12;
-		Time testTime = startTime.add(Duration
-				.fromTotalSecond(timeInSecondTest));
-
-		double duration = testTime.getDifference(startTime).getTotalSecond();
-
 		for (DiscretePoint point : train.getWholeCoursePoints()) {
 			timeInSecond += point.getDuration().getTotalSecond();
 			meter += point.getDistance().getMeter();
 			pointList.add(new TimeDistance(meter, timeInSecond));
 		}
 		return pointList;
-	}
-
-	private String getTimeString(Time time) {
-		// TODO 3:2:1 -> 03:01:01
-		return time.getHour() + ":" + time.getMinute() + ":" + time.getSecond();
 	}
 
 	private LinkedHashMap<Double, Double> getSpeedLimit(
@@ -560,19 +548,47 @@ public class GraphPaneController {
 		return blockingTimes;
 	}
 
-	private Map<TimeDistance, List<Event>> getEvents() {
+	private Map<TimeDistance, List<Event>> getEvents(AbstractTrainSimulator train, List<TimeDistance> timeDistances) {
 		Map<TimeDistance, List<Event>> eventsMap = new HashMap<TimeDistance, List<Event>>();
 
-		TimeDistance td = new TimeDistance(100, 60);
-		List<Event> events = new ArrayList<Event>();
-
-		events.add(new Event(100, 60, Event.IN,
-				"grant Movement authority from S1000000000"));
-		events.add(new Event(100, 60, Event.OUT, "request resource"));
-		events.add(new Event(100, 60, Event.SELF, "wait at ööööööö"));
-
-		eventsMap.put(td, events);
-
+		for (ScheduledEvent scheduledEvent : train.getEvents()) {
+			if (scheduledEvent instanceof UpdateLocationEvent) {
+				continue;
+			}
+			
+			double second = scheduledEvent.getScheduleTime().getDifference(
+					train.getTripSection().getStartTime()).getTotalSecond();
+			double currentSecond = 0;
+			double currentMeter = 0;
+			
+			for (TimeDistance point : timeDistances) {
+				if (point.getSecond() + currentSecond >= second) {
+					double factor = (point.getSecond() + currentSecond - second)/point.getSecond();
+					currentMeter += factor * point.getMeter();
+					break;
+				} else {
+					currentSecond += point.getSecond();
+					currentMeter += point.getMeter();
+				}
+			}
+			
+			TimeDistance entry = new TimeDistance(second, currentMeter);
+			int type = Event.IN;
+			if (scheduledEvent.getSource().equals(train)) {
+				type = Event.SELF;
+			}
+			
+			String text = scheduledEvent instanceof AbstractEventToTrain ?
+					((AbstractEventToTrain) scheduledEvent).getEventString() : scheduledEvent.toString();
+			
+			List<Event> events = eventsMap.get(entry);
+			if (events == null) {
+				events = new ArrayList<Event>();
+				eventsMap.put(entry, events);
+			}
+			events.add(new Event(entry, type, text));
+		}
+		
 		return eventsMap;
 	}
 
@@ -719,28 +735,8 @@ public class GraphPaneController {
 			this.blockingTimes = blockingTimes;
 		}
 		
-
-		private Map<TimeDistance, List<Event>> getEvents() {
-			Map<TimeDistance, List<Event>> eventsMap = new HashMap<TimeDistance, List<Event>>();
-
-			TimeDistance td = new TimeDistance(100, 60);
-			List<Event> events = new ArrayList<Event>();
-
-			events.add(new Event(100, 60, Event.IN,
-					"grant Movement authority from S1000000000"));
-			events.add(new Event(100, 60, Event.OUT, "request resource"));
-			events.add(new Event(100, 60, Event.SELF, "wait at ööööööö"));
-
-			TimeDistance td2 = new TimeDistance(500, 1000);
-
-			List<Event> events2 = new ArrayList<Event>();
-			events2.add(new Event(500, 1000, Event.OUT, "request resource"));
-			events2.add(new Event(500, 1000, Event.SELF, "wait at ööööööö"));
-
-			eventsMap.put(td, events);
-			eventsMap.put(td2, events2);
-
-			return eventsMap;
+		void setEventsMap(Map<TimeDistance, List<Event>> eventsMap) {
+			this.eventsMap = eventsMap;
 		}
 
 		private void drawArrow(double startx, double starty, double endx,
@@ -850,8 +846,7 @@ public class GraphPaneController {
 				}
 
 		
-				for (Map.Entry<TimeDistance, List<Event>> entry : getEvents()
-						.entrySet()) {
+				for (Map.Entry<TimeDistance, List<Event>> entry : this.eventsMap.entrySet()) {
 					TimeDistance td = entry.getKey();
 					List<Event> eventList = entry.getValue();
 					yAxis = (NumberAxis) this.getYAxis();
@@ -921,6 +916,7 @@ public class GraphPaneController {
 		}
 
 		private List<BlockingTime> blockingTimes;
+		private Map<TimeDistance, List<Event>> eventsMap;
 		private NumberAxis yAxis;
 		Circle circle;
 		Text txt;
