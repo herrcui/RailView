@@ -563,8 +563,10 @@ public class GraphPaneController {
 			
 			for (TimeDistance point : timeDistances) {
 				if (point.getSecond() + currentSecond >= second) {
-					double factor = (point.getSecond() + currentSecond - second)/point.getSecond();
-					currentMeter += factor * point.getMeter();
+					if (point.getSecond() != 0) {
+						double factor = (point.getSecond() + currentSecond - second)/point.getSecond();
+						currentMeter += factor * point.getMeter();
+					}
 					break;
 				} else {
 					currentSecond += point.getSecond();
@@ -572,7 +574,7 @@ public class GraphPaneController {
 				}
 			}
 			
-			TimeDistance entry = new TimeDistance(second, currentMeter);
+			TimeDistance entry = new TimeDistance(currentMeter, second);
 			int type = Event.IN;
 			if (scheduledEvent.getSource().equals(train)) {
 				type = Event.SELF;
