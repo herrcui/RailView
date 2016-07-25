@@ -558,23 +558,24 @@ public class GraphPaneController {
 			
 			double second = scheduledEvent.getScheduleTime().getDifference(
 					train.getTripSection().getStartTime()).getTotalSecond();
-			double currentSecond = 0;
-			double currentMeter = 0;
+			double lastSecond = 0;
+			double lastMeter = 0;
 			
+			// second and meter in timeDistances are accumulated value
 			for (TimeDistance point : timeDistances) {
-				if (point.getSecond() + currentSecond >= second) {
-					if (point.getSecond() != 0) {
-						double factor = (point.getSecond() + currentSecond - second)/point.getSecond();
-						currentMeter += factor * point.getMeter();
+				if (point.getSecond() >= second) {
+					if (point.getSecond() - lastSecond != 0) {
+						double factor = (second - lastSecond)/(point.getSecond() - lastSecond);
+						lastMeter += factor * (point.getMeter() - lastMeter);
 					}
 					break;
 				} else {
-					currentSecond += point.getSecond();
-					currentMeter += point.getMeter();
+					lastSecond = point.getSecond();
+					lastMeter = point.getMeter();
 				}
 			}
 			
-			TimeDistance entry = new TimeDistance(currentMeter, second);
+			TimeDistance entry = new TimeDistance(lastMeter, second);
 			int type = Event.IN;
 			if (scheduledEvent.getSource().equals(train)) {
 				type = Event.SELF;
@@ -588,7 +589,10 @@ public class GraphPaneController {
 				events = new ArrayList<Event>();
 				eventsMap.put(entry, events);
 			}
-			events.add(new Event(entry, type, text));
+			
+			Event event = new Event(entry, type, text);
+			events.add(event);
+			System.out.println(event);
 		}
 		
 		return eventsMap;
@@ -645,6 +649,11 @@ public class GraphPaneController {
 					.doubleToLongBits(other.second))
 				return false;
 			return true;
+		}
+		
+		@Override
+		public String toString() {
+			return "TimeDistance [meter=" + meter + ", second=" + second + "]";
 		}
 
 		private double meter;
@@ -712,6 +721,12 @@ public class GraphPaneController {
 
 		public String getText() {
 			return text;
+		}
+
+		@Override
+		public String toString() {
+			return "Event [timeDistance=" + timeDistance + ", type=" + type
+					+ ", text=" + text + "]";
 		}
 
 		TimeDistance timeDistance;
