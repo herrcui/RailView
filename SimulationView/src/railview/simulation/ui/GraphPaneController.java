@@ -769,7 +769,7 @@ public class GraphPaneController {
 							this.getXAxis().toRealValue(endx)), this.getYAxis()
 							.getDisplayPosition(
 									this.getYAxis().toRealValue(-endy))));
-			Polygon arrow = new Polygon();
+			arrow = new Polygon();
 			arrow.getPoints().addAll(
 					new Double[] { 0.0, 5.0, -5.0, -5.0, 5.0, -5.0 });
 
@@ -868,19 +868,38 @@ public class GraphPaneController {
 					List<Event> eventList = entry.getValue();
 					yAxis = (NumberAxis) this.getYAxis();
 
-					Circle circle = new Circle();
-					circle.setCenterX(this.getXAxis().getDisplayPosition(
-							this.getXAxis().toRealValue(td.getMeter())));
-					circle.setCenterY(this.getYAxis().getDisplayPosition(
-							this.getYAxis().toRealValue(-td.getSecond())));
-					circle.setRadius(this.getYAxis().getDisplayPosition(
-							this.getYAxis().toRealValue(-40)));
-					circle.setFill(Color.BLACK);
-					this.getPlotChildren().add(circle);
+					 Polygon polygon = new Polygon();
+				        polygon.getPoints().addAll(new Double[]{
+				        		(this.getXAxis().getDisplayPosition(
+										this.getXAxis().toRealValue(td.getMeter()))-
+										5.0),
+												
+								(this.getYAxis().getDisplayPosition(
+										this.getYAxis().toRealValue(-td.getSecond()))-
+										2.89),
+				           
+								(this.getXAxis().getDisplayPosition(
+										this.getXAxis().toRealValue(td.getMeter()))+
+										5.0),
+										
+								(this.getYAxis().getDisplayPosition(
+										this.getYAxis().toRealValue(-td.getSecond()))-
+										2.89),
+										
+								(this.getXAxis().getDisplayPosition(
+										this.getXAxis().toRealValue(td.getMeter()))),
+										
+								(this.getYAxis().getDisplayPosition(
+										this.getYAxis().toRealValue(-td.getSecond()))+
+										5.77),
+   
+				        });
+				        this.getPlotChildren().add(polygon);
 
-					circle.setOnMouseClicked(new EventHandler<MouseEvent>() {
+					polygon.setOnMouseClicked(new EventHandler<MouseEvent>() {
 						@Override
 						public void handle(MouseEvent t) {
+							System.out.println(getPlotChildren().toString());
 							if (td.getSecond() < -(yAxis.getLowerBound() / 2)) {
 								double x = td.getMeter();
 								double y = -((yAxis.getLowerBound() / 3) * 2);
@@ -923,8 +942,9 @@ public class GraphPaneController {
 									}
 									y = y - 80;
 								}
-							}
+							} 
 						}
+						
 					});
 
 				}
@@ -940,5 +960,6 @@ public class GraphPaneController {
 		Rectangle r;
 		Path path;
 		Label label;
+		Polygon arrow;
 	}
 }
