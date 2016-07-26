@@ -23,6 +23,10 @@ import railapp.units.Duration;
 import railapp.units.Length;
 import railapp.units.Time;
 import railapp.units.UnitUtility;
+import railview.simulation.ui.components.BlockingTimeChart;
+import railview.simulation.ui.data.BlockingTime;
+import railview.simulation.ui.data.EventData;
+import railview.simulation.ui.data.TimeDistance;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -30,30 +34,17 @@ import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Side;
-import javafx.scene.Node;
-import javafx.scene.chart.Axis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Data;
 import javafx.scene.chart.XYChart.Series;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TabPane;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.LineTo;
-import javafx.scene.shape.MoveTo;
-import javafx.scene.shape.Path;
-import javafx.scene.shape.Polygon;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
 import javafx.util.StringConverter;
-import javafx.util.converter.TimeStringConverter;
 
 public class GraphPaneController {
 
@@ -225,9 +216,7 @@ public class GraphPaneController {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-				}
-
-				else {
+				} else {
 					chart.getData().clear();
 					chart.getBlockingTimeChartPlotChildren().clear();
 					timeDistanceChart.getXAxis().setAutoRanging(true);
@@ -237,31 +226,15 @@ public class GraphPaneController {
 							chart);
 					chart.setBlockingTime(getBlockingTimeStairway( getTrain(trainNumbers
 							.getSelectionModel().getSelectedItem().toString())));
+					
+					chart.setEventsMap(getEvents(train, getTimeInDistance(train)));
+					
 					chart.setAnimated(false);
 					chart.setCreateSymbols(false);
 					Time startTime = getTrain(
 							trainNumbers.getSelectionModel().getSelectedItem()
 									.toString()).getTripSection()
 							.getStartTime();
-
-					// TODO arrows for events
-					// chart.drawArrow(400, 400, 200, 1000);
-					// chart.drawArrow2(400, 200, 400, 1000);
-					/**
-					 * for(Map.Entry<TimeDistance,List<Event>> entry :
-					 * getEvents().entrySet()){ TimeDistance td =
-					 * entry.getKey(); List<Event> eventList = entry.getValue();
-					 * chart.drawArrow2(td.getMeter(), td.getSecond(),
-					 * td.getMeter(), td.getSecond()+1000); double x =
-					 * td.getMeter(); double y = td.getSecond()+1150; for(Event
-					 * events: eventList){ //chart.writeText(x, y,
-					 * events.getText()); if(events.getType() == 0){
-					 * chart.drawCircle(x, y, 100, Color.YELLOW); }
-					 * if(events.getType() == 1){ chart.drawCircle(x, y, 100,
-					 * Color.GREEN); } if(events.getType() == -1){
-					 * chart.drawCircle(x, y, 100, Color.RED); } y = y + 200; }
-					 * }
-					 **/
 
 					yAxis.setTickLabelFormatter(new StringConverter<Number>() {
 
@@ -548,8 +521,8 @@ public class GraphPaneController {
 		return blockingTimes;
 	}
 
-	private Map<TimeDistance, List<Event>> getEvents(AbstractTrainSimulator train, List<TimeDistance> timeDistances) {
-		Map<TimeDistance, List<Event>> eventsMap = new HashMap<TimeDistance, List<Event>>();
+	private Map<TimeDistance, List<EventData>> getEvents(AbstractTrainSimulator train, List<TimeDistance> timeDistances) {
+		Map<TimeDistance, List<EventData>> eventsMap = new HashMap<TimeDistance, List<EventData>>();
 
 		for (ScheduledEvent scheduledEvent : train.getEvents()) {
 			if (scheduledEvent instanceof UpdateLocationEvent) {
@@ -576,390 +549,30 @@ public class GraphPaneController {
 			}
 			
 			TimeDistance entry = new TimeDistance(lastMeter, second);
-			int type = Event.IN;
+			int type = EventData.IN;
 			if (scheduledEvent.getSource().equals(train)) {
-				type = Event.SELF;
+				type = EventData.SELF;
 			}
 			
 			String text = scheduledEvent instanceof AbstractEventToTrain ?
 					((AbstractEventToTrain) scheduledEvent).getEventString() : scheduledEvent.toString();
 			
-			List<Event> events = eventsMap.get(entry);
+			List<EventData> events = eventsMap.get(entry);
 			if (events == null) {
-				events = new ArrayList<Event>();
+				events = new ArrayList<EventData>();
 				eventsMap.put(entry, events);
 			}
 			
-			Event event = new Event(entry, type, text);
+			EventData event = new EventData(entry, type, text);
 			events.add(event);
-			System.out.println(event);
 		}
 		
 		return eventsMap;
 	}
 
-	DraggableChart<Number, Number> timeDistanceChart;
-	DraggableChart<Number, Number> speedProfileChart;
+	private DraggableChart<Number, Number> timeDistanceChart;
+	private DraggableChart<Number, Number> speedProfileChart;
 
-	ObservableList<String> numbers = FXCollections.observableArrayList();
+	private ObservableList<String> numbers = FXCollections.observableArrayList();
 	private ConcurrentHashMap<String, AbstractTrainSimulator> trainMap = new ConcurrentHashMap<String, AbstractTrainSimulator>();
-
-	class TimeDistance {
-		TimeDistance(double meter, double second) {
-			this.meter = meter;
-			this.second = second;
-		}
-
-		public double getMeter() {
-			return this.meter;
-		}
-
-		public double getSecond() {
-			return this.second;
-		}
-
-		@Override
-		public int hashCode() {
-			final int prime = 31;
-			int result = 1;
-			result = prime * result + getOuterType().hashCode();
-			long temp;
-			temp = Double.doubleToLongBits(meter);
-			result = prime * result + (int) (temp ^ (temp >>> 32));
-			temp = Double.doubleToLongBits(second);
-			result = prime * result + (int) (temp ^ (temp >>> 32));
-			return result;
-		}
-
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			TimeDistance other = (TimeDistance) obj;
-			if (!getOuterType().equals(other.getOuterType()))
-				return false;
-			if (Double.doubleToLongBits(meter) != Double
-					.doubleToLongBits(other.meter))
-				return false;
-			if (Double.doubleToLongBits(second) != Double
-					.doubleToLongBits(other.second))
-				return false;
-			return true;
-		}
-		
-		@Override
-		public String toString() {
-			return "TimeDistance [meter=" + meter + ", second=" + second + "]";
-		}
-
-		private double meter;
-		private double second;
-
-		private GraphPaneController getOuterType() {
-			return GraphPaneController.this;
-		}
-	}
-
-	class BlockingTime {
-		BlockingTime(double startMeter, double endMeter,
-				double startTimeInSecond, double endTimeInSecond) {
-			super();
-			this.startMeter = startMeter;
-			this.endMeter = endMeter;
-			this.startTimeInSecond = startTimeInSecond;
-			this.endTimeInSecond = endTimeInSecond;
-		}
-
-		public double getStartMeter() {
-			return startMeter;
-		}
-
-		public double getEndMeter() {
-			return endMeter;
-		}
-
-		public double getStartTimeInSecond() {
-			return startTimeInSecond;
-		}
-
-		public double getEndTimeInSecond() {
-			return endTimeInSecond;
-		}
-
-		private double startMeter;
-		private double endMeter;
-		private double startTimeInSecond;
-		private double endTimeInSecond;
-	}
-
-	class Event {
-		Event(TimeDistance timeDistance, int type, String text) {
-			super();
-			this.timeDistance = timeDistance;
-			this.type = type;
-			this.text = text;
-		}
-
-		Event(double meter, double time, int type, String text) {
-			super();
-			this.timeDistance = new TimeDistance(meter, time);
-			this.type = type;
-			this.text = text;
-		}
-
-		public TimeDistance getTimeDistance() {
-			return timeDistance;
-		}
-
-		public int getType() {
-			return type;
-		}
-
-		public String getText() {
-			return text;
-		}
-
-		@Override
-		public String toString() {
-			return "Event [timeDistance=" + timeDistance + ", type=" + type
-					+ ", text=" + text + "]";
-		}
-
-		TimeDistance timeDistance;
-		private int type;
-		private String text;
-
-		static final int SELF = 0;
-		static final int IN = 1;
-		static final int OUT = -1;
-	}
-
-	class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
-
-		public BlockingTimeChart(Axis<X> xAxis, Axis<Y> yAxis) {
-			super(xAxis, yAxis);
-		}
-		
-		public ObservableList<Node> getBlockingTimeChartPlotChildren() {
-			return this.getPlotChildren();
-		}
-
-		void setBlockingTime(List<BlockingTime> blockingTimes) {
-			this.blockingTimes = blockingTimes;
-		}
-		
-		void setEventsMap(Map<TimeDistance, List<Event>> eventsMap) {
-			this.eventsMap = eventsMap;
-		}
-
-		private void drawArrow(double startx, double starty, double endx,
-				double endy) {
-			path = new Path();
-			path.getElements().add(
-					new MoveTo(this.getXAxis().getDisplayPosition(
-							this.getXAxis().toRealValue(startx)), this
-							.getYAxis().getDisplayPosition(
-									this.getYAxis().toRealValue(-starty))));
-			path.getElements().add(
-					new LineTo(this.getXAxis().getDisplayPosition(
-							this.getXAxis().toRealValue(endx)), this.getYAxis()
-							.getDisplayPosition(
-									this.getYAxis().toRealValue(-endy))));
-			arrow = new Polygon();
-			arrow.getPoints().addAll(
-					new Double[] { 0.0, 5.0, -5.0, -5.0, 5.0, -5.0 });
-
-			double angle = Math.atan2(endy - starty, endx - startx) * 180 / 3.14;
-
-			arrow.setRotate((angle - 90));
-
-			arrow.setTranslateX(this.getXAxis().getDisplayPosition(
-					this.getXAxis().toRealValue(startx)));
-			arrow.setTranslateY(this.getYAxis().getDisplayPosition(
-					this.getYAxis().toRealValue(-starty)));
-
-			arrow.setTranslateX(this.getXAxis().getDisplayPosition(
-					this.getXAxis().toRealValue(endx)));
-			arrow.setTranslateY(this.getYAxis().getDisplayPosition(
-					this.getYAxis().toRealValue(-endy)));
-
-			this.getPlotChildren().addAll(path, arrow);
-		}
-
-		private void drawCircle(double centerX, double centerY, double radius,
-				Paint value, Event events) {
-			circle = new Circle();
-			circle.setCenterX(this.getXAxis().getDisplayPosition(
-					this.getXAxis().toRealValue(centerX)));
-			circle.setCenterY(this.getYAxis().getDisplayPosition(
-					this.getYAxis().toRealValue(-centerY)));
-			circle.setRadius(this.getYAxis().getDisplayPosition(
-					this.getYAxis().toRealValue(-radius)));
-			circle.setFill(value);
-			this.getPlotChildren().add(circle);
-			
-			circle.setOnMouseEntered(new EventHandler<MouseEvent>() {
-				@Override
-				public void handle(MouseEvent t) {
-					events.getText();
-					writeText(centerX + 300, -centerY, events.getText());
-
-				}
-			});
-			circle.setOnMouseExited(new EventHandler<MouseEvent>() {
-				@Override
-				public void handle(MouseEvent t) {
-					removeText();
-
-				}
-			});
-		}
-
-		private void writeText(double x, double y, String text) {
-			txt = new Text();
-			txt.setText(text);
-			txt.setLayoutX(this.getXAxis().getDisplayPosition(
-					this.getXAxis().toRealValue(x)));
-			txt.setLayoutY(this.getYAxis().getDisplayPosition(
-					this.getYAxis().toRealValue(y)));
-			this.getPlotChildren().add(txt);
-		}
-
-		private void removeText() {
-			this.getPlotChildren().remove(this.txt);
-		}
-
-		@Override
-		protected void layoutPlotChildren() {
-			super.layoutPlotChildren();
-			if (this.blockingTimes != null) {
-				for (BlockingTime blockingTime : this.blockingTimes) {
-					r = new Rectangle();
-					this.getPlotChildren().add(r);
-					r.setX(this.getXAxis().getDisplayPosition(
-							this.getXAxis().toRealValue(
-									blockingTime.getStartMeter())));
-					r.setY(this.getYAxis().getDisplayPosition(
-							this.getYAxis().toRealValue(
-									-(blockingTime.getStartTimeInSecond()))));
-					r.setWidth(this.getXAxis().getDisplayPosition(
-							this.getXAxis().toRealValue(
-									blockingTime.getEndMeter()))
-							- this.getXAxis().getDisplayPosition(
-									this.getXAxis().toRealValue(
-											blockingTime.getStartMeter())));
-					r.setHeight(this.getYAxis().getDisplayPosition(
-							this.getYAxis().toRealValue(
-									-(blockingTime.getEndTimeInSecond())))
-							- this.getYAxis().getDisplayPosition(
-									this.getYAxis().toRealValue(
-											-(blockingTime
-													.getStartTimeInSecond()))));
-					r.setFill(Color.BLUE.deriveColor(0, 1, 1, 0.5));
-				}
-
-		
-				for (Map.Entry<TimeDistance, List<Event>> entry : this.eventsMap.entrySet()) {
-					TimeDistance td = entry.getKey();
-					List<Event> eventList = entry.getValue();
-					yAxis = (NumberAxis) this.getYAxis();
-
-					 Polygon polygon = new Polygon();
-				        polygon.getPoints().addAll(new Double[]{
-				        		(this.getXAxis().getDisplayPosition(
-										this.getXAxis().toRealValue(td.getMeter()))-
-										5.0),
-												
-								(this.getYAxis().getDisplayPosition(
-										this.getYAxis().toRealValue(-td.getSecond()))-
-										2.89),
-				           
-								(this.getXAxis().getDisplayPosition(
-										this.getXAxis().toRealValue(td.getMeter()))+
-										5.0),
-										
-								(this.getYAxis().getDisplayPosition(
-										this.getYAxis().toRealValue(-td.getSecond()))-
-										2.89),
-										
-								(this.getXAxis().getDisplayPosition(
-										this.getXAxis().toRealValue(td.getMeter()))),
-										
-								(this.getYAxis().getDisplayPosition(
-										this.getYAxis().toRealValue(-td.getSecond()))+
-										5.77),
-   
-				        });
-				        this.getPlotChildren().add(polygon);
-
-					polygon.setOnMouseClicked(new EventHandler<MouseEvent>() {
-						@Override
-						public void handle(MouseEvent t) {
-							System.out.println(getPlotChildren().toString());
-							if (td.getSecond() < -(yAxis.getLowerBound() / 2)) {
-								double x = td.getMeter();
-								double y = -((yAxis.getLowerBound() / 3) * 2);
-								drawArrow(td.getMeter(), td.getSecond(),
-										td.getMeter(),
-										-((yAxis.getLowerBound() / 3) * 2) - 65);
-								for (Event events : eventList) {
-									// chart.writeText(x, y, events.getText());
-									if (events.getType() == 0) {
-										drawCircle(x, y, 40, Color.ORANGE,
-												events);
-									}
-									if (events.getType() == 1) {
-										drawCircle(x, y, 40, Color.GREEN,
-												events);
-									}
-									if (events.getType() == -1) {
-										drawCircle(x, y, 40, Color.RED, events);
-									}
-									y = y + 80;
-								}
-							} else {
-								double x = td.getMeter();
-								double y = -((yAxis.getLowerBound() / 3));
-								drawArrow(td.getMeter(), td.getSecond(),
-										td.getMeter(),
-										-((yAxis.getLowerBound() / 3) - 65));
-								for (Event events : eventList) {
-									// chart.writeText(x, y, events.getText());
-									if (events.getType() == 0) {
-										drawCircle(x, y, 40, Color.ORANGE,
-												events);
-									}
-									if (events.getType() == 1) {
-										drawCircle(x, y, 40, Color.GREEN,
-												events);
-									}
-									if (events.getType() == -1) {
-										drawCircle(x, y, 40, Color.RED, events);
-									}
-									y = y - 80;
-								}
-							} 
-						}
-						
-					});
-
-				}
-
-			}
-		}
-
-		private List<BlockingTime> blockingTimes;
-		private Map<TimeDistance, List<Event>> eventsMap;
-		private NumberAxis yAxis;
-		Circle circle;
-		Text txt;
-		Rectangle r;
-		Path path;
-		Label label;
-		Polygon arrow;
-	}
 }
