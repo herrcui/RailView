@@ -87,18 +87,19 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 		Circle circle = new Circle();
 		circle.setCenterX(this.getXAxis().getDisplayPosition(
 				this.getXAxis().toRealValue(centerX)));
-		circle.setCenterY(this.getYAxis().getDisplayPosition(
-				this.getYAxis().toRealValue(-centerY)));
-		circle.setRadius(this.getYAxis().getDisplayPosition(
-				this.getYAxis().toRealValue(-radius)));
+		circle.setCenterY(centerY);
+		circle.setRadius(radius);
 		circle.setFill(value);
+		double centerPositon = this.getYAxis().getDisplayPosition(this.getYAxis().toRealValue(centerY));
 		this.getPlotChildren().add(circle);
 		
 		circle.setOnMouseEntered(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent t) {
-				event.getText();
-				writeText(centerX + 300, -centerY, event.getText());
+				NumberAxis xAxis = (NumberAxis) getXAxis();
+				NumberAxis yAxis = (NumberAxis) getYAxis();
+				String eventString = ("Event: " + event.getText());
+				writeText(xAxis.getUpperBound()/2 - xAxis.getUpperBound()/8, yAxis.getLowerBound()/10*9 , eventString);
 
 			}
 		});
@@ -165,27 +166,30 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 				Polygon polygon = new Polygon();
 			        polygon.getPoints().addAll(new Double[]{
 			        		(this.getXAxis().getDisplayPosition(
-									this.getXAxis().toRealValue(td.getMeter()))-
-									5.0),
+									this.getXAxis().toRealValue(td.getMeter()))),
 											
 							(this.getYAxis().getDisplayPosition(
 									this.getYAxis().toRealValue(-td.getSecond()))-
-									2.89),
+									6.0),
 			           
 							(this.getXAxis().getDisplayPosition(
-									this.getXAxis().toRealValue(td.getMeter()))+
-									5.0),
+									this.getXAxis().toRealValue(td.getMeter()))+6.0),
 									
 							(this.getYAxis().getDisplayPosition(
-									this.getYAxis().toRealValue(-td.getSecond()))-
-									2.89),
+									this.getYAxis().toRealValue(-td.getSecond()))),
 									
 							(this.getXAxis().getDisplayPosition(
 									this.getXAxis().toRealValue(td.getMeter()))),
 									
 							(this.getYAxis().getDisplayPosition(
 									this.getYAxis().toRealValue(-td.getSecond()))+
-									5.77),
+									6.0),
+									
+							(this.getXAxis().getDisplayPosition(
+									this.getXAxis().toRealValue(td.getMeter()))-6.0),
+											
+							(this.getYAxis().getDisplayPosition(
+									this.getYAxis().toRealValue(-td.getSecond()))),
 
 			        });
 			        this.getPlotChildren().add(polygon);
@@ -203,49 +207,58 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 						if (timeDistanceEvents == null) {
 							if (td.getSecond() < -(yAxis.getLowerBound() / 2)) {
 								double x = td.getMeter();
-								double y = -((yAxis.getLowerBound() / 3) * 2);
+								double y = yAxis.getDisplayPosition(
+										yAxis.toRealValue(((yAxis.getLowerBound() / 3) * 2)));
 								arrow = drawArrow(td.getMeter(), td.getSecond(),
 										td.getMeter(),
-										-((yAxis.getLowerBound() / 3) * 2) - 65);
+										-((yAxis.getLowerBound() / 3) * 2) - 100);
 								path = drawPath(td.getMeter(), td.getSecond(),
 										td.getMeter(),
-										-((yAxis.getLowerBound() / 3) * 2) - 65);
+										-((yAxis.getLowerBound() / 3) * 2) - 100);
 								
 								for (EventData event : eventList) {
 									// chart.writeText(x, y, events.getText());
 									if (event.getType() == 0) {
-										drawCircle(x, y, 40, Color.ORANGE,
+										drawCircle(x, y, 8, Color.ORANGE,
 												event);
+										y = y + 16;
 									}
 									if (event.getType() == 1) {
-										drawCircle(x, y, 40, Color.GREEN,
+										drawCircle(x, y, 8, Color.GREEN,
 												event);
+										y = y + 16;
 									}
 									if (event.getType() == -1) {
-										drawCircle(x, y, 40, Color.RED, event);
+										drawCircle(x, y, 8, Color.RED, event);
+										y = y + 16;
 									}
-									y = y + 80;
 								}
 							} else {
 								double x = td.getMeter();
-								double y = -((yAxis.getLowerBound() / 3));
-								drawArrow(td.getMeter(), td.getSecond(),
+								double y = yAxis.getDisplayPosition(
+										yAxis.toRealValue(((yAxis.getLowerBound() / 3))));
+								arrow = drawArrow(td.getMeter(), td.getSecond(),
 										td.getMeter(),
-										-((yAxis.getLowerBound() / 3) - 65));
+										-((yAxis.getLowerBound() / 3) - 100));
+								path = drawPath(td.getMeter(), td.getSecond(),
+										td.getMeter(),
+										-((yAxis.getLowerBound() / 3) - 100));
 								for (EventData events : eventList) {
 									// chart.writeText(x, y, events.getText());
 									if (events.getType() == 0) {
-										drawCircle(x, y, 40, Color.ORANGE,
+										drawCircle(x, y, 8, Color.ORANGE,
 												events);
+										y = y - 16;
 									}
 									if (events.getType() == 1) {
-										drawCircle(x, y, 40, Color.GREEN,
+										drawCircle(x, y, 8, Color.GREEN,
 												events);
+										y = y - 16;
 									}
 									if (events.getType() == -1) {
-										drawCircle(x, y, 40, Color.RED, events);
+										drawCircle(x, y, 8, Color.RED, events);
+										y = y - 16;
 									}
-									y = y - 80;
 								}
 							}
 							
