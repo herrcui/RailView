@@ -20,11 +20,11 @@ public class InfrastructureElementsPane extends PannablePane {
 		this.heightProperty().addListener(observable -> draw());
 	}
 
-	void setCoordinateMapper(CoordinateMapper mapper) {
+	public void setCoordinateMapper(CoordinateMapper mapper) {
 		this.mapper = mapper;
 	}
 
-	void setElements(Collection<InfrastructureElement> elements) {
+	public void setElements(Collection<InfrastructureElement> elements) {
 		this.elements = elements;
 		this.draw();
 	}

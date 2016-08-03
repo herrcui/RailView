@@ -1,5 +1,7 @@
 package railview.simulation.ui;
 
+import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -11,6 +13,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import railapp.infrastructure.object.dto.InfrastructureObject;
 import railapp.infrastructure.path.dto.LinkEdge;
 import railapp.infrastructure.path.dto.LinkPath;
+import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.rollingstock.dto.SimpleTrain;
 import railapp.simulation.events.ScheduledEvent;
 import railapp.simulation.events.totrain.AbstractEventToTrain;
@@ -23,6 +26,7 @@ import railapp.units.Duration;
 import railapp.units.Length;
 import railapp.units.Time;
 import railapp.units.UnitUtility;
+import railview.infrastructure.container.NetworkPaneController;
 import railview.simulation.ui.components.BlockingTimeChart;
 import railview.simulation.ui.data.BlockingTime;
 import railview.simulation.ui.data.EventData;
@@ -33,6 +37,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Side;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
@@ -44,6 +49,7 @@ import javafx.scene.control.TabPane;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.util.StringConverter;
 
 public class GraphPaneController {
@@ -64,14 +70,23 @@ public class GraphPaneController {
 	private AnchorPane timeDistancePane;
 
 	@FXML
-	private ListView<String> trainNumbers;
+	private AnchorPane energyPane;
+	
+	@FXML
+	private AnchorPane snapshotRoot;
+
+	@FXML
+	private ListView<String> trainNumbersBlockingTime;
+
+	@FXML
+	private ListView<String> trainNumbersRunningDynamics;
 
 	@FXML
 	public void initialize() {
 		tabPane.setSide(Side.BOTTOM);
 
-		speedProfileChart = createVelocityChart();
-		timeDistanceChart = createCourseForTimeChart();
+		speedProfileChart = createSpeedprofileChart();
+		timeDistanceChart = createTimeDistanceChart();
 
 		speedprofilePane.getChildren().add(speedProfileChart);
 		timeDistancePane.getChildren().add(timeDistanceChart);
@@ -111,6 +126,23 @@ public class GraphPaneController {
 		});
 		speedProfileChart.startEventHandlers();
 
+		try {
+			FXMLLoader snapshotPaneLoader = new FXMLLoader();
+			URL location = SnapshotPaneController.class
+					.getResource("SnapshotPane.fxml");
+			snapshotPaneLoader.setLocation(location);
+			snapshotPane = (StackPane) snapshotPaneLoader.load();
+			this.snapshotPaneController = snapshotPaneLoader.getController();
+			
+			this.snapshotRoot.getChildren().add(snapshotPane);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void setInfrastructureServiceUtility(
+			IInfrastructureServiceUtility infraServiceUtility) {
+		this.snapshotPaneController.setInfrastructureServiceUtility(infraServiceUtility);
 	}
 
 	@FXML
@@ -133,14 +165,14 @@ public class GraphPaneController {
 		}
 	}
 
-	private DraggableChart<Number, Number> createVelocityChart() {
+	private DraggableChart<Number, Number> createSpeedprofileChart() {
 		NumberAxis xAxis = createXAxis();
 		NumberAxis yAxis = createYAxis();
 		DraggableChart<Number, Number> chart = new DraggableChart<>(xAxis,
 				yAxis);
 		chart.setAnimated(false);
 		chart.setCreateSymbols(false);
-		trainNumbers.getSelectionModel().selectedItemProperty()
+		trainNumbersRunningDynamics.getSelectionModel().selectedItemProperty()
 				.addListener(new ChangeListener<String>() {
 					@Override
 					public void changed(
@@ -157,137 +189,159 @@ public class GraphPaneController {
 		return chart;
 	}
 
-	private BlockingTimeChart<Number, Number> createCourseForTimeChart() {
+	private BlockingTimeChart<Number, Number> createTimeDistanceChart() {
 
 		NumberAxis xAxis = createXAxis2();
 		NumberAxis yAxis = createYAxis2();
 		BlockingTimeChart<Number, Number> chart = new BlockingTimeChart<Number, Number>(
 				xAxis, yAxis);
-		
-		trainNumbers.setOnMouseClicked(new EventHandler<MouseEvent>() {
-			@Override
-			public void handle(MouseEvent event) {
-				AbstractTrainSimulator train = getTrain(trainNumbers.getSelectionModel().getSelectedItem().toString());
-				
-				if (chart.getData().isEmpty()) {
-					try {						
-						chart.getData().clear();
-						chart.getBlockingTimeChartPlotChildren().clear();
-						timeDistanceChart.getXAxis().setAutoRanging(true);
-						timeDistanceChart.getYAxis().setAutoRanging(true);
-						drawCourseforTimeTable(getTrain(trainNumbers
-								.getSelectionModel().getSelectedItem()
-								.toString()), chart);
 
-						chart.setBlockingTime(getBlockingTimeStairway(train));
-						
-						chart.setEventsMap(getEvents(train, getTimeInDistance(train)));
-						
-						chart.setAnimated(false);
-						chart.setCreateSymbols(false);
-						
-						Time startTime = train.getTripSection().getStartTime();
-
-						yAxis.setTickLabelFormatter(new StringConverter<Number>() {
-							@Override
-							public String toString(Number t) {
-								Time testTime = startTime.add(Duration.fromTotalSecond(
-									-t.doubleValue()));
-								return testTime.toString();
-							
-							}
-
-							@Override
-							public Number fromString(String string) {
-								return 1;
-							}
-						});
-				
-						
-						Thread.sleep(500);
-						chart.getBlockingTimeChartPlotChildren().clear();
-						chart.getData().clear();
-						drawCourseforTimeTable(getTrain(trainNumbers
-								.getSelectionModel().getSelectedItem()
-								.toString()), chart);
-						// TODO arrows for events
-
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				} else {
-					chart.getData().clear();
-					chart.getBlockingTimeChartPlotChildren().clear();
-					timeDistanceChart.getXAxis().setAutoRanging(true);
-					timeDistanceChart.getYAxis().setAutoRanging(true);
-					drawCourseforTimeTable(getTrain(trainNumbers
-							.getSelectionModel().getSelectedItem().toString()),
-							chart);
-					chart.setBlockingTime(getBlockingTimeStairway( getTrain(trainNumbers
-							.getSelectionModel().getSelectedItem().toString())));
-					
-					chart.setEventsMap(getEvents(train, getTimeInDistance(train)));
-					
-					chart.setAnimated(false);
-					chart.setCreateSymbols(false);
-					Time startTime = getTrain(
-							trainNumbers.getSelectionModel().getSelectedItem()
-									.toString()).getTripSection()
-							.getStartTime();
-
-					yAxis.setTickLabelFormatter(new StringConverter<Number>() {
-
-						@Override
-						public String toString(Number t) {
-							Time testTime = startTime.add(Duration.fromTotalSecond(
-								-t.doubleValue()));
-							return testTime.toString();
-						
-						}
-
-						@Override
-						public Number fromString(String string) {
-							return 1;
-						}
-					});
-				}
-
-				chart.setOnMouseDragged(new EventHandler<MouseEvent>() {
+		trainNumbersBlockingTime
+				.setOnMouseClicked(new EventHandler<MouseEvent>() {
 					@Override
 					public void handle(MouseEvent event) {
+						AbstractTrainSimulator train = getTrain(trainNumbersBlockingTime
+								.getSelectionModel().getSelectedItem()
+								.toString());
 
-						if (event.getButton().equals(MouseButton.PRIMARY)) {
+						if (chart.getData().isEmpty()) {
+							try {
+								chart.getData().clear();
+								chart.getBlockingTimeChartPlotChildren()
+										.clear();
+								timeDistanceChart.getXAxis().setAutoRanging(
+										true);
+								timeDistanceChart.getYAxis().setAutoRanging(
+										true);
+								drawCourseforTimeTable(
+										getTrain(trainNumbersBlockingTime
+												.getSelectionModel()
+												.getSelectedItem().toString()),
+										chart);
 
-							chart.getBlockingTimeChartPlotChildren().clear();
+								chart.setBlockingTime(getBlockingTimeStairway(train));
+
+								chart.setEventsMap(getEvents(train,
+										getTimeInDistance(train)));
+
+								chart.setAnimated(false);
+								chart.setCreateSymbols(false);
+
+								Time startTime = train.getTripSection()
+										.getStartTime();
+
+								yAxis.setTickLabelFormatter(new StringConverter<Number>() {
+									@Override
+									public String toString(Number t) {
+										Time testTime = startTime.add(Duration
+												.fromTotalSecond(-t
+														.doubleValue()));
+										return testTime.toString();
+
+									}
+
+									@Override
+									public Number fromString(String string) {
+										return 1;
+									}
+								});
+
+								Thread.sleep(500);
+								chart.getBlockingTimeChartPlotChildren()
+										.clear();
+								chart.getData().clear();
+								drawCourseforTimeTable(
+										getTrain(trainNumbersBlockingTime
+												.getSelectionModel()
+												.getSelectedItem().toString()),
+										chart);
+								// TODO arrows for events
+
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						} else {
 							chart.getData().clear();
-
-							drawCourseforTimeTable(getTrain(trainNumbers
+							chart.getBlockingTimeChartPlotChildren().clear();
+							timeDistanceChart.getXAxis().setAutoRanging(true);
+							timeDistanceChart.getYAxis().setAutoRanging(true);
+							drawCourseforTimeTable(
+									getTrain(trainNumbersBlockingTime
+											.getSelectionModel()
+											.getSelectedItem().toString()),
+									chart);
+							chart.setBlockingTime(getBlockingTimeStairway(getTrain(trainNumbersBlockingTime
 									.getSelectionModel().getSelectedItem()
-									.toString()), chart);
+									.toString())));
+
+							chart.setEventsMap(getEvents(train,
+									getTimeInDistance(train)));
+
+							chart.setAnimated(false);
+							chart.setCreateSymbols(false);
+							Time startTime = getTrain(
+									trainNumbersBlockingTime
+											.getSelectionModel()
+											.getSelectedItem().toString())
+									.getTripSection().getStartTime();
+
+							yAxis.setTickLabelFormatter(new StringConverter<Number>() {
+
+								@Override
+								public String toString(Number t) {
+									Time testTime = startTime.add(Duration
+											.fromTotalSecond(-t.doubleValue()));
+									return testTime.toString();
+
+								}
+
+								@Override
+								public Number fromString(String string) {
+									return 1;
+								}
+							});
 						}
 
-						chart.setOnMouseReleased(new EventHandler<MouseEvent>() {
+						chart.setOnMouseDragged(new EventHandler<MouseEvent>() {
+							@Override
 							public void handle(MouseEvent event) {
+
 								if (event.getButton().equals(
-										MouseButton.SECONDARY)) {
+										MouseButton.PRIMARY)) {
+
 									chart.getBlockingTimeChartPlotChildren()
 											.clear();
 									chart.getData().clear();
+
 									drawCourseforTimeTable(
-											getTrain(trainNumbers
+											getTrain(trainNumbersBlockingTime
 													.getSelectionModel()
 													.getSelectedItem()
 													.toString()), chart);
 								}
+
+								chart.setOnMouseReleased(new EventHandler<MouseEvent>() {
+									public void handle(MouseEvent event) {
+										if (event.getButton().equals(
+												MouseButton.SECONDARY)) {
+											chart.getBlockingTimeChartPlotChildren()
+													.clear();
+											chart.getData().clear();
+											drawCourseforTimeTable(
+													getTrain(trainNumbersBlockingTime
+															.getSelectionModel()
+															.getSelectedItem()
+															.toString()), chart);
+										}
+									}
+								});
+
 							}
 						});
-
 					}
-				});
-			}
 
-		});
+				});
 		xAxis.setSide(Side.TOP);
 
 		return chart;
@@ -331,7 +385,9 @@ public class GraphPaneController {
 				numbers.add(trainNumber);
 			}
 		}
-		trainNumbers.setItems(numbers);
+
+		trainNumbersRunningDynamics.setItems(numbers);
+		trainNumbersBlockingTime.setItems(numbers);
 
 	}
 
@@ -388,7 +444,7 @@ public class GraphPaneController {
 		courseForTimeSeries.getData().add(new Data<Number, Number>(0, y));
 		if (train.getTrain().getStatus() != SimpleTrain.INACTIVE) {
 			List<TimeDistance> timeDistances = this.getTimeInDistance(train);
-			
+
 			for (TimeDistance point : timeDistances) {
 				courseForTimeSeries.getData().add(
 						new Data<Number, Number>(point.getMeter(), (point
@@ -521,24 +577,27 @@ public class GraphPaneController {
 		return blockingTimes;
 	}
 
-	private Map<TimeDistance, List<EventData>> getEvents(AbstractTrainSimulator train, List<TimeDistance> timeDistances) {
+	private Map<TimeDistance, List<EventData>> getEvents(
+			AbstractTrainSimulator train, List<TimeDistance> timeDistances) {
 		Map<TimeDistance, List<EventData>> eventsMap = new HashMap<TimeDistance, List<EventData>>();
 
 		for (ScheduledEvent scheduledEvent : train.getEvents()) {
 			if (scheduledEvent instanceof UpdateLocationEvent) {
 				continue;
 			}
-			
-			double second = scheduledEvent.getScheduleTime().getDifference(
-					train.getTripSection().getStartTime()).getTotalSecond();
+
+			double second = scheduledEvent.getScheduleTime()
+					.getDifference(train.getTripSection().getStartTime())
+					.getTotalSecond();
 			double lastSecond = 0;
 			double lastMeter = 0;
-			
+
 			// second and meter in timeDistances are accumulated value
 			for (TimeDistance point : timeDistances) {
 				if (point.getSecond() >= second) {
 					if (point.getSecond() - lastSecond != 0) {
-						double factor = (second - lastSecond)/(point.getSecond() - lastSecond);
+						double factor = (second - lastSecond)
+								/ (point.getSecond() - lastSecond);
 						lastMeter += factor * (point.getMeter() - lastMeter);
 					}
 					break;
@@ -547,32 +606,36 @@ public class GraphPaneController {
 					lastMeter = point.getMeter();
 				}
 			}
-			
+
 			TimeDistance entry = new TimeDistance(lastMeter, second);
 			int type = EventData.IN;
 			if (scheduledEvent.getSource().equals(train)) {
 				type = EventData.SELF;
 			}
-			
-			String text = scheduledEvent instanceof AbstractEventToTrain ?
-					((AbstractEventToTrain) scheduledEvent).getEventString() : scheduledEvent.toString();
-			
+
+			String text = scheduledEvent instanceof AbstractEventToTrain ? ((AbstractEventToTrain) scheduledEvent)
+					.getEventString() : scheduledEvent.toString();
+
 			List<EventData> events = eventsMap.get(entry);
 			if (events == null) {
 				events = new ArrayList<EventData>();
 				eventsMap.put(entry, events);
 			}
-			
+
 			EventData event = new EventData(entry, type, text);
 			events.add(event);
 		}
-		
+
 		return eventsMap;
 	}
 
 	private DraggableChart<Number, Number> timeDistanceChart;
 	private DraggableChart<Number, Number> speedProfileChart;
 
-	private ObservableList<String> numbers = FXCollections.observableArrayList();
+	private StackPane snapshotPane;
+	private SnapshotPaneController snapshotPaneController;
+
+	private ObservableList<String> numbers = FXCollections
+			.observableArrayList();
 	private ConcurrentHashMap<String, AbstractTrainSimulator> trainMap = new ConcurrentHashMap<String, AbstractTrainSimulator>();
 }
