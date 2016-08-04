@@ -23,6 +23,8 @@ import railapp.units.Duration;
 import railapp.units.Length;
 import railapp.units.Time;
 import railview.simulation.ui.components.BlockingTimeChart;
+import railview.simulation.ui.components.DraggableChart;
+import railview.simulation.ui.components.Zoom;
 import railview.simulation.ui.data.BlockingTime;
 import railview.simulation.ui.data.EventData;
 import railview.simulation.ui.data.TimeDistance;

@@ -10,6 +10,8 @@ import railapp.rollingstock.dto.SimpleTrain;
 import railapp.simulation.runingdynamics.sections.DiscretePoint;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.units.UnitUtility;
+import railview.simulation.ui.components.DraggableChart;
+import railview.simulation.ui.components.ZoomOnlyX;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;

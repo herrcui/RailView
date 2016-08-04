@@ -20,7 +20,6 @@ import javafx.scene.shape.Path;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
-import railview.simulation.ui.DraggableChart;
 import railview.simulation.ui.data.BlockingTime;
 import railview.simulation.ui.data.EventData;
 import railview.simulation.ui.data.TimeDistance;

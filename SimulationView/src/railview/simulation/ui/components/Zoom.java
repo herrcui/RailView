@@ -1,17 +1,14 @@
-package railview.simulation.ui;
+package railview.simulation.ui.components;
 
 import javafx.event.EventHandler;
 import javafx.geometry.Point2D;
 import javafx.scene.Node;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
-
-public class ZoomOnlyX {
+public class Zoom {
 
 	private final AnchorPane pane;
 	private final XYChart<Number, Number> chart;
@@ -23,7 +20,7 @@ public class ZoomOnlyX {
 	private Point2D selectionRectangleStart;
 	private Point2D selectionRectangleEnd;
 
-	public ZoomOnlyX(XYChart<Number, Number> chart, AnchorPane pane) {
+	public Zoom(XYChart<Number, Number> chart, AnchorPane pane) {
 		this.pane = pane;
 		this.chart = chart;
 		this.xAxis = (NumberAxis) chart.getXAxis();
@@ -32,6 +29,8 @@ public class ZoomOnlyX {
 		pane.getChildren().add(selectionRectangle);
 		addDragSelectionMechanism();
 	}
+	
+
 
 	private void addDragSelectionMechanism() {
 		pane.addEventHandler(MouseEvent.MOUSE_PRESSED, new MousePressedHandler());
@@ -150,6 +149,7 @@ public class ZoomOnlyX {
 			double selectionMaxY = Math.max(selectionRectangleStart.getY(), selectionRectangleEnd.getY());
 
 			setHorizontalBounds(selectionMinX, selectionMaxX);
+			setVerticalBounds(selectionMinY, selectionMaxY);
 		}
 
 		private void disableAutoRanging() {
@@ -223,6 +223,6 @@ public class ZoomOnlyX {
 	}
 
 
-
 }
+
 

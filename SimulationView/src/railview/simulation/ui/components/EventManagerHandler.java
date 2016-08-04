@@ -1,4 +1,4 @@
-package railview.simulation.ui;
+package railview.simulation.ui.components;
 
 import java.util.ArrayList;
 import java.util.List;

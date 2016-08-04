@@ -1,15 +1,28 @@
-package railview.simulation.ui;
+package railview.simulation.ui.components;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.scene.chart.Axis;
-import javafx.scene.chart.LineChart;
+import javafx.event.EventType;
+import javafx.scene.Node;
 import javafx.scene.chart.ValueAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 
-public class DraggableChart<X, Y> extends LineChart<X,Y>  {
+
+public class Panning {
+
 	private final EventHandlerManager handlerManager;
+
 	private EventHandler<? super MouseEvent> mouseFilter = DEFAULT_FILTER;
+
+	private final ValueAxis<?> xAxis;
+	private final ValueAxis<?> yAxis;
+
+	private boolean dragging = false;
 
 	private boolean wasXAnimated;
 	private boolean wasYAnimated;
@@ -17,12 +30,10 @@ public class DraggableChart<X, Y> extends LineChart<X,Y>  {
 	private double lastX;
 	private double lastY;
 
-	private boolean dragging = false;
-
-	public DraggableChart(Axis<X> xAxis, Axis<Y> yAxis) {
-		super(xAxis, yAxis);
-
-		handlerManager = new EventHandlerManager(this);
+	public Panning( XYChart<?, ?> chart ) {
+		handlerManager = new EventHandlerManager( chart );
+		xAxis = (ValueAxis<?>) chart.getXAxis();
+		yAxis = (ValueAxis<?>) chart.getYAxis();
 
 		handlerManager.addEventHandler( false, MouseEvent.DRAG_DETECTED, new EventHandler<MouseEvent>() {
 			@Override
@@ -46,7 +57,6 @@ public class DraggableChart<X, Y> extends LineChart<X,Y>  {
 				release();
 			}
 		} );
-
 	}
 
 	public static final EventHandler<MouseEvent> DEFAULT_FILTER = new EventHandler<MouseEvent>() {
@@ -57,13 +67,6 @@ public class DraggableChart<X, Y> extends LineChart<X,Y>  {
 		}
 	};
 
-	public EventHandler<? super MouseEvent> getMouseFilter() {
-		return mouseFilter;
-	}
-
-	public void setMouseFilter( EventHandler<? super MouseEvent> mouseFilter ) {
-		this.mouseFilter = mouseFilter;
-	}
 
 	private boolean passesFilter( MouseEvent event ) {
 		if ( mouseFilter != null ) {
@@ -80,13 +83,13 @@ public class DraggableChart<X, Y> extends LineChart<X,Y>  {
 		lastX = event.getX();
 		lastY = event.getY();
 
-		wasXAnimated = this.getXAxis().getAnimated();
-		wasYAnimated = this.getYAxis().getAnimated();
+		wasXAnimated = xAxis.getAnimated();
+		wasYAnimated = yAxis.getAnimated();
 
-		this.getXAxis().setAnimated( false );
-		this.getXAxis().setAutoRanging( false );
-		this.getYAxis().setAnimated( false );
-		this.getYAxis().setAutoRanging( false );
+		xAxis.setAnimated( false );
+		xAxis.setAutoRanging( false );
+		yAxis.setAnimated( false );
+		yAxis.setAutoRanging( false );
 
 		dragging = true;
 	}
@@ -96,28 +99,34 @@ public class DraggableChart<X, Y> extends LineChart<X,Y>  {
 			return;
 
 		
-		ValueAxis<?> theXAxis = (ValueAxis<?>) this.getXAxis();
-		ValueAxis<?> theYAxis = (ValueAxis<?>) this.getYAxis();
-
-		double dX = ( event.getX() - lastX ) / - theXAxis.getScale();
-		double dY = ( event.getY() - lastY ) / - theYAxis.getScale();
+		
+		double dX = ( event.getX() - lastX ) / -xAxis.getScale();
+		double dY = ( event.getY() - lastY ) / -yAxis.getScale();
 		lastX = event.getX();
 		lastY = event.getY();
 
-		theXAxis.setAutoRanging(false);
-		theXAxis.setLowerBound( theXAxis.getLowerBound() + dX );
-		theXAxis.setUpperBound( theXAxis.getUpperBound() + dX );
+		xAxis.setAutoRanging(false);
+		xAxis.setLowerBound( xAxis.getLowerBound() + dX );
+		xAxis.setUpperBound( xAxis.getUpperBound() + dX );
 
-		theYAxis.setAutoRanging( false );
-		theYAxis.setLowerBound( theYAxis.getLowerBound() + dY );
-		theYAxis.setUpperBound( theYAxis.getUpperBound() + dY );
+		yAxis.setAutoRanging( false );
+		yAxis.setLowerBound( yAxis.getLowerBound() + dY );
+		yAxis.setUpperBound( yAxis.getUpperBound() + dY );
 	}
 
-	public void startEventHandlers() {
+	public EventHandler<? super MouseEvent> getMouseFilter() {
+		return mouseFilter;
+	}
+
+	public void setMouseFilter( EventHandler<? super MouseEvent> mouseFilter ) {
+		this.mouseFilter = mouseFilter;
+	}
+
+	public void start() {
 		handlerManager.addAllHandlers();
 	}
 
-	public void stopEventHandlers() {
+	public void stop() {
 		handlerManager.removeAllHandlers();
 		release();
 	}
@@ -128,11 +137,7 @@ public class DraggableChart<X, Y> extends LineChart<X,Y>  {
 
 		dragging = false;
 
-		this.getXAxis().setAnimated( wasXAnimated );
-		this.getYAxis().setAnimated( wasYAnimated );
+		xAxis.setAnimated( wasXAnimated );
+		yAxis.setAnimated( wasYAnimated );
 	}
 }
-
-
-
-

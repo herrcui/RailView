@@ -1,4 +1,4 @@
-package railview.simulation.ui;
+package railview.simulation.ui.components;
 
 import javafx.event.EventHandler;
 import javafx.geometry.Point2D;
@@ -8,7 +8,7 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
-public class Zoom {
+public class ZoomOnlyX {
 
 	private final AnchorPane pane;
 	private final XYChart<Number, Number> chart;
@@ -20,7 +20,7 @@ public class Zoom {
 	private Point2D selectionRectangleStart;
 	private Point2D selectionRectangleEnd;
 
-	public Zoom(XYChart<Number, Number> chart, AnchorPane pane) {
+	public ZoomOnlyX(XYChart<Number, Number> chart, AnchorPane pane) {
 		this.pane = pane;
 		this.chart = chart;
 		this.xAxis = (NumberAxis) chart.getXAxis();
@@ -29,8 +29,6 @@ public class Zoom {
 		pane.getChildren().add(selectionRectangle);
 		addDragSelectionMechanism();
 	}
-	
-
 
 	private void addDragSelectionMechanism() {
 		pane.addEventHandler(MouseEvent.MOUSE_PRESSED, new MousePressedHandler());
@@ -145,11 +143,8 @@ public class Zoom {
 
 			double selectionMinX = Math.min(selectionRectangleStart.getX(), selectionRectangleEnd.getX());
 			double selectionMaxX = Math.max(selectionRectangleStart.getX(), selectionRectangleEnd.getX());
-			double selectionMinY = Math.min(selectionRectangleStart.getY(), selectionRectangleEnd.getY());
-			double selectionMaxY = Math.max(selectionRectangleStart.getY(), selectionRectangleEnd.getY());
 
 			setHorizontalBounds(selectionMinX, selectionMaxX);
-			setVerticalBounds(selectionMinY, selectionMaxY);
 		}
 
 		private void disableAutoRanging() {
@@ -165,14 +160,6 @@ public class Zoom {
 			setUpperBoundX(maxPixelPosition, currentLowerBound, currentUpperBound, offset);
 		}
 
-		private void setVerticalBounds(double minPixelPosition, double maxPixelPosition) {
-			double currentLowerBound = yAxis.getLowerBound();
-			double currentUpperBound = yAxis.getUpperBound();
-			double offset = computeOffsetInChart(yAxis, true);
-			setLowerBoundY(maxPixelPosition, currentLowerBound, currentUpperBound, offset);
-			setUpperBoundY(minPixelPosition, currentLowerBound, currentUpperBound, offset);
-		}
-
 		private void setLowerBoundX(double pixelPosition, double currentLowerBound, double currentUpperBound,
 				double offset) {
 			double newLowerBound = computeBound(pixelPosition, offset, xAxis.getWidth(), currentLowerBound,
@@ -185,20 +172,6 @@ public class Zoom {
 			double newUpperBound = computeBound(pixelPosition, offset, xAxis.getWidth(), currentLowerBound,
 					currentUpperBound, false);
 			xAxis.setUpperBound(newUpperBound);
-		}
-
-		private void setLowerBoundY(double pixelPosition, double currentLowerBound, double currentUpperBound,
-				double offset) {
-			double newLowerBound = computeBound(pixelPosition, offset, yAxis.getHeight(), currentLowerBound,
-					currentUpperBound, true);
-			yAxis.setLowerBound(newLowerBound);
-		}
-
-		private void setUpperBoundY(double pixelPosition, double currentLowerBound, double currentUpperBound,
-				double offset) {
-			double newUpperBound = computeBound(pixelPosition, offset, yAxis.getHeight(), currentLowerBound,
-					currentUpperBound, true);
-			yAxis.setUpperBound(newUpperBound);
 		}
 
 		private double computeBound(double pixelPosition, double pixelOffset, double pixelLength, double lowerBound,
@@ -223,6 +196,6 @@ public class Zoom {
 	}
 
 
-}
 
+}
 
