@@ -4,7 +4,7 @@ import javafx.event.EventHandler;
 import javafx.scene.input.ScrollEvent;
 import railview.infrastructure.container.PannablePane;
 
-class NodeGestures {
+public class NodeGestures {
 
     private static final double MAX_SCALE = 100.0d;
     private static final double MIN_SCALE = .1d;

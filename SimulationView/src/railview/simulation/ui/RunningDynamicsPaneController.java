@@ -184,12 +184,12 @@ public class RunningDynamicsPaneController {
 		double maxTrainKmH = train.getTrainDefinition().getMaxVelocity()
 				.getKilometerPerHour();
 		double maxKmH = Math
-				.min(maxTrainKmH, path.getLinkEdges().get(0).getLink()
+				.min(maxTrainKmH, path.getEdges().get(0).getLink()
 						.getGeometry().getMaxVelocity().getKilometerPerHour());
 		double lastMeter = 0;
 		double meter = 0;
 
-		for (LinkEdge edge : path.getLinkEdges()) {
+		for (LinkEdge edge : path.getEdges()) {
 			if (edge.getLength().getMeter() == 0) {
 				continue;
 			}

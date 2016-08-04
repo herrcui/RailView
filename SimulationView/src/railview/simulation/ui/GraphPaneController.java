@@ -33,6 +33,12 @@ public class GraphPaneController {
 	
 	@FXML
 	private AnchorPane trainRunMonitorPane;
+	
+	@FXML
+	private AnchorPane occupancyAndPendingRoot;
+	
+	@FXML
+	private AnchorPane occupancyAndPendingPane;
 
 	@FXML
 	public void initialize() {
@@ -55,7 +61,7 @@ public class GraphPaneController {
 		
 		try {
 			FXMLLoader trainRunMonitorLoader = new FXMLLoader();
-			URL location = TrainRunMonitorController.class
+			URL location = TrainRunMonitorPaneController.class
 					.getResource("TrainRunMonitorPane.fxml");
 			trainRunMonitorLoader.setLocation(location);
 			this.trainRunMonitorPane = (AnchorPane) trainRunMonitorLoader.load();
@@ -67,10 +73,25 @@ public class GraphPaneController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		try {
+			FXMLLoader occupancyAndPendingLoader = new FXMLLoader();
+			URL location = OccupancyAndPendingPaneController.class
+					.getResource("OccupancyAndPendingPane.fxml");
+			occupancyAndPendingLoader.setLocation(location);
+			this.occupancyAndPendingPane = (AnchorPane) occupancyAndPendingLoader.load();
+			this.occupancyAndPendingPaneController = occupancyAndPendingLoader.getController();
+			
+			this.occupancyAndPendingRoot.getChildren().add(occupancyAndPendingPane);
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void setInfrastructureServiceUtility(IInfrastructureServiceUtility infraServiceUtility) {
 		this.trainRunMonitorController.setInfrastructureServiceUtility(infraServiceUtility);
+		this.occupancyAndPendingPaneController.setInfrastructureServiceUtility(infraServiceUtility);
 	}
 
 	public void updateTrainMap(List<AbstractTrainSimulator> trainList) {
@@ -96,7 +117,9 @@ public class GraphPaneController {
 	
 	private RunningDynamicsPaneController runningDynamicsPaneController;
 	
-	private TrainRunMonitorController trainRunMonitorController;
+	private TrainRunMonitorPaneController trainRunMonitorController;
+	
+	private OccupancyAndPendingPaneController occupancyAndPendingPaneController;
 
 	private ObservableList<String> numbers = FXCollections.observableArrayList();
 	

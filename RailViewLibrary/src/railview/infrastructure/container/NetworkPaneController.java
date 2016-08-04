@@ -22,7 +22,6 @@ public class NetworkPaneController {
 	@FXML
 	private StackPane stackPane;
 
-	final double SCALE_DELTA = 1.1;
 	private InfrastructureElementsPane elementPane;
 	private TrainPane trainPane;
 	private SwarmPane swarmPane;
@@ -65,7 +64,7 @@ public class NetworkPaneController {
 				minY);
 
 		this.elementPane.setCoordinateMapper(mapper);
-		this.elementPane.setElements(elements, new ColorPicker(Color.WHITE));
+		this.elementPane.setAndDrawElements(elements, Color.WHITE);
 		this.trainPane.setCoordinateMapper(mapper);
 		this.swarmPane.setCoordinateMapper(mapper);
 	}

@@ -43,7 +43,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.util.StringConverter;
 
-public class TrainRunMonitorController {
+public class TrainRunMonitorPaneController {
 	@FXML
 	private AnchorPane blockingTimePane;
 	

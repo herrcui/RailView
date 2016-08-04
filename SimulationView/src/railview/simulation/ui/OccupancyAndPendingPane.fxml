@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="300.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.ui.OccupancyAndPendingPaneController">
+   <children>
+      <SplitPane dividerPositions="0.9295302013422819" layoutX="70.0" layoutY="-58.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <StackPane fx:id="infraRoot" styleClass="background-white" stylesheets="@../../../../resources/CSS/Tabs.css"
+          			 onMouseEntered="#mouseEnter" onScroll="#scrollWheel" minHeight="0.0" minWidth="0.0" prefHeight="183.0" prefWidth="398.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

@@ -7,15 +7,15 @@ import railapp.infrastructure.element.dto.InfrastructureElement;
 import railapp.infrastructure.element.dto.Track;
 import railapp.infrastructure.element.dto.Turnout;
 import railapp.units.Coordinate;
+import javafx.collections.ObservableList;
+import javafx.scene.Node;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 
 public class InfrastructureElementsPane extends PannablePane {
 	private Collection<InfrastructureElement> elements;
 	private CoordinateMapper mapper;
-	private ColorPicker colorPicker;
-	
-	final double SCALE_DELTA = 1.1;
+	private Color elementColor;
 
 	public InfrastructureElementsPane() {
 		this.widthProperty().addListener(observable -> draw());
@@ -26,10 +26,18 @@ public class InfrastructureElementsPane extends PannablePane {
 		this.mapper = mapper;
 	}
 
-	public void setElements(Collection<InfrastructureElement> elements, ColorPicker colorPicker) {
+	public void setAndDrawElements(Collection<InfrastructureElement> elements, Color elementColor) {
 		this.elements = elements;
-		this.colorPicker = colorPicker;
+		this.elementColor = elementColor;
 		this.draw();
+	}
+	
+	public ObservableList<Node> getChrildren() {
+		return this.getChrildren();
+	}
+	
+	public void setElements(Collection<InfrastructureElement> elements) {
+		this.elements = elements;
 	}
 
 	private void draw() {
@@ -79,7 +87,7 @@ public class InfrastructureElementsPane extends PannablePane {
 			line.setEndX(mapper.mapToPaneX(coordinates.get(i + 1).getX(), this));
 			line.setEndY(mapper.mapToPaneY(coordinates.get(i + 1).getY(), this));
 
-			line.setStroke(this.colorPicker.getColor());
+			line.setStroke(this.elementColor);
 			line.setStrokeWidth(0.1);
 
 			this.getChildren().add(line);

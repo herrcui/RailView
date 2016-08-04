@@ -55,7 +55,7 @@ public class SnapshotPaneController {
 				minY);
 
 		this.elementPane.setCoordinateMapper(mapper);
-		this.elementPane.setElements(elements, new ColorPicker(Color.WHITE));
+		this.elementPane.setAndDrawElements(elements, Color.WHITE);
 	}
 
 }
