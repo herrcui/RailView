@@ -2,60 +2,25 @@ package railview.simulation.ui;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import railapp.infrastructure.object.dto.InfrastructureObject;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.rollingstock.dto.SimpleTrain;
-import railapp.simulation.events.ScheduledEvent;
-import railapp.simulation.events.totrain.AbstractEventToTrain;
-import railapp.simulation.events.totrain.UpdateLocationEvent;
-import railapp.simulation.infrastructure.PartialRouteResource;
-import railapp.simulation.runingdynamics.sections.DiscretePoint;
 import railapp.simulation.train.AbstractTrainSimulator;
-import railapp.simulation.train.TrainSimulator;
-import railapp.units.Duration;
-import railapp.units.Length;
-import railapp.units.Time;
-import railview.simulation.ui.components.BlockingTimeChart;
-import railview.simulation.ui.components.DraggableChart;
-import railview.simulation.ui.components.Zoom;
-import railview.simulation.ui.data.BlockingTime;
-import railview.simulation.ui.data.EventData;
-import railview.simulation.ui.data.TimeDistance;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Side;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
-import javafx.scene.chart.XYChart.Data;
-import javafx.scene.chart.XYChart.Series;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TabPane;
-import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
-import javafx.util.StringConverter;
 
 public class GraphPaneController {
 
 	@FXML
-	private AnchorPane anchorPane;
-
-	@FXML
 	private TabPane tabPane;
-
-	@FXML
-	private AnchorPane runningPane;
 
 	@FXML
 	private AnchorPane runningDynamicsRoot;

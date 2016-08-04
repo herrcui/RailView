@@ -92,7 +92,7 @@ public class TrainRunMonitorController {
 	}
 	
 	@FXML
-	private void resetTimeDistance(MouseEvent event) {
+	private void resetBlockingTime(MouseEvent event) {
 		if (event.getButton().equals(MouseButton.SECONDARY)) {
 			if (event.getClickCount() == 2) {
 				blockingTimeChart.getXAxis().setAutoRanging(true);
