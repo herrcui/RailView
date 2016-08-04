@@ -68,7 +68,7 @@ public class GraphPaneController {
 
 	@FXML
 	private AnchorPane timeDistancePane;
-
+	
 	@FXML
 	private AnchorPane energyPane;
 	
@@ -84,7 +84,7 @@ public class GraphPaneController {
 	@FXML
 	public void initialize() {
 		tabPane.setSide(Side.BOTTOM);
-
+		
 		speedProfileChart = createSpeedprofileChart();
 		timeDistanceChart = createTimeDistanceChart();
 

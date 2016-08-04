@@ -13,6 +13,8 @@ import javafx.scene.shape.Line;
 public class InfrastructureElementsPane extends PannablePane {
 	private Collection<InfrastructureElement> elements;
 	private CoordinateMapper mapper;
+	private ColorPicker colorPicker;
+	
 	final double SCALE_DELTA = 1.1;
 
 	public InfrastructureElementsPane() {
@@ -24,8 +26,9 @@ public class InfrastructureElementsPane extends PannablePane {
 		this.mapper = mapper;
 	}
 
-	public void setElements(Collection<InfrastructureElement> elements) {
+	public void setElements(Collection<InfrastructureElement> elements, ColorPicker colorPicker) {
 		this.elements = elements;
+		this.colorPicker = colorPicker;
 		this.draw();
 	}
 
@@ -76,7 +79,7 @@ public class InfrastructureElementsPane extends PannablePane {
 			line.setEndX(mapper.mapToPaneX(coordinates.get(i + 1).getX(), this));
 			line.setEndY(mapper.mapToPaneY(coordinates.get(i + 1).getY(), this));
 
-			line.setStroke(Color.WHITE);
+			line.setStroke(this.colorPicker.getColor());
 			line.setStrokeWidth(0.1);
 
 			this.getChildren().add(line);

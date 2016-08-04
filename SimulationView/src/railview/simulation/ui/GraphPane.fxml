@@ -23,8 +23,8 @@
                                  <children>
                                     <SplitPane dividerPositions="0.5" layoutX="-38.0" layoutY="36.0" orientation="VERTICAL" prefHeight="801.0" prefWidth="390.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                       <items>
+                                      	<AnchorPane fx:id="timeDistancePane" minHeight="0.0" minWidth="0.0" onMouseClicked="#resetTimeDistance" prefHeight="100.0" prefWidth="160.0" />
                                         <AnchorPane fx:id="snapshotRoot" minHeight="0.0" minWidth="0.0" onMouseClicked="#resetSpeedProfile" prefHeight="100.0" prefWidth="160.0" styleClass="background-light-grey" stylesheets="@../../../../resources/CSS/Tabs.css" />
-                                        <AnchorPane fx:id="timeDistancePane" minHeight="0.0" minWidth="0.0" onMouseClicked="#resetTimeDistance" prefHeight="100.0" prefWidth="160.0" />
                                       </items>
                                     </SplitPane>
                                  </children>
@@ -62,7 +62,8 @@
                               </AnchorPane>
                           </items>
                         </SplitPane>
-                     </children></AnchorPane>
+                     </children>
+              </AnchorPane>
             </content>
           </Tab>
             <Tab text="Occupancy &amp; Hindrance">

@@ -1,0 +1,183 @@
+package railview.simulation.ui;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+import railapp.infrastructure.path.dto.LinkEdge;
+import railapp.infrastructure.path.dto.LinkPath;
+import railapp.rollingstock.dto.SimpleTrain;
+import railapp.simulation.runingdynamics.sections.DiscretePoint;
+import railapp.simulation.train.AbstractTrainSimulator;
+import railapp.units.UnitUtility;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+import javafx.scene.chart.XYChart.Data;
+import javafx.scene.chart.XYChart.Series;
+import javafx.scene.control.ListView;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+
+public class RunningDynamicsPaneController {
+	@FXML
+	private AnchorPane speedprofilePane;
+
+	@FXML
+	private AnchorPane energyPane;
+	
+	@FXML
+	private ListView<String> trainNumbersRunningDynamics;
+
+	@FXML
+	public void initialize() {
+		speedProfileChart = createSpeedprofileChart();
+
+		speedprofilePane.getChildren().add(speedProfileChart);
+
+		AnchorPane.setTopAnchor(speedProfileChart, 0.0);
+		AnchorPane.setLeftAnchor(speedProfileChart, 0.0);
+		AnchorPane.setRightAnchor(speedProfileChart, 0.0);
+		AnchorPane.setBottomAnchor(speedProfileChart, 0.0);
+
+		new ZoomOnlyX(speedProfileChart, speedprofilePane);
+
+		speedProfileChart.setMouseFilter(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent mouseEvent) {
+				if (mouseEvent.getButton() == MouseButton.PRIMARY) {
+				} else {
+					mouseEvent.consume();
+				}
+			}
+		});
+		speedProfileChart.startEventHandlers();
+	}
+	
+	private DraggableChart<Number, Number> createSpeedprofileChart() {
+		NumberAxis xAxis = new NumberAxis();
+		NumberAxis yAxis = new NumberAxis();
+		DraggableChart<Number, Number> chart = new DraggableChart<>(xAxis,
+				yAxis);
+		chart.setAnimated(false);
+		chart.setCreateSymbols(false);
+		trainNumbersRunningDynamics.getSelectionModel().selectedItemProperty()
+				.addListener(new ChangeListener<String>() {
+					@Override
+					public void changed(
+							ObservableValue<? extends String> observable,
+							String oldValue, String newValue) {
+						
+						chart.getData().clear();
+						speedProfileChart.getXAxis().setAutoRanging(true);
+						speedProfileChart.getYAxis().setAutoRanging(true);
+						drawVelocityTable(trainMap.get(newValue), chart);
+
+					}
+				});
+		return chart;
+	}
+	
+	private LineChart<Number, Number> drawVelocityTable(
+			AbstractTrainSimulator train, LineChart<Number, Number> chart) {
+		XYChart.Series<Number, Number> CourseForVelocitySeries = new Series<Number, Number>();
+		CourseForVelocitySeries.setName("course for velocity");
+		if (train.getTrain().getStatus() != SimpleTrain.INACTIVE) {
+			for (Map.Entry<Double, Double> entry : getCourseForVelocity(train)
+					.entrySet()) {
+				CourseForVelocitySeries.getData().add(
+						new Data<Number, Number>(entry.getKey(), entry
+								.getValue()));
+			}
+			chart.getData().add(CourseForVelocitySeries);
+			XYChart.Series<Number, Number> speedLimitSeries = new Series<Number, Number>();
+
+			speedLimitSeries.setName("speedlimit");
+			double y = -1;
+			speedLimitSeries.getData().add(new Data<Number, Number>(0, y));
+			for (Map.Entry<Double, Double> entry : getSpeedLimit(train)
+					.entrySet()) {
+				if (y >= 0) {
+					speedLimitSeries.getData().add(
+							new Data<Number, Number>(entry.getKey(), y));
+				}
+				speedLimitSeries.getData().add(
+						new Data<Number, Number>(entry.getKey(), entry
+								.getValue()));
+				y = entry.getValue();
+			}
+			chart.getData().add(speedLimitSeries);
+			speedLimitSeries
+					.nodeProperty()
+					.get()
+					.setStyle(
+							"-fx-stroke: #000000; -fx-stroke-dash-array: 0.1 5.0;");
+
+			chart.setCreateSymbols(false);
+		}
+		return chart;
+	}
+	
+	// Map: Meter, VelocityInKmH
+	private Map<Double, Double> getCourseForVelocity(
+			AbstractTrainSimulator train) {
+		Map<Double, Double> velocityMap = new LinkedHashMap<Double, Double>();
+		double meter = 0; // x
+		double velocityInKmH = 0; // y
+		for (DiscretePoint point : train.getWholeCoursePoints()) {
+			velocityInKmH = point.getVelocity().getKilometerPerHour();
+			meter += point.getDistance().getMeter();
+			velocityMap.put(meter, velocityInKmH);
+		}
+		return velocityMap;
+	}
+	
+	private LinkedHashMap<Double, Double> getSpeedLimit(
+			AbstractTrainSimulator train) {
+		// Velocity
+		LinkedHashMap<Double, Double> speedLimitMap = new LinkedHashMap<Double, Double>();
+
+		LinkPath path = train.getFullPath();
+
+		double maxTrainKmH = train.getTrainDefinition().getMaxVelocity()
+				.getKilometerPerHour();
+		double maxKmH = Math
+				.min(maxTrainKmH, path.getLinkEdges().get(0).getLink()
+						.getGeometry().getMaxVelocity().getKilometerPerHour());
+		double lastMeter = 0;
+		double meter = 0;
+
+		for (LinkEdge edge : path.getLinkEdges()) {
+			if (edge.getLength().getMeter() == 0) {
+				continue;
+			}
+
+			double linkKmH = edge.getLink().getGeometry().getMaxVelocity()
+					.getKilometerPerHour();
+
+			if (Math.abs(Math.min(maxTrainKmH, linkKmH) - maxKmH) >= UnitUtility.ERROR) {
+				speedLimitMap.put(lastMeter, maxKmH);
+				speedLimitMap.put(meter, maxKmH);
+
+				maxKmH = Math.min(maxTrainKmH, linkKmH);
+				lastMeter = meter;
+			}
+
+			meter += edge.getLength().getMeter();
+		}
+
+		speedLimitMap.put(lastMeter, maxKmH);
+		speedLimitMap.put(meter, maxKmH);
+
+		return speedLimitMap;
+	}
+	
+	private DraggableChart<Number, Number> speedProfileChart;
+	private ConcurrentHashMap<String, AbstractTrainSimulator> 
+		trainMap = new ConcurrentHashMap<String, AbstractTrainSimulator>();
+}

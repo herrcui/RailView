@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import railapp.infrastructure.element.dto.InfrastructureElement;
 import railapp.infrastructure.element.dto.Port;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
@@ -64,7 +65,7 @@ public class NetworkPaneController {
 				minY);
 
 		this.elementPane.setCoordinateMapper(mapper);
-		this.elementPane.setElements(elements);
+		this.elementPane.setElements(elements, new ColorPicker(Color.WHITE));
 		this.trainPane.setCoordinateMapper(mapper);
 		this.swarmPane.setCoordinateMapper(mapper);
 	}
