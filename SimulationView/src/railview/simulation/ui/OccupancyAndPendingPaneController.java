@@ -1,7 +1,10 @@
 package railview.simulation.ui;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map.Entry;
+import java.util.TreeMap;
 
 import railapp.infrastructure.element.dto.InfrastructureElement;
 import railapp.infrastructure.element.dto.Port;
@@ -10,12 +13,11 @@ import railapp.infrastructure.element.dto.Turnout;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.simulation.logs.InfrastructureOccupancyAndPendingLogger;
 import railapp.units.Coordinate;
-import railview.infrastructure.container.ColorPicker;
+import railapp.units.Duration;
+import railapp.units.Percentage;
 import railview.infrastructure.container.CoordinateMapper;
 import railview.infrastructure.container.InfrastructureElementsPane;
 import railview.infrastructure.container.NodeGestures;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
@@ -66,6 +68,10 @@ public class OccupancyAndPendingPaneController {
 		this.draw(elements, mapper);
 	}
 	
+	public void setLogger(InfrastructureOccupancyAndPendingLogger logger) {
+		this.logger = logger;
+	}
+	
 	@FXML
 	private void mouseEnter(){
 		infraRoot.setOnMousePressed(new EventHandler<MouseEvent>()
@@ -109,32 +115,113 @@ public class OccupancyAndPendingPaneController {
 	
 	private void drawInfrastructureElement(InfrastructureElement element, CoordinateMapper mapper) {
 		if (element instanceof Track) {
-			List<Coordinate> coordinates = ((Track) element)
-					.getCoordinateAtLink12();
-			this.drawLink(coordinates, mapper);
+			List<Coordinate> coordinates = ((Track) element).getCoordinateAtLink12();
+			TreeMap<Double, Duration> opMap = null;
+			
+			if (logger != null) {
+				opMap = logger.getOccupancyMap((Track) element);
+			}
+			
+			if (opMap != null) {
+				this.drawTrackLinkWithOPMap(coordinates, mapper, opMap);
+			} else {
+				this.drawLink(coordinates, mapper, null);
+			}
 		} else {
+			Duration duration = null;
+			if (logger != null) {
+				duration = logger.getJunctionOccupancyDuration(element);
+			}
+			
 			if (element instanceof Turnout) {
-				List<Coordinate> coordinates = element.findLink(1, 2)
-						.getCoordinates();
+				List<Coordinate> coordinates = element.findLink(1, 2).getCoordinates();
 				Coordinate middlePoint = Coordinate.fromXY(0.5 * (coordinates
 						.get(0).getX() + coordinates.get(1).getX()),
 						0.5 * (coordinates.get(0).getY() + coordinates.get(1)
 								.getY()));
-				this.drawLink(coordinates, mapper);
+				this.drawLink(coordinates, mapper, duration);
 				coordinates = element.findLink(1, 3).getCoordinates();
 				coordinates.add(1, middlePoint);
-				this.drawLink(coordinates, mapper);
+				this.drawLink(coordinates, mapper, duration);
 			} else {
 				List<Coordinate> coordinates = element.findLink(1, 3)
 						.getCoordinates();
-				this.drawLink(coordinates, mapper);
+				this.drawLink(coordinates, mapper, duration);
 				coordinates = element.findLink(2, 4).getCoordinates();
-				this.drawLink(coordinates, mapper);
+				this.drawLink(coordinates, mapper, duration);
 			}
 		}
 	}
 
-	private void drawLink(List<Coordinate> coordinates, CoordinateMapper mapper) {
+	private void drawTrackLinkWithOPMap(List<Coordinate> coordinates, CoordinateMapper mapper, TreeMap<Double, Duration> opMap) {
+		double totalMeter = opMap.lastKey().doubleValue();
+		if (totalMeter == 0) {
+			this.drawLink(coordinates, mapper, null);
+		}
+		
+		double startPercentage = 0;
+		double totalCoordinateLength = 0;
+		for (int i = 0; i < coordinates.size() - 1; i++) {
+			totalCoordinateLength += Coordinate.getDistance(coordinates.get(i), coordinates.get(i + 1));
+		}
+		
+		for (Entry<Double, Duration> entry : opMap.entrySet()) {
+			if (entry.getKey()/totalMeter == startPercentage) {
+				continue;
+			}
+			
+			List<Coordinate> segement = this.interpolate(
+					coordinates, startPercentage, entry.getKey()/totalMeter, totalCoordinateLength);
+			for (int i = 0; i < segement.size() - 1; i++) {
+				Line line = new Line();
+
+				line.setStartX(mapper.mapToPaneX(coordinates.get(i).getX(), this.elementPane));
+				line.setStartY(mapper.mapToPaneY(coordinates.get(i).getY(), this.elementPane));
+				line.setEndX(mapper.mapToPaneX(coordinates.get(i + 1).getX(), this.elementPane));
+				line.setEndY(mapper.mapToPaneY(coordinates.get(i + 1).getY(), this.elementPane));
+
+				this.setStroke(line, entry.getValue());
+
+				this.elementPane.getChildren().add(line);
+			}
+			
+			startPercentage = entry.getKey()/totalMeter;
+		}
+	}
+	
+	private List<Coordinate> interpolate(
+			List<Coordinate> coordinates, double startPercentage, double endPercentage, double totalCoordinateLength) {		
+		List<Coordinate> segement = new ArrayList<Coordinate>();
+		double currentStartPercentage = 0;
+		double currentEndPercentage = 0;
+		
+		for (int i = 0; i < coordinates.size() - 1; i++) {
+			currentEndPercentage = Coordinate.getDistance(coordinates.get(i), coordinates.get(i + 1))/totalCoordinateLength;
+					
+			if (segement.size() == 0 && startPercentage >= currentStartPercentage && startPercentage < currentEndPercentage) {
+				Coordinate coordinate = Coordinate.getCoordinateByPercentage(
+					coordinates.get(i), coordinates.get(i + 1), Percentage.fromDouble(startPercentage - currentStartPercentage));
+				segement.add(coordinate);
+			}
+			
+			if (segement.size() > 0) {
+				if (endPercentage <= currentEndPercentage) {
+					Coordinate coordinate = Coordinate.getCoordinateByPercentage(
+							coordinates.get(i), coordinates.get(i + 1), Percentage.fromDouble(endPercentage - currentStartPercentage));
+					segement.add(coordinate);
+					return segement;
+				} else {
+					segement.add(coordinates.get(i + 1));
+				}
+			}
+			
+			currentStartPercentage = currentEndPercentage;
+		}
+		
+		return segement;
+	}
+	
+	private void drawLink(List<Coordinate> coordinates, CoordinateMapper mapper, Duration duration) {
 		for (int i = 0; i < coordinates.size() - 1; i++) {
 			Line line = new Line();
 
@@ -143,10 +230,19 @@ public class OccupancyAndPendingPaneController {
 			line.setEndX(mapper.mapToPaneX(coordinates.get(i + 1).getX(), this.elementPane));
 			line.setEndY(mapper.mapToPaneY(coordinates.get(i + 1).getY(), this.elementPane));
 
-			line.setStroke(Color.RED);
-			line.setStrokeWidth(0.1);
+			this.setStroke(line, null);
 
 			this.elementPane.getChildren().add(line);
+		}
+	}
+	
+	private void setStroke(Line line, Duration duration) {
+		if (duration == null || duration.getTotalSecond() == 0) {
+			line.setStroke(Color.BLACK);
+			line.setStrokeWidth(0.1);
+		} else {
+			line.setStroke(Color.RED);
+			line.setStrokeWidth(0.1 * duration.getTotalSecond() / 60);
 		}
 	}
 

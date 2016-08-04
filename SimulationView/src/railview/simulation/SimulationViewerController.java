@@ -133,10 +133,13 @@ public class SimulationViewerController extends AbstractSimulationController {
 	@FXML
 	public void startSimulation() {
 		super.startSimulation();
-
+		
 		this.startButton.setDisable(true);
 		this.pauseButton.setDisable(false);
 		this.stopButton.setDisable(false);
+		
+		this.graphPaneController.setInfrastructureOccupancyAndPendingLogger(
+			simulator.getInfrastructureSimulator().getOccupancyAndPendingLogger());
 	}
 
 	@FXML
