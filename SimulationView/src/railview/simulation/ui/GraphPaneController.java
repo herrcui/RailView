@@ -4,15 +4,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import railapp.infrastructure.object.dto.InfrastructureObject;
-import railapp.infrastructure.path.dto.LinkEdge;
-import railapp.infrastructure.path.dto.LinkPath;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.rollingstock.dto.SimpleTrain;
 import railapp.simulation.events.ScheduledEvent;
@@ -25,21 +22,16 @@ import railapp.simulation.train.TrainSimulator;
 import railapp.units.Duration;
 import railapp.units.Length;
 import railapp.units.Time;
-import railapp.units.UnitUtility;
-import railview.infrastructure.container.NetworkPaneController;
 import railview.simulation.ui.components.BlockingTimeChart;
 import railview.simulation.ui.data.BlockingTime;
 import railview.simulation.ui.data.EventData;
 import railview.simulation.ui.data.TimeDistance;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Side;
-import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Data;
@@ -64,13 +56,13 @@ public class GraphPaneController {
 	private AnchorPane runningPane;
 
 	@FXML
-	private AnchorPane speedprofilePane;
-
-	@FXML
 	private AnchorPane timeDistancePane;
 	
 	@FXML
-	private AnchorPane energyPane;
+	private AnchorPane runningDynamicsRoot;
+	
+	@FXML
+	private AnchorPane runningdynamicsPane;
 	
 	@FXML
 	private AnchorPane snapshotRoot;
@@ -79,16 +71,13 @@ public class GraphPaneController {
 	private ListView<String> trainNumbersBlockingTime;
 
 	@FXML
-	private ListView<String> trainNumbersRunningDynamics;
-
-	@FXML
 	public void initialize() {
 		tabPane.setSide(Side.BOTTOM);
 		
-		speedProfileChart = createSpeedprofileChart();
+		//speedProfileChart = createSpeedprofileChart();
 		timeDistanceChart = createTimeDistanceChart();
 
-		speedprofilePane.getChildren().add(speedProfileChart);
+		//speedprofilePane.getChildren().add(speedProfileChart);
 		timeDistancePane.getChildren().add(timeDistanceChart);
 
 		AnchorPane.setTopAnchor(timeDistanceChart, 0.0);
@@ -96,12 +85,6 @@ public class GraphPaneController {
 		AnchorPane.setRightAnchor(timeDistanceChart, 0.0);
 		AnchorPane.setBottomAnchor(timeDistanceChart, 0.0);
 
-		AnchorPane.setTopAnchor(speedProfileChart, 0.0);
-		AnchorPane.setLeftAnchor(speedProfileChart, 0.0);
-		AnchorPane.setRightAnchor(speedProfileChart, 0.0);
-		AnchorPane.setBottomAnchor(speedProfileChart, 0.0);
-
-		new ZoomOnlyX(speedProfileChart, speedprofilePane);
 		new Zoom(timeDistanceChart, timeDistancePane);
 
 		timeDistanceChart.setMouseFilter(new EventHandler<MouseEvent>() {
@@ -115,17 +98,21 @@ public class GraphPaneController {
 		});
 		timeDistanceChart.startEventHandlers();
 
-		speedProfileChart.setMouseFilter(new EventHandler<MouseEvent>() {
-			@Override
-			public void handle(MouseEvent mouseEvent) {
-				if (mouseEvent.getButton() == MouseButton.PRIMARY) {
-				} else {
-					mouseEvent.consume();
-				}
-			}
-		});
-		speedProfileChart.startEventHandlers();
-
+		try {
+			FXMLLoader runningDynamicsLoader = new FXMLLoader();
+			URL location = RunningDynamicsPaneController.class
+					.getResource("RunningDynamicsPane.fxml");
+			runningDynamicsLoader.setLocation(location);
+			this.runningdynamicsPane = (AnchorPane) runningDynamicsLoader.load();
+			this.runningDynamicsPaneController = runningDynamicsLoader.getController();
+			this.runningDynamicsPaneController.setTrainMap(this.trainMap);
+			
+			this.runningDynamicsRoot.getChildren().add(runningdynamicsPane);
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 		try {
 			FXMLLoader snapshotPaneLoader = new FXMLLoader();
 			URL location = SnapshotPaneController.class
@@ -146,16 +133,6 @@ public class GraphPaneController {
 	}
 
 	@FXML
-	private void resetSpeedProfile(MouseEvent event) {
-		if (event.getButton().equals(MouseButton.SECONDARY)) {
-			if (event.getClickCount() == 2) {
-				speedProfileChart.getXAxis().setAutoRanging(true);
-				speedProfileChart.getYAxis().setAutoRanging(true);
-			}
-		}
-	}
-
-	@FXML
 	private void resetTimeDistance(MouseEvent event) {
 		if (event.getButton().equals(MouseButton.SECONDARY)) {
 			if (event.getClickCount() == 2) {
@@ -165,34 +142,10 @@ public class GraphPaneController {
 		}
 	}
 
-	private DraggableChart<Number, Number> createSpeedprofileChart() {
-		NumberAxis xAxis = createXAxis();
-		NumberAxis yAxis = createYAxis();
-		DraggableChart<Number, Number> chart = new DraggableChart<>(xAxis,
-				yAxis);
-		chart.setAnimated(false);
-		chart.setCreateSymbols(false);
-		trainNumbersRunningDynamics.getSelectionModel().selectedItemProperty()
-				.addListener(new ChangeListener<String>() {
-					@Override
-					public void changed(
-							ObservableValue<? extends String> observable,
-							String oldValue, String newValue) {
-						System.out.println(getTrain(newValue));
-						chart.getData().clear();
-						speedProfileChart.getXAxis().setAutoRanging(true);
-						speedProfileChart.getYAxis().setAutoRanging(true);
-						drawVelocityTable(getTrain(newValue), chart);
-
-					}
-				});
-		return chart;
-	}
-
 	private BlockingTimeChart<Number, Number> createTimeDistanceChart() {
 
-		NumberAxis xAxis = createXAxis2();
-		NumberAxis yAxis = createYAxis2();
+		NumberAxis xAxis = new NumberAxis();
+		NumberAxis yAxis = new NumberAxis();
 		BlockingTimeChart<Number, Number> chart = new BlockingTimeChart<Number, Number>(
 				xAxis, yAxis);
 
@@ -348,31 +301,6 @@ public class GraphPaneController {
 
 	}
 
-	private NumberAxis createXAxis() {
-		NumberAxis xAxis = new NumberAxis();
-		return xAxis;
-	}
-
-	private NumberAxis createYAxis() {
-		NumberAxis yAxis = new NumberAxis();
-
-		return yAxis;
-	}
-
-	private NumberAxis createXAxis2() {
-		NumberAxis xAxis = new NumberAxis();
-		return xAxis;
-	}
-
-	private NumberAxis createYAxis2() {
-		NumberAxis yAxis = new NumberAxis();
-		return yAxis;
-	}
-
-	public void setTrainList(List<AbstractTrainSimulator> trainList) {
-		this.updateTrainMap(trainList);
-	}
-
 	public void updateTrainMap(List<AbstractTrainSimulator> trainList) {
 		CopyOnWriteArrayList<AbstractTrainSimulator> tempList = new CopyOnWriteArrayList<AbstractTrainSimulator>();
 		tempList.addAll(trainList);
@@ -385,54 +313,13 @@ public class GraphPaneController {
 				numbers.add(trainNumber);
 			}
 		}
-
-		trainNumbersRunningDynamics.setItems(numbers);
+		
+		this.runningDynamicsPaneController.setTrainNumbers(numbers);
 		trainNumbersBlockingTime.setItems(numbers);
-
 	}
 
 	public AbstractTrainSimulator getTrain(String trainNumber) {
 		return this.trainMap.get(trainNumber);
-	}
-
-	public LineChart<Number, Number> drawVelocityTable(
-			AbstractTrainSimulator train, LineChart<Number, Number> chart) {
-		XYChart.Series<Number, Number> CourseForVelocitySeries = new Series<Number, Number>();
-		CourseForVelocitySeries.setName("course for velocity");
-		if (train.getTrain().getStatus() != SimpleTrain.INACTIVE) {
-			for (Map.Entry<Double, Double> entry : getCourseForVelocity(train)
-					.entrySet()) {
-				CourseForVelocitySeries.getData().add(
-						new Data<Number, Number>(entry.getKey(), entry
-								.getValue()));
-			}
-			chart.getData().add(CourseForVelocitySeries);
-			XYChart.Series<Number, Number> speedLimitSeries = new Series<Number, Number>();
-
-			speedLimitSeries.setName("speedlimit");
-			double y = -1;
-			speedLimitSeries.getData().add(new Data<Number, Number>(0, y));
-			for (Map.Entry<Double, Double> entry : getSpeedLimit(train)
-					.entrySet()) {
-				if (y >= 0) {
-					speedLimitSeries.getData().add(
-							new Data<Number, Number>(entry.getKey(), y));
-				}
-				speedLimitSeries.getData().add(
-						new Data<Number, Number>(entry.getKey(), entry
-								.getValue()));
-				y = entry.getValue();
-			}
-			chart.getData().add(speedLimitSeries);
-			speedLimitSeries
-					.nodeProperty()
-					.get()
-					.setStyle(
-							"-fx-stroke: #000000; -fx-stroke-dash-array: 0.1 5.0;");
-
-			chart.setCreateSymbols(false);
-		}
-		return chart;
 	}
 
 	public BlockingTimeChart<Number, Number> drawCourseforTimeTable(
@@ -457,20 +344,6 @@ public class GraphPaneController {
 		return chart;
 	}
 
-	// Map: Meter, VelocityInKmH
-	private Map<Double, Double> getCourseForVelocity(
-			AbstractTrainSimulator train) {
-		Map<Double, Double> velocityMap = new LinkedHashMap<Double, Double>();
-		double meter = 0; // x
-		double velocityInKmH = 0; // y
-		for (DiscretePoint point : train.getWholeCoursePoints()) {
-			velocityInKmH = point.getVelocity().getKilometerPerHour();
-			meter += point.getDistance().getMeter();
-			velocityMap.put(meter, velocityInKmH);
-		}
-		return velocityMap;
-	}
-
 	// Map: Meter, TimeInSecond
 	private List<TimeDistance> getTimeInDistance(AbstractTrainSimulator train) {
 		List<TimeDistance> pointList = new ArrayList<TimeDistance>();
@@ -483,46 +356,6 @@ public class GraphPaneController {
 			pointList.add(new TimeDistance(meter, timeInSecond));
 		}
 		return pointList;
-	}
-
-	private LinkedHashMap<Double, Double> getSpeedLimit(
-			AbstractTrainSimulator train) {
-		// Velocity
-		LinkedHashMap<Double, Double> speedLimitMap = new LinkedHashMap<Double, Double>();
-
-		LinkPath path = train.getFullPath();
-
-		double maxTrainKmH = train.getTrainDefinition().getMaxVelocity()
-				.getKilometerPerHour();
-		double maxKmH = Math
-				.min(maxTrainKmH, path.getLinkEdges().get(0).getLink()
-						.getGeometry().getMaxVelocity().getKilometerPerHour());
-		double lastMeter = 0;
-		double meter = 0;
-
-		for (LinkEdge edge : path.getLinkEdges()) {
-			if (edge.getLength().getMeter() == 0) {
-				continue;
-			}
-
-			double linkKmH = edge.getLink().getGeometry().getMaxVelocity()
-					.getKilometerPerHour();
-
-			if (Math.abs(Math.min(maxTrainKmH, linkKmH) - maxKmH) >= UnitUtility.ERROR) {
-				speedLimitMap.put(lastMeter, maxKmH);
-				speedLimitMap.put(meter, maxKmH);
-
-				maxKmH = Math.min(maxTrainKmH, linkKmH);
-				lastMeter = meter;
-			}
-
-			meter += edge.getLength().getMeter();
-		}
-
-		speedLimitMap.put(lastMeter, maxKmH);
-		speedLimitMap.put(meter, maxKmH);
-
-		return speedLimitMap;
 	}
 
 	private List<BlockingTime> getBlockingTimeStairway(
@@ -630,12 +463,14 @@ public class GraphPaneController {
 	}
 
 	private DraggableChart<Number, Number> timeDistanceChart;
-	private DraggableChart<Number, Number> speedProfileChart;
 
 	private StackPane snapshotPane;
 	private SnapshotPaneController snapshotPaneController;
+	
+	private RunningDynamicsPaneController runningDynamicsPaneController;
 
-	private ObservableList<String> numbers = FXCollections
-			.observableArrayList();
-	private ConcurrentHashMap<String, AbstractTrainSimulator> trainMap = new ConcurrentHashMap<String, AbstractTrainSimulator>();
+	private ObservableList<String> numbers = FXCollections.observableArrayList();
+	
+	private ConcurrentHashMap<String, AbstractTrainSimulator> trainMap = 
+			new ConcurrentHashMap<String, AbstractTrainSimulator>();
 }

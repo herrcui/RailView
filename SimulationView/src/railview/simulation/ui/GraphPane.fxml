@@ -17,14 +17,14 @@
             <content>
               <AnchorPane fx:id="runningPane" minHeight="0.0" minWidth="0.0">
                      <children>
-                        <SplitPane dividerPositions="0.7602427921092565" prefHeight="803.0" prefWidth="1320.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <SplitPane dividerPositions="0.7602427921092565" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <items>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                  <children>
                                     <SplitPane dividerPositions="0.5" layoutX="-38.0" layoutY="36.0" orientation="VERTICAL" prefHeight="801.0" prefWidth="390.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                       <items>
                                       	<AnchorPane fx:id="timeDistancePane" minHeight="0.0" minWidth="0.0" onMouseClicked="#resetTimeDistance" prefHeight="100.0" prefWidth="160.0" />
-                                        <AnchorPane fx:id="snapshotRoot" minHeight="0.0" minWidth="0.0" onMouseClicked="#resetSpeedProfile" prefHeight="100.0" prefWidth="160.0" styleClass="background-light-grey" stylesheets="@../../../../resources/CSS/Tabs.css" />
+                                        <AnchorPane fx:id="snapshotRoot" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" styleClass="background-light-grey" stylesheets="@../../../../resources/CSS/Tabs.css" />
                                       </items>
                                     </SplitPane>
                                  </children>
@@ -40,37 +40,14 @@
             </content>
           </Tab>
           <Tab text="Running Dynamics">
+               <content>
+                  <AnchorPane fx:id="runningDynamicsRoot" minHeight="0.0" minWidth="0.0" />
+               </content></Tab>
+          <Tab text="Occupancy &amp; Hindrance">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <SplitPane dividerPositions="0.7268588770864947" layoutX="425.0" layoutY="143.0" prefHeight="803.0" prefWidth="1320.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                          <items>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                                 <children>
-                                    <SplitPane dividerPositions="0.5" layoutX="537.0" layoutY="157.0" orientation="VERTICAL" prefHeight="801.0" prefWidth="955.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                      <items>
-                                        <AnchorPane fx:id="speedprofilePane" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
-                                        <AnchorPane fx:id="energyPane" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
-                                      </items>
-                                    </SplitPane>
-                                 </children>
-                              </AnchorPane>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                                 <children>
-                                    <ListView fx:id="trainNumbersRunningDynamics" layoutY="124.0" prefHeight="801.0" prefWidth="357.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                 </children>
-                              </AnchorPane>
-                          </items>
-                        </SplitPane>
-                     </children>
-              </AnchorPane>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
             </content>
           </Tab>
-            <Tab text="Occupancy &amp; Hindrance">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-              </content>
-            </Tab>
         </tabs>
       </TabPane>
    </children>

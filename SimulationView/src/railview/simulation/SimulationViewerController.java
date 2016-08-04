@@ -255,7 +255,8 @@ public class SimulationViewerController extends AbstractSimulationController {
         // TODO: check if it is successful
         this.networkPaneController.setInfrastructureServiceUtility(this.infraServiceUtility);
         this.graphPaneController.setInfrastructureServiceUtility(this.infraServiceUtility);
-        this.graphPaneController.setTrainList(simulator.getTrainSimulators());
+        
+        this.graphPaneController.updateTrainMap(simulator.getTrainSimulators());
     }
 	
 

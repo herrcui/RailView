@@ -12,6 +12,7 @@ import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.units.UnitUtility;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
@@ -32,7 +33,7 @@ public class RunningDynamicsPaneController {
 	private AnchorPane energyPane;
 	
 	@FXML
-	private ListView<String> trainNumbersRunningDynamics;
+	private ListView<String> trainNumbers;
 
 	@FXML
 	public void initialize() {
@@ -59,6 +60,25 @@ public class RunningDynamicsPaneController {
 		speedProfileChart.startEventHandlers();
 	}
 	
+	@FXML
+	private void resetSpeedProfile(MouseEvent event) {
+		if (event.getButton().equals(MouseButton.SECONDARY)) {
+			if (event.getClickCount() == 2) {
+				speedProfileChart.getXAxis().setAutoRanging(true);
+				speedProfileChart.getYAxis().setAutoRanging(true);
+			}
+		}
+	}
+	
+	void setTrainMap(
+			ConcurrentHashMap<String, AbstractTrainSimulator> trainMap) {
+		this.trainMap = trainMap;
+	}
+	
+	void setTrainNumbers(ObservableList<String> numbers) {
+		this.trainNumbers.setItems(numbers);
+	}
+	
 	private DraggableChart<Number, Number> createSpeedprofileChart() {
 		NumberAxis xAxis = new NumberAxis();
 		NumberAxis yAxis = new NumberAxis();
@@ -66,7 +86,7 @@ public class RunningDynamicsPaneController {
 				yAxis);
 		chart.setAnimated(false);
 		chart.setCreateSymbols(false);
-		trainNumbersRunningDynamics.getSelectionModel().selectedItemProperty()
+		trainNumbers.getSelectionModel().selectedItemProperty()
 				.addListener(new ChangeListener<String>() {
 					@Override
 					public void changed(
@@ -76,14 +96,14 @@ public class RunningDynamicsPaneController {
 						chart.getData().clear();
 						speedProfileChart.getXAxis().setAutoRanging(true);
 						speedProfileChart.getYAxis().setAutoRanging(true);
-						drawVelocityTable(trainMap.get(newValue), chart);
+						drawVelocity(trainMap.get(newValue), chart);
 
 					}
 				});
 		return chart;
 	}
 	
-	private LineChart<Number, Number> drawVelocityTable(
+	private LineChart<Number, Number> drawVelocity(
 			AbstractTrainSimulator train, LineChart<Number, Number> chart) {
 		XYChart.Series<Number, Number> CourseForVelocitySeries = new Series<Number, Number>();
 		CourseForVelocitySeries.setName("course for velocity");
@@ -178,6 +198,5 @@ public class RunningDynamicsPaneController {
 	}
 	
 	private DraggableChart<Number, Number> speedProfileChart;
-	private ConcurrentHashMap<String, AbstractTrainSimulator> 
-		trainMap = new ConcurrentHashMap<String, AbstractTrainSimulator>();
+	private ConcurrentHashMap<String, AbstractTrainSimulator> trainMap;
 }
