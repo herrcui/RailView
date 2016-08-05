@@ -5,14 +5,16 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="300.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.ui.OccupancyAndPendingPaneController">
    <children>
-      <SplitPane dividerPositions="0.9295302013422819" layoutX="70.0" layoutY="-58.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <SplitPane dividerPositions="0.8557046979865772" layoutX="70.0" layoutY="-58.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" styleClass="background-white" stylesheets="@../../../../resources/CSS/Darktheme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <StackPane fx:id="infraRoot" styleClass="background-white" stylesheets="@../../../../resources/CSS/Tabs.css"
-          			 onMouseEntered="#mouseEnter" onScroll="#scrollWheel" minHeight="0.0" minWidth="0.0" prefHeight="183.0" prefWidth="398.0" />
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+          <StackPane fx:id="infraRoot" minHeight="0.0" minWidth="0.0" onMouseEntered="#mouseEnter" onScroll="#scrollWheel" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="45.0" prefWidth="411.0">
+               <children>
+                  <Button layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#drawOccupancy" text="Occupancy" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                  <Button layoutX="113.0" layoutY="10.0" mnemonicParsing="false" onAction="#drawPending" prefHeight="25.0" prefWidth="75.0" text="Pending" />
+               </children></AnchorPane>
         </items>
       </SplitPane>
    </children>

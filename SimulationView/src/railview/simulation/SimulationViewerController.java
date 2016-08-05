@@ -138,8 +138,20 @@ public class SimulationViewerController extends AbstractSimulationController {
 		this.pauseButton.setDisable(false);
 		this.stopButton.setDisable(false);
 		
-		this.graphPaneController.setInfrastructureOccupancyAndPendingLogger(
-			simulator.getInfrastructureSimulator().getOccupancyAndPendingLogger());
+		while (true) {
+			if (simulator.getInfrastructureSimulator() != null) {
+				this.graphPaneController.setInfrastructureOccupancyAndPendingLogger(
+						simulator.getInfrastructureSimulator().getOccupancyAndPendingLogger());
+				break;
+			} else {
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
 	}
 
 	@FXML
@@ -209,9 +221,7 @@ public class SimulationViewerController extends AbstractSimulationController {
 			
 			unlockButton.setVisible(false);
 			lockButton.setVisible(true);
-			
-			
-}
+	}
 	
 	@FXML
 	private void appearSymbolPane() {
@@ -257,8 +267,8 @@ public class SimulationViewerController extends AbstractSimulationController {
         
         // TODO: check if it is successful
         this.networkPaneController.setInfrastructureServiceUtility(this.infraServiceUtility);
-        this.graphPaneController.setInfrastructureServiceUtility(this.infraServiceUtility);
         
+        this.graphPaneController.setInfrastructureServiceUtility(this.infraServiceUtility);
         this.graphPaneController.updateTrainMap(simulator.getTrainSimulators());
     }
 	
@@ -271,8 +281,10 @@ public class SimulationViewerController extends AbstractSimulationController {
 	protected void updateUI() {
 		networkPaneController.updateTrainCoordinates(
 			simulator.getTrainCoordinates(this.updateTime), this.updateTime);
-		updateStatusBar();
+
 		this.graphPaneController.updateTrainMap(this.simulator.getTrainSimulators());
+		
+		updateStatusBar();
 	}
 
 	private void updateStatusBar() {

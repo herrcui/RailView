@@ -123,7 +123,7 @@ public class RunningDynamicsPaneController {
 	private LineChart<Number, Number> drawVelocity(
 			AbstractTrainSimulator train, LineChart<Number, Number> chart) {
 		XYChart.Series<Number, Number> CourseForVelocitySeries = new Series<Number, Number>();
-		CourseForVelocitySeries.setName("course for velocity");
+		CourseForVelocitySeries.setName("speed profile (km/h)");
 		if (train.getTrain().getStatus() != SimpleTrain.INACTIVE) {
 			for (Map.Entry<Double, Double> entry : getCourseForVelocity(train)
 					.entrySet()) {
@@ -133,8 +133,7 @@ public class RunningDynamicsPaneController {
 			}
 			chart.getData().add(CourseForVelocitySeries);
 			XYChart.Series<Number, Number> speedLimitSeries = new Series<Number, Number>();
-
-			speedLimitSeries.setName("speedlimit");
+			
 			double y = -1;
 			speedLimitSeries.getData().add(new Data<Number, Number>(0, y));
 			for (Map.Entry<Double, Double> entry : getSpeedLimit(train)
@@ -149,11 +148,10 @@ public class RunningDynamicsPaneController {
 				y = entry.getValue();
 			}
 			chart.getData().add(speedLimitSeries);
-			speedLimitSeries
-					.nodeProperty()
-					.get()
-					.setStyle(
+			speedLimitSeries.nodeProperty().get().setStyle(
 							"-fx-stroke: #000000; -fx-stroke-dash-array: 0.1 5.0;");
+
+			chart.setLegendVisible(false);
 
 			chart.setCreateSymbols(false);
 		}

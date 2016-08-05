@@ -5,7 +5,6 @@ import java.util.Collection;
 import railapp.infrastructure.element.dto.InfrastructureElement;
 import railapp.infrastructure.element.dto.Port;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
-import railview.infrastructure.container.ColorPicker;
 import railview.infrastructure.container.CoordinateMapper;
 import railview.infrastructure.container.InfrastructureElementsPane;
 import javafx.fxml.FXML;
@@ -25,7 +24,6 @@ public class SnapshotPaneController {
 	public void initialize() {
 		this.elementPane = new InfrastructureElementsPane();
 		this.stackPane.getChildren().add(this.elementPane);
-
 	}
 
 	public void setInfrastructureServiceUtility(

@@ -65,7 +65,9 @@ public class OccupancyAndPendingPaneController {
 
 		this.elementPane.setCoordinateMapper(mapper);
 		this.elementPane.setElements(elements);
-		this.draw(elements, mapper);
+		
+		this.elements = elements;
+		this.mapper = mapper;
 	}
 	
 	public void setLogger(InfrastructureOccupancyAndPendingLogger logger) {
@@ -102,24 +104,47 @@ public class OccupancyAndPendingPaneController {
 		infraRoot.addEventFilter( ScrollEvent.ANY, elemNodeGestures.getOnScrollEventHandler());
 	}
 	
-	private void draw(Collection<InfrastructureElement> elements, CoordinateMapper mapper) {
-		if (elements == null)
+	@FXML
+	private void drawOccupancy() {
+		if (this.elements == null)
 			return;
 
 		this.elementPane.getChildren().clear();
+		
+		this.type = OCCUPANCY;
 
 		for (InfrastructureElement element : elements) {
-			this.drawInfrastructureElement(element, mapper);
+			this.drawInfrastructureElement(element);
 		}
 	}
 	
-	private void drawInfrastructureElement(InfrastructureElement element, CoordinateMapper mapper) {
+	@FXML
+	private void drawPending() {
+		if (this.elements == null)
+			return;
+
+		this.elementPane.getChildren().clear();
+		
+		this.type = PENDING;
+
+		for (InfrastructureElement element : elements) {
+			this.drawInfrastructureElement(element);
+		}
+	}
+	
+	private void drawInfrastructureElement(InfrastructureElement element) {
 		if (element instanceof Track) {
 			List<Coordinate> coordinates = ((Track) element).getCoordinateAtLink12();
 			TreeMap<Double, Duration> opMap = null;
 			
 			if (logger != null) {
-				opMap = logger.getOccupancyMap((Track) element);
+				if (type == OCCUPANCY) {
+					opMap = logger.getOccupancyMap((Track) element);
+				}
+				
+				if (type == PENDING) {
+					opMap = logger.getPendingMap((Track) element);
+				}
 			}
 			
 			if (opMap != null) {
@@ -130,7 +155,13 @@ public class OccupancyAndPendingPaneController {
 		} else {
 			Duration duration = null;
 			if (logger != null) {
-				duration = logger.getJunctionOccupancyDuration(element);
+				if (type == OCCUPANCY) {
+					duration = logger.getJunctionOccupancyDuration(element);
+				}
+				
+				if (type == PENDING) {
+					duration = logger.getJunctionPendingDuration(element);
+				}
 			}
 			
 			if (element instanceof Turnout) {
@@ -230,22 +261,46 @@ public class OccupancyAndPendingPaneController {
 			line.setEndX(mapper.mapToPaneX(coordinates.get(i + 1).getX(), this.elementPane));
 			line.setEndY(mapper.mapToPaneY(coordinates.get(i + 1).getY(), this.elementPane));
 
-			this.setStroke(line, null);
+			this.setStroke(line, duration);
 
 			this.elementPane.getChildren().add(line);
 		}
 	}
 	
 	private void setStroke(Line line, Duration duration) {
+		//double totalSeconds = logger.getTotalDuration().getTotalSecond();
+		double totalSeconds = 18000;
+		
 		if (duration == null || duration.getTotalSecond() == 0) {
 			line.setStroke(Color.BLACK);
-			line.setStrokeWidth(0.1);
+			line.setStrokeWidth(this.MIN_WIDTH);
 		} else {
-			line.setStroke(Color.RED);
-			line.setStrokeWidth(0.1 * duration.getTotalSecond() / 60);
+			if (type == OCCUPANCY) {
+				line.setStroke(Color.BLUE);
+			}
+			
+			if (type == PENDING) {
+				line.setStroke(Color.RED);
+			}
+			
+			double width = duration.getTotalSecond() / totalSeconds;
+			if (width < this.MIN_WIDTH) {
+				width = this.MIN_WIDTH;
+			}
+			line.setStrokeWidth(width);
 		}
 	}
 
 	private double pressedX, pressedY;
 	private InfrastructureOccupancyAndPendingLogger logger;
+	
+	private Collection<InfrastructureElement> elements;
+	private CoordinateMapper mapper;
+	
+	private int type = -1;
+	
+	private double MIN_WIDTH = 0.01;
+	
+	private final int OCCUPANCY = 1;
+	private final int PENDING = 2;
 }
