@@ -18,6 +18,8 @@ import railapp.units.Percentage;
 import railview.infrastructure.container.CoordinateMapper;
 import railview.infrastructure.container.InfrastructureElementsPane;
 import railview.infrastructure.container.NodeGestures;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
@@ -35,6 +37,8 @@ public class OccupancyAndPendingPaneController {
 	public void initialize() {
 		this.elementPane = new InfrastructureElementsPane();
 		this.infraRoot.getChildren().add(this.elementPane);
+		
+		
 	}
 	
 	public void setInfrastructureServiceUtility(
@@ -116,6 +120,21 @@ public class OccupancyAndPendingPaneController {
 		for (InfrastructureElement element : elements) {
 			this.drawInfrastructureElement(element);
 		}
+		
+		elementPane.widthProperty().addListener(new ChangeListener<Number>() {
+		    @Override public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneWidth, Number newSceneWidth) {
+		    	for (InfrastructureElement element : elements) {
+					drawInfrastructureElement(element);
+				}
+		    }
+		});
+		elementPane.heightProperty().addListener(new ChangeListener<Number>() {
+		    @Override public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneHeight, Number newSceneHeight) {
+		    	for (InfrastructureElement element : elements) {
+					drawInfrastructureElement(element);
+				}
+		    }
+		});
 	}
 	
 	@FXML
@@ -130,6 +149,21 @@ public class OccupancyAndPendingPaneController {
 		for (InfrastructureElement element : elements) {
 			this.drawInfrastructureElement(element);
 		}
+		
+		elementPane.widthProperty().addListener(new ChangeListener<Number>() {
+		    @Override public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneWidth, Number newSceneWidth) {
+		    	for (InfrastructureElement element : elements) {
+					drawInfrastructureElement(element);
+				}
+		    }
+		});
+		elementPane.heightProperty().addListener(new ChangeListener<Number>() {
+		    @Override public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneHeight, Number newSceneHeight) {
+		    	for (InfrastructureElement element : elements) {
+					drawInfrastructureElement(element);
+				}
+		    }
+		});
 	}
 	
 	private void drawInfrastructureElement(InfrastructureElement element) {

@@ -27,6 +27,8 @@ import railview.simulation.ui.components.Zoom;
 import railview.simulation.ui.data.BlockingTime;
 import railview.simulation.ui.data.EventData;
 import railview.simulation.ui.data.TimeDistance;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -63,6 +65,7 @@ public class TrainRunMonitorPaneController {
 		AnchorPane.setLeftAnchor(blockingTimeChart, 0.0);
 		AnchorPane.setRightAnchor(blockingTimeChart, 0.0);
 		AnchorPane.setBottomAnchor(blockingTimeChart, 0.0);
+		
 
 		new Zoom(blockingTimeChart, blockingTimePane);
 
@@ -89,6 +92,20 @@ public class TrainRunMonitorPaneController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		snapshotRoot.widthProperty().addListener(new ChangeListener<Number>() {
+		    @Override public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneWidth, Number newSceneWidth) {
+		    	snapshotPane.setLayoutX((newSceneWidth.doubleValue() / 2)- (snapshotPane.prefWidth(-1) / 2));
+		    }
+		});
+
+		snapshotRoot.heightProperty().addListener(new ChangeListener<Number>() {
+		    @Override public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneHeight, Number newSceneHeight) {
+		    	snapshotPane.setLayoutY((newSceneHeight.doubleValue() / 2)- (snapshotPane.prefHeight(-1) / 2));
+		    	snapshotPane.setPrefHeight(newSceneHeight.doubleValue());
+		    }
+		});
+		
 	}
 	
 	@FXML
