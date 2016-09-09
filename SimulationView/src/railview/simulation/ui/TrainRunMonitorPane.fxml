@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.ui.TrainRunMonitorPaneController">
+<AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.ui.TrainRunMonitorPaneController">
    <children>
       <SplitPane dividerPositions="0.7224080267558528" layoutX="21.0" layoutY="31.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -13,7 +13,10 @@
                <children>
                   <SplitPane dividerPositions="0.5" layoutX="90.0" layoutY="51.0" orientation="VERTICAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <items>
-                     <AnchorPane fx:id="blockingTimePane" onMouseClicked="#resetBlockingTime"/>
+                     <AnchorPane fx:id="blockingTimePane" onMouseClicked="#resetBlockingTime">
+                           <children>
+                              <Label fx:id="eventLabel" layoutX="76.0" layoutY="90.0" text="eventlabel" />
+                           </children></AnchorPane>
                      <AnchorPane fx:id="snapshotRoot" styleClass="background-light-grey" stylesheets="@../../../../resources/CSS/Tabs.css" />
                     </items>
                   </SplitPane>

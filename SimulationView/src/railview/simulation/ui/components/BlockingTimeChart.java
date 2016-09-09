@@ -25,8 +25,9 @@ import railview.simulation.ui.data.EventData;
 import railview.simulation.ui.data.TimeDistance;
 
 public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
-	public BlockingTimeChart(Axis<X> xAxis, Axis<Y> yAxis) {
+	public BlockingTimeChart(Axis<X> xAxis, Axis<Y> yAxis, Label eventLabel) {
 		super(xAxis, yAxis);
+		this.eventLabel = eventLabel;
 	}
 	
 	public ObservableList<Node> getBlockingTimeChartPlotChildren() {
@@ -114,13 +115,13 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 	}
 
 	private void writeText(double x, double y, String text) {
-		txt = new Text();
-		txt.setText(text);
-		txt.setLayoutX(this.getXAxis().getDisplayPosition(
+		eventLabel.setText(text);
+		eventLabel.setLayoutX(this.getXAxis().getDisplayPosition(
 				this.getXAxis().toRealValue(x)));
-		txt.setLayoutY(this.getYAxis().getDisplayPosition(
+		eventLabel.setLayoutY(this.getYAxis().getDisplayPosition(
 				this.getYAxis().toRealValue(y)));
-		this.getPlotChildren().add(txt);
+
+		eventLabel.toFront();
 	}
 
 	private void removeText() {
@@ -288,6 +289,7 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 	
 	private Map<Polygon, TimeDistanceEvents> polygonMap = new HashMap<Polygon, TimeDistanceEvents>();
 
+	private Label eventLabel;
 	private Text txt;
 	private Rectangle r;
 	

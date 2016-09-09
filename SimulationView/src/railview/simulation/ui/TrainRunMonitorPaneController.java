@@ -38,6 +38,7 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Data;
 import javafx.scene.chart.XYChart.Series;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
@@ -56,10 +57,15 @@ public class TrainRunMonitorPaneController {
 	private ListView<String> trainNumbers;
 	
 	@FXML
+	private Label eventLabel;
+	
+	@FXML
 	public void initialize() {
 		blockingTimeChart = createBlockingTimeChart();
 
 		blockingTimePane.getChildren().add(blockingTimeChart);
+		
+		eventLabel.toFront();
 		
 		AnchorPane.setTopAnchor(blockingTimeChart, 0.0);
 		AnchorPane.setLeftAnchor(blockingTimeChart, 0.0);
@@ -136,7 +142,7 @@ public class TrainRunMonitorPaneController {
 
 		NumberAxis xAxis = new NumberAxis();
 		NumberAxis yAxis = new NumberAxis();
-		BlockingTimeChart<Number, Number> chart = new BlockingTimeChart<Number, Number>(xAxis, yAxis);
+		BlockingTimeChart<Number, Number> chart = new BlockingTimeChart<Number, Number>(xAxis, yAxis, eventLabel);
 
 		trainNumbers.setOnMouseClicked(new EventHandler<MouseEvent>() {
 					@Override
