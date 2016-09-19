@@ -1,17 +1,11 @@
 package railview.simulation.ui.data;
 
 public class EventData {
-	public EventData(TimeDistance timeDistance, int type, String text) {
+	public EventData(TimeDistance timeDistance, int type, String eventName, String text) {
 		super();
 		this.timeDistance = timeDistance;
 		this.type = type;
-		this.text = text;
-	}
-
-	public EventData(double meter, double time, int type, String text) {
-		super();
-		this.timeDistance = new TimeDistance(meter, time);
-		this.type = type;
+		this.eventName = eventName;
 		this.text = text;
 	}
 
@@ -23,6 +17,10 @@ public class EventData {
 		return type;
 	}
 
+	public String getEventName() {
+		return this.eventName;
+	}
+	
 	public String getText() {
 		return text;
 	}
@@ -35,6 +33,7 @@ public class EventData {
 
 	TimeDistance timeDistance;
 	private int type;
+	private String eventName;
 	private String text;
 
 	public static final int SELF = 0;

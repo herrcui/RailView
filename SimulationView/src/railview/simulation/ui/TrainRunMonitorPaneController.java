@@ -363,7 +363,7 @@ public class TrainRunMonitorPaneController {
 				eventsMap.put(entry, events);
 			}
 
-			EventData event = new EventData(entry, type, text);
+			EventData event = new EventData(entry, type, scheduledEvent.getClass().getSimpleName(), text);
 			events.add(event);
 		}
 
