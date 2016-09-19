@@ -108,7 +108,6 @@ public class TrainRunMonitorPaneController {
 		snapshotRoot.heightProperty().addListener(new ChangeListener<Number>() {
 		    @Override public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneHeight, Number newSceneHeight) {
 		    	snapshotPane.setLayoutY((newSceneHeight.doubleValue() / 2)- (snapshotPane.prefHeight(-1) / 2));
-		    	snapshotPane.setPrefHeight(newSceneHeight.doubleValue());
 		    }
 		});
 		

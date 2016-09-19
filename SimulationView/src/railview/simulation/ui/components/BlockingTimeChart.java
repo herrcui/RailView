@@ -99,7 +99,7 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 				NumberAxis xAxis = (NumberAxis) getXAxis();
 				NumberAxis yAxis = (NumberAxis) getYAxis();
 				String eventString = ("Event: " + event.getText());
-				writeText(xAxis.getUpperBound()/2 - xAxis.getUpperBound()/8, yAxis.getLowerBound()/10*9 , eventString);
+				writeText(xAxis.getUpperBound()/2 - xAxis.getUpperBound()/10, yAxis.getLowerBound()/12*11 , eventString);
 
 			}
 		});
@@ -120,12 +120,12 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 				this.getXAxis().toRealValue(x)));
 		eventLabel.setLayoutY(this.getYAxis().getDisplayPosition(
 				this.getYAxis().toRealValue(y)));
-
+		eventLabel.setStyle("-fx-border-color: white; -fx-background-color: orange");
 		eventLabel.toFront();
 	}
 
 	private void removeText() {
-		this.getPlotChildren().remove(this.txt);
+		this.getPlotChildren().remove(this.eventLabel);
 	}
 
 	@Override

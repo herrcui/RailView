@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.ui.TrainRunMonitorPaneController">
+<AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.ui.TrainRunMonitorPaneController">
    <children>
-      <SplitPane dividerPositions="0.7224080267558528" layoutX="21.0" layoutY="31.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <SplitPane dividerPositions="0.7224080267558528" layoutX="21.0" layoutY="31.0" stylesheets="@../../../../resources/CSS/Tabs.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane>
                <children>
@@ -15,7 +16,7 @@
                     <items>
                      <AnchorPane fx:id="blockingTimePane" onMouseClicked="#resetBlockingTime">
                            <children>
-                              <Label fx:id="eventLabel" layoutX="76.0" layoutY="90.0" text="eventlabel" />
+                              <Label fx:id="eventLabel" layoutX="76.0" layoutY="90.0" />
                            </children></AnchorPane>
                      <AnchorPane fx:id="snapshotRoot" styleClass="background-light-grey" stylesheets="@../../../../resources/CSS/Tabs.css" />
                     </items>
@@ -28,6 +29,10 @@
                </children>
             </AnchorPane>
         </items>
+         <styleClass>
+            <String fx:value="tab" />
+            <String fx:value="split-pane-divider" />
+         </styleClass>
       </SplitPane>
    </children>
 </AnchorPane>
