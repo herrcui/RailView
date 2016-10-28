@@ -25,19 +25,19 @@
 
 .tab-pane .tab:selected
 {
-    -fx-background-color: #3c3c3c
+    -fx-background-color: #3c3c3c;
 }
 
 .tab .tab-label { 
+	-fx-font-family: "Verdana";
     -fx-alignment: CENTER;
-    -fx-text-fill: #828282;
+    -fx-text-fill: #5E58F5;
     -fx-font-size: 12px;
-    -fx-font-weight: bold;
 }
 
 .tab:selected .tab-label { 
     -fx-alignment: CENTER;
-    -fx-text-fill: #9acd32
+    -fx-text-fill: #D6D5F5;
 }
 
 

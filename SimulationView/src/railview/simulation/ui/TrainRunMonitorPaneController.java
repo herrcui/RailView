@@ -3,6 +3,7 @@ package railview.simulation.ui;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,16 +35,19 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Side;
+import javafx.scene.Group;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Data;
 import javafx.scene.chart.XYChart.Series;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.shape.Polygon;
 import javafx.util.StringConverter;
 
 public class TrainRunMonitorPaneController {
@@ -60,17 +64,36 @@ public class TrainRunMonitorPaneController {
 	private Label eventLabel;
 	
 	@FXML
+	private Label label;
+	
+	@FXML
+	private CheckBox selfEventCheckBox; 
+	
+	@FXML
+	private CheckBox inEventCheckBox;
+	
+	@FXML
+	private CheckBox outEventCheckBox;
+	
+	@FXML
 	public void initialize() {
+		
+		Collections.addAll(checkBoxList, selfEventCheckBox, inEventCheckBox, outEventCheckBox);
+
+		eventLabel.toFront();
+
 		blockingTimeChart = createBlockingTimeChart();
 
 		blockingTimePane.getChildren().add(blockingTimeChart);
-		
-		eventLabel.toFront();
-		
+
 		AnchorPane.setTopAnchor(blockingTimeChart, 0.0);
 		AnchorPane.setLeftAnchor(blockingTimeChart, 0.0);
 		AnchorPane.setRightAnchor(blockingTimeChart, 0.0);
 		AnchorPane.setBottomAnchor(blockingTimeChart, 0.0);
+		
+		for(CheckBox checkBox: checkBoxList){
+				checkBox.toFront();
+		}
 		
 
 		new Zoom(blockingTimeChart, blockingTimePane);
@@ -141,11 +164,21 @@ public class TrainRunMonitorPaneController {
 
 		NumberAxis xAxis = new NumberAxis();
 		NumberAxis yAxis = new NumberAxis();
-		BlockingTimeChart<Number, Number> chart = new BlockingTimeChart<Number, Number>(xAxis, yAxis, eventLabel);
+		BlockingTimeChart<Number, Number> chart = new BlockingTimeChart<Number, Number>(xAxis, yAxis, eventLabel, label, selfEventCheckBox, inEventCheckBox, outEventCheckBox);
+		
 
+		
 		trainNumbers.setOnMouseClicked(new EventHandler<MouseEvent>() {
 					@Override
-					public void handle(MouseEvent event) {
+					public void handle(MouseEvent event) {		
+
+						for(CheckBox checkBox: checkBoxList){
+							if(checkBox.isVisible() == false){
+								checkBox.setVisible(true);
+							}
+						}
+
+						
 						AbstractTrainSimulator train = trainMap.get(
 								trainNumbers.getSelectionModel().getSelectedItem().toString());
 
@@ -392,7 +425,9 @@ public class TrainRunMonitorPaneController {
 		return chart;
 	}
 	
+	List<CheckBox> checkBoxList = new ArrayList<CheckBox>();
 	private DraggableChart<Number, Number> blockingTimeChart;
+	private List<EventData> eventList;
 	
 	private StackPane snapshotPane;
 	private SnapshotPaneController snapshotPaneController;

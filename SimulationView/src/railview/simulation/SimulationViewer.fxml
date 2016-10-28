@@ -74,9 +74,9 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Label fx:id="timeLabel" layoutX="260.0" layoutY="30.0" prefHeight="17.0" prefWidth="248.0" styleClass="label-bright" stylesheets="@../../../resources/CSS/Darktheme.css" text="Simulation Time:" />
-            <Label fx:id="activeLabel" layoutX="550.0" layoutY="30.0" text="Active Trains/Swarms:" />
-            <Label fx:id="terminatedLabel" layoutX="790.0" layoutY="30.0" text="Terminated Trains:" />
+            <Label fx:id="timeLabel" layoutX="260.0" layoutY="30.0" prefHeight="17.0" prefWidth="248.0" stylesheets="@../../../resources/CSS/Darktheme.css" text="Simulation Time:" />
+            <Label fx:id="activeLabel" layoutX="550.0" layoutY="30.0" stylesheets="@../../../resources/CSS/Darktheme.css" text="Active Trains/Swarms:" />
+            <Label fx:id="terminatedLabel" layoutX="790.0" layoutY="30.0" stylesheets="@../../../resources/CSS/Darktheme.css" text="Terminated Trains:" />
             <Button fx:id="pauseButton" layoutX="100.0" layoutY="15.0" mnemonicParsing="false" onAction="#pauseSimulation">
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
