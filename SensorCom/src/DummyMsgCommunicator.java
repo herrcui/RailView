@@ -12,7 +12,35 @@ import java.util.TimerTask;
 public class DummyMsgCommunicator {
 	static OutputStream out;
 
-	void connect(String portName) throws Exception {
+	void setWriter(CommPortIdentifier serialPortId) {
+		CommPort commPort;
+		SerialPort serialPort = null;
+
+		try {
+			commPort = serialPortId.open("DummySending", 2000);
+			serialPort = (SerialPort) commPort;
+			serialPort.setSerialPortParams(115200, SerialPort.DATABITS_8, SerialPort.STOPBITS_1,
+					SerialPort.PARITY_NONE);
+			out = serialPort.getOutputStream();
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		new Timer().schedule(new TimerTask() {
+			public void run() {
+				String now = LocalDateTime.now().toString();
+				try {
+					out.write(now.getBytes());
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}, 40, 40);
+	}
+
+	void setReader(String portName) throws Exception {
 		CommPortIdentifier portIdentifier = CommPortIdentifier.getPortIdentifier(portName);
 		if (portIdentifier.isCurrentlyOwned()) {
 			System.out.println("Error: Port is currently in use");
@@ -25,9 +53,9 @@ public class DummyMsgCommunicator {
 						SerialPort.PARITY_NONE);
 
 				InputStream in = serialPort.getInputStream();
-				out = serialPort.getOutputStream();
 
-				(new Thread(new SerialReader(in))).start();
+				serialPort.addEventListener(new SerialReaderEvent(in));
+                serialPort.notifyOnDataAvailable(true);
 
 			} else {
 				System.out.println("Error: Only serial ports are handled by this example.");
@@ -35,27 +63,36 @@ public class DummyMsgCommunicator {
 		}
 	}
 
-	/** */
-	public static class SerialReader implements Runnable {
-		InputStream in;
+	/**
+	 * Handles the input coming from the serial port. A new line character is
+	 * treated as the end of a block in this example.
+	 */
+	public static class SerialReaderEvent implements SerialPortEventListener {
+		private InputStream in;
+		private byte[] buffer = new byte[1024];
 
-		public SerialReader(InputStream in) {
+		public SerialReaderEvent(InputStream in) {
 			this.in = in;
 		}
 
-		public void run() {
-			byte[] buffer = new byte[1024];
-			int len = -1;
+		public void serialEvent(SerialPortEvent arg0) {
+			int data;
+
 			try {
-				while ((len = this.in.read(buffer)) > -1) {
-					System.out.print(new String(buffer, 0, len));
+				int len = 0;
+				while ((data = in.read()) > -1) {
+					if (data == '\n') {
+						break;
+					}
+					buffer[len++] = (byte) data;
 				}
+				System.out.println(new String(buffer, 0, len));
 			} catch (IOException e) {
 				e.printStackTrace();
+				System.exit(-1);
 			}
 		}
 	}
-
 
 	public static void main(String[] args) {
 		CommPortIdentifier serialPortId;
@@ -69,25 +106,17 @@ public class DummyMsgCommunicator {
 				System.out.println(portName);
 
 				if (portName.equals("COM2")) {
+					(new DummyMsgCommunicator()).setWriter(serialPortId);
+				}
+
+
+				if (portName.equals("COM4")) {
 					try {
-						(new DummyMsgCommunicator()).connect("COM2");
+						(new DummyMsgCommunicator()).setReader("COM4");
 					} catch (Exception e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-
-					new Timer().schedule(new TimerTask() {
-						public void run() {
-							String now = LocalDateTime.now().toString();
-							try {
-								out.write(now.getBytes());
-								System.out.println(now);
-							} catch (IOException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
-						}
-					}, 1, 1);
 				}
 			}
 		}
