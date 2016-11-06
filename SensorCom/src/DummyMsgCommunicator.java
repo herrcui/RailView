@@ -1,8 +1,13 @@
 import gnu.io.*;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.Enumeration;
 import java.util.Timer;
@@ -11,6 +16,8 @@ import java.util.TimerTask;
 
 public class DummyMsgCommunicator {
 	static OutputStream out;
+	static private FileWriter writer;
+	int interval = 1000;
 
 	void setWriter(CommPortIdentifier serialPortId) {
 		CommPort commPort;
@@ -37,7 +44,7 @@ public class DummyMsgCommunicator {
 					e.printStackTrace();
 				}
 			}
-		}, 40, 40);
+		}, interval, interval);
 	}
 
 	void setReader(String portName) throws Exception {
@@ -73,6 +80,15 @@ public class DummyMsgCommunicator {
 
 		public SerialReaderEvent(InputStream in) {
 			this.in = in;
+			
+			try {
+				File file;
+				file = new File("c:\\temp\\logComm.csv");
+				writer = new FileWriter(file);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 
 		public void serialEvent(SerialPortEvent arg0) {
@@ -86,7 +102,12 @@ public class DummyMsgCommunicator {
 					}
 					buffer[len++] = (byte) data;
 				}
-				System.out.println(new String(buffer, 0, len));
+				
+				StringBuffer msgBuffer = new StringBuffer(new String(buffer, 0, len));
+				msgBuffer.append("\n");
+				System.out.println(msgBuffer);
+				
+				writer.write(msgBuffer.toString());
 			} catch (IOException e) {
 				e.printStackTrace();
 				System.exit(-1);
@@ -119,5 +140,24 @@ public class DummyMsgCommunicator {
 				}
 			}
 		}
+		
+		new Timer().schedule(new TimerTask() {
+			int i = 0;
+			
+			public void run() {
+				if (i > 10) {
+					try {
+						writer.flush();
+						writer.close();
+						System.exit(-1);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				} else {
+					i++;
+				}
+			}
+		}, 1000, 1000);
 	}
 }
