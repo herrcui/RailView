@@ -105,14 +105,13 @@ public class DummyMsgCommunicator {
 				String portName = serialPortId.getName();
 				System.out.println(portName);
 
-				if (portName.equals("COM2")) {
+				if (portName.equals("COM5")) {
 					(new DummyMsgCommunicator()).setWriter(serialPortId);
 				}
 
-
-				if (portName.equals("COM4")) {
+				if (portName.equals("COM6")) {
 					try {
-						(new DummyMsgCommunicator()).setReader("COM4");
+						(new DummyMsgCommunicator()).setReader("COM6");
 					} catch (Exception e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
