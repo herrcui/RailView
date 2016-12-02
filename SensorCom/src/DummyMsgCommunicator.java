@@ -1,5 +1,6 @@
 import gnu.io.*;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -10,14 +11,15 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.Enumeration;
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
 
 public class DummyMsgCommunicator {
 	static OutputStream out;
-	static private FileWriter writer;
-	int interval = 1000;
+	static private BufferedWriter writer;
+	int interval = 400;
 
 	void setWriter(CommPortIdentifier serialPortId) {
 		CommPort commPort;
@@ -26,7 +28,7 @@ public class DummyMsgCommunicator {
 		try {
 			commPort = serialPortId.open("DummySending", 2000);
 			serialPort = (SerialPort) commPort;
-			serialPort.setSerialPortParams(115200, SerialPort.DATABITS_8, SerialPort.STOPBITS_1,
+			serialPort.setSerialPortParams(9600, SerialPort.DATABITS_8, SerialPort.STOPBITS_1,
 					SerialPort.PARITY_NONE);
 			out = serialPort.getOutputStream();
 		} catch (Exception e1) {
@@ -35,10 +37,20 @@ public class DummyMsgCommunicator {
 		}
 
 		new Timer().schedule(new TimerTask() {
+			private Random rn = new Random();
+
 			public void run() {
-				String now = LocalDateTime.now().toString();
+				StringBuffer msgBuffer = new StringBuffer(LocalDateTime.now().toString());
+				msgBuffer.append(";");
+				msgBuffer.append(rn.nextDouble());
+				msgBuffer.append(";");
+				msgBuffer.append(rn.nextDouble());
+				msgBuffer.append(";");
+				msgBuffer.append(rn.nextDouble());
+				msgBuffer.append(";");
+				
 				try {
-					out.write(now.getBytes());
+					out.write(msgBuffer.toString().getBytes());
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -56,7 +68,7 @@ public class DummyMsgCommunicator {
 
 			if (commPort instanceof SerialPort) {
 				SerialPort serialPort = (SerialPort) commPort;
-				serialPort.setSerialPortParams(115200, SerialPort.DATABITS_8, SerialPort.STOPBITS_1,
+				serialPort.setSerialPortParams(9600, SerialPort.DATABITS_8, SerialPort.STOPBITS_1,
 						SerialPort.PARITY_NONE);
 
 				InputStream in = serialPort.getInputStream();
@@ -77,14 +89,14 @@ public class DummyMsgCommunicator {
 	public static class SerialReaderEvent implements SerialPortEventListener {
 		private InputStream in;
 		private byte[] buffer = new byte[1024];
-
+		
 		public SerialReaderEvent(InputStream in) {
 			this.in = in;
 			
 			try {
 				File file;
 				file = new File("c:\\temp\\logComm.csv");
-				writer = new FileWriter(file);
+				writer = new BufferedWriter(new FileWriter(file));
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -103,11 +115,12 @@ public class DummyMsgCommunicator {
 					buffer[len++] = (byte) data;
 				}
 				
-				StringBuffer msgBuffer = new StringBuffer(new String(buffer, 0, len));
-				msgBuffer.append("\n");
-				System.out.println(msgBuffer);
+				StringBuffer msgBuf = new StringBuffer(new String(buffer, 0, len));
+				msgBuf.append("\n");
+				String msg = msgBuf.toString();
 				
-				writer.write(msgBuffer.toString());
+				System.out.print(msg);
+				writer.write(msg);
 			} catch (IOException e) {
 				e.printStackTrace();
 				System.exit(-1);
@@ -145,7 +158,7 @@ public class DummyMsgCommunicator {
 			int i = 0;
 			
 			public void run() {
-				if (i > 10) {
+				if (i > 300) {
 					try {
 						writer.flush();
 						writer.close();

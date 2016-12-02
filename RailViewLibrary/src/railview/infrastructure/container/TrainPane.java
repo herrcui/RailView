@@ -45,7 +45,25 @@ public class TrainPane extends PannablePane {
 				if (coordinateList != null && coordinateList.size() > 0) {
 					for (int i = 0; i < coordinateList.size() - 1; i++) {
 						Line line = new Line();
-						line.setFill(Color.RED);
+						
+						Color color = Color.LIGHTGREEN;
+						switch (entry.getKey().getPendingStatus()) {
+							case NONE:
+								color = Color.LIGHTGREEN;
+								break;
+							case OCCUPANCY:
+								color = Color.RED;
+								break;
+							case DEADLOCK:
+								color = Color.YELLOW;
+								break;
+							case DISPATCHING:
+								color = Color.BLUEVIOLET;
+								break;
+						}
+						
+						//line.setFill(color);
+						
 						line.setStartX(mapper.mapToPaneX(coordinateList.get(i)
 								.getX(), this));
 						line.setStartY(mapper.mapToPaneY(coordinateList.get(i)
@@ -55,8 +73,8 @@ public class TrainPane extends PannablePane {
 						line.setEndY(mapper.mapToPaneY(coordinateList
 								.get(i+1).getY(), this));
 
-						line.setStrokeWidth(0.2);			
-						line.setStroke(Color.RED);
+						line.setStrokeWidth(0.4);			
+						line.setStroke(color);
 						
 						this.getChildren().add(line);
 					}
