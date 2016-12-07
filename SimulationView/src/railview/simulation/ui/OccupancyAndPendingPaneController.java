@@ -22,16 +22,19 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 public class OccupancyAndPendingPaneController {
+	
 	@FXML
 	private StackPane infraRoot;
 	
 	private InfrastructureElementsPane elementPane;
+	
 	
 	@FXML
 	public void initialize() {
@@ -165,6 +168,7 @@ public class OccupancyAndPendingPaneController {
 		    }
 		});
 	}
+	
 	
 	private void drawInfrastructureElement(InfrastructureElement element) {
 		if (element instanceof Track) {
@@ -306,11 +310,11 @@ public class OccupancyAndPendingPaneController {
 		double totalSeconds = 18000;
 		
 		if (duration == null || duration.getTotalSecond() == 0) {
-			line.setStroke(Color.BLACK);
+			line.setStroke(Color.WHITE);
 			line.setStrokeWidth(this.MIN_WIDTH);
 		} else {
 			if (type == OCCUPANCY) {
-				line.setStroke(Color.BLUE);
+				line.setStroke(Color.DODGERBLUE);
 			}
 			
 			if (type == PENDING) {
@@ -333,7 +337,7 @@ public class OccupancyAndPendingPaneController {
 	
 	private int type = -1;
 	
-	private double MIN_WIDTH = 0.01;
+	private double MIN_WIDTH = 0.07;
 	
 	private final int OCCUPANCY = 1;
 	private final int PENDING = 2;

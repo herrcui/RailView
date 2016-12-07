@@ -7,7 +7,11 @@ import railapp.infrastructure.element.dto.Port;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railview.infrastructure.container.CoordinateMapper;
 import railview.infrastructure.container.InfrastructureElementsPane;
+import railview.infrastructure.container.NodeGestures;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
@@ -56,5 +60,37 @@ public class SnapshotPaneController {
 		this.elementPane.setCoordinateMapper(mapper);
 		this.elementPane.setAndDrawElements(elements, Color.WHITE);
 	}
+	
+	@FXML
+	private void mouseEnter(){
+		stackPane.setOnMousePressed(new EventHandler<MouseEvent>()
+		        {
+            public void handle(MouseEvent event)
+            {
+                pressedX = event.getX();
+                pressedY = event.getY();
+            }
+        });
+
+		stackPane.setOnMouseDragged(new EventHandler<MouseEvent>()
+        {
+            public void handle(MouseEvent event)
+            {
+            	stackPane.setTranslateX(stackPane.getTranslateX() + event.getX() - pressedX);
+            	stackPane.setTranslateY(stackPane.getTranslateY() + event.getY() - pressedY);
+
+                event.consume();
+            }
+        });
+	}
+	
+	@FXML
+	private void scrollWheel(){
+		NodeGestures elemNodeGestures = new NodeGestures(elementPane);
+		
+		stackPane.addEventFilter( ScrollEvent.ANY, elemNodeGestures.getOnScrollEventHandler());
+	}
+	
+	private double pressedX, pressedY;
 
 }
