@@ -10,6 +10,8 @@ import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.rollingstock.dto.SimpleTrain;
 import railapp.simulation.logs.InfrastructureOccupancyAndPendingLogger;
 import railapp.simulation.train.AbstractTrainSimulator;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -20,6 +22,12 @@ import javafx.scene.layout.AnchorPane;
 
 public class GraphPaneController {
 
+	@FXML
+	private AnchorPane graphPaneRoot;
+	
+	@FXML
+	private AnchorPane occupancyTabAnchorPane;
+	
 	@FXML
 	private TabPane tabPane;
 
@@ -38,7 +46,6 @@ public class GraphPaneController {
 	@FXML
 	private AnchorPane occupancyAndPendingRoot;
 	
-	@FXML
 	private AnchorPane occupancyAndPendingPane;
 
 	@FXML
@@ -80,14 +87,29 @@ public class GraphPaneController {
 			URL location = OccupancyAndPendingPaneController.class
 					.getResource("OccupancyAndPendingPane.fxml");
 			occupancyAndPendingLoader.setLocation(location);
-			this.occupancyAndPendingPane = (AnchorPane) occupancyAndPendingLoader.load();
+			occupancyAndPendingPane = (AnchorPane) occupancyAndPendingLoader.load();
 			this.occupancyAndPendingPaneController = occupancyAndPendingLoader.getController();
 			
 			this.occupancyAndPendingRoot.getChildren().add(occupancyAndPendingPane);
 			
+
+			
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		occupancyTabAnchorPane.widthProperty().addListener(new ChangeListener<Number>() {
+		    @Override public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneWidth, Number newSceneWidth) {
+		    	occupancyAndPendingRoot.setLayoutX((newSceneWidth.doubleValue() / 2)- (occupancyAndPendingRoot.prefWidth(-1) / 2));
+		    }
+		});
+
+		occupancyTabAnchorPane.heightProperty().addListener(new ChangeListener<Number>() {
+		    @Override public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneHeight, Number newSceneHeight) {
+		    	occupancyAndPendingRoot.setLayoutY((newSceneHeight.doubleValue() / 2)- (occupancyAndPendingRoot.prefHeight(-1) / 2));
+		    }
+		});
 	}
 	
 	public void setInfrastructureServiceUtility(IInfrastructureServiceUtility infraServiceUtility) {

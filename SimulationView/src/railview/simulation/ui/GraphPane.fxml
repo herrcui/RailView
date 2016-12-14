@@ -4,7 +4,7 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="840" prefWidth="1320" styleClass="background-white" stylesheets="@../../../../../SimulationView/resources/CSS/Darktheme.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.ui.GraphPaneController">
+<AnchorPane fx:id="graphPaneRoot" prefHeight="840" prefWidth="1320" styleClass="background-white" stylesheets="@../../../../../SimulationView/resources/CSS/Darktheme.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.ui.GraphPaneController">
    <children>
       <TabPane fx:id="tabPane" layoutX="224.0" layoutY="164.0" prefHeight="840.0" prefWidth="1320.0" stylesheets="@../../../../resources/CSS/Tabs.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
@@ -19,7 +19,10 @@
                </content></Tab>
           <Tab text="Occupancy &amp; Hindrance">
             <content>
-              <AnchorPane fx:id="occupancyAndPendingRoot" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="background" stylesheets="@../../../../resources/CSS/Darktheme.css" />
+              <AnchorPane fx:id="occupancyTabAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="400.0" styleClass="background" stylesheets="@../../../../resources/CSS/Darktheme.css">
+                     <children>
+                        <AnchorPane fx:id="occupancyAndPendingRoot" layoutX="258.0" layoutY="-37.0" prefHeight="803.0" prefWidth="803.0" />
+                     </children></AnchorPane>
             </content>
           </Tab>
         </tabs>
