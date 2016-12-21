@@ -19,7 +19,7 @@ import java.util.TimerTask;
 public class DummyMsgCommunicator {
 	static OutputStream out;
 	static private BufferedWriter writer;
-	int interval = 400;
+	int interval = 300;
 
 	void setWriter(CommPortIdentifier serialPortId) {
 		CommPort commPort;
@@ -88,7 +88,7 @@ public class DummyMsgCommunicator {
 	 */
 	public static class SerialReaderEvent implements SerialPortEventListener {
 		private InputStream in;
-		private byte[] buffer = new byte[1024];
+		private byte[] buffer = new byte[65536];
 		
 		public SerialReaderEvent(InputStream in) {
 			this.in = in;

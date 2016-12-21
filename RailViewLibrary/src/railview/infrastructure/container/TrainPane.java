@@ -63,8 +63,6 @@ public class TrainPane extends PannablePane {
 								break;
 						}
 						
-						//line.setFill(color);
-						
 						line.setStartX(mapper.mapToPaneX(coordinateList.get(i)
 								.getX(), this));
 						line.setStartY(mapper.mapToPaneY(coordinateList.get(i)

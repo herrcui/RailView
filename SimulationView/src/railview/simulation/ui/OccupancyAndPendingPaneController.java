@@ -18,11 +18,11 @@ import railapp.units.Percentage;
 import railview.infrastructure.container.CoordinateMapper;
 import railview.infrastructure.container.InfrastructureElementsPane;
 import railview.infrastructure.container.NodeGestures;
+import javafx.animation.AnimationTimer;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.CheckBox;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.StackPane;
@@ -41,7 +41,30 @@ public class OccupancyAndPendingPaneController {
 		this.elementPane = new InfrastructureElementsPane();
 		this.infraRoot.getChildren().add(this.elementPane);
 		
+		AnimationTimer timer = new AnimationTimer() {
+			private long lastUpdate = 0; 
+					
+            @Override
+            public void handle(long now) {
+            	// TODO Using switch
+    			if (isUpdating && now - lastUpdate >= 1000_000_000) {
+    				switch (type) {
+						case OCCUPANCY:
+							drawOccupancy();
+							break;
+						case PENDING:
+							drawPending();
+							break;
+						default:
+							drawOccupancy();
+							break;
+    				}
+    				lastUpdate = now;
+    			}
+            }
+        };
 		
+		timer.start();
 	}
 	
 	public void setInfrastructureServiceUtility(
@@ -80,6 +103,7 @@ public class OccupancyAndPendingPaneController {
 	public void setLogger(InfrastructureOccupancyAndPendingLogger logger) {
 		this.logger = logger;
 	}
+	
 	
 	@FXML
 	private void mouseEnter(){
@@ -169,6 +193,20 @@ public class OccupancyAndPendingPaneController {
 		});
 	}
 	
+	public void navigate() {
+		// TODO
+		if (!isUpdating) {
+			this.isUpdating = true;
+		}
+		
+		if (this.type == -1) {
+			this.type = OCCUPANCY;
+		} else if (this.type == OCCUPANCY) {
+			this.type = PENDING;
+		} else if (this.type == PENDING) {
+			this.type = OCCUPANCY;
+		}
+	}
 	
 	private void drawInfrastructureElement(InfrastructureElement element) {
 		if (element instanceof Track) {
@@ -337,6 +375,7 @@ public class OccupancyAndPendingPaneController {
 	private CoordinateMapper mapper;
 	
 	private int type = -1;
+	private boolean isUpdating = false;
 	
 	private double MIN_WIDTH = 0.07;
 	

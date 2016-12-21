@@ -92,9 +92,6 @@ public class GraphPaneController {
 			
 			this.occupancyAndPendingRoot.getChildren().add(occupancyAndPendingPane);
 			
-
-			
-			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -110,6 +107,11 @@ public class GraphPaneController {
 		    	occupancyAndPendingRoot.setLayoutY((newSceneHeight.doubleValue() / 2)- (occupancyAndPendingRoot.prefHeight(-1) / 2));
 		    }
 		});
+	}
+	
+	@FXML
+	public void navigate() {
+		this.occupancyAndPendingPaneController.navigate();
 	}
 	
 	public void setInfrastructureServiceUtility(IInfrastructureServiceUtility infraServiceUtility) {
