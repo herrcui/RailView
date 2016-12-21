@@ -314,10 +314,11 @@ public class OccupancyAndPendingPaneController {
 			line.setStrokeWidth(this.MIN_WIDTH);
 		} else {
 			if (type == OCCUPANCY) {
-				line.setStroke(Color.DODGERBLUE);
+				line.setStroke(Color.LIGHTGREEN);
 			}
 			
 			if (type == PENDING) {
+				// line.setStroke(Color.DODGERBLUE);
 				line.setStroke(Color.RED);
 			}
 			

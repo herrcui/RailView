@@ -52,6 +52,7 @@ public class TrainPane extends PannablePane {
 								color = Color.LIGHTGREEN;
 								break;
 							case OCCUPANCY:
+								// color = Color.DODGERBLUE;
 								color = Color.RED;
 								break;
 							case DEADLOCK:
