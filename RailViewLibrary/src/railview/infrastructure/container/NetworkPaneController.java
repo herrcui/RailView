@@ -26,6 +26,8 @@ public class NetworkPaneController {
 	private TrainPane trainPane;
 	private SwarmPane swarmPane;
 	private double pressedX, pressedY;
+	   
+	private boolean isActive = true;
 
 	@FXML
 	public void initialize() {
@@ -92,8 +94,6 @@ public class NetworkPaneController {
         });
 	}
 	
-	
-	
 	@FXML
 	private void scrollWheel(){
 		NodeGestures elemNodeGestures = new NodeGestures(elementPane);
@@ -107,11 +107,19 @@ public class NetworkPaneController {
 
 	public void updateTrainCoordinates(Map<AbstractTrainSimulator, List<Coordinate>> map,
 			Time time) {
-		this.trainPane.updateTrainLocations(map, time);
+		if (isActive) {
+			this.trainPane.updateTrainLocations(map, time);
+		}
 	}
 	
 	public void updateSwarms(Map<AbstractTrainSimulator, List<Coordinate>> map, Collection<Swarm> swarms, Time time) {
-		this.swarmPane.updateSwarms(map, swarms, time);
+		if (isActive) {
+			this.swarmPane.updateSwarms(map, swarms, time);
+		}
+	}
+	
+	public void setActive(boolean active) {
+		this.isActive = active;
 	}
 }
 	

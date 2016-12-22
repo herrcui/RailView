@@ -249,6 +249,7 @@ public class SimulationViewerController extends AbstractSimulationController {
 		menuPane.setVisible(false);
 		
 		graphPaneController.setActive(true);
+		networkPaneController.setActive(false);
 	}
 
 	@FXML
@@ -258,6 +259,7 @@ public class SimulationViewerController extends AbstractSimulationController {
 		menuPane.setVisible(true);
 		
 		graphPaneController.setActive(false);
+		networkPaneController.setActive(true);
 	}
 	
 	@FXML
@@ -369,7 +371,7 @@ public class SimulationViewerController extends AbstractSimulationController {
 				rollingStockServiceUtility,
 				timeTableServiceUtility);
 	}
-	   
+
 	private StackPane networkPane;
 	private AnchorPane graphPane;
 	private NetworkPaneController networkPaneController;

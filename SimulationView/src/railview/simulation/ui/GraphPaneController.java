@@ -162,6 +162,10 @@ public class GraphPaneController {
 	
 	public void setActive(boolean active) {
 		this.isActive = active;
+		
+		if (!active) {
+			this.occupancyAndPendingPaneController.setActive(false);
+		}
 	}
 	
 	private boolean isActive = false;
