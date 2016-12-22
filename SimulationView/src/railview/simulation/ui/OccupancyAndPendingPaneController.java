@@ -35,19 +35,19 @@ public class OccupancyAndPendingPaneController {
 	
 	private InfrastructureElementsPane elementPane;
 	
-	
 	@FXML
 	public void initialize() {
 		this.elementPane = new InfrastructureElementsPane();
 		this.infraRoot.getChildren().add(this.elementPane);
 		
 		AnimationTimer timer = new AnimationTimer() {
-			private long lastUpdate = 0; 
-					
+			private long lastUpdateTime = 0; 
+			
             @Override
             public void handle(long now) {
             	// TODO Using switch
-    			if (isUpdating && now - lastUpdate >= 1000_000_000) {
+            	
+    			if (isActive && now - lastUpdateTime >= 1000_000_000) {
     				switch (type) {
 						case OCCUPANCY:
 							drawOccupancy();
@@ -59,7 +59,7 @@ public class OccupancyAndPendingPaneController {
 							drawOccupancy();
 							break;
     				}
-    				lastUpdate = now;
+    				lastUpdateTime = now;
     			}
             }
         };
@@ -195,8 +195,8 @@ public class OccupancyAndPendingPaneController {
 	
 	public void navigate() {
 		// TODO
-		if (!isUpdating) {
-			this.isUpdating = true;
+		if (!isActive) {
+			this.isActive = true;
 		}
 		
 		if (this.type == -1) {
@@ -206,6 +206,10 @@ public class OccupancyAndPendingPaneController {
 		} else if (this.type == PENDING) {
 			this.type = OCCUPANCY;
 		}
+	}
+	
+	void setActive(boolean isActive) {
+		this.isActive = isActive;
 	}
 	
 	private void drawInfrastructureElement(InfrastructureElement element) {
@@ -375,7 +379,7 @@ public class OccupancyAndPendingPaneController {
 	private CoordinateMapper mapper;
 	
 	private int type = -1;
-	private boolean isUpdating = false;
+	private boolean isActive = false;
 	
 	private double MIN_WIDTH = 0.07;
 	

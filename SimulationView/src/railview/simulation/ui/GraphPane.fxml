@@ -20,7 +20,7 @@
                <content>
                   <AnchorPane fx:id="runningDynamicsRoot" minHeight="0.0" minWidth="0.0" />
                </content></Tab>
-          <Tab text="Occupancy &amp; Hindrance">
+          <Tab onSelectionChanged="#onSelectionChanged" text="Occupancy &amp; Hindrance">
             <content>
               <AnchorPane fx:id="occupancyTabAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="400.0" styleClass="background" stylesheets="@../../../../resources/CSS/Darktheme.css">
                      <children>

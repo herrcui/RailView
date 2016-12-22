@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -8,12 +12,12 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="840.0" prefWidth="1320.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.SimulationViewerController">
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="840.0" prefWidth="1320.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.SimulationViewerController">
    <children>
       <AnchorPane fx:id="networkPaneRoot" prefHeight="840.0" prefWidth="1320.0" styleClass="background" stylesheets="@../../../resources/CSS/Darktheme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <AnchorPane fx:id="symbolPane" layoutX="450.0" onMouseEntered="#appearSymbolPane" onMouseExited="#fadeSymbolPane" prefHeight="78.0" prefWidth="403.0" styleClass="background-grey" stylesheets="@../../../resources/CSS/Darktheme.css">
          <children>
-            <Button fx:id="swarmButton" layoutY="7.0" mnemonicParsing="false" onAction="#swarmButtonClicked" stylesheets="@../../../resources/CSS/Darktheme.css" AnchorPane.leftAnchor="25.0">
+            <Button fx:id="networkButton" layoutY="7.0" mnemonicParsing="false" onAction="#networkButtonClicked" stylesheets="@../../../resources/CSS/Darktheme.css" AnchorPane.leftAnchor="25.0">
                <graphic>
                   <ImageView fitHeight="45.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>

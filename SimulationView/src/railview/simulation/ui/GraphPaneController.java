@@ -96,6 +96,17 @@ public class GraphPaneController {
 			e.printStackTrace();
 		}
 		
+		tabPane.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+		    @Override
+		    public void changed(ObservableValue<? extends Number> ov, Number oldValue, Number newValue) {
+		        if (isActive && newValue.intValue() == 2) {
+		        	occupancyAndPendingPaneController.setActive(true);
+		        } else {
+		        	occupancyAndPendingPaneController.setActive(false);
+		        }
+		    }
+		});
+		
 		occupancyTabAnchorPane.widthProperty().addListener(new ChangeListener<Number>() {
 		    @Override public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneWidth, Number newSceneWidth) {
 		    	occupancyAndPendingRoot.setLayoutX((newSceneWidth.doubleValue() / 2)- (occupancyAndPendingRoot.prefWidth(-1) / 2));
@@ -112,6 +123,11 @@ public class GraphPaneController {
 	@FXML
 	public void navigate() {
 		this.occupancyAndPendingPaneController.navigate();
+	}
+	
+	@FXML
+	public void onSelectionChanged() {
+		
 	}
 	
 	public void setInfrastructureServiceUtility(IInfrastructureServiceUtility infraServiceUtility) {
@@ -143,6 +159,12 @@ public class GraphPaneController {
 	public AbstractTrainSimulator getTrain(String trainNumber) {
 		return this.trainMap.get(trainNumber);
 	}
+	
+	public void setActive(boolean active) {
+		this.isActive = active;
+	}
+	
+	private boolean isActive = false;
 	
 	private RunningDynamicsPaneController runningDynamicsPaneController;
 	

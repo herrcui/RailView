@@ -178,8 +178,8 @@ public class DialogPaneController extends Stage implements Initializable
     }
     
     private void openInfra(File directory) {
-    		this.infraPath = directory.toPath();   
-    		textOne.setText(directory.getAbsolutePath());
+		this.infraPath = directory.toPath();   
+		textOne.setText(directory.getAbsolutePath());
     }
     
     private void openRolling(File directory) {

@@ -66,7 +66,7 @@ public class SimulationViewerController extends AbstractSimulationController {
 	private Button graphButton;
 
 	@FXML
-	private Button swarmButton;
+	private Button networkButton;
 	
 	@FXML
 	private Button lockButton;
@@ -247,13 +247,17 @@ public class SimulationViewerController extends AbstractSimulationController {
 		graphPane.setVisible(true);
 		networkPane.setVisible(false);
 		menuPane.setVisible(false);
+		
+		graphPaneController.setActive(true);
 	}
 
 	@FXML
-	public void swarmButtonClicked() {
+	public void networkButtonClicked() {
 		graphPane.setVisible(false);
 		networkPane.setVisible(true);
 		menuPane.setVisible(true);
+		
+		graphPaneController.setActive(false);
 	}
 	
 	@FXML
