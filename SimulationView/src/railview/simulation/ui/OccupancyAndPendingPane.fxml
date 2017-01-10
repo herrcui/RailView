@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane prefHeight="400.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.ui.OccupancyAndPendingPaneController">
+<AnchorPane prefHeight="803.0" prefWidth="803.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.ui.OccupancyAndPendingPaneController">
    <children>
-    <StackPane fx:id="infraRoot" minHeight="0.0" minWidth="0.0" onMouseEntered="#mouseEnter" onScroll="#scrollWheel" prefHeight="400.0" prefWidth="400.0" styleClass="background" stylesheets="@../../../../resources/CSS/Darktheme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <Button layoutX="311.0" layoutY="150.0" mnemonicParsing="false" onAction="#drawOccupancy" text="Occupancy" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="14.0" />
-      <Button layoutX="311.0" layoutY="114.0" mnemonicParsing="false" onAction="#drawPending" prefHeight="25.0" prefWidth="75.0" text="Pending" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="90.0" />
+    <StackPane fx:id="infraRoot" minHeight="0.0" minWidth="0.0" onMouseEntered="#mouseEnter" onScroll="#scrollWheel" prefHeight="803.0" prefWidth="803.0" styleClass="background" stylesheets="@../../../../resources/CSS/Darktheme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Rectangle fx:id="pendingBar" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="10.0" layoutX="350.0" stroke="BLACK" strokeType="INSIDE" width="70.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="330.0" />
+      <Rectangle fx:id="occupancyBar" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="10.0" layoutX="450.0" stroke="BLACK" strokeType="INSIDE" width="70.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="330.0" />
    </children>
 </AnchorPane>

@@ -28,10 +28,17 @@ import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
+import javafx.scene.shape.Rectangle;
 public class OccupancyAndPendingPaneController {
 	
 	@FXML
 	private StackPane infraRoot;
+	
+	@FXML
+	private Rectangle pendingBar;
+	
+	@FXML
+	private Rectangle occupancyBar;
 	
 	private InfrastructureElementsPane elementPane;
 	
@@ -39,6 +46,9 @@ public class OccupancyAndPendingPaneController {
 	public void initialize() {
 		this.elementPane = new InfrastructureElementsPane();
 		this.infraRoot.getChildren().add(this.elementPane);
+		pendingBar.setLayoutX(infraRoot.getPrefWidth()/2 - pendingBar.getWidth()/2);
+		occupancyBar.setLayoutX(infraRoot.getPrefWidth()/2 + occupancyBar.getWidth()/2);
+		
 		
 		AnimationTimer timer = new AnimationTimer() {
 			private long lastUpdateTime = 0; 
@@ -51,12 +61,18 @@ public class OccupancyAndPendingPaneController {
     				switch (type) {
 						case OCCUPANCY:
 							drawOccupancy();
+							occupancyBar.setFill(Color.GREY);
+							pendingBar.setFill(Color.WHITE);
 							break;
 						case PENDING:
 							drawPending();
+							occupancyBar.setFill(Color.WHITE);
+							pendingBar.setFill(Color.GREY);
 							break;
 						default:
 							drawOccupancy();
+							occupancyBar.setFill(Color.GREY);
+							pendingBar.setFill(Color.WHITE);
 							break;
     				}
     				lastUpdateTime = now;
@@ -135,7 +151,7 @@ public class OccupancyAndPendingPaneController {
 		infraRoot.addEventFilter( ScrollEvent.ANY, elemNodeGestures.getOnScrollEventHandler());
 	}
 	
-	@FXML
+
 	private void drawOccupancy() {
 		if (this.elements == null)
 			return;
@@ -164,7 +180,7 @@ public class OccupancyAndPendingPaneController {
 		});
 	}
 	
-	@FXML
+
 	private void drawPending() {
 		if (this.elements == null)
 			return;
@@ -207,6 +223,7 @@ public class OccupancyAndPendingPaneController {
 			this.type = OCCUPANCY;
 		}
 	}
+	
 	
 	void setActive(boolean isActive) {
 		this.isActive = isActive;

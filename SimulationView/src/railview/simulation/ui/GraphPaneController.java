@@ -17,8 +17,11 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Side;
+import javafx.scene.control.Button;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 
 public class GraphPaneController {
 
@@ -46,12 +49,35 @@ public class GraphPaneController {
 	@FXML
 	private AnchorPane occupancyAndPendingRoot;
 	
+	@FXML
+	private Button forwardButton;
+	
+	@FXML
+	private Button backButton;
+	
+	
 	private AnchorPane occupancyAndPendingPane;
 
 	@FXML
 	public void initialize() {
 		tabPane.setSide(Side.BOTTOM);
-
+		forwardButton.setStyle(
+	                "-fx-background-radius: 50px; " +
+	                		 "-fx-min-width: 50px; " +
+	                         "-fx-min-height: 50px; " +
+	                         "-fx-max-width: 50px; " +
+	                         "-fx-max-height: 50px;" +
+	                "-fx-background-color: #B2B2B2; "
+	        );
+		
+		backButton.setStyle(  "-fx-background-radius: 50px; " +
+	                		 "-fx-min-width: 50px; " +
+	                         "-fx-min-height: 50px; " +
+	                         "-fx-max-width: 50px; " +
+	                         "-fx-max-height: 50px;" +
+	                "-fx-background-color: #B2B2B2; "
+	        );
+		
 		try {
 			FXMLLoader runningDynamicsLoader = new FXMLLoader();
 			URL location = RunningDynamicsPaneController.class
@@ -124,10 +150,43 @@ public class GraphPaneController {
 	public void navigate() {
 		this.occupancyAndPendingPaneController.navigate();
 	}
+
 	
 	@FXML
 	public void onSelectionChanged() {
 		
+	}
+	
+	@FXML
+	public void onForwardButtonEntered() {
+		forwardButton.setStyle("-fx-background-radius: 50px; "
+				+ "-fx-min-width: 50px; " + "-fx-min-height: 50px; "
+				+ "-fx-max-width: 50px; " + "-fx-max-height: 50px;"
+				+ "-fx-background-color: #EBEBEB; ");
+	}
+	
+	@FXML
+	public void onForwardButtonExited() {
+		forwardButton.setStyle("-fx-background-radius: 50px; "
+				+ "-fx-min-width: 50px; " + "-fx-min-height: 50px; "
+				+ "-fx-max-width: 50px; " + "-fx-max-height: 50px;"
+				+  "-fx-background-color: #B2B2B2; ");
+	}
+	
+	@FXML
+	public void onBackButtonEntered() {
+		backButton.setStyle("-fx-background-radius: 50px; "
+				+ "-fx-min-width: 50px; " + "-fx-min-height: 50px; "
+				+ "-fx-max-width: 50px; " + "-fx-max-height: 50px;"
+				+ "-fx-background-color: #EBEBEB; ");
+	}
+	
+	@FXML
+	public void onBackButtonExited() {
+		backButton.setStyle("-fx-background-radius: 50px; "
+				+ "-fx-min-width: 50px; " + "-fx-min-height: 50px; "
+				+ "-fx-max-width: 50px; " + "-fx-max-height: 50px;"
+				+  "-fx-background-color: #B2B2B2; ");
 	}
 	
 	public void setInfrastructureServiceUtility(IInfrastructureServiceUtility infraServiceUtility) {
