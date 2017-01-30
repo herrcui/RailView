@@ -35,7 +35,6 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Side;
-import javafx.scene.Group;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Data;
@@ -43,11 +42,11 @@ import javafx.scene.chart.XYChart.Series;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.shape.Polygon;
 import javafx.util.StringConverter;
 
 public class TrainRunMonitorPaneController {
@@ -76,6 +75,9 @@ public class TrainRunMonitorPaneController {
 	private CheckBox outEventCheckBox;
 	
 	@FXML
+	private TextField trainNumberText;
+	
+	@FXML
 	public void initialize() {
 		
 		Collections.addAll(checkBoxList, selfEventCheckBox, inEventCheckBox, outEventCheckBox);
@@ -92,7 +94,7 @@ public class TrainRunMonitorPaneController {
 		AnchorPane.setBottomAnchor(blockingTimeChart, 0.0);
 		
 		for(CheckBox checkBox: checkBoxList){
-				checkBox.toFront();
+			checkBox.toFront();
 		}
 		
 
@@ -134,6 +136,28 @@ public class TrainRunMonitorPaneController {
 		    }
 		});
 		
+		trainNumberText.textProperty().addListener((observable, oldValue, newValue) -> {
+		    int selectedIdx = -1;
+			int idx = 0;
+			
+			if (oldValue.equals(newValue)) {
+				return;
+			}
+			
+			for (String trainNum : trainNumbers.getItems()) {
+				if (trainNum.equals(trainNumberText.getText())) {
+					selectedIdx = idx;
+					break;
+				}
+				idx++;
+			}
+			
+			if (selectedIdx > -1) {
+				trainNumbers.getSelectionModel().select(selectedIdx);
+				trainNumbers.getFocusModel().focus(selectedIdx);
+				trainNumbers.scrollTo(selectedIdx);
+			}
+		});
 	}
 	
 	@FXML
@@ -166,120 +190,119 @@ public class TrainRunMonitorPaneController {
 		NumberAxis yAxis = new NumberAxis();
 		BlockingTimeChart<Number, Number> chart = new BlockingTimeChart<Number, Number>(xAxis, yAxis, eventLabel, label, selfEventCheckBox, inEventCheckBox, outEventCheckBox);
 		
+		trainNumbers.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+			@Override
+			public void changed(ObservableValue<? extends String> observable,
+					String oldValue, String newValue) {
+				trainNumberText.setText(newValue);
+				
+				for(CheckBox checkBox: checkBoxList){
+					if(checkBox.isVisible() == false){
+						checkBox.setVisible(true);
+					}
+				}
+				
+				AbstractTrainSimulator train = trainMap.get(
+						trainNumbers.getSelectionModel().getSelectedItem().toString());
 
-		
-		trainNumbers.setOnMouseClicked(new EventHandler<MouseEvent>() {
-					@Override
-					public void handle(MouseEvent event) {		
+				if (chart.getData().isEmpty()) {
+					try {
+						chart.getData().clear();
+						chart.getBlockingTimeChartPlotChildren().clear();
+						blockingTimeChart.getXAxis().setAutoRanging(true);
+						blockingTimeChart.getYAxis().setAutoRanging(true);
+						drawCourseforTimeTable(train, chart);
 
-						for(CheckBox checkBox: checkBoxList){
-							if(checkBox.isVisible() == false){
-								checkBox.setVisible(true);
-							}
-						}
+						chart.setBlockingTime(getBlockingTimeStairway(train));
 
-						
-						AbstractTrainSimulator train = trainMap.get(
-								trainNumbers.getSelectionModel().getSelectedItem().toString());
+						chart.setEventsMap(getEvents(train, getTimeInDistance(train)));
 
-						if (chart.getData().isEmpty()) {
-							try {
-								chart.getData().clear();
-								chart.getBlockingTimeChartPlotChildren().clear();
-								blockingTimeChart.getXAxis().setAutoRanging(true);
-								blockingTimeChart.getYAxis().setAutoRanging(true);
-								drawCourseforTimeTable(train, chart);
+						chart.setAnimated(false);
+						chart.setCreateSymbols(false);
 
-								chart.setBlockingTime(getBlockingTimeStairway(train));
+						Time startTime = train.getTripSection()
+								.getStartTime();
 
-								chart.setEventsMap(getEvents(train, getTimeInDistance(train)));
-
-								chart.setAnimated(false);
-								chart.setCreateSymbols(false);
-
-								Time startTime = train.getTripSection()
-										.getStartTime();
-
-								yAxis.setTickLabelFormatter(new StringConverter<Number>() {
-									@Override
-									public String toString(Number t) {
-										Time testTime = startTime.add(Duration.fromTotalSecond(
-												-t.doubleValue()));
-										return testTime.toString();
-									}
-
-									@Override
-									public Number fromString(String string) {
-										return 1;
-									}
-								});
-
-								Thread.sleep(500);
-								chart.getBlockingTimeChartPlotChildren()
-										.clear();
-								chart.getData().clear();
-								drawCourseforTimeTable(train, chart);
-								// TODO arrows for events
-
-							} catch (InterruptedException e) {
-								e.printStackTrace();
-							}
-						} else {
-							chart.getData().clear();
-							chart.getBlockingTimeChartPlotChildren().clear();
-							blockingTimeChart.getXAxis().setAutoRanging(true);
-							blockingTimeChart.getYAxis().setAutoRanging(true);
-							drawCourseforTimeTable(train, chart);
-							chart.setBlockingTime(getBlockingTimeStairway(train));
-
-							chart.setEventsMap(getEvents(train, getTimeInDistance(train)));
-
-							chart.setAnimated(false);
-							chart.setCreateSymbols(false);
-							Time startTime = train.getTripSection().getStartTime();
-
-							yAxis.setTickLabelFormatter(new StringConverter<Number>() {
-
-								@Override
-								public String toString(Number t) {
-									Time testTime = startTime.add(Duration
-											.fromTotalSecond(-t.doubleValue()));
-									return testTime.toString();
-								}
-
-								@Override
-								public Number fromString(String string) {
-									return 1;
-								}
-							});
-						}
-
-						chart.setOnMouseDragged(new EventHandler<MouseEvent>() {
+						yAxis.setTickLabelFormatter(new StringConverter<Number>() {
 							@Override
+							public String toString(Number t) {
+								Time testTime = startTime.add(Duration.fromTotalSecond(
+										-t.doubleValue()));
+								return testTime.toString();
+							}
+
+							@Override
+							public Number fromString(String string) {
+								return 1;
+							}
+						});
+
+						Thread.sleep(500);
+						chart.getBlockingTimeChartPlotChildren()
+								.clear();
+						chart.getData().clear();
+						drawCourseforTimeTable(train, chart);
+						// TODO arrows for events
+
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				} else {
+					chart.getData().clear();
+					chart.getBlockingTimeChartPlotChildren().clear();
+					blockingTimeChart.getXAxis().setAutoRanging(true);
+					blockingTimeChart.getYAxis().setAutoRanging(true);
+					drawCourseforTimeTable(train, chart);
+					chart.setBlockingTime(getBlockingTimeStairway(train));
+
+					chart.setEventsMap(getEvents(train, getTimeInDistance(train)));
+
+					chart.setAnimated(false);
+					chart.setCreateSymbols(false);
+					Time startTime = train.getTripSection().getStartTime();
+
+					yAxis.setTickLabelFormatter(new StringConverter<Number>() {
+
+						@Override
+						public String toString(Number t) {
+							Time testTime = startTime.add(Duration
+									.fromTotalSecond(-t.doubleValue()));
+							return testTime.toString();
+						}
+
+						@Override
+						public Number fromString(String string) {
+							return 1;
+						}
+					});
+				}
+				
+				chart.setOnMouseDragged(new EventHandler<MouseEvent>() {
+					@Override
+					public void handle(MouseEvent event) {
+
+						if (event.getButton().equals(MouseButton.PRIMARY)) {
+
+							chart.getBlockingTimeChartPlotChildren().clear();
+							chart.getData().clear();
+
+							drawCourseforTimeTable(train, chart);
+						}
+
+						chart.setOnMouseReleased(new EventHandler<MouseEvent>() {
 							public void handle(MouseEvent event) {
-
-								if (event.getButton().equals(MouseButton.PRIMARY)) {
-
+								if (event.getButton().equals(MouseButton.SECONDARY)) {
 									chart.getBlockingTimeChartPlotChildren().clear();
 									chart.getData().clear();
-
 									drawCourseforTimeTable(train, chart);
 								}
-
-								chart.setOnMouseReleased(new EventHandler<MouseEvent>() {
-									public void handle(MouseEvent event) {
-										if (event.getButton().equals(MouseButton.SECONDARY)) {
-											chart.getBlockingTimeChartPlotChildren().clear();
-											chart.getData().clear();
-											drawCourseforTimeTable(train, chart);
-										}
-									}
-								});
 							}
 						});
 					}
-
 				});
+			}
+		});
+		
 		xAxis.setSide(Side.TOP);
 
 		return chart;
@@ -427,7 +450,6 @@ public class TrainRunMonitorPaneController {
 	
 	List<CheckBox> checkBoxList = new ArrayList<CheckBox>();
 	private DraggableChart<Number, Number> blockingTimeChart;
-	private List<EventData> eventList;
 	
 	private StackPane snapshotPane;
 	private SnapshotPaneController snapshotPaneController;

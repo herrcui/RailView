@@ -25,6 +25,7 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Data;
 import javafx.scene.chart.XYChart.Series;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -38,6 +39,9 @@ public class RunningDynamicsPaneController {
 	
 	@FXML
 	private ListView<String> trainNumbers;
+	
+	@FXML
+	private TextField trainNumberText;
 
 	@FXML
 	public void initialize() {
@@ -54,12 +58,36 @@ public class RunningDynamicsPaneController {
 				speedProfileChart.getXAxis().setAutoRanging(true);
 				speedProfileChart.getYAxis().setAutoRanging(true);
 				drawVelocity(trainMap.get(newValue), speedProfileChart);
+				trainNumberText.setText(newValue);
 				
 				energyChart.getData().clear();
 				energyChart.getXAxis().setAutoRanging(true);
 				energyChart.getYAxis().setAutoRanging(true);
 				drawEnergy(trainMap.get(newValue));
 
+			}
+		});
+		
+		trainNumberText.textProperty().addListener((observable, oldValue, newValue) -> {
+		    int selectedIdx = -1;
+			int idx = 0;
+			
+			if (oldValue.equals(newValue)) {
+				return;
+			}
+			
+			for (String trainNum : trainNumbers.getItems()) {
+				if (trainNum.equals(trainNumberText.getText())) {
+					selectedIdx = idx;
+					break;
+				}
+				idx++;
+			}
+			
+			if (selectedIdx > -1) {
+				trainNumbers.getSelectionModel().select(selectedIdx);
+				trainNumbers.getFocusModel().focus(selectedIdx);
+				trainNumbers.scrollTo(selectedIdx);
 			}
 		});
 		
