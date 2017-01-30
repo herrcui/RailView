@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import railapp.infrastructure.object.dto.InfrastructureObject;
+import railapp.infrastructure.path.dto.LinkEdge;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.rollingstock.dto.SimpleTrain;
 import railapp.simulation.events.ScheduledEvent;
@@ -19,6 +20,7 @@ import railapp.simulation.infrastructure.PartialRouteResource;
 import railapp.simulation.runingdynamics.sections.DiscretePoint;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.simulation.train.TrainSimulator;
+import railapp.units.Coordinate;
 import railapp.units.Duration;
 import railapp.units.Length;
 import railapp.units.Time;
@@ -203,7 +205,11 @@ public class TrainRunMonitorPaneController {
 				}
 				
 				AbstractTrainSimulator train = trainMap.get(
-						trainNumbers.getSelectionModel().getSelectedItem().toString());
+					trainNumbers.getSelectionModel().getSelectedItem().toString());
+				
+				List<Coordinate> path = getTrainPathCoordinates(train);
+				snapshotPaneController.setHighlightedPath(path);
+				snapshotPaneController.draw();
 
 				if (chart.getData().isEmpty()) {
 					try {
@@ -372,6 +378,15 @@ public class TrainRunMonitorPaneController {
 			pointList.add(new TimeDistance(meter, timeInSecond));
 		}
 		return pointList;
+	}
+	
+	private List<Coordinate> getTrainPathCoordinates(AbstractTrainSimulator train) {
+		List<Coordinate> coordniates = new ArrayList<Coordinate>();
+		for (LinkEdge edge : train.getFullPath().getEdges()) {
+			coordniates.addAll(edge.getCoordinates());
+		}
+		
+		return coordniates;
 	}
 
 	private Map<TimeDistance, List<EventData>> getEvents(

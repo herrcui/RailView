@@ -1,10 +1,12 @@
 package railview.simulation.ui;
 
 import java.util.Collection;
+import java.util.List;
 
 import railapp.infrastructure.element.dto.InfrastructureElement;
 import railapp.infrastructure.element.dto.Port;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
+import railapp.units.Coordinate;
 import railview.infrastructure.container.CoordinateMapper;
 import railview.infrastructure.container.InfrastructureElementsPane;
 import railview.infrastructure.container.NodeGestures;
@@ -12,7 +14,6 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 
@@ -29,6 +30,10 @@ public class SnapshotPaneController {
 	public void initialize() {
 		this.elementPane = new InfrastructureElementsPane();
 		this.stackPane.getChildren().add(this.elementPane);
+	}
+	
+	public void setHighlightedPath(List<Coordinate> path) {
+		this.elementPane.setHighlightedPath(path);
 	}
 
 	public void setInfrastructureServiceUtility(
@@ -93,4 +98,8 @@ public class SnapshotPaneController {
 	
 	private double pressedX, pressedY;
 
+
+	public void draw() {
+		this.elementPane.draw();
+	}
 }

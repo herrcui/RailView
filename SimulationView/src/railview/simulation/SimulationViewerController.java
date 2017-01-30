@@ -197,17 +197,16 @@ public class SimulationViewerController extends AbstractSimulationController {
 		
 			menuPane.setOnMouseEntered(new EventHandler<MouseEvent>(){
 
-	            public void handle(MouseEvent event)
-	            {
-			FadeTransition fadeTransition1 = new FadeTransition(
-					javafx.util.Duration.millis(500), menuPane);
-			fadeTransition1.setFromValue(0);
-			fadeTransition1.setToValue(1.0);
-			fadeTransition1.play();
-	            }
-			});
+		        public void handle(MouseEvent event) {
+					FadeTransition fadeTransition1 = new FadeTransition(
+							javafx.util.Duration.millis(500), menuPane);
+					fadeTransition1.setFromValue(0);
+					fadeTransition1.setToValue(1.0);
+					fadeTransition1.play();
+		        }
+				});
 			
-			menuPane.setOnMouseExited(new EventHandler<MouseEvent>(){
+				menuPane.setOnMouseExited(new EventHandler<MouseEvent>(){
 
 	            public void handle(MouseEvent event)
 	            {
