@@ -186,11 +186,25 @@ public class TrainRunMonitorPaneController {
 		this.snapshotPaneController.setInfrastructureServiceUtility(infraServiceUtility);
 	}
 	
+	public void drawEventOnSnap(TimeDistance td) {
+		AbstractTrainSimulator train = this.trainMap.get(trainNumberText.getText());
+		Coordinate coordinate = train.getFullPath().getCoordinate(Length.fromMeter(td.getMeter()));
+		snapshotPaneController.setEventPoint(coordinate);
+		snapshotPaneController.draw();
+	}
+	
 	private BlockingTimeChart<Number, Number> createBlockingTimeChart() {
-
 		NumberAxis xAxis = new NumberAxis();
 		NumberAxis yAxis = new NumberAxis();
-		BlockingTimeChart<Number, Number> chart = new BlockingTimeChart<Number, Number>(xAxis, yAxis, eventLabel, label, selfEventCheckBox, inEventCheckBox, outEventCheckBox);
+		BlockingTimeChart<Number, Number> chart = new BlockingTimeChart<Number, Number>(
+				xAxis,
+				yAxis,
+				eventLabel,
+				label,
+				selfEventCheckBox,
+				inEventCheckBox,
+				outEventCheckBox,
+				this);
 		
 		trainNumbers.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
 			@Override
@@ -209,6 +223,7 @@ public class TrainRunMonitorPaneController {
 				
 				List<Coordinate> path = getTrainPathCoordinates(train);
 				snapshotPaneController.setHighlightedPath(path);
+				snapshotPaneController.setEventPoint(null);
 				snapshotPaneController.draw();
 
 				if (chart.getData().isEmpty()) {

@@ -35,6 +35,10 @@ public class SnapshotPaneController {
 	public void setHighlightedPath(List<Coordinate> path) {
 		this.elementPane.setHighlightedPath(path);
 	}
+	
+	public void setEventPoint(Coordinate coordinate) {
+		this.elementPane.setEventPoint(coordinate);
+	}
 
 	public void setInfrastructureServiceUtility(
 			IInfrastructureServiceUtility infraServiceUtility) {

@@ -28,12 +28,13 @@ import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
+import railview.simulation.ui.TrainRunMonitorPaneController;
 import railview.simulation.ui.data.BlockingTime;
 import railview.simulation.ui.data.EventData;
 import railview.simulation.ui.data.TimeDistance;
 
 public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
-	public BlockingTimeChart(Axis<X> xAxis, Axis<Y> yAxis, Label eventLabel, Label label, CheckBox selfEventCheckBox, CheckBox inEventCheckBox, CheckBox outEventCheckBox) {
+	public BlockingTimeChart(Axis<X> xAxis, Axis<Y> yAxis, Label eventLabel, Label label, CheckBox selfEventCheckBox, CheckBox inEventCheckBox, CheckBox outEventCheckBox, TrainRunMonitorPaneController controller) {
 		super(xAxis, yAxis);
 		this.eventLabel = eventLabel;
 		this.informationLabel = label;
@@ -41,6 +42,7 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 		this.incomingEventCheckBox = inEventCheckBox;
 		this.outgoingEventCheckBox = outEventCheckBox;
 		
+		this.controller = controller;
 	}
 
 	public ObservableList<Node> getBlockingTimeChartPlotChildren() {
@@ -364,6 +366,7 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 							text += data.getText() + "\n" + type + "\n" + data.getEventName() + "\n" + data.getTimeDistance() + "\n \n";
 						}
 						informationLabel.setText(text);
+						controller.drawEventOnSnap(td);
 					}
 				});
 
@@ -451,6 +454,7 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 	private CheckBox outgoingEventCheckBox;
 	private Label eventLabel;
 	private Label informationLabel;
+	private TrainRunMonitorPaneController controller;
 	private Rectangle r;
 
 	

@@ -10,6 +10,7 @@ import railapp.units.Coordinate;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 
 public class InfrastructureElementsPane extends PannablePane {
@@ -120,7 +121,14 @@ public class InfrastructureElementsPane extends PannablePane {
 	
 	private void drawEventPoint() {
 		if (this.eventPoint != null) {
+			Circle circle = new Circle();
 			
+			circle.setCenterX((mapper.mapToPaneX(eventPoint.getX(), this)));
+			circle.setCenterY((mapper.mapToPaneY(eventPoint.getY(), this)));
+			circle.setFill(Color.RED);
+			circle.setRadius(0.6);
+			
+			this.getChildren().add(circle);
 		}
 	}
 }
