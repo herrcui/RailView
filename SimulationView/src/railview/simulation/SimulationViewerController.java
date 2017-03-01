@@ -27,6 +27,7 @@ import railview.controller.framework.AbstractSimulationController;
 import railview.railmodel.infrastructure.railsys7.InfrastructureReader;
 import railview.railmodel.infrastructure.railsys7.RollingStockReader;
 import railview.railmodel.infrastructure.railsys7.TimetableReader;
+import railview.simulation.ui.EditorPaneController;
 import railview.simulation.ui.GraphPaneController;
 import railview.simulation.ui.DialogPaneController;
 import railview.infrastructure.container.NetworkPaneController;
@@ -69,6 +70,9 @@ public class SimulationViewerController extends AbstractSimulationController {
 	private Button networkButton;
 	
 	@FXML
+	private Button editorButton;
+	
+	@FXML
 	private Button lockButton;
 	
 	@FXML
@@ -102,14 +106,25 @@ public class SimulationViewerController extends AbstractSimulationController {
 			graphpaneloader.setLocation(graphpanelocation);
 			graphPane = (AnchorPane) graphpaneloader.load();
 			this.graphPaneController = graphpaneloader.getController();
+		
+			FXMLLoader editorpaneloader = new FXMLLoader();
+			URL editorpanelocation = EditorPaneController.class
+					.getResource("EditorPane.fxml");
+			editorpaneloader.setLocation(editorpanelocation);
+			editorPane = (AnchorPane) editorpaneloader.load();
+			this.editorPaneController = editorpaneloader.getController();
+
 			
-			this.networkPaneRoot.getChildren().addAll(networkPane, graphPane);
+			this.networkPaneRoot.getChildren().addAll(networkPane, graphPane, editorPane);
+			
+		    
 			
 			networkPaneRoot.widthProperty().addListener(new ChangeListener<Number>() {
 			    @Override public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneWidth, Number newSceneWidth) {
 			    	symbolPane.setLayoutX((newSceneWidth.doubleValue()- symbolPane.getPrefWidth())/2);
 			    	networkPane.setLayoutX((newSceneWidth.doubleValue() / 2)- (networkPane.prefWidth(-1) / 2));
 			    	graphPane.setPrefWidth(newSceneWidth.doubleValue());
+			    	editorPane.setPrefWidth(newSceneWidth.doubleValue());
 			    }
 			});
 
@@ -117,10 +132,12 @@ public class SimulationViewerController extends AbstractSimulationController {
 			    @Override public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneHeight, Number newSceneHeight) {
 			    	networkPane.setLayoutY((newSceneHeight.doubleValue() / 2)- (networkPane.prefHeight(-1) / 2));
 			       	graphPane.setPrefHeight(newSceneHeight.doubleValue());
+			    	editorPane.setPrefHeight(newSceneHeight.doubleValue());
 			    }
 			});
 	
 			graphPane.setVisible(false);
+			editorPane.setVisible(false);
 			symbolPane.setOpacity(0.0);
 			menuPane.setOpacity(1.0);
 
@@ -243,23 +260,40 @@ public class SimulationViewerController extends AbstractSimulationController {
 
 	@FXML
 	public void graphButtonClicked() {
+		editorPane.setVisible(false);
 		graphPane.setVisible(true);
 		networkPane.setVisible(false);
 		menuPane.setVisible(false);
 		
 		graphPaneController.setActive(true);
 		networkPaneController.setActive(false);
+//		editorPaneController.setActive(false);
 	}
 
 	@FXML
 	public void networkButtonClicked() {
+		editorPane.setVisible(false);
 		graphPane.setVisible(false);
 		networkPane.setVisible(true);
 		menuPane.setVisible(true);
 		
 		graphPaneController.setActive(false);
 		networkPaneController.setActive(true);
+	//	editorPaneController.setActive(false);
 	}
+	
+	@FXML
+	public void editorButtonClicked() {
+		editorPane.setVisible(true);
+		graphPane.setVisible(false);
+		networkPane.setVisible(false);
+		menuPane.setVisible(false);
+		
+		graphPaneController.setActive(false);
+		networkPaneController.setActive(false);
+//		editorPaneController.setActive(true);
+	}
+	
 	
 	@FXML
     public void onButtonAction(ActionEvent event)
@@ -373,8 +407,10 @@ public class SimulationViewerController extends AbstractSimulationController {
 
 	private StackPane networkPane;
 	private AnchorPane graphPane;
+	private AnchorPane editorPane;
 	private NetworkPaneController networkPaneController;
 	private GraphPaneController graphPaneController;
+	private EditorPaneController editorPaneController;
 	private int UIPause = 100;
 	private int MAXSpeed = 20000; // 1 : 200
 }
