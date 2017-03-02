@@ -5,8 +5,12 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 
+import py4j.GatewayServer;
+import railapp.simulation.python.TimetableSimulationEntry;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
@@ -17,7 +21,10 @@ import javafx.stage.Stage;
 public class EditorPaneController {
 	
 	@FXML
-	private TextArea textArea;
+	private TextArea editArea;
+	
+	@FXML
+	private TextArea infoArea;
 	
 	private FileChooser fileChooser = new FileChooser();
 	private File file;
@@ -25,7 +32,7 @@ public class EditorPaneController {
 	
 	@FXML
 	protected void onNew(ActionEvent event) {
-		this.textArea.clear();
+		this.editArea.clear();
 		this.file = null;
 	}
 
@@ -33,13 +40,13 @@ public class EditorPaneController {
 	protected void onLoad(ActionEvent event) {
 			this.file = fileChooser.showOpenDialog(null);
 			if(this.file != null) {
-				this.textArea.clear();
+				this.editArea.clear();
 				BufferedReader bufferedReader = null;
 				try {
 					String currentLine;
 					bufferedReader = new BufferedReader(new FileReader(this.file));
 					while((currentLine = bufferedReader.readLine()) != null)
-						textArea.appendText(currentLine + "\n");
+						editArea.appendText(currentLine + "\n");
 				} catch(Exception e) {
 					e.printStackTrace();
 				}
@@ -48,7 +55,7 @@ public class EditorPaneController {
 	
 	@FXML
 	protected void onSave(ActionEvent event) {
-		String content = this.textArea.getText();
+		String content = this.editArea.getText();
 		FileChooser.ExtensionFilter extFilter = 
                 new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
             fileChooser.getExtensionFilters().add(extFilter);
@@ -82,8 +89,44 @@ public class EditorPaneController {
 		}
 	}
 	
+	@FXML
+	protected void onPlay(ActionEvent event) {
+		GatewayServer gatewayServer = new GatewayServer(new TimetableSimulationEntry());
+        gatewayServer.start();
+        
+		try {
+			String s = "";
+			
+			ProcessBuilder pb = new ProcessBuilder("python",
+					"C:\\Projekte\\201X Veröffentlichung\\201X Habi\\python\\TimetableSimulation.py");
+			Process p = pb.start();
+			
+			BufferedReader stdInput = new BufferedReader(new 
+                InputStreamReader(p.getInputStream()));
 
-	
+            BufferedReader stdError = new BufferedReader(new 
+                InputStreamReader(p.getErrorStream()));
+
+            // read the output from the command
+            infoArea.appendText("Here is the standard output of the command:\n");
+            while ((s = stdInput.readLine()) != null) {
+                infoArea.appendText(s);
+                infoArea.appendText("\n");
+            }
+            
+            // read any errors from the attempted command
+            infoArea.appendText("Here is the standard error of the command (if any):\n");
+            while ((s = stdError.readLine()) != null) {
+            	infoArea.appendText(s);
+            	infoArea.appendText("\n");
+            }
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		gatewayServer.shutdown();
 	}
+}
 
 

@@ -11,5 +11,7 @@
 	<classpathentry kind="lib" path="/Library/RailModel/RollingstockDefinition.jar"/>
 	<classpathentry kind="lib" path="/Library/RailModel/TimetableDefinition.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/RailModel_RailSys7"/>
+	<classpathentry kind="lib" path="/Library/RailModel/RailSimulatorForPython.jar"/>
+	<classpathentry kind="lib" path="/Library/Py4J/py4j0.10.2.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
