@@ -29,7 +29,6 @@ public class EditorPaneController {
 	private FileChooser fileChooser = new FileChooser();
 	private File file;
 	
-	
 	@FXML
 	protected void onNew(ActionEvent event) {
 		this.editArea.clear();
@@ -91,14 +90,16 @@ public class EditorPaneController {
 	
 	@FXML
 	protected void onPlay(ActionEvent event) {
+		infoArea.clear();
+		infoArea.appendText("Here is the standard output of the command:\n");
+		
 		GatewayServer gatewayServer = new GatewayServer(new TimetableSimulationEntry());
         gatewayServer.start();
         
-		try {
+		try {			
 			String s = "";
-			
-			ProcessBuilder pb = new ProcessBuilder("python",
-					"C:\\Projekte\\201X Veröffentlichung\\201X Habi\\python\\TimetableSimulation.py");
+			ProcessBuilder pb = new ProcessBuilder(
+					"python", this.file.getPath());
 			Process p = pb.start();
 			
 			BufferedReader stdInput = new BufferedReader(new 
@@ -108,7 +109,6 @@ public class EditorPaneController {
                 InputStreamReader(p.getErrorStream()));
 
             // read the output from the command
-            infoArea.appendText("Here is the standard output of the command:\n");
             while ((s = stdInput.readLine()) != null) {
                 infoArea.appendText(s);
                 infoArea.appendText("\n");
