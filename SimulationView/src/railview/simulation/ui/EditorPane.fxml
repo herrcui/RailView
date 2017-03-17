@@ -15,10 +15,7 @@
                <children>
                   <SplitPane dividerPositions="0.6725352112676056" layoutX="320.0" layoutY="173.0" prefHeight="439.0" prefWidth="570.0" styleClass="split-pane-divider_zero" stylesheets="@../../../../resources/CSS/Tabs.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                           <children>
-                              <TextArea fx:id="editArea" layoutX="42.0" layoutY="79.0" prefHeight="437.0" prefWidth="423.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                           </children></AnchorPane>
+                      <AnchorPane fx:id="codePane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                            <children>
                               <TextArea fx:id="infoArea" layoutX="14.0" prefHeight="200.0" prefWidth="200.0" styleClass="text-area" stylesheets="@../../../../resources/CSS/text-area.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
