@@ -89,6 +89,29 @@ public class EditorPaneController {
 	}
 	
 	@FXML
+	private void onSaveAs() {
+		this.file = this.fileChooser.showSaveDialog(null);
+		
+		String content = this.editArea.getText();
+		if(this.file != null) {
+			Stage stage = (Stage) this.editArea.getScene().getWindow();
+			stage.setTitle(this.file.getName() + " - jNotepad");
+			try {
+				if(!this.file.exists())
+					this.file.createNewFile();
+				
+				FileWriter fileWriter = new FileWriter(this.file.getAbsoluteFile());
+				BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+				bufferedWriter.write(content);
+				bufferedWriter.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	
+	@FXML
 	protected void onPlay(ActionEvent event) {
 		infoArea.clear();
 		infoArea.appendText("Here is the standard output of the command:\n");

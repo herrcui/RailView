@@ -1,0 +1,9 @@
+.text-area {
+    text-area-background: #1d1d1d ;
+    -fx-text-fill: #FFFFFF;
+}
+
+.text-area .content {
+    -fx-background-color: text-area-background ;
+}
+    

@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
@@ -11,13 +7,13 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="500.0" prefWidth="637.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.ui.EditorPaneController">
+<AnchorPane prefHeight="500.0" prefWidth="637.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.ui.EditorPaneController">
    <children>
-      <SplitPane dividerPositions="0.8875502008032129" layoutX="177.0" layoutY="164.0" orientation="VERTICAL" prefHeight="500.0" prefWidth="559.0" styleClass="split-pane-divider" stylesheets="@../../../../resources/CSS/Tabs.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <SplitPane dividerPositions="0.8875502008032129" layoutX="177.0" layoutY="164.0" orientation="VERTICAL" prefHeight="500.0" prefWidth="559.0" styleClass="split-pane-divider_zero" stylesheets="@../../../../resources/CSS/Tabs.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="381.0" prefWidth="570.0">
                <children>
-                  <SplitPane dividerPositions="0.6725352112676056" layoutX="320.0" layoutY="173.0" prefHeight="439.0" prefWidth="570.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <SplitPane dividerPositions="0.6725352112676056" layoutX="320.0" layoutY="173.0" prefHeight="439.0" prefWidth="570.0" styleClass="split-pane-divider_zero" stylesheets="@../../../../resources/CSS/Tabs.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <items>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                            <children>
@@ -25,7 +21,7 @@
                            </children></AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                            <children>
-                              <TextArea fx:id="infoArea" layoutX="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <TextArea fx:id="infoArea" layoutX="14.0" prefHeight="200.0" prefWidth="200.0" styleClass="text-area" stylesheets="@../../../../resources/CSS/text-area.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                            </children></AnchorPane>
                     </items>
                   </SplitPane>
@@ -49,7 +45,7 @@
                            </image>
                         </ImageView>
                      </graphic></Button>
-                  <Button layoutX="160.0" layoutY="14.0" mnemonicParsing="false" onAction="#onLoad" AnchorPane.topAnchor="14.0">
+                  <Button layoutX="210.0" layoutY="14.0" mnemonicParsing="false" onAction="#onLoad" AnchorPane.topAnchor="14.0">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -62,6 +58,15 @@
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../resources/images/green_play.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="160.0" layoutY="14.0" mnemonicParsing="false" onAction="#onSaveAs">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../resources/images/saveas.png" />
                            </image>
                         </ImageView>
                      </graphic>
