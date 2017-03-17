@@ -15,6 +15,7 @@ import java.util.regex.Pattern;
 
 import py4j.GatewayServer;
 import railapp.simulation.python.TimetableSimulationEntry;
+import railview.simulation.resources.SimulationViewResources;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
@@ -117,7 +118,7 @@ public class EditorPaneController {
      codeArea.prefWidthProperty().bind(codePane.widthProperty());
      codeArea.prefHeightProperty().bind(codePane.heightProperty());
      this.codePane.getChildren().add(codeArea);
-     codePane.getStylesheets().add(this.getClass().getResource("syntax-highlight.css").toExternalForm());
+     codePane.getStylesheets().add(SimulationViewResources.class.getResource("/CSS/syntax-highlight.css").toExternalForm());
  }
  	
 	
