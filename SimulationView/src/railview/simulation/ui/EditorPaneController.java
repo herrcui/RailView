@@ -13,11 +13,16 @@ import java.util.Collections;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
+
 import py4j.GatewayServer;
 import railapp.simulation.python.TimetableSimulationEntry;
 import railview.simulation.resources.SimulationViewResources;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
@@ -37,6 +42,12 @@ public class EditorPaneController {
 	
 	@FXML
 	private TextArea infoArea;
+	
+	@FXML
+	private Button playButton;
+	
+	@FXML
+	private Button saveButton;
 	
 	private FileChooser fileChooser = new FileChooser();
 	private File file;
@@ -118,6 +129,15 @@ public class EditorPaneController {
      codeArea.prefWidthProperty().bind(codePane.widthProperty());
      codeArea.prefHeightProperty().bind(codePane.heightProperty());
      this.codePane.getChildren().add(codeArea);
+     
+     codeArea.textProperty().addListener(new ChangeListener<String>(){
+         @Override
+         public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+             playButton.setDisable(true);
+             saveButton.setDisable(false);
+         }
+     });
+
      codePane.getStylesheets().add(SimulationViewResources.class.getResource("/CSS/syntax-highlight.css").toExternalForm());
  }
  	
@@ -159,6 +179,8 @@ public class EditorPaneController {
 				BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 				bufferedWriter.write(content);
 				bufferedWriter.close();
+				saveButton.setDisable(true);
+				playButton.setDisable(false);
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
@@ -174,6 +196,8 @@ public class EditorPaneController {
 					BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 					bufferedWriter.write(content);
 					bufferedWriter.close();
+					saveButton.setDisable(true);
+					playButton.setDisable(false);
 				} catch(Exception e) {
 					e.printStackTrace();
 				}
@@ -197,6 +221,8 @@ public class EditorPaneController {
 				BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 				bufferedWriter.write(content);
 				bufferedWriter.close();
+				saveButton.setDisable(true);
+				playButton.setDisable(false);
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
