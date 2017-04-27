@@ -21,9 +21,6 @@ public class PSDLearning {
 					new double[] {6.276413371708169, 3.5712782411506234, 1.7687694577853579, 14.556417290067378});
 					//new double[] {0, 0, 0, 0});
 			
-			
-			SL.setDelta(0.001);
-			SL.setLearningRate(0.001);
 			SL.setMaxRound(100000);
 			
 			SL.learn(0.1);
