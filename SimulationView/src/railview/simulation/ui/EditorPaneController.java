@@ -159,6 +159,8 @@ public class EditorPaneController {
 					bufferedReader = new BufferedReader(new FileReader(this.file));
 					while((currentLine = bufferedReader.readLine()) != null)
 						codeArea.appendText(currentLine + "\n");
+						saveButton.setDisable(true);
+						playButton.setDisable(false);
 				} catch(Exception e) {
 					e.printStackTrace();
 				}
