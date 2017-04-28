@@ -12,7 +12,6 @@ import railapp.timetable.service.ITimetableServiceUtility;
 import railview.railmodel.infrastructure.railsys7.InfrastructureReader;
 import railview.railmodel.infrastructure.railsys7.RollingStockReader;
 import railview.railmodel.infrastructure.railsys7.TimetableReader;
-import railview.railsys.data.RailsysData;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -31,40 +30,41 @@ public class SwarmApplication extends Application {
 	}
 
 	public static void main(String[] args) {
-		infraServiceUtility = InfrastructureReader.getRailSys7Instance(
-			RailsysData.class.getResource("\\var-2011")).initialize();
+		//infraServiceUtility = InfrastructureReader.getRailSys7Instance(
+		//	RailsysData.class.getResource("\\var-2011")).initialize();
+
 		Network network = infraServiceUtility.getNetworkService().allNetworks().iterator().next();
-		
+
 		// Rollilngstock
-		rollingStockServiceUtility = RollingStockReader.getInstance().initialize();
-		
+		// rollingStockServiceUtility = RollingStockReader.getInstance().initialize();
+
 		// Timetable
-		timeTableServiceUtility = TimetableReader.getInstance(
-				infraServiceUtility, rollingStockServiceUtility, network).initialize();
-		
+		// timeTableServiceUtility = TimetableReader.getInstance(
+		//		infraServiceUtility, rollingStockServiceUtility, network).initialize();
+
 		simulator = SingleSimulationManager.getInstance(infraServiceUtility,
 				rollingStockServiceUtility,
 				timeTableServiceUtility);
-		
-		swarmManager = SwarmManager.getInstance(simulator); 
-		
+
+		swarmManager = SwarmManager.getInstance(simulator);
+
 		launch(args);
 	}
-	
+
 	private void initRootLayout() {
 		SwarmViewerController controller = this.initializeSwarmViewerController();
-		
+
 		if (this.rootLayout != null) {
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);
-		
+
 			controller.setInfrastructureServiceUtility(infraServiceUtility);
 			controller.setSimulationManager(simulator);
 			controller.setSwarmManager(swarmManager);
 			primaryStage.show();
 		}
 	}
-	
+
 	private SwarmViewerController initializeSwarmViewerController() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
@@ -81,7 +81,7 @@ public class SwarmApplication extends Application {
 			return null;
 		}
 	}
-	
+
 	private Stage primaryStage;
 	private AnchorPane rootLayout;
 	private static SingleSimulationManager simulator;
