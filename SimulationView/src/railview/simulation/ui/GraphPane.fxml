@@ -7,9 +7,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="graphPaneRoot" prefHeight="840" prefWidth="1320" styleClass="background-white" stylesheets="@../../../../../SimulationView/resources/CSS/Darktheme.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.ui.GraphPaneController">
+<AnchorPane fx:id="graphPaneRoot" prefHeight="840" prefWidth="1320" styleClass="background-white" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Darktheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.ui.GraphPaneController">
    <children>
-      <TabPane fx:id="tabPane" layoutX="224.0" layoutY="164.0" prefHeight="840.0" prefWidth="1320.0" stylesheets="@../../../../resources/CSS/Tabs.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <TabPane fx:id="tabPane" layoutX="224.0" layoutY="164.0" prefHeight="840.0" prefWidth="1320.0" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Tabs.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
           <Tab text="Blocking Time">
             <content>
@@ -22,14 +22,14 @@
                </content></Tab>
           <Tab onSelectionChanged="#onSelectionChanged" text="Occupancy &amp; Hindrance">
             <content>
-              <AnchorPane fx:id="occupancyTabAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="400.0" styleClass="background" stylesheets="@../../../../resources/CSS/Darktheme.css">
+              <AnchorPane fx:id="occupancyTabAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="400.0" styleClass="background" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Darktheme.css">
                      <children>
                         <AnchorPane fx:id="occupancyAndPendingRoot" layoutX="258.0" layoutY="-37.0" prefHeight="803.0" prefWidth="803.0" />
                         <Button fx:id="forwardButton" layoutX="1260.0" layoutY="383.0" mnemonicParsing="false" onAction="#navigate" onMouseEntered="#onForwardButtonEntered" onMouseExited="#onForwardButtonExited" AnchorPane.bottomAnchor="400.0" AnchorPane.rightAnchor="15.0">
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../resources/images/forward.png" />
+                                    <Image url="@../../../../resources/railview/simulation/resources/image/forward.png" />
                                  </image>
                               </ImageView>
                            </graphic></Button>
@@ -37,7 +37,7 @@
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../resources/images/backward.png" />
+                                    <Image url="@../../../../resources/railview/simulation/resources/image/backward.png" />
                                  </image>
                               </ImageView>
                            </graphic></Button>

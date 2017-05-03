@@ -138,7 +138,7 @@ public class EditorPaneController {
          }
      });
 
-     codePane.getStylesheets().add(SimulationViewResources.class.getResource("/CSS/syntax-highlight.css").toExternalForm());
+ //    codePane.getStylesheets().add(SimulationViewResources.class.getResource("/CSS/syntax-highlight.css").toExternalForm());
  }
  	
 	
