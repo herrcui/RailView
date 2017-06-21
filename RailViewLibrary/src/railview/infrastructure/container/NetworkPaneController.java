@@ -1,5 +1,6 @@
 package railview.infrastructure.container;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -13,6 +14,7 @@ import javafx.scene.paint.Color;
 import railapp.infrastructure.element.dto.InfrastructureElement;
 import railapp.infrastructure.element.dto.Port;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
+import railapp.infrastructure.signalling.dto.AbstractSignal;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.swarmintelligence.Swarm;
 import railapp.units.Coordinate;
@@ -43,6 +45,7 @@ public class NetworkPaneController {
 			IInfrastructureServiceUtility serviceUtility) {
 		Collection<InfrastructureElement> elements = serviceUtility
 				.getInfrastructureElementService().findElements();
+		Collection<AbstractSignal> signals = new ArrayList<AbstractSignal>();
 
 		double maxX = Double.MIN_VALUE;
 		double minX = Double.MAX_VALUE;
@@ -60,13 +63,17 @@ public class NetworkPaneController {
 				if (port.getCoordinate().getY() < minY)
 					minY = port.getCoordinate().getY();
 			}
+			
+			signals.addAll(serviceUtility.getSignallingService().findAbstractSignalsByElement(element));
 		}
 
 		CoordinateMapper mapper = new CoordinateMapper(maxX, minX, maxY,
 				minY);
 
 		this.elementPane.setCoordinateMapper(mapper);
+		this.elementPane.setSignals(signals, Color.YELLOW);
 		this.elementPane.setAndDrawElements(elements, Color.WHITE);
+		
 		this.trainPane.setCoordinateMapper(mapper);
 		this.swarmPane.setCoordinateMapper(mapper);
 	}

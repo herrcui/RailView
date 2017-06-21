@@ -1,11 +1,14 @@
 package railview.infrastructure.container;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 import railapp.infrastructure.element.dto.InfrastructureElement;
+import railapp.infrastructure.element.dto.RelativePosition;
 import railapp.infrastructure.element.dto.Track;
 import railapp.infrastructure.element.dto.Turnout;
+import railapp.infrastructure.signalling.dto.AbstractSignal;
 import railapp.units.Coordinate;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
@@ -15,8 +18,10 @@ import javafx.scene.shape.Line;
 
 public class InfrastructureElementsPane extends PannablePane {
 	private Collection<InfrastructureElement> elements;
+	private Collection<AbstractSignal> signals;
 	private CoordinateMapper mapper;
 	private Color elementColor;
+	private Color signalColor;
 	
 	private List<Coordinate> path = null;
 	private Coordinate eventPoint = null;
@@ -46,6 +51,12 @@ public class InfrastructureElementsPane extends PannablePane {
 		this.draw();
 	}
 	
+	public void setSignals(Collection<AbstractSignal> signals, Color signalColor) {
+		// TODO Auto-generated method stub
+		this.signals = signals;
+		this.signalColor = signalColor;
+	}
+	
 	public ObservableList<Node> getChrildren() {
 		return this.getChrildren();
 	}
@@ -62,6 +73,12 @@ public class InfrastructureElementsPane extends PannablePane {
 
 		for (InfrastructureElement element : this.elements) {
 			this.drawInfrastructureElement(element);
+		}
+		
+		if (this.signals != null) { // for some panes, it is not necessary to draw signals.
+			for (AbstractSignal signal : this.signals) {
+				this.drawSignal(signal);
+			}
 		}
 		
 		this.drawPath();
@@ -111,6 +128,41 @@ public class InfrastructureElementsPane extends PannablePane {
 		}
 	}
 	
+	private void drawSignal(AbstractSignal signal) {
+		RelativePosition position = signal.getPositions().get(0);
+		double percentage = position.getDistance().getMeter()/position.getLink().getGeometry().getLength().getMeter();
+		
+		List<Coordinate> coordinates = position.getLink().getCoordinates();
+		List<Double> coorDists = new ArrayList<Double>();
+		double totalCoorDist = 0;
+		for (int i = 0; i < coordinates.size() - 1; i++) {
+			double coorDist = Coordinate.getDistance(coordinates.get(i), coordinates.get(i+1));
+			totalCoorDist += coorDist;
+			coorDists.add(totalCoorDist);
+		}
+		
+		InfrastructureObjectCoordinate signalCoor = null;
+		for (int i = 0; i < coordinates.size() - 1; i++) {
+			if (coorDists.get(i)/totalCoorDist >= percentage) {
+				double percentageInSegment = (coorDists.get(i)/totalCoorDist - percentage) * totalCoorDist /
+						(i==0 ? coorDists.get(i) : (coorDists.get(i) - coorDists.get(i-1)));
+				signalCoor = new InfrastructureObjectCoordinate(
+					coordinates.get(i),
+					coordinates.get(i+1),
+					percentageInSegment);
+				break;
+			}
+		}
+		if (signalCoor == null) {
+			signalCoor = new InfrastructureObjectCoordinate(
+				coordinates.get(coordinates.size() - 2),
+				coordinates.get(coordinates.size() - 1),
+				1);
+		}
+		
+		System.out.println(signalCoor);
+	}
+	
 	private void drawPath() {
 		if (path == null) {
 			return;
@@ -129,6 +181,39 @@ public class InfrastructureElementsPane extends PannablePane {
 			circle.setRadius(0.6);
 			
 			this.getChildren().add(circle);
+		}
+	}
+	
+	class InfrastructureObjectCoordinate {
+		private Coordinate start;
+		private Coordinate end;
+		private double percentage;
+		
+		public InfrastructureObjectCoordinate(railapp.units.Coordinate start,
+				railapp.units.Coordinate end,
+				double percentage) {
+			super();
+			this.start = start;
+			this.end = end;
+			this.percentage = percentage;
+		}
+
+		public Coordinate getStart() {
+			return start;
+		}
+
+		public Coordinate getEnd() {
+			return end;
+		}
+		
+		public double percentage() {
+			return percentage;
+		}
+
+		@Override
+		public String toString() {
+			return "InfrastructureObjectCoordinate [start=" + start + ", end="
+					+ end + ", percentage=" + percentage + "]";
 		}
 	}
 }
