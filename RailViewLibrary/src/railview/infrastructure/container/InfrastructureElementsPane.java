@@ -170,8 +170,8 @@ public class InfrastructureElementsPane extends PannablePane {
 		double yEnd = signalCoor.getEnd().getY();
 
 		double signalStartX = xStart + (percentage * (xEnd - xStart));
-		double signalStartY = yStart + (percentage * (yStart - yEnd));
-		
+		double signalStartY = yStart + (percentage * (yEnd - yStart));
+
 		// random static number a and b
 		double a = 450.0;
 		double b = 150.0;
@@ -181,24 +181,24 @@ public class InfrastructureElementsPane extends PannablePane {
 		double xCoordinateP1;
 		double yCoordinateP1;
 		double xCoordinateP2;
-		double yCoordinateP2;		
+		double yCoordinateP2;
 		double xCoordinateP3;
 		double yCoordinateP3;
-		
-		double length = Math.sqrt(Math.pow((yStart - yEnd), 2)+ Math.pow((xEnd - xStart), 2));
-		
-		xCoordinateP0 = signalStartX + (a * ((yStart - yEnd)/ length));
-		yCoordinateP0 = signalStartY + (a * ((xEnd - xStart)/ length));
-		
-		xCoordinateP1 = signalStartX + ((a-(b/2)) * ((yStart - yEnd)/ length));
-		yCoordinateP1 = signalStartY + ((a-(b/2)) * ((xEnd - xStart)/ length));
-		
-		xCoordinateP2 = signalStartX + ((a+(b/2)) * ((yStart - yEnd)/ length));
-		yCoordinateP2 = signalStartY + ((a+(b/2)) * ((xEnd - xStart)/ length));
-		
+
+		double length = Math.sqrt(Math.pow((yEnd - yStart), 2)+ Math.pow((xEnd - xStart), 2));
+
+		xCoordinateP0 = signalStartX + (a * ((yEnd - yStart)/ length));
+		yCoordinateP0 = signalStartY + (a * ((xStart - xEnd)/ length));
+
+		xCoordinateP1 = signalStartX + ((a-(b/2.0)) * ((yEnd - yStart)/ length));
+		yCoordinateP1 = signalStartY + ((a-(b/2.0)) * ((xStart - xEnd)/ length));
+
+		xCoordinateP2 = signalStartX + ((a+(b/2.0)) * ((yEnd - yStart)/ length));
+		yCoordinateP2 = signalStartY + ((a+(b/2.0)) * ((xStart - xEnd)/ length));
+
 		xCoordinateP3 = xCoordinateP0 + ((xEnd-xStart) * a / length);
-		yCoordinateP3 = yCoordinateP0 - ((yStart-yEnd)* a / length);
-		
+		yCoordinateP3 = yCoordinateP0 + ((yEnd-yStart)* a / length);
+
 		Line line1 = new Line();
 		line1.setStartX(mapper.mapToPaneX(xCoordinateP0, this));
 		line1.setStartY(mapper.mapToPaneY(yCoordinateP0, this));
@@ -206,24 +206,25 @@ public class InfrastructureElementsPane extends PannablePane {
 		line1.setEndY(mapper.mapToPaneY(yCoordinateP3, this));
 		line1.setStroke(Color.RED);
 		line1.setStrokeWidth(0.1);
-		
-		Line line = new Line();
-		line.setStartX(mapper.mapToPaneX(xCoordinateP2, this));
-		line.setStartY(mapper.mapToPaneY(yCoordinateP2, this));
-		line.setEndX(mapper.mapToPaneX(xCoordinateP1, this));
-		line.setEndY(mapper.mapToPaneY(yCoordinateP1, this));
-		line.setStroke(Color.RED);
-		line.setStrokeWidth(0.1);
-		
+
+		Line line2 = new Line();
+		line2.setStartX(mapper.mapToPaneX(xCoordinateP2, this));
+		line2.setStartY(mapper.mapToPaneY(yCoordinateP2, this));
+		line2.setEndX(mapper.mapToPaneX(xCoordinateP1, this));
+		line2.setEndY(mapper.mapToPaneY(yCoordinateP1, this));
+		line2.setStroke(Color.RED);
+		line2.setStrokeWidth(0.1);
+
+
 		Circle circle = new Circle();
 		circle.setRadius(0.20);
 		circle.setCenterX(mapper.mapToPaneX(xCoordinateP3, this));
 		circle.setCenterY(mapper.mapToPaneY(yCoordinateP3, this));
 		circle.setStrokeWidth(0.1);
 		circle.setStroke(Color.RED);
-		
-		this.getChildren().addAll(line1, line, circle);
-		
+
+		this.getChildren().addAll(line1, line2, circle);
+
 /**
 		// angle between line and x-axis
 //		double angle = (yEnd - yStart) / (xEnd - xStart);
@@ -376,9 +377,9 @@ public class InfrastructureElementsPane extends PannablePane {
 		}
 
 		this.getChildren().addAll(line, orthLine, circle);
- * 
+ *
  **/
- 
+
 		System.out.println(signalCoor);
 	}
 
