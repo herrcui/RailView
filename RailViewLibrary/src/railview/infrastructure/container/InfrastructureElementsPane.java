@@ -164,17 +164,18 @@ public class InfrastructureElementsPane extends PannablePane {
 					coordinates.get(coordinates.size() - 1), 1);
 		}
 
-		double xStart = signalCoor.getStart().getX();
-		double yStart = signalCoor.getStart().getY();
-		double xEnd = signalCoor.getEnd().getX();
-		double yEnd = signalCoor.getEnd().getY();
+		double xStart = mapper.mapToPaneX(signalCoor.getStart().getX(), this);
+		double yStart = mapper.mapToPaneY(signalCoor.getStart().getY(), this);
+		double xEnd = mapper.mapToPaneX(signalCoor.getEnd().getX(), this);
+		double yEnd = mapper.mapToPaneY(signalCoor.getEnd().getY(), this);
 
 		double signalStartX = xStart + (percentage * (xEnd - xStart));
 		double signalStartY = yStart + (percentage * (yEnd - yStart));
 
 		// random static number a and b
-		double a = 200.0;
-		double b = 100.0;
+		double a = 2.0;
+		double b = 1.0;
+		double c = 0.5;
 
 		double xCoordinateP0;
 		double yCoordinateP0;
@@ -200,185 +201,30 @@ public class InfrastructureElementsPane extends PannablePane {
 		yCoordinateP3 = yCoordinateP0 + ((yEnd-yStart)* a*2 / length);
 
 		Line line1 = new Line();
-		line1.setStartX(mapper.mapToPaneX(xCoordinateP0, this));
-		line1.setStartY(mapper.mapToPaneY(yCoordinateP0, this));
-		line1.setEndX(mapper.mapToPaneX(xCoordinateP3, this));
-		line1.setEndY(mapper.mapToPaneY(yCoordinateP3, this));
+		line1.setStartX(xCoordinateP0);
+		line1.setStartY(yCoordinateP0);
+		line1.setEndX(xCoordinateP3);
+		line1.setEndY(yCoordinateP3);
 		line1.setStroke(Color.RED);
 		line1.setStrokeWidth(0.1);
 
 		Line line2 = new Line();
-		line2.setStartX(mapper.mapToPaneX(xCoordinateP2, this));
-		line2.setStartY(mapper.mapToPaneY(yCoordinateP2, this));
-		line2.setEndX(mapper.mapToPaneX(xCoordinateP1, this));
-		line2.setEndY(mapper.mapToPaneY(yCoordinateP1, this));
+		line2.setStartX(xCoordinateP2);
+		line2.setStartY(yCoordinateP2);
+		line2.setEndX(xCoordinateP1);
+		line2.setEndY(yCoordinateP1);
 		line2.setStroke(Color.RED);
 		line2.setStrokeWidth(0.1);
 
 
 		Circle circle = new Circle();
-		circle.setRadius(0.20);
-		circle.setCenterX(mapper.mapToPaneX(xCoordinateP3, this));
-		circle.setCenterY(mapper.mapToPaneY(yCoordinateP3, this));
+		circle.setRadius(c);
+		circle.setCenterX(xCoordinateP3);
+		circle.setCenterY(yCoordinateP3);
 		circle.setStrokeWidth(0.1);
 		circle.setStroke(Color.RED);
 
 		this.getChildren().addAll(line1, line2, circle);
-
-/**
-		// angle between line and x-axis
-//		double angle = (yEnd - yStart) / (xEnd - xStart);
-		double alpha = Math.atan2(yEnd - yStart, xEnd - xStart);
-
-		// parallel line
-		Line line = new Line();
-		// orthogonal line
-		Line orthLine = new Line();
-		Circle circle = new Circle();
-
-		// line is horizontal
-		if (yStart == yEnd) {
-			line.setStartX(mapper.mapToPaneX(signalStartX, this));
-			line.setStartY(mapper.mapToPaneY(signalStartY + a, this));
-			line.setEndX(mapper.mapToPaneX(signalStartX + a, this));
-			line.setEndY(mapper.mapToPaneY(signalStartY + a, this));
-			line.setStroke(Color.RED);
-			line.setStrokeWidth(0.1);
-
-			orthLine.setStartX(mapper.mapToPaneX(signalStartX, this));
-			orthLine.setStartY(mapper.mapToPaneY(signalStartY + a + (b), this));
-			orthLine.setEndX(mapper.mapToPaneX(signalStartX, this));
-			orthLine.setEndY(mapper.mapToPaneY(signalStartY + a - (b), this));
-			orthLine.setStroke(Color.RED);
-			orthLine.setStrokeWidth(0.1);
-			circle.setRadius(0.000000000000000001);
-			circle.setCenterX(mapper.mapToPaneX(signalStartX + a + circle.getRadius(), this));
-			circle.setCenterY(mapper.mapToPaneY(signalStartY + a + circle.getRadius(), this));
-			circle.setStroke(Color.RED);
-		}
-
-		// line is vertical
-		else if (xStart == xEnd) {
-			line.setStartX(mapper.mapToPaneX(signalStartX + a, this));
-			line.setStartY(mapper.mapToPaneY(signalStartY, this));
-			line.setEndX(mapper.mapToPaneX(signalStartX + a, this));
-			line.setEndY(mapper.mapToPaneY(signalStartY + a, this));
-			line.setStroke(Color.RED);
-			line.setStrokeWidth(0.1);
-
-			orthLine.setStartX(mapper.mapToPaneX(signalStartX + a + (b), this));
-			orthLine.setStartY(mapper.mapToPaneY(signalStartY, this));
-			orthLine.setEndX(mapper.mapToPaneX(signalStartX + a - (b), this));
-			orthLine.setEndY(mapper.mapToPaneY(signalStartY, this));
-			orthLine.setStroke(Color.RED);
-			orthLine.setStrokeWidth(0.1);
-
-			circle.setRadius(0.000000000000000001);
-			circle.setCenterX(mapper.mapToPaneX(signalStartX + a + circle.getRadius(), this));
-			circle.setCenterY(mapper.mapToPaneY(signalStartY + a + circle.getRadius(), this));
-			circle.setStrokeWidth(0.2);
-			circle.setStroke(Color.RED);
-		}
-
-		// 0 - 360°
-		else if (xEnd > xStart && yEnd > yStart) {
-			xCoordinateP0 = signalStartX - (a * (Math.sin(alpha)));
-			yCoordinateP0 = signalStartY + (a * (Math.cos(alpha)));
-			xCoordinateP3 = signalStartX - (a - b / 2) * (Math.sin(alpha));
-			yCoordinateP3 = signalStartY + (a - b / 2) * (Math.cos(alpha));
-			line.setStartX(mapper.mapToPaneX(xCoordinateP0, this));
-			line.setStartY(mapper.mapToPaneY(yCoordinateP0, this));
-			line.setEndX(mapper.mapToPaneX(
-					xCoordinateP0 + (a * (Math.cos(alpha))), this));
-			line.setEndY(mapper.mapToPaneY(
-					yCoordinateP0 + (a * (Math.sin(alpha))), this));
-			line.setStroke(Color.RED);
-			circle.setStrokeWidth(0.1);
-			line.setStrokeWidth(0.1);
-
-			orthLine.setStartX(mapper.mapToPaneX(xCoordinateP3, this));
-			orthLine.setStartY(mapper.mapToPaneY(yCoordinateP3, this));
-			orthLine.setEndX(mapper.mapToPaneX(xCoordinateP0, this));
-			orthLine.setEndY(mapper.mapToPaneY(yCoordinateP0, this));
-			orthLine.setStroke(Color.RED);
-			orthLine.setStrokeWidth(0.1);
-
-		}
-
-		else if (xEnd > xStart && yEnd < yStart) {
-			xCoordinateP0 = signalStartX + (a * (Math.sin(alpha)));
-			yCoordinateP0 = signalStartY + (a * (Math.cos(alpha)));
-			xCoordinateP3 = signalStartX + (a - b / 2) * (Math.sin(alpha));
-			yCoordinateP3 = signalStartY + (a - b / 2) * (Math.cos(alpha));
-			line.setStartX(mapper.mapToPaneX(xCoordinateP0, this));
-			line.setStartY(mapper.mapToPaneY(yCoordinateP0, this));
-			line.setEndX(mapper.mapToPaneX(
-					xCoordinateP0 + (a * (Math.cos(alpha))), this));
-			line.setEndY(mapper.mapToPaneY(
-					yCoordinateP0 - (a * (Math.sin(alpha))), this));
-			line.setStroke(Color.RED);
-			circle.setStrokeWidth(0.1);
-			line.setStrokeWidth(0.1);
-
-			orthLine.setStartX(mapper.mapToPaneX(xCoordinateP3, this));
-			orthLine.setStartY(mapper.mapToPaneY(yCoordinateP3, this));
-			orthLine.setEndX(mapper.mapToPaneX(xCoordinateP0, this));
-			orthLine.setEndY(mapper.mapToPaneY(yCoordinateP0, this));
-			orthLine.setStroke(Color.RED);
-			orthLine.setStrokeWidth(0.1);
-		}
-
-		else if (xEnd < xStart && yEnd < yStart) {
-			xCoordinateP0 = signalStartX + (a * (Math.sin(alpha)));
-			yCoordinateP0 = signalStartY - (a * (Math.cos(alpha)));
-			xCoordinateP3 = signalStartX + (a - b / 2) * (Math.sin(alpha));
-			yCoordinateP3 = signalStartY - (a - b / 2) * (Math.cos(alpha));
-			line.setStartX(mapper.mapToPaneX(xCoordinateP0, this));
-			line.setStartY(mapper.mapToPaneY(yCoordinateP0, this));
-			line.setEndX(mapper.mapToPaneX(
-					xCoordinateP0 - (a * (Math.cos(alpha))), this));
-			line.setEndY(mapper.mapToPaneY(
-					yCoordinateP0 - (a * (Math.sin(alpha))), this));
-			line.setStroke(Color.RED);
-			circle.setStrokeWidth(0.1);
-			line.setStrokeWidth(0.1);
-
-			orthLine.setStartX(mapper.mapToPaneX(xCoordinateP3, this));
-			orthLine.setStartY(mapper.mapToPaneY(yCoordinateP3, this));
-			orthLine.setEndX(mapper.mapToPaneX(xCoordinateP0, this));
-			orthLine.setEndY(mapper.mapToPaneY(yCoordinateP0, this));
-			orthLine.setStroke(Color.RED);
-			orthLine.setStrokeWidth(0.1);
-		}
-
-		else if (xEnd < xStart && yEnd > yStart) {
-			xCoordinateP0 = signalStartX - (a * (Math.sin(alpha)));
-			yCoordinateP0 = signalStartY - (a * (Math.cos(alpha)));
-			xCoordinateP3 = signalStartX - (a - b / 2) * (Math.sin(alpha));
-			yCoordinateP3 = signalStartY - (a - b / 2) * (Math.cos(alpha));
-			xCoordinateP3 = signalStartX;
-			yCoordinateP3 = signalStartY;
-			line.setStartX(mapper.mapToPaneX(xCoordinateP0, this));
-			line.setStartY(mapper.mapToPaneY(yCoordinateP0, this));
-			line.setEndX(mapper.mapToPaneX(
-					xCoordinateP0 - (a * (Math.cos(alpha))), this));
-			line.setEndY(mapper.mapToPaneY(
-					yCoordinateP0 + (a * (Math.sin(alpha))), this));
-			line.setStroke(Color.RED);
-			circle.setStrokeWidth(0.1);
-			line.setStrokeWidth(0.1);
-
-			orthLine.setStartX(mapper.mapToPaneX(xCoordinateP3, this));
-			orthLine.setStartY(mapper.mapToPaneY(yCoordinateP3, this));
-			orthLine.setEndX(mapper.mapToPaneX(xCoordinateP0, this));
-			orthLine.setEndY(mapper.mapToPaneY(yCoordinateP0, this));
-			orthLine.setStroke(Color.RED);
-			orthLine.setStrokeWidth(0.1);
-		}
-
-		this.getChildren().addAll(line, orthLine, circle);
- *
- **/
 
 		System.out.println(signalCoor);
 	}
