@@ -173,8 +173,8 @@ public class InfrastructureElementsPane extends PannablePane {
 		double signalStartY = yStart + (percentage * (yEnd - yStart));
 
 		// random static number a and b
-		double a = 450.0;
-		double b = 150.0;
+		double a = 200.0;
+		double b = 100.0;
 
 		double xCoordinateP0;
 		double yCoordinateP0;
@@ -196,8 +196,8 @@ public class InfrastructureElementsPane extends PannablePane {
 		xCoordinateP2 = signalStartX + ((a+(b/2.0)) * ((yEnd - yStart)/ length));
 		yCoordinateP2 = signalStartY + ((a+(b/2.0)) * ((xStart - xEnd)/ length));
 
-		xCoordinateP3 = xCoordinateP0 + ((xEnd-xStart) * a / length);
-		yCoordinateP3 = yCoordinateP0 + ((yEnd-yStart)* a / length);
+		xCoordinateP3 = xCoordinateP0 + ((xEnd-xStart) * a*2 / length);
+		yCoordinateP3 = yCoordinateP0 + ((yEnd-yStart)* a*2 / length);
 
 		Line line1 = new Line();
 		line1.setStartX(mapper.mapToPaneX(xCoordinateP0, this));
