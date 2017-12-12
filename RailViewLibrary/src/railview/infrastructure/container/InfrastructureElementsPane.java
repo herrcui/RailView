@@ -74,15 +74,13 @@ public class InfrastructureElementsPane extends PannablePane {
 		for (InfrastructureElement element : this.elements) {
 			this.drawInfrastructureElement(element);
 		}
-
-		/*
+	
 		if (this.signals != null) { // for some panes, it is not necessary to
 									// draw signals.
 			for (AbstractSignal signal : this.signals) {
 				this.drawSignal(signal);
 			}
 		}
-	    */
 
 		this.drawPath();
 		this.drawEventPoint();
