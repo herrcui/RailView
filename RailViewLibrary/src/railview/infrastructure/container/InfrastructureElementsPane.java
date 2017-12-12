@@ -75,12 +75,14 @@ public class InfrastructureElementsPane extends PannablePane {
 			this.drawInfrastructureElement(element);
 		}
 
+		/*
 		if (this.signals != null) { // for some panes, it is not necessary to
 									// draw signals.
 			for (AbstractSignal signal : this.signals) {
 				this.drawSignal(signal);
 			}
 		}
+	    */
 
 		this.drawPath();
 		this.drawEventPoint();
@@ -92,21 +94,16 @@ public class InfrastructureElementsPane extends PannablePane {
 					.getCoordinateAtLink12();
 			this.drawLink(coordinates, this.elementColor, elementWidth);
 		} else {
-			if (element instanceof Turnout) {
-				List<Coordinate> coordinates = element.findLink(1, 2)
-						.getCoordinates();
-				Coordinate middlePoint = Coordinate.fromXY(0.5 * (coordinates
-						.get(0).getX() + coordinates.get(1).getX()),
-						0.5 * (coordinates.get(0).getY() + coordinates.get(1)
-								.getY()));
+			if (element instanceof Turnout) {				
+				List<Coordinate> coordinates = element.findLink(1, 2).getCoordinates();
 				this.drawLink(coordinates, this.elementColor, elementWidth);
+				
 				coordinates = element.findLink(1, 3).getCoordinates();
-				coordinates.add(1, middlePoint);
 				this.drawLink(coordinates, this.elementColor, elementWidth);
 			} else {
-				List<Coordinate> coordinates = element.findLink(1, 3)
-						.getCoordinates();
+				List<Coordinate> coordinates = element.findLink(1, 3).getCoordinates();
 				this.drawLink(coordinates, this.elementColor, elementWidth);
+				
 				coordinates = element.findLink(2, 4).getCoordinates();
 				this.drawLink(coordinates, this.elementColor, elementWidth);
 			}
@@ -173,9 +170,9 @@ public class InfrastructureElementsPane extends PannablePane {
 		double signalStartY = yStart + (percentage * (yEnd - yStart));
 
 		// random static number a and b
-		double a = 2.0;
+		double a = 1.0;
 		double b = 1.0;
-		double c = 0.5;
+		double c = 0.5; // radius of the circle
 
 		double xCoordinateP0;
 		double yCoordinateP0;
