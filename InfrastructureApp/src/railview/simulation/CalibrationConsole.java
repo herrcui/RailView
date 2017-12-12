@@ -5,14 +5,12 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 
-import railapp.infrastructure.dto.Network;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.rollingstock.dto.TrainClass;
 import railapp.rollingstock.service.IRollingStockServiceUtility;
 import railapp.simulation.MultipleSimulationManager;
 import railapp.simulation.SingleSimulationManager;
 import railapp.simulation.calibration.Calibrator;
-import railapp.simulation.disturbances.DistributionDefinition;
 import railapp.simulation.disturbances.DisturbanceDefinition;
 import railapp.simulation.disturbances.DisturbanceType;
 import railapp.simulation.logs.DelayLogger;
@@ -20,16 +18,14 @@ import railapp.simulation.train.TrainClassGroup;
 import railapp.timetable.service.ITimetableServiceUtility;
 import railapp.units.Duration;
 import railapp.units.Time;
-import railview.railmodel.infrastructure.railsys7.InfrastructureReader;
-import railview.railmodel.infrastructure.railsys7.RollingStockReader;
-import railview.railmodel.infrastructure.railsys7.TimetableReader;
+import railapp.util.random.DistributionDefinition;
 
 public class CalibrationConsole {
 
+	@SuppressWarnings("null")
 	public static void main(String[] args) {
 		//IInfrastructureServiceUtility infraServiceUtility = InfrastructureReader.getInstanceHannover().initialize();
 		IInfrastructureServiceUtility infraServiceUtility = null;
-		Network network = infraServiceUtility.getNetworkService().allNetworks().iterator().next();
 
 		// Rollilngstock
 		//IRollingStockServiceUtility rollingStockServiceUtility = RollingStockReader.getInstanceHannover().initialize();

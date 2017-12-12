@@ -71,7 +71,7 @@ public class NetworkPaneController {
 				minY);
 
 		this.elementPane.setCoordinateMapper(mapper);
-		this.elementPane.setSignals(signals, Color.YELLOW);
+		this.elementPane.setSignals(signals, Color.LIGHTGREEN);
 		this.elementPane.setAndDrawElements(elements, Color.WHITE);
 		
 		this.trainPane.setCoordinateMapper(mapper);

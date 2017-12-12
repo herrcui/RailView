@@ -21,7 +21,7 @@ public class InfrastructureElementsPane extends PannablePane {
 	private Collection<AbstractSignal> signals;
 	private CoordinateMapper mapper;
 	private Color elementColor;
-	private Color signalColor;
+	private Color signalColor = Color.RED;
 	private List<Coordinate> path = null;
 	private Coordinate eventPoint = null;
 
@@ -52,7 +52,6 @@ public class InfrastructureElementsPane extends PannablePane {
 	}
 
 	public void setSignals(Collection<AbstractSignal> signals, Color signalColor) {
-		// TODO Auto-generated method stub
 		this.signals = signals;
 		this.signalColor = signalColor;
 	}
@@ -167,10 +166,9 @@ public class InfrastructureElementsPane extends PannablePane {
 		double signalStartX = xStart + (percentage * (xEnd - xStart));
 		double signalStartY = yStart + (percentage * (yEnd - yStart));
 
-		// random static number a and b
-		double a = 1.0;
-		double b = 1.0;
-		double c = 0.5; // radius of the circle
+		double a = 0.3;
+		double b = 0.3;
+		double c = 0.5 * a; // radius of the circle
 
 		double xCoordinateP0;
 		double yCoordinateP0;
@@ -200,7 +198,7 @@ public class InfrastructureElementsPane extends PannablePane {
 		line1.setStartY(yCoordinateP0);
 		line1.setEndX(xCoordinateP3);
 		line1.setEndY(yCoordinateP3);
-		line1.setStroke(Color.RED);
+		line1.setStroke(signalColor);
 		line1.setStrokeWidth(0.1);
 
 		Line line2 = new Line();
@@ -208,7 +206,7 @@ public class InfrastructureElementsPane extends PannablePane {
 		line2.setStartY(yCoordinateP2);
 		line2.setEndX(xCoordinateP1);
 		line2.setEndY(yCoordinateP1);
-		line2.setStroke(Color.RED);
+		line2.setStroke(signalColor);
 		line2.setStrokeWidth(0.1);
 
 
@@ -217,11 +215,9 @@ public class InfrastructureElementsPane extends PannablePane {
 		circle.setCenterX(xCoordinateP3);
 		circle.setCenterY(yCoordinateP3);
 		circle.setStrokeWidth(0.1);
-		circle.setStroke(Color.RED);
+		circle.setStroke(signalColor);
 
 		this.getChildren().addAll(line1, line2, circle);
-
-		System.out.println(signalCoor);
 	}
 
 	private void drawPath() {
