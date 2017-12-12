@@ -50,9 +50,6 @@ public class EditorPaneController {
 	private FileChooser fileChooser = new FileChooser();
 	private File file;
 	
-	private static GatewayServer gatewayServer = new GatewayServer(new TimetableSimulationEntry());
-	private Process p = null;
-	
 	private static final String[] KEYWORDS = new String[] {
         "abstract", "assert", "boolean", "break", "byte",
         "case", "catch", "char", "class", "const",
@@ -141,7 +138,6 @@ public class EditorPaneController {
 		});
 
 		// codePane.getStylesheets().add(SimulationViewResources.class.getResource("/CSS/syntax-highlight.css").toExternalForm());
-		gatewayServer.start();
 	}
  	
 	
@@ -236,13 +232,20 @@ public class EditorPaneController {
 	
 	@FXML
 	protected void onPlay(ActionEvent event) {
+		this.infoArea.clear();
+		
 		try {        
-	        ProcessBuilder pb = new ProcessBuilder("python", file.getPath());
-	        
 			Thread thread = new Thread(() -> {
 				try {
+					GatewayServer gatewayServer = new GatewayServer(new TimetableSimulationEntry());
+					
+					gatewayServer.start();
+					
+			        ProcessBuilder pb = new ProcessBuilder("python", file.getPath());
+			        
 					this.infoArea.appendText("Start Python script ... \n");
-					p = pb.start();
+
+					Process p = pb.start();
 	
 				    StreamGobbler outputGobbler = new StreamGobbler(p.getInputStream(), "OUTPUT");
 					StreamGobbler errorGobbler = new StreamGobbler(p.getErrorStream(), "ERROR");
@@ -251,6 +254,8 @@ public class EditorPaneController {
 	                errorGobbler.start();
 	                
 	                p.waitFor();
+	                
+	                gatewayServer.shutdown();
 				} catch (Exception e) {}
 			});
 			
