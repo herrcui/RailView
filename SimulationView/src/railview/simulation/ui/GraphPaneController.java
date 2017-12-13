@@ -20,8 +20,6 @@ import javafx.geometry.Side;
 import javafx.scene.control.Button;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 
 public class GraphPaneController {
 

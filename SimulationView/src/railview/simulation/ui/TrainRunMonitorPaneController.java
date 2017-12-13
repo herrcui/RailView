@@ -29,6 +29,7 @@ import railview.simulation.ui.components.DraggableChart;
 import railview.simulation.ui.components.Zoom;
 import railview.simulation.ui.data.BlockingTime;
 import railview.simulation.ui.data.EventData;
+import railview.simulation.ui.data.TableProperty;
 import railview.simulation.ui.data.TimeDistance;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -44,7 +45,10 @@ import javafx.scene.chart.XYChart.Series;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -65,7 +69,7 @@ public class TrainRunMonitorPaneController {
 	private Label eventLabel;
 	
 	@FXML
-	private Label label;
+	private TableView<TableProperty> eventTable;
 	
 	@FXML
 	private CheckBox selfEventCheckBox; 
@@ -79,6 +83,7 @@ public class TrainRunMonitorPaneController {
 	@FXML
 	private TextField trainNumberText;
 	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@FXML
 	public void initialize() {
 		
@@ -89,7 +94,7 @@ public class TrainRunMonitorPaneController {
 		blockingTimeChart = createBlockingTimeChart();
 
 		blockingTimePane.getChildren().add(blockingTimeChart);
-
+		
 		AnchorPane.setTopAnchor(blockingTimeChart, 0.0);
 		AnchorPane.setLeftAnchor(blockingTimeChart, 0.0);
 		AnchorPane.setRightAnchor(blockingTimeChart, 0.0);
@@ -98,7 +103,6 @@ public class TrainRunMonitorPaneController {
 		for(CheckBox checkBox: checkBoxList){
 			checkBox.toFront();
 		}
-		
 
 		new Zoom(blockingTimeChart, blockingTimePane);
 
@@ -160,6 +164,18 @@ public class TrainRunMonitorPaneController {
 				trainNumbers.scrollTo(selectedIdx);
 			}
 		});
+		
+		TableColumn itemCol = new TableColumn("Item");
+        itemCol.setMinWidth(100);
+        itemCol.setCellValueFactory(
+            new PropertyValueFactory<TableProperty, String>("item"));
+        
+        TableColumn valueCol = new TableColumn("Value");
+        valueCol.setMinWidth(100);
+        valueCol.setCellValueFactory(
+            new PropertyValueFactory<TableProperty, String>("value"));
+        
+        eventTable.getColumns().addAll(itemCol, valueCol);
 	}
 	
 	@FXML
@@ -200,12 +216,12 @@ public class TrainRunMonitorPaneController {
 				xAxis,
 				yAxis,
 				eventLabel,
-				label,
 				selfEventCheckBox,
 				inEventCheckBox,
 				outEventCheckBox,
+				eventTable,
 				this);
-		
+
 		trainNumbers.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
 			@Override
 			public void changed(ObservableValue<? extends String> observable,

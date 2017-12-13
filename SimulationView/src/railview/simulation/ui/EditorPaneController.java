@@ -14,7 +14,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import py4j.GatewayServer;
-import railapp.simulation.python.TimetableSimulationEntry;
+import railapp.simulation.entries.TimetableSimulationEntry;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -136,7 +136,6 @@ public class EditorPaneController {
 				saveButton.setDisable(false);
 			}
 		});
-
 		// codePane.getStylesheets().add(SimulationViewResources.class.getResource("/CSS/syntax-highlight.css").toExternalForm());
 	}
  	
@@ -243,12 +242,12 @@ public class EditorPaneController {
 					
 			        ProcessBuilder pb = new ProcessBuilder("python", file.getPath());
 			        
-					this.infoArea.appendText("Start Python script ... \n");
+			        this.infoArea.appendText("Start and run Python script ... \n");
+			        					
+			        Process p = pb.start();
 
-					Process p = pb.start();
-	
-				    StreamGobbler outputGobbler = new StreamGobbler(p.getInputStream(), "OUTPUT");
-					StreamGobbler errorGobbler = new StreamGobbler(p.getErrorStream(), "ERROR");
+				    StreamGobbler outputGobbler = new StreamGobbler(p.getInputStream());
+					StreamGobbler errorGobbler = new StreamGobbler(p.getErrorStream());
 					
 					outputGobbler.start();
 	                errorGobbler.start();
@@ -265,11 +264,9 @@ public class EditorPaneController {
 	
 	private class StreamGobbler extends Thread {
 	    InputStream is;
-	    String type;
 
-	    private StreamGobbler(InputStream is, String type) {
+	    private StreamGobbler(InputStream is) {
 	        this.is = is;
-	        this.type = type;
 	    }
 
 	    @Override
@@ -279,16 +276,13 @@ public class EditorPaneController {
 	            BufferedReader br = new BufferedReader(isr);
 	            String line = null;
 	            while ((line = br.readLine()) != null) {
-	                System.out.println(type + "> " + line);
 	                String str =line;
-	                 Platform.runLater(new Runnable() {
-
-	                        @Override
-	                        public void run() {
-	                            infoArea.appendText(">" + str + "\n");
-
-	                        }
-	                    });
+	                Platform.runLater(new Runnable() {
+	                    @Override
+	                    public void run() {
+	                        infoArea.appendText(">" + str + "\n");
+	                    }
+	                });
 	            }
 	        } catch (IOException ioe) {
 	            ioe.printStackTrace();

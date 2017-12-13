@@ -1,14 +1,11 @@
 package railview.simulation.ui.components;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
@@ -16,32 +13,26 @@ import javafx.scene.chart.Axis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.Tooltip;
+import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.LineTo;
-import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
 import railview.simulation.ui.TrainRunMonitorPaneController;
 import railview.simulation.ui.data.BlockingTime;
 import railview.simulation.ui.data.EventData;
+import railview.simulation.ui.data.TableProperty;
 import railview.simulation.ui.data.TimeDistance;
 
 public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
-	public BlockingTimeChart(Axis<X> xAxis, Axis<Y> yAxis, Label eventLabel, Label label, CheckBox selfEventCheckBox, CheckBox inEventCheckBox, CheckBox outEventCheckBox, TrainRunMonitorPaneController controller) {
+	public BlockingTimeChart(Axis<X> xAxis, Axis<Y> yAxis, Label eventLabel, CheckBox selfEventCheckBox, CheckBox inEventCheckBox, CheckBox outEventCheckBox, TableView<TableProperty> eventTable, TrainRunMonitorPaneController controller) {
 		super(xAxis, yAxis);
 		this.eventLabel = eventLabel;
-		this.informationLabel = label;
 		this.selfEventCheckBox = selfEventCheckBox;
 		this.incomingEventCheckBox = inEventCheckBox;
 		this.outgoingEventCheckBox = outEventCheckBox;
-		
+		this.eventTable = eventTable;
 		this.controller = controller;
 	}
 
@@ -57,22 +48,6 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 		this.eventsMap = eventsMap;
 	}
 	
-
-	private Path drawPath(double startx, double starty, double endx, double endy) {
-		Path path = new Path();
-		path.getElements().add(
-				new MoveTo(this.getXAxis().getDisplayPosition(
-						this.getXAxis().toRealValue(startx)), this.getYAxis()
-						.getDisplayPosition(
-								this.getYAxis().toRealValue(-starty))));
-		path.getElements()
-				.add(new LineTo(this.getXAxis().getDisplayPosition(
-						this.getXAxis().toRealValue(endx)), this.getYAxis()
-						.getDisplayPosition(this.getYAxis().toRealValue(-endy))));
-
-		return path;
-	}
-	
 	public List<Polygon> getInformation(Label label){
 		 for(Polygon polygon : polygonList) {
 			 	polygon.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -83,74 +58,6 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 	        }
 		 return this.polygonList;
 
-	}
-	
-
-
-	private Polygon drawArrow(double startx, double starty, double endx,
-			double endy) {
-		Polygon arrow = new Polygon();
-		arrow.getPoints().addAll(
-				new Double[] { 0.0, 5.0, -5.0, -5.0, 5.0, -5.0 });
-
-		double angle = Math.atan2(endy - starty, endx - startx) * 180 / 3.14;
-
-		arrow.setRotate((angle - 90));
-
-		arrow.setTranslateX(this.getXAxis().getDisplayPosition(
-				this.getXAxis().toRealValue(startx)));
-		arrow.setTranslateY(this.getYAxis().getDisplayPosition(
-				this.getYAxis().toRealValue(-starty)));
-
-		arrow.setTranslateX(this.getXAxis().getDisplayPosition(
-				this.getXAxis().toRealValue(endx)));
-		arrow.setTranslateY(this.getYAxis().getDisplayPosition(
-				this.getYAxis().toRealValue(-endy)));
-
-		return arrow;
-	}
-
-	private void drawCircle(double centerX, double centerY, double radius,
-			Paint value, EventData event) {
-		Circle circle = new Circle();
-		circle.setCenterX(this.getXAxis().getDisplayPosition(
-				this.getXAxis().toRealValue(centerX)));
-		circle.setCenterY(centerY);
-		circle.setRadius(radius);
-		circle.setFill(value);
-		double centerPositon = this.getYAxis().getDisplayPosition(
-				this.getYAxis().toRealValue(centerY));
-		this.getPlotChildren().add(circle);
-
-		circle.setOnMouseEntered(new EventHandler<MouseEvent>() {
-			@Override
-			public void handle(MouseEvent t) {
-				NumberAxis xAxis = (NumberAxis) getXAxis();
-				NumberAxis yAxis = (NumberAxis) getYAxis();
-				String eventString = ("Event: " + event.getText());
-				// writeText(xAxis.getUpperBound()/2 - xAxis.getUpperBound()/10,
-				// yAxis.getLowerBound()/12*11 , eventString);
-
-			}
-		});
-		circle.setOnMouseExited(new EventHandler<MouseEvent>() {
-			@Override
-			public void handle(MouseEvent t) {
-				removeText();
-
-			}
-		});
-
-		this.circleMap.put(event, circle);
-	}
-	
-	private void selfEvent(){
-		 selfEventCheckBox.selectedProperty().addListener(new ChangeListener<Boolean>() {
-	           public void changed(ObservableValue<? extends Boolean> ov,
-	             Boolean old_val, Boolean new_val) {
-	        	   
-	          }
-	        });
 	}
 
 	private void writeText(double x, double y, List<EventData> eventList) {
@@ -248,7 +155,9 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 										.toRealValue(-td.getSecond()))),
 
 						});
+				
 				this.getPlotChildren().add(polygon);
+				
 				for (EventData data : eventList) {		
 					if (data.getType() == 0 ){
 						selfEventPolygonList.add(polygon);
@@ -327,6 +236,21 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 							eventLabel.setLayoutY(-70);
 						}
 
+						ObservableList<TableProperty> observableEventList = FXCollections.observableArrayList();
+						observableEventList.add(new TableProperty("Time [s]", String.format("%1$,.2f", td.getSecond())));
+						observableEventList.add(new TableProperty("Distance [m]", String.format("%1$,.2f", td.getMeter())));
+						int index = 1;
+						for (EventData e : eventList) {
+							observableEventList.add(new TableProperty(index + ". Event Name", e.getEventName()));
+							observableEventList.add(new TableProperty("   Description", e.getText()));
+							index++;
+						}
+						
+						if (eventTable == null) {
+							System.out.println("eventtable is null");
+						}
+						eventTable.setItems(observableEventList);
+
 						writeText((td.getMeter() + 3), (td.getSecond() - 3),
 								eventList);
 						polygon.setFill(Color.CRIMSON);
@@ -350,87 +274,9 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 				polygon.setOnMouseClicked(new EventHandler<MouseEvent>() {
 					@Override
 					public void handle(MouseEvent event) {
-						String text ="";
-						for (EventData data : eventList) {		
-							String type = "";
-							if (data.getType() == 0 ){
-								type = "self event";
-							}
-							else if (data.getType() == 1){
-								type = "incoming event";
-							}
-							else {
-								type = "outgoing event";
-							}
-							
-							text += data.getText() + "\n" + type + "\n" + data.getEventName() + "\n" + data.getTimeDistance() + "\n \n";
-						}
-						informationLabel.setText(text);
 						controller.drawEventOnSnap(td);
 					}
 				});
-
-				/**
-				 * polygon.setOnMouseClicked(new EventHandler<MouseEvent>() {
-				 * 
-				 * @Override public void handle(MouseEvent t) {
-				 *           System.out.println(getPlotChildren().toString());
-				 *           Polygon arrow = null; Path path = null;
-				 * 
-				 *           TimeDistanceEvents timeDistanceEvents =
-				 *           polygonMap.get(t.getSource()); if
-				 *           (timeDistanceEvents == null) { if (td.getSecond() <
-				 *           -(yAxis.getLowerBound() / 2)) { double x =
-				 *           td.getMeter(); double y = yAxis.getDisplayPosition(
-				 *           yAxis.toRealValue(((yAxis.getLowerBound() / 3) *
-				 *           2))); arrow = drawArrow(td.getMeter(),
-				 *           td.getSecond(), td.getMeter(),
-				 *           -((yAxis.getLowerBound() / 3) * 2) - 100); path =
-				 *           drawPath(td.getMeter(), td.getSecond(),
-				 *           td.getMeter(), -((yAxis.getLowerBound() / 3) * 2) -
-				 *           100);
-				 * 
-				 *           for (EventData event : eventList) { //
-				 *           chart.writeText(x, y, events.getText()); if
-				 *           (event.getType() == 0) { drawCircle(x, y, 8,
-				 *           Color.ORANGE, event); y = y + 16; } if
-				 *           (event.getType() == 1) { drawCircle(x, y, 8,
-				 *           Color.GREEN, event); y = y + 16; } if
-				 *           (event.getType() == -1) { drawCircle(x, y, 8,
-				 *           Color.RED, event); y = y + 16; } } } else { double
-				 *           x = td.getMeter(); double y =
-				 *           yAxis.getDisplayPosition(
-				 *           yAxis.toRealValue(((yAxis.getLowerBound() / 3))));
-				 *           arrow = drawArrow(td.getMeter(), td.getSecond(),
-				 *           td.getMeter(), -((yAxis.getLowerBound() / 3) -
-				 *           100)); path = drawPath(td.getMeter(),
-				 *           td.getSecond(), td.getMeter(),
-				 *           -((yAxis.getLowerBound() / 3) - 100)); for
-				 *           (EventData events : eventList) { //
-				 *           chart.writeText(x, y, events.getText()); if
-				 *           (events.getType() == 0) { drawCircle(x, y, 8,
-				 *           Color.ORANGE, events); y = y - 16; } if
-				 *           (events.getType() == 1) { drawCircle(x, y, 8,
-				 *           Color.GREEN, events); y = y - 16; } if
-				 *           (events.getType() == -1) { drawCircle(x, y, 8,
-				 *           Color.RED, events); y = y - 16; } } }
-				 * 
-				 *           getPlotChildren().addAll(arrow, path);
-				 *           polygonMap.put(polygon, new
-				 *           TimeDistanceEvents(arrow, path, eventList)); } else
-				 *           {
-				 *           getPlotChildren().remove(timeDistanceEvents.getArrow
-				 *           ());
-				 *           getPlotChildren().remove(timeDistanceEvents.getPath
-				 *           ()); for (EventData event :
-				 *           timeDistanceEvents.events) {
-				 *           getPlotChildren().remove(circleMap.get(event)); }
-				 *           polygonMap.remove(polygon); } }
-				 * 
-				 *           });
-				 * 
-				 *           } }
-				 **/
 			}
 		}
 	}
@@ -439,10 +285,6 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 	private Map<TimeDistance, List<EventData>> eventsMap;
 	private NumberAxis yAxis;
 	private NumberAxis xAxis;
-
-	private Map<EventData, Circle> circleMap = new HashMap<EventData, Circle>();
-
-	private Map<Polygon, TimeDistanceEvents> polygonMap = new HashMap<Polygon, TimeDistanceEvents>();
 	
 	private List<Polygon> polygonList = new ArrayList<Polygon>();
 	private List<Polygon> selfEventPolygonList = new ArrayList<Polygon>();
@@ -453,11 +295,9 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 	private CheckBox selfEventCheckBox;
 	private CheckBox outgoingEventCheckBox;
 	private Label eventLabel;
-	private Label informationLabel;
+	private TableView<TableProperty> eventTable;
 	private TrainRunMonitorPaneController controller;
 	private Rectangle r;
-
-	
 	
 	class TimeDistanceEvents {
 		public TimeDistanceEvents(Polygon arrow, Path path,
