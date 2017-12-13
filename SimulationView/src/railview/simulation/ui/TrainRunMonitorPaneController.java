@@ -402,7 +402,7 @@ public class TrainRunMonitorPaneController {
 		List<TimeDistance> pointList = new ArrayList<TimeDistance>();
 		double meter = 0; // x
 		double timeInSecond = 0; // y
-
+		
 		for (DiscretePoint point : train.getWholeCoursePoints()) {
 			timeInSecond += point.getDuration().getTotalSecond();
 			meter += point.getDistance().getMeter();
