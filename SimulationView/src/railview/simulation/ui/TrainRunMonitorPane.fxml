@@ -34,7 +34,10 @@
                                   <AnchorPane fx:id="snapshotRoot" styleClass="background-grey" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Darktheme.css" />
                                   <AnchorPane>
                                        <children>
-                                          <TableView fx:id="eventTable" layoutX="-7.0" layoutY="6.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="0.0" />
+                                          <TableView fx:id="eventTable" layoutX="-7.0" layoutY="6.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="0.0">
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy></TableView>
                                        </children></AnchorPane>
                                 </items>
                               </SplitPane>

@@ -64,7 +64,7 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 		eventLabel.setVisible(true);
 		String text = "";
 		for (EventData data : eventList) {
-			text += data.getText() + "\n";
+			text += data.getEventName() + "\n";
 		}
 		eventLabel.setText(text);
 		eventLabel.setTranslateX(this.getXAxis().getDisplayPosition(
