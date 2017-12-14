@@ -4,10 +4,12 @@ import java.io.IOException;
 import java.net.URL;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 public class DoSim extends Application {
 
@@ -29,6 +31,16 @@ public class DoSim extends Application {
 					.getResource("SimulationViewer.fxml");
 			loader.setLocation(location);
 			this.rootLayout = (AnchorPane) loader.load();
+			
+			this.primaryStage.setOnCloseRequest(new EventHandler<WindowEvent> () {
+				@Override
+				public void handle(WindowEvent event) {
+					SimulationViewerController controller = 
+							loader.<SimulationViewerController>getController();
+					controller.shutdown();
+				}
+			});
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

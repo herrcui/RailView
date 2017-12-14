@@ -117,8 +117,6 @@ public class SimulationViewerController extends AbstractSimulationController {
 			
 			this.networkPaneRoot.getChildren().addAll(networkPane, graphPane, editorPane);
 			
-		    
-			
 			networkPaneRoot.widthProperty().addListener(new ChangeListener<Number>() {
 			    @Override public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneWidth, Number newSceneWidth) {
 			    	symbolPane.setLayoutX((newSceneWidth.doubleValue()- symbolPane.getPrefWidth())/2);
@@ -314,6 +312,10 @@ public class SimulationViewerController extends AbstractSimulationController {
 
 	public NetworkPaneController getNetworkPaneController() {
 		return this.networkPaneController;
+	}
+	
+	public void shutdown() {
+		super.stopSimulation();
 	}
 
 	@Override
