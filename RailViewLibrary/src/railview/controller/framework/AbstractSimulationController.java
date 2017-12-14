@@ -41,16 +41,18 @@ public abstract class AbstractSimulationController {
 	}
 
 	protected void stopSimulation() {
-		this.simulator.stop();
-
-		this.isOnStopCommand = true;
-
-		try {
-			this.simulationThread.join();
-			this.updateThread.join();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		};
+		if (this.simulator != null) {
+			this.simulator.stop();
+	
+			this.isOnStopCommand = true;
+	
+			try {
+				this.simulationThread.join();
+				this.updateThread.join();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			};
+		}
 	}
 
 	public void setSimulationManager(SingleSimulationManager simulator) {
