@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="307.0" prefWidth="505.0" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="307.0" prefWidth="505.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
    <children>
       <TextField fx:id="textOne" layoutX="213.0" layoutY="95.0" prefHeight="25.0" prefWidth="214.0" />
       <TextField fx:id="textTwo" layoutX="213.0" layoutY="145.0" prefHeight="25.0" prefWidth="214.0" />
@@ -14,6 +17,6 @@
       <Button fx:id="timetableButton" layoutX="60.0" layoutY="195.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="110.0" text="Timetable" />
       <Button layoutX="385.0" layoutY="263.0" mnemonicParsing="false" onAction="#onCancelButtonAction" prefWidth="80.0" text="Cancel" />
       <Button fx:id="applyButton" layoutX="280.0" layoutY="263.0" mnemonicParsing="false" onAction="#onApplyButtonAction" prefWidth="80.0" text="Apply" />
-      <Button fx:id="rootButton" layoutX="60.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="367.0" text="root directory" />
+      <Button fx:id="rootButton" layoutX="60.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="367.0" text="Load from timetable directory" />
    </children>
 </AnchorPane>
