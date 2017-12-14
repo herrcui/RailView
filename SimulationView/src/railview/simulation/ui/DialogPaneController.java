@@ -99,17 +99,26 @@ public class DialogPaneController extends Stage implements Initializable
     	return this.timetablePath;
     }
     
-    private void openInfrastructure() {
-    	
+    private void openRoot() {
     	rootButton.setOnAction(
                 new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(final ActionEvent e) {
                         File file = directoryChooser.showDialog(anchorPane.getScene().getWindow());
                         directoryChooser.setInitialDirectory(file);
+                        if (file != null) {
+                        	String infraPath = file.getParent().toString() + "\\" + file.getName().substring(0, file.getName().lastIndexOf('-'));
+                        	String rollingstockPath = file.getParent().toString() + "\\global\\dat";
+
+                        	openInfra(new File(infraPath));
+                        	openRolling(new File(rollingstockPath));
+                        	openTime(file);
+                        }
                     }
                 });
-    	
+    }
+    
+    private void openInfrastructure() {
     	infraButton.setOnAction(
                 new EventHandler<ActionEvent>() {
                     @Override
@@ -124,16 +133,6 @@ public class DialogPaneController extends Stage implements Initializable
     	}
      
     private void openRollingstock() {    	
-    	
-    	rootButton.setOnAction(
-                new EventHandler<ActionEvent>() {
-                    @Override
-                    public void handle(final ActionEvent e) {
-                        File file = directoryChooser.showDialog(anchorPane.getScene().getWindow());
-                        directoryChooser.setInitialDirectory(file);
-                    }
-                });
-    	
     	rollingstockButton.setOnAction(
                 new EventHandler<ActionEvent>() {
                     @Override
@@ -148,16 +147,6 @@ public class DialogPaneController extends Stage implements Initializable
     	}
     
     private void openTimetable() {
-    	
-    	rootButton.setOnAction(
-                new EventHandler<ActionEvent>() {
-                    @Override
-                    public void handle(final ActionEvent e) {
-                        File file = directoryChooser.showDialog(anchorPane.getScene().getWindow());
-                        directoryChooser.setInitialDirectory(file);
-                    }
-                });
-    	
     	timetableButton.setOnAction(
            new EventHandler<ActionEvent>() {
                 @Override
@@ -195,6 +184,7 @@ public class DialogPaneController extends Stage implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
+    	openRoot();
     	openInfrastructure();
     	openRollingstock();
     	openTimetable();
