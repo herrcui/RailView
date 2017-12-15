@@ -6,8 +6,10 @@ import java.net.URL;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
@@ -46,8 +48,15 @@ public class DoSim extends Application {
 		}
 
 		if (this.rootLayout != null) {
-			Scene scene = new Scene(rootLayout);
+			Scene scene = new Scene(rootLayout);			
 			primaryStage.setScene(scene);
+			
+			Screen screen = Screen.getPrimary();
+			Rectangle2D bounds = screen.getVisualBounds();
+		    primaryStage.setWidth(bounds.getWidth());
+		    primaryStage.setHeight(bounds.getHeight());
+		    primaryStage.setMaximized(true);
+
 			primaryStage.show();
 		}
 	}
