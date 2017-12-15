@@ -3,15 +3,11 @@ package railview.swarmintelligence;
 import java.io.IOException;
 import java.net.URL;
 
-import railapp.infrastructure.dto.Network;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.rollingstock.service.IRollingStockServiceUtility;
 import railapp.simulation.SingleSimulationManager;
 import railapp.swarmintelligence.SwarmManager;
 import railapp.timetable.service.ITimetableServiceUtility;
-import railview.railmodel.infrastructure.railsys7.InfrastructureReader;
-import railview.railmodel.infrastructure.railsys7.RollingStockReader;
-import railview.railmodel.infrastructure.railsys7.TimetableReader;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -30,18 +26,6 @@ public class SwarmApplication extends Application {
 	}
 
 	public static void main(String[] args) {
-		//infraServiceUtility = InfrastructureReader.getRailSys7Instance(
-		//	RailsysData.class.getResource("\\var-2011")).initialize();
-
-		Network network = infraServiceUtility.getNetworkService().allNetworks().iterator().next();
-
-		// Rollilngstock
-		// rollingStockServiceUtility = RollingStockReader.getInstance().initialize();
-
-		// Timetable
-		// timeTableServiceUtility = TimetableReader.getInstance(
-		//		infraServiceUtility, rollingStockServiceUtility, network).initialize();
-
 		simulator = SingleSimulationManager.getInstance(infraServiceUtility,
 				rollingStockServiceUtility,
 				timeTableServiceUtility);

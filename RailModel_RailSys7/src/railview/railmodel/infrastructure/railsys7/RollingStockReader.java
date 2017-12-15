@@ -1,9 +1,6 @@
 package railview.railmodel.infrastructure.railsys7;
 
-import java.net.URISyntaxException;
-import java.net.URL;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 
 import railapp.parser.railsys7.rollingstock.RollingStockParser;
 import railapp.rollingstock.service.IRollingStockServiceUtility;

@@ -1,12 +1,6 @@
 package railview.simulation.ui.components;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.event.EventType;
-import javafx.scene.Node;
 import javafx.scene.chart.ValueAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.input.MouseButton;

@@ -31,7 +31,6 @@ import org.fxmisc.richtext.LineNumberFactory;
 import org.fxmisc.richtext.model.StyleSpans;
 import org.fxmisc.richtext.model.StyleSpansBuilder;
 
-
 public class EditorPaneController {
 	@FXML
 	private AnchorPane codePane;

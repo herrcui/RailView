@@ -1,8 +1,6 @@
 package railview.simulation.ui;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,8 +8,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-
-import com.sun.javafx.scene.control.skin.TableViewSkin;
 
 import railapp.infrastructure.object.dto.InfrastructureObject;
 import railapp.infrastructure.path.dto.LinkEdge;
@@ -37,7 +33,6 @@ import railview.simulation.ui.data.TableProperty;
 import railview.simulation.ui.data.TimeDistance;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -92,7 +87,7 @@ public class TrainRunMonitorPaneController {
 	@FXML
 	private TextField trainNumberText;
 	
-	@SuppressWarnings({ "unchecked", "rawtypes", "restriction" })
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@FXML
 	public void initialize() {
 		
@@ -404,7 +399,7 @@ public class TrainRunMonitorPaneController {
 				double endTimeInSecond = resource.getReleaseTime()
 						.getDifference(trainStartTime).getTotalSecond();
 
-				if (meter == 0) { // for the first resource
+				if (blockingTimes.size() == 0) { // for the first resource
 					endMeter = endMeter
 							- headDistanceInFirstResource.getMeter();
 				}

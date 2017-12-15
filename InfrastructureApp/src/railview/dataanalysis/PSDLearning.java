@@ -25,8 +25,6 @@ public class PSDLearning {
 
 			SL.learn(0.1);
 
-			String s = "";
-
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

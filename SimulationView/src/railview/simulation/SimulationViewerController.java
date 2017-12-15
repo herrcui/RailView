@@ -112,8 +112,6 @@ public class SimulationViewerController extends AbstractSimulationController {
 					.getResource("EditorPane.fxml");
 			editorpaneloader.setLocation(editorpanelocation);
 			editorPane = (AnchorPane) editorpaneloader.load();
-			this.editorPaneController = editorpaneloader.getController();
-
 			
 			this.networkPaneRoot.getChildren().addAll(networkPane, graphPane, editorPane);
 			
@@ -412,7 +410,6 @@ public class SimulationViewerController extends AbstractSimulationController {
 	private AnchorPane editorPane;
 	private NetworkPaneController networkPaneController;
 	private GraphPaneController graphPaneController;
-	private EditorPaneController editorPaneController;
 	private int UIPause = 100;
 	private int MAXSpeed = 20000; // 1 : 200
 }

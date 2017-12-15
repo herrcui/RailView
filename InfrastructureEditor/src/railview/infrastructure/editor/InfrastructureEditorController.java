@@ -25,8 +25,6 @@ public class InfrastructureEditorController {
 			StackPane networkPane = (StackPane) loader.load();
 			this.networkPaneController = loader.getController();
 			this.networkPaneRoot.setCenter(networkPane);
-			//this.networkPaneRoot.getChildren().add(networkPane);
-
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
