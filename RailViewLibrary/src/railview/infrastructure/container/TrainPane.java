@@ -41,36 +41,31 @@ public class TrainPane extends PannablePane {
 			for (Entry<AbstractTrainSimulator, List<Coordinate>> entry : this.trainCoordinates
 					.entrySet()) {
 				List<Coordinate> coordinateList = entry.getValue();
-
+				Color color = Color.LIGHTGREEN;
+				switch (entry.getKey().getPendingStatus()) {
+					case NONE:
+						color = Color.LIGHTGREEN;
+						break;
+					case OCCUPANCY:
+						// color = Color.DODGERBLUE;
+						color = Color.RED;
+						break;
+					case DEADLOCK:
+						color = Color.YELLOW;
+						break;
+					case DISPATCHING:
+						color = Color.BLUEVIOLET;
+						break;
+				}
+				
 				if (coordinateList != null && coordinateList.size() > 0) {
 					for (int i = 0; i < coordinateList.size() - 1; i++) {
 						Line line = new Line();
-						
-						Color color = Color.LIGHTGREEN;
-						switch (entry.getKey().getPendingStatus()) {
-							case NONE:
-								color = Color.LIGHTGREEN;
-								break;
-							case OCCUPANCY:
-								// color = Color.DODGERBLUE;
-								color = Color.RED;
-								break;
-							case DEADLOCK:
-								color = Color.YELLOW;
-								break;
-							case DISPATCHING:
-								color = Color.BLUEVIOLET;
-								break;
-						}
-						
-						line.setStartX(mapper.mapToPaneX(coordinateList.get(i)
-								.getX(), this));
-						line.setStartY(mapper.mapToPaneY(coordinateList.get(i)
-								.getY(), this));
-						line.setEndX(mapper.mapToPaneX(coordinateList
-								.get(i+1).getX(), this));
-						line.setEndY(mapper.mapToPaneY(coordinateList
-								.get(i+1).getY(), this));
+
+						line.setStartX(mapper.mapToPaneX(coordinateList.get(i).getX(), this));
+						line.setStartY(mapper.mapToPaneY(coordinateList.get(i).getY(), this));
+						line.setEndX(mapper.mapToPaneX(coordinateList.get(i+1).getX(), this));
+						line.setEndY(mapper.mapToPaneY(coordinateList.get(i+1).getY(), this));
 
 						line.setStrokeWidth(0.4);			
 						line.setStroke(color);

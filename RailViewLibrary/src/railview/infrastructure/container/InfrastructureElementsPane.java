@@ -130,6 +130,9 @@ public class InfrastructureElementsPane extends PannablePane {
 				/ position.getLink().getGeometry().getLength().getMeter();
 
 		List<Coordinate> coordinates = position.getLink().getCoordinates();
+		Coordinate startCoor = coordinates.get(coordinates.size() - 2);
+		Coordinate endCoor = coordinates.get(coordinates.size() - 1);
+		
 		List<Double> coorDists = new ArrayList<Double>();
 		double totalCoorDist = 0;
 		for (int i = 0; i < coordinates.size() - 1; i++) {
@@ -139,35 +142,27 @@ public class InfrastructureElementsPane extends PannablePane {
 			coorDists.add(totalCoorDist);
 		}
 
-		InfrastructureObjectCoordinate signalCoor = null;
 		for (int i = 0; i < coordinates.size() - 1; i++) {
 			if (coorDists.get(i) / totalCoorDist >= percentage) {
-				double percentageInSegment = (coorDists.get(i) / totalCoorDist - percentage)
-						* totalCoorDist
-						/ (i == 0 ? coorDists.get(i)
-								: (coorDists.get(i) - coorDists.get(i - 1)));
-				signalCoor = new InfrastructureObjectCoordinate(
-						coordinates.get(i), coordinates.get(i + 1),
-						percentageInSegment);
+				startCoor = coordinates.get(i);
+				endCoor = coordinates.get(i + 1);
 				break;
 			}
 		}
-		if (signalCoor == null) {
-			signalCoor = new InfrastructureObjectCoordinate(
-					coordinates.get(coordinates.size() - 2),
-					coordinates.get(coordinates.size() - 1), 1);
-		}
 
-		double xStart = mapper.mapToPaneX(signalCoor.getStart().getX(), this);
-		double yStart = mapper.mapToPaneY(signalCoor.getStart().getY(), this);
-		double xEnd = mapper.mapToPaneX(signalCoor.getEnd().getX(), this);
-		double yEnd = mapper.mapToPaneY(signalCoor.getEnd().getY(), this);
+		Coordinate signalCoordinate = position.getLink().getCoordinate(position.getDistance());
+		
+		double signalX = mapper.mapToPaneX(signalCoordinate.getX(), this);
+		double signalY = mapper.mapToPaneY(signalCoordinate.getY(), this);
+				
+		double xStart = mapper.mapToPaneX(startCoor.getX(), this);
+		double yStart = mapper.mapToPaneY(startCoor.getY(), this);
+		double xEnd = mapper.mapToPaneX(endCoor.getX(), this);
+		double yEnd = mapper.mapToPaneY(endCoor.getY(), this);
 
-		double signalStartX = xStart + (percentage * (xEnd - xStart));
-		double signalStartY = yStart + (percentage * (yEnd - yStart));
-
-		double a = 0.3;
-		double b = 0.3;
+		
+		double a = 0.4;
+		double b = 0.4;
 		double c = 0.5 * a; // radius of the circle
 
 		double xCoordinateP0;
@@ -180,15 +175,19 @@ public class InfrastructureElementsPane extends PannablePane {
 		double yCoordinateP3;
 
 		double length = Math.sqrt(Math.pow((yEnd - yStart), 2)+ Math.pow((xEnd - xStart), 2));
+		
+		// P0 - P3 parallel to line
+		// P1 - P2 perpendicular to line
+		// Here all the coordinates are screen coordinates, increase to buttom and right
+		
+		xCoordinateP0 = signalX - (a * ((yEnd - yStart)/ length));
+		yCoordinateP0 = signalY + (a * ((xEnd - xStart)/ length));
 
-		xCoordinateP0 = signalStartX + (a * ((yEnd - yStart)/ length));
-		yCoordinateP0 = signalStartY + (a * ((xStart - xEnd)/ length));
+		xCoordinateP1 = signalX - ((a-(b/2.0)) * ((yEnd - yStart)/ length));
+		yCoordinateP1 = signalY + ((a-(b/2.0)) * ((xEnd - xStart)/ length));
 
-		xCoordinateP1 = signalStartX + ((a-(b/2.0)) * ((yEnd - yStart)/ length));
-		yCoordinateP1 = signalStartY + ((a-(b/2.0)) * ((xStart - xEnd)/ length));
-
-		xCoordinateP2 = signalStartX + ((a+(b/2.0)) * ((yEnd - yStart)/ length));
-		yCoordinateP2 = signalStartY + ((a+(b/2.0)) * ((xStart - xEnd)/ length));
+		xCoordinateP2 = signalX - ((a+(b/2.0)) * ((yEnd - yStart)/ length));
+		yCoordinateP2 = signalY + ((a+(b/2.0)) * ((xEnd - xStart)/ length));
 
 		xCoordinateP3 = xCoordinateP0 + ((xEnd-xStart) * a*2 / length);
 		yCoordinateP3 = yCoordinateP0 + ((yEnd-yStart)* a*2 / length);
@@ -238,38 +237,6 @@ public class InfrastructureElementsPane extends PannablePane {
 			circle.setRadius(0.6);
 
 			this.getChildren().add(circle);
-		}
-	}
-
-	class InfrastructureObjectCoordinate {
-		private Coordinate start;
-		private Coordinate end;
-		private double percentage;
-
-		public InfrastructureObjectCoordinate(railapp.units.Coordinate start,
-				railapp.units.Coordinate end, double percentage) {
-			super();
-			this.start = start;
-			this.end = end;
-			this.percentage = percentage;
-		}
-
-		public Coordinate getStart() {
-			return start;
-		}
-
-		public Coordinate getEnd() {
-			return end;
-		}
-
-		public double percentage() {
-			return percentage;
-		}
-
-		@Override
-		public String toString() {
-			return "InfrastructureObjectCoordinate [start=" + start + ", end="
-					+ end + ", percentage=" + percentage + "]";
 		}
 	}
 }
