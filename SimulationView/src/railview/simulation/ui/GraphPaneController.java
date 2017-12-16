@@ -200,7 +200,7 @@ public class GraphPaneController {
 		CopyOnWriteArrayList<AbstractTrainSimulator> tempList = new CopyOnWriteArrayList<AbstractTrainSimulator>();
 		tempList.addAll(trainList);
 		for (AbstractTrainSimulator trainSimulator : tempList) {
-			if (trainSimulator.getTrain().getStatus() != SimpleTrain.TERMINATED) {
+			if (trainSimulator.getTrain().getStatus() == SimpleTrain.INACTIVE) {
 				continue;
 			}
 			
@@ -209,7 +209,7 @@ public class GraphPaneController {
 
 			this.trainMap.put(trainNumber, trainSimulator);
 			
-			if (trainSimulator.getTrain().getStatus() == SimpleTrain.TERMINATED
+			if (trainSimulator.getTrain().getStatus() != SimpleTrain.INACTIVE
 					&& !numbers.contains(trainNumber)) {
 				numbers.add(trainNumber);
 			}

@@ -4,6 +4,8 @@ package railview.simulation;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Path;
+import java.util.List;
+import java.util.Map;
 
 import javafx.animation.FadeTransition;
 import javafx.beans.value.ChangeListener;
@@ -22,6 +24,7 @@ import railapp.infrastructure.dto.Network;
 import railapp.simulation.SingleSimulationManager;
 import railapp.simulation.events.EventListener;
 import railapp.simulation.train.AbstractTrainSimulator;
+import railapp.units.Coordinate;
 import railapp.units.Duration;
 import railview.controller.framework.AbstractSimulationController;
 import railview.railmodel.infrastructure.railsys7.InfrastructureReader;
@@ -318,12 +321,17 @@ public class SimulationViewerController extends AbstractSimulationController {
 
 	@Override
 	protected void updateUI() {
-		networkPaneController.updateTrainCoordinates(
-			simulator.getTrainCoordinates(this.updateTime), this.updateTime);
-
-		this.graphPaneController.updateTrainMap(this.simulator.getTrainSimulators());
+		Map<AbstractTrainSimulator, List<Coordinate>> coordinates = 
+				simulator.getTrainCoordinates(this.updateTime);
 		
-		updateStatusBar();
+		if (coordinates != null) {
+			networkPaneController.updateTrainCoordinates(
+					coordinates, this.updateTime);
+	
+			this.graphPaneController.updateTrainMap(this.simulator.getTrainSimulators());
+			
+			updateStatusBar();
+		}
 	}
 
 	private void updateStatusBar() {

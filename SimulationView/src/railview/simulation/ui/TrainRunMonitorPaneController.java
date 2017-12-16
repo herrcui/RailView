@@ -308,7 +308,9 @@ public class TrainRunMonitorPaneController {
 					blockingTimeChart.getXAxis().setAutoRanging(true);
 					blockingTimeChart.getYAxis().setAutoRanging(true);
 					drawCourseforTimeTable(train, chart);
-					chart.setBlockingTime(getBlockingTimeStairway(train));
+					try {
+						chart.setBlockingTime(getBlockingTimeStairway(train));
+					} catch(Exception e) {}
 
 					chart.setEventsMap(getEvents(train, getTimeInDistance(train)));
 

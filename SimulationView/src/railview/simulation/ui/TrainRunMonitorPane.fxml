@@ -48,14 +48,22 @@
             </AnchorPane>
           <AnchorPane>
                <children>
-               	  <SplitPane dividerPositions="0.04" layoutX="90.0" layoutY="51.0" orientation="VERTICAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               	  <SplitPane layoutX="90.0" layoutY="51.0" orientation="VERTICAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <items>
-                     <AnchorPane prefHeight="16.0" prefWidth="109.0">
-                           <children>
-                              <TextField fx:id="trainNumberText" layoutX="-1.0" layoutY="2.0" prefHeight="25.0" prefWidth="200.0" />
-                           </children>
-                      </AnchorPane>
-                      <ListView fx:id="trainNumbers" layoutX="24.0" layoutY="49.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <SplitPane dividerPositions="0.05" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0">
+                                 <children>
+                                    <TextField fx:id="trainNumberText" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                  <ListView fx:id="trainNumbers" layoutY="-123.0" prefHeight="275.0" prefWidth="104.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
                     </items>
                   </SplitPane> 
                </children>
