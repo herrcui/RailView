@@ -54,12 +54,16 @@
                           <items>
                             <AnchorPane minHeight="0.0" minWidth="0.0">
                                  <children>
-                                    <TextField fx:id="trainNumberText" AnchorPane.topAnchor="0.0" />
+                                    <TableView fx:id="trainInfoTable" prefHeight="52.0" prefWidth="104.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columnResizePolicy>
+                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                      </columnResizePolicy>
+                                    </TableView>
                                  </children>
                               </AnchorPane>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                  <children>
-                                  <ListView fx:id="trainNumbers" layoutY="-123.0" prefHeight="275.0" prefWidth="104.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                  <ListView fx:id="trainNumbers" layoutY="35.0" prefHeight="255.0" prefWidth="104.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                  </children>
                               </AnchorPane>
                           </items>

@@ -57,8 +57,7 @@ public class TrainPane extends PannablePane {
 						color = Color.BLUEVIOLET;
 						break;
 				}
-				
-				double lineLength = 0;
+
 				if (coordinateList != null && coordinateList.size() > 0) {
 					for (int i = 0; i < coordinateList.size() - 1; i++) {
 						Line line = new Line();
@@ -73,9 +72,6 @@ public class TrainPane extends PannablePane {
 						line.setEndX(endX);
 						line.setEndY(endY);
 
-						lineLength += Math.sqrt((endX - startX)*(endX - startX) + 
-								(endY - startY)*(endY - startY));
-						
 						line.setStrokeWidth(0.4);		
 						line.setStroke(color);
 

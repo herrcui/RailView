@@ -20,6 +20,7 @@ import railapp.simulation.infrastructure.PartialRouteResource;
 import railapp.simulation.runingdynamics.sections.DiscretePoint;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.simulation.train.TrainSimulator;
+import railapp.timetable.dto.TripElement;
 import railapp.units.Coordinate;
 import railapp.units.Duration;
 import railapp.units.Length;
@@ -33,6 +34,7 @@ import railview.simulation.ui.data.TableProperty;
 import railview.simulation.ui.data.TimeDistance;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -49,7 +51,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
@@ -85,7 +86,7 @@ public class TrainRunMonitorPaneController {
 	private CheckBox outEventCheckBox;
 	
 	@FXML
-	private TextField trainNumberText;
+	private TableView<TableProperty> trainInfoTable;
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@FXML
@@ -146,42 +147,39 @@ public class TrainRunMonitorPaneController {
 		    }
 		});
 		
-		trainNumberText.textProperty().addListener((observable, oldValue, newValue) -> {
-		    int selectedIdx = -1;
-			int idx = 0;
-			
-			if (oldValue.equals(newValue)) {
-				return;
-			}
-			
-			for (String trainNum : trainNumbers.getItems()) {
-				if (trainNum.equals(trainNumberText.getText())) {
-					selectedIdx = idx;
-					break;
-				}
-				idx++;
-			}
-			
-			if (selectedIdx > -1) {
-				trainNumbers.getSelectionModel().select(selectedIdx);
-				trainNumbers.getFocusModel().focus(selectedIdx);
-				trainNumbers.scrollTo(selectedIdx);
-			}
-		});
-		
-		TableColumn itemCol = new TableColumn("Item");
-        itemCol.setMinWidth(100);
-        itemCol.setCellValueFactory(
+		// initialize eventTable
+		TableColumn eventItemCol = new TableColumn("Item");
+        eventItemCol.setMinWidth(100);
+        eventItemCol.setCellValueFactory(
             new PropertyValueFactory<TableProperty, String>("item"));
         
-        TableColumn valueCol = new TableColumn("Value");
-        valueCol.setMinWidth(100);
-        valueCol.setCellValueFactory(
+        TableColumn eventValueCol = new TableColumn("Value");
+        eventValueCol.setMinWidth(100);
+        eventValueCol.setCellValueFactory(
             new PropertyValueFactory<TableProperty, String>("value"));
         
-        eventTable.getColumns().addAll(itemCol, valueCol);
+        eventTable.getColumns().addAll(eventItemCol, eventValueCol);
         
-        valueCol.setCellFactory(new Callback<TableColumn<TableProperty, String>, TableCell<TableProperty, String>>() {
+        eventValueCol.setCellFactory(createCellFactory());
+        
+        // initialize trainInfoTable
+        TableColumn trainItemCol = new TableColumn("Item");
+        trainItemCol.setMinWidth(100);
+        trainItemCol.setCellValueFactory(
+            new PropertyValueFactory<TableProperty, String>("item"));
+        
+        TableColumn trainValueCol = new TableColumn("Value");
+        trainValueCol.setMinWidth(100);
+        trainValueCol.setCellValueFactory(
+            new PropertyValueFactory<TableProperty, String>("value"));
+        
+        trainInfoTable.getColumns().addAll(trainItemCol, trainValueCol);
+        
+        trainValueCol.setCellFactory(createCellFactory());
+	}
+	
+	private Callback<TableColumn<TableProperty, String>, TableCell<TableProperty, String>> createCellFactory() {
+		return new Callback<TableColumn<TableProperty, String>, TableCell<TableProperty, String>>() {
         	@Override
             public TableCell<TableProperty, String> call(
                     TableColumn<TableProperty, String> param) {
@@ -193,7 +191,7 @@ public class TrainRunMonitorPaneController {
                 text.textProperty().bind(cell.itemProperty());
                 return cell ;
             }
-        });
+        };
 	}
 	
 	@FXML
@@ -221,7 +219,8 @@ public class TrainRunMonitorPaneController {
 	}
 	
 	public void drawEventOnSnap(TimeDistance td) {
-		AbstractTrainSimulator train = this.trainMap.get(trainNumberText.getText());
+		AbstractTrainSimulator train = trainMap.get(
+			trainNumbers.getSelectionModel().getSelectedItem().toString());
 		Coordinate coordinate = train.getFullPath().getCoordinate(Length.fromMeter(td.getMeter()));
 		snapshotPaneController.setEventPoint(coordinate);
 		snapshotPaneController.draw();
@@ -244,16 +243,35 @@ public class TrainRunMonitorPaneController {
 			@Override
 			public void changed(ObservableValue<? extends String> observable,
 					String oldValue, String newValue) {
-				trainNumberText.setText(newValue);
+				if (! oldValue.equals(newValue)) {
+					eventTable.getItems().clear();
+				}
+				
+				AbstractTrainSimulator train = trainMap.get(
+					trainNumbers.getSelectionModel().getSelectedItem().toString());
+				
+				ObservableList<TableProperty> observableTrainInfoList = FXCollections.observableArrayList();
+				observableTrainInfoList.add(new TableProperty("Train Number", newValue));
+				observableTrainInfoList.add(new TableProperty("State",
+						train.getTrain().getStatus() == SimpleTrain.ACTIVE ? "In operation ..." : "Terminated"));
+				List<TripElement> elements = train.getTripSection().getTripElements();
+				observableTrainInfoList.add(new TableProperty("From",
+					((InfrastructureObject) elements.get(0).getOperationalPoint()).getElement().getStation().getDescription()));
+				observableTrainInfoList.add(new TableProperty("To",
+						((InfrastructureObject) elements.get(elements.size()-1).getOperationalPoint()).getElement().getStation().getDescription()));
+				observableTrainInfoList.add(new TableProperty("Start time",
+						elements.get(0).getArriverTime().toString()));
+				
+				if (trainInfoTable == null) {
+					System.out.println("eventtable is null");
+				}
+				trainInfoTable.setItems(observableTrainInfoList);
 				
 				for(CheckBox checkBox: checkBoxList){
 					if(checkBox.isVisible() == false){
 						checkBox.setVisible(true);
 					}
 				}
-				
-				AbstractTrainSimulator train = trainMap.get(
-					trainNumbers.getSelectionModel().getSelectedItem().toString());
 				
 				List<Coordinate> path = getTrainPathCoordinates(train);
 				snapshotPaneController.setHighlightedPath(path);
