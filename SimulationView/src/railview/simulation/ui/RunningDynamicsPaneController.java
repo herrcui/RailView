@@ -14,6 +14,7 @@ import railapp.units.Energy;
 import railapp.units.UnitUtility;
 import railview.simulation.ui.components.DraggableChart;
 import railview.simulation.ui.components.ZoomOnlyX;
+import railview.simulation.ui.data.TableProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
@@ -25,7 +26,9 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Data;
 import javafx.scene.chart.XYChart.Series;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -41,8 +44,9 @@ public class RunningDynamicsPaneController {
 	private ListView<String> trainNumbers;
 	
 	@FXML
-	private TextField trainNumberText;
+	private TableView<TableProperty> trainInfoTable;
 
+	@SuppressWarnings("unchecked")
 	@FXML
 	public void initialize() {
 		speedProfileChart = this.createChart();
@@ -58,38 +62,32 @@ public class RunningDynamicsPaneController {
 				speedProfileChart.getXAxis().setAutoRanging(true);
 				speedProfileChart.getYAxis().setAutoRanging(true);
 				drawVelocity(trainMap.get(newValue), speedProfileChart);
-				trainNumberText.setText(newValue);
 				
 				energyChart.getData().clear();
 				energyChart.getXAxis().setAutoRanging(true);
 				energyChart.getYAxis().setAutoRanging(true);
 				drawEnergy(trainMap.get(newValue));
-
+				
+				AbstractTrainSimulator train = trainMap.get(newValue); 
+				
+				trainInfoTable.setItems(TrainRunMonitorPaneController.generateTrainInfo(train, newValue));
 			}
 		});
 		
-		trainNumberText.textProperty().addListener((observable, oldValue, newValue) -> {
-		    int selectedIdx = -1;
-			int idx = 0;
-			
-			if (oldValue.equals(newValue)) {
-				return;
-			}
-			
-			for (String trainNum : trainNumbers.getItems()) {
-				if (trainNum.equals(trainNumberText.getText())) {
-					selectedIdx = idx;
-					break;
-				}
-				idx++;
-			}
-			
-			if (selectedIdx > -1) {
-				trainNumbers.getSelectionModel().select(selectedIdx);
-				trainNumbers.getFocusModel().focus(selectedIdx);
-				trainNumbers.scrollTo(selectedIdx);
-			}
-		});
+		// initialize trainInfoTable
+        TableColumn<TableProperty, String> trainItemCol = new TableColumn<TableProperty, String>("Item");
+        trainItemCol.setMinWidth(100);
+        trainItemCol.setCellValueFactory(
+            new PropertyValueFactory<TableProperty, String>("item"));
+        
+        TableColumn<TableProperty, String> trainValueCol = new TableColumn<TableProperty, String>("Value");
+        trainValueCol.setMinWidth(100);
+        trainValueCol.setCellValueFactory(
+            new PropertyValueFactory<TableProperty, String>("value"));
+        
+        trainInfoTable.getColumns().addAll(trainItemCol, trainValueCol);
+        
+        trainValueCol.setCellFactory(TrainRunMonitorPaneController.createCellFactory());
 		
 		speedprofilePane.getChildren().add(speedProfileChart);
 		energyPane.getChildren().add(energyChart);

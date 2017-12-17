@@ -178,7 +178,7 @@ public class TrainRunMonitorPaneController {
         trainValueCol.setCellFactory(createCellFactory());
 	}
 	
-	private Callback<TableColumn<TableProperty, String>, TableCell<TableProperty, String>> createCellFactory() {
+	static Callback<TableColumn<TableProperty, String>, TableCell<TableProperty, String>> createCellFactory() {
 		return new Callback<TableColumn<TableProperty, String>, TableCell<TableProperty, String>>() {
         	@Override
             public TableCell<TableProperty, String> call(
@@ -243,29 +243,14 @@ public class TrainRunMonitorPaneController {
 			@Override
 			public void changed(ObservableValue<? extends String> observable,
 					String oldValue, String newValue) {
-				if (! oldValue.equals(newValue)) {
+				if (oldValue == null || ! oldValue.equals(newValue)) {
 					eventTable.getItems().clear();
 				}
 				
 				AbstractTrainSimulator train = trainMap.get(
 					trainNumbers.getSelectionModel().getSelectedItem().toString());
-				
-				ObservableList<TableProperty> observableTrainInfoList = FXCollections.observableArrayList();
-				observableTrainInfoList.add(new TableProperty("Train Number", newValue));
-				observableTrainInfoList.add(new TableProperty("State",
-						train.getTrain().getStatus() == SimpleTrain.ACTIVE ? "In operation ..." : "Terminated"));
-				List<TripElement> elements = train.getTripSection().getTripElements();
-				observableTrainInfoList.add(new TableProperty("From",
-					((InfrastructureObject) elements.get(0).getOperationalPoint()).getElement().getStation().getDescription()));
-				observableTrainInfoList.add(new TableProperty("To",
-						((InfrastructureObject) elements.get(elements.size()-1).getOperationalPoint()).getElement().getStation().getDescription()));
-				observableTrainInfoList.add(new TableProperty("Start time",
-						elements.get(0).getArriverTime().toString()));
-				
-				if (trainInfoTable == null) {
-					System.out.println("eventtable is null");
-				}
-				trainInfoTable.setItems(observableTrainInfoList);
+
+				trainInfoTable.setItems(generateTrainInfo(train, newValue));
 				
 				for(CheckBox checkBox: checkBoxList){
 					if(checkBox.isVisible() == false){
@@ -381,6 +366,21 @@ public class TrainRunMonitorPaneController {
 		xAxis.setSide(Side.TOP);
 
 		return chart;
+	}
+	
+	static ObservableList<TableProperty> generateTrainInfo(AbstractTrainSimulator train, String trainNumber) {
+		ObservableList<TableProperty> observableTrainInfoList = FXCollections.observableArrayList();
+		observableTrainInfoList.add(new TableProperty("Train Number", trainNumber));
+		observableTrainInfoList.add(new TableProperty("State",
+				train.getTrain().getStatus() == SimpleTrain.ACTIVE ? "In operation ..." : "Terminated"));
+		List<TripElement> elements = train.getTripSection().getTripElements();
+		observableTrainInfoList.add(new TableProperty("From",
+			((InfrastructureObject) elements.get(0).getOperationalPoint()).getElement().getStation().getDescription()));
+		observableTrainInfoList.add(new TableProperty("To",
+				((InfrastructureObject) elements.get(elements.size()-1).getOperationalPoint()).getElement().getStation().getDescription()));
+		observableTrainInfoList.add(new TableProperty("Start time",
+				elements.get(0).getArriverTime().toString()));
+		return observableTrainInfoList;
 	}
 	
 	private List<BlockingTime> getBlockingTimeStairway(
