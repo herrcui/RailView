@@ -30,6 +30,7 @@ import railview.controller.framework.AbstractSimulationController;
 import railview.railmodel.infrastructure.railsys7.InfrastructureReader;
 import railview.railmodel.infrastructure.railsys7.RollingStockReader;
 import railview.railmodel.infrastructure.railsys7.TimetableReader;
+import railview.simulation.ui.ConfigurationPaneController;
 import railview.simulation.ui.EditorPaneController;
 import railview.simulation.ui.GraphPaneController;
 import railview.simulation.ui.DialogPaneController;
@@ -74,6 +75,9 @@ public class SimulationViewerController extends AbstractSimulationController {
 	
 	@FXML
 	private Button editorButton;
+	
+	@FXML
+	private Button settingButton;
 	
 	@FXML
 	private Button lockButton;
@@ -266,7 +270,6 @@ public class SimulationViewerController extends AbstractSimulationController {
 		
 		graphPaneController.setActive(true);
 		networkPaneController.setActive(false);
-//		editorPaneController.setActive(false);
 	}
 
 	@FXML
@@ -278,7 +281,6 @@ public class SimulationViewerController extends AbstractSimulationController {
 		
 		graphPaneController.setActive(false);
 		networkPaneController.setActive(true);
-	//	editorPaneController.setActive(false);
 	}
 	
 	@FXML
@@ -290,12 +292,17 @@ public class SimulationViewerController extends AbstractSimulationController {
 		
 		graphPaneController.setActive(false);
 		networkPaneController.setActive(false);
-//		editorPaneController.setActive(true);
 	}
 	
+	@FXML
+	public void onSettingButtonAction(ActionEvent event) {
+		ConfigurationPaneController configController = new ConfigurationPaneController();
+		configController.setMaximized(true);
+		configController.showAndWait();
+	}
 	
 	@FXML
-    public void onButtonAction(ActionEvent event)
+    public void onLoadButtonAction(ActionEvent event)
     {
         DialogPaneController pathDialog = new DialogPaneController(null);
         pathDialog.showAndWait();
@@ -307,6 +314,7 @@ public class SimulationViewerController extends AbstractSimulationController {
         this.networkPaneController.setInfrastructureServiceUtility(this.infraServiceUtility);
         
         this.graphPaneController.setInfrastructureServiceUtility(this.infraServiceUtility);
+        
         this.graphPaneController.updateTrainMap(simulator.getTrainSimulators());
     }
 	

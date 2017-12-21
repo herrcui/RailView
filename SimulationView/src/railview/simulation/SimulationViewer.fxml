@@ -35,7 +35,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="settingButton" layoutY="7.0" mnemonicParsing="false" styleClass="button-dark-blue" stylesheets="@../../../resources/railview/simulation/resources/CSS/Darktheme.css" AnchorPane.leftAnchor="385.0">
+            <Button fx:id="settingButton" layoutY="7.0" onAction="#onSettingButtonAction" mnemonicParsing="false" styleClass="button-dark-blue" stylesheets="@../../../resources/railview/simulation/resources/CSS/Darktheme.css" AnchorPane.leftAnchor="385.0">
                <graphic>
                   <ImageView fitHeight="45.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -44,7 +44,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutY="7.0" mnemonicParsing="false" onAction="#onButtonAction" styleClass="button-dark-blue" stylesheets="@../../../resources/railview/simulation/resources/CSS/Darktheme.css" AnchorPane.leftAnchor="295.0">
+            <Button layoutY="7.0" mnemonicParsing="false" onAction="#onLoadButtonAction" styleClass="button-dark-blue" stylesheets="@../../../resources/railview/simulation/resources/CSS/Darktheme.css" AnchorPane.leftAnchor="295.0">
                <graphic>
                   <ImageView fitHeight="45.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
