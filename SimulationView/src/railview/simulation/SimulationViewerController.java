@@ -296,7 +296,6 @@ public class SimulationViewerController extends AbstractSimulationController {
 	
 	@FXML
 	public void onSettingButtonAction(ActionEvent event) {
-		ConfigurationPaneController configController = new ConfigurationPaneController();
 		configController.setMaximized(true);
 		configController.showAndWait();
 	}
@@ -419,6 +418,8 @@ public class SimulationViewerController extends AbstractSimulationController {
 		simulator = SingleSimulationManager.getInstance(infraServiceUtility,
 				rollingStockServiceUtility,
 				timeTableServiceUtility);
+		
+		this.configController.setSimulator(simulator);
 	}
 
 	private StackPane networkPane;
@@ -426,6 +427,7 @@ public class SimulationViewerController extends AbstractSimulationController {
 	private AnchorPane editorPane;
 	private NetworkPaneController networkPaneController;
 	private GraphPaneController graphPaneController;
+	private ConfigurationPaneController configController = new ConfigurationPaneController();
 	private int UIPause = 100;
 	private int MAXSpeed = 20000; // 1 : 200
 }

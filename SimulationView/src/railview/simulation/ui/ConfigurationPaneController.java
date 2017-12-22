@@ -9,6 +9,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import railapp.dispatching.DispatchingSystem;
+import railapp.dispatching.NoneDispatchingSystem;
+import railapp.dispatching.services.ExternalDispatchingSystem;
+import railapp.simulation.SingleSimulationManager;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -45,7 +49,7 @@ public class ConfigurationPaneController extends Stage implements Initializable{
 	private TextArea externalScript;
 	
 	@FXML
-	private Button saveButton;
+	private Button applyButton;
 			
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -53,7 +57,7 @@ public class ConfigurationPaneController extends Stage implements Initializable{
 			@Override
 			public void changed(ObservableValue<? extends String> observable,
 					String oldValue, String newValue) {
-				saveButton.setDisable(false);
+				applyButton.setDisable(false);
 			}
 		});
 	}
@@ -79,12 +83,19 @@ public class ConfigurationPaneController extends Stage implements Initializable{
         }
 	}
 	
+	public void setSimulator(SingleSimulationManager simulator) {
+		this.simulator = simulator;
+		this.setDispatchingSystem();
+	}
+	
 	@FXML
     private void onDefaultRB(ActionEvent event) {
 		this.externalFileButton.setDisable(this.defaultRB.isSelected());
 		this.externalRB.setSelected(! this.defaultRB.isSelected());
 		this.fileNameLabel.setDisable(this.defaultRB.isSelected());
 		this.externalScript.setDisable(this.defaultRB.isSelected());
+		
+		this.applyButton.setDisable(false);
     }
 	
 	@FXML
@@ -93,10 +104,16 @@ public class ConfigurationPaneController extends Stage implements Initializable{
 		this.externalFileButton.setDisable(this.defaultRB.isSelected());
 		this.fileNameLabel.setDisable(this.defaultRB.isSelected());
 		this.externalScript.setDisable(this.defaultRB.isSelected());
+		
+		if (this.externalRB.isSelected()) {
+			this.fileNameLabel.setText("Select an external dispatching script");
+			this.externalScript.clear();
+			this.file = null;
+		}
     }
 	
 	@FXML
-	private void onSave(ActionEvent event) {
+	private void onApply(ActionEvent event) {
 		String content = this.externalScript.getText();
 		
 		if(this.file != null) {
@@ -107,11 +124,13 @@ public class ConfigurationPaneController extends Stage implements Initializable{
 				BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 				bufferedWriter.write(content);
 				bufferedWriter.close();
-				saveButton.setDisable(true);
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
 		}
+		
+		this.setDispatchingSystem();
+		this.applyButton.setDisable(true);
 	}
 	
 	@FXML
@@ -120,7 +139,6 @@ public class ConfigurationPaneController extends Stage implements Initializable{
 		
         if (this.file != null) {
         	this.fileNameLabel.setText(file.getPath());
-        	
         	this.externalScript.clear();
 			BufferedReader bufferedReader = null;
 			try {
@@ -134,6 +152,22 @@ public class ConfigurationPaneController extends Stage implements Initializable{
         }
     }
 	
+	private void setDispatchingSystem() {
+		if (this.simulator != null) {
+			if (this.defaultRB.isSelected()) {
+				this.simulator.setDispatchingSystem(NoneDispatchingSystem.getInstance());
+			} else {
+				if (this.file != null) {
+					DispatchingSystem dispatcher = 
+						ExternalDispatchingSystem.getInstance(file.getPath());
+					this.simulator.setDispatchingSystem(dispatcher);
+				}
+			}
+		}
+	}
+	
 	private FileChooser fileChooser = new FileChooser();
 	private File file = null;
+	
+	private SingleSimulationManager simulator;
 }
