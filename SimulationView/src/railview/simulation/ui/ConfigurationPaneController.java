@@ -13,6 +13,7 @@ import railapp.dispatching.DispatchingSystem;
 import railapp.dispatching.NoneDispatchingSystem;
 import railapp.dispatching.services.ExternalDispatchingSystem;
 import railapp.simulation.SingleSimulationManager;
+import railapp.simulation.entries.TimetableSimulationEntry;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -85,7 +86,9 @@ public class ConfigurationPaneController extends Stage implements Initializable{
 	
 	public void setSimulator(SingleSimulationManager simulator) {
 		this.simulator = simulator;
-		this.setDispatchingSystem();
+		TimetableSimulationEntry.setSimulator(simulator);
+		
+		// this.setDispatchingSystem();
 	}
 	
 	@FXML
@@ -158,8 +161,10 @@ public class ConfigurationPaneController extends Stage implements Initializable{
 				this.simulator.setDispatchingSystem(NoneDispatchingSystem.getInstance());
 			} else {
 				if (this.file != null) {
+					String className = file.getName().substring(0, file.getName().lastIndexOf('.'));
 					DispatchingSystem dispatcher = 
-						ExternalDispatchingSystem.getInstance(file.getPath());
+						ExternalDispatchingSystem.getInstanceFromServiceClass(
+							className, file.getPath());
 					this.simulator.setDispatchingSystem(dispatcher);
 				}
 			}
