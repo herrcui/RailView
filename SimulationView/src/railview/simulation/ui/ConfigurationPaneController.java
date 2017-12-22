@@ -86,9 +86,8 @@ public class ConfigurationPaneController extends Stage implements Initializable{
 	
 	public void setSimulator(SingleSimulationManager simulator) {
 		this.simulator = simulator;
-		TimetableSimulationEntry.setSimulator(simulator);
 		
-		// this.setDispatchingSystem();
+		this.setDispatchingSystem();
 	}
 	
 	@FXML
