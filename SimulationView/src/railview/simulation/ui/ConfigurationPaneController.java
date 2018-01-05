@@ -13,7 +13,6 @@ import railapp.dispatching.DispatchingSystem;
 import railapp.dispatching.NoneDispatchingSystem;
 import railapp.dispatching.services.ExternalDispatchingSystem;
 import railapp.simulation.SingleSimulationManager;
-import railapp.simulation.entries.TimetableSimulationEntry;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;

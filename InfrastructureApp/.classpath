@@ -5,7 +5,6 @@
 	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/RailModel_RailSys7"/>
 	<classpathentry kind="lib" path="/Library/RailModel/InfrastructureDefinition.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/InfrastructureEditor"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/RailViewLibrary"/>
 	<classpathentry kind="lib" path="/Library/RailModel/TimetableDefinition.jar"/>
 	<classpathentry kind="lib" path="/Library/RailModel/InfrastructureRepository.jar"/>
@@ -15,7 +14,6 @@
 	<classpathentry kind="lib" path="/Library/RailModel/TimetableRepository.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/SimulationView"/>
 	<classpathentry kind="lib" path="/Library/RailModel/RailSimulator.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/SwarmIntelligence"/>
 	<classpathentry kind="lib" path="/Library/RailModel/SwarmIntelligence.jar"/>
 	<classpathentry kind="lib" path="/Library/RailModel/BasicDefinition.jar"/>
 	<classpathentry kind="lib" path="/Library/RailModel/MachineLearning.jar"/>
