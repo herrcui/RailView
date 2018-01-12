@@ -7,7 +7,16 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.fxmisc.richtext.CodeArea;
+import org.fxmisc.richtext.LineNumberFactory;
+import org.fxmisc.richtext.model.StyleSpans;
+import org.fxmisc.richtext.model.StyleSpansBuilder;
 
 import railapp.dispatching.DispatchingSystem;
 import railapp.dispatching.NoneDispatchingSystem;
@@ -34,6 +43,9 @@ public class ConfigurationPaneController extends Stage implements Initializable{
 	private AnchorPane configurationPaneRoot;
 	
 	@FXML
+	private AnchorPane codePane;
+	
+	@FXML
 	private RadioButton defaultRB;
 	
 	@FXML
@@ -46,14 +58,91 @@ public class ConfigurationPaneController extends Stage implements Initializable{
 	private Label fileNameLabel;
 	
 	@FXML
-	private TextArea externalScript;
-	
-	@FXML
 	private Button applyButton;
+	
+	private CodeArea codeArea;
+	
+	private static final String[] KEYWORDS = new String[] {
+        "abstract", "assert", "boolean", "break", "byte",
+        "case", "catch", "char", "class", "const",
+        "continue", "default", "do", "double", "else",
+        "enum", "extends", "final", "finally", "float",
+        "for", "goto", "if", "implements", "import",
+        "instanceof", "int", "interface", "long", "native",
+        "new", "package", "private", "protected", "public",
+        "return", "short", "static", "strictfp", "super",
+        "switch", "synchronized", "this", "throw", "throws",
+        "transient", "try", "void", "volatile", "while"
+         
+        /** Python Keywords
+	       	"False", "class", "finally", "is", "return", "None",
+	        "continue", "for","lambda","try", "True", "def", "from",
+	        "nonlocal", "while", "and", "del", "global", "not", "with",
+	        "as", "elif", "if", "or", "yield", "assert", "else",
+	        "import", "pass", "break", "except", "in", "raise"	 
+	 	**/
+	};
+	
+	private static final String KEYWORD_PATTERN = "\\b(" + String.join("|", KEYWORDS) + ")\\b";
+	private static final String PAREN_PATTERN = "\\(|\\)";
+	private static final String BRACE_PATTERN = "\\{|\\}";
+	private static final String BRACKET_PATTERN = "\\[|\\]";
+	private static final String SEMICOLON_PATTERN = "\\;";
+	private static final String STRING_PATTERN = "\"([^\"\\\\]|\\\\.)*\"";
+	private static final String COMMENT_PATTERN = "//[^\n]*" + "|" + "/\\*(.|\\R)*?\\*/";
+	
+	private static final Pattern PATTERN = Pattern.compile("(?<KEYWORD>"
+			+ KEYWORD_PATTERN + ")" + "|(?<PAREN>" + PAREN_PATTERN + ")"
+			+ "|(?<BRACE>" + BRACE_PATTERN + ")" + "|(?<BRACKET>"
+			+ BRACKET_PATTERN + ")" + "|(?<SEMICOLON>" + SEMICOLON_PATTERN
+			+ ")" + "|(?<STRING>" + STRING_PATTERN + ")" + "|(?<COMMENT>"
+			+ COMMENT_PATTERN + ")");
+
+ 
+	private static StyleSpans<Collection<String>> computeHighlighting(
+			String text) {
+		Matcher matcher = PATTERN.matcher(text);
+		int lastKwEnd = 0;
+		StyleSpansBuilder<Collection<String>> spansBuilder = new StyleSpansBuilder<>();
+		while (matcher.find()) {
+			String styleClass = matcher.group("KEYWORD") != null ? "keyword"
+					: matcher.group("PAREN") != null ? "paren" : matcher
+							.group("BRACE") != null ? "brace" : matcher
+							.group("BRACKET") != null ? "bracket" : matcher
+							.group("SEMICOLON") != null ? "semicolon" : matcher
+							.group("STRING") != null ? "string" : matcher
+							.group("COMMENT") != null ? "comment" : null; /*
+																		 * never
+																		 * happens
+																		 */
+			assert styleClass != null;
+			spansBuilder.add(Collections.emptyList(), matcher.start()
+					- lastKwEnd);
+			spansBuilder.add(Collections.singleton(styleClass), matcher.end()
+					- matcher.start());
+			lastKwEnd = matcher.end();
+		}
+		spansBuilder.add(Collections.emptyList(), text.length() - lastKwEnd);
+		return spansBuilder.create();
+	}
+	
 			
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		externalScript.textProperty().addListener(new ChangeListener<String>() {
+		codeArea = new CodeArea();
+		codeArea.setPrefHeight(codePane.getPrefHeight());
+		codeArea.setPrefWidth(codePane.getPrefWidth());
+		codeArea.setParagraphGraphicFactory(LineNumberFactory.get(codeArea));
+		codeArea.richChanges()
+				.filter(ch -> !ch.getInserted().equals(ch.getRemoved())).subscribe(
+					change -> {
+						codeArea.setStyleSpans(0,
+							computeHighlighting(codeArea.getText()));
+					});
+		codeArea.prefWidthProperty().bind(codePane.widthProperty());
+		codeArea.prefHeightProperty().bind(codePane.heightProperty());
+		this.codePane.getChildren().add(codeArea);
+		codeArea.textProperty().addListener(new ChangeListener<String>() {
 			@Override
 			public void changed(ObservableValue<? extends String> observable,
 					String oldValue, String newValue) {
@@ -61,6 +150,7 @@ public class ConfigurationPaneController extends Stage implements Initializable{
 			}
 		});
 	}
+		
 	
 	public ConfigurationPaneController() {
 		setTitle("Configurations");
@@ -94,7 +184,7 @@ public class ConfigurationPaneController extends Stage implements Initializable{
 		this.externalFileButton.setDisable(this.defaultRB.isSelected());
 		this.externalRB.setSelected(! this.defaultRB.isSelected());
 		this.fileNameLabel.setDisable(this.defaultRB.isSelected());
-		this.externalScript.setDisable(this.defaultRB.isSelected());
+		this.codeArea.setDisable(this.defaultRB.isSelected());
 		
 		this.applyButton.setDisable(false);
     }
@@ -104,18 +194,18 @@ public class ConfigurationPaneController extends Stage implements Initializable{
 		this.defaultRB.setSelected(! this.externalRB.isSelected());
 		this.externalFileButton.setDisable(this.defaultRB.isSelected());
 		this.fileNameLabel.setDisable(this.defaultRB.isSelected());
-		this.externalScript.setDisable(this.defaultRB.isSelected());
+		this.codeArea.setDisable(this.defaultRB.isSelected());
 		
 		if (this.externalRB.isSelected()) {
 			this.fileNameLabel.setText("Select an external dispatching script");
-			this.externalScript.clear();
+			this.codeArea.clear();
 			this.file = null;
 		}
     }
 	
 	@FXML
 	private void onApply(ActionEvent event) {
-		String content = this.externalScript.getText();
+		String content = this.codeArea.getText();
 		
 		if(this.file != null) {
 			try {
@@ -140,13 +230,13 @@ public class ConfigurationPaneController extends Stage implements Initializable{
 		
         if (this.file != null) {
         	this.fileNameLabel.setText(file.getPath());
-        	this.externalScript.clear();
+        	this.codeArea.clear();
 			BufferedReader bufferedReader = null;
 			try {
 				String currentLine;
 				bufferedReader = new BufferedReader(new FileReader(file));
 				while((currentLine = bufferedReader.readLine()) != null)
-					externalScript.appendText(currentLine + "\n");
+					codeArea.appendText(currentLine + "\n");
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
