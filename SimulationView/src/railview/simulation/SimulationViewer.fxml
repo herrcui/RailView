@@ -9,7 +9,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="840.0" prefWidth="1320.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.SimulationViewerController">
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="840.0" prefWidth="1320.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.SimulationViewerController">
    <children>
       <AnchorPane fx:id="networkPaneRoot" prefHeight="840.0" prefWidth="1320.0" styleClass="background" stylesheets="@../../../resources/railview/simulation/resources/CSS/Darktheme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <AnchorPane fx:id="symbolPane" layoutX="416.0" onMouseEntered="#appearSymbolPane" onMouseExited="#fadeSymbolPane" prefHeight="78.0" prefWidth="492.0" styleClass="background-grey" stylesheets="@../../../resources/railview/simulation/resources/CSS/Darktheme.css">
@@ -23,7 +23,7 @@
                   </ImageView>
                </graphic>
                <tooltip>
-                  <Tooltip fx:id="openFileTooltip" prefWidth="100.0" text="tooltip" />
+                  <Tooltip fx:id="openFileTooltip" prefWidth="100.0" text="Open" />
                </tooltip></Button>
             <Button fx:id="networkButton" layoutY="7.0" mnemonicParsing="false" onAction="#networkButtonClicked" stylesheets="@../../../resources/railview/simulation/resources/CSS/Darktheme.css" AnchorPane.leftAnchor="115.0">
                <graphic>
@@ -38,7 +38,7 @@
                   <String fx:value="button-dark-blue" />
                </styleClass>
                <tooltip>
-                  <Tooltip fx:id="videoTooltip" prefWidth="100.0" text="Empty Tooltip" />
+                  <Tooltip fx:id="videoTooltip" prefWidth="100.0" text="Simulate" />
                </tooltip>
             </Button>
             <Button fx:id="graphButton" layoutY="7.0" mnemonicParsing="false" onAction="#graphButtonClicked" styleClass="button-dark-blue" stylesheets="@../../../resources/railview/simulation/resources/CSS/Darktheme.css" AnchorPane.leftAnchor="205.0">
@@ -50,7 +50,7 @@
                   </ImageView>
                </graphic>
                <tooltip>
-                  <Tooltip fx:id="graphTooltip" prefWidth="100.0" text="Empty Tooltip" />
+                  <Tooltip fx:id="graphTooltip" prefWidth="100.0" text="Diagram" />
                </tooltip>
             </Button>
             <Button fx:id="settingButton" layoutY="7.0" mnemonicParsing="false" onAction="#onSettingButtonAction" styleClass="button-dark-blue" stylesheets="@../../../resources/railview/simulation/resources/CSS/Darktheme.css" AnchorPane.leftAnchor="295.0">
@@ -62,7 +62,7 @@
                   </ImageView>
                </graphic>
                <tooltip>
-                  <Tooltip fx:id="settingsTooltip" prefWidth="100.0" text="Empty Tooltip" />
+                  <Tooltip fx:id="settingsTooltip" prefWidth="100.0" text="Config" />
                </tooltip>
             </Button>
             <Button fx:id="editorButton" layoutX="387.0" layoutY="7.0" mnemonicParsing="false" onAction="#editorButtonClicked" styleClass="button-dark-blue" stylesheets="@../../../resources/railview/simulation/resources/CSS/Darktheme.css" AnchorPane.leftAnchor="385.0">
@@ -74,7 +74,7 @@
                   </ImageView>
                </graphic>
                <tooltip>
-                  <Tooltip fx:id="editorTooltip" prefWidth="100.0" text="Empty Tooltip" />
+                  <Tooltip fx:id="editorTooltip" prefWidth="100.0" text="Python Interface" />
                </tooltip>
             </Button>
          </children>
