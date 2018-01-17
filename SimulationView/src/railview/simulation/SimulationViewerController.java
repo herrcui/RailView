@@ -24,6 +24,7 @@ import railapp.infrastructure.dto.Network;
 import railapp.simulation.SingleSimulationManager;
 import railapp.simulation.events.EventListener;
 import railapp.simulation.train.AbstractTrainSimulator;
+import railapp.swarmintelligence.SwarmManager;
 import railapp.units.Coordinate;
 import railapp.units.Duration;
 import railview.controller.framework.AbstractSimulationController;
@@ -418,6 +419,9 @@ public class SimulationViewerController extends AbstractSimulationController {
 		simulator = SingleSimulationManager.getInstance(infraServiceUtility,
 				rollingStockServiceUtility,
 				timeTableServiceUtility);
+		
+		SwarmManager swarmManager = SwarmManager.getInstance(simulator);
+		this.networkPaneController.setSwarmManager(swarmManager);
 		
 		this.configController.setSimulator(simulator);
 	}

@@ -17,6 +17,7 @@ import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.infrastructure.signalling.dto.AbstractSignal;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.swarmintelligence.Swarm;
+import railapp.swarmintelligence.SwarmManager;
 import railapp.units.Coordinate;
 import railapp.units.Time;
 
@@ -26,7 +27,6 @@ public class NetworkPaneController {
 
 	private InfrastructureElementsPane elementPane;
 	private TrainPane trainPane;
-	private SwarmPane swarmPane;
 	private double pressedX, pressedY;
 	   
 	private boolean isActive = true;
@@ -35,10 +35,8 @@ public class NetworkPaneController {
 	public void initialize() {
 		this.elementPane = new InfrastructureElementsPane();
 		this.trainPane = new TrainPane();
-		this.swarmPane = new SwarmPane();
 		this.stackPane.getChildren().add(this.elementPane);
 		this.stackPane.getChildren().add(this.trainPane);
-		this.stackPane.getChildren().add(this.swarmPane);
 	}
 
 	public void setInfrastructureServiceUtility(
@@ -75,7 +73,6 @@ public class NetworkPaneController {
 		this.elementPane.setAndDrawElements(elements, Color.WHITE);
 		
 		this.trainPane.setCoordinateMapper(mapper);
-		this.swarmPane.setCoordinateMapper(mapper);
 	}
 
 	@FXML
@@ -105,11 +102,9 @@ public class NetworkPaneController {
 	private void scrollWheel(){
 		NodeGestures elemNodeGestures = new NodeGestures(elementPane);
 		NodeGestures trainNodeGestures = new NodeGestures(trainPane);
-		NodeGestures swarmNodeGestures = new NodeGestures(swarmPane);
 		
 		stackPane.addEventFilter( ScrollEvent.ANY, elemNodeGestures.getOnScrollEventHandler());
 		stackPane.addEventFilter( ScrollEvent.ANY, trainNodeGestures.getOnScrollEventHandler());
-		stackPane.addEventFilter( ScrollEvent.ANY, swarmNodeGestures.getOnScrollEventHandler());
 	}
 
 	public void updateTrainCoordinates(Map<AbstractTrainSimulator, List<Coordinate>> map,
@@ -119,10 +114,8 @@ public class NetworkPaneController {
 		}
 	}
 	
-	public void updateSwarms(Map<AbstractTrainSimulator, List<Coordinate>> map, Collection<Swarm> swarms, Time time) {
-		if (isActive) {
-			this.swarmPane.updateSwarms(map, swarms, time);
-		}
+	public void setSwarmManager(SwarmManager swarmManager) {
+		this.trainPane.setSwarmManager(swarmManager);
 	}
 	
 	public void setActive(boolean active) {

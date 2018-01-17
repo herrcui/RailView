@@ -47,10 +47,6 @@ public abstract class AbstractSimulationController {
 		}
 	}
 
-	public void setSimulationManager(SingleSimulationManager simulator) {
-		this.simulator = simulator;
-	}
-
 	protected abstract void updateUI();
 
 	protected abstract void setTime(boolean isReplay);

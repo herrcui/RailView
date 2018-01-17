@@ -1,12 +1,18 @@
 package railview.infrastructure.container;
 
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
+import java.util.Set;
 import java.util.Map.Entry;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import railapp.simulation.train.AbstractTrainSimulator;
+import railapp.swarmintelligence.Swarm;
+import railapp.swarmintelligence.SwarmManager;
 import railapp.units.Coordinate;
 import railapp.units.Time;
 
@@ -21,6 +27,10 @@ public class TrainPane extends PannablePane {
 
 	void setCoordinateMapper(CoordinateMapper mapper) {
 		this.mapper = mapper;
+	}
+	
+	void setSwarmManager(SwarmManager swarmManager) {
+		this.swarmManager = swarmManager;
 	}
 	
 	void updateTrainLocations(final Map<AbstractTrainSimulator, List<Coordinate>> map,
@@ -41,23 +51,9 @@ public class TrainPane extends PannablePane {
 			for (Entry<AbstractTrainSimulator, List<Coordinate>> entry : this.trainCoordinates
 					.entrySet()) {
 				List<Coordinate> coordinateList = entry.getValue();
-				Color color = Color.LIGHTGREEN;
-				switch (entry.getKey().getPendingStatus()) {
-					case NONE:
-						color = Color.LIGHTGREEN;
-						break;
-					case OCCUPANCY:
-						// color = Color.DODGERBLUE;
-						color = Color.RED;
-						break;
-					case DEADLOCK:
-						color = Color.YELLOW;
-						break;
-					case DISPATCHING:
-						color = Color.BLUEVIOLET;
-						break;
-				}
-
+				Color color = this.getColor(entry.getKey());
+				color = this.getColorBySwarm(entry.getKey(), time);
+				
 				if (coordinateList != null && coordinateList.size() > 0) {
 					for (int i = 0; i < coordinateList.size() - 1; i++) {
 						Line line = new Line();
@@ -81,6 +77,62 @@ public class TrainPane extends PannablePane {
 			}
 		}
 	}
+	
+	private Color getColor(AbstractTrainSimulator train) {
+		Color color = Color.LIGHTGREEN;
+		switch (train.getPendingStatus()) {
+			case NONE:
+				color = Color.LIGHTGREEN;
+				break;
+			case OCCUPANCY:
+				// color = Color.DODGERBLUE;
+				color = Color.RED;
+				break;
+			case DEADLOCK:
+				color = Color.YELLOW;
+				break;
+			case DISPATCHING:
+				color = Color.BLUEVIOLET;
+				break;
+		}
+		
+		return color;
+	}
+	
+	private Color getColorBySwarm(AbstractTrainSimulator train, Time time) {
+		Swarm swarm = this.swarmManager.getSwarm(train, time);
+		Color color = this.swarmColorMap.get(swarm);
+		
+		if (color == null) {
+			if (swarm.getTrains().size() == 1) {
+				color = this.COLOR_SINGLETRAIN;
+				this.swarmColorMap.put(swarm, color);
+				return color;
+			}
+
+			while (color == null ||
+					this.usedColors.contains(color) ||
+					color.equals(this.COLOR_SINGLETRAIN)) {
+				Random random = new Random();
+			    double red = random.nextInt(256);
+			    double green = random.nextInt(256);
+			    double blue = random.nextInt(256);
+
+			    color = Color.rgb((int) red, (int) green, (int) blue);
+			}
+
+			this.swarmColorMap.put(swarm, color);
+			this.usedColors.add(color);
+		}
+
+		return color;
+	}
 
 	private Map<AbstractTrainSimulator, List<Coordinate>> trainCoordinates;
+	
+	
+	private Map<Swarm, Color> swarmColorMap = new HashMap<Swarm, Color>();
+	private Set<Color> usedColors = new HashSet<Color>();
+	private Color COLOR_SINGLETRAIN = Color.WHITESMOKE;
+	private SwarmManager swarmManager;
 }
