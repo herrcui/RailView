@@ -52,7 +52,7 @@ public class TrainPane extends PannablePane {
 					.entrySet()) {
 				List<Coordinate> coordinateList = entry.getValue();
 				Color color = this.getColor(entry.getKey());
-				color = this.getColorBySwarm(entry.getKey(), time);
+				// color = this.getColorBySwarm(entry.getKey(), time);
 				
 				if (coordinateList != null && coordinateList.size() > 0) {
 					for (int i = 0; i < coordinateList.size() - 1; i++) {
