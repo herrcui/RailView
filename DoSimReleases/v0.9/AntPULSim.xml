@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project RailViewApp">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="C:/Projects/201X RailApp/DoSim/source/RailView/DoSimReleases/v0.9/PULSim.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="railview.simulation.DoSim"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="C:/Projects/201X RailApp/DoSim/source/RailView/InfrastructureApp/bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Program Files/Eclipse/Luna/plugins/org.eclipse.fx.ide.css.jfx8_1.1.0.201411050807.jar"/>
+            <fileset dir="C:/Projects/201X RailApp/DoSim/source/RailView/RailModel_RailSys7/bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Projects/201X RailApp/DoSim/source/RailView/Library/RailModel/BasicDefinition.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Projects/201X RailApp/DoSim/source/RailView/Library/RailModel/InfrastructureDefinition.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Projects/201X RailApp/DoSim/source/RailView/Library/RailModel/InfrastructureRepository.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Projects/201X RailApp/DoSim/source/RailView/Library/RailModel/RailSys7Parser.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Projects/201X RailApp/DoSim/source/RailView/Library/RailModel/RollingstockDefinition.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Projects/201X RailApp/DoSim/source/RailView/Library/RailModel/RollingstockRepository.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Projects/201X RailApp/DoSim/source/RailView/Library/RailModel/TimetableDefinition.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Projects/201X RailApp/DoSim/source/RailView/Library/RailModel/TimetableRepository.jar"/>
+            <fileset dir="C:/Projects/201X RailApp/DoSim/source/RailView/RailViewLibrary/bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Projects/201X RailApp/DoSim/source/RailView/Library/RailModel/RailSimulator.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Projects/201X RailApp/DoSim/source/RailView/Library/RailModel/SwarmIntelligence.jar"/>
+            <fileset dir="C:/Projects/201X RailApp/DoSim/source/RailView/SimulationView/bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Projects/201X RailApp/DoSim/source/RailView/Library/Py4J/py4j0.10.2.1.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Projects/201X RailApp/DoSim/source/RailView/Library/RailModel/richtextfx-fat-0.7-M3.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Projects/201X RailApp/DoSim/source/RailView/Library/RailModel/Py4JServices.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Projects/201X RailApp/DoSim/source/RailView/Library/RailModel/MachineLearning.jar"/>
+        </jar>
+    </target>
+</project>
