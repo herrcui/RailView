@@ -16,7 +16,6 @@ import railapp.infrastructure.element.dto.Port;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.infrastructure.signalling.dto.AbstractSignal;
 import railapp.simulation.train.AbstractTrainSimulator;
-import railapp.swarmintelligence.Swarm;
 import railapp.swarmintelligence.SwarmManager;
 import railapp.units.Coordinate;
 import railapp.units.Time;

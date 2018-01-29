@@ -99,7 +99,7 @@ public class TrainPane extends PannablePane {
 		return color;
 	}
 	
-	private Color getColorBySwarm(AbstractTrainSimulator train, Time time) {
+	Color getColorBySwarm(AbstractTrainSimulator train, Time time) {
 		Swarm swarm = this.swarmManager.getSwarm(train, time);
 		Color color = this.swarmColorMap.get(swarm);
 		

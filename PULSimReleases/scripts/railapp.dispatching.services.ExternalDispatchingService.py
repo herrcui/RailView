@@ -5,6 +5,7 @@ import random
 
 class RandomDispatcher():
     is_initialized = False
+    simulator = None
     
     def __init__(self):
         self.is_initialized = True
@@ -12,10 +13,30 @@ class RandomDispatcher():
     def isInitialized(self):
         return self.is_initialized
         
-    def determineAction(self, actions):
+    def determineAction(self, actions, conflictTrains):
         # add your own logic here
-        length = len(actions)
-        return random.randint(0, length-1)
+        
+        # example for with FCFS (probability 50%) or give the priority for the train with the maximum delays
+        if random.uniform(0, 1) < 0.5: 
+            return 0
+        
+        # example for return the train with the maximum delays
+        allTrains = self.simulator.getTrainSimulators()
+        index = 0
+        maxDelaySeconds = 0
+        for i in range(len(conflictTrains)):
+            delay = conflictTrains[i].getDelay()
+            delaySeconds = 0
+            if delay != None:
+                delaySeconds = delay.getTotalSecond()
+                
+            if delaySeconds > maxDelaySeconds:
+                maxDelaySeconds = delaySeconds
+                index = i
+        return index
+        
+    def setSimulator(self, simulator):
+        self.simulator = simulator
 
 python_log=True
 

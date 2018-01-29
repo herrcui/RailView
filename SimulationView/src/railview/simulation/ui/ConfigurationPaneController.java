@@ -33,7 +33,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -250,9 +249,10 @@ public class ConfigurationPaneController extends Stage implements Initializable{
 			} else {
 				if (this.file != null) {
 					String className = file.getName().substring(0, file.getName().lastIndexOf('.'));
-					DispatchingSystem dispatcher = 
-						ExternalDispatchingSystem.getInstanceFromServiceClass(
-							className, file.getPath());
+					DispatchingSystem dispatcher = ExternalDispatchingSystem.getInstanceFromServiceClass(
+						className,
+						file.getPath(),
+						this.simulator);
 					this.simulator.setDispatchingSystem(dispatcher);
 				}
 			}
