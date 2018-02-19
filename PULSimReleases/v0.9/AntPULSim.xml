@@ -3,12 +3,12 @@
     <!--this file was created by Eclipse Runnable JAR Export Wizard-->
     <!--ANT 1.7 is required                                        -->
     <target name="create_run_jar">
-        <jar destfile="C:/Projects/201X RailApp/DoSim/source/RailView/DoSimReleases/v0.9/PULSim.jar" filesetmanifest="mergewithoutmain">
+        <jar destfile="C:/Projects/201X RailApp/DoSim/source/RailView/PULSimReleases/v0.9/PULSim.jar" filesetmanifest="mergewithoutmain">
             <manifest>
                 <attribute name="Main-Class" value="railview.simulation.DoSim"/>
                 <attribute name="Class-Path" value="."/>
             </manifest>
-            <fileset dir="C:/Projects/201X RailApp/DoSim/source/RailView/InfrastructureApp/bin"/>
+            <fileset dir="C:/Projects/201X RailApp/DoSim/source/RailView/RailViewApp/bin"/>
             <zipfileset excludes="META-INF/*.SF" src="C:/Program Files/Eclipse/Luna/plugins/org.eclipse.fx.ide.css.jfx8_1.1.0.201411050807.jar"/>
             <fileset dir="C:/Projects/201X RailApp/DoSim/source/RailView/RailModel_RailSys7/bin"/>
             <zipfileset excludes="META-INF/*.SF" src="C:/Projects/201X RailApp/DoSim/source/RailView/Library/RailModel/BasicDefinition.jar"/>
@@ -27,6 +27,7 @@
             <zipfileset excludes="META-INF/*.SF" src="C:/Projects/201X RailApp/DoSim/source/RailView/Library/RailModel/richtextfx-fat-0.7-M3.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="C:/Projects/201X RailApp/DoSim/source/RailView/Library/RailModel/Py4JServices.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="C:/Projects/201X RailApp/DoSim/source/RailView/Library/RailModel/MachineLearning.jar"/>
+        	<fileset includes="resources/**" dir="C:/Projects/201X RailApp/DoSim/source/RailView/SimulationView" />
         </jar>
     </target>
 </project>
