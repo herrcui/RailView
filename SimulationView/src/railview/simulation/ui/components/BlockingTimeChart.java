@@ -26,12 +26,9 @@ import railview.simulation.ui.data.TableProperty;
 import railview.simulation.ui.data.TimeDistance;
 
 public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
-	public BlockingTimeChart(Axis<X> xAxis, Axis<Y> yAxis, Label eventLabel, CheckBox selfEventCheckBox, CheckBox inEventCheckBox, CheckBox outEventCheckBox, TableView<TableProperty> eventTable, TrainRunMonitorPaneController controller) {
+	public BlockingTimeChart(Axis<X> xAxis, Axis<Y> yAxis, Label eventLabel, TableView<TableProperty> eventTable, TrainRunMonitorPaneController controller) {
 		super(xAxis, yAxis);
 		this.eventLabel = eventLabel;
-		this.selfEventCheckBox = selfEventCheckBox;
-		this.incomingEventCheckBox = inEventCheckBox;
-		this.outgoingEventCheckBox = outEventCheckBox;
 		this.eventTable = eventTable;
 		this.controller = controller;
 	}
@@ -158,57 +155,13 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 				
 				this.getPlotChildren().add(polygon);
 				
-				for (EventData data : eventList) {		
-					if (data.getType() == 0 ){
-						selfEventPolygonList.add(polygon);
-					}
-					else if (data.getType() == 1){
-						incomingEventPolygonList.add(polygon);
-					}
-					else {
-						outgoingEventPolygonList.add(polygon);
-					}
-				}
 				polygonList.add(polygon);
 				
-				selfEventCheckBox.setSelected(false);
-				selfEventCheckBox.setOnAction((e) -> {
-			        if (selfEventCheckBox.isSelected()) {
-			        	for(Polygon poly: selfEventPolygonList){
-			        		poly.setFill(Color.ORANGE);
-			        	}
-			        } else {
-			        	for(Polygon poly: selfEventPolygonList){
-			        	 	poly.setFill(Color.BLACK);
-			        	}
-			        }
-			        });
+				for(Polygon poly: selfEventPolygonList){
+	        		poly.setFill(Color.BLACK);
+	        	}
 				
-				incomingEventCheckBox.setSelected(false);
-				incomingEventCheckBox.setOnAction((e) -> {
-			        if (incomingEventCheckBox.isSelected()) {
-			        	for(Polygon poly: incomingEventPolygonList){
-			        		poly.setFill(Color.ORANGE);
-			        	}
-			        } else {
-			        	for(Polygon poly: incomingEventPolygonList){
-			        	 	poly.setFill(Color.BLACK);
-			        	}
-			        }
-			        });
-				
-				outgoingEventCheckBox.setSelected(false);
-				outgoingEventCheckBox.setOnAction((e) -> {
-			        if (outgoingEventCheckBox.isSelected()) {
-			        	for(Polygon poly: outgoingEventPolygonList){
-			        		poly.setFill(Color.ORANGE);
-			        	}
-			        } else {
-			        	for(Polygon poly: outgoingEventPolygonList){
-			        	 	poly.setFill(Color.BLACK);
-			        	}
-			        }
-			        });
+		
 
 				polygon.setOnMouseEntered(new EventHandler<MouseEvent>() {
 					@Override
@@ -262,12 +215,8 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 					@Override
 					public void handle(MouseEvent event) {
 						removeText();
-						if (selfEventCheckBox.isSelected()) {			        	
-							polygon.setFill(Color.ORANGE);
-						}
-						else{
-							polygon.setFill(Color.BLACK);
-						}
+						polygon.setFill(Color.BLACK);
+
 					}
 				});
 				
@@ -291,9 +240,6 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 	private List<Polygon> incomingEventPolygonList = new ArrayList<Polygon>();
 	private List<Polygon> outgoingEventPolygonList = new ArrayList<Polygon>();
 
-	private CheckBox incomingEventCheckBox;
-	private CheckBox selfEventCheckBox;
-	private CheckBox outgoingEventCheckBox;
 	private Label eventLabel;
 	private TableView<TableProperty> eventTable;
 	private TrainRunMonitorPaneController controller;
