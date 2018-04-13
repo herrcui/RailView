@@ -92,8 +92,6 @@ public class TrainRunMonitorPaneController {
 	@FXML
 	public void initialize() {
 
-		Collections.addAll(checkBoxList, selfEventCheckBox, inEventCheckBox,
-				outEventCheckBox);
 
 		eventLabel.toFront();
 
@@ -105,10 +103,6 @@ public class TrainRunMonitorPaneController {
 		AnchorPane.setLeftAnchor(blockingTimeChart, 0.0);
 		AnchorPane.setRightAnchor(blockingTimeChart, 0.0);
 		AnchorPane.setBottomAnchor(blockingTimeChart, 0.0);
-
-		for (CheckBox checkBox : checkBoxList) {
-			checkBox.toFront();
-		}
 
 		new Zoom(blockingTimeChart, blockingTimePane);
 
@@ -146,13 +140,14 @@ public class TrainRunMonitorPaneController {
 			}
 		});
 
-		snapshotRoot.heightProperty().addListener(new ChangeListener<Number>() {
+
+		blockingTimePane.heightProperty().addListener(new ChangeListener<Number>() {
 			@Override
 			public void changed(
 					ObservableValue<? extends Number> observableValue,
 					Number oldSceneHeight, Number newSceneHeight) {
-				snapshotPane.setLayoutY((newSceneHeight.doubleValue() / 2)
-						- (snapshotPane.prefHeight(-1) / 2));
+				blockingTimePane.setLayoutY((newSceneHeight.doubleValue() / 2)
+						- (blockingTimePane.prefHeight(-1) / 2));
 			}
 		});
 
@@ -244,8 +239,7 @@ public class TrainRunMonitorPaneController {
 		NumberAxis xAxis = new NumberAxis();
 		NumberAxis yAxis = new NumberAxis();
 		BlockingTimeChart<Number, Number> chart = new BlockingTimeChart<Number, Number>(
-				xAxis, yAxis, eventLabel, selfEventCheckBox, inEventCheckBox,
-				outEventCheckBox, eventTable, this);
+				xAxis, yAxis, eventLabel, eventTable, this);
 
 		trainNumbers.getSelectionModel().selectedItemProperty()
 				.addListener(new ChangeListener<String>() {
@@ -264,11 +258,6 @@ public class TrainRunMonitorPaneController {
 						trainInfoTable.setItems(generateTrainInfo(train,
 								newValue));
 
-						for (CheckBox checkBox : checkBoxList) {
-							if (checkBox.isVisible() == false) {
-								checkBox.setVisible(true);
-							}
-						}
 
 						List<Coordinate> path = getTrainPathCoordinates(train);
 						snapshotPaneController.setHighlightedPath(path);
@@ -390,6 +379,7 @@ public class TrainRunMonitorPaneController {
 
 						// window resize listener
 						//TODO
+
 						blockingTimePane.widthProperty().addListener(
 								(obs, oldVal, newVal) -> {
 									chart.getData().clear();
@@ -404,7 +394,6 @@ public class TrainRunMonitorPaneController {
 									chart.getBlockingTimeChartPlotChildren()
 											.clear();
 									drawCourseforTimeTable(train, chart);
-
 								});
 
 						/**
@@ -598,11 +587,10 @@ public class TrainRunMonitorPaneController {
 			chart.getData().add(courseForTimeSeries);
 			chart.setCreateSymbols(false);
 		}
-
+				
 		return chart;
 	}
 
-	List<CheckBox> checkBoxList = new ArrayList<CheckBox>();
 	private DraggableChart<Number, Number> blockingTimeChart;
 
 	private StackPane snapshotPane;
