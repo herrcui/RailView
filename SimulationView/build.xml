@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="SimulationView">
+    <property environment="env"/>
+    <property name="Library.location" value="../Library"/>
+    <property name="ECLIPSE_HOME" value="../../../../../Neuer Ordner/eclipse/"/>
+    <property name="RailViewApp.location" value="../RailViewApp"/>
+    <property name="RailModel_RailSys7.location" value="../RailModel_RailSys7"/>
+    <property name="RailViewLibrary.location" value="../RailViewLibrary"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="JavaFX SDK.libraryclasspath">
+        <pathelement location="${ECLIPSE_HOME}plugins/org.eclipse.fx.ide.css.jfx8_1.1.0.201411050807.jar"/>
+    </path>
+    <path id="RailViewLibrary.classpath">
+        <pathelement location="${RailViewLibrary.location}/bin"/>
+        <path refid="JavaFX SDK.libraryclasspath"/>
+        <pathelement location="${Library.location}/RailModel/BasicDefinition.jar"/>
+        <pathelement location="${Library.location}/RailModel/InfrastructureDefinition.jar"/>
+        <pathelement location="${Library.location}/RailModel/RollingstockDefinition.jar"/>
+        <pathelement location="${Library.location}/RailModel/RailSimulator.jar"/>
+        <pathelement location="${Library.location}/RailModel/SwarmIntelligence.jar"/>
+        <pathelement location="${Library.location}/RailModel/TimetableDefinition.jar"/>
+    </path>
+    <path id="RailModel_RailSys7.classpath">
+        <pathelement location="${RailModel_RailSys7.location}/bin"/>
+        <pathelement location="${Library.location}/RailModel/BasicDefinition.jar"/>
+        <pathelement location="${Library.location}/RailModel/InfrastructureDefinition.jar"/>
+        <pathelement location="${Library.location}/RailModel/InfrastructureRepository.jar"/>
+        <pathelement location="${Library.location}/RailModel/RailSys7Parser.jar"/>
+        <pathelement location="${Library.location}/RailModel/RollingstockDefinition.jar"/>
+        <pathelement location="${Library.location}/RailModel/RollingstockRepository.jar"/>
+        <pathelement location="${Library.location}/RailModel/TimetableDefinition.jar"/>
+        <pathelement location="${Library.location}/RailModel/TimetableRepository.jar"/>
+    </path>
+    <path id="SimulationView.classpath">
+        <pathelement location="bin"/>
+        <path refid="JavaFX SDK.libraryclasspath"/>
+        <path refid="RailViewLibrary.classpath"/>
+        <pathelement location="${Library.location}/RailModel/InfrastructureDefinition.jar"/>
+        <pathelement location="${Library.location}/RailModel/InfrastructureRepository.jar"/>
+        <pathelement location="${Library.location}/RailModel/RailSimulator.jar"/>
+        <pathelement location="${Library.location}/RailModel/BasicDefinition.jar"/>
+        <pathelement location="${Library.location}/RailModel/RollingstockDefinition.jar"/>
+        <pathelement location="${Library.location}/RailModel/TimetableDefinition.jar"/>
+        <path refid="RailModel_RailSys7.classpath"/>
+        <pathelement location="${Library.location}/Py4J/py4j0.10.2.1.jar"/>
+        <pathelement location="${Library.location}/RailModel/richtextfx-fat-0.7-M3.jar"/>
+        <pathelement location="${Library.location}/RailModel/Py4JServices.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="resources">
+                <exclude name="**/*.java"/>
+                <exclude name="railview/simulation/resources/CSS/"/>
+                <exclude name="railview/simulation/resources/image/"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall">
+        <ant antfile="build.xml" dir="${RailModel_RailSys7.location}" inheritAll="false" target="clean"/>
+        <ant antfile="build.xml" dir="${RailViewLibrary.location}" inheritAll="false" target="clean"/>
+    </target>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects">
+        <ant antfile="build.xml" dir="${RailModel_RailSys7.location}" inheritAll="false" target="build-project">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+        <ant antfile="build.xml" dir="${RailViewLibrary.location}" inheritAll="false" target="build-project">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+    </target>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <src path="resources"/>
+            <exclude name="railview/simulation/resources/CSS/"/>
+            <exclude name="railview/simulation/resources/image/"/>
+            <classpath refid="SimulationView.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects">
+        <ant antfile="build.xml" dir="${RailViewApp.location}" inheritAll="false" target="clean"/>
+        <ant antfile="build.xml" dir="${RailViewApp.location}" inheritAll="false" target="build">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+    </target>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+</project>
