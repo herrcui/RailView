@@ -10,7 +10,7 @@ import ml.supervise.TrainingDataReader;
 
 public class PSDLearning {
 	public static void main(String[] args) {
-		try {
+		try { 
 			Path path = Paths.get("C:\\temp\\Lat_R_V_1212_con.csv");
 
 			List<TrainingData> trainingData = TrainingDataReader.readTrainingData(path);
