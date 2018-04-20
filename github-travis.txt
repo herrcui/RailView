@@ -1,0 +1,16 @@
+1. sign up travis with github account
+2. install Ruby
+3. in cmd console
+- check travis version in gem: gem search travis (e.g. the current version is 1.8.8)
+- install travis: gem install travis -v 1.8.8 --no-rdoc --no-ri
+- travis login, give the github user name and password
+- go to the repository directory (e.g. C:\Projects\201X RailApp\DoSim\source\RailView)
+- upload github release: travis setup releases
+
+If ready for release for a specific version:
+1. Commit (WITHOUT PUSH!)
+2. In Eclipse-team-advanced, set tag and push
+or
+2. Put with tag in cmd
+- git tag -a v0.9 -m "message for this version"
+- git push origin v0.9
