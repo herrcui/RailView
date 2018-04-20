@@ -2,4 +2,12 @@ language: java
 script:
 - ant build
 - ant create_run_jar
-before_script: cd InfrastructureApp
+before_script: cd RailViewApp
+deploy:
+  provider: releases
+  api_key:
+    secure: 5bULgvrqygVdSDpNGhvWOF46Fu8Nc55c6gb9hz/q7dxN4EenhfITRMaSKuD7CnK3d3uELo0po0YtsdxlJyVstJk41KoSLAaZTPtolp09wdcjBrp++TxBq0SDHgI8oRIW0/U6kra3ucs8g6YPHTiNlaGLvkx4sN+edHqsXhOqGshNgCkGLvdnE/5JRSEshkOZQJAn1STG3kBHKr1n/D1KufCS+YrusZjc/nKij8qs/QwZSynXdykHAAfm8l3eYk0IMt8BL8gnkkHuX1APzv+/hkAKGJgJ0wpRiKj33j2YEiSI8V+Gf6CGuCXdbvPVo/1lOO7aJv2wXZhxVMTqPRdfGfl4uALWf5UdTtMGPTz5NzC504C7WvaOTKF8g6rqZ6crw5vbynSAUmtrDPmbTwjBG69dMLkdda6w/XtI1m+FlUk95vgTlchcfEMOIbI7kxB9OTQy/uyWm7QO20mAqW3jx5nZmc8Zm1QRoeYYRRIshKOWk5MA5OXoa6NfvfLzLStsBK7qOS+jGXq/MD+INMYDkhULtZBv4ozz2qdU9d2TEMwAQQO85UCHyzebCF/LHm05YzujGB5NtfyOfnfx9eQkrxztKz2RijqZTSA4Hh2ayI90H6GPEVEG3d0kHWFPoftU7bT+4MV93Lo14uT3xVzy1z8BndSZ1M6f5lkxinj4AMA=
+  file: "../PULSimReleases/v0.9/PULSim.jar"
+  on:
+    repo: herrcui/RailView
+    tags: true
