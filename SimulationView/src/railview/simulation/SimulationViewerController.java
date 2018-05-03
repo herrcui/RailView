@@ -37,66 +37,26 @@ import railview.simulation.ui.GraphPaneController;
 import railview.simulation.ui.DialogPaneController;
 import railview.infrastructure.container.NetworkPaneController;
 
+
+/**
+ * The controller class for the main user interface (SimulationViewer.fxml) which appears, when you start the program.
+ *
+ */
+
 public class SimulationViewerController extends AbstractSimulationController {
-	@FXML
-	private AnchorPane networkPaneRoot;
-	
-	@FXML 
-	private AnchorPane rootPane;
-
-	@FXML
-	private Label timeLabel;
-
-	@FXML
-	private Label activeLabel;
-
-	@FXML
-	private Label terminatedLabel;
-
-	@FXML
-	private AnchorPane menuPane;
-
-	@FXML
-	private AnchorPane symbolPane;
 	
 	@FXML
-	protected Button startButton;
-
-	@FXML
-	protected Button pauseButton;
-
-	@FXML
-	protected Button stopButton;
+	private AnchorPane networkPaneRoot, rootPane, menuPane, symbolPane;
 	
 	@FXML
-	private Button graphButton;
-
-	@FXML
-	private Button networkButton;
+	private Label timeLabel, activeLabel, terminatedLabel;
 	
 	@FXML
-	private Button editorButton;
-	
-	@FXML
-	private Button settingButton;
-	
-	@FXML
-	private Button lockButton;
-	
-	@FXML
-	private Button unlockButton;
+	private Button startButton, pauseButton, stopButton, graphButton, networkButton, editorButton, settingButton, 
+	lockButton, unlockButton, openOne, openTwo, openThree;
 	
 	@FXML
 	private Slider speedBar;
-	
-	@FXML
-	private Button openOne;
-	
-	@FXML
-	private Button openTwo;
-	
-	@FXML
-	private Button openThree;
 
 	@FXML
 	public void initialize() {
@@ -192,6 +152,8 @@ public class SimulationViewerController extends AbstractSimulationController {
 		this.pauseButton.setDisable(true);
 		this.stopButton.setDisable(true);
 	}
+	
+	
 	@FXML
 	public void lock(){
 		

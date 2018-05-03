@@ -39,25 +39,16 @@ import javafx.stage.Stage;
 
 public class ConfigurationPaneController extends Stage implements Initializable{
 	@FXML
-	private AnchorPane configurationPaneRoot;
+	private AnchorPane configurationPaneRoot, codePane;
+		
+	@FXML
+	private RadioButton defaultRB, externalRB;
 	
 	@FXML
-	private AnchorPane codePane;
-	
-	@FXML
-	private RadioButton defaultRB;
-	
-	@FXML
-	private RadioButton externalRB;
-	
-	@FXML
-	private Button externalFileButton;
+	private Button externalFileButton, applyButton;
 	
 	@FXML
 	private Label fileNameLabel;
-	
-	@FXML
-	private Button applyButton;
 	
 	private CodeArea codeArea;
 	

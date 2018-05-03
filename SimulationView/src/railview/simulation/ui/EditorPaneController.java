@@ -36,18 +36,10 @@ public class EditorPaneController {
 	private AnchorPane codePane;
 	
 	@FXML
+	private Button playButton, saveButton;
+	
+	@FXML
 	private TextArea infoArea;
-	
-	@FXML
-	private Button playButton;
-	
-	@FXML
-	private Button saveButton;
-	
-	private CodeArea codeArea = new CodeArea();
-	
-	private FileChooser fileChooser = new FileChooser();
-	private File file;
 	
 	private static final String[] KEYWORDS = new String[] {
         "abstract", "assert", "boolean", "break", "byte",
@@ -135,7 +127,6 @@ public class EditorPaneController {
 				saveButton.setDisable(false);
 			}
 		});
-		// codePane.getStylesheets().add(SimulationViewResources.class.getResource("/CSS/syntax-highlight.css").toExternalForm());
 	}
  	
 	
@@ -288,6 +279,11 @@ public class EditorPaneController {
 	        }
 	    }
 	}
+	
+	private CodeArea codeArea = new CodeArea();
+	private FileChooser fileChooser = new FileChooser();
+	private File file;
+	
 }
 
 

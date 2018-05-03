@@ -13,6 +13,12 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
+
+/**
+ * main class of the whole program
+ *
+ */
+
 public class DoSim extends Application {
 
 	@Override
@@ -26,6 +32,7 @@ public class DoSim extends Application {
 		launch(args);
 	}
 
+	// initializes the rootLayout by calling the class SimulationController and SimulationViewer.fxml
 	private void initRootLayout() {
 		try {
 			FXMLLoader loader = new FXMLLoader();

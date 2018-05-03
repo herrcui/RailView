@@ -35,10 +35,7 @@ public class OccupancyAndPendingPaneController {
 	private StackPane infraRoot;
 	
 	@FXML
-	private Rectangle pendingBar;
-	
-	@FXML
-	private Rectangle occupancyBar;
+	private Rectangle pendingBar, occupancyBar;
 	
 	private InfrastructureElementsPane elementPane;
 	
@@ -365,7 +362,6 @@ public class OccupancyAndPendingPaneController {
 	}
 	
 	private void setStroke(Line line, Duration duration) {
-		//double totalSeconds = logger.getTotalDuration().getTotalSecond();
 		double totalSeconds = 18000;
 		
 		if (duration == null || duration.getTotalSecond() == 0) {
@@ -377,7 +373,6 @@ public class OccupancyAndPendingPaneController {
 			}
 			
 			if (type == PENDING) {
-				// line.setStroke(Color.DODGERBLUE);
 				line.setStroke(Color.RED);
 			}
 			

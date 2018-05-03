@@ -35,10 +35,7 @@ import javafx.scene.layout.AnchorPane;
 
 public class RunningDynamicsPaneController {
 	@FXML
-	private AnchorPane speedprofilePane;
-
-	@FXML
-	private AnchorPane energyPane;
+	private AnchorPane speedprofilePane, energyPane;
 	
 	@FXML
 	private ListView<String> trainNumbers;

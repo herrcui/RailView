@@ -25,38 +25,13 @@ public class DialogPaneController extends Stage implements Initializable
 	private AnchorPane anchorPane;
 	
     @FXML
-    private Button okButton;
-    
+    private Button okButton, cancelButton, applyButton, rootButton, infraButton, rollingstockButton, timetableButton;
+      
     @FXML
-    private Button infraButton;
-    
-    @FXML
-    private Button rollingstockButton;
-    
-    @FXML
-    private Button timetableButton;
+    private TextField textOne, textTwo, textThree;
   
-    @FXML
-    private TextField textOne;
     
-    @FXML
-    private TextField textTwo;
-    
-    @FXML
-    private TextField textThree;
-    
-    @FXML
-    private Button cancelButton;
-    
-    @FXML
-    private Button applyButton;
-    
-    @FXML
-    private Button rootButton;
-    
-    private Path infraPath;
-    private Path rollingStockPath;
-    private Path timetablePath;
+    private Path infraPath, rollingStockPath, timetablePath;
 
     public DialogPaneController(Parent parent)
     {

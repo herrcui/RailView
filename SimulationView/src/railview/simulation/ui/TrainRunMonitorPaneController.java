@@ -62,10 +62,7 @@ import javafx.util.StringConverter;
 
 public class TrainRunMonitorPaneController {
 	@FXML
-	private AnchorPane blockingTimePane;
-
-	@FXML
-	private AnchorPane snapshotRoot;
+	private AnchorPane blockingTimePane, snapshotRoot;
 
 	@FXML
 	private ListView<String> trainNumbers;
@@ -74,19 +71,11 @@ public class TrainRunMonitorPaneController {
 	private Label eventLabel;
 
 	@FXML
-	private TableView<TableProperty> eventTable;
+	private TableView<TableProperty> eventTable, trainInfoTable;
 
 	@FXML
-	private CheckBox selfEventCheckBox;
+	private CheckBox selfEventCheckBox, inEventCheckBox, outEventCheckBox;
 
-	@FXML
-	private CheckBox inEventCheckBox;
-
-	@FXML
-	private CheckBox outEventCheckBox;
-
-	@FXML
-	private TableView<TableProperty> trainInfoTable;
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@FXML

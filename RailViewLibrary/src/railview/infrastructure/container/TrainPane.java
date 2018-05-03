@@ -51,9 +51,7 @@ public class TrainPane extends PannablePane {
 			for (Entry<AbstractTrainSimulator, List<Coordinate>> entry : this.trainCoordinates
 					.entrySet()) {
 				List<Coordinate> coordinateList = entry.getValue();
-				Color color = this.getColor(entry.getKey());
-				// color = this.getColorBySwarm(entry.getKey(), time);
-				
+				Color color = this.getColor(entry.getKey());				
 				if (coordinateList != null && coordinateList.size() > 0) {
 					for (int i = 0; i < coordinateList.size() - 1; i++) {
 						Line line = new Line();
@@ -85,7 +83,6 @@ public class TrainPane extends PannablePane {
 				color = Color.LIGHTGREEN;
 				break;
 			case OCCUPANCY:
-				// color = Color.DODGERBLUE;
 				color = Color.RED;
 				break;
 			case DEADLOCK:
