@@ -56,10 +56,6 @@ public class InfrastructureElementsPane extends PannablePane {
 		this.signalColor = signalColor;
 	}
 
-	public ObservableList<Node> getChrildren() {
-		return this.getChrildren();
-	}
-
 	public void setElements(Collection<InfrastructureElement> elements) {
 		this.elements = elements;
 	}
