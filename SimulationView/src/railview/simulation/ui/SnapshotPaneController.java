@@ -17,25 +17,30 @@ import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 
-
+/**
+ * The controller class for SnapshotPane.fxml. The Pane shows a miniature copy of
+ * the simulation in the TrainRunMonitorPane.
+ */
 public class SnapshotPaneController {
-	
+
 	@FXML
 	private StackPane stackPane;
-	
+
 	private InfrastructureElementsPane elementPane;
-	
-	
+
+	/**
+	 * Add the elementPane on top of the snapshotPane
+	 */
 	@FXML
 	public void initialize() {
 		this.elementPane = new InfrastructureElementsPane();
 		this.stackPane.getChildren().add(this.elementPane);
 	}
-	
+
 	public void setHighlightedPath(List<Coordinate> path) {
 		this.elementPane.setHighlightedPath(path);
 	}
-	
+
 	public void setEventPoint(Coordinate coordinate) {
 		this.elementPane.setEventPoint(coordinate);
 	}
@@ -63,47 +68,47 @@ public class SnapshotPaneController {
 			}
 		}
 
-		CoordinateMapper mapper = new CoordinateMapper(maxX, minX, maxY,
-				minY);
+		CoordinateMapper mapper = new CoordinateMapper(maxX, minX, maxY, minY);
 
 		this.elementPane.setCoordinateMapper(mapper);
 		this.elementPane.setAndDrawElements(elements, Color.WHITE);
 	}
-	
-	@FXML
-	private void mouseEnter(){
-		stackPane.setOnMousePressed(new EventHandler<MouseEvent>()
-		        {
-            public void handle(MouseEvent event)
-            {
-                pressedX = event.getX();
-                pressedY = event.getY();
-            }
-        });
 
-		stackPane.setOnMouseDragged(new EventHandler<MouseEvent>()
-        {
-            public void handle(MouseEvent event)
-            {
-            	stackPane.setTranslateX(stackPane.getTranslateX() + event.getX() - pressedX);
-            	stackPane.setTranslateY(stackPane.getTranslateY() + event.getY() - pressedY);
-
-                event.consume();
-            }
-        });
-	}
-	
-	@FXML
-	private void scrollWheel(){
-		NodeGestures elemNodeGestures = new NodeGestures(elementPane);
-		
-		stackPane.addEventFilter( ScrollEvent.ANY, elemNodeGestures.getOnScrollEventHandler());
-	}
-	
-	private double pressedX, pressedY;
-
-
+	/**
+	 * use the draw method from infrastructureElementPane
+	 */
 	public void draw() {
 		this.elementPane.draw();
 	}
+
+	@FXML
+	private void mouseEnter() {
+		stackPane.setOnMousePressed(new EventHandler<MouseEvent>() {
+			public void handle(MouseEvent event) {
+				pressedX = event.getX();
+				pressedY = event.getY();
+			}
+		});
+
+		stackPane.setOnMouseDragged(new EventHandler<MouseEvent>() {
+			public void handle(MouseEvent event) {
+				stackPane.setTranslateX(stackPane.getTranslateX()
+						+ event.getX() - pressedX);
+				stackPane.setTranslateY(stackPane.getTranslateY()
+						+ event.getY() - pressedY);
+
+				event.consume();
+			}
+		});
+	}
+
+	@FXML
+	private void scrollWheel() {
+		NodeGestures elemNodeGestures = new NodeGestures(elementPane);
+
+		stackPane.addEventFilter(ScrollEvent.ANY,
+				elemNodeGestures.getOnScrollEventHandler());
+	}
+
+	private double pressedX, pressedY;
 }

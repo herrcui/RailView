@@ -20,6 +20,10 @@ import railapp.swarmintelligence.SwarmManager;
 import railapp.units.Coordinate;
 import railapp.units.Time;
 
+/**
+ * The controller class of NetworkPane.fxml. The Pane includes the elementPane and the trainPane.
+ * 
+ */
 public class NetworkPaneController {
 	@FXML
 	private StackPane stackPane;
@@ -30,6 +34,9 @@ public class NetworkPaneController {
 	   
 	private boolean isActive = true;
 
+	/**
+	 * adds elementPane and trainPane to the stackPane
+	 */
 	@FXML
 	public void initialize() {
 		this.elementPane = new InfrastructureElementsPane();
@@ -74,6 +81,27 @@ public class NetworkPaneController {
 		this.trainPane.setCoordinateMapper(mapper);
 	}
 
+	/**
+	 * updates the trainPane
+	 * 
+	 * @param map
+	 * @param time
+	 */
+	public void updateTrainCoordinates(Map<AbstractTrainSimulator, List<Coordinate>> map,
+			Time time) {
+		if (isActive) {
+			this.trainPane.updateTrainLocations(map, time);
+		}
+	}
+	
+	public void setSwarmManager(SwarmManager swarmManager) {
+		this.trainPane.setSwarmManager(swarmManager);
+	}
+	
+	public void setActive(boolean active) {
+		this.isActive = active;
+	}
+	
 	@FXML
 	private void mouseEnter(){
 		stackPane.setOnMousePressed(new EventHandler<MouseEvent>()
@@ -106,20 +134,6 @@ public class NetworkPaneController {
 		stackPane.addEventFilter( ScrollEvent.ANY, trainNodeGestures.getOnScrollEventHandler());
 	}
 
-	public void updateTrainCoordinates(Map<AbstractTrainSimulator, List<Coordinate>> map,
-			Time time) {
-		if (isActive) {
-			this.trainPane.updateTrainLocations(map, time);
-		}
-	}
-	
-	public void setSwarmManager(SwarmManager swarmManager) {
-		this.trainPane.setSwarmManager(swarmManager);
-	}
-	
-	public void setActive(boolean active) {
-		this.isActive = active;
-	}
 }
 	
 

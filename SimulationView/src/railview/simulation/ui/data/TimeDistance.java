@@ -1,5 +1,8 @@
 package railview.simulation.ui.data;
 
+/**
+ * An object representing timeDistance with meters and seconds.
+ */
 public class TimeDistance {
 	public TimeDistance(double meter, double second) {
 		this.meter = meter;
@@ -13,7 +16,7 @@ public class TimeDistance {
 	public double getSecond() {
 		return this.second;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

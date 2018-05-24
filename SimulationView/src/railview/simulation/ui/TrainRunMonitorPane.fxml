@@ -17,7 +17,7 @@
                <children>
                   <SplitPane dividerPositions="0.5" layoutX="90.0" layoutY="51.0" orientation="VERTICAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <items>
-                     <AnchorPane fx:id="blockingTimePane" onMouseClicked="#resetBlockingTime">
+                     <AnchorPane fx:id="blockingTimePane" onMouseClicked="#resetZoomBlockingTime">
                            <children>
                               <Label fx:id="eventLabel" layoutX="76.0" layoutY="90.0" />
                               <CheckBox fx:id="inEventCheckBox" layoutX="358.0" layoutY="176.0" mnemonicParsing="false" styleClass="label" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Darktheme.css" text="incoming events" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="240.0" />

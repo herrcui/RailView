@@ -1,7 +1,11 @@
 package railview.simulation.ui.data;
 
+/**
+ * An object representing eventData with timeDistance, type, eventName and text.
+ */
 public class EventData {
-	public EventData(TimeDistance timeDistance, int type, String eventName, String text) {
+	public EventData(TimeDistance timeDistance, int type, String eventName,
+			String text) {
 		super();
 		this.timeDistance = timeDistance;
 		this.type = type;
@@ -20,7 +24,7 @@ public class EventData {
 	public String getEventName() {
 		return this.eventName;
 	}
-	
+
 	public String getText() {
 		return text;
 	}

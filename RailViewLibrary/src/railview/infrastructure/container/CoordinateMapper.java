@@ -2,6 +2,9 @@ package railview.infrastructure.container;
 
 import javafx.scene.layout.Pane;
 
+/**
+ * A class to map the x and y coordinates to the Pane.
+ */
 public class CoordinateMapper {
 	
 	public CoordinateMapper(double maxX, double minX, double maxY, double minY) {

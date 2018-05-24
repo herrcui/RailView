@@ -9,10 +9,10 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="840.0" prefWidth="1320.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.SimulationViewerController">
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="840.0" prefWidth="1320.0" xmlns="http://javafx.com/javafx/8.0.161" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.SimulationViewerController">
    <children>
       <AnchorPane fx:id="networkPaneRoot" prefHeight="840.0" prefWidth="1320.0" styleClass="background" stylesheets="@../../../resources/railview/simulation/resources/CSS/Darktheme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <AnchorPane fx:id="symbolPane" layoutX="416.0" onMouseEntered="#appearSymbolPane" onMouseExited="#fadeSymbolPane" prefHeight="78.0" prefWidth="492.0" styleClass="background-grey" stylesheets="@../../../resources/railview/simulation/resources/CSS/Darktheme.css">
+      <AnchorPane fx:id="symbolPane" layoutX="416.0" onMouseEntered="#appearSymbolPaneWhenHover" onMouseExited="#fadeSymbolPaneWhenLeaving" prefHeight="78.0" prefWidth="492.0" styleClass="background-grey" stylesheets="@../../../resources/railview/simulation/resources/CSS/Darktheme.css">
          <children>
             <Button fx:id="openFileButton" layoutY="7.0" mnemonicParsing="false" onAction="#onLoadButtonAction" styleClass="button-dark-blue" stylesheets="@../../../resources/railview/simulation/resources/CSS/Darktheme.css" AnchorPane.leftAnchor="25.0">
                <graphic>
@@ -25,7 +25,7 @@
                <tooltip>
                   <Tooltip fx:id="openFileTooltip" prefWidth="100.0" text="Open" />
                </tooltip></Button>
-            <Button fx:id="networkButton" layoutY="7.0" mnemonicParsing="false" onAction="#networkButtonClicked" stylesheets="@../../../resources/railview/simulation/resources/CSS/Darktheme.css" AnchorPane.leftAnchor="115.0">
+            <Button fx:id="networkButton" layoutY="7.0" mnemonicParsing="false" onAction="#enterNetworkPane" stylesheets="@../../../resources/railview/simulation/resources/CSS/Darktheme.css" AnchorPane.leftAnchor="115.0">
                <graphic>
                   <ImageView fitHeight="45.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -41,7 +41,7 @@
                   <Tooltip fx:id="videoTooltip" prefWidth="100.0" text="Simulate" />
                </tooltip>
             </Button>
-            <Button fx:id="graphButton" layoutY="7.0" mnemonicParsing="false" onAction="#graphButtonClicked" styleClass="button-dark-blue" stylesheets="@../../../resources/railview/simulation/resources/CSS/Darktheme.css" AnchorPane.leftAnchor="205.0">
+            <Button fx:id="graphButton" layoutY="7.0" mnemonicParsing="false" onAction="#enterGraphPane" styleClass="button-dark-blue" stylesheets="@../../../resources/railview/simulation/resources/CSS/Darktheme.css" AnchorPane.leftAnchor="205.0">
                <graphic>
                   <ImageView fitHeight="45.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -65,7 +65,7 @@
                   <Tooltip fx:id="settingsTooltip" prefWidth="100.0" text="Config" />
                </tooltip>
             </Button>
-            <Button fx:id="editorButton" layoutX="387.0" layoutY="7.0" mnemonicParsing="false" onAction="#editorButtonClicked" styleClass="button-dark-blue" stylesheets="@../../../resources/railview/simulation/resources/CSS/Darktheme.css" AnchorPane.leftAnchor="385.0">
+            <Button fx:id="editorButton" layoutX="387.0" layoutY="7.0" mnemonicParsing="false" onAction="#enterEditorPane" styleClass="button-dark-blue" stylesheets="@../../../resources/railview/simulation/resources/CSS/Darktheme.css" AnchorPane.leftAnchor="385.0">
                <graphic>
                   <ImageView fitHeight="45.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -112,7 +112,7 @@
                </graphic>
             </Button>
             <Slider fx:id="speedBar" blockIncrement="5.0" layoutX="980.0" layoutY="30.0" prefHeight="14.0" prefWidth="200.0" value="100.0" AnchorPane.rightAnchor="113.0" />
-            <Button fx:id="lockButton" layoutX="1250.0" layoutY="15.0" mnemonicParsing="false" onAction="#lock" AnchorPane.rightAnchor="20.0">
+            <Button fx:id="lockButton" layoutX="1250.0" layoutY="15.0" mnemonicParsing="false" onAction="#lockMenuPane" AnchorPane.rightAnchor="20.0">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -121,7 +121,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="unlockButton" layoutX="1250.0" layoutY="15.0" mnemonicParsing="false" onAction="#unlock" AnchorPane.rightAnchor="20.0">
+            <Button fx:id="unlockButton" layoutX="1250.0" layoutY="15.0" mnemonicParsing="false" onAction="#unlockMenuPane" AnchorPane.rightAnchor="20.0">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>

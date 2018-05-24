@@ -21,6 +21,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
 
+/**
+ * The controller class for GraphPane.fxml. The Pane shows different kind of
+ * data for the simulation.
+ * 
+ */
 public class GraphPaneController {
 
 	@FXML
@@ -137,48 +142,6 @@ public class GraphPaneController {
 				});
 	}
 
-	@FXML
-	public void navigate() {
-		this.occupancyAndPendingPaneController.navigate();
-	}
-
-	@FXML
-	public void onSelectionChanged() {
-
-	}
-
-	@FXML
-	public void onForwardButtonEntered() {
-		forwardButton.setStyle("-fx-background-radius: 50px; "
-				+ "-fx-min-width: 50px; " + "-fx-min-height: 50px; "
-				+ "-fx-max-width: 50px; " + "-fx-max-height: 50px;"
-				+ "-fx-background-color: #EBEBEB; ");
-	}
-
-	@FXML
-	public void onForwardButtonExited() {
-		forwardButton.setStyle("-fx-background-radius: 50px; "
-				+ "-fx-min-width: 50px; " + "-fx-min-height: 50px; "
-				+ "-fx-max-width: 50px; " + "-fx-max-height: 50px;"
-				+ "-fx-background-color: #B2B2B2; ");
-	}
-
-	@FXML
-	public void onBackButtonEntered() {
-		backButton.setStyle("-fx-background-radius: 50px; "
-				+ "-fx-min-width: 50px; " + "-fx-min-height: 50px; "
-				+ "-fx-max-width: 50px; " + "-fx-max-height: 50px;"
-				+ "-fx-background-color: #EBEBEB; ");
-	}
-
-	@FXML
-	public void onBackButtonExited() {
-		backButton.setStyle("-fx-background-radius: 50px; "
-				+ "-fx-min-width: 50px; " + "-fx-min-height: 50px; "
-				+ "-fx-max-width: 50px; " + "-fx-max-height: 50px;"
-				+ "-fx-background-color: #B2B2B2; ");
-	}
-
 	public void setInfrastructureServiceUtility(
 			IInfrastructureServiceUtility infraServiceUtility) {
 		this.trainRunMonitorController
@@ -226,6 +189,48 @@ public class GraphPaneController {
 		if (!active) {
 			this.occupancyAndPendingPaneController.setActive(false);
 		}
+	}
+
+	@FXML
+	private void navigate() {
+		this.occupancyAndPendingPaneController.navigate();
+	}
+
+	@FXML
+	private void onSelectionChanged() {
+
+	}
+
+	@FXML
+	private void onForwardButtonEntered() {
+		forwardButton.setStyle("-fx-background-radius: 50px; "
+				+ "-fx-min-width: 50px; " + "-fx-min-height: 50px; "
+				+ "-fx-max-width: 50px; " + "-fx-max-height: 50px;"
+				+ "-fx-background-color: #EBEBEB; ");
+	}
+
+	@FXML
+	private void onForwardButtonExited() {
+		forwardButton.setStyle("-fx-background-radius: 50px; "
+				+ "-fx-min-width: 50px; " + "-fx-min-height: 50px; "
+				+ "-fx-max-width: 50px; " + "-fx-max-height: 50px;"
+				+ "-fx-background-color: #B2B2B2; ");
+	}
+
+	@FXML
+	private void onBackButtonEntered() {
+		backButton.setStyle("-fx-background-radius: 50px; "
+				+ "-fx-min-width: 50px; " + "-fx-min-height: 50px; "
+				+ "-fx-max-width: 50px; " + "-fx-max-height: 50px;"
+				+ "-fx-background-color: #EBEBEB; ");
+	}
+
+	@FXML
+	private void onBackButtonExited() {
+		backButton.setStyle("-fx-background-radius: 50px; "
+				+ "-fx-min-width: 50px; " + "-fx-min-height: 50px; "
+				+ "-fx-max-width: 50px; " + "-fx-max-height: 50px;"
+				+ "-fx-background-color: #B2B2B2; ");
 	}
 
 	private boolean isActive = false;

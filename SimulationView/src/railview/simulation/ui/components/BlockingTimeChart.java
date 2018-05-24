@@ -25,8 +25,19 @@ import railview.simulation.ui.data.EventData;
 import railview.simulation.ui.data.TableProperty;
 import railview.simulation.ui.data.TimeDistance;
 
+/**
+ * A class representing a Chart with BlockingTime inside. For each blockingTime
+ * there is a rectangle drawn in the chart. The BlockingTimeChart has an eventLabel, an eventTable
+ * and a controller.
+ * 
+ * @param <X>
+ * @param <Y>
+ */
 public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
-	public BlockingTimeChart(Axis<X> xAxis, Axis<Y> yAxis, Label eventLabel, TableView<TableProperty> eventTable, TrainRunMonitorPaneController controller) {
+
+	public BlockingTimeChart(Axis<X> xAxis, Axis<Y> yAxis, Label eventLabel,
+			TableView<TableProperty> eventTable,
+			TrainRunMonitorPaneController controller) {
 		super(xAxis, yAxis);
 		this.eventLabel = eventLabel;
 		this.eventTable = eventTable;
@@ -44,16 +55,16 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 	public void setEventsMap(Map<TimeDistance, List<EventData>> eventsMap) {
 		this.eventsMap = eventsMap;
 	}
-	
-	public List<Polygon> getInformation(Label label){
-		 for(Polygon polygon : polygonList) {
-			 	polygon.setOnMouseClicked(new EventHandler<MouseEvent>() {
-			 			@Override
-			 			public void handle(MouseEvent event) {
-						}
-			 		});
-	        }
-		 return this.polygonList;
+
+	public List<Polygon> getInformation(Label label) {
+		for (Polygon polygon : polygonList) {
+			polygon.setOnMouseClicked(new EventHandler<MouseEvent>() {
+				@Override
+				public void handle(MouseEvent event) {
+				}
+			});
+		}
+		return this.polygonList;
 
 	}
 
@@ -79,6 +90,9 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 		eventLabel.setVisible(false);
 	}
 
+	/**
+	 * add the rectangles on top of the blockingTimeChart
+	 */
 	@Override
 	protected void layoutPlotChildren() {
 		super.layoutPlotChildren();
@@ -152,16 +166,10 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 										.toRealValue(-td.getSecond()))),
 
 						});
-				
+
 				this.getPlotChildren().add(polygon);
-				
+
 				polygonList.add(polygon);
-				
-				for(Polygon poly: selfEventPolygonList){
-	        		poly.setFill(Color.BLACK);
-	        	}
-				
-		
 
 				polygon.setOnMouseEntered(new EventHandler<MouseEvent>() {
 					@Override
@@ -189,16 +197,22 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 							eventLabel.setLayoutY(-70);
 						}
 
-						ObservableList<TableProperty> observableEventList = FXCollections.observableArrayList();
-						observableEventList.add(new TableProperty("Time [s]", String.format("%1$,.2f", td.getSecond())));
-						observableEventList.add(new TableProperty("Distance [m]", String.format("%1$,.2f", td.getMeter())));
+						ObservableList<TableProperty> observableEventList = FXCollections
+								.observableArrayList();
+						observableEventList.add(new TableProperty("Time [s]",
+								String.format("%1$,.2f", td.getSecond())));
+						observableEventList.add(new TableProperty(
+								"Distance [m]", String.format("%1$,.2f",
+										td.getMeter())));
 						int index = 1;
 						for (EventData e : eventList) {
-							observableEventList.add(new TableProperty(index + ". Event Name", e.getEventName()));
-							observableEventList.add(new TableProperty("   Description", e.getText()));
+							observableEventList.add(new TableProperty(index
+									+ ". Event Name", e.getEventName()));
+							observableEventList.add(new TableProperty(
+									"   Description", e.getText()));
 							index++;
 						}
-						
+
 						if (eventTable == null) {
 							System.out.println("eventtable is null");
 						}
@@ -219,7 +233,7 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 
 					}
 				});
-				
+
 				polygon.setOnMouseClicked(new EventHandler<MouseEvent>() {
 					@Override
 					public void handle(MouseEvent event) {
@@ -234,17 +248,14 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 	private Map<TimeDistance, List<EventData>> eventsMap;
 	private NumberAxis yAxis;
 	private NumberAxis xAxis;
-	
+
 	private List<Polygon> polygonList = new ArrayList<Polygon>();
-	private List<Polygon> selfEventPolygonList = new ArrayList<Polygon>();
-	private List<Polygon> incomingEventPolygonList = new ArrayList<Polygon>();
-	private List<Polygon> outgoingEventPolygonList = new ArrayList<Polygon>();
 
 	private Label eventLabel;
 	private TableView<TableProperty> eventTable;
 	private TrainRunMonitorPaneController controller;
 	private Rectangle r;
-	
+
 	class TimeDistanceEvents {
 		public TimeDistanceEvents(Polygon arrow, Path path,
 				List<EventData> events) {

@@ -3,7 +3,6 @@ package railview.simulation.ui;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -60,6 +59,11 @@ import javafx.scene.text.Text;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
 
+/**
+ * The controller class for TrainRunMonitorPane.fxml. The Pane gives a
+ * selectable list of trains where you can see their blockingTimeChart.
+ * 
+ */
 public class TrainRunMonitorPaneController {
 	@FXML
 	private AnchorPane blockingTimePane, snapshotRoot;
@@ -76,11 +80,14 @@ public class TrainRunMonitorPaneController {
 	@FXML
 	private CheckBox selfEventCheckBox, inEventCheckBox, outEventCheckBox;
 
-
+	/**
+	 * initialize the trainRunMonitorPane, add blockingTimeChart on top of it,
+	 * add zoom function, load snapshotPane, add window resize listener, create
+	 * eventTable and trainInfoTable
+	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@FXML
 	public void initialize() {
-
 
 		eventLabel.toFront();
 
@@ -129,16 +136,17 @@ public class TrainRunMonitorPaneController {
 			}
 		});
 
-
-		blockingTimePane.heightProperty().addListener(new ChangeListener<Number>() {
-			@Override
-			public void changed(
-					ObservableValue<? extends Number> observableValue,
-					Number oldSceneHeight, Number newSceneHeight) {
-				blockingTimePane.setLayoutY((newSceneHeight.doubleValue() / 2)
-						- (blockingTimePane.prefHeight(-1) / 2));
-			}
-		});
+		blockingTimePane.heightProperty().addListener(
+				new ChangeListener<Number>() {
+					@Override
+					public void changed(
+							ObservableValue<? extends Number> observableValue,
+							Number oldSceneHeight, Number newSceneHeight) {
+						blockingTimePane.setLayoutY((newSceneHeight
+								.doubleValue() / 2)
+								- (blockingTimePane.prefHeight(-1) / 2));
+					}
+				});
 
 		// initialize eventTable
 		TableColumn eventItemCol = new TableColumn("Item");
@@ -175,46 +183,11 @@ public class TrainRunMonitorPaneController {
 		trainValueCol.setCellFactory(createCellFactory());
 	}
 
-	static Callback<TableColumn<TableProperty, String>, TableCell<TableProperty, String>> createCellFactory() {
-		return new Callback<TableColumn<TableProperty, String>, TableCell<TableProperty, String>>() {
-			@Override
-			public TableCell<TableProperty, String> call(
-					TableColumn<TableProperty, String> param) {
-				TableCell<TableProperty, String> cell = new TableCell<>();
-				Text text = new Text();
-				cell.setGraphic(text);
-				cell.setPrefHeight(Control.USE_COMPUTED_SIZE);
-				text.wrappingWidthProperty().bind(cell.widthProperty());
-				text.textProperty().bind(cell.itemProperty());
-				return cell;
-			}
-		};
-	}
-
-	@FXML
-	private void resetBlockingTime(MouseEvent event) {
-		if (event.getButton().equals(MouseButton.SECONDARY)) {
-			if (event.getClickCount() == 2) {
-				blockingTimeChart.getXAxis().setAutoRanging(true);
-				blockingTimeChart.getYAxis().setAutoRanging(true);
-			}
-		}
-	}
-
-	void setTrainNumbers(ObservableList<String> numbers) {
-		this.trainNumbers.setItems(numbers);
-	}
-
-	void setTrainMap(ConcurrentHashMap<String, AbstractTrainSimulator> trainMap) {
-		this.trainMap = trainMap;
-	}
-
-	void setInfrastructureServiceUtility(
-			IInfrastructureServiceUtility infraServiceUtility) {
-		this.snapshotPaneController
-				.setInfrastructureServiceUtility(infraServiceUtility);
-	}
-
+	/**
+	 * draw the event points on the path in the snapshotPane
+	 * 
+	 * @param td
+	 */
 	public void drawEventOnSnap(TimeDistance td) {
 		AbstractTrainSimulator train = trainMap.get(trainNumbers
 				.getSelectionModel().getSelectedItem().toString());
@@ -222,6 +195,21 @@ public class TrainRunMonitorPaneController {
 				Length.fromMeter(td.getMeter()));
 		snapshotPaneController.setEventPoint(coordinate);
 		snapshotPaneController.draw();
+	}
+
+	/**
+	 * reset the zoom of the blockingTimeChart
+	 * 
+	 * @param event
+	 */
+	@FXML
+	private void resetZoomBlockingTime(MouseEvent event) {
+		if (event.getButton().equals(MouseButton.SECONDARY)) {
+			if (event.getClickCount() == 2) {
+				blockingTimeChart.getXAxis().setAutoRanging(true);
+				blockingTimeChart.getYAxis().setAutoRanging(true);
+			}
+		}
 	}
 
 	private BlockingTimeChart<Number, Number> createBlockingTimeChart() {
@@ -246,7 +234,6 @@ public class TrainRunMonitorPaneController {
 
 						trainInfoTable.setItems(generateTrainInfo(train,
 								newValue));
-
 
 						List<Coordinate> path = getTrainPathCoordinates(train);
 						snapshotPaneController.setHighlightedPath(path);
@@ -367,7 +354,7 @@ public class TrainRunMonitorPaneController {
 						});
 
 						// window resize listener
-						//TODO
+						// TODO
 
 						blockingTimePane.widthProperty().addListener(
 								(obs, oldVal, newVal) -> {
@@ -405,28 +392,6 @@ public class TrainRunMonitorPaneController {
 		xAxis.setSide(Side.TOP);
 
 		return chart;
-	}
-
-	static ObservableList<TableProperty> generateTrainInfo(
-			AbstractTrainSimulator train, String trainNumber) {
-		ObservableList<TableProperty> observableTrainInfoList = FXCollections
-				.observableArrayList();
-		observableTrainInfoList.add(new TableProperty("Train Number",
-				trainNumber));
-		observableTrainInfoList.add(new TableProperty("State", train.getTrain()
-				.getStatus() == SimpleTrain.ACTIVE ? "In operation ..."
-				: "Terminated"));
-		List<TripElement> elements = train.getTripSection().getTripElements();
-		observableTrainInfoList.add(new TableProperty("From",
-				((InfrastructureObject) elements.get(0).getOperationalPoint())
-						.getElement().getStation().getDescription()));
-		observableTrainInfoList.add(new TableProperty("To",
-				((InfrastructureObject) elements.get(elements.size() - 1)
-						.getOperationalPoint()).getElement().getStation()
-						.getDescription()));
-		observableTrainInfoList.add(new TableProperty("Start time", elements
-				.get(0).getArriverTime().toString()));
-		return observableTrainInfoList;
 	}
 
 	private List<BlockingTime> getBlockingTimeStairway(
@@ -576,8 +541,60 @@ public class TrainRunMonitorPaneController {
 			chart.getData().add(courseForTimeSeries);
 			chart.setCreateSymbols(false);
 		}
-				
+
 		return chart;
+	}
+
+	static Callback<TableColumn<TableProperty, String>, TableCell<TableProperty, String>> createCellFactory() {
+		return new Callback<TableColumn<TableProperty, String>, TableCell<TableProperty, String>>() {
+			@Override
+			public TableCell<TableProperty, String> call(
+					TableColumn<TableProperty, String> param) {
+				TableCell<TableProperty, String> cell = new TableCell<>();
+				Text text = new Text();
+				cell.setGraphic(text);
+				cell.setPrefHeight(Control.USE_COMPUTED_SIZE);
+				text.wrappingWidthProperty().bind(cell.widthProperty());
+				text.textProperty().bind(cell.itemProperty());
+				return cell;
+			}
+		};
+	}
+
+	void setTrainNumbers(ObservableList<String> numbers) {
+		this.trainNumbers.setItems(numbers);
+	}
+
+	void setTrainMap(ConcurrentHashMap<String, AbstractTrainSimulator> trainMap) {
+		this.trainMap = trainMap;
+	}
+
+	void setInfrastructureServiceUtility(
+			IInfrastructureServiceUtility infraServiceUtility) {
+		this.snapshotPaneController
+				.setInfrastructureServiceUtility(infraServiceUtility);
+	}
+
+	static ObservableList<TableProperty> generateTrainInfo(
+			AbstractTrainSimulator train, String trainNumber) {
+		ObservableList<TableProperty> observableTrainInfoList = FXCollections
+				.observableArrayList();
+		observableTrainInfoList.add(new TableProperty("Train Number",
+				trainNumber));
+		observableTrainInfoList.add(new TableProperty("State", train.getTrain()
+				.getStatus() == SimpleTrain.ACTIVE ? "In operation ..."
+				: "Terminated"));
+		List<TripElement> elements = train.getTripSection().getTripElements();
+		observableTrainInfoList.add(new TableProperty("From",
+				((InfrastructureObject) elements.get(0).getOperationalPoint())
+						.getElement().getStation().getDescription()));
+		observableTrainInfoList.add(new TableProperty("To",
+				((InfrastructureObject) elements.get(elements.size() - 1)
+						.getOperationalPoint()).getElement().getStation()
+						.getDescription()));
+		observableTrainInfoList.add(new TableProperty("Start time", elements
+				.get(0).getArriverTime().toString()));
+		return observableTrainInfoList;
 	}
 
 	private DraggableChart<Number, Number> blockingTimeChart;

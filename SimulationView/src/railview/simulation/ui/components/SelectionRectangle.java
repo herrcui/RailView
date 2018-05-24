@@ -3,6 +3,11 @@ package railview.simulation.ui.components;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
+/**
+ * A rectangle object which appears when selecting an area.
+ * 
+ */
+
 public class SelectionRectangle extends Rectangle {
 
 	public SelectionRectangle() {

@@ -16,6 +16,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 
+/**
+ * The class responsible to draw the InfrastructureElement, the events and the signals.
+ * 
+ */
 public class InfrastructureElementsPane extends PannablePane {
 	private Collection<InfrastructureElement> elements;
 	private Collection<AbstractSignal> signals;

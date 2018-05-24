@@ -8,6 +8,10 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
+/**
+ * The class responsible for zooming in a chart. It zooms both x and y direction.
+ *
+ */
 public class Zoom {
 
 	private final AnchorPane pane;

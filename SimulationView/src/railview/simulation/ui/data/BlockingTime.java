@@ -1,5 +1,9 @@
 package railview.simulation.ui.data;
 
+/**
+ * An object representing a blockingTime with startMeter, endMeter, startTime
+ * and endTime.
+ */
 public class BlockingTime {
 	public BlockingTime(double startMeter, double endMeter,
 			double startTimeInSecond, double endTimeInSecond) {

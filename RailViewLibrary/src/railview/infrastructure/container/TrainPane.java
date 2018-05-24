@@ -16,6 +16,10 @@ import railapp.swarmintelligence.SwarmManager;
 import railapp.units.Coordinate;
 import railapp.units.Time;
 
+/**
+ * This class is a Pane for the simulation of the trains.
+ * 
+ */
 public class TrainPane extends PannablePane {
 
 	private CoordinateMapper mapper;

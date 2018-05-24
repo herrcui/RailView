@@ -33,13 +33,20 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
+/**
+ * The controller class for RunningDynamicsPane.fxml. The Pane gives a
+ * selectable list of trains from the simulation where you can see their
+ * speedProfileChart and energyChart.
+ * 
+ */
+
 public class RunningDynamicsPaneController {
 	@FXML
 	private AnchorPane speedprofilePane, energyPane;
-	
+
 	@FXML
 	private ListView<String> trainNumbers;
-	
+
 	@FXML
 	private TableView<TableProperty> trainInfoTable;
 
@@ -49,59 +56,66 @@ public class RunningDynamicsPaneController {
 		speedProfileChart = this.createChart();
 		energyChart = this.createChart();
 
-		trainNumbers.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-			@Override
-			public void changed(
-					ObservableValue<? extends String> observable,
-					String oldValue, String newValue) {
-				
-				speedProfileChart.getData().clear();
-				speedProfileChart.getXAxis().setAutoRanging(true);
-				speedProfileChart.getYAxis().setAutoRanging(true);
-				drawVelocity(trainMap.get(newValue), speedProfileChart);
-				
-				energyChart.getData().clear();
-				energyChart.getXAxis().setAutoRanging(true);
-				energyChart.getYAxis().setAutoRanging(true);
-				drawEnergy(trainMap.get(newValue));
-				
-				AbstractTrainSimulator train = trainMap.get(newValue); 
-				
-				trainInfoTable.setItems(TrainRunMonitorPaneController.generateTrainInfo(train, newValue));
-			}
-		});
-		
+		trainNumbers.getSelectionModel().selectedItemProperty()
+				.addListener(new ChangeListener<String>() {
+					@Override
+					public void changed(
+							ObservableValue<? extends String> observable,
+							String oldValue, String newValue) {
+
+						speedProfileChart.getData().clear();
+						speedProfileChart.getXAxis().setAutoRanging(true);
+						speedProfileChart.getYAxis().setAutoRanging(true);
+						drawVelocity(trainMap.get(newValue), speedProfileChart);
+
+						energyChart.getData().clear();
+						energyChart.getXAxis().setAutoRanging(true);
+						energyChart.getYAxis().setAutoRanging(true);
+						drawEnergy(trainMap.get(newValue));
+
+						AbstractTrainSimulator train = trainMap.get(newValue);
+
+						trainInfoTable.setItems(TrainRunMonitorPaneController
+								.generateTrainInfo(train, newValue));
+					}
+				});
+
 		// initialize trainInfoTable
-        TableColumn<TableProperty, String> trainItemCol = new TableColumn<TableProperty, String>("Item");
-        trainItemCol.setMinWidth(100);
-        trainItemCol.setCellValueFactory(
-            new PropertyValueFactory<TableProperty, String>("item"));
-        
-        TableColumn<TableProperty, String> trainValueCol = new TableColumn<TableProperty, String>("Value");
-        trainValueCol.setMinWidth(100);
-        trainValueCol.setCellValueFactory(
-            new PropertyValueFactory<TableProperty, String>("value"));
-        
-        trainInfoTable.getColumns().addAll(trainItemCol, trainValueCol);
-        
-        trainValueCol.setCellFactory(TrainRunMonitorPaneController.createCellFactory());
-		
+		TableColumn<TableProperty, String> trainItemCol = new TableColumn<TableProperty, String>(
+				"Item");
+		trainItemCol.setMinWidth(100);
+		trainItemCol
+				.setCellValueFactory(new PropertyValueFactory<TableProperty, String>(
+						"item"));
+
+		TableColumn<TableProperty, String> trainValueCol = new TableColumn<TableProperty, String>(
+				"Value");
+		trainValueCol.setMinWidth(100);
+		trainValueCol
+				.setCellValueFactory(new PropertyValueFactory<TableProperty, String>(
+						"value"));
+
+		trainInfoTable.getColumns().addAll(trainItemCol, trainValueCol);
+
+		trainValueCol.setCellFactory(TrainRunMonitorPaneController
+				.createCellFactory());
+
 		speedprofilePane.getChildren().add(speedProfileChart);
 		energyPane.getChildren().add(energyChart);
 
 		new ZoomOnlyX(speedProfileChart, speedprofilePane);
-		new ZoomOnlyX(energyChart, energyPane);		
+		new ZoomOnlyX(energyChart, energyPane);
 
 		initializeChart(speedProfileChart);
 		initializeChart(energyChart);
 	}
-	
+
 	private void initializeChart(DraggableChart<Number, Number> chart) {
 		AnchorPane.setTopAnchor(chart, 0.0);
 		AnchorPane.setLeftAnchor(chart, 0.0);
 		AnchorPane.setRightAnchor(chart, 0.0);
 		AnchorPane.setBottomAnchor(chart, 0.0);
-		
+
 		chart.setMouseFilter(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent mouseEvent) {
@@ -113,7 +127,7 @@ public class RunningDynamicsPaneController {
 		});
 		chart.startEventHandlers();
 	}
-	
+
 	@FXML
 	private void resetSpeedProfile(MouseEvent event) {
 		if (event.getButton().equals(MouseButton.SECONDARY)) {
@@ -123,26 +137,26 @@ public class RunningDynamicsPaneController {
 			}
 		}
 	}
-	
-	void setTrainMap(
-			ConcurrentHashMap<String, AbstractTrainSimulator> trainMap) {
+
+	void setTrainMap(ConcurrentHashMap<String, AbstractTrainSimulator> trainMap) {
 		this.trainMap = trainMap;
 	}
-	
+
 	void setTrainNumbers(ObservableList<String> numbers) {
 		this.trainNumbers.setItems(numbers);
 	}
-	
+
 	private DraggableChart<Number, Number> createChart() {
 		NumberAxis xAxis = new NumberAxis();
 		NumberAxis yAxis = new NumberAxis();
-		DraggableChart<Number, Number> chart = new DraggableChart<>(xAxis, yAxis);
+		DraggableChart<Number, Number> chart = new DraggableChart<>(xAxis,
+				yAxis);
 		chart.setAnimated(false);
 		chart.setCreateSymbols(false);
-		
+
 		return chart;
 	}
-	
+
 	private LineChart<Number, Number> drawVelocity(
 			AbstractTrainSimulator train, LineChart<Number, Number> chart) {
 		XYChart.Series<Number, Number> CourseForVelocitySeries = new Series<Number, Number>();
@@ -156,7 +170,7 @@ public class RunningDynamicsPaneController {
 			}
 			chart.getData().add(CourseForVelocitySeries);
 			XYChart.Series<Number, Number> speedLimitSeries = new Series<Number, Number>();
-			
+
 			double y = -1;
 			speedLimitSeries.getData().add(new Data<Number, Number>(0, y));
 			for (Map.Entry<Double, Double> entry : getSpeedLimit(train)
@@ -171,7 +185,10 @@ public class RunningDynamicsPaneController {
 				y = entry.getValue();
 			}
 			chart.getData().add(speedLimitSeries);
-			speedLimitSeries.nodeProperty().get().setStyle(
+			speedLimitSeries
+					.nodeProperty()
+					.get()
+					.setStyle(
 							"-fx-stroke: #000000; -fx-stroke-dash-array: 0.1 5.0;");
 
 			chart.setLegendVisible(false);
@@ -180,7 +197,7 @@ public class RunningDynamicsPaneController {
 		}
 		return chart;
 	}
-	
+
 	// Map: Meter, VelocityInKmH
 	private Map<Double, Double> getCourseForVelocity(
 			AbstractTrainSimulator train) {
@@ -194,7 +211,7 @@ public class RunningDynamicsPaneController {
 		}
 		return velocityMap;
 	}
-	
+
 	private LinkedHashMap<Double, Double> getSpeedLimit(
 			AbstractTrainSimulator train) {
 		// Velocity
@@ -204,9 +221,8 @@ public class RunningDynamicsPaneController {
 
 		double maxTrainKmH = train.getTrainDefinition().getMaxVelocity()
 				.getKilometerPerHour();
-		double maxKmH = Math
-				.min(maxTrainKmH, path.getEdges().get(0).getLink()
-						.getGeometry().getMaxVelocity().getKilometerPerHour());
+		double maxKmH = Math.min(maxTrainKmH, path.getEdges().get(0).getLink()
+				.getGeometry().getMaxVelocity().getKilometerPerHour());
 		double lastMeter = 0;
 		double meter = 0;
 
@@ -234,26 +250,29 @@ public class RunningDynamicsPaneController {
 
 		return speedLimitMap;
 	}
-	
+
 	private void drawEnergy(AbstractTrainSimulator train) {
 		XYChart.Series<Number, Number> courseForEnergy = new Series<Number, Number>();
 		courseForEnergy.setName("energy consumption (KWH)");
 		if (train.getTrain().getStatus() != SimpleTrain.INACTIVE) {
-			for (Map.Entry<Double, Double> entry : getCourseForEnergy(train).entrySet()) {
+			for (Map.Entry<Double, Double> entry : getCourseForEnergy(train)
+					.entrySet()) {
 				courseForEnergy.getData().add(
-						new Data<Number, Number>(entry.getKey(), entry.getValue()));
+						new Data<Number, Number>(entry.getKey(), entry
+								.getValue()));
 			}
 			energyChart.getData().add(courseForEnergy);
 			energyChart.setCreateSymbols(false);
 		}
 	}
-	
+
 	// Map: Meter, VelocityInKmH
 	private Map<Double, Double> getCourseForEnergy(AbstractTrainSimulator train) {
 		Map<Double, Double> energyMap = new LinkedHashMap<Double, Double>();
 		double meter = 0; // x
 		double accumlatedEnergy = 0; // y
-		Energy[] energies = Course.calculateEnergy(train.getWholeCoursePoints(), train.getTrainDefinition());
+		Energy[] energies = Course.calculateEnergy(
+				train.getWholeCoursePoints(), train.getTrainDefinition());
 		int index = 0;
 		for (DiscretePoint point : train.getWholeCoursePoints()) {
 			if (energies[index] != null) {
@@ -261,13 +280,13 @@ public class RunningDynamicsPaneController {
 			}
 			meter += point.getDistance().getMeter();
 			energyMap.put(meter, accumlatedEnergy);
-			
+
 			index++;
 		}
-		
+
 		return energyMap;
 	}
-	
+
 	private DraggableChart<Number, Number> speedProfileChart;
 	private DraggableChart<Number, Number> energyChart;
 	private ConcurrentHashMap<String, AbstractTrainSimulator> trainMap;

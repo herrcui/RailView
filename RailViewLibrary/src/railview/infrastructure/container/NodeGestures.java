@@ -4,65 +4,66 @@ import javafx.event.EventHandler;
 import javafx.scene.input.ScrollEvent;
 import railview.infrastructure.container.PannablePane;
 
+/**
+ * class for enabling scrolling events for Panes.
+ * 
+ */
 public class NodeGestures {
 
-    private static final double MAX_SCALE = 100.0d;
-    private static final double MIN_SCALE = .1d;
-    double zoomFactor = 1.2;
+	private static final double MAX_SCALE = 100.0d;
+	private static final double MIN_SCALE = .1d;
+	double zoomFactor = 1.2;
 
-    PannablePane canvas;
+	PannablePane canvas;
 
-    public NodeGestures( PannablePane canvas) {
-        this.canvas = canvas;
+	public NodeGestures(PannablePane canvas) {
+		this.canvas = canvas;
+	}
 
-    }
+	public EventHandler<ScrollEvent> getOnScrollEventHandler() {
+		return onScrollEventHandler;
+	}
 
-    
-    public EventHandler<ScrollEvent> getOnScrollEventHandler() {
-        return onScrollEventHandler;
-    }
+	private EventHandler<ScrollEvent> onScrollEventHandler = new EventHandler<ScrollEvent>() {
 
+		@Override
+		public void handle(ScrollEvent event) {
 
-    
-    private EventHandler<ScrollEvent> onScrollEventHandler = new EventHandler<ScrollEvent>() {
+			double scale = canvas.getScale();
+			double oldScale = scale;
 
-        @Override
-        public void handle(ScrollEvent event) {
+			if (event.getDeltaY() < 0)
+				scale /= zoomFactor;
+			else
+				scale *= zoomFactor;
 
-            double scale = canvas.getScale();
-            double oldScale = scale;
+			scale = clamp(scale, MIN_SCALE, MAX_SCALE);
 
-            if (event.getDeltaY() < 0)
-                scale /= zoomFactor;
-            else
-                scale *= zoomFactor;
+			double f = (scale / oldScale) - 1;
 
-            scale = clamp( scale, MIN_SCALE, MAX_SCALE);
+			double dx = (event.getX() - (canvas.getBoundsInParent().getWidth() / 2 + canvas
+					.getBoundsInParent().getMinX()));
+			double dy = (event.getY() - (canvas.getBoundsInParent().getHeight() / 2 + canvas
+					.getBoundsInParent().getMinY()));
 
-            double f = (scale / oldScale) - 1;
+			canvas.setScale(scale);
 
-            double dx = (event.getX() - (canvas.getBoundsInParent().getWidth()/2 + canvas.getBoundsInParent().getMinX()));
-            double dy = (event.getY() - (canvas.getBoundsInParent().getHeight()/2 + canvas.getBoundsInParent().getMinY()));
+			// note: pivot value must be untransformed, i. e. without scaling
+			canvas.setPivot(f * dx, f * dy);
 
-            canvas.setScale(scale);
+			event.consume();
+		}
+	};
 
-            // note: pivot value must be untransformed, i. e. without scaling
-            canvas.setPivot(f*dx, f*dy);
+	private static double clamp(double value, double min, double max) {
 
-            event.consume();
-        }
-    };
+		if (Double.compare(value, min) < 0)
+			return min;
 
+		if (Double.compare(value, max) > 0)
+			return max;
 
-    public static double clamp( double value, double min, double max) {
-
-        if( Double.compare(value, min) < 0)
-            return min;
-
-        if( Double.compare(value, max) > 0)
-            return max;
-
-        return value;
-    }
+		return value;
+	}
 
 }

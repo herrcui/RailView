@@ -8,6 +8,10 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
+/**
+ * A class responsible for zooming only in X direction.
+ * 
+ */
 public class ZoomOnlyX {
 
 	private final AnchorPane pane;
@@ -15,7 +19,6 @@ public class ZoomOnlyX {
 	private final NumberAxis xAxis;
 	private final NumberAxis yAxis;
 	private final SelectionRectangle selectionRectangle;
-
 
 	private Point2D selectionRectangleStart;
 	private Point2D selectionRectangleEnd;
@@ -31,9 +34,12 @@ public class ZoomOnlyX {
 	}
 
 	private void addDragSelectionMechanism() {
-		pane.addEventHandler(MouseEvent.MOUSE_PRESSED, new MousePressedHandler());
-		pane.addEventHandler(MouseEvent.MOUSE_DRAGGED, new MouseDraggedHandler());
-		pane.addEventHandler(MouseEvent.MOUSE_RELEASED, new MouseReleasedHandler());
+		pane.addEventHandler(MouseEvent.MOUSE_PRESSED,
+				new MousePressedHandler());
+		pane.addEventHandler(MouseEvent.MOUSE_DRAGGED,
+				new MouseDraggedHandler());
+		pane.addEventHandler(MouseEvent.MOUSE_RELEASED,
+				new MouseReleasedHandler());
 	}
 
 	private Point2D computeRectanglePoint(double eventX, double eventY) {
@@ -67,7 +73,8 @@ public class ZoomOnlyX {
 				return;
 			}
 
-			selectionRectangleStart = computeRectanglePoint(event.getX(), event.getY());
+			selectionRectangleStart = computeRectanglePoint(event.getX(),
+					event.getY());
 			event.consume();
 		}
 	}
@@ -80,18 +87,24 @@ public class ZoomOnlyX {
 				return;
 			}
 
-			selectionRectangleEnd = computeRectanglePoint(event.getX(), event.getY());
+			selectionRectangleEnd = computeRectanglePoint(event.getX(),
+					event.getY());
 
-			double x = Math.min(selectionRectangleStart.getX(), selectionRectangleEnd.getX());
-			double y = Math.min(selectionRectangleStart.getY(), selectionRectangleEnd.getY());
-			double width = Math.abs(selectionRectangleStart.getX() - selectionRectangleEnd.getX());
-			double height = Math.abs(selectionRectangleStart.getY() - selectionRectangleEnd.getY());
+			double x = Math.min(selectionRectangleStart.getX(),
+					selectionRectangleEnd.getX());
+			double y = Math.min(selectionRectangleStart.getY(),
+					selectionRectangleEnd.getY());
+			double width = Math.abs(selectionRectangleStart.getX()
+					- selectionRectangleEnd.getX());
+			double height = Math.abs(selectionRectangleStart.getY()
+					- selectionRectangleEnd.getY());
 
 			drawSelectionRectangle(x, y, width, height);
 			event.consume();
 		}
 
-		private void drawSelectionRectangle(final double x, final double y, final double width, final double height) {
+		private void drawSelectionRectangle(final double x, final double y,
+				final double width, final double height) {
 			selectionRectangle.setVisible(true);
 			selectionRectangle.setX(x);
 			selectionRectangle.setY(y);
@@ -100,8 +113,8 @@ public class ZoomOnlyX {
 		}
 	}
 
-
-	private final class MouseReleasedHandler implements EventHandler<MouseEvent> {
+	private final class MouseReleasedHandler implements
+			EventHandler<MouseEvent> {
 
 		private static final double MIN_RECTANGE_WIDTH = 10;
 
@@ -111,7 +124,8 @@ public class ZoomOnlyX {
 		public void handle(final MouseEvent event) {
 			hideSelectionRectangle();
 
-			if (selectionRectangleStart == null || selectionRectangleEnd == null) {
+			if (selectionRectangleStart == null
+					|| selectionRectangleEnd == null) {
 				return;
 			}
 
@@ -128,11 +142,12 @@ public class ZoomOnlyX {
 		}
 
 		private boolean isRectangleSizeTooSmall() {
-			double width = Math.abs(selectionRectangleEnd.getX() - selectionRectangleStart.getX());
-			double height = Math.abs(selectionRectangleEnd.getY() - selectionRectangleStart.getY());
+			double width = Math.abs(selectionRectangleEnd.getX()
+					- selectionRectangleStart.getX());
+			double height = Math.abs(selectionRectangleEnd.getY()
+					- selectionRectangleStart.getY());
 			return width < MIN_RECTANGE_WIDTH || height < MIN_RECTANGLE_HEIGHT;
 		}
-
 
 		private void hideSelectionRectangle() {
 			selectionRectangle.setVisible(false);
@@ -141,8 +156,10 @@ public class ZoomOnlyX {
 		private void setAxisBounds() {
 			disableAutoRanging();
 
-			double selectionMinX = Math.min(selectionRectangleStart.getX(), selectionRectangleEnd.getX());
-			double selectionMaxX = Math.max(selectionRectangleStart.getX(), selectionRectangleEnd.getX());
+			double selectionMinX = Math.min(selectionRectangleStart.getX(),
+					selectionRectangleEnd.getX());
+			double selectionMaxX = Math.max(selectionRectangleStart.getX(),
+					selectionRectangleEnd.getX());
 
 			setHorizontalBounds(selectionMinX, selectionMaxX);
 		}
@@ -152,30 +169,38 @@ public class ZoomOnlyX {
 			yAxis.setAutoRanging(false);
 		}
 
-		private void setHorizontalBounds(double minPixelPosition, double maxPixelPosition) {
+		private void setHorizontalBounds(double minPixelPosition,
+				double maxPixelPosition) {
 			double currentLowerBound = xAxis.getLowerBound();
 			double currentUpperBound = xAxis.getUpperBound();
 			double offset = computeOffsetInChart(xAxis, false);
-			setLowerBoundX(minPixelPosition, currentLowerBound, currentUpperBound, offset);
-			setUpperBoundX(maxPixelPosition, currentLowerBound, currentUpperBound, offset);
+			setLowerBoundX(minPixelPosition, currentLowerBound,
+					currentUpperBound, offset);
+			setUpperBoundX(maxPixelPosition, currentLowerBound,
+					currentUpperBound, offset);
 		}
 
-		private void setLowerBoundX(double pixelPosition, double currentLowerBound, double currentUpperBound,
+		private void setLowerBoundX(double pixelPosition,
+				double currentLowerBound, double currentUpperBound,
 				double offset) {
-			double newLowerBound = computeBound(pixelPosition, offset, xAxis.getWidth(), currentLowerBound,
-					currentUpperBound, false);
+			double newLowerBound = computeBound(pixelPosition, offset,
+					xAxis.getWidth(), currentLowerBound, currentUpperBound,
+					false);
 			xAxis.setLowerBound(newLowerBound);
 		}
 
-		private void setUpperBoundX(double pixelPosition, double currentLowerBound, double currentUpperBound,
+		private void setUpperBoundX(double pixelPosition,
+				double currentLowerBound, double currentUpperBound,
 				double offset) {
-			double newUpperBound = computeBound(pixelPosition, offset, xAxis.getWidth(), currentLowerBound,
-					currentUpperBound, false);
+			double newUpperBound = computeBound(pixelPosition, offset,
+					xAxis.getWidth(), currentLowerBound, currentUpperBound,
+					false);
 			xAxis.setUpperBound(newUpperBound);
 		}
 
-		private double computeBound(double pixelPosition, double pixelOffset, double pixelLength, double lowerBound,
-				double upperBound, boolean axisInverted) {
+		private double computeBound(double pixelPosition, double pixelOffset,
+				double pixelLength, double lowerBound, double upperBound,
+				boolean axisInverted) {
 			double pixelPositionWithoutOffset = pixelPosition - pixelOffset;
 			double relativePosition = pixelPositionWithoutOffset / pixelLength;
 			double axisLength = upperBound - lowerBound;
@@ -195,7 +220,4 @@ public class ZoomOnlyX {
 		}
 	}
 
-
-
 }
-
