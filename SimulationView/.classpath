@@ -4,7 +4,6 @@
 	<classpathentry excluding="railview/simulation/resources/CSS/|railview/simulation/resources/image/" kind="src" path="resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/RailViewLibrary"/>
 	<classpathentry kind="lib" path="/Library/RailModel/InfrastructureDefinition.jar"/>
 	<classpathentry kind="lib" path="/Library/RailModel/InfrastructureRepository.jar"/>
 	<classpathentry kind="lib" path="/Library/RailModel/RailSimulator.jar"/>
@@ -15,5 +14,6 @@
 	<classpathentry kind="lib" path="/Library/Py4J/py4j0.10.2.1.jar"/>
 	<classpathentry kind="lib" path="/Library/RailModel/richtextfx-fat-0.7-M3.jar"/>
 	<classpathentry kind="lib" path="/Library/RailModel/Py4JServices.jar"/>
+	<classpathentry kind="lib" path="/Library/RailModel/SwarmIntelligence.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

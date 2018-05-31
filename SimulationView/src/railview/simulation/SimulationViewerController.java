@@ -26,15 +26,15 @@ import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.swarmintelligence.SwarmManager;
 import railapp.units.Coordinate;
 import railapp.units.Duration;
-import railview.controller.framework.AbstractSimulationController;
 import railview.railmodel.infrastructure.railsys7.InfrastructureReader;
 import railview.railmodel.infrastructure.railsys7.RollingStockReader;
 import railview.railmodel.infrastructure.railsys7.TimetableReader;
+import railview.simulation.container.NetworkPaneController;
+import railview.simulation.framework.AbstractSimulationController;
 import railview.simulation.ui.ConfigurationPaneController;
 import railview.simulation.ui.EditorPaneController;
 import railview.simulation.ui.GraphPaneController;
 import railview.simulation.ui.DialogPaneController;
-import railview.infrastructure.container.NetworkPaneController;
 
 /**
  * The controller class for the main user interface (SimulationViewer.fxml)

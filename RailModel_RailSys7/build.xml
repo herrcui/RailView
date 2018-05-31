@@ -8,7 +8,7 @@
     <property name="Library.location" value="../Library"/>
     <property name="RailViewApp.location" value="../RailViewApp"/>
     <property name="SimulationView.location" value="../SimulationView"/>
-    <property name="ECLIPSE_HOME" value="../../../../../Neuer Ordner/eclipse/"/>
+    <property name="ECLIPSE_HOME" value="../../../../../../Neuer Ordner/eclipse/"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.8"/>
     <property name="source" value="1.8"/>
@@ -27,6 +27,8 @@
         <mkdir dir="bin"/>
         <copy includeemptydirs="false" todir="bin">
             <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.xtend"/>
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>

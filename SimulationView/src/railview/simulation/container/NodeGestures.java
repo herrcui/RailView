@@ -1,8 +1,8 @@
-package railview.infrastructure.container;
+package railview.simulation.container;
 
 import javafx.event.EventHandler;
 import javafx.scene.input.ScrollEvent;
-import railview.infrastructure.container.PannablePane;
+import railview.simulation.container.PannablePane;
 
 /**
  * class for enabling scrolling events for Panes.

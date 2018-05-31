@@ -1,4 +1,4 @@
-package railview.infrastructure.container;
+package railview.simulation.container;
 
 import javafx.scene.layout.Pane;
 
