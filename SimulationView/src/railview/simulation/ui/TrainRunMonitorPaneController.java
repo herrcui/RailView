@@ -3,11 +3,14 @@ package railview.simulation.ui;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import railapp.infrastructure.dto.Line;
+import railapp.infrastructure.dto.Station;
 import railapp.infrastructure.object.dto.InfrastructureObject;
 import railapp.infrastructure.path.dto.LinkEdge;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
@@ -16,6 +19,9 @@ import railapp.simulation.events.ScheduledEvent;
 import railapp.simulation.events.totrain.AbstractEventToTrain;
 import railapp.simulation.events.totrain.UpdateLocationEvent;
 import railapp.simulation.infrastructure.PartialRouteResource;
+import railapp.simulation.infrastructure.ResourceOccupancy;
+import railapp.simulation.prediction.TrainRunPredictor;
+import railapp.simulation.runingdynamics.Course;
 import railapp.simulation.runingdynamics.sections.DiscretePoint;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.simulation.train.TrainSimulator;
@@ -401,13 +407,20 @@ public class TrainRunMonitorPaneController {
 			double meter = 0;
 			Length headDistanceInFirstResource = null;
 
-			List<PartialRouteResource> resources = ((TrainSimulator) train)
+			List<ResourceOccupancy> resourceOccupancies = ((TrainSimulator) train)
 					.getBlockingTimeStairWay();
+			
+			List<ResourceOccupancy> scheduldResourceOccupancies = 
+				this.trainRunPredictor.getScheduledBlockingTime().get(train);
+			Course course = 
+				this.trainRunPredictor.getScheduledCourseMap().get(train);
+			// for Kai
+			
 			Time trainStartTime = train.getTripSection().getStartTime();
 
-			for (PartialRouteResource resource : resources) {
+			for (ResourceOccupancy resourceOccupancy : resourceOccupancies) {
 				if (headDistanceInFirstResource == null) {
-					headDistanceInFirstResource = resource.getPath()
+					headDistanceInFirstResource = ((PartialRouteResource) resourceOccupancy.getResource()).getPath()
 							.findFirstDistance(
 									(InfrastructureObject) train
 											.getTripSection().getTripElements()
@@ -417,18 +430,18 @@ public class TrainRunMonitorPaneController {
 					}
 				}
 
-				if (resource.getReleaseTime() == null) {
+				if (resourceOccupancy.getReleaseTime() == null) {
 					break;
 				}
 
 				double startMeter = meter;
 				double endMeter = meter
-						+ resource.getPartialRoute().getPath().getLength()
+						+ ((PartialRouteResource) resourceOccupancy.getResource()).getPartialRoute().getPath().getLength()
 								.getMeter();
-				double startTimeInSecond = resource.getGrantTime()
-						.getDifference(trainStartTime).getTotalSecond();
-				double endTimeInSecond = resource.getReleaseTime()
-						.getDifference(trainStartTime).getTotalSecond();
+				double startTimeInSecond = resourceOccupancy.getGrantTime()
+						.getDifference(trainStartTime).getTotalSeconds();
+				double endTimeInSecond = resourceOccupancy.getReleaseTime()
+						.getDifference(trainStartTime).getTotalSeconds();
 
 				if (blockingTimes.size() == 0) { // for the first resource
 					endMeter = endMeter
@@ -453,7 +466,7 @@ public class TrainRunMonitorPaneController {
 		double timeInSecond = 0; // y
 
 		for (DiscretePoint point : train.getWholeCoursePoints()) {
-			timeInSecond += point.getDuration().getTotalSecond();
+			timeInSecond += point.getDuration().getTotalSeconds();
 			meter += point.getDistance().getMeter();
 			pointList.add(new TimeDistance(meter, timeInSecond));
 		}
@@ -481,7 +494,7 @@ public class TrainRunMonitorPaneController {
 
 			double second = scheduledEvent.getScheduleTime()
 					.getDifference(train.getTripSection().getStartTime())
-					.getTotalSecond();
+					.getTotalSeconds();
 			double lastSecond = 0;
 			double lastMeter = 0;
 
@@ -544,6 +557,10 @@ public class TrainRunMonitorPaneController {
 
 		return chart;
 	}
+	
+	private Collection<Station> getStationByLines(Line line) {
+		return this.infrastructureServiceUtility.getLineService().findStationsByLine(line);
+	}
 
 	static Callback<TableColumn<TableProperty, String>, TableCell<TableProperty, String>> createCellFactory() {
 		return new Callback<TableColumn<TableProperty, String>, TableCell<TableProperty, String>>() {
@@ -568,11 +585,19 @@ public class TrainRunMonitorPaneController {
 	void setTrainMap(ConcurrentHashMap<String, AbstractTrainSimulator> trainMap) {
 		this.trainMap = trainMap;
 	}
-
+	
 	void setInfrastructureServiceUtility(
 			IInfrastructureServiceUtility infraServiceUtility) {
 		this.snapshotPaneController
 				.setInfrastructureServiceUtility(infraServiceUtility);
+		this.infrastructureServiceUtility = infraServiceUtility;
+		for (Line line : this.infrastructureServiceUtility.getNetworkService().allLines(null)) {
+			this.lineMap.put(line.getDescription(), line);
+		}
+	}
+	
+	void setTrainRunPredictor(TrainRunPredictor trainRunPredictor) {
+		this.trainRunPredictor = trainRunPredictor;
 	}
 
 	static ObservableList<TableProperty> generateTrainInfo(
@@ -603,4 +628,8 @@ public class TrainRunMonitorPaneController {
 	private SnapshotPaneController snapshotPaneController;
 
 	private ConcurrentHashMap<String, AbstractTrainSimulator> trainMap;
+	
+	private IInfrastructureServiceUtility infrastructureServiceUtility;
+	private TrainRunPredictor trainRunPredictor;
+	private HashMap<String, Line> lineMap = new HashMap<String, Line>(); // for Kai
 }

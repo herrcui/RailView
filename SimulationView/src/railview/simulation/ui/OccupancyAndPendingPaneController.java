@@ -403,7 +403,7 @@ public class OccupancyAndPendingPaneController {
 	private void setStroke(Line line, Duration duration) {
 		double totalSeconds = 18000;
 
-		if (duration == null || duration.getTotalSecond() == 0) {
+		if (duration == null || duration.getTotalSeconds() == 0) {
 			line.setStroke(Color.WHITE);
 			line.setStrokeWidth(this.MIN_WIDTH);
 		} else {
@@ -415,7 +415,7 @@ public class OccupancyAndPendingPaneController {
 				line.setStroke(Color.RED);
 			}
 
-			double width = duration.getTotalSecond() / totalSeconds;
+			double width = duration.getTotalSeconds() / totalSeconds;
 			if (width < this.MIN_WIDTH) {
 				width = this.MIN_WIDTH;
 			}

@@ -9,6 +9,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.rollingstock.dto.SimpleTrain;
 import railapp.simulation.logs.InfrastructureOccupancyAndPendingLogger;
+import railapp.simulation.prediction.TrainRunPredictor;
 import railapp.simulation.train.AbstractTrainSimulator;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -153,6 +154,10 @@ public class GraphPaneController {
 	public void setInfrastructureOccupancyAndPendingLogger(
 			InfrastructureOccupancyAndPendingLogger logger) {
 		this.occupancyAndPendingPaneController.setLogger(logger);
+	}
+	
+	public void setTrainRunPredictor(TrainRunPredictor trainRunPredictor) {
+		this.trainRunMonitorController.setTrainRunPredictor(trainRunPredictor);
 	}
 
 	public void updateTrainMap(List<AbstractTrainSimulator> trainList) {
