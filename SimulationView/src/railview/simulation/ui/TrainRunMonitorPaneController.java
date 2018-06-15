@@ -593,6 +593,11 @@ public class TrainRunMonitorPaneController {
 		this.infrastructureServiceUtility = infraServiceUtility;
 		for (Line line : this.infrastructureServiceUtility.getNetworkService().allLines(null)) {
 			this.lineMap.put(line.getDescription(), line);
+		} // Kai
+		Line line0 = lineMap.values().iterator().next();
+		for (Station station : this.infrastructureServiceUtility.getLineService().findStationsByLine(line0)) {
+			station.getCoordinate().getX();
+			station.getName();
 		}
 	}
 	
