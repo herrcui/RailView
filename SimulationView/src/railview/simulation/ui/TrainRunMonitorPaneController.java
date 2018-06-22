@@ -61,6 +61,8 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
@@ -71,11 +73,13 @@ import javafx.util.StringConverter;
  * 
  */
 public class TrainRunMonitorPaneController {
-	@FXML
-	private AnchorPane blockingTimePane, snapshotRoot;
 
 	@FXML
-	private ListView<String> trainNumbers;
+	private AnchorPane blockingTimePane, snapshotRoot, trainRoot, lineRoot,
+			linePane;
+
+	@FXML
+	private ListView<String> trainNumbers, lineListView, stationListView;
 
 	@FXML
 	private Label eventLabel;
@@ -85,6 +89,14 @@ public class TrainRunMonitorPaneController {
 
 	@FXML
 	private CheckBox selfEventCheckBox, inEventCheckBox, outEventCheckBox;
+
+	private DraggableChart<Number, Number> blockingTimeChart;
+	private StackPane snapshotPane;
+	private SnapshotPaneController snapshotPaneController;
+	private ConcurrentHashMap<String, AbstractTrainSimulator> trainMap;
+	private IInfrastructureServiceUtility infrastructureServiceUtility;
+	private TrainRunPredictor trainRunPredictor;
+	private static HashMap<String, Line> lineMap = new HashMap<String, Line>();
 
 	/**
 	 * initialize the trainRunMonitorPane, add blockingTimeChart on top of it,
@@ -187,6 +199,7 @@ public class TrainRunMonitorPaneController {
 		trainInfoTable.getColumns().addAll(trainItemCol, trainValueCol);
 
 		trainValueCol.setCellFactory(createCellFactory());
+
 	}
 
 	/**
@@ -233,6 +246,8 @@ public class TrainRunMonitorPaneController {
 						if (oldValue == null || !oldValue.equals(newValue)) {
 							eventTable.getItems().clear();
 						}
+						lineRoot.setVisible(false);
+						trainRoot.setVisible(true);
 
 						AbstractTrainSimulator train = trainMap
 								.get(trainNumbers.getSelectionModel()
@@ -409,22 +424,22 @@ public class TrainRunMonitorPaneController {
 
 			List<ResourceOccupancy> resourceOccupancies = ((TrainSimulator) train)
 					.getBlockingTimeStairWay();
-			
-			List<ResourceOccupancy> scheduldResourceOccupancies = 
-				this.trainRunPredictor.getScheduledBlockingTime().get(train);
-			Course course = 
-				this.trainRunPredictor.getScheduledCourseMap().get(train);
+
+			List<ResourceOccupancy> scheduldResourceOccupancies = this.trainRunPredictor
+					.getScheduledBlockingTime().get(train);
+			Course course = this.trainRunPredictor.getScheduledCourseMap().get(
+					train);
 			// for Kai
-			
+
 			Time trainStartTime = train.getTripSection().getStartTime();
 
 			for (ResourceOccupancy resourceOccupancy : resourceOccupancies) {
 				if (headDistanceInFirstResource == null) {
-					headDistanceInFirstResource = ((PartialRouteResource) resourceOccupancy.getResource()).getPath()
-							.findFirstDistance(
-									(InfrastructureObject) train
-											.getTripSection().getTripElements()
-											.get(0).getOperationalPoint());
+					headDistanceInFirstResource = ((PartialRouteResource) resourceOccupancy
+							.getResource()).getPath().findFirstDistance(
+							(InfrastructureObject) train.getTripSection()
+									.getTripElements().get(0)
+									.getOperationalPoint());
 					if (headDistanceInFirstResource == null) {
 						continue;
 					}
@@ -436,8 +451,9 @@ public class TrainRunMonitorPaneController {
 
 				double startMeter = meter;
 				double endMeter = meter
-						+ ((PartialRouteResource) resourceOccupancy.getResource()).getPartialRoute().getPath().getLength()
-								.getMeter();
+						+ ((PartialRouteResource) resourceOccupancy
+								.getResource()).getPartialRoute().getPath()
+								.getLength().getMeter();
 				double startTimeInSecond = resourceOccupancy.getGrantTime()
 						.getDifference(trainStartTime).getTotalSeconds();
 				double endTimeInSecond = resourceOccupancy.getReleaseTime()
@@ -557,9 +573,10 @@ public class TrainRunMonitorPaneController {
 
 		return chart;
 	}
-	
+
 	private Collection<Station> getStationByLines(Line line) {
-		return this.infrastructureServiceUtility.getLineService().findStationsByLine(line);
+		return this.infrastructureServiceUtility.getLineService()
+				.findStationsByLine(line);
 	}
 
 	static Callback<TableColumn<TableProperty, String>, TableCell<TableProperty, String>> createCellFactory() {
@@ -585,24 +602,106 @@ public class TrainRunMonitorPaneController {
 	void setTrainMap(ConcurrentHashMap<String, AbstractTrainSimulator> trainMap) {
 		this.trainMap = trainMap;
 	}
-	
+
 	void setInfrastructureServiceUtility(
 			IInfrastructureServiceUtility infraServiceUtility) {
 		this.snapshotPaneController
 				.setInfrastructureServiceUtility(infraServiceUtility);
 		this.infrastructureServiceUtility = infraServiceUtility;
-		for (Line line : this.infrastructureServiceUtility.getNetworkService().allLines(null)) {
-			this.lineMap.put(line.getDescription(), line);
+		for (Line line : this.infrastructureServiceUtility.getNetworkService()
+				.allLines(null)) {
+			lineMap.put(line.getDescription(), line);
 		} // Kai
-		
+
+		ObservableList<String> lineList = FXCollections.observableArrayList();
+
 		for (Line line : lineMap.values()) {
-			for (Station station : this.infrastructureServiceUtility.getLineService().findStationsByLine(line)) {
-				station.getCoordinate().getX();
-				station.getName();
-			}
+			lineList.add(line.getName());
 		}
+		lineListView.setItems(lineList);
+
+		lineListView.getSelectionModel().selectedItemProperty()
+				.addListener(new ChangeListener<String>() {
+					@Override
+					public void changed(
+							ObservableValue<? extends String> observable,
+							String oldValue, String newValue) {
+						if (oldValue == null || !oldValue.equals(newValue)) {
+							stationListView.getItems().clear();
+							linePane.getChildren().clear();
+						}
+						lineRoot.setVisible(true);
+						trainRoot.setVisible(false);
+
+						Line line = lineMap.get(lineListView
+								.getSelectionModel().getSelectedItem()
+								.toString());
+
+						ObservableList<String> stationList = FXCollections
+								.observableArrayList();
+
+						double maxX = getMaxX(line);
+						double minX = getMinX(line);
+
+						LineMapper mapper = new LineMapper(maxX, minX);
+						javafx.scene.shape.Line stationLine = new javafx.scene.shape.Line();
+						stationLine.setStartX(mapper.mapToPaneX(minX, linePane));
+						stationLine.setEndX(mapper.mapToPaneX(maxX, linePane));
+						stationLine.setStartY(linePane.getHeight() / 2);
+						stationLine.setEndY(linePane.getHeight() / 2);
+						linePane.getChildren().add(stationLine);
+
+						for (Station station : infraServiceUtility
+								.getLineService().findStationsByLine(line)) {
+							stationList.add(station.getName());
+
+							Circle circle = new Circle();
+							circle.setCenterX(mapper.mapToPaneX(station
+									.getCoordinate().getX(), linePane));
+							circle.setCenterY(linePane.getHeight() / 2);
+							circle.setRadius(5);
+							
+							Label stationLabel = new Label();
+							stationLabel.setText(station.getName());
+							stationLabel.setVisible(true);
+							stationLabel.setTranslateX(mapper.mapToPaneX(
+									station.getCoordinate().getX()
+											- stationLabel.getWidth(), linePane));
+							stationLabel.setTranslateY(linePane.getHeight() / 2
+									- linePane.getHeight() / 15);
+							
+							linePane.getChildren().addAll(circle, stationLabel);
+
+						}
+
+						stationListView.setItems(stationList);
+
+					}
+
+				});
+
 	}
-	
+
+	private double getMinX(Line line) {
+		double minX = Double.MAX_VALUE;
+		for (Station station : this.infrastructureServiceUtility
+				.getLineService().findStationsByLine(line)) {
+			if (station.getCoordinate().getX() < minX)
+				minX = station.getCoordinate().getX();
+		}
+		return minX;
+	}
+
+	private double getMaxX(Line line) {
+		double maxX = Double.MIN_VALUE;
+		for (Station station : this.infrastructureServiceUtility
+				.getLineService().findStationsByLine(line)) {
+			if (station.getCoordinate().getX() > maxX)
+				maxX = station.getCoordinate().getX();
+		}
+		return maxX;
+	}
+
 	void setTrainRunPredictor(TrainRunPredictor trainRunPredictor) {
 		this.trainRunPredictor = trainRunPredictor;
 	}
@@ -629,14 +728,4 @@ public class TrainRunMonitorPaneController {
 		return observableTrainInfoList;
 	}
 
-	private DraggableChart<Number, Number> blockingTimeChart;
-
-	private StackPane snapshotPane;
-	private SnapshotPaneController snapshotPaneController;
-
-	private ConcurrentHashMap<String, AbstractTrainSimulator> trainMap;
-	
-	private IInfrastructureServiceUtility infrastructureServiceUtility;
-	private TrainRunPredictor trainRunPredictor;
-	private HashMap<String, Line> lineMap = new HashMap<String, Line>(); // for Kai
 }

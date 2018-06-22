@@ -9,38 +9,55 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.ui.TrainRunMonitorPaneController">
+<AnchorPane prefHeight="985.0" prefWidth="1372.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.161" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.ui.TrainRunMonitorPaneController">
    <children>
       <SplitPane dividerPositions="0.8113496932515337" layoutX="21.0" layoutY="31.0" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Tabs.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane>
                <children>
-                  <SplitPane dividerPositions="0.5" layoutX="90.0" layoutY="51.0" orientation="VERTICAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <items>
-                     <AnchorPane fx:id="blockingTimePane" onMouseClicked="#resetZoomBlockingTime">
-                           <children>
-                              <Label fx:id="eventLabel" layoutX="76.0" layoutY="90.0" />
-                              <CheckBox fx:id="inEventCheckBox" layoutX="358.0" layoutY="176.0" mnemonicParsing="false" styleClass="label" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Darktheme.css" text="incoming events" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="240.0" />
-                              <CheckBox fx:id="selfEventCheckBox" layoutX="455.0" layoutY="177.0" mnemonicParsing="false" styleClass="label" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Darktheme.css" text="self events" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="140.0" />
-                              <CheckBox fx:id="outEventCheckBox" layoutX="546.0" layoutY="176.0" mnemonicParsing="false" styleClass="label" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Darktheme.css" text="outgoing events" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="10.0" />
-                           </children></AnchorPane>
-                     <AnchorPane>
-                           <children>
-                              <SplitPane dividerPositions="0.5836909871244635" prefHeight="198.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                <items>
-                                  <AnchorPane fx:id="snapshotRoot" styleClass="background-grey" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Darktheme.css" />
-                                  <AnchorPane>
-                                       <children>
-                                          <TableView fx:id="eventTable" layoutX="-7.0" layoutY="6.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="0.0">
-                                             <columnResizePolicy>
-                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                                             </columnResizePolicy></TableView>
-                                       </children></AnchorPane>
-                                </items>
-                              </SplitPane>
-                           </children></AnchorPane>
-                    </items>
-                  </SplitPane>
+                  <AnchorPane fx:id="lineRoot" prefHeight="310.4" prefWidth="490.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <SplitPane dividerPositions="0.2576374745417515" orientation="VERTICAL" prefHeight="311.2" prefWidth="561.6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane fx:id="linePane" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="94.0" prefWidth="560.0" />
+                          </items>
+                        </SplitPane>
+                     </children></AnchorPane>
+                  <AnchorPane fx:id="trainRoot" prefHeight="311.2" prefWidth="561.6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <SplitPane dividerPositions="0.5" orientation="VERTICAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                           <AnchorPane fx:id="blockingTimePane" onMouseClicked="#resetZoomBlockingTime">
+                                 <children>
+                                    <Label fx:id="eventLabel" layoutX="76.0" layoutY="90.0" />
+                                    <CheckBox fx:id="inEventCheckBox" layoutX="358.0" layoutY="176.0" mnemonicParsing="false" styleClass="label" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Darktheme.css" text="incoming events" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="240.0" />
+                                    <CheckBox fx:id="selfEventCheckBox" layoutX="455.0" layoutY="177.0" mnemonicParsing="false" styleClass="label" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Darktheme.css" text="self events" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="140.0" />
+                                    <CheckBox fx:id="outEventCheckBox" layoutX="546.0" layoutY="176.0" mnemonicParsing="false" styleClass="label" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Darktheme.css" text="outgoing events" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="10.0" />
+                                 </children>
+                              </AnchorPane>
+                           <AnchorPane>
+                                 <children>
+                                    <SplitPane dividerPositions="0.5836909871244635" prefHeight="198.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <items>
+                                        <AnchorPane fx:id="snapshotRoot" styleClass="background-grey" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Darktheme.css" />
+                                        <AnchorPane>
+                                             <children>
+                                                <TableView fx:id="eventTable" layoutX="-7.0" layoutY="6.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="0.0">
+                                                   <columnResizePolicy>
+                                                      <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                   </columnResizePolicy>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                      </items>
+                                    </SplitPane>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
           <AnchorPane>
@@ -51,7 +68,7 @@
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                 	  <SplitPane orientation="VERTICAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 	  <SplitPane orientation="VERTICAL" prefWidth="215.0" AnchorPane.bottomAnchor="-67.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                       <items>
                                           <SplitPane dividerPositions="0.05" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
                                             <items>
@@ -83,22 +100,27 @@
                                  <children>
                                     <SplitPane orientation="VERTICAL" prefHeight="272.0" prefWidth="114.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <items>
-                                          <SplitPane dividerPositions="0.05" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                                          <SplitPane dividerPositions="0.2944915254237288" orientation="VERTICAL" prefHeight="604.0" prefWidth="257.0">
                                              <items>
-                                                <AnchorPane minHeight="0.0" minWidth="0.0">
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="342.0" prefWidth="257.0">
                                                    <children>
-                                                      <TableView prefHeight="53.0" prefWidth="113.0" AnchorPane.bottomAnchor="-39.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                                         <columnResizePolicy>
-                                                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                                                         </columnResizePolicy>
-                                                      </TableView>
+                                                      <SplitPane dividerPositions="0.47095761381475665" prefHeight="278.4" prefWidth="256.8" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <items>
+                                                            <AnchorPane prefHeight="191.0" prefWidth="66.0">
+                                                               <children>
+                                                                  <ListView fx:id="lineListView" prefHeight="281.6" prefWidth="99.2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                            <AnchorPane prefHeight="293.0" prefWidth="118.0">
+                                                               <children>
+                                                                  <ListView fx:id="stationListView" prefHeight="281.6" prefWidth="43.2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </items>
+                                                      </SplitPane>
                                                    </children>
                                                 </AnchorPane>
-                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                                                   <children>
-                                                      <ListView layoutY="35.0" prefHeight="255.0" prefWidth="104.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                                   </children>
-                                                </AnchorPane>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="708.0" prefWidth="257.0" />
                                              </items>
                                           </SplitPane>
                                        </items>
