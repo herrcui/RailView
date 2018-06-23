@@ -101,17 +101,17 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 				this.getPlotChildren().add(r);
 				r.setX(this.getXAxis().getDisplayPosition(
 						this.getXAxis().toRealValue(
-								blockingTime.getStartMeter())));
+								blockingTime.getStartDistance())));
 				r.setY(this.getYAxis().getDisplayPosition(
 						this.getYAxis().toRealValue(
 								-(blockingTime.getStartTimeInSecond()))));
 				r.setWidth(this.getXAxis()
 						.getDisplayPosition(
 								this.getXAxis().toRealValue(
-										blockingTime.getEndMeter()))
+										blockingTime.getEndDistance()))
 						- this.getXAxis().getDisplayPosition(
 								this.getXAxis().toRealValue(
-										blockingTime.getStartMeter())));
+										blockingTime.getStartDistance())));
 				r.setHeight(this.getYAxis().getDisplayPosition(
 						this.getYAxis().toRealValue(
 								-(blockingTime.getEndTimeInSecond())))
@@ -135,7 +135,7 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 				polygon.getPoints()
 						.addAll(new Double[] {
 								(this.getXAxis().getDisplayPosition(this
-										.getXAxis().toRealValue(td.getMeter()))),
+										.getXAxis().toRealValue(td.getDistance()))),
 
 								(this.getYAxis().getDisplayPosition(
 										this.getYAxis().toRealValue(
@@ -143,14 +143,14 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 
 								(this.getXAxis().getDisplayPosition(
 										this.getXAxis().toRealValue(
-												td.getMeter())) + 6.0),
+												td.getDistance())) + 6.0),
 
 								(this.getYAxis().getDisplayPosition(this
 										.getYAxis()
 										.toRealValue(-td.getSecond()))),
 
 								(this.getXAxis().getDisplayPosition(this
-										.getXAxis().toRealValue(td.getMeter()))),
+										.getXAxis().toRealValue(td.getDistance()))),
 
 								(this.getYAxis().getDisplayPosition(
 										this.getYAxis().toRealValue(
@@ -158,7 +158,7 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 
 								(this.getXAxis().getDisplayPosition(
 										this.getXAxis().toRealValue(
-												td.getMeter())) - 6.0),
+												td.getDistance())) - 6.0),
 
 								(this.getYAxis().getDisplayPosition(this
 										.getYAxis()
@@ -174,19 +174,19 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 					@Override
 					public void handle(MouseEvent event) {
 						if (td.getSecond() < -(yAxis.getLowerBound() / 2)
-								&& td.getMeter() <= xAxis.getUpperBound() / 2) {
+								&& td.getDistance() <= xAxis.getUpperBound() / 2) {
 							eventLabel.setLayoutX(105);
 							eventLabel.setLayoutY(50);
 						}
 
 						else if (td.getSecond() < -(yAxis.getLowerBound() / 2)
-								&& td.getMeter() > xAxis.getUpperBound() / 2) {
+								&& td.getDistance() > xAxis.getUpperBound() / 2) {
 							eventLabel.setLayoutX(-125);
 							eventLabel.setLayoutY(50);
 						}
 
 						else if (td.getSecond() >= -(yAxis.getLowerBound() / 2)
-								&& td.getMeter() <= xAxis.getUpperBound() / 2) {
+								&& td.getDistance() <= xAxis.getUpperBound() / 2) {
 							eventLabel.setLayoutX(105);
 							eventLabel.setLayoutY(-70);
 						}
@@ -202,7 +202,7 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 								String.format("%1$,.2f", td.getSecond())));
 						observableEventList.add(new TableProperty(
 								"Distance [m]", String.format("%1$,.2f",
-										td.getMeter())));
+										td.getDistance())));
 						int index = 1;
 						for (EventData e : eventList) {
 							observableEventList.add(new TableProperty(index
@@ -217,7 +217,7 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 						}
 						eventTable.setItems(observableEventList);
 
-						writeText((td.getMeter() + 3), (td.getSecond() - 3),
+						writeText((td.getDistance() + 3), (td.getSecond() - 3),
 								eventList);
 						polygon.setFill(Color.CRIMSON);
 					}

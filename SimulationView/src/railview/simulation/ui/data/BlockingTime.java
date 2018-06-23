@@ -5,21 +5,21 @@ package railview.simulation.ui.data;
  * and endTime.
  */
 public class BlockingTime {
-	public BlockingTime(double startMeter, double endMeter,
+	public BlockingTime(double startDistance, double endDistance,
 			double startTimeInSecond, double endTimeInSecond) {
 		super();
-		this.startMeter = startMeter;
-		this.endMeter = endMeter;
+		this.startDistance = startDistance;
+		this.endDistance = endDistance;
 		this.startTimeInSecond = startTimeInSecond;
 		this.endTimeInSecond = endTimeInSecond;
 	}
 
-	public double getStartMeter() {
-		return startMeter;
+	public double getStartDistance() {
+		return startDistance;
 	}
 
-	public double getEndMeter() {
-		return endMeter;
+	public double getEndDistance() {
+		return endDistance;
 	}
 
 	public double getStartTimeInSecond() {
@@ -30,8 +30,8 @@ public class BlockingTime {
 		return endTimeInSecond;
 	}
 
-	private double startMeter;
-	private double endMeter;
+	private double startDistance;
+	private double endDistance;
 	private double startTimeInSecond;
 	private double endTimeInSecond;
 }

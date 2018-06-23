@@ -4,13 +4,13 @@ package railview.simulation.ui.data;
  * An object representing timeDistance with meters and seconds.
  */
 public class TimeDistance {
-	public TimeDistance(double meter, double second) {
-		this.meter = meter;
+	public TimeDistance(double distance, double second) {
+		this.distance = distance;
 		this.second = second;
 	}
 
-	public double getMeter() {
-		return this.meter;
+	public double getDistance() {
+		return this.distance;
 	}
 
 	public double getSecond() {
@@ -22,7 +22,7 @@ public class TimeDistance {
 		final int prime = 31;
 		int result = 1;
 		long temp;
-		temp = Double.doubleToLongBits(meter);
+		temp = Double.doubleToLongBits(distance);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		temp = Double.doubleToLongBits(second);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
@@ -38,8 +38,8 @@ public class TimeDistance {
 		if (getClass() != obj.getClass())
 			return false;
 		TimeDistance other = (TimeDistance) obj;
-		if (Double.doubleToLongBits(meter) != Double
-				.doubleToLongBits(other.meter))
+		if (Double.doubleToLongBits(distance) != Double
+				.doubleToLongBits(other.distance))
 			return false;
 		if (Double.doubleToLongBits(second) != Double
 				.doubleToLongBits(other.second))
@@ -49,9 +49,9 @@ public class TimeDistance {
 
 	@Override
 	public String toString() {
-		return "TimeDistance [meter=" + meter + ", second=" + second + "]";
+		return "TimeDistance [meter=" + distance + ", second=" + second + "]";
 	}
 
-	private double meter;
+	private double distance;
 	private double second;
 }

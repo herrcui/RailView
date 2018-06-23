@@ -146,9 +146,6 @@ public class SimulationViewerController extends AbstractSimulationController {
 						.setInfrastructureOccupancyAndPendingLogger(simulator
 								.getInfrastructureSimulator()
 								.getOccupancyAndPendingLogger());
-				
-				this.graphPaneController.setTrainRunPredictor(
-						simulator.getDispatchingSystem().getTrainRunPredictor());
 				break;
 			} else {
 				try {
