@@ -10,6 +10,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import railapp.infrastructure.dto.Line;
 import railapp.infrastructure.dto.Station;
+import railapp.infrastructure.element.dto.RelativePosition;
 import railapp.infrastructure.object.dto.InfrastructureObject;
 import railapp.infrastructure.path.dto.LinkEdge;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
@@ -479,21 +480,24 @@ public class TrainRunMonitorPaneController {
 			opDistances = new ArrayList<Length>();
 			for (TripElement elem : train.getTripSection().getTripElements()) {
 				Length opDistance = train.getFullPath().findFirstDistance(
-					((InfrastructureObject) elem.getOperationalPoint()).getPositions().get(0), refDist);
-				if (opDistance == null) {
-					opDistance = train.getFullPath().findFirstDistance(
-						((InfrastructureObject) elem.getOperationalPoint()).getPositions().get(0).getReverse(), refDist);
-				}
+					(InfrastructureObject) elem.getOperationalPoint(), refDist);
 				opDistances.add(opDistance);
 				refDist = opDistance;
 			}
+			
 			this.opDistMap.put(train, opDistances);
 		}
+		
 		return opDistances;
 	}
 	
 	private double getDistanceInLine(List<Length> opDistances, double meter, AbstractTrainSimulator train) {
 		int index = 0;
+		if (meter >= opDistances.get(opDistances.size() - 1).getMeter()) {
+			return ((InfrastructureObject) train.getTripSection().getTripElements().get(opDistances.size() - 1).
+					getOperationalPoint()).getElement().getStation().getCoordinate().getX();
+		}
+		
 		for (Length dist : opDistances) {
 			if (index >= opDistances.size() - 1) {
 				break;
