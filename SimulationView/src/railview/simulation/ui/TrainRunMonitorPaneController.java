@@ -541,9 +541,9 @@ public class TrainRunMonitorPaneController {
 						.getOperationalPoint()).getElement().getStation();
 
 				return startStation.getCoordinate().getX()
-						+ (meter - dist.getMeter())
-						/ (endStation.getCoordinate().getX() - startStation
-								.getCoordinate().getX());
+						+ (meter - dist.getMeter())	* 
+						  (endStation.getCoordinate().getX() - startStation.getCoordinate().getX()) /
+						  (opDistances.get(index + 1).getMeter() - opDistances.get(index).getMeter());
 			}
 			index++;
 		}
@@ -792,38 +792,34 @@ public class TrainRunMonitorPaneController {
 		HashMap<AbstractTrainSimulator, List<BlockingTime>> blockingTimeStairways = this
 				.getAllBlockingTimeStairways(line);
 		if (blockingTimeStairways.size() > 0) {
+			CoordinateMapper mapper = new CoordinateMapper(maxX, minX, maxY, minY);
 			// TODO doesnt draw any rectangles
-			for (List<BlockingTime> blockingTimeStairway : blockingTimeStairways
-					.values()) {
+			for (List<BlockingTime> blockingTimeStairway : blockingTimeStairways.values()) {
 				for (BlockingTime blockingTime : blockingTimeStairway) {
 					double startX = blockingTime.getStartDistance();
 					double endX = blockingTime.getEndDistance();
 					double startY = blockingTime.getStartTimeInSecond();
 					double endY = blockingTime.getEndTimeInSecond();
 
-					CoordinateMapper mapper = new CoordinateMapper(maxX, minX,
-							maxY, minY);
-
 					Rectangle rectangle = new Rectangle();
 
 					rectangle.setY(mapper.mapToPaneY(startY,
 							lineBlockingTimesPane));
-					rectangle.setHeight(mapper.mapToPaneY(endY - startY,
-							lineBlockingTimesPane));
+					rectangle.setHeight(mapper.mapToPaneY(startY, lineBlockingTimesPane) - 
+							mapper.mapToPaneY(endY, lineBlockingTimesPane));
 					if (endX > startX) {
 						rectangle.setX(mapper.mapToPaneX(startX,
 								lineBlockingTimesPane));
-						rectangle.setWidth(mapper.mapToPaneX(endX - startX,
-								lineBlockingTimesPane));
+						rectangle.setWidth(mapper.mapToPaneX(endX, lineBlockingTimesPane) - 
+								mapper.mapToPaneX(startX, lineBlockingTimesPane));
 					} else {
 						rectangle.setX(mapper.mapToPaneX(endX,
 								lineBlockingTimesPane));
-						rectangle.setWidth(mapper.mapToPaneX(startX - endX,
-								lineBlockingTimesPane));
+						rectangle.setWidth(mapper.mapToPaneX(startX, lineBlockingTimesPane) - 
+								mapper.mapToPaneX(endX, lineBlockingTimesPane));
 					}
-
+					lineBlockingTimesPane.getChildren().add(rectangle);
 				}
-
 			}
 		}
 	}
@@ -834,15 +830,12 @@ public class TrainRunMonitorPaneController {
 				.getAllTimeDistances(line);
 		if (timeDistances.size() > 0) {
 			//TODO wrong lines
-			for (List<TimeDistance> blockingTimeStairway : timeDistances
+			CoordinateMapper mapper = new CoordinateMapper(maxX, minX, maxY, minY);
+			for (List<TimeDistance> timeDistance : timeDistances
 					.values()) {
-
-				CoordinateMapper mapper = new CoordinateMapper(maxX, minX,
-						maxY, minY);
-
 				// Iterator to get the current and next distance and time value
 				
-				Iterator<TimeDistance> it = blockingTimeStairway.iterator();
+				Iterator<TimeDistance> it = timeDistance.iterator();
 				TimeDistance previous = null;
 				if (it.hasNext()) {
 					previous = it.next();
@@ -860,21 +853,8 @@ public class TrainRunMonitorPaneController {
 					polyLine.setEndY(mapper.mapToPaneY(current.getSecond(),
 							lineBlockingTimesPane));
 					lineBlockingTimesPane.getChildren().add(polyLine);
-
 					previous = current;
 				}
-
-
-				for (TimeDistance timeDistance : blockingTimeStairway) {
-					Circle circle = new Circle();
-					circle.setCenterX(mapper.mapToPaneX(
-							timeDistance.getDistance(), lineBlockingTimesPane));
-					circle.setCenterY(mapper.mapToPaneY(
-							timeDistance.getSecond(), lineBlockingTimesPane));
-					circle.setRadius(2);
-					lineBlockingTimesPane.getChildren().add(circle);
-				}
-
 			}
 		}
 	}
