@@ -22,7 +22,7 @@ public class CoordinateMapper {
 	
 	public float mapToPaneY(double y, Pane canvas) {
 		float mappedY = (float) (canvas.getHeight() * 
-				(this.maxY -y) / (this.maxY - this.minY));
+				(this.maxY - y) / (this.maxY - this.minY));
 		return mappedY;
 	}
 	

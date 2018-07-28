@@ -9,6 +9,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 
 import railapp.infrastructure.dto.Line;
@@ -735,13 +736,14 @@ public class TrainRunMonitorPaneController {
 						// max and minimum y-coordinate
 						HashMap<AbstractTrainSimulator, List<BlockingTime>> blockingTimeStairways = getAllBlockingTimeStairways(line);
 
-						for (List<BlockingTime> blockingTimeStairway : blockingTimeStairways
-								.values()) {
-							for (BlockingTime blockingTime : blockingTimeStairway) {
-								if (blockingTime.getStartTimeInSecond() > maxY)
-									maxY = blockingTime.getEndTimeInSecond();
-								if (blockingTime.getEndTimeInSecond() < minY)
-									minY = blockingTime.getStartTimeInSecond();
+						for (Entry<AbstractTrainSimulator, List<BlockingTime>> entry : blockingTimeStairways.entrySet()) {
+							for (BlockingTime blockingTime : entry.getValue()) {
+								double time = blockingTime.getEndTimeInSecond() + 
+									entry.getKey().getActiveTime().getDifference(Time.getInstance(0, 0, 0)).getTotalSeconds();
+								if (time > maxY)
+									maxY = time;
+								if (time < minY)
+									minY = time;
 							}
 						}
 
@@ -779,6 +781,7 @@ public class TrainRunMonitorPaneController {
 
 						stationListView.setItems(stationList);
 
+						lineBlockingTimesPane.getChildren().clear();
 						drawAllBlockingtimesInLine(line);
 						drawAllTimeDistanceInLine(line);
 					}
@@ -794,8 +797,9 @@ public class TrainRunMonitorPaneController {
 		if (blockingTimeStairways.size() > 0) {
 			CoordinateMapper mapper = new CoordinateMapper(maxX, minX, maxY, minY);
 			// TODO doesnt draw any rectangles
-			for (List<BlockingTime> blockingTimeStairway : blockingTimeStairways.values()) {
-				for (BlockingTime blockingTime : blockingTimeStairway) {
+			for (Entry<AbstractTrainSimulator, List<BlockingTime>> entry : blockingTimeStairways.entrySet()) {
+				double activeTime = entry.getKey().getActiveTime().getDifference(Time.getInstance(0, 0, 0)).getTotalSeconds();
+				for (BlockingTime blockingTime : entry.getValue()) {
 					double startX = blockingTime.getStartDistance();
 					double endX = blockingTime.getEndDistance();
 					double startY = blockingTime.getStartTimeInSecond();
@@ -803,10 +807,10 @@ public class TrainRunMonitorPaneController {
 
 					Rectangle rectangle = new Rectangle();
 
-					rectangle.setY(mapper.mapToPaneY(startY,
+					rectangle.setY(mapper.mapToPaneY(maxY - (activeTime + startY),
 							lineBlockingTimesPane));
-					rectangle.setHeight(mapper.mapToPaneY(startY, lineBlockingTimesPane) - 
-							mapper.mapToPaneY(endY, lineBlockingTimesPane));
+					rectangle.setHeight(mapper.mapToPaneY(maxY - (activeTime + endY), lineBlockingTimesPane) - 
+							mapper.mapToPaneY(maxY - (activeTime + startY), lineBlockingTimesPane));
 					if (endX > startX) {
 						rectangle.setX(mapper.mapToPaneX(startX,
 								lineBlockingTimesPane));
@@ -825,17 +829,15 @@ public class TrainRunMonitorPaneController {
 	}
 
 	private void drawAllTimeDistanceInLine(Line line) {
-		lineBlockingTimesPane.getChildren().clear();
 		HashMap<AbstractTrainSimulator, List<TimeDistance>> timeDistances = this
 				.getAllTimeDistances(line);
 		if (timeDistances.size() > 0) {
 			//TODO wrong lines
 			CoordinateMapper mapper = new CoordinateMapper(maxX, minX, maxY, minY);
-			for (List<TimeDistance> timeDistance : timeDistances
-					.values()) {
+			for (Entry<AbstractTrainSimulator, List<TimeDistance>> entry : timeDistances.entrySet()) {
 				// Iterator to get the current and next distance and time value
-				
-				Iterator<TimeDistance> it = timeDistance.iterator();
+				double activeTime = entry.getKey().getActiveTime().getDifference(Time.getInstance(0, 0, 0)).getTotalSeconds();
+				Iterator<TimeDistance> it = entry.getValue().iterator();
 				TimeDistance previous = null;
 				if (it.hasNext()) {
 					previous = it.next();
@@ -848,9 +850,9 @@ public class TrainRunMonitorPaneController {
 							previous.getDistance(), lineBlockingTimesPane));
 					polyLine.setEndX(mapper.mapToPaneX(current.getDistance(),
 							lineBlockingTimesPane));
-					polyLine.setStartY(mapper.mapToPaneY(previous.getSecond(),
+					polyLine.setStartY(mapper.mapToPaneY(maxY - (activeTime + previous.getSecond()),
 							lineBlockingTimesPane));
-					polyLine.setEndY(mapper.mapToPaneY(current.getSecond(),
+					polyLine.setEndY(mapper.mapToPaneY(maxY - (activeTime + current.getSecond()),
 							lineBlockingTimesPane));
 					lineBlockingTimesPane.getChildren().add(polyLine);
 					previous = current;
