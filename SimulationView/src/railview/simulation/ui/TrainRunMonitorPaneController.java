@@ -35,6 +35,8 @@ import railapp.units.Length;
 import railapp.units.Time;
 import railapp.units.UnitUtility;
 import railview.simulation.container.CoordinateMapper;
+import railview.simulation.container.NodeGestures;
+import railview.simulation.container.PannablePane;
 import railview.simulation.ui.components.BlockingTimeChart;
 import railview.simulation.ui.components.DraggableChart;
 import railview.simulation.ui.components.Zoom;
@@ -65,8 +67,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Polyline;
 import javafx.scene.shape.Rectangle;
@@ -85,7 +89,12 @@ public class TrainRunMonitorPaneController {
 
 	@FXML
 	private AnchorPane blockingTimePane, snapshotRoot, trainRoot, lineRoot,
-			linePane, lineBlockingTimesPane;
+			linePane;
+	
+	@FXML
+	private StackPane lineBlockingTimesStackPane;
+	
+	private PannablePane lineBlockingTimesPane = new PannablePane();
 
 	@FXML
 	private ListView<String> trainNumbers, lineListView, stationListView;
@@ -108,10 +117,12 @@ public class TrainRunMonitorPaneController {
 	private HashMap<AbstractTrainSimulator, List<Length>> opDistMap = new HashMap<AbstractTrainSimulator, List<Length>>();
 	private Rectangle rectangle;
 
-	double minX = Double.MAX_VALUE;
-	double maxX = Double.MIN_VALUE;
-	double maxY = Double.MIN_VALUE;
-	double minY = Double.MAX_VALUE;
+	private double minX = Double.MAX_VALUE;
+	private double maxX = Double.MIN_VALUE;
+	private double maxY = Double.MIN_VALUE;
+	private double minY = Double.MAX_VALUE;
+	
+	private double pressedX, pressedY;
 
 	/**
 	 * initialize the trainRunMonitorPane, add blockingTimeChart on top of it,
@@ -122,6 +133,9 @@ public class TrainRunMonitorPaneController {
 	@FXML
 	public void initialize() {
 
+		lineBlockingTimesStackPane.getChildren().add(lineBlockingTimesPane);
+		lineBlockingTimesStackPane.setPickOnBounds(false);
+		
 		eventLabel.toFront();
 
 		blockingTimeChart = createBlockingTimeChart();
@@ -806,7 +820,7 @@ public class TrainRunMonitorPaneController {
 					double endY = blockingTime.getEndTimeInSecond();
 
 					Rectangle rectangle = new Rectangle();
-
+					rectangle.setFill(Color.BLUE.deriveColor(0, 1, 1, 0.5));
 					rectangle.setY(mapper.mapToPaneY(maxY - (activeTime + startY),
 							lineBlockingTimesPane));
 					rectangle.setHeight(mapper.mapToPaneY(maxY - (activeTime + endY), lineBlockingTimesPane) - 
@@ -886,6 +900,37 @@ public class TrainRunMonitorPaneController {
 			result.put(train, this.getTimeInDistance(train, line));
 		}
 		return result;
+	}
+	
+	@FXML
+	private void mouseEnter(){
+		lineBlockingTimesStackPane.setOnMousePressed(new EventHandler<MouseEvent>()
+		        {
+            public void handle(MouseEvent event)
+            {
+                pressedX = event.getX();
+                pressedY = event.getY();
+            }
+        });
+
+		lineBlockingTimesStackPane.setOnMouseDragged(new EventHandler<MouseEvent>()
+        {
+            public void handle(MouseEvent event)
+            {
+            	lineBlockingTimesStackPane.setTranslateX(lineBlockingTimesStackPane.getTranslateX() + event.getX() - pressedX);
+            	lineBlockingTimesStackPane.setTranslateY(lineBlockingTimesStackPane.getTranslateY() + event.getY() - pressedY);
+
+                event.consume();
+            }
+        });
+	}
+	
+	@FXML
+	private void onScrollWheel(){
+		NodeGestures lineBlockingTimesGestures = new NodeGestures(lineBlockingTimesPane);
+		
+		lineBlockingTimesStackPane.addEventFilter( ScrollEvent.ANY, lineBlockingTimesGestures.getOnScrollEventHandler());
+	
 	}
 
 	static ObservableList<TableProperty> generateTrainInfo(

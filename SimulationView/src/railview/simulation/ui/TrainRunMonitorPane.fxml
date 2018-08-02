@@ -8,8 +8,9 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 
-<AnchorPane prefHeight="985.0" prefWidth="1372.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="railview.simulation.ui.TrainRunMonitorPaneController">
+<AnchorPane prefHeight="985.0" prefWidth="1372.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.ui.TrainRunMonitorPaneController">
    <children>
       <SplitPane dividerPositions="0.8113496932515337" layoutX="21.0" layoutY="31.0" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Tabs.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -17,10 +18,10 @@
                <children>
                   <AnchorPane fx:id="lineRoot" prefHeight="310.4" prefWidth="490.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <SplitPane dividerPositions="0.2576374745417515" orientation="VERTICAL" prefHeight="311.2" prefWidth="561.6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <SplitPane dividerPositions="0.15" orientation="VERTICAL" prefHeight="311.2" prefWidth="561.6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <items>
                             <AnchorPane fx:id="linePane" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
-                            <AnchorPane fx:id="lineBlockingTimesPane" minHeight="0.0" minWidth="0.0" prefHeight="94.0" prefWidth="560.0" />
+                              <StackPane fx:id="lineBlockingTimesStackPane" onMouseEntered="#mouseEnter" onScroll="#onScrollWheel" prefHeight="150.0" prefWidth="200.0" />
                           </items>
                         </SplitPane>
                      </children></AnchorPane>
