@@ -33,6 +33,18 @@ import railview.simulation.ui.data.TimeDistance;
  * @param <Y>
  */
 public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
+	
+	private List<BlockingTime> blockingTimes;
+	private Map<TimeDistance, List<EventData>> eventsMap;
+	private NumberAxis yAxis;
+	private NumberAxis xAxis;
+
+	private List<Polygon> polygonList = new ArrayList<Polygon>();
+
+	private Label eventLabel;
+	private TableView<TableProperty> eventTable;
+	private TrainRunMonitorPaneController controller;
+	private Rectangle rectangle;
 
 	public BlockingTimeChart(Axis<X> xAxis, Axis<Y> yAxis, Label eventLabel,
 			TableView<TableProperty> eventTable,
@@ -97,22 +109,22 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 		super.layoutPlotChildren();
 		if (this.blockingTimes != null) {
 			for (BlockingTime blockingTime : this.blockingTimes) {
-				r = new Rectangle();
-				this.getPlotChildren().add(r);
-				r.setX(this.getXAxis().getDisplayPosition(
+				rectangle = new Rectangle();
+				this.getPlotChildren().add(rectangle);
+				rectangle.setX(this.getXAxis().getDisplayPosition(
 						this.getXAxis().toRealValue(
 								blockingTime.getStartDistance())));
-				r.setY(this.getYAxis().getDisplayPosition(
+				rectangle.setY(this.getYAxis().getDisplayPosition(
 						this.getYAxis().toRealValue(
 								-(blockingTime.getStartTimeInSecond()))));
-				r.setWidth(this.getXAxis()
+				rectangle.setWidth(this.getXAxis()
 						.getDisplayPosition(
 								this.getXAxis().toRealValue(
 										blockingTime.getEndDistance()))
 						- this.getXAxis().getDisplayPosition(
 								this.getXAxis().toRealValue(
 										blockingTime.getStartDistance())));
-				r.setHeight(this.getYAxis().getDisplayPosition(
+				rectangle.setHeight(this.getYAxis().getDisplayPosition(
 						this.getYAxis().toRealValue(
 								-(blockingTime.getEndTimeInSecond())))
 						- this.getYAxis()
@@ -121,7 +133,7 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 												.toRealValue(
 														-(blockingTime
 																.getStartTimeInSecond()))));
-				r.setFill(Color.BLUE.deriveColor(0, 1, 1, 0.5));
+				rectangle.setFill(Color.BLUE.deriveColor(0, 1, 1, 0.5));
 			}
 
 			for (Map.Entry<TimeDistance, List<EventData>> entry : this.eventsMap
@@ -243,17 +255,6 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 		}
 	}
 
-	private List<BlockingTime> blockingTimes;
-	private Map<TimeDistance, List<EventData>> eventsMap;
-	private NumberAxis yAxis;
-	private NumberAxis xAxis;
-
-	private List<Polygon> polygonList = new ArrayList<Polygon>();
-
-	private Label eventLabel;
-	private TableView<TableProperty> eventTable;
-	private TrainRunMonitorPaneController controller;
-	private Rectangle r;
 
 	class TimeDistanceEvents {
 		public TimeDistanceEvents(Polygon arrow, Path path,
