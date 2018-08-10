@@ -790,7 +790,11 @@ public class TrainRunMonitorPaneController {
 						
 						new Zoom(blockingTimeStairwaysChart, lineBlockingTimesAnchorPane);
 
-						drawAllBlockingtimesInLine(line);						
+						blockingTimeStairwaysChart.getData().clear();
+						blockingTimeStairwaysChart.getBlockingTimeChartPlotChildren()
+								.clear();
+						
+						// drawAllBlockingtimesInLine(line);						
 						drawAllTimeDistances(line, blockingTimeStairwaysChart);
 						lineBlockingTimesAnchorPane.getChildren().add(blockingTimeStairwaysChart);
 					}
@@ -801,9 +805,7 @@ public class TrainRunMonitorPaneController {
 
 	// for Kai
 	private void drawAllBlockingtimesInLine(Line line) {
-		blockingTimeStairwaysChart.getData().clear();
-		blockingTimeStairwaysChart.getBlockingTimeChartPlotChildren()
-				.clear();
+		
 		blockingTimeStairwaysChart.setMaxY(maxY);
 		blockingTimeStairwaysChart.setBlockingTimeStairwaysMap(this
 				.getAllBlockingTimeStairways(line));
@@ -868,20 +870,31 @@ public class TrainRunMonitorPaneController {
 	private BlockingTimeStairwaysChart<Number, Number> drawAllTimeDistances(Line line, BlockingTimeStairwaysChart<Number, Number> chart) {
 		HashMap<AbstractTrainSimulator, List<TimeDistance>> timeDistances = this
 				.getAllTimeDistances(line);
-		XYChart.Series<Number, Number> timeDistancesSeries = new Series<Number, Number>();
-		timeDistancesSeries.setName("timeDistancesSeries");
+		
+
 		if (timeDistances.size() > 0) {
 			for (Entry<AbstractTrainSimulator, List<TimeDistance>> entry : timeDistances.entrySet()) {
 				// Iterator to get the current and next distance and time value
+				int count = 0;
+				
+				XYChart.Series<Number, Number> timeDistancesSeries = new Series<Number, Number>();
+				// timeDistancesSeries.setName("timeDistancesSeries");
 				double activeTime = entry.getKey().getActiveTime().getDifference(Time.getInstance(0, 0, 0)).getTotalSeconds();
 				for(TimeDistance timeDistance: entry.getValue()) {
 					timeDistancesSeries.getData().add(
-							new Data<Number, Number>(timeDistance.getDistance(), (maxY - (activeTime + timeDistance.getSecond()))));
+							new Data<Number, Number>(timeDistance.getDistance(),
+									(0 - (activeTime + timeDistance.getSecond()))));
 				}
 				
+				count++;
+				
+				chart.getData().add(timeDistancesSeries);
+				chart.setCreateSymbols(false);
+				
+				if (count >=2) {
+					break;
+				}
 			}
-			chart.getData().add(timeDistancesSeries);
-			chart.setCreateSymbols(false);
 		}
 
 		return chart;

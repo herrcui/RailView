@@ -77,7 +77,7 @@ public class BlockingTimeStairwaysChart<X, Y> extends DraggableChart<X, Y> {
 			 **/
 		}
 
-		if (blockingTimeStairwaysMap.size() > 0) {
+		if (blockingTimeStairwaysMap != null && blockingTimeStairwaysMap.size() > 0) {
 			for (Entry<AbstractTrainSimulator, List<BlockingTime>> entry : blockingTimeStairwaysMap
 					.entrySet()) {
 				double activeTime = entry.getKey().getActiveTime()
