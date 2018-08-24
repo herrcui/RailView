@@ -54,6 +54,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Point2D;
 import javafx.geometry.Side;
+import javafx.scene.Node;
+import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Data;
@@ -92,7 +94,6 @@ public class TrainRunMonitorPaneController {
 	private AnchorPane blockingTimePane, snapshotRoot, trainRoot, lineRoot,
 			linePane, lineBlockingTimesAnchorPane;
 
-
 	@FXML
 	private ListView<String> trainNumbers, lineListView, stationListView;
 
@@ -119,7 +120,7 @@ public class TrainRunMonitorPaneController {
 	private double maxX = Double.MIN_VALUE;
 	private double maxY = Double.MIN_VALUE;
 	private double minY = Double.MAX_VALUE;
-	
+
 	private double pressedX, pressedY;
 
 	/**
@@ -132,13 +133,12 @@ public class TrainRunMonitorPaneController {
 	public void initialize() {
 
 		lineBlockingTimesAnchorPane.setPickOnBounds(false);
-		
+
 		eventLabel.toFront();
 
 		blockingTimeChart = createBlockingTimeChart();
 
 		blockingTimePane.getChildren().add(blockingTimeChart);
-
 
 		AnchorPane.setTopAnchor(blockingTimeChart, 0.0);
 		AnchorPane.setLeftAnchor(blockingTimeChart, 0.0);
@@ -257,6 +257,7 @@ public class TrainRunMonitorPaneController {
 			}
 		}
 	}
+
 
 	private BlockingTimeChart<Number, Number> createBlockingTimeChart() {
 		NumberAxis xAxis = new NumberAxis();
@@ -554,9 +555,11 @@ public class TrainRunMonitorPaneController {
 						.getOperationalPoint()).getElement().getStation();
 
 				return startStation.getCoordinate().getX()
-						+ (meter - dist.getMeter())	* 
-						  (endStation.getCoordinate().getX() - startStation.getCoordinate().getX()) /
-						  (opDistances.get(index + 1).getMeter() - opDistances.get(index).getMeter());
+						+ (meter - dist.getMeter())
+						* (endStation.getCoordinate().getX() - startStation
+								.getCoordinate().getX())
+						/ (opDistances.get(index + 1).getMeter() - opDistances
+								.get(index).getMeter());
 			}
 			index++;
 		}
@@ -733,10 +736,6 @@ public class TrainRunMonitorPaneController {
 						ObservableList<String> stationNameList = FXCollections
 								.observableArrayList();
 
-						
-						blockingTimeStairwaysChart = createBlockingTimeStairwayChart();
-						
-						//TODO are x,y-coordinates right?
 						// max and min x-coordinate for the Mapper
 						for (Station station : infraServiceUtility
 								.getLineService().findStationsByLine(line)) {
@@ -750,16 +749,28 @@ public class TrainRunMonitorPaneController {
 						// max and minimum y-coordinate
 						HashMap<AbstractTrainSimulator, List<BlockingTime>> blockingTimeStairways = getAllBlockingTimeStairways(line);
 
-						for (Entry<AbstractTrainSimulator, List<BlockingTime>> entry : blockingTimeStairways.entrySet()) {
+						for (Entry<AbstractTrainSimulator, List<BlockingTime>> entry : blockingTimeStairways
+								.entrySet()) {
 							for (BlockingTime blockingTime : entry.getValue()) {
-								double time = blockingTime.getEndTimeInSecond() + 
-									entry.getKey().getActiveTime().getDifference(Time.getInstance(0, 0, 0)).getTotalSeconds();
+								double time = blockingTime.getEndTimeInSecond()
+										+ entry.getKey()
+												.getActiveTime()
+												.getDifference(
+														Time.getInstance(0, 0,
+																0))
+												.getTotalSeconds();
 								if (time > maxY)
 									maxY = time;
 								if (time < minY)
 									minY = time;
 							}
 						}
+
+						lineBlockingTimesAnchorPane.getChildren().clear();
+						blockingTimeStairwaysChart = createBlockingTimeStairwayChart();
+						blockingTimeStairwaysChart
+								.getBlockingTimeStairwayChartPlotChildren()
+								.clear();
 
 						CoordinateMapper mapper = new CoordinateMapper(maxX,
 								minX, maxY, minY);
@@ -776,131 +787,122 @@ public class TrainRunMonitorPaneController {
 							stationList.add(station);
 							stationNameList.add(station.getName());
 
-							blockingTimeStairwaysChart.setStationList(stationList);
+							blockingTimeStairwaysChart
+									.setStationList(stationList);
+							drawStations(stationList,
+									blockingTimeStairwaysChart);
 						}
-						
-						lineBlockingTimesAnchorPane.getChildren().clear();
-						
+
+						// to draw the rectangles directly into the chart
+						blockingTimeStairwaysChart
+								.setBlockingTimeStairwaysMap(getAllBlockingTimeStairways(line));
+
+						// to draw the timeDistances directly into the chart
+						blockingTimeStairwaysChart
+								.setTimeDistancesMap(getAllTimeDistances(line));
+
 						stationListView.setItems(stationNameList);
 
-						AnchorPane.setTopAnchor(blockingTimeStairwaysChart, 0.0);
-						AnchorPane.setLeftAnchor(blockingTimeStairwaysChart, 0.0);
-						AnchorPane.setRightAnchor(blockingTimeStairwaysChart, 0.0);
-						AnchorPane.setBottomAnchor(blockingTimeStairwaysChart, 0.0);
-						
-						new Zoom(blockingTimeStairwaysChart, lineBlockingTimesAnchorPane);
+						AnchorPane
+								.setTopAnchor(blockingTimeStairwaysChart, 0.0);
+						AnchorPane.setLeftAnchor(blockingTimeStairwaysChart,
+								0.0);
+						AnchorPane.setRightAnchor(blockingTimeStairwaysChart,
+								0.0);
+						AnchorPane.setBottomAnchor(blockingTimeStairwaysChart,
+								0.0);
 
-						blockingTimeStairwaysChart.getData().clear();
-						blockingTimeStairwaysChart.getBlockingTimeChartPlotChildren()
-								.clear();
-						
-						// drawAllBlockingtimesInLine(line);						
 						drawAllTimeDistances(line, blockingTimeStairwaysChart);
-						lineBlockingTimesAnchorPane.getChildren().add(blockingTimeStairwaysChart);
+
+						new Zoom(blockingTimeStairwaysChart, lineBlockingTimesAnchorPane);
+						
+						blockingTimeStairwaysChart.setMouseFilter(new EventHandler<MouseEvent>() {
+							@Override
+							public void handle(MouseEvent mouseEvent) {
+								if (mouseEvent.getButton() == MouseButton.PRIMARY) {
+								} else {
+									mouseEvent.consume();
+								}
+							}
+						});
+						blockingTimeStairwaysChart.startEventHandlers();
+						
+						lineBlockingTimesAnchorPane.getChildren().add(
+								blockingTimeStairwaysChart);
+
 					}
 
 				});
 
 	}
 
-	// for Kai
-	private void drawAllBlockingtimesInLine(Line line) {
-		
-		blockingTimeStairwaysChart.setMaxY(maxY);
-		blockingTimeStairwaysChart.setBlockingTimeStairwaysMap(this
-				.getAllBlockingTimeStairways(line));
-		
-	}
-	
-	
-	private BlockingTimeStairwaysChart<Number, Number> createBlockingTimeStairwayChart(){
+	private BlockingTimeStairwaysChart<Number, Number> createBlockingTimeStairwayChart() {
 		NumberAxis xAxis = new NumberAxis();
 		NumberAxis yAxis = new NumberAxis();
-		
-		// xAxis autorange is wrong, test
+
 		xAxis.setAutoRanging(false);
 		xAxis.setLowerBound(minX);
 		xAxis.setUpperBound(maxX);
 		yAxis.setAutoRanging(true);
-		
+
 		BlockingTimeStairwaysChart<Number, Number> chart = new BlockingTimeStairwaysChart<Number, Number>(
 				xAxis, yAxis);
 
-		chart.getData().clear();
-
 		xAxis.setSide(Side.TOP);
+		chart.setMaxY(maxY);
 
 		return chart;
 	}
-/**
-	private void drawAllTimeDistanceInLine(Line line) {
-		HashMap<AbstractTrainSimulator, List<TimeDistance>> timeDistances = this
-				.getAllTimeDistances(line);
-		if (timeDistances.size() > 0) {
-			//TODO wrong lines
-			CoordinateMapper mapper = new CoordinateMapper(maxX, minX, maxY, minY);
-			for (Entry<AbstractTrainSimulator, List<TimeDistance>> entry : timeDistances.entrySet()) {
-				// Iterator to get the current and next distance and time value
-				double activeTime = entry.getKey().getActiveTime().getDifference(Time.getInstance(0, 0, 0)).getTotalSeconds();
-				Iterator<TimeDistance> it = entry.getValue().iterator();
-				TimeDistance previous = null;
-				if (it.hasNext()) {
-					previous = it.next();
-				}
-				while (it.hasNext()) {
-					TimeDistance current = it.next();
-					// Process previous and current here.
-					javafx.scene.shape.Line polyLine = new javafx.scene.shape.Line();
-					polyLine.setStartX(mapper.mapToPaneX(
-							previous.getDistance(), lineBlockingTimesPane));
-					polyLine.setEndX(mapper.mapToPaneX(current.getDistance(),
-							lineBlockingTimesPane));
-					polyLine.setStartY(mapper.mapToPaneY(maxY - (activeTime + previous.getSecond()),
-							lineBlockingTimesPane));
-					polyLine.setEndY(mapper.mapToPaneY(maxY - (activeTime + current.getSecond()),
-							lineBlockingTimesPane));
-					lineBlockingTimesPane.getChildren().add(polyLine);
-					previous = current;
-				}
-			}
+
+	private BlockingTimeStairwaysChart<Number, Number> drawStations(
+			List<Station> stationList,
+			BlockingTimeStairwaysChart<Number, Number> chart) {
+		XYChart.Series<Number, Number> stationSeries = new Series<Number, Number>();
+
+		for (Station station : stationList) {
+			stationSeries.getData()
+					.add(new Data<Number, Number>(station.getCoordinate()
+							.getX(), 0));
+
 		}
+		chart.getData().add(stationSeries);
+	    return chart;
 	}
-	**/
-	
-	private BlockingTimeStairwaysChart<Number, Number> drawAllTimeDistances(Line line, BlockingTimeStairwaysChart<Number, Number> chart) {
+
+	private BlockingTimeStairwaysChart<Number, Number> drawAllTimeDistances(
+			Line line, BlockingTimeStairwaysChart<Number, Number> chart) {
 		HashMap<AbstractTrainSimulator, List<TimeDistance>> timeDistances = this
 				.getAllTimeDistances(line);
-		
+
+		chart.setAxisSortingPolicy(LineChart.SortingPolicy.NONE);
+		chart.setLegendVisible(false);
+		chart.setCreateSymbols(false);
 
 		if (timeDistances.size() > 0) {
-			for (Entry<AbstractTrainSimulator, List<TimeDistance>> entry : timeDistances.entrySet()) {
-				// Iterator to get the current and next distance and time value
-				int count = 0;
-				
+			for (Entry<AbstractTrainSimulator, List<TimeDistance>> entry : timeDistances
+					.entrySet()) {
 				XYChart.Series<Number, Number> timeDistancesSeries = new Series<Number, Number>();
-				// timeDistancesSeries.setName("timeDistancesSeries");
-				double activeTime = entry.getKey().getActiveTime().getDifference(Time.getInstance(0, 0, 0)).getTotalSeconds();
-				for(TimeDistance timeDistance: entry.getValue()) {
+
+				double activeTime = entry.getKey().getActiveTime()
+						.getDifference(Time.getInstance(0, 0, 0))
+						.getTotalSeconds();
+				for (TimeDistance timeDistance : entry.getValue()) {
 					timeDistancesSeries.getData().add(
-							new Data<Number, Number>(timeDistance.getDistance(),
-									(0 - (activeTime + timeDistance.getSecond()))));
+							new Data<Number, Number>(
+									timeDistance.getDistance(),
+									(maxY - (activeTime + timeDistance
+											.getSecond()))));
 				}
-				
-				count++;
-				
+
 				chart.getData().add(timeDistancesSeries);
-				chart.setCreateSymbols(false);
-				
-				if (count >=2) {
-					break;
-				}
+				timeDistancesSeries.nodeProperty().get()
+						.setStyle("-fx-stroke: red");
 			}
+
 		}
 
 		return chart;
 	}
-	
-	
 
 	static Double[] addElement(Double[] a, Double e) {
 		a = Arrays.copyOf(a, a.length + 1);
@@ -928,38 +930,18 @@ public class TrainRunMonitorPaneController {
 		}
 		return result;
 	}
-	
-	@FXML
-	private void mouseEnter(){
-		lineBlockingTimesAnchorPane.setOnMousePressed(new EventHandler<MouseEvent>()
-		        {
-            public void handle(MouseEvent event)
-            {
-                pressedX = event.getX();
-                pressedY = event.getY();
-            }
-        });
 
-		lineBlockingTimesAnchorPane.setOnMouseDragged(new EventHandler<MouseEvent>()
-        {
-            public void handle(MouseEvent event)
-            {
-            	lineBlockingTimesAnchorPane.setTranslateX(lineBlockingTimesAnchorPane.getTranslateX() + event.getX() - pressedX);
-            	lineBlockingTimesAnchorPane.setTranslateY(lineBlockingTimesAnchorPane.getTranslateY() + event.getY() - pressedY);
-
-                event.consume();
-            }
-        });
-	}
-	/**
 	@FXML
-	private void onScrollWheel(){
-		NodeGestures lineBlockingTimesGestures = new NodeGestures(lineBlockingTimesPane);
-		
-		lineBlockingTimesAnchorPane.addEventFilter( ScrollEvent.ANY, lineBlockingTimesGestures.getOnScrollEventHandler());
-	
+	private void resetZoomBlockingTimeStairways(MouseEvent event) {
+		if (event.getButton().equals(MouseButton.SECONDARY)) {
+			if (event.getClickCount() == 2) {
+				blockingTimeStairwaysChart.getXAxis().setAutoRanging(true);
+				blockingTimeStairwaysChart.getYAxis().setAutoRanging(true);
+			}
+		}
 	}
-**/
+	
+
 	static ObservableList<TableProperty> generateTrainInfo(
 			AbstractTrainSimulator train, String trainNumber) {
 		ObservableList<TableProperty> observableTrainInfoList = FXCollections

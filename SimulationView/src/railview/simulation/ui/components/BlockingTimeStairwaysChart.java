@@ -1,6 +1,7 @@
 package railview.simulation.ui.components;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
 
@@ -31,7 +32,7 @@ public class BlockingTimeStairwaysChart<X, Y> extends DraggableChart<X, Y> {
 		super(xAxis, yAxis);
 	}
 
-	public ObservableList<Node> getBlockingTimeChartPlotChildren() {
+	public ObservableList<Node> getBlockingTimeStairwayChartPlotChildren() {
 		return this.getPlotChildren();
 	}
 
@@ -45,13 +46,15 @@ public class BlockingTimeStairwaysChart<X, Y> extends DraggableChart<X, Y> {
 		this.timeDistancesMap = timeDistancesMap;
 	}
 
-	public void setMaxY(double maxY) {
-		this.maxY = maxY;
-	}
-
 	public void setStationList(List<Station> stationList) {
 		this.stationList = stationList;
 	}
+
+	
+	public void setMaxY(double maxY) {
+		this.maxY = maxY;
+	}
+	
 
 	@Override
 	protected void layoutPlotChildren() {
@@ -66,19 +69,54 @@ public class BlockingTimeStairwaysChart<X, Y> extends DraggableChart<X, Y> {
 			circle.setCenterY(0);
 			circle.setRadius(5);
 			this.getPlotChildren().add(circle);
-			/**
-			 * Label stationLabel = new Label();
-			 * stationLabel.setText(station.getName());
-			 * stationLabel.setVisible(true);
-			 * stationLabel.setTranslateX(mapper.mapToPaneX(
-			 * station.getCoordinate().getX() - stationLabel.getWidth(),
-			 * linePane)); stationLabel.setTranslateY(linePane.getHeight() / 2 -
-			 * linePane.getHeight() / 15);
-			 **/
+/**
+			Label stationLabel = new Label();
+			stationLabel.setText(station.getName());
+			stationLabel.setVisible(true);
+			stationLabel
+					.setTranslateX(mapper.mapToPaneX(station.getCoordinate()
+							.getX() - stationLabel.getWidth(), linePane));
+			stationLabel.setTranslateY(linePane.getHeight() / 2
+					- linePane.getHeight() / 15);
+**/
 		}
 
-		if (blockingTimeStairwaysMap != null && blockingTimeStairwaysMap.size() > 0) {
-			for (Entry<AbstractTrainSimulator, List<BlockingTime>> entry : blockingTimeStairwaysMap
+		if (this.timeDistancesMap != null && this.timeDistancesMap.size() > 0) {
+
+			for (Entry<AbstractTrainSimulator, List<TimeDistance>> entry : this.timeDistancesMap
+					.entrySet()) {
+				// Iterator to get the current and next distance and time value
+				double activeTime = entry.getKey().getActiveTime()
+						.getDifference(Time.getInstance(0, 0, 0))
+						.getTotalSeconds();
+				Iterator<TimeDistance> it = entry.getValue().iterator();
+				TimeDistance previous = null;
+				if (it.hasNext()) {
+					previous = it.next();
+				}
+				while (it.hasNext()) {
+					TimeDistance current = it.next();
+					// Process previous and current here.
+					javafx.scene.shape.Line polyLine = new javafx.scene.shape.Line();
+					polyLine.setStartX(this.getXAxis()
+							.getDisplayPosition(
+									this.getXAxis().toRealValue(
+											previous.getDistance())));
+					polyLine.setEndX(this.getXAxis().getDisplayPosition(
+							this.getXAxis().toRealValue(current.getDistance())));
+					polyLine.setStartY(this.getYAxis().getDisplayPosition(
+							this.getYAxis().toRealValue(maxY - (activeTime + previous.getSecond()))));
+					polyLine.setEndY(this.getYAxis().getDisplayPosition(
+							this.getYAxis().toRealValue(maxY - (activeTime + current.getSecond()))));
+			//		this.getPlotChildren().add(polyLine);
+					previous = current;
+				}
+			}
+		}
+
+		if (this.blockingTimeStairwaysMap != null
+				&& this.blockingTimeStairwaysMap.size() > 0) {
+			for (Entry<AbstractTrainSimulator, List<BlockingTime>> entry : this.blockingTimeStairwaysMap
 					.entrySet()) {
 				double activeTime = entry.getKey().getActiveTime()
 						.getDifference(Time.getInstance(0, 0, 0))
@@ -97,10 +135,10 @@ public class BlockingTimeStairwaysChart<X, Y> extends DraggableChart<X, Y> {
 
 					rectangle.setHeight(this.getYAxis().getDisplayPosition(
 							this.getYAxis().toRealValue(
-									(maxY - (activeTime + endY))))
+									(this.maxY - (activeTime + endY))))
 							- this.getYAxis().getDisplayPosition(
 									this.getYAxis().toRealValue(
-											(maxY - (activeTime + endY)))));
+											(maxY - (activeTime + startY)))));
 
 					if (endX > startX) {
 						rectangle.setX(this.getXAxis().getDisplayPosition(
