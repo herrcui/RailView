@@ -3,10 +3,7 @@ package railview.simulation.ui;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -14,7 +11,6 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import railapp.infrastructure.dto.Line;
 import railapp.infrastructure.dto.Station;
-import railapp.infrastructure.element.dto.RelativePosition;
 import railapp.infrastructure.object.dto.InfrastructureObject;
 import railapp.infrastructure.path.dto.LinkEdge;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
@@ -22,21 +18,13 @@ import railapp.rollingstock.dto.SimpleTrain;
 import railapp.simulation.events.ScheduledEvent;
 import railapp.simulation.events.totrain.AbstractEventToTrain;
 import railapp.simulation.events.totrain.UpdateLocationEvent;
-import railapp.simulation.infrastructure.PartialRouteResource;
-import railapp.simulation.infrastructure.ResourceOccupancy;
-import railapp.simulation.prediction.TrainRunPredictor;
-import railapp.simulation.runingdynamics.sections.DiscretePoint;
 import railapp.simulation.train.AbstractTrainSimulator;
-import railapp.simulation.train.TrainSimulator;
 import railapp.timetable.dto.TripElement;
 import railapp.units.Coordinate;
 import railapp.units.Duration;
 import railapp.units.Length;
 import railapp.units.Time;
-import railapp.units.UnitUtility;
 import railview.simulation.container.CoordinateMapper;
-import railview.simulation.container.NodeGestures;
-import railview.simulation.container.PannablePane;
 import railview.simulation.ui.components.BlockingTimeChart;
 import railview.simulation.ui.components.BlockingTimeStairwaysChart;
 import railview.simulation.ui.components.DraggableChart;
@@ -45,6 +33,7 @@ import railview.simulation.ui.data.BlockingTime;
 import railview.simulation.ui.data.EventData;
 import railview.simulation.ui.data.TableProperty;
 import railview.simulation.ui.data.TimeDistance;
+import railview.simulation.ui.data.TrainRunDataManager;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -52,9 +41,7 @@ import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Point2D;
 import javafx.geometry.Side;
-import javafx.scene.Node;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
@@ -70,13 +57,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Polyline;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
@@ -113,15 +95,12 @@ public class TrainRunMonitorPaneController {
 	private ConcurrentHashMap<String, AbstractTrainSimulator> trainMap;
 	private IInfrastructureServiceUtility infrastructureServiceUtility;
 	private static HashMap<String, Line> lineMap = new HashMap<String, Line>();
-	private HashMap<AbstractTrainSimulator, List<Length>> opDistMap = new HashMap<AbstractTrainSimulator, List<Length>>();
-	private Rectangle rectangle;
-
+	private TrainRunDataManager trainRunDataManager = new TrainRunDataManager();
+	
 	private double minX = Double.MAX_VALUE;
 	private double maxX = Double.MIN_VALUE;
 	private double maxY = Double.MIN_VALUE;
 	private double minY = Double.MAX_VALUE;
-
-	private double pressedX, pressedY;
 
 	/**
 	 * initialize the trainRunMonitorPane, add blockingTimeChart on top of it,
@@ -301,11 +280,11 @@ public class TrainRunMonitorPaneController {
 										true);
 								drawCourseforTimeTable(train, chart);
 
-								chart.setBlockingTime(getBlockingTimeStairway(
+								chart.setBlockingTime(trainRunDataManager.getBlockingTimeStairway(
 										train, null));
 
 								chart.setEventsMap(getEvents(train,
-										getTimeInDistance(train, null)));
+										trainRunDataManager.getTimeInDistance(train, null)));
 
 								chart.setAnimated(false);
 								chart.setCreateSymbols(false);
@@ -346,13 +325,13 @@ public class TrainRunMonitorPaneController {
 							blockingTimeChart.getYAxis().setAutoRanging(true);
 							drawCourseforTimeTable(train, chart);
 							try {
-								chart.setBlockingTime(getBlockingTimeStairway(
+								chart.setBlockingTime(trainRunDataManager.getBlockingTimeStairway(
 										train, null));
 							} catch (Exception e) {
 							}
 
 							chart.setEventsMap(getEvents(train,
-									getTimeInDistance(train, null)));
+								trainRunDataManager.getTimeInDistance(train, null)));
 
 							chart.setAnimated(false);
 							chart.setCreateSymbols(false);
@@ -431,164 +410,6 @@ public class TrainRunMonitorPaneController {
 		return chart;
 	}
 
-	private List<BlockingTime> getBlockingTimeStairway(
-			AbstractTrainSimulator train, Line line) {
-		List<BlockingTime> blockingTimes = new ArrayList<BlockingTime>();
-		if (train instanceof TrainSimulator) {
-			double meter = 0;
-			Length headDistanceInFirstResource = null;
-
-			List<ResourceOccupancy> resourceOccupancies = ((TrainSimulator) train)
-					.getBlockingTimeStairWay();
-
-			/*
-			 * List<ResourceOccupancy> scheduldResourceOccupancies =
-			 * this.trainRunPredictor .getScheduledBlockingTime().get(train);
-			 * Course course =
-			 * this.trainRunPredictor.getScheduledCourseMap().get( train);
-			 */
-			// for Kai
-
-			Time trainStartTime = train.getTripSection().getStartTime();
-
-			for (ResourceOccupancy resourceOccupancy : resourceOccupancies) {
-				if (headDistanceInFirstResource == null) {
-					headDistanceInFirstResource = ((PartialRouteResource) resourceOccupancy
-							.getResource()).getPath().findFirstDistance(
-							(InfrastructureObject) train.getTripSection()
-									.getTripElements().get(0)
-									.getOperationalPoint());
-					if (headDistanceInFirstResource == null) {
-						continue;
-					}
-				}
-
-				if (resourceOccupancy.getReleaseTime() == null) {
-					break;
-				}
-
-				double startMeter = meter;
-				double endMeter = meter
-						+ ((PartialRouteResource) resourceOccupancy
-								.getResource()).getPartialRoute().getPath()
-								.getLength().getMeter();
-				double startTimeInSecond = resourceOccupancy.getGrantTime()
-						.getDifference(trainStartTime).getTotalSeconds();
-				double endTimeInSecond = resourceOccupancy.getReleaseTime()
-						.getDifference(trainStartTime).getTotalSeconds();
-
-				if (blockingTimes.size() == 0) { // for the first resource
-					endMeter = endMeter
-							- headDistanceInFirstResource.getMeter();
-				}
-
-				if (line == null) {
-					blockingTimes.add(new BlockingTime(startMeter, endMeter,
-							startTimeInSecond, endTimeInSecond));
-				} else {
-					List<Length> opDistances = this.getOpDistances(train);
-
-					double startDist = this.getDistanceInLine(opDistances,
-							startMeter, train);
-					double endDist = this.getDistanceInLine(opDistances,
-							endMeter, train);
-					blockingTimes.add(new BlockingTime(startDist, endDist,
-							startTimeInSecond, endTimeInSecond));
-				}
-
-				meter = endMeter;
-			}
-
-		}
-
-		return blockingTimes;
-	}
-
-	private List<Length> getOpDistances(AbstractTrainSimulator train) {
-		List<Length> opDistances = this.opDistMap.get(train);
-
-		if (opDistances == null) {
-			Length refDist = Length.fromMeter(0);
-			opDistances = new ArrayList<Length>();
-			for (TripElement elem : train.getTripSection().getTripElements()) {
-				Length opDistance = train.getFullPath().findFirstDistance(
-						(InfrastructureObject) elem.getOperationalPoint(),
-						refDist);
-				opDistances.add(opDistance);
-				refDist = opDistance;
-			}
-
-			this.opDistMap.put(train, opDistances);
-		}
-
-		return opDistances;
-	}
-
-	private double getDistanceInLine(List<Length> opDistances, double meter,
-			AbstractTrainSimulator train) {
-		int index = 0;
-		if (meter >= opDistances.get(opDistances.size() - 1).getMeter()) {
-			return ((InfrastructureObject) train.getTripSection()
-					.getTripElements().get(opDistances.size() - 1)
-					.getOperationalPoint()).getElement().getStation()
-					.getCoordinate().getX();
-		}
-
-		for (Length dist : opDistances) {
-			if (index >= opDistances.size() - 1) {
-				break;
-			}
-
-			if (opDistances == null || opDistances.get(index + 1) == null) {
-				continue;
-			}
-
-			if (meter - dist.getMeter() >= UnitUtility.ERROR * -1
-					&& opDistances.get(index + 1).getMeter() - meter >= UnitUtility.ERROR
-							* -1) {
-
-				Station startStation = ((InfrastructureObject) train
-						.getTripSection().getTripElements().get(index)
-						.getOperationalPoint()).getElement().getStation();
-				Station endStation = ((InfrastructureObject) train
-						.getTripSection().getTripElements().get(index + 1)
-						.getOperationalPoint()).getElement().getStation();
-
-				return startStation.getCoordinate().getX()
-						+ (meter - dist.getMeter())
-						* (endStation.getCoordinate().getX() - startStation
-								.getCoordinate().getX())
-						/ (opDistances.get(index + 1).getMeter() - opDistances
-								.get(index).getMeter());
-			}
-			index++;
-		}
-
-		return -1;
-	}
-
-	// Map: Meter, TimeInSecond
-	private List<TimeDistance> getTimeInDistance(AbstractTrainSimulator train,
-			Line line) {
-		List<TimeDistance> pointList = new ArrayList<TimeDistance>();
-		double meter = 0; // x
-		double timeInSecond = 0; // y
-
-		for (DiscretePoint point : train.getWholeCoursePoints()) {
-			timeInSecond += point.getDuration().getTotalSeconds();
-			meter += point.getDistance().getMeter();
-			if (line == null) {
-				pointList.add(new TimeDistance(meter, timeInSecond));
-			} else {
-				List<Length> opDistances = this.getOpDistances(train);
-				double distance = this.getDistanceInLine(opDistances, meter,
-						train);
-				pointList.add(new TimeDistance(distance, timeInSecond));
-			}
-		}
-		return pointList;
-	}
-
 	private List<Coordinate> getTrainPathCoordinates(
 			AbstractTrainSimulator train) {
 		List<Coordinate> coordniates = new ArrayList<Coordinate>();
@@ -660,7 +481,7 @@ public class TrainRunMonitorPaneController {
 		double y = -1;
 		courseForTimeSeries.getData().add(new Data<Number, Number>(0, y));
 		if (train.getTrain().getStatus() != SimpleTrain.INACTIVE) {
-			List<TimeDistance> timeDistances = this.getTimeInDistance(train,
+			List<TimeDistance> timeDistances = trainRunDataManager.getTimeInDistance(train,
 					null);
 
 			for (TimeDistance point : timeDistances) {
@@ -747,7 +568,8 @@ public class TrainRunMonitorPaneController {
 						}
 
 						// max and minimum y-coordinate
-						HashMap<AbstractTrainSimulator, List<BlockingTime>> blockingTimeStairways = getAllBlockingTimeStairways(line);
+						HashMap<AbstractTrainSimulator, List<BlockingTime>> blockingTimeStairways = 
+								trainRunDataManager.getAllBlockingTimeStairwaysInLine(line, trainMap.values());
 
 						for (Entry<AbstractTrainSimulator, List<BlockingTime>> entry : blockingTimeStairways
 								.entrySet()) {
@@ -794,12 +616,12 @@ public class TrainRunMonitorPaneController {
 						}
 
 						// to draw the rectangles directly into the chart
-						blockingTimeStairwaysChart
-								.setBlockingTimeStairwaysMap(getAllBlockingTimeStairways(line));
+						blockingTimeStairwaysChart.setBlockingTimeStairwaysMap(
+							trainRunDataManager.getAllBlockingTimeStairwaysInLine(line, trainMap.values()));
 
 						// to draw the timeDistances directly into the chart
-						blockingTimeStairwaysChart
-								.setTimeDistancesMap(getAllTimeDistances(line));
+						blockingTimeStairwaysChart.setTimeDistancesMap(
+							trainRunDataManager.getAllTimeDistancesInLine(line, trainMap.values()));
 
 						stationListView.setItems(stationNameList);
 
@@ -833,7 +655,6 @@ public class TrainRunMonitorPaneController {
 					}
 
 				});
-
 	}
 
 	private BlockingTimeStairwaysChart<Number, Number> createBlockingTimeStairwayChart() {
@@ -871,8 +692,8 @@ public class TrainRunMonitorPaneController {
 
 	private BlockingTimeStairwaysChart<Number, Number> drawAllTimeDistances(
 			Line line, BlockingTimeStairwaysChart<Number, Number> chart) {
-		HashMap<AbstractTrainSimulator, List<TimeDistance>> timeDistances = this
-				.getAllTimeDistances(line);
+		HashMap<AbstractTrainSimulator, List<TimeDistance>> timeDistances = trainRunDataManager
+				.getAllTimeDistancesInLine(line, this.trainMap.values());
 
 		chart.setAxisSortingPolicy(LineChart.SortingPolicy.NONE);
 		chart.setLegendVisible(false);
@@ -902,33 +723,6 @@ public class TrainRunMonitorPaneController {
 		}
 
 		return chart;
-	}
-
-	static Double[] addElement(Double[] a, Double e) {
-		a = Arrays.copyOf(a, a.length + 1);
-		a[a.length - 1] = e;
-		return a;
-	}
-
-	// kai, rectangle
-	private HashMap<AbstractTrainSimulator, List<BlockingTime>> getAllBlockingTimeStairways(
-			Line line) {
-		HashMap<AbstractTrainSimulator, List<BlockingTime>> result = new HashMap<AbstractTrainSimulator, List<BlockingTime>>();
-
-		for (AbstractTrainSimulator train : this.trainMap.values()) {
-			result.put(train, this.getBlockingTimeStairway(train, line));
-		}
-		return result;
-	}
-
-	// kai, line
-	private HashMap<AbstractTrainSimulator, List<TimeDistance>> getAllTimeDistances(
-			Line line) {
-		HashMap<AbstractTrainSimulator, List<TimeDistance>> result = new HashMap<AbstractTrainSimulator, List<TimeDistance>>();
-		for (AbstractTrainSimulator train : this.trainMap.values()) {
-			result.put(train, this.getTimeInDistance(train, line));
-		}
-		return result;
 	}
 
 	@FXML

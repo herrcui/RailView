@@ -8,15 +8,12 @@ import java.util.Map.Entry;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.chart.Axis;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import railapp.infrastructure.dto.Station;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.units.Time;
-import railview.simulation.container.CoordinateMapper;
 import railview.simulation.ui.data.BlockingTime;
 import railview.simulation.ui.data.TimeDistance;
 
