@@ -524,7 +524,10 @@ public class TrainRunMonitorPaneController {
 			IInfrastructureServiceUtility infraServiceUtility) {
 		this.snapshotPaneController
 				.setInfrastructureServiceUtility(infraServiceUtility);
+		this.trainRunDataManager.setInfraServiceUtility(infraServiceUtility);
+		
 		this.infrastructureServiceUtility = infraServiceUtility;
+		
 		for (Line line : this.infrastructureServiceUtility.getNetworkService()
 				.allLines(null)) {
 			lineMap.put(line.getDescription(), line);
@@ -575,12 +578,7 @@ public class TrainRunMonitorPaneController {
 								.entrySet()) {
 							for (BlockingTime blockingTime : entry.getValue()) {
 								double time = blockingTime.getEndTimeInSecond()
-										+ entry.getKey()
-												.getActiveTime()
-												.getDifference(
-														Time.getInstance(0, 0,
-																0))
-												.getTotalSeconds();
+										+ entry.getKey().getActiveTime().getDifference(Time.getInstance(0, 0, 0)).getTotalSeconds();
 								if (time > maxY)
 									maxY = time;
 								if (time < minY)
@@ -594,8 +592,7 @@ public class TrainRunMonitorPaneController {
 								.getBlockingTimeStairwayChartPlotChildren()
 								.clear();
 
-						CoordinateMapper mapper = new CoordinateMapper(maxX,
-								minX, maxY, minY);
+						CoordinateMapper mapper = new CoordinateMapper(maxX, minX, maxY, minY);
 						javafx.scene.shape.Line stationLine = new javafx.scene.shape.Line();
 						stationLine.setStartX(mapper.mapToPaneX(minX, linePane));
 						stationLine.setEndX(mapper.mapToPaneX(maxX, linePane));
@@ -708,16 +705,24 @@ public class TrainRunMonitorPaneController {
 						.getDifference(Time.getInstance(0, 0, 0))
 						.getTotalSeconds();
 				for (TimeDistance timeDistance : entry.getValue()) {
-					timeDistancesSeries.getData().add(
-							new Data<Number, Number>(
-									timeDistance.getDistance(),
-									(maxY - (activeTime + timeDistance
-											.getSecond()))));
+					if (timeDistance.getDistance() == -1) {
+						if (timeDistancesSeries.getData().size() > 0) {
+							// store series and prepare new series
+							chart.getData().add(timeDistancesSeries);
+							timeDistancesSeries.nodeProperty().get().setStyle("-fx-stroke: red");
+							timeDistancesSeries = new Series<Number, Number>();
+						}
+					} else {
+						timeDistancesSeries.getData().add(new Data<Number, Number>(
+							timeDistance.getDistance(),
+							(maxY - (activeTime + timeDistance.getSecond()))));
+					}
 				}
 
-				chart.getData().add(timeDistancesSeries);
-				timeDistancesSeries.nodeProperty().get()
-						.setStyle("-fx-stroke: red");
+				if (timeDistancesSeries.getData().size() > 0) {
+					chart.getData().add(timeDistancesSeries);
+					timeDistancesSeries.nodeProperty().get().setStyle("-fx-stroke: red");
+				}
 			}
 
 		}

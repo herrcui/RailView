@@ -3,11 +3,13 @@ package railview.simulation.ui.data;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 import railapp.infrastructure.dto.Line;
 import railapp.infrastructure.dto.Station;
 import railapp.infrastructure.object.dto.InfrastructureObject;
+import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.simulation.infrastructure.PartialRouteResource;
 import railapp.simulation.infrastructure.ResourceOccupancy;
 import railapp.simulation.runingdynamics.sections.DiscretePoint;
@@ -20,6 +22,11 @@ import railapp.units.UnitUtility;
 
 public class TrainRunDataManager {
 	private HashMap<AbstractTrainSimulator, List<Length>> opDistMap = new HashMap<AbstractTrainSimulator, List<Length>>();
+	private IInfrastructureServiceUtility infraServiceUtility;
+	
+	public void setInfraServiceUtility(IInfrastructureServiceUtility infraServiceUtility) {
+		this.infraServiceUtility = infraServiceUtility;
+	}
 	
 	public List<BlockingTime> getBlockingTimeStairway(AbstractTrainSimulator train, Line line) {
 		List<BlockingTime> blockingTimes = new ArrayList<BlockingTime>();
@@ -67,14 +74,12 @@ public class TrainRunDataManager {
 					blockingTimes.add(new BlockingTime(startMeter, endMeter,
 							startTimeInSecond, endTimeInSecond));
 				} else {
-					List<Length> opDistances = this.getOpDistances(train);
-
-					double startDist = this.getDistanceInLine(opDistances,
-							startMeter, train);
-					double endDist = this.getDistanceInLine(opDistances,
-							endMeter, train);
-					blockingTimes.add(new BlockingTime(startDist, endDist,
-							startTimeInSecond, endTimeInSecond));
+					double startDist = this.getDistanceInLine(startMeter, train, line);
+					double endDist = this.getDistanceInLine(endMeter, train, line);
+					if (startDist != -1 && endDist != -1) {
+						blockingTimes.add(new BlockingTime(startDist, endDist,
+								startTimeInSecond, endTimeInSecond));
+					}
 				}
 
 				meter = endMeter;
@@ -97,8 +102,7 @@ public class TrainRunDataManager {
 			if (line == null) {
 				pointList.add(new TimeDistance(meter, timeInSecond));
 			} else {
-				List<Length> opDistances = this.getOpDistances(train);
-				double distance = this.getDistanceInLine(opDistances, meter, train);
+				double distance = this.getDistanceInLine(meter, train, line);
 				pointList.add(new TimeDistance(distance, timeInSecond));
 			}
 		}
@@ -144,15 +148,19 @@ public class TrainRunDataManager {
 		return opDistances;
 	}
 	
-	private double getDistanceInLine(List<Length> opDistances, double meter,
-			AbstractTrainSimulator train) {
+	private double getDistanceInLine(double meter, AbstractTrainSimulator train, Line line) {
 		int index = 0;
+		List<Length> opDistances = this.getOpDistances(train);
+		
 		if (meter >= opDistances.get(opDistances.size() - 1).getMeter()) {
 			return ((InfrastructureObject) train.getTripSection()
 					.getTripElements().get(opDistances.size() - 1)
 					.getOperationalPoint()).getElement().getStation()
 					.getCoordinate().getX();
 		}
+		
+		Collection<Station> stations = new HashSet<Station>();
+		stations.addAll(this.infraServiceUtility.getLineService().findStationsByLine(line));
 
 		for (Length dist : opDistances) {
 			if (index >= opDistances.size() - 1) {
@@ -174,12 +182,16 @@ public class TrainRunDataManager {
 						.getTripSection().getTripElements().get(index + 1)
 						.getOperationalPoint()).getElement().getStation();
 
-				return startStation.getCoordinate().getX()
-						+ (meter - dist.getMeter())
-						* (endStation.getCoordinate().getX() - startStation
-								.getCoordinate().getX())
-						/ (opDistances.get(index + 1).getMeter() - opDistances
-								.get(index).getMeter());
+				if (stations.contains(startStation) && stations.contains(endStation)) {
+					return startStation.getCoordinate().getX()
+							+ (meter - dist.getMeter())
+							* (endStation.getCoordinate().getX() - startStation
+									.getCoordinate().getX())
+							/ (opDistances.get(index + 1).getMeter() - opDistances
+									.get(index).getMeter());
+				} else {
+					return -1;
+				}
 			}
 			index++;
 		}
