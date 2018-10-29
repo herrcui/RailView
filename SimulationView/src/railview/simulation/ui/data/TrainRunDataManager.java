@@ -56,18 +56,15 @@ public class TrainRunDataManager {
 				}
 
 				double startMeter = meter;
-				double endMeter = meter
-						+ ((PartialRouteResource) resourceOccupancy
-								.getResource()).getPartialRoute().getPath()
-								.getLength().getMeter();
+				double endMeter = meter	+ ((PartialRouteResource) resourceOccupancy
+						.getResource()).getPartialRoute().getPath().getLength().getMeter();
 				double startTimeInSecond = resourceOccupancy.getGrantTime()
 						.getDifference(trainStartTime).getTotalSeconds();
 				double endTimeInSecond = resourceOccupancy.getReleaseTime()
 						.getDifference(trainStartTime).getTotalSeconds();
 
 				if (blockingTimes.size() == 0) { // for the first resource
-					endMeter = endMeter
-							- headDistanceInFirstResource.getMeter();
+					endMeter = endMeter	- headDistanceInFirstResource.getMeter();
 				}
 
 				if (line == null) {
@@ -167,13 +164,8 @@ public class TrainRunDataManager {
 				break;
 			}
 
-			if (opDistances == null || opDistances.get(index + 1) == null) {
-				continue;
-			}
-
-			if (meter - dist.getMeter() >= UnitUtility.ERROR * -1
-					&& opDistances.get(index + 1).getMeter() - meter >= UnitUtility.ERROR
-							* -1) {
+			if (meter - dist.getMeter() >= UnitUtility.ERROR * -1 && 
+				opDistances.get(index + 1).getMeter() - meter >= UnitUtility.ERROR * -1) {
 
 				Station startStation = ((InfrastructureObject) train
 						.getTripSection().getTripElements().get(index)
