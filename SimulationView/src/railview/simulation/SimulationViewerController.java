@@ -45,7 +45,7 @@ import railview.simulation.ui.DialogPaneController;
 public class SimulationViewerController extends AbstractSimulationController {
 
 	@FXML
-	private AnchorPane networkPaneRoot, rootPane, menuPane, symbolPane;
+	private AnchorPane networkPaneRoot, menuPane, symbolPane;
 
 	@FXML
 	private Label timeLabel, activeLabel, terminatedLabel;

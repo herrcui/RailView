@@ -25,8 +25,8 @@ import railapp.units.Duration;
 import railapp.units.Length;
 import railapp.units.Time;
 import railview.simulation.container.CoordinateMapper;
-import railview.simulation.ui.components.BlockingTimeChart;
-import railview.simulation.ui.components.BlockingTimeStairwaysChart;
+import railview.simulation.ui.components.BlockingTimeForTripChart;
+import railview.simulation.ui.components.BlockingTimeForLineChart;
 import railview.simulation.ui.components.DraggableChart;
 import railview.simulation.ui.components.Zoom;
 import railview.simulation.ui.data.BlockingTime;
@@ -89,7 +89,7 @@ public class TrainRunMonitorPaneController {
 	private CheckBox selfEventCheckBox, inEventCheckBox, outEventCheckBox;
 
 	private DraggableChart<Number, Number> blockingTimeChart;
-	private BlockingTimeStairwaysChart<Number, Number> blockingTimeStairwaysChart;
+	private BlockingTimeForLineChart<Number, Number> blockingTimeStairwaysChart;
 	private StackPane snapshotPane;
 	private SnapshotPaneController snapshotPaneController;
 	private ConcurrentHashMap<String, AbstractTrainSimulator> trainMap;
@@ -238,10 +238,10 @@ public class TrainRunMonitorPaneController {
 	}
 
 
-	private BlockingTimeChart<Number, Number> createBlockingTimeChart() {
+	private BlockingTimeForTripChart<Number, Number> createBlockingTimeChart() {
 		NumberAxis xAxis = new NumberAxis();
 		NumberAxis yAxis = new NumberAxis();
-		BlockingTimeChart<Number, Number> chart = new BlockingTimeChart<Number, Number>(
+		BlockingTimeForTripChart<Number, Number> chart = new BlockingTimeForTripChart<Number, Number>(
 				xAxis, yAxis, eventLabel, eventTable, this);
 
 		trainNumbers.getSelectionModel().selectedItemProperty()
@@ -473,9 +473,9 @@ public class TrainRunMonitorPaneController {
 		return eventsMap;
 	}
 
-	private BlockingTimeChart<Number, Number> drawCourseforTimeTable(
+	private BlockingTimeForTripChart<Number, Number> drawCourseforTimeTable(
 			AbstractTrainSimulator train,
-			BlockingTimeChart<Number, Number> chart) {
+			BlockingTimeForTripChart<Number, Number> chart) {
 		XYChart.Series<Number, Number> courseForTimeSeries = new Series<Number, Number>();
 		courseForTimeSeries.setName("course for time");
 		double y = -1;
@@ -654,7 +654,7 @@ public class TrainRunMonitorPaneController {
 				});
 	}
 
-	private BlockingTimeStairwaysChart<Number, Number> createBlockingTimeStairwayChart() {
+	private BlockingTimeForLineChart<Number, Number> createBlockingTimeStairwayChart() {
 		NumberAxis xAxis = new NumberAxis();
 		NumberAxis yAxis = new NumberAxis();
 
@@ -663,7 +663,7 @@ public class TrainRunMonitorPaneController {
 		xAxis.setUpperBound(maxX);
 		yAxis.setAutoRanging(true);
 
-		BlockingTimeStairwaysChart<Number, Number> chart = new BlockingTimeStairwaysChart<Number, Number>(
+		BlockingTimeForLineChart<Number, Number> chart = new BlockingTimeForLineChart<Number, Number>(
 				xAxis, yAxis);
 
 		xAxis.setSide(Side.TOP);
@@ -672,9 +672,9 @@ public class TrainRunMonitorPaneController {
 		return chart;
 	}
 
-	private BlockingTimeStairwaysChart<Number, Number> drawStations(
+	private BlockingTimeForLineChart<Number, Number> drawStations(
 			List<Station> stationList,
-			BlockingTimeStairwaysChart<Number, Number> chart) {
+			BlockingTimeForLineChart<Number, Number> chart) {
 		XYChart.Series<Number, Number> stationSeries = new Series<Number, Number>();
 
 		for (Station station : stationList) {
@@ -687,8 +687,8 @@ public class TrainRunMonitorPaneController {
 	    return chart;
 	}
 
-	private BlockingTimeStairwaysChart<Number, Number> drawAllTimeDistances(
-			Line line, BlockingTimeStairwaysChart<Number, Number> chart) {
+	private BlockingTimeForLineChart<Number, Number> drawAllTimeDistances(
+			Line line, BlockingTimeForLineChart<Number, Number> chart) {
 		HashMap<AbstractTrainSimulator, List<TimeDistance>> timeDistances = trainRunDataManager
 				.getAllTimeDistancesInLine(line, this.trainMap.values());
 

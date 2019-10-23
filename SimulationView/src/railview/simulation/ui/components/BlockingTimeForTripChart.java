@@ -32,7 +32,7 @@ import railview.simulation.ui.data.TimeDistance;
  * @param <X>
  * @param <Y>
  */
-public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
+public class BlockingTimeForTripChart<X, Y> extends DraggableChart<X, Y> {
 	
 	private List<BlockingTime> blockingTimes;
 	private Map<TimeDistance, List<EventData>> eventsMap;
@@ -46,7 +46,7 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 	private TrainRunMonitorPaneController controller;
 	private Rectangle rectangle;
 
-	public BlockingTimeChart(Axis<X> xAxis, Axis<Y> yAxis, Label eventLabel,
+	public BlockingTimeForTripChart(Axis<X> xAxis, Axis<Y> yAxis, Label eventLabel,
 			TableView<TableProperty> eventTable,
 			TrainRunMonitorPaneController controller) {
 		super(xAxis, yAxis);
@@ -254,7 +254,6 @@ public class BlockingTimeChart<X, Y> extends DraggableChart<X, Y> {
 			}
 		}
 	}
-
 
 	class TimeDistanceEvents {
 		public TimeDistanceEvents(Polygon arrow, Path path,
