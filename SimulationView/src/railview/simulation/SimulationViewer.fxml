@@ -53,7 +53,7 @@
                   <Tooltip fx:id="graphTooltip" prefWidth="100.0" text="Diagram" />
                </tooltip>
             </Button>
-            <Button fx:id="settingButton" layoutY="7.0" mnemonicParsing="false" onAction="#onSettingButtonAction" styleClass="button-dark-blue" stylesheets="@../../../resources/railview/simulation/resources/CSS/Darktheme.css" AnchorPane.leftAnchor="295.0">
+            <Button fx:id="settingButton" layoutY="7.0" mnemonicParsing="false" onAction="#enterSettingPane" styleClass="button-dark-blue" stylesheets="@../../../resources/railview/simulation/resources/CSS/Darktheme.css" AnchorPane.leftAnchor="295.0">
                <graphic>
                   <ImageView fitHeight="45.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>

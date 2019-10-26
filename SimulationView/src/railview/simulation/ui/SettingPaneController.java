@@ -42,9 +42,9 @@ import javafx.stage.Stage;
  * load a python script in this UI.
  * 
  */
-public class ConfigurationPaneController extends Stage implements Initializable {
+public class SettingPaneController extends Stage implements Initializable {
 	@FXML
-	private AnchorPane configurationPaneRoot, codePane;
+	private AnchorPane settingPaneRoot, codePane;
 
 	@FXML
 	private RadioButton defaultRB, externalRB;
@@ -118,23 +118,14 @@ public class ConfigurationPaneController extends Stage implements Initializable 
 		});
 	}
 
-	public ConfigurationPaneController() {
+	
+	public SettingPaneController() {
 		setTitle("Configurations");
-
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(
-				"ConfigurationPane.fxml"));
-		fxmlLoader.setController(this);
-
+		
 		fileChooser.setTitle("Choose external Python dispatching file ...");
 		FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter(
 				"Python files (*.py)", "*.py");
 		fileChooser.getExtensionFilters().add(extFilter);
-
-		try {
-			setScene(new Scene((Parent) fxmlLoader.load()));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	}
 
 	public void setSimulator(SingleSimulationManager simulator) {
@@ -218,7 +209,7 @@ public class ConfigurationPaneController extends Stage implements Initializable 
 
 	@FXML
 	private void onExternalFileButton(ActionEvent event) {
-		this.file = fileChooser.showOpenDialog(configurationPaneRoot.getScene()
+		this.file = fileChooser.showOpenDialog(settingPaneRoot.getScene()
 				.getWindow());
 
 		if (this.file != null) {

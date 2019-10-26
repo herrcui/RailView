@@ -31,7 +31,7 @@ import railview.railmodel.infrastructure.railsys7.RollingStockReader;
 import railview.railmodel.infrastructure.railsys7.TimetableReader;
 import railview.simulation.container.NetworkPaneController;
 import railview.simulation.framework.AbstractSimulationController;
-import railview.simulation.ui.ConfigurationPaneController;
+import railview.simulation.ui.SettingPaneController;
 import railview.simulation.ui.EditorPaneController;
 import railview.simulation.ui.GraphPaneController;
 import railview.simulation.ui.DialogPaneController;
@@ -78,14 +78,25 @@ public class SimulationViewerController extends AbstractSimulationController {
 			graphpaneloader.setLocation(graphpanelocation);
 			graphPane = (AnchorPane) graphpaneloader.load();
 			this.graphPaneController = graphpaneloader.getController();
+			
+			FXMLLoader settingpaneloader = new FXMLLoader();
+			URL settingpanelocation = SettingPaneController.class
+					.getResource("SettingPane.fxml");
+			settingpaneloader.setLocation(settingpanelocation);
+			settingPane = (AnchorPane) settingpaneloader.load();
+			this.settingPaneController = settingpaneloader.getController();
 
 			FXMLLoader editorpaneloader = new FXMLLoader();
 			URL editorpanelocation = EditorPaneController.class
 					.getResource("EditorPane.fxml");
 			editorpaneloader.setLocation(editorpanelocation);
 			editorPane = (AnchorPane) editorpaneloader.load();
+			this.editorPaneController = editorpaneloader.getController();
 
-			this.networkPaneRoot.getChildren().addAll(networkPane, graphPane,
+			this.networkPaneRoot.getChildren().addAll(
+					networkPane, 
+					graphPane,
+					settingPane,
 					editorPane);
 
 			networkPaneRoot.widthProperty().addListener(
@@ -100,6 +111,7 @@ public class SimulationViewerController extends AbstractSimulationController {
 									- (networkPane.prefWidth(-1) / 2));
 							graphPane.setPrefWidth(newSceneWidth.doubleValue());
 							editorPane.setPrefWidth(newSceneWidth.doubleValue());
+							settingPane.setPrefWidth(newSceneWidth.doubleValue());
 						}
 					});
 
@@ -112,15 +124,16 @@ public class SimulationViewerController extends AbstractSimulationController {
 							networkPane.setLayoutY((newSceneHeight
 									.doubleValue() / 2)
 									- (networkPane.prefHeight(-1) / 2));
-							graphPane.setPrefHeight(newSceneHeight
-									.doubleValue());
-							editorPane.setPrefHeight(newSceneHeight
-									.doubleValue());
+							graphPane.setPrefHeight(newSceneHeight.doubleValue());
+							editorPane.setPrefHeight(newSceneHeight.doubleValue());
+							settingPane.setPrefHeight(newSceneHeight.doubleValue());
 						}
 					});
 
 			graphPane.setVisible(false);
 			editorPane.setVisible(false);
+			settingPane.setVisible(false);
+			
 			symbolPane.setOpacity(0.0);
 			menuPane.setOpacity(1.0);
 
@@ -259,41 +272,56 @@ public class SimulationViewerController extends AbstractSimulationController {
 
 	@FXML
 	private void enterGraphPane() {
-		editorPane.setVisible(false);
 		graphPane.setVisible(true);
+		
+		editorPane.setVisible(false);
 		networkPane.setVisible(false);
 		menuPane.setVisible(false);
+		settingPane.setVisible(false);
 
-		graphPaneController.setActive(true);
-		networkPaneController.setActive(false);
+		//graphPaneController.setActive(true);
+		//networkPaneController.setActive(false);
 	}
 
 	@FXML
 	private void enterNetworkPane() {
-		editorPane.setVisible(false);
-		graphPane.setVisible(false);
 		networkPane.setVisible(true);
 		menuPane.setVisible(true);
-
-		graphPaneController.setActive(false);
-		networkPaneController.setActive(true);
+		
+		editorPane.setVisible(false);
+		graphPane.setVisible(false);
+		settingPane.setVisible(false);
+		
+		//graphPaneController.setActive(false);
+		//networkPaneController.setActive(true);
 	}
 
 	@FXML
 	private void enterEditorPane() {
 		editorPane.setVisible(true);
+		
+		graphPane.setVisible(false);
+		networkPane.setVisible(false);
+		menuPane.setVisible(false);
+		settingPane.setVisible(false);
+
+		//graphPaneController.setActive(false);
+		//networkPaneController.setActive(false);
+	}
+
+	@FXML
+	private void enterSettingPane() {
+		settingPane.setVisible(true);
+		
+		editorPane.setVisible(false);
 		graphPane.setVisible(false);
 		networkPane.setVisible(false);
 		menuPane.setVisible(false);
 
-		graphPaneController.setActive(false);
-		networkPaneController.setActive(false);
-	}
-
-	@FXML
-	private void onSettingButtonAction(ActionEvent event) {
-		configController.setMaximized(true);
-		configController.showAndWait();
+		//graphPaneController.setActive(false);
+		//networkPaneController.setActive(false);
+		//configController.setMaximized(true);
+		//configController.showAndWait();
 	}
 
 	/**
@@ -386,7 +414,7 @@ public class SimulationViewerController extends AbstractSimulationController {
 		SwarmManager swarmManager = SwarmManager.getInstance(simulator);
 		this.networkPaneController.setSwarmManager(swarmManager);
 
-		this.configController.setSimulator(simulator);
+		this.settingPaneController.setSimulator(simulator);
 	}
 
 	@Override
@@ -441,10 +469,14 @@ public class SimulationViewerController extends AbstractSimulationController {
 
 	private StackPane networkPane;
 	private AnchorPane graphPane;
+	private AnchorPane settingPane;
 	private AnchorPane editorPane;
+	
 	private NetworkPaneController networkPaneController;
 	private GraphPaneController graphPaneController;
-	private ConfigurationPaneController configController = new ConfigurationPaneController();
+	private SettingPaneController settingPaneController;
+	private EditorPaneController editorPaneController;
+	
 	private int UIPause = 100;
 	private int MAXSpeed = 20000; // 1 : 200
 }

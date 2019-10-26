@@ -7,9 +7,9 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="configurationPaneRoot" prefHeight="600.0" prefWidth="800.0" styleClass="background-white" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Darktheme.css" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="settingPaneRoot" prefHeight="600.0" prefWidth="800.0" styleClass="background-white" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Darktheme.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.ui.SettingPaneController">
    <children>
-   	<TabPane fx:id="tabPane" side="BOTTOM" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Tabs.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+   	<TabPane side="BOTTOM" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Tabs.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
    		<tabs>
              <Tab text="Dispatching System">
                <content>
