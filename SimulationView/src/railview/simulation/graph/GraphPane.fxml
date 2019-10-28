@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="graphPaneRoot" prefHeight="840" prefWidth="1320" styleClass="background-white" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Darktheme.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.graph.GraphPaneController">
+   <children>
+      <TabPane fx:id="tabPane" layoutX="224.0" layoutY="164.0" prefHeight="840.0" prefWidth="1320.0" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Tabs.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Blocking Time">
+            <content>
+              <AnchorPane fx:id="trainRunMonitorRoot" minHeight="0.0" minWidth="0.0" />
+            </content>
+          </Tab>
+          <Tab text="Running Dynamics">
+               <content>
+                  <AnchorPane fx:id="runningDynamicsRoot" minHeight="0.0" minWidth="0.0" />
+               </content></Tab>
+          <Tab onSelectionChanged="#onSelectionChanged" text="Occupancy &amp; Hindrance">
+            <content>
+              <AnchorPane fx:id="occupancyTabAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="400.0" styleClass="background" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Darktheme.css">
+                     <children>
+                        <AnchorPane fx:id="occupancyAndPendingRoot" layoutX="258.0" layoutY="-37.0" prefHeight="803.0" prefWidth="803.0" />
+                        <Button fx:id="forwardButton" layoutX="1260.0" layoutY="383.0" mnemonicParsing="false" onAction="#navigate" onMouseEntered="#onForwardButtonEntered" onMouseExited="#onForwardButtonExited" AnchorPane.bottomAnchor="400.0" AnchorPane.rightAnchor="15.0">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../resources/railview/simulation/resources/image/forward.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <Button fx:id="backButton" layoutX="14.0" layoutY="383.0" mnemonicParsing="false" onAction="#navigate" onMouseEntered="#onBackButtonEntered" onMouseExited="#onBackButtonExited" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="15.0">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../resources/railview/simulation/resources/image/backward.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

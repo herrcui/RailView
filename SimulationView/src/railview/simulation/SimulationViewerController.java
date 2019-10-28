@@ -29,12 +29,10 @@ import railapp.units.Duration;
 import railview.railmodel.infrastructure.railsys7.InfrastructureReader;
 import railview.railmodel.infrastructure.railsys7.RollingStockReader;
 import railview.railmodel.infrastructure.railsys7.TimetableReader;
-import railview.simulation.container.NetworkPaneController;
-import railview.simulation.framework.AbstractSimulationController;
-import railview.simulation.ui.SettingPaneController;
-import railview.simulation.ui.EditorPaneController;
-import railview.simulation.ui.GraphPaneController;
-import railview.simulation.ui.DialogPaneController;
+import railview.simulation.editor.EditorPaneController;
+import railview.simulation.graph.GraphPaneController;
+import railview.simulation.network.NetworkPaneController;
+import railview.simulation.setting.SettingPaneController;
 
 /**
  * The controller class for the main user interface (SimulationViewer.fxml)
@@ -45,7 +43,7 @@ import railview.simulation.ui.DialogPaneController;
 public class SimulationViewerController extends AbstractSimulationController {
 
 	@FXML
-	private AnchorPane networkPaneRoot, menuPane, symbolPane;
+	private AnchorPane simulationPane, controlPane, menuPane;
 
 	@FXML
 	private Label timeLabel, activeLabel, terminatedLabel;
@@ -53,7 +51,7 @@ public class SimulationViewerController extends AbstractSimulationController {
 	@FXML
 	private Button startButton, pauseButton, stopButton, graphButton,
 			networkButton, editorButton, settingButton, lockButton,
-			unlockButton, openOne, openTwo, openThree;
+			unlockButton;
 
 	@FXML
 	private Slider speedBar;
@@ -93,19 +91,19 @@ public class SimulationViewerController extends AbstractSimulationController {
 			editorPane = (AnchorPane) editorpaneloader.load();
 			this.editorPaneController = editorpaneloader.getController();
 
-			this.networkPaneRoot.getChildren().addAll(
+			this.simulationPane.getChildren().addAll(
 					networkPane, 
 					graphPane,
 					settingPane,
 					editorPane);
 
-			networkPaneRoot.widthProperty().addListener(
+			simulationPane.widthProperty().addListener(
 					new ChangeListener<Number>() {
 						@Override
 						public void changed(
 								ObservableValue<? extends Number> observableValue,
 								Number oldSceneWidth, Number newSceneWidth) {
-							symbolPane.setLayoutX((newSceneWidth.doubleValue() - symbolPane
+							menuPane.setLayoutX((newSceneWidth.doubleValue() - menuPane
 									.getPrefWidth()) / 2);
 							networkPane.setLayoutX((newSceneWidth.doubleValue() / 2)
 									- (networkPane.prefWidth(-1) / 2));
@@ -115,15 +113,14 @@ public class SimulationViewerController extends AbstractSimulationController {
 						}
 					});
 
-			networkPaneRoot.heightProperty().addListener(
+			simulationPane.heightProperty().addListener(
 					new ChangeListener<Number>() {
 						@Override
 						public void changed(
 								ObservableValue<? extends Number> observableValue,
 								Number oldSceneHeight, Number newSceneHeight) {
-							networkPane.setLayoutY((newSceneHeight
-									.doubleValue() / 2)
-									- (networkPane.prefHeight(-1) / 2));
+							networkPane.setLayoutY(newSceneHeight.doubleValue()/2
+									- networkPane.prefHeight(-1)/2);
 							graphPane.setPrefHeight(newSceneHeight.doubleValue());
 							editorPane.setPrefHeight(newSceneHeight.doubleValue());
 							settingPane.setPrefHeight(newSceneHeight.doubleValue());
@@ -134,8 +131,8 @@ public class SimulationViewerController extends AbstractSimulationController {
 			editorPane.setVisible(false);
 			settingPane.setVisible(false);
 			
-			symbolPane.setOpacity(0.0);
-			menuPane.setOpacity(1.0);
+			menuPane.setOpacity(0.0);
+			controlPane.setOpacity(1.0);
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -206,16 +203,16 @@ public class SimulationViewerController extends AbstractSimulationController {
 	@FXML
 	private void lockMenuPane() {
 
-		menuPane.setOnMouseEntered(new EventHandler<MouseEvent>() {
+		controlPane.setOnMouseEntered(new EventHandler<MouseEvent>() {
 
 			public void handle(MouseEvent event) {
-				menuPane.setOpacity(1.0);
+				controlPane.setOpacity(1.0);
 			}
 		});
-		menuPane.setOnMouseExited(new EventHandler<MouseEvent>() {
+		controlPane.setOnMouseExited(new EventHandler<MouseEvent>() {
 
 			public void handle(MouseEvent event) {
-				menuPane.setOpacity(1.0);
+				controlPane.setOpacity(1.0);
 			}
 		});
 		lockButton.setVisible(false);
@@ -225,22 +222,22 @@ public class SimulationViewerController extends AbstractSimulationController {
 	@FXML
 	private void unlockMenuPane() {
 
-		menuPane.setOnMouseEntered(new EventHandler<MouseEvent>() {
+		controlPane.setOnMouseEntered(new EventHandler<MouseEvent>() {
 
 			public void handle(MouseEvent event) {
 				FadeTransition fadeTransition1 = new FadeTransition(
-						javafx.util.Duration.millis(500), menuPane);
+						javafx.util.Duration.millis(500), controlPane);
 				fadeTransition1.setFromValue(0);
 				fadeTransition1.setToValue(1.0);
 				fadeTransition1.play();
 			}
 		});
 
-		menuPane.setOnMouseExited(new EventHandler<MouseEvent>() {
+		controlPane.setOnMouseExited(new EventHandler<MouseEvent>() {
 
 			public void handle(MouseEvent event) {
 				FadeTransition fadeTransition2 = new FadeTransition(
-						javafx.util.Duration.millis(500), menuPane);
+						javafx.util.Duration.millis(500), controlPane);
 				fadeTransition2.setFromValue(1.0);
 				fadeTransition2.setToValue(0.0);
 				fadeTransition2.play();
@@ -254,7 +251,7 @@ public class SimulationViewerController extends AbstractSimulationController {
 	@FXML
 	private void appearSymbolPaneWhenHover() {
 		FadeTransition fadeTransition = new FadeTransition(
-				javafx.util.Duration.millis(500), symbolPane);
+				javafx.util.Duration.millis(500), menuPane);
 		fadeTransition.setFromValue(0.0);
 		fadeTransition.setToValue(1.0);
 		fadeTransition.play();
@@ -263,7 +260,7 @@ public class SimulationViewerController extends AbstractSimulationController {
 	@FXML
 	private void fadeSymbolPaneWhenLeaving() {
 		FadeTransition fadeTransition = new FadeTransition(
-				javafx.util.Duration.millis(500), symbolPane);
+				javafx.util.Duration.millis(500), menuPane);
 		fadeTransition.setFromValue(1.0);
 		fadeTransition.setToValue(0.0);
 		fadeTransition.play();
@@ -276,7 +273,7 @@ public class SimulationViewerController extends AbstractSimulationController {
 		
 		editorPane.setVisible(false);
 		networkPane.setVisible(false);
-		menuPane.setVisible(false);
+		controlPane.setVisible(false);
 		settingPane.setVisible(false);
 
 		//graphPaneController.setActive(true);
@@ -286,7 +283,7 @@ public class SimulationViewerController extends AbstractSimulationController {
 	@FXML
 	private void enterNetworkPane() {
 		networkPane.setVisible(true);
-		menuPane.setVisible(true);
+		controlPane.setVisible(true);
 		
 		editorPane.setVisible(false);
 		graphPane.setVisible(false);
@@ -302,7 +299,7 @@ public class SimulationViewerController extends AbstractSimulationController {
 		
 		graphPane.setVisible(false);
 		networkPane.setVisible(false);
-		menuPane.setVisible(false);
+		controlPane.setVisible(false);
 		settingPane.setVisible(false);
 
 		//graphPaneController.setActive(false);
@@ -316,7 +313,7 @@ public class SimulationViewerController extends AbstractSimulationController {
 		editorPane.setVisible(false);
 		graphPane.setVisible(false);
 		networkPane.setVisible(false);
-		menuPane.setVisible(false);
+		controlPane.setVisible(false);
 
 		//graphPaneController.setActive(false);
 		//networkPaneController.setActive(false);

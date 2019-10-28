@@ -18,11 +18,12 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Path;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
-import railview.simulation.ui.TrainRunMonitorPaneController;
+import railview.simulation.graph.TrainRunMonitorPaneController;
 import railview.simulation.ui.data.BlockingTime;
 import railview.simulation.ui.data.EventData;
 import railview.simulation.ui.data.TableProperty;
 import railview.simulation.ui.data.TimeDistance;
+import railview.simulation.ui.utilities.DraggableChart;
 
 /**
  * A class representing a Chart with BlockingTime inside. For each blockingTime

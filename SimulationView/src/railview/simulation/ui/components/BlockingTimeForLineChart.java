@@ -16,6 +16,7 @@ import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.units.Time;
 import railview.simulation.ui.data.BlockingTime;
 import railview.simulation.ui.data.TimeDistance;
+import railview.simulation.ui.utilities.DraggableChart;
 
 public class BlockingTimeForLineChart<X, Y> extends DraggableChart<X, Y> {
 
