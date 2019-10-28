@@ -1,4 +1,4 @@
-package railview.simulation.graph;
+package railview.simulation.graph.occupancypending;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -236,7 +236,7 @@ public class OccupancyAndPendingPaneController {
 		});
 	}
 
-	void setActive(boolean isActive) {
+	public void setActive(boolean isActive) {
 		this.isActive = isActive;
 	}
 

@@ -1,4 +1,4 @@
-package railview.simulation.graph;
+package railview.simulation.graph.trainrunmonitor;
 
 import java.io.IOException;
 import java.net.URL;
@@ -496,7 +496,7 @@ public class TrainRunMonitorPaneController {
 		return chart;
 	}
 
-	static Callback<TableColumn<TableProperty, String>, TableCell<TableProperty, String>> createCellFactory() {
+	public static Callback<TableColumn<TableProperty, String>, TableCell<TableProperty, String>> createCellFactory() {
 		return new Callback<TableColumn<TableProperty, String>, TableCell<TableProperty, String>>() {
 			@Override
 			public TableCell<TableProperty, String> call(
@@ -512,15 +512,15 @@ public class TrainRunMonitorPaneController {
 		};
 	}
 
-	void setTrainNumbers(ObservableList<String> numbers) {
+	public void setTrainNumbers(ObservableList<String> numbers) {
 		this.trainNumbers.setItems(numbers);
 	}
 
-	void setTrainMap(ConcurrentHashMap<String, AbstractTrainSimulator> trainMap) {
+	public void setTrainMap(ConcurrentHashMap<String, AbstractTrainSimulator> trainMap) {
 		this.trainMap = trainMap;
 	}
 
-	void setInfrastructureServiceUtility(
+	public void setInfrastructureServiceUtility(
 			IInfrastructureServiceUtility infraServiceUtility) {
 		this.snapshotPaneController
 				.setInfrastructureServiceUtility(infraServiceUtility);
@@ -741,7 +741,7 @@ public class TrainRunMonitorPaneController {
 	}
 	
 
-	static ObservableList<TableProperty> generateTrainInfo(
+	public static ObservableList<TableProperty> generateTrainInfo(
 			AbstractTrainSimulator train, String trainNumber) {
 		ObservableList<TableProperty> observableTrainInfoList = FXCollections
 				.observableArrayList();

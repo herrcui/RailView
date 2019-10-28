@@ -1,4 +1,4 @@
-package railview.simulation.graph;
+package railview.simulation.graph.runningdynamics;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -12,6 +12,7 @@ import railapp.simulation.runingdynamics.sections.DiscretePoint;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.units.Energy;
 import railapp.units.UnitUtility;
+import railview.simulation.graph.trainrunmonitor.TrainRunMonitorPaneController;
 import railview.simulation.ui.data.TableProperty;
 import railview.simulation.ui.utilities.DraggableChart;
 import railview.simulation.ui.utilities.ZoomOnlyX;
@@ -138,11 +139,11 @@ public class RunningDynamicsPaneController {
 		}
 	}
 
-	void setTrainMap(ConcurrentHashMap<String, AbstractTrainSimulator> trainMap) {
+	public void setTrainMap(ConcurrentHashMap<String, AbstractTrainSimulator> trainMap) {
 		this.trainMap = trainMap;
 	}
 
-	void setTrainNumbers(ObservableList<String> numbers) {
+	public void setTrainNumbers(ObservableList<String> numbers) {
 		this.trainNumbers.setItems(numbers);
 	}
 

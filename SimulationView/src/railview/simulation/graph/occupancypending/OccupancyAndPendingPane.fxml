@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane prefHeight="803.0" prefWidth="803.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.graph.occupancypending.OccupancyAndPendingPaneController">
+   <children>
+    <StackPane fx:id="infraRoot" minHeight="0.0" minWidth="0.0" onMouseEntered="#mouseEnter" onScroll="#scrollWheel" prefHeight="803.0" prefWidth="803.0" styleClass="background" stylesheets="@../../../../../resources/railview/simulation/resources/CSS/Darktheme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Rectangle fx:id="pendingBar" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="10.0" layoutX="350.0" stroke="BLACK" strokeType="INSIDE" width="70.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="330.0" />
+      <Rectangle fx:id="occupancyBar" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="10.0" layoutX="450.0" stroke="BLACK" strokeType="INSIDE" width="70.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="330.0" />
+   </children>
+</AnchorPane>

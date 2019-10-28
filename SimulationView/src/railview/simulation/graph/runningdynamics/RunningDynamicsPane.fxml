@@ -8,7 +8,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="railview.simulation.graph.RunningDynamicsPaneController">
+<AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="railview.simulation.graph.runningdynamics.RunningDynamicsPaneController">
    <children>
       <SplitPane dividerPositions="0.7224080267558528" layoutX="21.0" layoutY="31.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -35,7 +35,7 @@
                                </TableView>
                            </children>
                       </AnchorPane>
-                      <ListView fx:id="trainNumbers" layoutX="24.0" layoutY="49.0" styleClass="list-cell" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Darktheme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                      <ListView fx:id="trainNumbers" layoutX="24.0" layoutY="49.0" styleClass="list-cell" stylesheets="@../../../../../resources/railview/simulation/resources/CSS/Darktheme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                     </items>
                   </SplitPane> 
                </children>

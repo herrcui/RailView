@@ -1,4 +1,4 @@
-package railview.simulation.graph;
+package railview.simulation.graph.trainrunmonitor;
 
 import java.util.Collection;
 import java.util.List;
