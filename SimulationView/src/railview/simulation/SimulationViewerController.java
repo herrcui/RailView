@@ -29,6 +29,7 @@ import railapp.units.Duration;
 import railview.railmodel.infrastructure.railsys7.InfrastructureReader;
 import railview.railmodel.infrastructure.railsys7.RollingStockReader;
 import railview.railmodel.infrastructure.railsys7.TimetableReader;
+import railview.simulation.SimulationFactory.ISimulationUpdateUI;
 import railview.simulation.editor.EditorPaneController;
 import railview.simulation.graph.GraphPaneController;
 import railview.simulation.network.NetworkPaneController;
@@ -40,7 +41,7 @@ import railview.simulation.setting.SettingPaneController;
  *
  */
 
-public class SimulationViewerController extends AbstractSimulationController {
+public class SimulationViewerController implements ISimulationUpdateUI {
 
 	@FXML
 	private AnchorPane simulationPane, controlPane, menuPane;
@@ -55,6 +56,8 @@ public class SimulationViewerController extends AbstractSimulationController {
 
 	@FXML
 	private Slider speedBar;
+	
+	private SimulationFactory simulationFactory;
 
 	/**
 	 * initialize the class and load the networkPane, graphPane and editorPane.
@@ -144,16 +147,16 @@ public class SimulationViewerController extends AbstractSimulationController {
 	 */
 	@FXML
 	public void startSimulation() {
-		super.startSimulation();
+		this.simulationFactory.startSimulation();
 
 		this.startButton.setDisable(true);
 		this.pauseButton.setDisable(false);
 		this.stopButton.setDisable(false);
 
 		while (true) {
-			if (simulator.getInfrastructureSimulator() != null) {
+			if (this.simulationFactory.getSimulator().getInfrastructureSimulator() != null) {
 				this.graphPaneController
-						.setInfrastructureOccupancyAndPendingLogger(simulator
+						.setInfrastructureOccupancyAndPendingLogger(this.simulationFactory.getSimulator()
 								.getInfrastructureSimulator()
 								.getOccupancyAndPendingLogger());
 				break;
@@ -173,7 +176,7 @@ public class SimulationViewerController extends AbstractSimulationController {
 	 */
 	@FXML
 	public void pauseSimulation() {
-		super.pauseSimulation();
+		this.simulationFactory.pauseSimulation();
 
 		this.startButton.setDisable(false);
 		this.pauseButton.setDisable(true);
@@ -185,7 +188,7 @@ public class SimulationViewerController extends AbstractSimulationController {
 	 */
 	@FXML
 	public void stopSimulation() {
-		super.stopSimulation();
+		this.simulationFactory.stopSimulation();
 
 		this.startButton.setDisable(false);
 		this.pauseButton.setDisable(true);
@@ -197,7 +200,7 @@ public class SimulationViewerController extends AbstractSimulationController {
 	}
 
 	public void shutdown() {
-		super.stopSimulation();
+		this.simulationFactory.stopSimulation();
 	}
 
 	@FXML
@@ -330,47 +333,55 @@ public class SimulationViewerController extends AbstractSimulationController {
 	private void onLoadButtonAction(ActionEvent event) {
 		DialogPaneController pathDialog = new DialogPaneController(null);
 		pathDialog.showAndWait();
-		this.initiateRailSys7Simulator(pathDialog.getInfrastructurePath(),
-				pathDialog.getRollingStockPath(), pathDialog.getTimeTablePath());
+		
+		this.simulationFactory = SimulationFactory.getInstance(pathDialog.getInfrastructurePath(),
+				pathDialog.getRollingStockPath(),
+				pathDialog.getTimeTablePath());
+		
+		this.simulationFactory.registerUpdateUI(this);
+		
+		SwarmManager swarmManager = SwarmManager.getInstance(this.simulationFactory.getSimulator());
+		this.networkPaneController.setSwarmManager(swarmManager);
+		this.settingPaneController.setSimulator(this.simulationFactory.getSimulator());
 
 		// TODO: check if it is successful
 		this.networkPaneController
-				.setInfrastructureServiceUtility(this.infraServiceUtility);
+				.setInfrastructureServiceUtility(this.simulationFactory.getInfraServiceUtility());
 
 		this.graphPaneController
-				.setInfrastructureServiceUtility(this.infraServiceUtility);
+				.setInfrastructureServiceUtility(this.simulationFactory.getInfraServiceUtility());
 
-		this.graphPaneController.updateTrainMap(simulator.getTrainSimulators());
+		this.graphPaneController.updateTrainMap(this.simulationFactory.getSimulator().getTrainSimulators());
 	}
 
 	/**
 	 * shows updates of the data on the status bar
 	 */
 	private void updateStatusBar() {
-		timeLabel.setText("Simulation Time: " + this.updateTime.toString());
+		timeLabel.setText("Simulation Time: " + this.simulationFactory.getUpdateTime().toString());
 
 		int numActive = 0;
 		int numTerminate = 0;
 
-		if (simulator.getStatus() != SingleSimulationManager.INACTIVE) {
-			for (EventListener listener : simulator.getListeners()) {
+		if (this.simulationFactory.getSimulator().getStatus() != SingleSimulationManager.INACTIVE) {
+			for (EventListener listener : this.simulationFactory.getSimulator().getListeners()) {
 				if (listener instanceof AbstractTrainSimulator) {
 					AbstractTrainSimulator trainSimulator = (AbstractTrainSimulator) listener;
 
 					if (trainSimulator.getTerminateTime() != null) {
 						if (trainSimulator.getTerminateTime().compareTo(
-								this.updateTime) < 0) {
+								this.simulationFactory.getUpdateTime()) < 0) {
 							numTerminate++;
 						} else {
 							if (trainSimulator.getActiveTime().compareTo(
-									this.updateTime) < 0) {
+									this.simulationFactory.getUpdateTime()) < 0) {
 								numActive++;
 							}
 						}
 					} else {
 						if (trainSimulator.getActiveTime() != null
 								&& trainSimulator.getActiveTime().compareTo(
-										this.updateTime) < 0) {
+										this.simulationFactory.getUpdateTime()) < 0) {
 							numActive++;
 						}
 					}
@@ -382,48 +393,16 @@ public class SimulationViewerController extends AbstractSimulationController {
 		terminatedLabel.setText("Terminated Trains: " + numTerminate);
 	}
 
-	/**
-	 * initializes the simulator
-	 * 
-	 * @param infraPath
-	 * @param rollingstockPath
-	 * @param timetablePath
-	 */
-	private void initiateRailSys7Simulator(Path infraPath,
-			Path rollingstockPath, Path timetablePath) {
-		infraServiceUtility = InfrastructureReader.getRailSys7Instance(
-				infraPath).initialize();
-		Network network = infraServiceUtility.getNetworkService().allNetworks()
-				.iterator().next();
-
-		// Rollilngstock
-		rollingStockServiceUtility = RollingStockReader.getRailSys7Instance(
-				rollingstockPath).initialize();
-
-		// Timetable
-		timeTableServiceUtility = TimetableReader.getRailSys7Instance(
-				timetablePath, infraServiceUtility, rollingStockServiceUtility,
-				network).initialize();
-
-		simulator = SingleSimulationManager.getInstance(infraServiceUtility,
-				rollingStockServiceUtility, timeTableServiceUtility);
-
-		SwarmManager swarmManager = SwarmManager.getInstance(simulator);
-		this.networkPaneController.setSwarmManager(swarmManager);
-
-		this.settingPaneController.setSimulator(simulator);
-	}
-
 	@Override
-	protected void updateUI() {
-		Map<AbstractTrainSimulator, List<Coordinate>> coordinates = simulator
-				.getTrainCoordinates(this.updateTime);
+	public void updateUI() {
+		Map<AbstractTrainSimulator, List<Coordinate>> coordinates = this.simulationFactory.getSimulator()
+				.getTrainCoordinates(this.simulationFactory.getUpdateTime());
 
 		if (coordinates != null) {
 			networkPaneController.updateTrainCoordinates(coordinates,
-					this.updateTime);
+					this.simulationFactory.getUpdateTime());
 
-			this.graphPaneController.updateTrainMap(this.simulator
+			this.graphPaneController.updateTrainMap(this.simulationFactory.getSimulator()
 					.getTrainSimulators());
 
 			updateStatusBar();
@@ -431,9 +410,9 @@ public class SimulationViewerController extends AbstractSimulationController {
 	}
 
 	@Override
-	protected void setTime(boolean isReplay) {
+	public void setTime(boolean isReplay) {
 		Duration updateInterval = Duration.fromTotalMilliSecond(UIPause);
-		if (simulator.getStatus() != SingleSimulationManager.INACTIVE) {
+		if (this.simulationFactory.getSimulator().getStatus() != SingleSimulationManager.INACTIVE) {
 			updateInterval = Duration.fromTotalMilliSecond(MAXSpeed
 					* speedBar.getValue() / 100);
 			if (speedBar.getValue() == speedBar.getMin()) {
@@ -441,25 +420,25 @@ public class SimulationViewerController extends AbstractSimulationController {
 			}
 
 			if (speedBar.getValue() == speedBar.getMax()
-					&& simulator.getTime() != null
-					&& simulator.getStatus() != SingleSimulationManager.TERMINATED) {
+					&& this.simulationFactory.getSimulator().getTime() != null
+					&& this.simulationFactory.getSimulator().getStatus() != SingleSimulationManager.TERMINATED) {
 
-				updateInterval = simulator.getTime().getDifference(updateTime);
+				updateInterval = this.simulationFactory.getSimulator().getTime().getDifference(this.simulationFactory.getUpdateTime());
 			}
 		}
 		if (isReplay) {
-			this.updateTime = this.updateTime.add(updateInterval);
+			this.simulationFactory.setUpdateTime(this.simulationFactory.getUpdateTime().add(updateInterval));
 		} else {
-			if (simulator.getStatus() == SingleSimulationManager.RUNNING) { // not
+			if (this.simulationFactory.getSimulator().getStatus() == SingleSimulationManager.RUNNING) { // not
 																			// terminated
 																			// yet
-				this.updateTime = this.updateTime.add(updateInterval);
-				if (this.updateTime.compareTo(simulator.getTime()) > 0) {
-					this.updateTime = simulator.getTime(); // if update too
+				this.simulationFactory.setUpdateTime(this.simulationFactory.getUpdateTime().add(updateInterval));
+				if (this.simulationFactory.getUpdateTime().compareTo(this.simulationFactory.getSimulator().getTime()) > 0) {
+					this.simulationFactory.setUpdateTime(this.simulationFactory.getSimulator().getTime()); // if update too
 															// fast, slow down
 				}
 			} else {
-				this.updateTime = this.updateTime.add(updateInterval);
+				this.simulationFactory.setUpdateTime(this.simulationFactory.getUpdateTime().add(updateInterval));
 			}
 		}
 	}
