@@ -124,7 +124,8 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 								Number oldSceneHeight, Number newSceneHeight) {
 							networkPane.setLayoutY(newSceneHeight.doubleValue()/2
 									- networkPane.prefHeight(-1)/2);
-							graphPane.setPrefHeight(newSceneHeight.doubleValue());
+
+							graphPane.setPrefHeight(newSceneHeight.doubleValue() - controlPane.getPrefHeight());						
 							pythonPane.setPrefHeight(newSceneHeight.doubleValue());
 							settingPane.setPrefHeight(newSceneHeight.doubleValue());
 						}
@@ -274,10 +275,10 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 	@FXML
 	private void enterGraphPane() {
 		graphPane.setVisible(true);
+		controlPane.setVisible(true);
 		
 		pythonPane.setVisible(false);
 		networkPane.setVisible(false);
-		controlPane.setVisible(false);
 		settingPane.setVisible(false);
 
 		//graphPaneController.setActive(true);
@@ -300,10 +301,10 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 	@FXML
 	private void enterEditorPane() {
 		pythonPane.setVisible(true);
+		controlPane.setVisible(false);
 		
 		graphPane.setVisible(false);
 		networkPane.setVisible(false);
-		controlPane.setVisible(false);
 		settingPane.setVisible(false);
 
 		//graphPaneController.setActive(false);
@@ -313,11 +314,11 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 	@FXML
 	private void enterSettingPane() {
 		settingPane.setVisible(true);
+		controlPane.setVisible(false);
 		
 		pythonPane.setVisible(false);
 		graphPane.setVisible(false);
 		networkPane.setVisible(false);
-		controlPane.setVisible(false);
 
 		//graphPaneController.setActive(false);
 		//networkPaneController.setActive(false);

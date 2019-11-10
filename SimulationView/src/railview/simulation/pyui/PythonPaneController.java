@@ -27,6 +27,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.SplitPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -49,7 +50,7 @@ public class PythonPaneController {
 	private GatewayServer gatewayServer = null;
 	
 	@FXML
-	private AnchorPane pythonPane, codePane;
+	private AnchorPane pythonPane, fixedButtonPane, codePane;
 
 	@FXML
 	private Button playButton, saveButton;
@@ -122,6 +123,8 @@ public class PythonPaneController {
 				saveButton.setDisable(false);
 			}
 		});
+		
+		SplitPane.setResizableWithParent(fixedButtonPane, Boolean.FALSE);
 		
 		pyDeactiveButton.setVisible(false);
 	}
