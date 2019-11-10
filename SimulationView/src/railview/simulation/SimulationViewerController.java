@@ -30,9 +30,9 @@ import railview.railmodel.infrastructure.railsys7.InfrastructureReader;
 import railview.railmodel.infrastructure.railsys7.RollingStockReader;
 import railview.railmodel.infrastructure.railsys7.TimetableReader;
 import railview.simulation.SimulationFactory.ISimulationUpdateUI;
-import railview.simulation.editor.EditorPaneController;
 import railview.simulation.graph.GraphPaneController;
 import railview.simulation.network.NetworkPaneController;
+import railview.simulation.pyui.PythonPaneController;
 import railview.simulation.setting.SettingPaneController;
 
 /**
@@ -87,18 +87,18 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 			settingPane = (AnchorPane) settingpaneloader.load();
 			this.settingPaneController = settingpaneloader.getController();
 
-			FXMLLoader editorpaneloader = new FXMLLoader();
-			URL editorpanelocation = EditorPaneController.class
-					.getResource("EditorPane.fxml");
-			editorpaneloader.setLocation(editorpanelocation);
-			editorPane = (AnchorPane) editorpaneloader.load();
-			this.editorPaneController = editorpaneloader.getController();
+			FXMLLoader pythonpaneloader = new FXMLLoader();
+			URL pythonpanelocation = PythonPaneController.class
+					.getResource("PythonPane.fxml");
+			pythonpaneloader.setLocation(pythonpanelocation);
+			pythonPane = (AnchorPane) pythonpaneloader.load();
+			this.pythonPaneController = pythonpaneloader.getController();
 
 			this.simulationPane.getChildren().addAll(
 					networkPane, 
 					graphPane,
 					settingPane,
-					editorPane);
+					pythonPane);
 
 			simulationPane.widthProperty().addListener(
 					new ChangeListener<Number>() {
@@ -111,7 +111,7 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 							networkPane.setLayoutX((newSceneWidth.doubleValue() / 2)
 									- (networkPane.prefWidth(-1) / 2));
 							graphPane.setPrefWidth(newSceneWidth.doubleValue());
-							editorPane.setPrefWidth(newSceneWidth.doubleValue());
+							pythonPane.setPrefWidth(newSceneWidth.doubleValue());
 							settingPane.setPrefWidth(newSceneWidth.doubleValue());
 						}
 					});
@@ -125,13 +125,13 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 							networkPane.setLayoutY(newSceneHeight.doubleValue()/2
 									- networkPane.prefHeight(-1)/2);
 							graphPane.setPrefHeight(newSceneHeight.doubleValue());
-							editorPane.setPrefHeight(newSceneHeight.doubleValue());
+							pythonPane.setPrefHeight(newSceneHeight.doubleValue());
 							settingPane.setPrefHeight(newSceneHeight.doubleValue());
 						}
 					});
 
 			graphPane.setVisible(false);
-			editorPane.setVisible(false);
+			pythonPane.setVisible(false);
 			settingPane.setVisible(false);
 			
 			menuPane.setOpacity(0.0);
@@ -200,7 +200,8 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 	}
 
 	public void shutdown() {
-		this.simulationFactory.stopSimulation();
+		if (this.simulationFactory != null)
+			this.simulationFactory.stopSimulation();
 	}
 
 	@FXML
@@ -274,7 +275,7 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 	private void enterGraphPane() {
 		graphPane.setVisible(true);
 		
-		editorPane.setVisible(false);
+		pythonPane.setVisible(false);
 		networkPane.setVisible(false);
 		controlPane.setVisible(false);
 		settingPane.setVisible(false);
@@ -288,7 +289,7 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 		networkPane.setVisible(true);
 		controlPane.setVisible(true);
 		
-		editorPane.setVisible(false);
+		pythonPane.setVisible(false);
 		graphPane.setVisible(false);
 		settingPane.setVisible(false);
 		
@@ -298,7 +299,7 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 
 	@FXML
 	private void enterEditorPane() {
-		editorPane.setVisible(true);
+		pythonPane.setVisible(true);
 		
 		graphPane.setVisible(false);
 		networkPane.setVisible(false);
@@ -313,7 +314,7 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 	private void enterSettingPane() {
 		settingPane.setVisible(true);
 		
-		editorPane.setVisible(false);
+		pythonPane.setVisible(false);
 		graphPane.setVisible(false);
 		networkPane.setVisible(false);
 		controlPane.setVisible(false);
@@ -446,12 +447,12 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 	private StackPane networkPane;
 	private AnchorPane graphPane;
 	private AnchorPane settingPane;
-	private AnchorPane editorPane;
+	private AnchorPane pythonPane;
 	
 	private NetworkPaneController networkPaneController;
 	private GraphPaneController graphPaneController;
 	private SettingPaneController settingPaneController;
-	private EditorPaneController editorPaneController;
+	private PythonPaneController pythonPaneController;
 	
 	private int UIPause = 100;
 	private int MAXSpeed = 20000; // 1 : 200

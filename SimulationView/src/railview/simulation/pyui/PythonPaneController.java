@@ -1,4 +1,4 @@
-package railview.simulation.editor;
+package railview.simulation.pyui;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -7,7 +7,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.FileInputStream;
 import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.regex.Matcher;
@@ -15,16 +17,23 @@ import java.util.regex.Pattern;
 
 import py4j.GatewayServer;
 import railapp.simulation.entries.TimetableSimulationEntry;
+import railview.simulation.network.NetworkPaneController;
 import javafx.application.Platform;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import org.fxmisc.richtext.CodeArea;
 import org.fxmisc.richtext.LineNumberFactory;
@@ -36,12 +45,20 @@ import org.fxmisc.richtext.model.StyleSpansBuilder;
  * code on the left side and the outcome is on the right side.
  * 
  */
-public class EditorPaneController {
+public class PythonPaneController {
+	private GatewayServer gatewayServer = null;
+	
 	@FXML
-	private AnchorPane codePane;
+	private AnchorPane pythonPane, codePane;
 
 	@FXML
 	private Button playButton, saveButton;
+	
+	@FXML
+	private Button pyActiveButton, pyDeactiveButton;
+	
+	@FXML
+	private Image pyImgBW;
 
 	@FXML
 	private TextArea infoArea;
@@ -105,6 +122,8 @@ public class EditorPaneController {
 				saveButton.setDisable(false);
 			}
 		});
+		
+		pyDeactiveButton.setVisible(false);
 	}
 
 	private static StyleSpans<Collection<String>> computeHighlighting(
@@ -225,42 +244,74 @@ public class EditorPaneController {
 			}
 		}
 	}
+	
+	@FXML
+	protected void onPyAction(ActionEvent event) {
+		try {
+			if (this.pyActiveButton.visibleProperty().getValue()) {
+				gatewayServer = new GatewayServer(
+					new TimetableSimulationEntry());
+				this.pyActiveButton.setVisible(false);
+				this.pyDeactiveButton.setVisible(true);
+				
+				Stage stage = (Stage) this.pythonPane.getScene().getWindow();
+				stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+				    public void handle(WindowEvent we) {
+				    	System.out.println(gatewayServer);
+				        if (gatewayServer != null) {
+				        	System.out.println("closing gatewayserver");
+				        	gatewayServer.shutdown();
+				        }
+				    }
+				}); 
+				
+				gatewayServer.start();
+				
+			} else {
+				gatewayServer.shutdown();
+				gatewayServer = null;
+				this.pyActiveButton.setVisible(true);
+				this.pyDeactiveButton.setVisible(false);
+			}
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
 
 	@FXML
 	protected void onPlay(ActionEvent event) {
 		this.infoArea.clear();
-
 		try {
-			Thread thread = new Thread(
-					() -> {
-						try {
-							GatewayServer gatewayServer = new GatewayServer(
-									new TimetableSimulationEntry());
+			Thread thread = new Thread(() -> {
+				try {
+					GatewayServer gatewayServer = new GatewayServer(
+							new TimetableSimulationEntry());
 
-							gatewayServer.start();
+					gatewayServer.start();
 
-							ProcessBuilder pb = new ProcessBuilder("python",
-									file.getPath());
+					ProcessBuilder pb = new ProcessBuilder("python",
+							file.getPath());
 
-							this.infoArea
-									.appendText("Start and run Python script ... \n");
+					this.infoArea
+							.appendText("Start and run Python script ... \n");
 
-							Process p = pb.start();
+					Process p = pb.start();
 
-							StreamGobbler outputGobbler = new StreamGobbler(p
-									.getInputStream());
-							StreamGobbler errorGobbler = new StreamGobbler(p
-									.getErrorStream());
+					StreamGobbler outputGobbler = new StreamGobbler(p.getInputStream());
+					StreamGobbler errorGobbler = new StreamGobbler(p.getErrorStream());
 
-							outputGobbler.start();
-							errorGobbler.start();
+					outputGobbler.start();
+					errorGobbler.start();
 
-							p.waitFor();
+					p.waitFor();
 
-							gatewayServer.shutdown();
-						} catch (Exception e) {
-						}
-					});
+					gatewayServer.shutdown();
+
+				} catch (Exception e) {
+					System.out.println(e);
+				}
+			});
 
 			thread.start();
 		} catch (Exception e) {
