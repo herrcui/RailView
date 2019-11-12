@@ -12,6 +12,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -287,15 +288,10 @@ public class PythonPaneController {
 		this.infoArea.clear();
 		try {
 			Thread thread = new Thread(() -> {
-				try {
-					GatewayServer gatewayServer = new GatewayServer(
-							new TimetableSimulationEntry());
-
-					gatewayServer.start();
-
+				try {							
 					ProcessBuilder pb = new ProcessBuilder("python",
 							file.getPath());
-
+					
 					this.infoArea
 							.appendText("Start and run Python script ... \n");
 
@@ -308,9 +304,6 @@ public class PythonPaneController {
 					errorGobbler.start();
 
 					p.waitFor();
-
-					gatewayServer.shutdown();
-
 				} catch (Exception e) {
 					System.out.println(e);
 				}
