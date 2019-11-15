@@ -229,12 +229,9 @@ public class SettingPaneController extends Stage implements Initializable {
 				this.simulator.setDispatchingSystem(NoneDispatchingSystem
 						.getInstance());
 			} else {
-				if (this.file != null) {
-					String className = file.getName().substring(0,
-							file.getName().lastIndexOf('.'));
-					DispatchingSystem dispatcher = ExternalDispatchingSystem
-							.getInstanceFromServiceClass(className,
-									file.getPath(), this.simulator);
+				if (this.file != null) {					
+					DispatchingSystem dispatcher = 
+							ExternalDispatchingSystem.getDefaultInstance(file.getPath());							
 					this.simulator.setDispatchingSystem(dispatcher);
 				}
 			}

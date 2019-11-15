@@ -14,7 +14,7 @@ import railapp.simulation.infrastructure.PartialRouteResource;
 import railapp.simulation.infrastructure.ResourceOccupancy;
 import railapp.simulation.runingdynamics.sections.DiscretePoint;
 import railapp.simulation.train.AbstractTrainSimulator;
-import railapp.simulation.train.TrainSimulator;
+import railapp.simulation.train.FDTrainSimulator;
 import railapp.timetable.dto.TripElement;
 import railapp.units.Length;
 import railapp.units.Time;
@@ -30,11 +30,11 @@ public class TrainRunDataManager {
 	
 	public List<BlockingTime> getBlockingTimeStairway(AbstractTrainSimulator train, Line line) {
 		List<BlockingTime> blockingTimes = new ArrayList<BlockingTime>();
-		if (train instanceof TrainSimulator) {
+		if (train instanceof FDTrainSimulator) {
 			double meter = 0;
 			Length headDistanceInFirstResource = null;
 
-			List<ResourceOccupancy> resourceOccupancies = ((TrainSimulator) train)
+			List<ResourceOccupancy> resourceOccupancies = ((FDTrainSimulator) train)
 					.getBlockingTimeStairWay();
 
 			Time trainStartTime = train.getTripSection().getStartTime();
