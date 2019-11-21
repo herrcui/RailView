@@ -15,15 +15,7 @@
         <items>
           <AnchorPane>
                <children>
-                  <AnchorPane fx:id="lineRoot" prefHeight="310.4" prefWidth="490.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <SplitPane dividerPositions="0.15" orientation="VERTICAL" prefHeight="311.2" prefWidth="561.6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                          <items>
-                            <AnchorPane fx:id="linePane" />
-                              <AnchorPane fx:id="lineBlockingTimesAnchorPane" onMouseClicked="#resetZoomBlockingTimeStairways" />
-                          </items>
-                        </SplitPane>
-                     </children></AnchorPane>
+                  <AnchorPane fx:id="lineRoot" prefHeight="310.4" prefWidth="490.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                   <AnchorPane fx:id="trainRoot" prefHeight="311.2" prefWidth="561.6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <SplitPane dividerPositions="0.5" orientation="VERTICAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

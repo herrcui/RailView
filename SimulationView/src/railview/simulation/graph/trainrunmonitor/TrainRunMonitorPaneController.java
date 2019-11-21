@@ -2,22 +2,16 @@ package railview.simulation.graph.trainrunmonitor;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 
 import railapp.infrastructure.dto.Line;
 import railapp.infrastructure.dto.Station;
 import railapp.infrastructure.object.dto.InfrastructureObject;
-import railapp.infrastructure.path.dto.LinkEdge;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.rollingstock.dto.SimpleTrain;
-import railapp.simulation.events.ScheduledEvent;
-import railapp.simulation.events.totrain.AbstractEventToTrain;
-import railapp.simulation.events.totrain.UpdateLocationEvent;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.timetable.dto.TripElement;
 import railapp.units.Coordinate;
@@ -27,8 +21,6 @@ import railapp.units.Time;
 import railview.simulation.ui.components.BlockingTimeForTripChart;
 import railview.simulation.ui.components.BlockingTimeForLineChart;
 import railview.simulation.ui.data.BlockingTime;
-import railview.simulation.ui.data.CoordinateMapper;
-import railview.simulation.ui.data.EventData;
 import railview.simulation.ui.data.TableProperty;
 import railview.simulation.ui.data.TimeDistance;
 import railview.simulation.ui.data.TrainRunDataManager;
@@ -42,7 +34,6 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Side;
-import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Data;
@@ -51,6 +42,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Control;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.SplitPane;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -70,8 +62,10 @@ import javafx.util.StringConverter;
  */
 public class TrainRunMonitorPaneController {
 	@FXML
-	private AnchorPane blockingTimePane, snapshotRoot, trainRoot, lineRoot,
-			linePane, lineBlockingTimesAnchorPane;
+	private AnchorPane blockingTimePane, snapshotRoot, trainRoot, lineRoot;
+	
+	@FXML
+	private SplitPane lineMonitorPane;
 
 	@FXML
 	private ListView<String> trainNumbers, lineListView, stationListView;
@@ -89,16 +83,12 @@ public class TrainRunMonitorPaneController {
 	private BlockingTimeForLineChart<Number, Number> lineChart;
 	private StackPane snapshotPane;
 	private SnapshotPaneController snapshotPaneController;
+	private LineMonitorPaneController lineMonitorPaneController;
 	private ConcurrentHashMap<String, AbstractTrainSimulator> trainMap;
 	private IInfrastructureServiceUtility infrastructureServiceUtility;
 	private static HashMap<String, Line> lineMap = new HashMap<String, Line>();
 	private TrainRunDataManager trainRunDataManager = new TrainRunDataManager();
 	
-	private double minX = Double.MAX_VALUE;
-	private double maxX = Double.MIN_VALUE;
-	private double maxY = Double.MIN_VALUE;
-	private double minY = Double.MAX_VALUE;
-
 	/**
 	 * initialize the trainRunMonitorPane, add blockingTimeChart on top of it,
 	 * add zoom function, load snapshotPane, add window resize listener, create
@@ -107,8 +97,6 @@ public class TrainRunMonitorPaneController {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@FXML
 	public void initialize() {
-		lineBlockingTimesAnchorPane.setPickOnBounds(false);
-
 		eventLabel.toFront();
 
 		tripChart = createBlockingTimeForTripChart();
@@ -192,7 +180,17 @@ public class TrainRunMonitorPaneController {
 
 		trainValueCol.setCellFactory(createCellFactory());
 
-		lineChart = BlockingTimeForLineChart.createBlockingTimeChartForLine();
+		try {
+			FXMLLoader lineMonitorPaneLoader = new FXMLLoader();
+			URL location = LineMonitorPaneController.class.getResource("LineMonitorPane.fxml");
+			lineMonitorPaneLoader.setLocation(location);
+			lineMonitorPane = (SplitPane) lineMonitorPaneLoader.load();
+			this.lineMonitorPaneController = lineMonitorPaneLoader.getController();
+
+			this.lineRoot.getChildren().add(lineMonitorPane);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -441,92 +439,27 @@ public class TrainRunMonitorPaneController {
 			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
 				if (oldValue == null || !oldValue.equals(newValue)) {
 					stationListView.getItems().clear();
-					linePane.getChildren().clear();
+					//linePane.getChildren().clear();
 				}
 				lineRoot.setVisible(true);
 				trainRoot.setVisible(false);
 
-				Line line = lineMap.get(lineListView.getSelectionModel().getSelectedItem().toString());
+				String lineString = lineListView.getSelectionModel().getSelectedItem().toString();
+				Line line = lineMap.get(lineString);
 
-				ObservableList<String> stationNameList = FXCollections.observableArrayList();
-
-				// max and min x-coordinate for the Mapper
-				for (Station station : infraServiceUtility.getLineService().findStationsByLine(line)) {
-					if (station.getCoordinate().getX() > maxX)
-						maxX = station.getCoordinate().getX();
-					if (station.getCoordinate().getX() < minX)
-						minX = station.getCoordinate().getX();
-				}
-
-				// max and minimum y-coordinate
-				HashMap<AbstractTrainSimulator, List<BlockingTime>> blockingTimeStairways = 
+				Collection<Station> stations = infraServiceUtility.getLineService().findStationsByLine(line);
+				HashMap<AbstractTrainSimulator, List<BlockingTime>> blockingTimeMap = 
 						trainRunDataManager.getBlockingTimeStairwaysInLine(line, trainMap.values());
-
-				for (Entry<AbstractTrainSimulator, List<BlockingTime>> entry : blockingTimeStairways.entrySet()) {
-					for (BlockingTime blockingTime : entry.getValue()) {
-						double time = blockingTime.getEndTimeInSecond() + 
-								entry.getKey().getActiveTime().getDifference(Time.getInstance(0, 0, 0)).getTotalSeconds();
-						if (time > maxY)
-							maxY = time;
-						if (time < minY)
-							minY = time;
-					}
-				}
+				HashMap<AbstractTrainSimulator, List<TimeDistance>> timeDistanceMap = 
+						trainRunDataManager.getTimeDistancesInLine(line, trainMap.values());
 				
-				lineChart.setX(minX, maxX);
-
-				lineBlockingTimesAnchorPane.getChildren().clear();
-				//lineChart = createBlockingTimeChartForLine();
-				lineChart.getBlockingTimeStairwayChartPlotChildren().clear();
-
-				CoordinateMapper mapper = new CoordinateMapper(maxX, minX, maxY, minY);
-				javafx.scene.shape.Line stationLine = new javafx.scene.shape.Line();
-				stationLine.setStartX(mapper.mapToPaneX(minX, linePane));
-				stationLine.setEndX(mapper.mapToPaneX(maxX, linePane));
-				stationLine.setStartY(linePane.getHeight() / 2);
-				stationLine.setEndY(linePane.getHeight() / 2);
-				linePane.getChildren().add(stationLine);
-
-				List<Station> stationList = new ArrayList<Station>();
-				for (Station station : infraServiceUtility.getLineService().findStationsByLine(line)) {
-					stationList.add(station);
+				ObservableList<String> stationNameList = FXCollections.observableArrayList();
+				for (Station station : stations) {
 					stationNameList.add(station.getName());
-
-					lineChart.setStationList(stationList);
-					lineChart.drawStations(stationList, lineChart);
 				}
-
-				// to draw the rectangles directly into the chart
-				lineChart.setBlockingTimeStairwaysMap(
-					trainRunDataManager.getBlockingTimeStairwaysInLine(line, trainMap.values()));
-
-				// to draw the timeDistances directly into the chart
-				lineChart.setTimeDistancesMap(
-					trainRunDataManager.getTimeDistancesInLine(line, trainMap.values()));
-
 				stationListView.setItems(stationNameList);
-
-				AnchorPane.setTopAnchor(lineChart, 0.0);
-				AnchorPane.setLeftAnchor(lineChart, 0.0);
-				AnchorPane.setRightAnchor(lineChart, 0.0);
-				AnchorPane.setBottomAnchor(lineChart, 0.0);
-
-				lineChart.drawTimeDistances(lineChart);
-				//lineChart.drawBlockingTimeStairway();
-
-				//new Zoom(lineChart, lineBlockingTimesAnchorPane);
 				
-				lineChart.setMouseFilter(new EventHandler<MouseEvent>() {
-					@Override
-					public void handle(MouseEvent mouseEvent) {
-						if (mouseEvent.getButton() != MouseButton.PRIMARY) {
-							mouseEvent.consume();
-						}
-					}
-				});
-				lineChart.startEventHandlers();
-				
-				lineBlockingTimesAnchorPane.getChildren().add(lineChart);
+				lineMonitorPaneController.updateUI(line, stations, blockingTimeMap, timeDistanceMap);
 			}
 		});
 	}

@@ -1,5 +1,6 @@
 package railview.simulation.ui.components;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -30,7 +31,7 @@ public class BlockingTimeForLineChart<X, Y> extends DraggableChart<X, Y> {
 
 	private HashMap<AbstractTrainSimulator, List<BlockingTime>> blockingTimeStairwaysMap;
 	private HashMap<AbstractTrainSimulator, List<TimeDistance>> timeDistancesMap;
-	private List<Station> stationList;
+	private Collection<Station> stations;
 	private Rectangle rectangle;
 	
 	private static double minX, maxX;
@@ -75,10 +76,9 @@ public class BlockingTimeForLineChart<X, Y> extends DraggableChart<X, Y> {
 		this.timeDistancesMap = timeDistancesMap;
 	}
 
-	public void setStationList(List<Station> stationList) {
-		this.stationList = stationList;
+	public void setStations(Collection<Station> stations) {
+		this.stations = stations;
 	}
-
 	
 	public void setMaxY(double maxY) {
 		this.maxY = maxY;
@@ -95,7 +95,7 @@ public class BlockingTimeForLineChart<X, Y> extends DraggableChart<X, Y> {
 	protected void layoutPlotChildren() {
 		super.layoutPlotChildren();
 
-		for (Station station : this.stationList) {
+		for (Station station : this.stations) {
 			Circle circle = new Circle();
 			circle.setCenterX(this.getXAxis()
 					.getDisplayPosition(
@@ -241,11 +241,11 @@ public class BlockingTimeForLineChart<X, Y> extends DraggableChart<X, Y> {
 	}
 	
 	public BlockingTimeForLineChart<Number, Number> drawStations(
-			List<Station> stationList,
+			Collection<Station> stations,
 			BlockingTimeForLineChart<Number, Number> chart) {
 		XYChart.Series<Number, Number> stationSeries = new Series<Number, Number>();
 
-		for (Station station : stationList) {
+		for (Station station : stations) {
 			stationSeries.getData().add(new Data<Number, Number>(station.getCoordinate().getX(), 0));
 
 		}
