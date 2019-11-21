@@ -20,7 +20,6 @@ public class Zoom {
 	private final NumberAxis yAxis;
 	private final SelectionRectangle selectionRectangle;
 
-
 	private Point2D selectionRectangleStart;
 	private Point2D selectionRectangleEnd;
 
@@ -33,8 +32,6 @@ public class Zoom {
 		pane.getChildren().add(selectionRectangle);
 		addDragSelectionMechanism();
 	}
-	
-
 
 	private void addDragSelectionMechanism() {
 		pane.addEventHandler(MouseEvent.MOUSE_PRESSED, new MousePressedHandler());

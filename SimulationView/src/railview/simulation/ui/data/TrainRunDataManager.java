@@ -5,17 +5,23 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 
 import railapp.infrastructure.dto.Line;
 import railapp.infrastructure.dto.Station;
 import railapp.infrastructure.object.dto.InfrastructureObject;
+import railapp.infrastructure.path.dto.LinkEdge;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
+import railapp.simulation.events.ScheduledEvent;
+import railapp.simulation.events.totrain.AbstractEventToTrain;
+import railapp.simulation.events.totrain.UpdateLocationEvent;
 import railapp.simulation.infrastructure.PartialRouteResource;
 import railapp.simulation.infrastructure.ResourceOccupancy;
 import railapp.simulation.runingdynamics.sections.DiscretePoint;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.simulation.train.FDTrainSimulator;
 import railapp.timetable.dto.TripElement;
+import railapp.units.Coordinate;
 import railapp.units.Length;
 import railapp.units.Time;
 import railapp.units.UnitUtility;
@@ -106,7 +112,7 @@ public class TrainRunDataManager {
 		return pointList;
 	}
 	
-	public HashMap<AbstractTrainSimulator, List<BlockingTime>> getAllBlockingTimeStairwaysInLine(
+	public HashMap<AbstractTrainSimulator, List<BlockingTime>> getBlockingTimeStairwaysInLine(
 			Line line, Collection<AbstractTrainSimulator> trains) {
 		HashMap<AbstractTrainSimulator, List<BlockingTime>> result = new HashMap<AbstractTrainSimulator, List<BlockingTime>>();
 
@@ -116,7 +122,7 @@ public class TrainRunDataManager {
 		return result;
 	}
 
-	public HashMap<AbstractTrainSimulator, List<TimeDistance>> getAllTimeDistancesInLine(
+	public HashMap<AbstractTrainSimulator, List<TimeDistance>> getTimeDistancesInLine(
 			Line line, Collection<AbstractTrainSimulator> trains) {
 		HashMap<AbstractTrainSimulator, List<TimeDistance>> result = new HashMap<AbstractTrainSimulator, List<TimeDistance>>();
 		for (AbstractTrainSimulator train : trains) {
@@ -135,6 +141,7 @@ public class TrainRunDataManager {
 				Length opDistance = train.getFullPath().findFirstDistance(
 						(InfrastructureObject) elem.getOperationalPoint(),
 						refDist);
+
 				opDistances.add(opDistance);
 				refDist = opDistance;
 			}
@@ -189,5 +196,68 @@ public class TrainRunDataManager {
 		}
 
 		return -1;
+	}
+	
+	public Map<TimeDistance, List<EventData>> getEvents(AbstractTrainSimulator train) {
+		List<TimeDistance> timeDistances = this.getTimeInDistance(train, null);
+		Map<TimeDistance, List<EventData>> eventsMap = new HashMap<TimeDistance, List<EventData>>();
+
+		for (ScheduledEvent scheduledEvent : train.getEvents()) {
+			if (scheduledEvent instanceof UpdateLocationEvent) {
+				continue;
+			}
+
+			double second = scheduledEvent.getScheduleTime()
+					.getDifference(train.getTripSection().getStartTime())
+					.getTotalSeconds();
+			double lastSecond = 0;
+			double lastMeter = 0;
+
+			// second and meter in timeDistances are accumulated value
+			for (TimeDistance point : timeDistances) {
+				if (point.getSecond() >= second) {
+					if (point.getSecond() - lastSecond != 0) {
+						double factor = (second - lastSecond)
+								/ (point.getSecond() - lastSecond);
+						lastMeter += factor * (point.getDistance() - lastMeter);
+					}
+					break;
+				} else {
+					lastSecond = point.getSecond();
+					lastMeter = point.getDistance();
+				}
+			}
+
+			TimeDistance entry = new TimeDistance(lastMeter, second);
+			int type = EventData.IN;
+			if (scheduledEvent.getSource().equals(train)) {
+				type = EventData.SELF;
+			}
+
+			String text = scheduledEvent instanceof AbstractEventToTrain ? ((AbstractEventToTrain) scheduledEvent)
+					.getEventString() : scheduledEvent.toString();
+
+			List<EventData> events = eventsMap.get(entry);
+			if (events == null) {
+				events = new ArrayList<EventData>();
+				eventsMap.put(entry, events);
+			}
+
+			EventData event = new EventData(entry, type, scheduledEvent
+					.getClass().getSimpleName(), text);
+			events.add(event);
+		}
+
+		return eventsMap;
+	}
+	
+	public List<Coordinate> getTrainPathCoordinates(
+			AbstractTrainSimulator train) {
+		List<Coordinate> coordniates = new ArrayList<Coordinate>();
+		for (LinkEdge edge : train.getFullPath().getEdges()) {
+			coordniates.addAll(edge.getCoordinates());
+		}
+
+		return coordniates;
 	}
 }
