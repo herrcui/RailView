@@ -19,6 +19,7 @@ import javafx.scene.shape.Path;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import railview.simulation.graph.trainrunmonitor.TrainRunMonitorPaneController;
+import railview.simulation.graph.trainrunmonitor.TripMonitorPaneController;
 import railview.simulation.ui.data.BlockingTime;
 import railview.simulation.ui.data.EventData;
 import railview.simulation.ui.data.TableProperty;
@@ -44,12 +45,13 @@ public class BlockingTimeForTripChart<X, Y> extends DraggableChart<X, Y> {
 
 	private Label eventLabel;
 	private TableView<TableProperty> eventTable;
-	private TrainRunMonitorPaneController controller;
+	//private TrainRunMonitorPaneController controller;
+	private TripMonitorPaneController controller;
 	private Rectangle rectangle;
 
 	public BlockingTimeForTripChart(Axis<X> xAxis, Axis<Y> yAxis, Label eventLabel,
 			TableView<TableProperty> eventTable,
-			TrainRunMonitorPaneController controller) {
+			TripMonitorPaneController controller) {
 		super(xAxis, yAxis);
 		this.eventLabel = eventLabel;
 		this.eventTable = eventTable;
@@ -108,6 +110,10 @@ public class BlockingTimeForTripChart<X, Y> extends DraggableChart<X, Y> {
 	@Override
 	protected void layoutPlotChildren() {
 		super.layoutPlotChildren();
+		this.drawBlockingTime();
+	}
+	
+	private void drawBlockingTime() {
 		if (this.blockingTimes != null) {
 			for (BlockingTime blockingTime : this.blockingTimes) {
 				rectangle = new Rectangle();
