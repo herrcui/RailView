@@ -7,19 +7,19 @@ import java.util.List;
 import java.util.Map.Entry;
 
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.geometry.Side;
 import javafx.scene.Node;
 import javafx.scene.chart.Axis;
-import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.ValueAxis;
-import javafx.scene.chart.XYChart;
-import javafx.scene.chart.XYChart.Data;
-import javafx.scene.chart.XYChart.Series;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
-import railapp.infrastructure.dto.Line;
+import javafx.scene.text.Text;
 import railapp.infrastructure.dto.Station;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.units.Time;
@@ -33,33 +33,53 @@ public class BlockingTimeForLineChart<X, Y> extends DraggableChart<X, Y> {
 	private HashMap<AbstractTrainSimulator, List<TimeDistance>> timeDistancesMap;
 	private Collection<Station> stations;
 	private Rectangle rectangle;
-	
-	private static double minX, maxX;
-	private static double minY, maxY;
 
-	public static BlockingTimeForLineChart<Number, Number> createBlockingTimeChartForLine() {
+	private double maxY;
+	
+	public static BlockingTimeForLineChart<Number, Number> createBlockingTimeChartForLine(
+			double minX, double maxX, double minY, double maxY) {
 		NumberAxis xAxis = new NumberAxis();
 		NumberAxis yAxis = new NumberAxis();
+		xAxis.setSide(Side.TOP);
 
-		minX = minY = 0;
-		maxX = maxY = 100;
+		BlockingTimeForLineChart<Number, Number> chart = 
+			new BlockingTimeForLineChart<Number, Number>(xAxis, yAxis, maxY);
+		
+		chart.setChartBound(minX, maxX, minY, maxY);
+		
+		chart.setMouseFilter(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent mouseEvent) {
+				if (mouseEvent.getButton() != MouseButton.PRIMARY) {
+					mouseEvent.consume();
+				}
+			}
+		});
+		chart.startEventHandlers();
+		
+		return chart;
+	}
+	
+	public BlockingTimeForLineChart(Axis<X> xAxis, Axis<Y> yAxis, double maxY) {
+		super(xAxis, yAxis);
+		this.maxY = maxY;
+		
+		AnchorPane.setTopAnchor(this, 0.0);
+		AnchorPane.setLeftAnchor(this, 0.0);
+		AnchorPane.setRightAnchor(this, 0.0);
+		AnchorPane.setBottomAnchor(this, 0.0);
+	}
+	
+	public void setChartBound(double minX, double maxX, double minY, double maxY) {
+		NumberAxis xAxis = (NumberAxis) this.getXAxis();
+		NumberAxis yAxis = (NumberAxis) this.getYAxis();
 		
 		xAxis.setAutoRanging(false);
 		xAxis.setLowerBound(minX);
 		xAxis.setUpperBound(maxX);
-		yAxis.setAutoRanging(true);
-
-		BlockingTimeForLineChart<Number, Number> chart = new BlockingTimeForLineChart<Number, Number>(
-				xAxis, yAxis);
-
-		xAxis.setSide(Side.TOP);
-		chart.setMaxY(maxY);
-
-		return chart;
-	}
-	
-	public BlockingTimeForLineChart(Axis<X> xAxis, Axis<Y> yAxis) {
-		super(xAxis, yAxis);
+		yAxis.setAutoRanging(false);
+		yAxis.setLowerBound(0);
+		yAxis.setUpperBound(maxY-minY);
 	}
 
 	public ObservableList<Node> getBlockingTimeStairwayChartPlotChildren() {
@@ -79,91 +99,32 @@ public class BlockingTimeForLineChart<X, Y> extends DraggableChart<X, Y> {
 	public void setStations(Collection<Station> stations) {
 		this.stations = stations;
 	}
-	
-	public void setMaxY(double maxY) {
-		this.maxY = maxY;
-	}
-	
-	@SuppressWarnings("unchecked")
-	public void setX(double minX, double maxX) {
-		this.getXAxis().setAutoRanging(false);
-		((ValueAxis<Number>) this.getXAxis()).setLowerBound(minX);
-		((ValueAxis<Number>) this.getXAxis()).setUpperBound(maxX);
-	}
 
 	@Override
 	protected void layoutPlotChildren() {
 		super.layoutPlotChildren();
-
-		for (Station station : this.stations) {
-			Circle circle = new Circle();
-			circle.setCenterX(this.getXAxis()
-					.getDisplayPosition(
-							this.getXAxis().toRealValue(
-									station.getCoordinate().getX())));
-			circle.setCenterY(0);
-			circle.setRadius(5);
-			this.getPlotChildren().add(circle);
-/**
-			Label stationLabel = new Label();
-			stationLabel.setText(station.getName());
-			stationLabel.setVisible(true);
-			stationLabel
-					.setTranslateX(mapper.mapToPaneX(station.getCoordinate()
-							.getX() - stationLabel.getWidth(), linePane));
-			stationLabel.setTranslateY(linePane.getHeight() / 2
-					- linePane.getHeight() / 15);
-**/
-		}
-
+		this.refresh();
+	}
+	
+	public void refresh() {
+		this.getPlotChildren().clear();
+		
 		if (this.blockingTimeStairwaysMap != null && this.blockingTimeStairwaysMap.size() > 0) {
 			this.drawBlockingTimeStairway();
 		}
 		
 		if (this.timeDistancesMap != null && this.timeDistancesMap.size() > 0) {
-			this.drawTimeDistanceOld();
-		}	
-	}	
-	
-	public void drawTimeDistances(BlockingTimeForLineChart<Number, Number> lineChart) {
-
-		lineChart.setAxisSortingPolicy(LineChart.SortingPolicy.NONE);
-		lineChart.setLegendVisible(false);
-		lineChart.setCreateSymbols(false);
-
-		if (this.timeDistancesMap.size() > 0) {
-			for (Entry<AbstractTrainSimulator, List<TimeDistance>> entry : this.timeDistancesMap.entrySet()) {
-				XYChart.Series<Number, Number> timeDistancesSeries = new Series<Number, Number>();
-
-				double activeTime = entry.getKey().getActiveTime()
-						.getDifference(Time.getInstance(0, 0, 0))
-						.getTotalSeconds();
-				for (TimeDistance timeDistance : entry.getValue()) {
-					if (timeDistance.getDistance() == -1) {
-						if (timeDistancesSeries.getData().size() > 0) {
-							// store series and prepare new series
-							lineChart.getData().add(timeDistancesSeries);
-							timeDistancesSeries.nodeProperty().get().setStyle("-fx-stroke: blue");
-							timeDistancesSeries = new Series<Number, Number>();
-						}
-					} else {
-						timeDistancesSeries.getData().add(new Data<Number, Number>(
-							timeDistance.getDistance(),
-							(maxY - (activeTime + timeDistance.getSecond()))));
-						
-					}
-				}
-
-				if (timeDistancesSeries.getData().size() > 0) {
-					lineChart.getData().add(timeDistancesSeries);
-					timeDistancesSeries.nodeProperty().get().setStyle("-fx-stroke: blue");
-				}
-			}
-
+			this.drawTimeDistance();
 		}
+
+		this.drawStations();
 	}
 	
-	private void drawTimeDistanceOld() {
+	private void drawTimeDistance() {
+		//lineChart.setAxisSortingPolicy(LineChart.SortingPolicy.NONE);
+		//lineChart.setLegendVisible(false);
+		//lineChart.setCreateSymbols(false);
+		
 		for (Entry<AbstractTrainSimulator, List<TimeDistance>> entry : this.timeDistancesMap
 				.entrySet()) {
 			// Iterator to get the current and next distance and time value
@@ -175,6 +136,7 @@ public class BlockingTimeForLineChart<X, Y> extends DraggableChart<X, Y> {
 			if (it.hasNext()) {
 				previous = it.next();
 			}
+			
 			while (it.hasNext()) {
 				TimeDistance current = it.next();
 				if (current.getDistance() == -1) { // ignore the current point with -1 distance
@@ -188,15 +150,12 @@ public class BlockingTimeForLineChart<X, Y> extends DraggableChart<X, Y> {
 				}
 				
 				// Process previous and current here.
-				javafx.scene.shape.Line polyLine = new javafx.scene.shape.Line();
-				polyLine.setStartX(this.getXAxis().getDisplayPosition(
-						this.getXAxis().toRealValue(previous.getDistance())));
-				polyLine.setEndX(this.getXAxis().getDisplayPosition(
-						this.getXAxis().toRealValue(current.getDistance())));
-				polyLine.setStartY(this.getYAxis().getDisplayPosition(
-						this.getYAxis().toRealValue(maxY + 100 - (activeTime + previous.getSecond()))));
-				polyLine.setEndY(this.getYAxis().getDisplayPosition(
-						this.getYAxis().toRealValue(maxY + 100 - (activeTime + current.getSecond()))));
+				Line polyLine = new Line();
+				polyLine.setStartX(mapToChart(previous.getDistance(), true));
+				polyLine.setEndX(mapToChart(current.getDistance(), true));
+				polyLine.setStartY(mapToChart(activeTime + previous.getSecond(), false));
+				polyLine.setEndY(mapToChart(activeTime + current.getSecond(), false));
+				
 				this.getPlotChildren().add(polyLine);
 				
 				previous = current;
@@ -215,23 +174,17 @@ public class BlockingTimeForLineChart<X, Y> extends DraggableChart<X, Y> {
 				double endY = blockingTime.getEndTimeInSecond();
 
 				rectangle = new Rectangle();
+				
+				rectangle.setY(mapToChart(activeTime + startY, false));
+				rectangle.setHeight(mapToChart(endY, false) - mapToChart(startY, false));
 
-				rectangle.setY(this.getYAxis().getDisplayPosition(this.getYAxis().toRealValue(
-						(maxY - (activeTime + startY)))));
-
-				rectangle.setHeight(this.getYAxis().getDisplayPosition(this.getYAxis().toRealValue(
-						(maxY - (activeTime + endY)))) - 
-					this.getYAxis().getDisplayPosition(this.getYAxis().toRealValue(
-						(maxY - (activeTime + startY)))));
-
+				
 				if (endX > startX) {
-					rectangle.setX(this.getXAxis().getDisplayPosition(this.getXAxis().toRealValue(startX)));
-					rectangle.setWidth(this.getXAxis().getDisplayPosition(this.getXAxis().toRealValue(endX)) -
-						this.getXAxis().getDisplayPosition(this.getXAxis().toRealValue(startX)));
+					rectangle.setX(mapToChart(startX, true));
+					rectangle.setWidth(mapToChart(endX, true) - mapToChart(startX, true));
 				} else {
-					rectangle.setX(this.getXAxis().getDisplayPosition(this.getXAxis().toRealValue(endX)));
-					rectangle.setWidth(this.getXAxis().getDisplayPosition(this.getXAxis().toRealValue(startX)) -
-						this.getXAxis().getDisplayPosition(this.getXAxis().toRealValue(endX)));
+					rectangle.setX(mapToChart(endX, true));
+					rectangle.setWidth(mapToChart(startX, true) - mapToChart(endX, true));
 				}
 
 				rectangle.setFill(Color.BLUE.deriveColor(0, 1, 1, 0.5));
@@ -240,16 +193,30 @@ public class BlockingTimeForLineChart<X, Y> extends DraggableChart<X, Y> {
 		}
 	}
 	
-	public BlockingTimeForLineChart<Number, Number> drawStations(
-			Collection<Station> stations,
-			BlockingTimeForLineChart<Number, Number> chart) {
-		XYChart.Series<Number, Number> stationSeries = new Series<Number, Number>();
-
-		for (Station station : stations) {
-			stationSeries.getData().add(new Data<Number, Number>(station.getCoordinate().getX(), 0));
-
+	private void drawStations() {
+		for (Station station : this.stations) {
+			double chartX = mapToChart(station.getCoordinate().getX(), true);
+			Circle circle = new Circle();
+			circle.setCenterX(chartX);
+			circle.setCenterY(0);
+			circle.setRadius(5);
+			circle.setFill(Color.BLUE.deriveColor(0, 1, 1, 1.0));
+			this.getPlotChildren().add(circle);
+			
+			Text dataText = new Text(station.getName());
+			dataText.setLayoutX(chartX);
+			dataText.setLayoutY(30);
+			dataText.setRotate(90);
+			this.getPlotChildren().add(dataText);
 		}
-		chart.getData().add(stationSeries);
-	    return chart;
+	}
+	
+	private double mapToChart(double origin, boolean isXAxis) {
+		if (isXAxis) {
+			return this.getXAxis().getDisplayPosition(this.getXAxis().toRealValue(origin));
+		}
+		else {
+			return this.getYAxis().getDisplayPosition(this.getYAxis().toRealValue(maxY - origin));
+		}
 	}
 }

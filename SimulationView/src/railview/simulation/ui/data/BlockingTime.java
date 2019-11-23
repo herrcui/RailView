@@ -3,6 +3,8 @@ package railview.simulation.ui.data;
 /**
  * An object representing a blockingTime with startMeter, endMeter, startTime
  * and endTime.
+ * 
+ * The time is referenced by the start time of the original timetable.
  */
 public class BlockingTime {
 	public BlockingTime(double startDistance, double endDistance,

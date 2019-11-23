@@ -8,7 +8,6 @@ import railapp.infrastructure.dto.Network;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.rollingstock.service.IRollingStockServiceUtility;
 import railapp.simulation.SingleSimulationManager;
-import railapp.swarmintelligence.SwarmManager;
 import railapp.timetable.service.ITimetableServiceUtility;
 import railapp.units.Time;
 import railview.railmodel.infrastructure.railsys7.InfrastructureReader;

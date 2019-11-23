@@ -62,10 +62,7 @@ import javafx.util.StringConverter;
  */
 public class TrainRunMonitorPaneController {
 	@FXML
-	private AnchorPane blockingTimePane, snapshotRoot, trainRoot, lineRoot;
-	
-	@FXML
-	private SplitPane lineMonitorPane;
+	private AnchorPane blockingTimePane, snapshotRoot, trainRoot, lineRoot, lineMonitorPane;
 
 	@FXML
 	private ListView<String> trainNumbers, lineListView, stationListView;
@@ -184,7 +181,7 @@ public class TrainRunMonitorPaneController {
 			FXMLLoader lineMonitorPaneLoader = new FXMLLoader();
 			URL location = LineMonitorPaneController.class.getResource("LineMonitorPane.fxml");
 			lineMonitorPaneLoader.setLocation(location);
-			lineMonitorPane = (SplitPane) lineMonitorPaneLoader.load();
+			lineMonitorPane = (AnchorPane) lineMonitorPaneLoader.load();
 			this.lineMonitorPaneController = lineMonitorPaneLoader.getController();
 
 			this.lineRoot.getChildren().add(lineMonitorPane);
@@ -373,6 +370,7 @@ public class TrainRunMonitorPaneController {
 	private BlockingTimeForTripChart<Number, Number> drawTimeDistancesForTrip(
 			AbstractTrainSimulator train,
 			BlockingTimeForTripChart<Number, Number> chart) {
+		
 		XYChart.Series<Number, Number> courseForTimeSeries = new Series<Number, Number>();
 		courseForTimeSeries.setName("course for time");
 		double y = -1;

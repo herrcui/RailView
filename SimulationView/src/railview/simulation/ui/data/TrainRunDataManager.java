@@ -39,6 +39,7 @@ public class TrainRunDataManager {
 		if (train instanceof FDTrainSimulator) {
 			double meter = 0;
 			Length headDistanceInFirstResource = null;
+			boolean isFirstResource = true;
 
 			List<ResourceOccupancy> resourceOccupancies = ((FDTrainSimulator) train)
 					.getBlockingTimeStairWay();
@@ -69,8 +70,9 @@ public class TrainRunDataManager {
 				double endTimeInSecond = resourceOccupancy.getReleaseTime()
 						.getDifference(trainStartTime).getTotalSeconds();
 
-				if (blockingTimes.size() == 0) { // for the first resource
+				if (isFirstResource) { // for the first resource
 					endMeter = endMeter	- headDistanceInFirstResource.getMeter();
+					isFirstResource = false;
 				}
 
 				if (line == null) {

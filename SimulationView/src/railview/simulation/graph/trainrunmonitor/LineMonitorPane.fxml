@@ -9,16 +9,15 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<SplitPane dividerPositions="0.15" orientation="VERTICAL"
-	prefHeight="311.2" prefWidth="561.6" AnchorPane.bottomAnchor="0.0"
-	AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+<AnchorPane 
+	fx:id="lineMonitorPane"
+	prefHeight="311.2" prefWidth="561.6" 
+	AnchorPane.bottomAnchor="0.0"
+	AnchorPane.leftAnchor="0.0" 
+	AnchorPane.rightAnchor="0.0"
 	AnchorPane.topAnchor="0.0"
 	xmlns:fx="http://javafx.com/fxml/1" 
-	fx:controller="railview.simulation.graph.trainrunmonitor.LineMonitorPaneController">
-	
-	<items>
-		<AnchorPane fx:id="linePane" />
-		<AnchorPane fx:id="lineBlockingTimesAnchorPane"	onMouseClicked="#resetZoomBlockingTimeStairways" />
-	</items>
-	
-</SplitPane>
+	fx:controller="railview.simulation.graph.trainrunmonitor.LineMonitorPaneController"
+	onMouseClicked="#resetZoomBlockingTimeStairways">
+
+</AnchorPane>
