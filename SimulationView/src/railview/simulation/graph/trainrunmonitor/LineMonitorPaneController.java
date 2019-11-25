@@ -9,7 +9,7 @@ import railapp.infrastructure.dto.Line;
 import railapp.infrastructure.dto.Station;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.units.Time;
-import railview.simulation.ui.components.BlockingTimeForLineChart;
+import railview.simulation.ui.components.ChartLineBlockingTime;
 import railview.simulation.ui.data.BlockingTime;
 import railview.simulation.ui.data.TimeDistance;
 import railview.simulation.ui.utilities.Zoom;
@@ -27,7 +27,7 @@ public class LineMonitorPaneController {
 	private double maxY = Double.MIN_VALUE;
 	private double minY = Double.MAX_VALUE;
 	
-	private BlockingTimeForLineChart<Number, Number> lineChart;
+	private ChartLineBlockingTime<Number, Number> lineChart;
 	
 	@FXML
 	public void initialize() {
@@ -51,7 +51,7 @@ public class LineMonitorPaneController {
 		this.setMaxMinXY(stations, blockingTimeMap);
 		
 		lineMonitorPane.getChildren().clear();
-		lineChart = BlockingTimeForLineChart.createBlockingTimeChartForLine(minX, maxX, minY, maxY);
+		lineChart = ChartLineBlockingTime.createBlockingTimeChartForLine(minX, maxX, minY, maxY);
 
 		lineChart.setStations(stations);
 		lineChart.setBlockingTimeStairwaysMap(blockingTimeMap);

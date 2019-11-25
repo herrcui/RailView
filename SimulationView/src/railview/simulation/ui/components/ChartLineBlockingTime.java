@@ -27,7 +27,7 @@ import railview.simulation.ui.data.BlockingTime;
 import railview.simulation.ui.data.TimeDistance;
 import railview.simulation.ui.utilities.DraggableChart;
 
-public class BlockingTimeForLineChart<X, Y> extends DraggableChart<X, Y> {
+public class ChartLineBlockingTime<X, Y> extends DraggableChart<X, Y> {
 
 	private HashMap<AbstractTrainSimulator, List<BlockingTime>> blockingTimeStairwaysMap;
 	private HashMap<AbstractTrainSimulator, List<TimeDistance>> timeDistancesMap;
@@ -36,14 +36,14 @@ public class BlockingTimeForLineChart<X, Y> extends DraggableChart<X, Y> {
 
 	private double maxY;
 	
-	public static BlockingTimeForLineChart<Number, Number> createBlockingTimeChartForLine(
+	public static ChartLineBlockingTime<Number, Number> createBlockingTimeChartForLine(
 			double minX, double maxX, double minY, double maxY) {
 		NumberAxis xAxis = new NumberAxis();
 		NumberAxis yAxis = new NumberAxis();
 		xAxis.setSide(Side.TOP);
 
-		BlockingTimeForLineChart<Number, Number> chart = 
-			new BlockingTimeForLineChart<Number, Number>(xAxis, yAxis, maxY);
+		ChartLineBlockingTime<Number, Number> chart = 
+			new ChartLineBlockingTime<Number, Number>(xAxis, yAxis, maxY);
 		
 		chart.setChartBound(minX, maxX, minY, maxY);
 		
@@ -60,7 +60,7 @@ public class BlockingTimeForLineChart<X, Y> extends DraggableChart<X, Y> {
 		return chart;
 	}
 	
-	public BlockingTimeForLineChart(Axis<X> xAxis, Axis<Y> yAxis, double maxY) {
+	public ChartLineBlockingTime(Axis<X> xAxis, Axis<Y> yAxis, double maxY) {
 		super(xAxis, yAxis);
 		this.maxY = maxY;
 		

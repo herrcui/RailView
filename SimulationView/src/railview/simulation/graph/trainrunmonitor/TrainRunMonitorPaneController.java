@@ -16,46 +16,28 @@ import railapp.rollingstock.dto.SimpleTrain;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.timetable.dto.TripElement;
 import railapp.units.Coordinate;
-import railapp.units.Duration;
-import railapp.units.Length;
-import railapp.units.Time;
-import railview.simulation.ui.components.BlockingTimeForTripChart;
-import railview.simulation.ui.components.BlockingTimeForLineChart;
 import railview.simulation.ui.data.BlockingTime;
 import railview.simulation.ui.data.EventData;
 import railview.simulation.ui.data.TableProperty;
 import railview.simulation.ui.data.TimeDistance;
 import railview.simulation.ui.data.TrainRunDataManager;
-import railview.simulation.ui.utilities.DraggableChart;
-import railview.simulation.ui.utilities.Zoom;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Side;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
-import javafx.scene.chart.XYChart.Data;
-import javafx.scene.chart.XYChart.Series;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Control;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
-import javafx.util.StringConverter;
 
 /**
  * The controller class for TrainRunMonitorPane.fxml. The Pane gives a
@@ -103,9 +85,7 @@ public class TrainRunMonitorPaneController {
 			this.tripRoot.getChildren().add(tripMonitorPane);
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
-		
-		
+		}		
 		
 		trainNumbers.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
 			@Override
