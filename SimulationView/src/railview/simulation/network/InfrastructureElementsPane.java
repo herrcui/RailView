@@ -29,7 +29,8 @@ public class InfrastructureElementsPane extends PannablePane {
 	private List<Coordinate> path = null;
 	private Coordinate eventPoint = null;
 
-	private double elementWidth = 0.1;
+	private double elementWidth = 0.5;
+	private double signalWidth = 0.2;
 
 	public InfrastructureElementsPane() {
 		this.widthProperty().addListener(observable -> draw());
@@ -198,7 +199,7 @@ public class InfrastructureElementsPane extends PannablePane {
 		line1.setEndX(xCoordinateP3);
 		line1.setEndY(yCoordinateP3);
 		line1.setStroke(signalColor);
-		line1.setStrokeWidth(0.1);
+		line1.setStrokeWidth(this.signalWidth);
 
 		Line line2 = new Line();
 		line2.setStartX(xCoordinateP2);
@@ -206,14 +207,14 @@ public class InfrastructureElementsPane extends PannablePane {
 		line2.setEndX(xCoordinateP1);
 		line2.setEndY(yCoordinateP1);
 		line2.setStroke(signalColor);
-		line2.setStrokeWidth(0.1);
+		line2.setStrokeWidth(this.signalWidth);
 
 
 		Circle circle = new Circle();
 		circle.setRadius(c);
 		circle.setCenterX(xCoordinateP3);
 		circle.setCenterY(yCoordinateP3);
-		circle.setStrokeWidth(0.1);
+		circle.setStrokeWidth(this.signalWidth);
 		circle.setStroke(signalColor);
 
 		this.getChildren().addAll(line1, line2, circle);

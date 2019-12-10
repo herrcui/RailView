@@ -33,7 +33,7 @@ public class SimulationFactory {
 		SingleSimulationManager simulator = SingleSimulationManager.getInstance(infraServiceUtility,
 				rollingStockServiceUtility, timeTableServiceUtility);
 		
-		simulator.setTimePeriod(Time.getInstance(1, 0, 0), Time.getInstance(1, 3, 0));
+		//simulator.setTimePeriod(Time.getInstance(1, 0, 0), Time.getInstance(1, 3, 0));
 
 		return new SimulationFactory(
 				simulator, infraServiceUtility, rollingStockServiceUtility, timeTableServiceUtility);

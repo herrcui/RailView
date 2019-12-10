@@ -401,7 +401,7 @@ public class OccupancyAndPendingPaneController {
 	}
 
 	private void setStroke(Line line, Duration duration) {
-		double totalSeconds = 18000;
+		double width = this.MIN_WIDTH;
 
 		if (duration == null || duration.getTotalSeconds() == 0) {
 			line.setStroke(Color.WHITE);
@@ -409,16 +409,20 @@ public class OccupancyAndPendingPaneController {
 		} else {
 			if (type == OCCUPANCY) {
 				line.setStroke(Color.LIGHTGREEN);
+				width = duration.getTotalSeconds() / 600;
+				if (width < this.MIN_WIDTH) {
+					width = this.MIN_WIDTH;
+				}
 			}
 
 			if (type == PENDING) {
 				line.setStroke(Color.RED);
+				width = duration.getTotalSeconds() / 60;
+				if (width < this.MIN_WIDTH) {
+					width = this.MIN_WIDTH;
+				}
 			}
-
-			double width = duration.getTotalSeconds() / totalSeconds;
-			if (width < this.MIN_WIDTH) {
-				width = this.MIN_WIDTH;
-			}
+			
 			line.setStrokeWidth(width);
 		}
 	}
@@ -432,7 +436,7 @@ public class OccupancyAndPendingPaneController {
 	private int type = -1;
 	private boolean isActive = false;
 
-	private double MIN_WIDTH = 0.07;
+	private double MIN_WIDTH = 0.1;
 
 	private final int OCCUPANCY = 1;
 	private final int PENDING = 2;

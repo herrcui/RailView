@@ -10,6 +10,7 @@ import java.util.Map.Entry;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
+import javafx.scene.text.Text;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.swarmintelligence.Swarm;
 import railapp.swarmintelligence.SwarmManager;
@@ -57,7 +58,10 @@ public class TrainPane extends PannablePane {
 			for (Entry<AbstractTrainSimulator, List<Coordinate>> entry : this.trainCoordinates
 					.entrySet()) {
 				List<Coordinate> coordinateList = entry.getValue();
-				Color color = this.getColor(entry.getKey());				
+				Color color = this.getColor(entry.getKey());		
+				double x = -1;
+				double y = -1;
+				
 				if (coordinateList != null && coordinateList.size() > 0) {
 					for (int i = 0; i < coordinateList.size() - 1; i++) {
 						Line line = new Line();
@@ -67,16 +71,30 @@ public class TrainPane extends PannablePane {
 						float endX = mapper.mapToPaneX(coordinateList.get(i+1).getX(), this);
 						float endY = mapper.mapToPaneY(coordinateList.get(i+1).getY(), this);
 						
+						if (x == -1 && y == -1) {
+							x = startX;
+							y = startY;
+						}
+						
 						line.setStartX(startX);
 						line.setStartY(startY);
 						line.setEndX(endX);
 						line.setEndY(endY);
 
-						line.setStrokeWidth(0.4);		
+						line.setStrokeWidth(1.0);		
 						line.setStroke(color);
 
 						this.getChildren().add(line);
 					}
+				}
+				
+				if (x != -1 && y != -1) {
+					Text dataText = new Text(entry.getKey().getTrain().getNumber());
+					dataText.setLayoutX(x);
+					dataText.setLayoutY(y);
+					dataText.setFill(color);
+	
+					this.getChildren().add(dataText);
 				}
 			}
 		}
