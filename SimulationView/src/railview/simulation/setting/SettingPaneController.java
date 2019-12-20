@@ -8,6 +8,7 @@ import java.io.FileWriter;
 import java.net.URL;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -20,15 +21,25 @@ import org.fxmisc.richtext.model.StyleSpansBuilder;
 import railapp.dispatching.DispatchingSystem;
 import railapp.dispatching.NoneDispatchingSystem;
 import railapp.dispatching.services.ExternalDispatchingSystem;
+import railapp.infrastructure.object.dto.InfrastructureObject;
+import railapp.rollingstock.dto.SimpleTrain;
 import railapp.simulation.SingleSimulationManager;
+import railapp.simulation.train.AbstractTrainSimulator;
+import railapp.timetable.dto.TripElement;
+import railview.simulation.ui.data.TableProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -44,6 +55,9 @@ public class SettingPaneController extends Stage implements Initializable {
 
 	@FXML
 	private RadioButton defaultRB, externalRB;
+	
+	@FXML
+	private TableView<TableProperty> ILTable;
 
 	@FXML
 	private Button externalFileButton, applyButton;
@@ -112,8 +126,34 @@ public class SettingPaneController extends Stage implements Initializable {
 				applyButton.setDisable(false);
 			}
 		});
+		
+		TableColumn<TableProperty, String> trainItemCol = new TableColumn<TableProperty, String>("Item");
+		trainItemCol.setMinWidth(100);
+		trainItemCol.setCellValueFactory(new PropertyValueFactory<TableProperty, String>("item"));
+
+		TableColumn<TableProperty, String> trainValueCol = new TableColumn<TableProperty, String>("Value");
+		trainValueCol.setMinWidth(100);
+		trainValueCol.setCellValueFactory(new PropertyValueFactory<TableProperty, String>("value"));
+
+		ILTable.getColumns().addAll(trainItemCol, trainValueCol);
+		
+		ILTable.setItems(generateILInfo());
 	}
 
+	private static ObservableList<TableProperty> generateILInfo() {
+		ObservableList<TableProperty> ILInfoList = FXCollections.observableArrayList();
+		
+		ILInfoList.add(new TableProperty("Release Time (s)", "3.0"));
+		ILInfoList.add(new TableProperty("Route Setting Time with Junction (s)", "13.0"));
+		ILInfoList.add(new TableProperty("Route Setting Time without Junction (s)", "8.0"));
+		ILInfoList.add(new TableProperty("Transfer time from IL to RBC (s)", "0.5"));
+		ILInfoList.add(new TableProperty("RBC Process Time (s)", "0.5"));
+		ILInfoList.add(new TableProperty("GSMR Transfer Time (s)", "8.0"));
+		ILInfoList.add(new TableProperty("GSMR_SCI Time (s)", "1.0"));
+		ILInfoList.add(new TableProperty("On_Board Unit and Reaction Time (s)", "1.5"));
+		
+		return ILInfoList;
+	}
 	
 	public SettingPaneController() {
 		setTitle("Configurations");

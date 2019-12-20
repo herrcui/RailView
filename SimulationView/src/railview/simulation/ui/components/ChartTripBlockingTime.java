@@ -4,30 +4,24 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.geometry.Side;
 import javafx.scene.Node;
 import javafx.scene.chart.Axis;
 import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
-import javafx.scene.chart.XYChart.Data;
-import javafx.scene.chart.XYChart.Series;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
-import javafx.scene.shape.Path;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
-import railapp.rollingstock.dto.SimpleTrain;
-import railapp.simulation.train.AbstractTrainSimulator;
-import railapp.units.Time;
-import railview.simulation.graph.trainrunmonitor.TrainRunMonitorPaneController;
 import railview.simulation.graph.trainrunmonitor.TripMonitorPaneController;
 import railview.simulation.ui.data.BlockingTime;
 import railview.simulation.ui.data.EventData;
@@ -58,7 +52,53 @@ public class ChartTripBlockingTime<X, Y> extends DraggableChart<X, Y> {
 	private TripMonitorPaneController controller;
 	private Rectangle rectangle;
 
-	public ChartTripBlockingTime(Axis<X> xAxis, Axis<Y> yAxis,
+	public static ChartTripBlockingTime<Number, Number> createBlockingTimeForTripChart(
+			Label eventLabel,
+			TableView<TableProperty> eventTable,
+			TripMonitorPaneController controller) {
+		
+		NumberAxis xAxis = new NumberAxis();
+		NumberAxis yAxis = new NumberAxis();
+
+		ChartTripBlockingTime<Number, Number> chart = new ChartTripBlockingTime<Number, Number>(
+				xAxis, yAxis, eventLabel, eventTable, controller);
+				
+		chart.setOnMouseDragged(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				if (event.getButton().equals(MouseButton.PRIMARY)) {
+					chart.getBlockingTimeChartPlotChildren().clear();
+					chart.getData().clear();
+				}
+
+				chart.setOnMouseReleased(new EventHandler<MouseEvent>() {
+					public void handle(MouseEvent event) {
+						if (event.getButton().equals(MouseButton.SECONDARY)) {
+							chart.getBlockingTimeChartPlotChildren().clear();
+							chart.getData().clear();
+						}
+					}
+				});
+			}
+		});
+		
+		chart.setMouseFilter(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent mouseEvent) {
+				if (mouseEvent.getButton() == MouseButton.PRIMARY) {
+				} else {
+					mouseEvent.consume();
+				}
+			}
+		});
+		chart.startEventHandlers();
+		
+		xAxis.setSide(Side.TOP);
+
+		return chart;
+	}
+	
+	private ChartTripBlockingTime(Axis<X> xAxis, Axis<Y> yAxis,
 			Label eventLabel,
 			TableView<TableProperty> eventTable,
 			TripMonitorPaneController controller) {
@@ -69,6 +109,11 @@ public class ChartTripBlockingTime<X, Y> extends DraggableChart<X, Y> {
 		
 		this.xAxis = (NumberAxis) this.getXAxis();
 		this.yAxis = (NumberAxis) this.getYAxis();
+		
+		AnchorPane.setTopAnchor(this, 0.0);
+		AnchorPane.setLeftAnchor(this, 0.0);
+		AnchorPane.setRightAnchor(this, 0.0);
+		AnchorPane.setBottomAnchor(this, 0.0);
 	}
 
 	public ObservableList<Node> getBlockingTimeChartPlotChildren() {
@@ -98,6 +143,10 @@ public class ChartTripBlockingTime<X, Y> extends DraggableChart<X, Y> {
 			yAxis.setAutoRanging(false);
 			yAxis.setLowerBound(-1 * lastTD.getSecond());
 			yAxis.setUpperBound(-1 * this.timeDistances.get(0).getSecond());
+			
+			xAxis.setTickUnit(100);
+			yAxis.setTickUnit(1000);
+			
 		}
 	}
 

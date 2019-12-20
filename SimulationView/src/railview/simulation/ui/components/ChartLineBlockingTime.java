@@ -36,16 +36,13 @@ public class ChartLineBlockingTime<X, Y> extends DraggableChart<X, Y> {
 
 	private double maxY;
 	
-	public static ChartLineBlockingTime<Number, Number> createBlockingTimeChartForLine(
-			double minX, double maxX, double minY, double maxY) {
+	public static ChartLineBlockingTime<Number, Number> createBlockingTimeChartForLine() {
 		NumberAxis xAxis = new NumberAxis();
 		NumberAxis yAxis = new NumberAxis();
 		xAxis.setSide(Side.TOP);
 
 		ChartLineBlockingTime<Number, Number> chart = 
-			new ChartLineBlockingTime<Number, Number>(xAxis, yAxis, maxY);
-		
-		chart.setChartBound(minX, maxX, minY, maxY);
+			new ChartLineBlockingTime<Number, Number>(xAxis, yAxis);
 		
 		chart.setMouseFilter(new EventHandler<MouseEvent>() {
 			@Override
@@ -60,9 +57,8 @@ public class ChartLineBlockingTime<X, Y> extends DraggableChart<X, Y> {
 		return chart;
 	}
 	
-	public ChartLineBlockingTime(Axis<X> xAxis, Axis<Y> yAxis, double maxY) {
+	private ChartLineBlockingTime(Axis<X> xAxis, Axis<Y> yAxis) {
 		super(xAxis, yAxis);
-		this.maxY = maxY;
 		
 		AnchorPane.setTopAnchor(this, 0.0);
 		AnchorPane.setLeftAnchor(this, 0.0);
@@ -73,6 +69,8 @@ public class ChartLineBlockingTime<X, Y> extends DraggableChart<X, Y> {
 	public void setChartBound(double minX, double maxX, double minY, double maxY) {
 		NumberAxis xAxis = (NumberAxis) this.getXAxis();
 		NumberAxis yAxis = (NumberAxis) this.getYAxis();
+		
+		this.maxY = maxY;
 		
 		xAxis.setAutoRanging(false);
 		xAxis.setLowerBound(minX);
@@ -117,7 +115,9 @@ public class ChartLineBlockingTime<X, Y> extends DraggableChart<X, Y> {
 			this.drawTimeDistance();
 		}
 
-		this.drawStations();
+		if (this.stations != null) {
+			this.drawStations();
+		}
 	}
 	
 	private void drawTimeDistance() {
@@ -193,7 +193,7 @@ public class ChartLineBlockingTime<X, Y> extends DraggableChart<X, Y> {
 		}
 	}
 	
-	private void drawStations() {
+	private void drawStations() {		
 		for (Station station : this.stations) {
 			double chartX = mapToChart(station.getCoordinate().getX(), true);
 			Circle circle = new Circle();
