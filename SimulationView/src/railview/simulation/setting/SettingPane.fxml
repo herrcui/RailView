@@ -11,37 +11,68 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.control.SplitPane?>
 
-<AnchorPane fx:id="settingPaneRoot" prefHeight="600.0" prefWidth="800.0" styleClass="background-white" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Darktheme.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="railview.simulation.setting.SettingPaneController">
+<AnchorPane fx:id="settingPaneRoot" prefHeight="600.0" prefWidth="800.0" styleClass="background-white" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Darktheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.setting.SettingPaneController">
    <children>
    	<TabPane side="BOTTOM" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Tabs.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
    		<tabs>
              <Tab text="Operations Control">
                <content>
                   <SplitPane dividerPositions="0.5" orientation="HORIZONTAL">
-	                  <AnchorPane prefWidth="800.0">
-	                     <children>
-	                        <AnchorPane fx:id="codePane" layoutY="46.0" prefHeight="516.0" prefWidth="800.0" stylesheets="@../../../../resources/railview/simulation/resources/CSS/syntax-highlight.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="46.0" />
-	                        <RadioButton fx:id="defaultRB" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onDefaultRB" selected="true" text="Default" />
-	                        <RadioButton fx:id="externalRB" layoutX="163.0" layoutY="14.0" mnemonicParsing="false" onAction="#onExternalRB" text="External" />
-	                        <Button fx:id="externalFileButton" disable="true" layoutX="301.0" layoutY="6.0" mnemonicParsing="false" onAction="#onExternalFileButton" prefHeight="24.0" prefWidth="24.0" text="..." AnchorPane.topAnchor="6.0" />
-	                        <Label fx:id="fileNameLabel" layoutX="358.0" layoutY="14.0" />                  
-	                        <Button fx:id="applyButton" disable="true" layoutX="682.0" layoutY="6.0" mnemonicParsing="false" onAction="#onApply" prefWidth="120.0" text="Apply" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="6.0" />
-	                     </children>
-	                  </AnchorPane>
-	                   <AnchorPane>
-                      	<children>
-								<TableView fx:id="ILTable" layoutX="-7.0" layoutY="6.0"
-									prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0"
-									AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-8.0"
-									AnchorPane.topAnchor="0.0">
-									<columnResizePolicy>
-										<TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-									</columnResizePolicy>
-								</TableView>
-							</children>
-                      </AnchorPane>
+                     <items>
+   	                  <AnchorPane prefWidth="800.0">
+   	                     <children>
+   	                        <AnchorPane fx:id="codePane" layoutY="46.0" prefHeight="516.0" prefWidth="800.0" stylesheets="@../../../../resources/railview/simulation/resources/CSS/syntax-highlight.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="46.0" />
+   	                        <RadioButton fx:id="defaultRB" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onDefaultRB" selected="true" text="Default" />
+   	                        <RadioButton fx:id="externalRB" layoutX="163.0" layoutY="14.0" mnemonicParsing="false" onAction="#onExternalRB" text="External" />
+   	                        <Button fx:id="externalFileButton" disable="true" layoutX="301.0" layoutY="6.0" mnemonicParsing="false" onAction="#onExternalFileButton" prefHeight="24.0" prefWidth="24.0" text="..." AnchorPane.topAnchor="6.0" />
+   	                        <Label fx:id="fileNameLabel" layoutX="358.0" layoutY="14.0" />                  
+   	                        <Button fx:id="applyButton" disable="true" layoutX="682.0" layoutY="6.0" mnemonicParsing="false" onAction="#onApply" prefWidth="120.0" text="Apply" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="6.0" />
+   	                     </children>
+   	                  </AnchorPane>
+   	                   <AnchorPane>
+                           <children>
+                           <TableView fx:id="ILTable" layoutX="-4.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                </columnResizePolicy>
+                           </TableView>
+                           </children>
+                         </AnchorPane>
+                     </items>
 	                  </SplitPane>
                </content>
+             </Tab>
+             <Tab text="Communication Messages">
+                 <TabPane layoutY="14.0" prefHeight="261.0" prefWidth="394.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <tabs>
+                       <Tab text="Received">
+                         <content>
+                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                  <children>
+                                     <TableView fx:id="ReceivedTable" layoutY="9.0" prefHeight="210.0" prefWidth="405.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <columnResizePolicy>
+             							<TableView fx:constant="UNCONSTRAINED_RESIZE_POLICY" />
+             						  </columnResizePolicy>
+                                     </TableView>
+                                  </children>
+                               </AnchorPane>
+                         </content>
+                       </Tab>
+                       <Tab text="Sent">
+                         <content>
+                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                  <children>
+                                     <TableView fx:id="SentTable" layoutX="6.0" layoutY="3.0" prefHeight="211.0" prefWidth="376.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <columnResizePolicy>
+             							<TableView fx:constant="UNCONSTRAINED_RESIZE_POLICY" />
+             						  </columnResizePolicy>
+                                     </TableView>
+                                  </children>
+                               </AnchorPane>
+                         </content>
+                       </Tab>
+                     </tabs>
+                   </TabPane>
              </Tab>
            </tabs>
    	</TabPane>

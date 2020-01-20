@@ -15,5 +15,7 @@
 	<classpathentry kind="lib" path="/Library/RailModel/richtextfx-fat-0.7-M3.jar"/>
 	<classpathentry kind="lib" path="/Library/RailModel/Py4JServices.jar"/>
 	<classpathentry kind="lib" path="/Library/RailModel/SwarmIntelligence.jar"/>
+	<classpathentry kind="lib" path="/Library/RailModel/Messaging.jar"/>
+	<classpathentry kind="lib" path="/Library/ActiveMQ/activemq-all-5.15.11.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

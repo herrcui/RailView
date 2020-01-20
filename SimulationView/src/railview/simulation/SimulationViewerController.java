@@ -404,11 +404,14 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 			networkPaneController.updateTrainCoordinates(coordinates,
 					this.simulationFactory.getUpdateTime());
 
-			this.graphPaneController.updateTrainMap(this.simulationFactory.getSimulator()
-					.getTrainSimulators());
+			this.graphPaneController.updateTrainMap(this.simulationFactory.getSimulator().getTrainSimulators());
 
 			updateStatusBar();
 		}
+		
+		this.settingPaneController.updateMessages(
+				this.simulationFactory.getSimulator().getDispatchingSystem().getReceivedMessages(),
+				this.simulationFactory.getSimulator().getDispatchingSystem().getSentMessages());
 	}
 
 	@Override

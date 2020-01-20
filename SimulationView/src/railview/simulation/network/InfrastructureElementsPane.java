@@ -29,8 +29,8 @@ public class InfrastructureElementsPane extends PannablePane {
 	private List<Coordinate> path = null;
 	private Coordinate eventPoint = null;
 
-	private double elementWidth = 0.5;
-	private double signalWidth = 0.2;
+	private double elementWidth = 0.2; // 0.5
+	private double signalWidth = 0.1; // 0.2
 
 	public InfrastructureElementsPane() {
 		this.widthProperty().addListener(observable -> draw());

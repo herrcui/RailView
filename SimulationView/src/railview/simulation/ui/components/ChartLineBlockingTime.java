@@ -78,6 +78,9 @@ public class ChartLineBlockingTime<X, Y> extends DraggableChart<X, Y> {
 		yAxis.setAutoRanging(false);
 		yAxis.setLowerBound(0);
 		yAxis.setUpperBound(maxY-minY);
+		
+		xAxis.setTickUnit(100);
+		yAxis.setTickUnit(600);
 	}
 
 	public ObservableList<Node> getBlockingTimeStairwayChartPlotChildren() {

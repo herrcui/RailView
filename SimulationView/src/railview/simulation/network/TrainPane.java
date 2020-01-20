@@ -81,7 +81,7 @@ public class TrainPane extends PannablePane {
 						line.setEndX(endX);
 						line.setEndY(endY);
 
-						line.setStrokeWidth(1.0);		
+						line.setStrokeWidth(0.4);		
 						line.setStroke(color);
 
 						this.getChildren().add(line);

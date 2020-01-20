@@ -6,10 +6,13 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -18,6 +21,7 @@ import org.fxmisc.richtext.LineNumberFactory;
 import org.fxmisc.richtext.model.StyleSpans;
 import org.fxmisc.richtext.model.StyleSpansBuilder;
 
+import railapp.activemq.messages.dispatching.TopicMessage;
 import railapp.dispatching.DispatchingSystem;
 import railapp.dispatching.NoneDispatchingSystem;
 import railapp.dispatching.services.ExternalDispatchingSystem;
@@ -34,6 +38,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
@@ -64,6 +69,9 @@ public class SettingPaneController extends Stage implements Initializable {
 
 	@FXML
 	private Label fileNameLabel;
+	
+	@FXML
+	private TableView<TableProperty> ReceivedTable, SentTable;
 
 	private CodeArea codeArea;
 
@@ -103,6 +111,7 @@ public class SettingPaneController extends Stage implements Initializable {
 			+ ")" + "|(?<STRING>" + STRING_PATTERN + ")" + "|(?<COMMENT>"
 			+ COMMENT_PATTERN + ")");
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		codeArea = new CodeArea();
@@ -138,6 +147,26 @@ public class SettingPaneController extends Stage implements Initializable {
 		ILTable.getColumns().addAll(trainItemCol, trainValueCol);
 		
 		ILTable.setItems(generateILInfo());
+		
+		TableColumn<TableProperty, String> RMsgTimeCol = new TableColumn<TableProperty, String>("Time");
+		RMsgTimeCol.setMinWidth(100);
+		RMsgTimeCol.setCellValueFactory(new PropertyValueFactory<TableProperty, String>("item"));
+
+		TableColumn<TableProperty, String> RMsgContentCol = new TableColumn<TableProperty, String>("Content");
+		RMsgContentCol.setMinWidth(100);
+		RMsgContentCol.setCellValueFactory(new PropertyValueFactory<TableProperty, String>("value"));
+		
+		ReceivedTable.getColumns().addAll(RMsgTimeCol, RMsgContentCol);
+		
+		TableColumn<TableProperty, String> SMsgTimeCol = new TableColumn<TableProperty, String>("Time");
+		SMsgTimeCol.setMinWidth(100);
+		SMsgTimeCol.setCellValueFactory(new PropertyValueFactory<TableProperty, String>("item"));
+
+		TableColumn<TableProperty, String> SMsgContentCol = new TableColumn<TableProperty, String>("Content");
+		SMsgContentCol.setMinWidth(100);
+		SMsgContentCol.setCellValueFactory(new PropertyValueFactory<TableProperty, String>("value"));
+		
+		SentTable.getColumns().addAll(SMsgTimeCol, SMsgContentCol);
 	}
 
 	private static ObservableList<TableProperty> generateILInfo() {
@@ -262,12 +291,35 @@ public class SettingPaneController extends Stage implements Initializable {
 			}
 		}
 	}
+	
+	public void updateMessages(List<TopicMessage>received, List<TopicMessage>sent) {
+		if (received != null && received.size()>0) {
+			this.addMessages(received, this.ReceivedTable);
+		}
+		
+		if (sent != null && sent.size()>0) {
+			this.addMessages(sent, this.SentTable);
+		}
+	}
+	
+	private void addMessages(List<TopicMessage> messages, TableView<TableProperty> tv) {
+		CopyOnWriteArrayList<TopicMessage> tempList = new CopyOnWriteArrayList<TopicMessage>();
+		tempList.addAll(messages);
+		ObservableList<TableProperty> messageList = FXCollections.observableArrayList();
+		
+		for (TopicMessage message : tempList) {
+			SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
+			String timeText = timeFormat.format(new Date(message.getTimestamp()));
+			messageList.add(new TableProperty(timeText,	message.toString()));
+		}
+		
+		tv.setItems(messageList);
+	}
 
 	private void setDispatchingSystem() {
 		if (this.simulator != null) {
 			if (this.defaultRB.isSelected()) {
-				this.simulator.setDispatchingSystem(NoneDispatchingSystem
-						.getInstance());
+				this.simulator.setDispatchingSystem(NoneDispatchingSystem.getInstance());
 			} else {
 				if (this.file != null) {					
 					DispatchingSystem dispatcher = 

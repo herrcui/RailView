@@ -34,6 +34,7 @@ public class SimulationFactory {
 				rollingStockServiceUtility, timeTableServiceUtility);
 		
 		//simulator.setTimePeriod(Time.getInstance(0, 57, 0), Time.getInstance(1, 0, 0));
+		//simulator.getDispatchingSystem().setDispComm(true);
 
 		return new SimulationFactory(
 				simulator, infraServiceUtility, rollingStockServiceUtility, timeTableServiceUtility);

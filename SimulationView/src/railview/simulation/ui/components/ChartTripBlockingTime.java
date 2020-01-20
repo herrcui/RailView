@@ -145,7 +145,7 @@ public class ChartTripBlockingTime<X, Y> extends DraggableChart<X, Y> {
 			yAxis.setUpperBound(-1 * this.timeDistances.get(0).getSecond());
 			
 			xAxis.setTickUnit(100);
-			yAxis.setTickUnit(1000);
+			yAxis.setTickUnit(600);
 			
 		}
 	}
