@@ -318,7 +318,8 @@ public class SettingPaneController extends Stage implements Initializable {
 
 	private void setDispatchingSystem() {
 		if (this.simulator != null) {
-			if (this.defaultRB.isSelected()) {
+			if (this.defaultRB.isSelected() &&
+					!(this.simulator.getDispatchingSystem() instanceof NoneDispatchingSystem)) {
 				this.simulator.setDispatchingSystem(NoneDispatchingSystem.getInstance());
 			} else {
 				if (this.file != null) {					

@@ -18,6 +18,7 @@ import java.util.regex.Pattern;
 
 import py4j.GatewayServer;
 import railapp.simulation.entries.TimetableSimulationEntry;
+import railapp.simulation.entries.SchedulingEntry;
 import railview.simulation.network.NetworkPaneController;
 import javafx.application.Platform;
 import javafx.beans.property.BooleanProperty;
@@ -253,8 +254,10 @@ public class PythonPaneController {
 	protected void onPyAction(ActionEvent event) {
 		try {
 			if (this.pyActiveButton.visibleProperty().getValue()) {
+				//gatewayServer = new GatewayServer(
+				//	new TimetableSimulationEntry());
 				gatewayServer = new GatewayServer(
-					new TimetableSimulationEntry());
+					new SchedulingEntry());
 				this.pyActiveButton.setVisible(false);
 				this.pyDeactiveButton.setVisible(true);
 				
