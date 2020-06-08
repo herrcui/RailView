@@ -16,7 +16,6 @@ import railapp.infrastructure.element.dto.Port;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.infrastructure.signalling.dto.AbstractSignal;
 import railapp.simulation.train.AbstractTrainSimulator;
-import railapp.swarmintelligence.SwarmManager;
 import railapp.units.Coordinate;
 import railapp.units.Time;
 import railview.simulation.ui.data.CoordinateMapper;
@@ -94,10 +93,6 @@ public class NetworkPaneController {
 		if (isActive) {
 			this.trainPane.updateTrainLocations(map, time);
 		}
-	}
-	
-	public void setSwarmManager(SwarmManager swarmManager) {
-		this.trainPane.setSwarmManager(swarmManager);
 	}
 	
 	public void setActive(boolean active) {

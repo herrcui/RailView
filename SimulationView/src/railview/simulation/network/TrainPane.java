@@ -12,8 +12,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
 import railapp.simulation.train.AbstractTrainSimulator;
-import railapp.swarmintelligence.Swarm;
-import railapp.swarmintelligence.SwarmManager;
 import railapp.units.Coordinate;
 import railapp.units.Time;
 import railview.simulation.ui.data.CoordinateMapper;
@@ -36,9 +34,6 @@ public class TrainPane extends PannablePane {
 		this.mapper = mapper;
 	}
 	
-	void setSwarmManager(SwarmManager swarmManager) {
-		this.swarmManager = swarmManager;
-	}
 	
 	void updateTrainLocations(final Map<AbstractTrainSimulator, List<Coordinate>> map,
 			Time time) {
@@ -102,7 +97,7 @@ public class TrainPane extends PannablePane {
 	
 	private Color getColor(AbstractTrainSimulator train) {
 		Color color = Color.LIGHTGREEN;
-		switch (train.getPendingStatus()) {
+		switch (train.getConflictStatus()) {
 			case NONE:
 				color = Color.LIGHTGREEN;
 				break;
@@ -119,41 +114,9 @@ public class TrainPane extends PannablePane {
 		
 		return color;
 	}
-	
-	Color getColorBySwarm(AbstractTrainSimulator train, Time time) {
-		Swarm swarm = this.swarmManager.getSwarm(train, time);
-		Color color = this.swarmColorMap.get(swarm);
-		
-		if (color == null) {
-			if (swarm.getTrains().size() == 1) {
-				color = this.COLOR_SINGLETRAIN;
-				this.swarmColorMap.put(swarm, color);
-				return color;
-			}
-
-			while (color == null ||
-					this.usedColors.contains(color) ||
-					color.equals(this.COLOR_SINGLETRAIN)) {
-				Random random = new Random();
-			    double red = random.nextInt(256);
-			    double green = random.nextInt(256);
-			    double blue = random.nextInt(256);
-
-			    color = Color.rgb((int) red, (int) green, (int) blue);
-			}
-
-			this.swarmColorMap.put(swarm, color);
-			this.usedColors.add(color);
-		}
-
-		return color;
-	}
 
 	private Map<AbstractTrainSimulator, List<Coordinate>> trainCoordinates;
 	
-	
-	private Map<Swarm, Color> swarmColorMap = new HashMap<Swarm, Color>();
 	private Set<Color> usedColors = new HashSet<Color>();
 	private Color COLOR_SINGLETRAIN = Color.WHITESMOKE;
-	private SwarmManager swarmManager;
 }

@@ -7,22 +7,15 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.FileInputStream;
 import java.io.InputStreamReader;
-import java.net.URL;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import py4j.GatewayServer;
-import railapp.simulation.entries.TimetableSimulationEntry;
-import railapp.simulation.entries.SchedulingEntry;
-import railview.simulation.network.NetworkPaneController;
+import railapp.simulation.entries.Py4JGateway;
 import javafx.application.Platform;
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -32,7 +25,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -256,8 +248,8 @@ public class PythonPaneController {
 			if (this.pyActiveButton.visibleProperty().getValue()) {
 				//gatewayServer = new GatewayServer(
 				//	new TimetableSimulationEntry());
-				gatewayServer = new GatewayServer(
-					new SchedulingEntry());
+				gatewayServer = new GatewayServer(new Py4JGateway());
+				
 				this.pyActiveButton.setVisible(false);
 				this.pyDeactiveButton.setVisible(true);
 				

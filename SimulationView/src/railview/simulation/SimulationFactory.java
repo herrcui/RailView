@@ -34,7 +34,7 @@ public class SimulationFactory {
 				rollingStockServiceUtility, timeTableServiceUtility);
 		
 		//simulator.setTimePeriod(Time.getInstance(0, 57, 0), Time.getInstance(1, 0, 0));
-		//simulator.getDispatchingSystem().setDispCommunication(true);
+		//simulator.getDispatchingSystem().getDispCommunication().start();
 		
 		return new SimulationFactory(
 				simulator, infraServiceUtility, rollingStockServiceUtility, timeTableServiceUtility);
@@ -109,7 +109,7 @@ public class SimulationFactory {
 
 	public void stopSimulation() {
 		if (this.simulator != null) {
-			this.simulator.stop();
+			this.simulator.reset();
 			this.isOnStopCommand = true;
 		}
 	}

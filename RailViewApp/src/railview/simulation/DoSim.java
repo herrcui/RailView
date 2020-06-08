@@ -16,7 +16,7 @@ import javafx.stage.WindowEvent;
 
 /**
  * main class of the whole program
- *
+ *PUL
  */
 
 public class DoSim extends Application {
@@ -24,7 +24,7 @@ public class DoSim extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
-		this.primaryStage.setTitle("DoSim");
+		this.primaryStage.setTitle("PULSim");
 		this.initRootLayout();
 	}
 

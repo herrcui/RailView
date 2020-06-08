@@ -24,12 +24,8 @@ import org.fxmisc.richtext.model.StyleSpansBuilder;
 import railapp.activemq.messages.dispatching.TopicMessage;
 import railapp.dispatching.DispatchingSystem;
 import railapp.dispatching.NoneDispatchingSystem;
-import railapp.dispatching.services.ExternalDispatchingSystem;
-import railapp.infrastructure.object.dto.InfrastructureObject;
-import railapp.rollingstock.dto.SimpleTrain;
+import railapp.dispatching.services.Py4JDispatchingSystem;
 import railapp.simulation.SingleSimulationManager;
-import railapp.simulation.train.AbstractTrainSimulator;
-import railapp.timetable.dto.TripElement;
 import railview.simulation.ui.data.TableProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -38,7 +34,6 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
@@ -323,8 +318,7 @@ public class SettingPaneController extends Stage implements Initializable {
 				this.simulator.setDispatchingSystem(NoneDispatchingSystem.getInstance());
 			} else {
 				if (this.file != null) {					
-					DispatchingSystem dispatcher = 
-							ExternalDispatchingSystem.getDefaultInstance(file.getPath());							
+					DispatchingSystem dispatcher = Py4JDispatchingSystem.getDefaultInstance(file.getPath());							
 					this.simulator.setDispatchingSystem(dispatcher);
 				}
 			}

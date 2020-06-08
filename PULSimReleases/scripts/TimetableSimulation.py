@@ -4,6 +4,14 @@ import matplotlib.pyplot as plt
 gateway = JavaGateway()
 
 print ("load data ...")
+
+gateway.entry_point.initialize("c:\\temp\\raildata\\infrastructure",
+    "c:\\temp\\raildata\\rollingstocks")
+
+print ("data loaded.")
+
+print ("with old interface")
+
 # read infrastructure, rollingstocks and timetable data
 simulator = gateway.entry_point.initialize(
     "file:///c://temp//raildata//infrastructure",

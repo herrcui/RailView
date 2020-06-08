@@ -2,7 +2,6 @@ package railview.simulation;
 
 import java.io.IOException;
 import java.net.URL;
-import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 
@@ -19,16 +18,11 @@ import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
-import railapp.infrastructure.dto.Network;
 import railapp.simulation.SingleSimulationManager;
 import railapp.simulation.events.EventListener;
 import railapp.simulation.train.AbstractTrainSimulator;
-import railapp.swarmintelligence.SwarmManager;
 import railapp.units.Coordinate;
 import railapp.units.Duration;
-import railview.railmodel.infrastructure.railsys7.InfrastructureReader;
-import railview.railmodel.infrastructure.railsys7.RollingStockReader;
-import railview.railmodel.infrastructure.railsys7.TimetableReader;
 import railview.simulation.SimulationFactory.ISimulationUpdateUI;
 import railview.simulation.graph.GraphPaneController;
 import railview.simulation.network.NetworkPaneController;
@@ -342,8 +336,6 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 		
 		this.simulationFactory.registerUpdateUI(this);
 		
-		SwarmManager swarmManager = SwarmManager.getInstance(this.simulationFactory.getSimulator());
-		this.networkPaneController.setSwarmManager(swarmManager);
 		this.settingPaneController.setSimulator(this.simulationFactory.getSimulator());
 
 		// TODO: check if it is successful
@@ -410,8 +402,8 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 		}
 		
 		this.settingPaneController.updateMessages(
-				this.simulationFactory.getSimulator().getDispatchingSystem().getReceivedMessages(),
-				this.simulationFactory.getSimulator().getDispatchingSystem().getSentMessages());
+				this.simulationFactory.getSimulator().getDispatchingSystem().getDispCommunication().getReceivedMessages(),
+				this.simulationFactory.getSimulator().getDispatchingSystem().getDispCommunication().getSentMessages());
 	}
 
 	@Override
