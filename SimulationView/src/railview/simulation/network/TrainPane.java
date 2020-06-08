@@ -1,10 +1,8 @@
 package railview.simulation.network;
 
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 import java.util.Set;
 import java.util.Map.Entry;
 
@@ -19,7 +17,7 @@ import railview.simulation.ui.utilities.PannablePane;
 
 /**
  * This class is a Pane for the simulation of the trains.
- * 
+ *
  */
 public class TrainPane extends PannablePane {
 
@@ -33,12 +31,12 @@ public class TrainPane extends PannablePane {
 	void setCoordinateMapper(CoordinateMapper mapper) {
 		this.mapper = mapper;
 	}
-	
-	
+
+
 	void updateTrainLocations(final Map<AbstractTrainSimulator, List<Coordinate>> map,
 			Time time) {
 		this.trainCoordinates = map;
-		
+
 		this.draw(time);
 	}
 
@@ -53,10 +51,10 @@ public class TrainPane extends PannablePane {
 			for (Entry<AbstractTrainSimulator, List<Coordinate>> entry : this.trainCoordinates
 					.entrySet()) {
 				List<Coordinate> coordinateList = entry.getValue();
-				Color color = this.getColor(entry.getKey());		
+				Color color = this.getColor(entry.getKey());
 				double x = -1;
 				double y = -1;
-				
+
 				if (coordinateList != null && coordinateList.size() > 0) {
 					for (int i = 0; i < coordinateList.size() - 1; i++) {
 						Line line = new Line();
@@ -65,36 +63,36 @@ public class TrainPane extends PannablePane {
 						float startY = mapper.mapToPaneY(coordinateList.get(i).getY(), this);
 						float endX = mapper.mapToPaneX(coordinateList.get(i+1).getX(), this);
 						float endY = mapper.mapToPaneY(coordinateList.get(i+1).getY(), this);
-						
+
 						if (x == -1 && y == -1) {
 							x = startX;
 							y = startY;
 						}
-						
+
 						line.setStartX(startX);
 						line.setStartY(startY);
 						line.setEndX(endX);
 						line.setEndY(endY);
 
-						line.setStrokeWidth(0.4);		
+						line.setStrokeWidth(0.4);
 						line.setStroke(color);
 
 						this.getChildren().add(line);
 					}
 				}
-				
+
 				if (x != -1 && y != -1) {
 					Text dataText = new Text(entry.getKey().getTrain().getNumber());
 					dataText.setLayoutX(x);
 					dataText.setLayoutY(y);
 					dataText.setFill(color);
-	
+
 					this.getChildren().add(dataText);
 				}
 			}
 		}
 	}
-	
+
 	private Color getColor(AbstractTrainSimulator train) {
 		Color color = Color.LIGHTGREEN;
 		switch (train.getConflictStatus()) {
@@ -111,12 +109,12 @@ public class TrainPane extends PannablePane {
 				color = Color.BLUEVIOLET;
 				break;
 		}
-		
+
 		return color;
 	}
 
 	private Map<AbstractTrainSimulator, List<Coordinate>> trainCoordinates;
-	
+
 	private Set<Color> usedColors = new HashSet<Color>();
 	private Color COLOR_SINGLETRAIN = Color.WHITESMOKE;
 }
