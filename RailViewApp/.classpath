@@ -4,16 +4,16 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/RailModel_RailSys7"/>
-	<classpathentry kind="lib" path="/Library/RailModel/InfrastructureDefinition.jar"/>
-	<classpathentry kind="lib" path="/Library/RailModel/TimetableDefinition.jar"/>
-	<classpathentry kind="lib" path="/Library/RailModel/InfrastructureRepository.jar"/>
-	<classpathentry kind="lib" path="/Library/RailModel/RailSys7Parser.jar"/>
-	<classpathentry kind="lib" path="/Library/RailModel/RollingstockDefinition.jar"/>
-	<classpathentry kind="lib" path="/Library/RailModel/RollingstockRepository.jar"/>
-	<classpathentry kind="lib" path="/Library/RailModel/TimetableRepository.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/SimulationView"/>
-	<classpathentry kind="lib" path="/Library/RailModel/RailSimulator.jar"/>
-	<classpathentry kind="lib" path="/Library/RailModel/BasicDefinition.jar"/>
-	<classpathentry kind="lib" path="/Library/RailModel/MachineLearning.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/BasicDefinition"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/InfrastructureDefinition"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/InfrastructureRepository"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/MachineLearning"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/RailSimulator"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/RailSys7Parser"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/RollingstockDefinition"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/RollingstockRepository"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/TimetableDefinition"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/TimetableRepository"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

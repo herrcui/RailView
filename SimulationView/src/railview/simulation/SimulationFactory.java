@@ -17,29 +17,29 @@ import railview.railmodel.infrastructure.railsys7.TimetableReader;
 public class SimulationFactory {
 	public static SimulationFactory getInstance(Path infraPath,
 			Path rollingstockPath, Path timetablePath) {
-		IInfrastructureServiceUtility infraServiceUtility = 
+		IInfrastructureServiceUtility infraServiceUtility =
 			InfrastructureReader.getRailSys7Instance(infraPath).initialize();
 		Network network = infraServiceUtility.getNetworkService().allNetworks().iterator().next();
 
 		// Rollilngstock
-		IRollingStockServiceUtility rollingStockServiceUtility = 
+		IRollingStockServiceUtility rollingStockServiceUtility =
 			RollingStockReader.getRailSys7Instance(rollingstockPath).initialize();
 
 		// Timetable
-		ITimetableServiceUtility timeTableServiceUtility = 
+		ITimetableServiceUtility timeTableServiceUtility =
 			TimetableReader.getRailSys7Instance(
 				timetablePath, infraServiceUtility, rollingStockServiceUtility, network).initialize();
 
 		SingleSimulationManager simulator = SingleSimulationManager.getInstance(infraServiceUtility,
 				rollingStockServiceUtility, timeTableServiceUtility);
-		
+
 		//simulator.setTimePeriod(Time.getInstance(0, 57, 0), Time.getInstance(1, 0, 0));
 		//simulator.getDispatchingSystem().getDispCommunication().start();
-		
+
 		return new SimulationFactory(
 				simulator, infraServiceUtility, rollingStockServiceUtility, timeTableServiceUtility);
 	}
-	
+
 	public SingleSimulationManager getSimulator() {
 		return simulator;
 	}
@@ -55,17 +55,17 @@ public class SimulationFactory {
 	public ITimetableServiceUtility getTimeTableServiceUtility() {
 		return timeTableServiceUtility;
 	}
-	
+
 	public Time getUpdateTime() {
 		return this.updateTime;
 	}
-	
+
 	public void setUpdateTime(Time time) {
 		this.updateTime = time;
 	}
 
 	private SimulationFactory(SingleSimulationManager simulator,
-			IInfrastructureServiceUtility infraUtil, 
+			IInfrastructureServiceUtility infraUtil,
 			IRollingStockServiceUtility rsUtil,
 			ITimetableServiceUtility ttUtil) {
 		this.simulator = simulator;
@@ -74,7 +74,7 @@ public class SimulationFactory {
 		this.timeTableServiceUtility = ttUtil;
 		this.updateUIs = new ArrayList<ISimulationUpdateUI>();
 	}
-	
+
 	public void startSimulation() {
 		if (isOnPauseCommand) {
 			isOnPauseCommand = false;
@@ -117,7 +117,7 @@ public class SimulationFactory {
 	public void registerUpdateUI(ISimulationUpdateUI updateUI) {
 		this.updateUIs.add(updateUI);
 	}
-	
+
 	protected void updateUI() {
 		for (ISimulationUpdateUI ui : this.updateUIs) {
 			ui.updateUI();
@@ -151,7 +151,7 @@ public class SimulationFactory {
 		SimulationFactory factory = null;
 
 		Updater(SimulationFactory factory) {
-			this.factory = factory; 
+			this.factory = factory;
 		}
 
 		void periodicalUpdate(boolean isReplay) {
@@ -161,7 +161,7 @@ public class SimulationFactory {
 					break;
 				}
 
-				if (simulator.getStatus() == SingleSimulationManager.TERMINATED && 
+				if (simulator.getStatus() == SingleSimulationManager.TERMINATED &&
 						updateTime.compareTo(simulator.getTime()) > 0) {
 					isUpdating = false;
 					break;
@@ -186,7 +186,7 @@ public class SimulationFactory {
 			} // while ((simulator.getTerminatedTime() == null || time.compareTo(simulator.getTerminatedTime()) < 0))
 		} // periodicalUpdate(boolean isReplay)
 	}
-	
+
 	public interface ISimulationUpdateUI {
 		void updateUI();
 		void setTime(boolean isReplay);

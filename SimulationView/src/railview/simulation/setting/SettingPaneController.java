@@ -16,6 +16,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.fxmisc.flowless.VirtualizedScrollPane;
 import org.fxmisc.richtext.CodeArea;
 import org.fxmisc.richtext.LineNumberFactory;
 import org.fxmisc.richtext.model.StyleSpans;
@@ -35,10 +36,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
@@ -47,7 +48,7 @@ import javafx.stage.Stage;
 /**
  * The controller class for the ConfigurationPane.fxml. You can either write or
  * load a python script in this UI.
- * 
+ *
  */
 public class SettingPaneController extends Stage implements Initializable {
 	@FXML
@@ -55,7 +56,7 @@ public class SettingPaneController extends Stage implements Initializable {
 
 	@FXML
 	private RadioButton defaultRB, externalRB;
-	
+
 	@FXML
 	private TableView<TableProperty> ILTable;
 
@@ -63,8 +64,8 @@ public class SettingPaneController extends Stage implements Initializable {
 	private Button externalFileButton, applyButton;
 
 	@FXML
-	private Label fileNameLabel;
-	
+	private TextField fileNameText;
+
 	@FXML
 	private TableView<TableProperty> ReceivedTable, SentTable;
 
@@ -110,6 +111,8 @@ public class SettingPaneController extends Stage implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		codeArea = new CodeArea();
+		VirtualizedScrollPane<CodeArea> sp = new VirtualizedScrollPane<CodeArea>(codeArea);
+
 		codeArea.setPrefHeight(codePane.getPrefHeight());
 		codeArea.setPrefWidth(codePane.getPrefWidth());
 		codeArea.setParagraphGraphicFactory(LineNumberFactory.get(codeArea));
@@ -130,7 +133,7 @@ public class SettingPaneController extends Stage implements Initializable {
 				applyButton.setDisable(false);
 			}
 		});
-		
+
 		TableColumn<TableProperty, String> trainItemCol = new TableColumn<TableProperty, String>("Item");
 		trainItemCol.setMinWidth(100);
 		trainItemCol.setCellValueFactory(new PropertyValueFactory<TableProperty, String>("item"));
@@ -140,9 +143,9 @@ public class SettingPaneController extends Stage implements Initializable {
 		trainValueCol.setCellValueFactory(new PropertyValueFactory<TableProperty, String>("value"));
 
 		ILTable.getColumns().addAll(trainItemCol, trainValueCol);
-		
+
 		ILTable.setItems(generateILInfo());
-		
+
 		TableColumn<TableProperty, String> RMsgTimeCol = new TableColumn<TableProperty, String>("Time");
 		RMsgTimeCol.setMinWidth(100);
 		RMsgTimeCol.setCellValueFactory(new PropertyValueFactory<TableProperty, String>("item"));
@@ -150,9 +153,9 @@ public class SettingPaneController extends Stage implements Initializable {
 		TableColumn<TableProperty, String> RMsgContentCol = new TableColumn<TableProperty, String>("Content");
 		RMsgContentCol.setMinWidth(100);
 		RMsgContentCol.setCellValueFactory(new PropertyValueFactory<TableProperty, String>("value"));
-		
+
 		ReceivedTable.getColumns().addAll(RMsgTimeCol, RMsgContentCol);
-		
+
 		TableColumn<TableProperty, String> SMsgTimeCol = new TableColumn<TableProperty, String>("Time");
 		SMsgTimeCol.setMinWidth(100);
 		SMsgTimeCol.setCellValueFactory(new PropertyValueFactory<TableProperty, String>("item"));
@@ -160,13 +163,13 @@ public class SettingPaneController extends Stage implements Initializable {
 		TableColumn<TableProperty, String> SMsgContentCol = new TableColumn<TableProperty, String>("Content");
 		SMsgContentCol.setMinWidth(100);
 		SMsgContentCol.setCellValueFactory(new PropertyValueFactory<TableProperty, String>("value"));
-		
+
 		SentTable.getColumns().addAll(SMsgTimeCol, SMsgContentCol);
 	}
 
 	private static ObservableList<TableProperty> generateILInfo() {
 		ObservableList<TableProperty> ILInfoList = FXCollections.observableArrayList();
-		
+
 		ILInfoList.add(new TableProperty("Release Time (s)", "3.0"));
 		ILInfoList.add(new TableProperty("Route Setting Time with Junction (s)", "13.0"));
 		ILInfoList.add(new TableProperty("Route Setting Time without Junction (s)", "8.0"));
@@ -175,13 +178,13 @@ public class SettingPaneController extends Stage implements Initializable {
 		ILInfoList.add(new TableProperty("GSMR Transfer Time (s)", "8.0"));
 		ILInfoList.add(new TableProperty("GSMR_SCI Time (s)", "1.0"));
 		ILInfoList.add(new TableProperty("On_Board Unit and Reaction Time (s)", "1.5"));
-		
+
 		return ILInfoList;
 	}
-	
+
 	public SettingPaneController() {
 		setTitle("Configurations");
-		
+
 		fileChooser.setTitle("Choose external Python dispatching file ...");
 		FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter(
 				"Python files (*.py)", "*.py");
@@ -225,7 +228,7 @@ public class SettingPaneController extends Stage implements Initializable {
 	private void onDefaultRB(ActionEvent event) {
 		this.externalFileButton.setDisable(this.defaultRB.isSelected());
 		this.externalRB.setSelected(!this.defaultRB.isSelected());
-		this.fileNameLabel.setDisable(this.defaultRB.isSelected());
+		this.fileNameText.setDisable(this.defaultRB.isSelected());
 		this.codeArea.setDisable(this.defaultRB.isSelected());
 
 		this.applyButton.setDisable(false);
@@ -235,11 +238,11 @@ public class SettingPaneController extends Stage implements Initializable {
 	private void onExternalRB(ActionEvent event) {
 		this.defaultRB.setSelected(!this.externalRB.isSelected());
 		this.externalFileButton.setDisable(this.defaultRB.isSelected());
-		this.fileNameLabel.setDisable(this.defaultRB.isSelected());
+		this.fileNameText.setDisable(this.defaultRB.isSelected());
 		this.codeArea.setDisable(this.defaultRB.isSelected());
 
 		if (this.externalRB.isSelected()) {
-			this.fileNameLabel.setText("Select an external dispatching script");
+			this.fileNameText.setText("Select an external dispatching script");
 			this.codeArea.clear();
 			this.file = null;
 		}
@@ -273,7 +276,7 @@ public class SettingPaneController extends Stage implements Initializable {
 				.getWindow());
 
 		if (this.file != null) {
-			this.fileNameLabel.setText(file.getPath());
+			this.fileNameText.setText(file.getPath());
 			this.codeArea.clear();
 			BufferedReader bufferedReader = null;
 			try {
@@ -286,28 +289,28 @@ public class SettingPaneController extends Stage implements Initializable {
 			}
 		}
 	}
-	
+
 	public void updateMessages(List<TopicMessage>received, List<TopicMessage>sent) {
 		if (received != null && received.size()>0) {
 			this.addMessages(received, this.ReceivedTable);
 		}
-		
+
 		if (sent != null && sent.size()>0) {
 			this.addMessages(sent, this.SentTable);
 		}
 	}
-	
+
 	private void addMessages(List<TopicMessage> messages, TableView<TableProperty> tv) {
 		CopyOnWriteArrayList<TopicMessage> tempList = new CopyOnWriteArrayList<TopicMessage>();
 		tempList.addAll(messages);
 		ObservableList<TableProperty> messageList = FXCollections.observableArrayList();
-		
+
 		for (TopicMessage message : tempList) {
 			SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
 			String timeText = timeFormat.format(new Date(message.getTimestamp()));
 			messageList.add(new TableProperty(timeText,	message.toString()));
 		}
-		
+
 		tv.setItems(messageList);
 	}
 
@@ -317,8 +320,8 @@ public class SettingPaneController extends Stage implements Initializable {
 					!(this.simulator.getDispatchingSystem() instanceof NoneDispatchingSystem)) {
 				this.simulator.setDispatchingSystem(NoneDispatchingSystem.getInstance());
 			} else {
-				if (this.file != null) {					
-					DispatchingSystem dispatcher = Py4JDispatchingSystem.getDefaultInstance(file.getPath());							
+				if (this.file != null) {
+					DispatchingSystem dispatcher = Py4JDispatchingSystem.getDefaultInstance(file.getPath());
 					this.simulator.setDispatchingSystem(dispatcher);
 				}
 			}

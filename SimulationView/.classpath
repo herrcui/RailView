@@ -4,16 +4,16 @@
 	<classpathentry excluding="railview/simulation/resources/CSS/|railview/simulation/resources/image/" kind="src" path="resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
-	<classpathentry kind="lib" path="/Library/RailModel/InfrastructureDefinition.jar"/>
-	<classpathentry kind="lib" path="/Library/RailModel/InfrastructureRepository.jar"/>
-	<classpathentry kind="lib" path="/Library/RailModel/RailSimulator.jar"/>
-	<classpathentry kind="lib" path="/Library/RailModel/BasicDefinition.jar"/>
-	<classpathentry kind="lib" path="/Library/RailModel/RollingstockDefinition.jar"/>
-	<classpathentry kind="lib" path="/Library/RailModel/TimetableDefinition.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/RailModel_RailSys7"/>
-	<classpathentry kind="lib" path="/Library/Py4J/py4j0.10.2.1.jar"/>
-	<classpathentry kind="lib" path="/Library/RailModel/richtextfx-fat-0.7-M3.jar"/>
-	<classpathentry kind="lib" path="/Library/RailModel/Py4JServices.jar"/>
-	<classpathentry kind="lib" path="/Library/RailModel/Messaging.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/BasicDefinition"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/InfrastructureDefinition"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/InfrastructureRepository"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Messaging"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Py4JServices"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/RailSimulator"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/RollingstockDefinition"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/TimetableDefinition"/>
+	<classpathentry kind="lib" path="/Library/Py4J/py4j0.10.6.jar"/>
+	<classpathentry kind="lib" path="/Library/GUI/richtextfx-fat-0.7-M3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
