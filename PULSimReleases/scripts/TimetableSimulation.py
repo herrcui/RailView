@@ -4,24 +4,18 @@ import matplotlib.pyplot as plt
 gateway = JavaGateway()
 
 print ("load data ...")
-
-gateway.entry_point.initialize("c:\\temp\\raildata\\infrastructure",
-    "c:\\temp\\raildata\\rollingstocks")
-
-print ("data loaded.")
-
-print ("with old interface")
-
 # read infrastructure, rollingstocks and timetable data
-simulator = gateway.entry_point.initialize(
-    "file:///c://temp//raildata//infrastructure",
-    "file:///c://temp//raildata//rollingstocks",
-    "file:///c://temp//raildata//timetable")
+timetable_entry = gateway.createTimetableSimulationEntry("c:\\temp\\raildata\\infrastructure",
+    "c:\\temp\\raildata\\rollingstocks",
+    "c:\\temp\\raildata\\timetable")
+
+simulator = timetable_entry.getSimulator()
 
 print ("data loaded.")
 
 # the simulation period will be set from 7:00 to 8:00
-gateway.entry_point.setSimulationTime(simulator, 7, 8)
+
+timetable_entry.setSimulationTime(simulator, 7, 8)
 
 print("run simulation ...")
 simulator.run()
@@ -30,9 +24,9 @@ simulator.run()
 
 def output_occupancy():
     print ("Occupancy time of tracks:")
-    elements = gateway.entry_point.getAllInfrastructureElements()
+    elements = timetable_entry.getAllInfrastructureElements()
     for element in elements:
-        oMap = gateway.entry_point.getOccupancyMap(simulator, element)
+        oMap = timetable_entry.getOccupancyMap(simulator, element)
         if oMap is not None:
             print ("Track Id: ", element, ":")
             lastKey = 0;
@@ -44,11 +38,11 @@ def output_occupancy():
 
 def output_train_arrive_departures():
     print ("Train arrive and departure time:")
-    trains = gateway.entry_point.getAllTrains(simulator)
+    trains = timetable_entry.getAllTrains(simulator)
     index = 0
     if len(trains) > 0:
         # map: key - trip element, value - String[0] arrive String [1] departure 
-        arrive_departures = gateway.entry_point.getArriveDepatures(simulator, index)
+        arrive_departures = timetable_entry.getArriveDepatures(simulator, index)
         if arrive_departures is not None:
             for key in arrive_departures:
                 print(key,
@@ -58,11 +52,11 @@ def output_train_arrive_departures():
 
 def output_course():
     print ("Running dynamics:")
-    trains = gateway.entry_point.getAllTrains(simulator)
+    trains = timetable_entry.getAllTrains(simulator)
     index = 0
     if len(trains) > 0:
         # List of points array: double[0] distance meter, [1] velocity km/h, [2] time second 
-        course = gateway.entry_point.getCourse(simulator, index)
+        course = timetable_entry.getCourse(simulator, index)
         if course is not None:
             distances = []
             velocities = []
