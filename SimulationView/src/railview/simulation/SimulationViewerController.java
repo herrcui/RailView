@@ -50,7 +50,7 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 
 	@FXML
 	private Slider speedBar;
-	
+
 	private SimulationFactory simulationFactory;
 
 	/**
@@ -73,7 +73,7 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 			graphpaneloader.setLocation(graphpanelocation);
 			graphPane = (AnchorPane) graphpaneloader.load();
 			this.graphPaneController = graphpaneloader.getController();
-			
+
 			FXMLLoader settingpaneloader = new FXMLLoader();
 			URL settingpanelocation = SettingPaneController.class
 					.getResource("SettingPane.fxml");
@@ -86,10 +86,9 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 					.getResource("PythonPane.fxml");
 			pythonpaneloader.setLocation(pythonpanelocation);
 			pythonPane = (AnchorPane) pythonpaneloader.load();
-			this.pythonPaneController = pythonpaneloader.getController();
 
 			this.simulationPane.getChildren().addAll(
-					networkPane, 
+					networkPane,
 					graphPane,
 					settingPane,
 					pythonPane);
@@ -119,7 +118,7 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 							networkPane.setLayoutY(newSceneHeight.doubleValue()/2
 									- networkPane.prefHeight(-1)/2);
 
-							graphPane.setPrefHeight(newSceneHeight.doubleValue() - controlPane.getPrefHeight());						
+							graphPane.setPrefHeight(newSceneHeight.doubleValue() - controlPane.getPrefHeight());
 							pythonPane.setPrefHeight(newSceneHeight.doubleValue());
 							settingPane.setPrefHeight(newSceneHeight.doubleValue());
 						}
@@ -128,7 +127,7 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 			graphPane.setVisible(false);
 			pythonPane.setVisible(false);
 			settingPane.setVisible(false);
-			
+
 			menuPane.setOpacity(0.0);
 			controlPane.setOpacity(1.0);
 
@@ -270,7 +269,7 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 	private void enterGraphPane() {
 		graphPane.setVisible(true);
 		controlPane.setVisible(true);
-		
+
 		pythonPane.setVisible(false);
 		networkPane.setVisible(false);
 		settingPane.setVisible(false);
@@ -283,11 +282,11 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 	private void enterNetworkPane() {
 		networkPane.setVisible(true);
 		controlPane.setVisible(true);
-		
+
 		pythonPane.setVisible(false);
 		graphPane.setVisible(false);
 		settingPane.setVisible(false);
-		
+
 		//graphPaneController.setActive(false);
 		//networkPaneController.setActive(true);
 	}
@@ -296,7 +295,7 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 	private void enterEditorPane() {
 		pythonPane.setVisible(true);
 		controlPane.setVisible(false);
-		
+
 		graphPane.setVisible(false);
 		networkPane.setVisible(false);
 		settingPane.setVisible(false);
@@ -309,7 +308,7 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 	private void enterSettingPane() {
 		settingPane.setVisible(true);
 		controlPane.setVisible(false);
-		
+
 		pythonPane.setVisible(false);
 		graphPane.setVisible(false);
 		networkPane.setVisible(false);
@@ -322,20 +321,20 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 
 	/**
 	 * method for loading the data (infrastructure, rollingstock, timetable)
-	 * 
+	 *
 	 * @param event
 	 */
 	@FXML
 	private void onLoadButtonAction(ActionEvent event) {
 		DialogPaneController pathDialog = new DialogPaneController(null);
 		pathDialog.showAndWait();
-		
+
 		this.simulationFactory = SimulationFactory.getInstance(pathDialog.getInfrastructurePath(),
 				pathDialog.getRollingStockPath(),
 				pathDialog.getTimeTablePath());
-		
+
 		this.simulationFactory.registerUpdateUI(this);
-		
+
 		this.settingPaneController.setSimulator(this.simulationFactory.getSimulator());
 
 		// TODO: check if it is successful
@@ -400,7 +399,7 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 
 			updateStatusBar();
 		}
-		
+
 		this.settingPaneController.updateMessages(
 				this.simulationFactory.getSimulator().getDispatchingSystem().getDispCommunication().getReceivedMessages(),
 				this.simulationFactory.getSimulator().getDispatchingSystem().getDispCommunication().getSentMessages());
@@ -444,12 +443,11 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 	private AnchorPane graphPane;
 	private AnchorPane settingPane;
 	private AnchorPane pythonPane;
-	
+
 	private NetworkPaneController networkPaneController;
 	private GraphPaneController graphPaneController;
 	private SettingPaneController settingPaneController;
-	private PythonPaneController pythonPaneController;
-	
+
 	private int UIPause = 100;
 	private int MAXSpeed = 20000; // 1 : 200
 }

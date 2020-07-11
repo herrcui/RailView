@@ -1,6 +1,7 @@
 package railview.simulation;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
@@ -111,35 +112,41 @@ public class CalibrationConsole {
 		for (TrainClassGroup trainClassGroup : trainClassGroups) {
 			if (trainClassGroup.getName().equals("S")) {
 				distrubanceDefinitions.add(DisturbanceDefinition.create(DisturbanceType.RUNNINGTIME_EXTENSION,
-					DistributionDefinition.getExpotentialInstance(0.20, Duration.fromTotalSecond(30)),
+					DistributionDefinition.createDistributionDefinition("ExponentialDistribution",
+						new ArrayList<>(Arrays.asList((Double) 0.05))),
 					trainClassGroup,
 					null));
 
 				distrubanceDefinitions.add(DisturbanceDefinition.create(DisturbanceType.DWELLTIME_EXTENSION,
-					DistributionDefinition.getExpotentialInstance(0.10, Duration.fromTotalSecond(15)),
+					DistributionDefinition.createDistributionDefinition("ExponentialDistribution",
+						new ArrayList<>(Arrays.asList((Double) 0.05))),
 					trainClassGroup,
 					null));
 
 
 				distrubanceDefinitions.add(DisturbanceDefinition.create(DisturbanceType.ENTRY_DELAY,
-					DistributionDefinition.getExpotentialInstance(0.05, Duration.fromTotalSecond(15)),
+					DistributionDefinition.createDistributionDefinition("ExponentialDistribution",
+						new ArrayList<>(Arrays.asList((Double) 0.05))),
 					trainClassGroup,
 					null));
 			}
 
 			if (trainClassGroup.getName().equals("Gz")) {
 				distrubanceDefinitions.add(DisturbanceDefinition.create(DisturbanceType.RUNNINGTIME_EXTENSION,
-					DistributionDefinition.getExpotentialInstance(0.30, Duration.fromTotalSecond(120)),
+					DistributionDefinition.createDistributionDefinition("ExponentialDistribution",
+						new ArrayList<>(Arrays.asList((Double) 0.05))),
 					trainClassGroup,
 					null));
 
 				distrubanceDefinitions.add(DisturbanceDefinition.create(DisturbanceType.DWELLTIME_EXTENSION,
-					DistributionDefinition.getExpotentialInstance(0.20, Duration.fromTotalSecond(600)),
+					DistributionDefinition.createDistributionDefinition("ExponentialDistribution",
+						new ArrayList<>(Arrays.asList((Double) 0.05))),
 					trainClassGroup,
 					null));
 
 				distrubanceDefinitions.add(DisturbanceDefinition.create(DisturbanceType.ENTRY_DELAY,
-					DistributionDefinition.getExpotentialInstance(0.10, Duration.fromTotalSecond(300)),
+					DistributionDefinition.createDistributionDefinition("ExponentialDistribution",
+						new ArrayList<>(Arrays.asList((Double) 0.05))),
 					trainClassGroup,
 					null));
 
@@ -147,17 +154,20 @@ public class CalibrationConsole {
 
 			if (trainClassGroup.getName().equals("NRz")) {
 				distrubanceDefinitions.add(DisturbanceDefinition.create(DisturbanceType.RUNNINGTIME_EXTENSION,
-					DistributionDefinition.getExpotentialInstance(0.15, Duration.fromTotalSecond(60)),
+					DistributionDefinition.createDistributionDefinition("ExponentialDistribution",
+						new ArrayList<>(Arrays.asList((Double) 0.05))),
 					trainClassGroup,
 					null));
 
 				distrubanceDefinitions.add(DisturbanceDefinition.create(DisturbanceType.DWELLTIME_EXTENSION,
-					DistributionDefinition.getExpotentialInstance(0.10, Duration.fromTotalSecond(45)),
+					DistributionDefinition.createDistributionDefinition("ExponentialDistribution",
+						new ArrayList<>(Arrays.asList((Double) 0.05))),
 					trainClassGroup,
 					null));
 
 				distrubanceDefinitions.add(DisturbanceDefinition.create(DisturbanceType.ENTRY_DELAY,
-					DistributionDefinition.getExpotentialInstance(0.05, Duration.fromTotalSecond(60)),
+					DistributionDefinition.createDistributionDefinition("ExponentialDistribution",
+						new ArrayList<>(Arrays.asList((Double) 0.05))),
 					trainClassGroup,
 					null));
 
@@ -165,17 +175,20 @@ public class CalibrationConsole {
 
 			if (trainClassGroup.getName().equals("FRz")) {
 				distrubanceDefinitions.add(DisturbanceDefinition.create(DisturbanceType.RUNNINGTIME_EXTENSION,
-					DistributionDefinition.getExpotentialInstance(0.10, Duration.fromTotalSecond(90)),
+					DistributionDefinition.createDistributionDefinition("ExponentialDistribution",
+						new ArrayList<>(Arrays.asList((Double) 0.05))),
 					trainClassGroup,
 					null));
 
 				distrubanceDefinitions.add(DisturbanceDefinition.create(DisturbanceType.DWELLTIME_EXTENSION,
-					DistributionDefinition.getExpotentialInstance(0.10, Duration.fromTotalSecond(60)),
+					DistributionDefinition.createDistributionDefinition("ExponentialDistribution",
+						new ArrayList<>(Arrays.asList((Double) 0.05))),
 					trainClassGroup,
 					null));
 
 				distrubanceDefinitions.add(DisturbanceDefinition.create(DisturbanceType.ENTRY_DELAY,
-					DistributionDefinition.getExpotentialInstance(0.10, Duration.fromTotalSecond(60)),
+					DistributionDefinition.createDistributionDefinition("ExponentialDistribution",
+						new ArrayList<>(Arrays.asList((Double) 0.05))),
 					trainClassGroup,
 					null));
 
@@ -190,17 +203,20 @@ public class CalibrationConsole {
 
 		for (TrainClassGroup trainClassGroup : trainClassGroups) {
 			distrubanceDefinitions.add(DisturbanceDefinition.create(DisturbanceType.RUNNINGTIME_EXTENSION,
-					DistributionDefinition.getExpotentialInstance(0.5, Duration.fromTotalSecond(600)),
-					trainClassGroup,
-					null));
+				DistributionDefinition.createDistributionDefinition("ExponentialDistribution",
+					new ArrayList<>(Arrays.asList((Double) 0.05))),
+				trainClassGroup,
+				null));
 
 			distrubanceDefinitions.add(DisturbanceDefinition.create(DisturbanceType.DWELLTIME_EXTENSION,
-				DistributionDefinition.getExpotentialInstance(0.5, Duration.fromTotalSecond(600)),
+				DistributionDefinition.createDistributionDefinition("ExponentialDistribution",
+					new ArrayList<>(Arrays.asList((Double) 0.05))),
 				trainClassGroup,
 				null));
 
 			distrubanceDefinitions.add(DisturbanceDefinition.create(DisturbanceType.ENTRY_DELAY,
-				DistributionDefinition.getExpotentialInstance(0.5, Duration.fromTotalSecond(600)),
+				DistributionDefinition.createDistributionDefinition("ExponentialDistribution",
+					new ArrayList<>(Arrays.asList((Double) 0.05))),
 				trainClassGroup,
 				null));
 

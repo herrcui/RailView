@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.nio.file.Path;
 
 import javafx.application.Platform;
-import railapp.infrastructure.dto.Network;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.rollingstock.service.IRollingStockServiceUtility;
 import railapp.simulation.SingleSimulationManager;
@@ -19,7 +18,6 @@ public class SimulationFactory {
 			Path rollingstockPath, Path timetablePath) {
 		IInfrastructureServiceUtility infraServiceUtility =
 			InfrastructureReader.getRailSys7Instance(infraPath).initialize();
-		Network network = infraServiceUtility.getNetworkService().allNetworks().iterator().next();
 
 		// Rollilngstock
 		IRollingStockServiceUtility rollingStockServiceUtility =
@@ -28,7 +26,7 @@ public class SimulationFactory {
 		// Timetable
 		ITimetableServiceUtility timeTableServiceUtility =
 			TimetableReader.getRailSys7Instance(
-				timetablePath, infraServiceUtility, rollingStockServiceUtility, network).initialize();
+				timetablePath, infraServiceUtility, rollingStockServiceUtility).initialize();
 
 		SingleSimulationManager simulator = SingleSimulationManager.getInstance(infraServiceUtility,
 				rollingStockServiceUtility, timeTableServiceUtility);

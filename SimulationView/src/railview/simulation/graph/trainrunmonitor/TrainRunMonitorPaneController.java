@@ -42,12 +42,12 @@ import javafx.util.Callback;
 /**
  * The controller class for TrainRunMonitorPane.fxml. The Pane gives a
  * selectable list of trains where you can see their blockingTimeChart.
- * 
+ *
  */
 public class TrainRunMonitorPaneController {
 	@FXML
 	private AnchorPane blockingTimePane, snapshotRoot, tripRoot, lineRoot, lineMonitorPane;
-	
+
 	@FXML
 	private SplitPane tripMonitorPane;
 
@@ -59,14 +59,14 @@ public class TrainRunMonitorPaneController {
 
 	@FXML
 	private CheckBox selfEventCheckBox, inEventCheckBox, outEventCheckBox;
-	
+
 	private TripMonitorPaneController tripMonitorPaneController;
 	private LineMonitorPaneController lineMonitorPaneController;
 	private ConcurrentHashMap<String, AbstractTrainSimulator> trainMap;
 	private IInfrastructureServiceUtility infrastructureServiceUtility;
 	private static HashMap<String, Line> lineMap = new HashMap<String, Line>();
 	private TrainRunDataManager trainRunDataManager = new TrainRunDataManager();
-	
+
 	/**
 	 * initialize the trainRunMonitorPane, add blockingTimeChart on top of it,
 	 * add zoom function, load snapshotPane, add window resize listener, create
@@ -85,14 +85,14 @@ public class TrainRunMonitorPaneController {
 			this.tripRoot.getChildren().add(tripMonitorPane);
 		} catch (IOException e) {
 			e.printStackTrace();
-		}		
-		
+		}
+
 		trainNumbers.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
 			@Override
 			public void changed(
 					ObservableValue<? extends String> observable,
 					String oldValue, String newValue) {
-				
+
 				lineRoot.setVisible(false);
 				tripRoot.setVisible(true);
 
@@ -102,11 +102,11 @@ public class TrainRunMonitorPaneController {
 				trainInfoTable.setItems(generateTrainInfo(train, newValue));
 
 				List<Coordinate> path = trainRunDataManager.getTrainPathCoordinates(train);
-				
+
 				List<BlockingTime> blockingTime = trainRunDataManager.getBlockingTimeStairway(train, null);
-				
+
 				Map<TimeDistance, List<EventData>> events = trainRunDataManager.getEvents(train);
-				
+
 				List<TimeDistance> timeDistances = trainRunDataManager.getTimeInDistance(train, null);
 
 				tripMonitorPaneController.updateUI(train, path, blockingTime, timeDistances, events);
@@ -118,8 +118,8 @@ public class TrainRunMonitorPaneController {
 				*/
 			}
 
-		});	
-		
+		});
+
 		// initialize trainInfoTable
 		TableColumn trainItemCol = new TableColumn("Item");
 		trainItemCol.setMinWidth(100);
@@ -145,7 +145,7 @@ public class TrainRunMonitorPaneController {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static Callback<TableColumn<TableProperty, String>, TableCell<TableProperty, String>> createCellFactory() {
 		return new Callback<TableColumn<TableProperty, String>, TableCell<TableProperty, String>>() {
 			@Override
@@ -161,8 +161,8 @@ public class TrainRunMonitorPaneController {
 			}
 		};
 	}
-	
-	
+
+
 	public void setTrainMap(ConcurrentHashMap<String, AbstractTrainSimulator> trainMap) {
 		this.trainMap = trainMap;
 	}
@@ -174,10 +174,10 @@ public class TrainRunMonitorPaneController {
 	public void setInfrastructureServiceUtility(IInfrastructureServiceUtility infraServiceUtility) {
 		this.tripMonitorPaneController.setInfrastructureServiceUtility(infraServiceUtility);
 		this.trainRunDataManager.setInfraServiceUtility(infraServiceUtility);
-		
+
 		this.infrastructureServiceUtility = infraServiceUtility;
-		
-		for (Line line : this.infrastructureServiceUtility.getNetworkService().allLines(null)) {
+
+		for (Line line : this.infrastructureServiceUtility.getNetworkService().allLines()) {
 			lineMap.put(line.getDescription(), line);
 		} // Kai
 
@@ -202,17 +202,17 @@ public class TrainRunMonitorPaneController {
 				Line line = lineMap.get(lineString);
 
 				Collection<Station> stations = infraServiceUtility.getLineService().findStationsByLine(line);
-				HashMap<AbstractTrainSimulator, List<BlockingTime>> blockingTimeMap = 
+				HashMap<AbstractTrainSimulator, List<BlockingTime>> blockingTimeMap =
 						trainRunDataManager.getBlockingTimeStairwaysInLine(line, trainMap.values());
-				HashMap<AbstractTrainSimulator, List<TimeDistance>> timeDistanceMap = 
+				HashMap<AbstractTrainSimulator, List<TimeDistance>> timeDistanceMap =
 						trainRunDataManager.getTimeDistancesInLine(line, trainMap.values());
-				
+
 				ObservableList<String> stationNameList = FXCollections.observableArrayList();
 				for (Station station : stations) {
 					stationNameList.add(station.getName());
 				}
 				stationListView.setItems(stationNameList);
-				
+
 				lineMonitorPaneController.updateUI(line, stations, blockingTimeMap, timeDistanceMap);
 			}
 		});
@@ -220,10 +220,10 @@ public class TrainRunMonitorPaneController {
 
 	public static ObservableList<TableProperty> generateTrainInfo(
 			AbstractTrainSimulator train, String trainNumber) {
-		
+
 		ObservableList<TableProperty> observableTrainInfoList = FXCollections.observableArrayList();
 		observableTrainInfoList.add(new TableProperty("Train Number", trainNumber));
-		observableTrainInfoList.add(new TableProperty("State", 
+		observableTrainInfoList.add(new TableProperty("State",
 			train.getTrain().getStatus() == SimpleTrain.ACTIVE ? "In operation ..."	: "Terminated"));
 		List<TripElement> elements = train.getTripSection().getTripElements();
 		observableTrainInfoList.add(new TableProperty("From",
@@ -232,9 +232,9 @@ public class TrainRunMonitorPaneController {
 		observableTrainInfoList.add(new TableProperty("To",
 			((InfrastructureObject) elements.get(elements.size() - 1).
 					getOperationalPoint()).getElement().getStation().getDescription()));
-		observableTrainInfoList.add(new TableProperty("Start time", 
+		observableTrainInfoList.add(new TableProperty("Start time",
 			elements.get(0).getArriverTime().toString()));
-		
+
 		return observableTrainInfoList;
 	}
 
