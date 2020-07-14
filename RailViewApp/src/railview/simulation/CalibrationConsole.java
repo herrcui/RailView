@@ -43,10 +43,11 @@ public class CalibrationConsole {
 		System.out.println("... Single simulation started");
 		SingleSimulationManager timetableSimulator = SingleSimulationManager.getInstance(
 				infraServiceUtility, rollingStockServiceUtility, timeTableServiceUtility);
-			timetableSimulator.setTimePeriod(from, to);
-			timetableSimulator.run();
+		timetableSimulator.setTimePeriod(from, to);
+		timetableSimulator.run();
 		DelayLogger loggerWithoutDisturbance = timetableSimulator.getDelayLogger();
 		System.out.println("... Single simulation accomplished");
+		timetableSimulator.getDispatchingSystem().close();
 
 		List<TrainClassGroup> trainClassGroups =
 			buildTrainClassGroups(rollingStockServiceUtility.getRollingStockService().findAllTrainClasses());

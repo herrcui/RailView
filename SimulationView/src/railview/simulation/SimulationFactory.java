@@ -108,6 +108,7 @@ public class SimulationFactory {
 	public void stopSimulation() {
 		if (this.simulator != null) {
 			this.simulator.reset();
+			this.simulator.getDispatchingSystem().close();
 			this.isOnStopCommand = true;
 		}
 	}
