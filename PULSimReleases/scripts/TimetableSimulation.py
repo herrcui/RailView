@@ -5,9 +5,9 @@ gateway = JavaGateway()
 
 print ("load data ...")
 # read infrastructure, rollingstocks and timetable data
-timetable_entry = gateway.createTimetableSimulationEntry("c:\\temp\\raildata\\infrastructure",
-    "c:\\temp\\raildata\\rollingstocks",
-    "c:\\temp\\raildata\\timetable")
+timetable_entry = gateway.createTimetableSimulationEntry("d:\\temp\\python\\raildata\\infrastructure",
+    "d:\\temp\\python\\raildata\\rollingstocks",
+    "d:\\temp\\python\\raildata\\timetable")
 
 simulator = timetable_entry.getSimulator()
 
