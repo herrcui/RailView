@@ -14,10 +14,8 @@ import railapp.simulation.SingleSimulationManager;
 import railapp.simulation.calibration.Calibrator;
 import railapp.simulation.disturbances.DisturbanceDefinition;
 import railapp.simulation.disturbances.DisturbanceType;
-import railapp.simulation.logs.DelayLogger;
 import railapp.simulation.train.TrainClassGroup;
 import railapp.timetable.service.ITimetableServiceUtility;
-import railapp.units.Duration;
 import railapp.units.Time;
 import railapp.util.random.DistributionDefinition;
 
@@ -45,7 +43,6 @@ public class CalibrationConsole {
 				infraServiceUtility, rollingStockServiceUtility, timeTableServiceUtility);
 		timetableSimulator.setTimePeriod(from, to);
 		timetableSimulator.run();
-		DelayLogger loggerWithoutDisturbance = timetableSimulator.getDelayLogger();
 		System.out.println("... Single simulation accomplished");
 		timetableSimulator.getDispatchingSystem().close();
 

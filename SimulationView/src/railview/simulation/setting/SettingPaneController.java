@@ -111,7 +111,6 @@ public class SettingPaneController extends Stage implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		codeArea = new CodeArea();
-		VirtualizedScrollPane<CodeArea> sp = new VirtualizedScrollPane<CodeArea>(codeArea);
 
 		codeArea.setPrefHeight(codePane.getPrefHeight());
 		codeArea.setPrefWidth(codePane.getPrefWidth());
