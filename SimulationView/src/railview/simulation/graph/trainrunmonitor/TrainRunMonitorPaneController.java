@@ -233,7 +233,7 @@ public class TrainRunMonitorPaneController {
 			((InfrastructureObject) elements.get(elements.size() - 1).
 					getOperationalPoint()).getElement().getStation().getDescription()));
 		observableTrainInfoList.add(new TableProperty("Start time",
-			elements.get(0).getArriverTime().toString()));
+			elements.get(0).getArriveTime().toString()));
 
 		return observableTrainInfoList;
 	}
