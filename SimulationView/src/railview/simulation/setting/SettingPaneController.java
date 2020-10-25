@@ -16,16 +16,15 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.fxmisc.flowless.VirtualizedScrollPane;
 import org.fxmisc.richtext.CodeArea;
 import org.fxmisc.richtext.LineNumberFactory;
 import org.fxmisc.richtext.model.StyleSpans;
 import org.fxmisc.richtext.model.StyleSpansBuilder;
 
-import railapp.activemq.messages.dispatching.TopicMessage;
 import railapp.dispatching.DispatchingSystem;
 import railapp.dispatching.NoneDispatchingSystem;
 import railapp.dispatching.services.Py4JDispatchingSystem;
+import railapp.messages.Message;
 import railapp.simulation.SingleSimulationManager;
 import railview.simulation.ui.data.TableProperty;
 import javafx.beans.value.ChangeListener;
@@ -289,7 +288,7 @@ public class SettingPaneController extends Stage implements Initializable {
 		}
 	}
 
-	public void updateMessages(List<TopicMessage>received, List<TopicMessage>sent) {
+	public void updateMessages(List<Message>received, List<Message>sent) {
 		if (received != null && received.size()>0) {
 			this.addMessages(received, this.ReceivedTable);
 		}
@@ -299,14 +298,14 @@ public class SettingPaneController extends Stage implements Initializable {
 		}
 	}
 
-	private void addMessages(List<TopicMessage> messages, TableView<TableProperty> tv) {
-		CopyOnWriteArrayList<TopicMessage> tempList = new CopyOnWriteArrayList<TopicMessage>();
+	private void addMessages(List<Message> messages, TableView<TableProperty> tv) {
+		CopyOnWriteArrayList<Message> tempList = new CopyOnWriteArrayList<Message>();
 		tempList.addAll(messages);
 		ObservableList<TableProperty> messageList = FXCollections.observableArrayList();
 
-		for (TopicMessage message : tempList) {
+		for (Message message : tempList) {
 			SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
-			String timeText = timeFormat.format(new Date(message.getTimestamp()));
+			String timeText = timeFormat.format(new Date(message.getTxTimestamp()));
 			messageList.add(new TableProperty(timeText,	message.toString()));
 		}
 

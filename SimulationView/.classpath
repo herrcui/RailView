@@ -15,5 +15,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/TimetableDefinition"/>
 	<classpathentry kind="lib" path="/Library/Py4J/py4j0.10.6.jar"/>
 	<classpathentry kind="lib" path="/Library/GUI/richtextfx-fat-0.7-M3.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/MessagingMQ"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
