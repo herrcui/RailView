@@ -60,10 +60,10 @@ public class SettingPaneController extends Stage implements Initializable {
 	private TableView<TableProperty> ILTable;
 
 	@FXML
-	private Button externalFileButton, applyButton;
+	private Button externalFileButton, applyButton, setCommButton;
 
 	@FXML
-	private TextField fileNameText;
+	private TextField fileNameText, urlText, portText;
 
 	@FXML
 	private TableView<TableProperty> ReceivedTable, SentTable;
@@ -286,6 +286,13 @@ public class SettingPaneController extends Stage implements Initializable {
 				e.printStackTrace();
 			}
 		}
+	}
+
+	@FXML
+	private void onSetCommButton(ActionEvent event) {
+		this.simulator.getDispatchingSystem().getDispCommunication().setRadioLibConn(
+				this.urlText.getText(), Integer.parseInt(this.portText.getText()));
+		System.out.println("socket has been set.");
 	}
 
 	public void updateMessages(List<Message>received, List<Message>sent) {

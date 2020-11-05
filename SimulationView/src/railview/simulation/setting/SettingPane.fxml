@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -27,7 +28,7 @@
    	                        <RadioButton fx:id="externalRB" layoutX="80.0" layoutY="10.0" mnemonicParsing="false" onAction="#onExternalRB" text="External" AnchorPane.topAnchor="10.0" />
    	                        <Button fx:id="externalFileButton" disable="true" layoutX="150.0" layoutY="6.0" mnemonicParsing="false" onAction="#onExternalFileButton" prefHeight="24.0" prefWidth="24.0" text="..." AnchorPane.topAnchor="6.0" />
    	                        <Button fx:id="applyButton" disable="true" layoutX="180.0" layoutY="6.0" mnemonicParsing="false" onAction="#onApply" prefHeight="24.0" prefWidth="100.0" text="Apply" AnchorPane.topAnchor="6.0" />
-   	                        <TextField fx:id="fileNameText" layoutY="6.0" layoutX="300.0" prefWidth="500.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="6.0" />
+   	                        <TextField fx:id="fileNameText" layoutX="300.0" layoutY="6.0" prefWidth="500.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="6.0" />
    	                     </children>
    	                  </AnchorPane>
    	                   <AnchorPane>
@@ -51,7 +52,7 @@
                             <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                      <children>
-                                        <TableView fx:id="ReceivedTable" layoutY="9.0" prefHeight="210.0" prefWidth="405.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                        <TableView fx:id="ReceivedTable" layoutY="-2.0" prefHeight="514.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0">
                                           <columnResizePolicy>
                 							<TableView fx:constant="UNCONSTRAINED_RESIZE_POLICY" />
                 						  </columnResizePolicy>
@@ -64,11 +65,30 @@
                             <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                      <children>
-                                        <TableView fx:id="SentTable" layoutX="6.0" layoutY="3.0" prefHeight="211.0" prefWidth="376.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                        <TableView fx:id="SentTable" layoutX="6.0" layoutY="40.0" prefHeight="472.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
                                           <columnResizePolicy>
                 							<TableView fx:constant="UNCONSTRAINED_RESIZE_POLICY" />
                 						  </columnResizePolicy>
                                         </TableView>
+                                    <HBox layoutX="14.0" layoutY="4.0" prefHeight="25.0" prefWidth="313.0">
+                                       <children>
+                                          <Button fx:id="setCommButton" layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#onSetCommButton" text="Set Socket">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField fx:id="urlText" layoutX="172.0" layoutY="8.0" prefHeight="25.0" prefWidth="82.0" text="127.0.0.1">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="portText" layoutX="428.0" layoutY="9.0" prefHeight="25.0" prefWidth="42.0" text="9000">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
                                      </children>
                                   </AnchorPane>
                             </content>
