@@ -14,12 +14,13 @@ import railapp.infrastructure.path.dto.LinkEdge;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.simulation.events.ScheduledEvent;
 import railapp.simulation.events.totrain.AbstractEventToTrain;
+import railapp.simulation.events.totrain.LeaveResourceEvent;
 import railapp.simulation.events.totrain.UpdateLocationEvent;
-import railapp.simulation.infrastructure.PartialRouteResource;
 import railapp.simulation.infrastructure.ResourceOccupancy;
 import railapp.simulation.runingdynamics.sections.DiscretePoint;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.simulation.train.FDTrainSimulator;
+import railapp.simulation.train.MBTrainSimulator;
 import railapp.timetable.dto.TripElement;
 import railapp.units.Coordinate;
 import railapp.units.Length;
@@ -29,27 +30,25 @@ import railapp.units.UnitUtility;
 public class TrainRunDataManager {
 	private HashMap<AbstractTrainSimulator, List<Length>> opDistMap = new HashMap<AbstractTrainSimulator, List<Length>>();
 	private IInfrastructureServiceUtility infraServiceUtility;
-	
+
 	public void setInfraServiceUtility(IInfrastructureServiceUtility infraServiceUtility) {
 		this.infraServiceUtility = infraServiceUtility;
 	}
-	
+
 	public List<BlockingTime> getBlockingTimeStairway(AbstractTrainSimulator train, Line line) {
 		List<BlockingTime> blockingTimes = new ArrayList<BlockingTime>();
-		if (train instanceof FDTrainSimulator) {
+		if (train instanceof FDTrainSimulator || train instanceof MBTrainSimulator) {
 			double meter = 0;
 			Length headDistanceInFirstResource = null;
 			boolean isFirstResource = true;
 
-			List<ResourceOccupancy> resourceOccupancies = ((FDTrainSimulator) train)
-					.getBlockingTimeStairWay();
+			List<ResourceOccupancy> resourceOccupancies = train.getBlockingTimeStairWay();
 
 			Time trainStartTime = train.getTripSection().getStartTime();
 
 			for (ResourceOccupancy resourceOccupancy : resourceOccupancies) {
 				if (headDistanceInFirstResource == null) {
-					headDistanceInFirstResource = ((PartialRouteResource) resourceOccupancy
-							.getResource()).getPath().findFirstDistance(
+					headDistanceInFirstResource = (resourceOccupancy.getResource()).getPath().findFirstDistance(
 							(InfrastructureObject) train.getTripSection()
 									.getTripElements().get(0)
 									.getOperationalPoint());
@@ -63,8 +62,7 @@ public class TrainRunDataManager {
 				}
 
 				double startMeter = meter;
-				double endMeter = meter	+ ((PartialRouteResource) resourceOccupancy
-						.getResource()).getPartialRoute().getPath().getLength().getMeter();
+				double endMeter = meter	+ resourceOccupancy.getResource().getPath().getLength().getMeter();
 				double startTimeInSecond = resourceOccupancy.getGrantTime()
 						.getDifference(trainStartTime).getTotalSeconds();
 				double endTimeInSecond = resourceOccupancy.getReleaseTime()
@@ -94,7 +92,7 @@ public class TrainRunDataManager {
 
 		return blockingTimes;
 	}
-	
+
 	// Map: Meter, TimeInSecond
 	public List<TimeDistance> getTimeInDistance(AbstractTrainSimulator train, Line line) {
 		List<TimeDistance> pointList = new ArrayList<TimeDistance>();
@@ -113,7 +111,7 @@ public class TrainRunDataManager {
 		}
 		return pointList;
 	}
-	
+
 	public HashMap<AbstractTrainSimulator, List<BlockingTime>> getBlockingTimeStairwaysInLine(
 			Line line, Collection<AbstractTrainSimulator> trains) {
 		HashMap<AbstractTrainSimulator, List<BlockingTime>> result = new HashMap<AbstractTrainSimulator, List<BlockingTime>>();
@@ -132,7 +130,7 @@ public class TrainRunDataManager {
 		}
 		return result;
 	}
-	
+
 	private List<Length> getOpDistances(AbstractTrainSimulator train) {
 		List<Length> opDistances = this.opDistMap.get(train);
 
@@ -153,18 +151,18 @@ public class TrainRunDataManager {
 
 		return opDistances;
 	}
-	
+
 	private double getDistanceInLine(double meter, AbstractTrainSimulator train, Line line) {
 		int index = 0;
 		List<Length> opDistances = this.getOpDistances(train);
-		
+
 		if (meter >= opDistances.get(opDistances.size() - 1).getMeter()) {
 			return ((InfrastructureObject) train.getTripSection()
 					.getTripElements().get(opDistances.size() - 1)
 					.getOperationalPoint()).getElement().getStation()
 					.getCoordinate().getX();
 		}
-		
+
 		Collection<Station> stations = new HashSet<Station>();
 		stations.addAll(this.infraServiceUtility.getLineService().findStationsByLine(line));
 
@@ -173,7 +171,7 @@ public class TrainRunDataManager {
 				break;
 			}
 
-			if (meter - dist.getMeter() >= UnitUtility.ERROR * -1 && 
+			if (meter - dist.getMeter() >= UnitUtility.ERROR * -1 &&
 				opDistances.get(index + 1).getMeter() - meter >= UnitUtility.ERROR * -1) {
 
 				Station startStation = ((InfrastructureObject) train
@@ -199,13 +197,17 @@ public class TrainRunDataManager {
 
 		return -1;
 	}
-	
+
 	public Map<TimeDistance, List<EventData>> getEvents(AbstractTrainSimulator train) {
 		List<TimeDistance> timeDistances = this.getTimeInDistance(train, null);
 		Map<TimeDistance, List<EventData>> eventsMap = new HashMap<TimeDistance, List<EventData>>();
 
 		for (ScheduledEvent scheduledEvent : train.getEvents()) {
 			if (scheduledEvent instanceof UpdateLocationEvent) {
+				continue;
+			}
+
+			if (scheduledEvent instanceof LeaveResourceEvent && train instanceof MBTrainSimulator) {
 				continue;
 			}
 
@@ -252,7 +254,7 @@ public class TrainRunDataManager {
 
 		return eventsMap;
 	}
-	
+
 	public List<Coordinate> getTrainPathCoordinates(
 			AbstractTrainSimulator train) {
 		List<Coordinate> coordniates = new ArrayList<Coordinate>();

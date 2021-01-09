@@ -31,7 +31,7 @@ public class SimulationFactory {
 		SingleSimulationManager simulator = SingleSimulationManager.getInstance(infraServiceUtility,
 				rollingStockServiceUtility, timeTableServiceUtility);
 
-		simulator.setIsCommForDisp(true);
+		simulator.setIsCommForDisp(false);
 
 		//simulator.setTimePeriod(Time.getInstance(0, 57, 0), Time.getInstance(1, 0, 0));
 		//simulator.getDispatchingSystem().getDispCommunication().start();
