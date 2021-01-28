@@ -24,7 +24,7 @@
             </AnchorPane>
           <AnchorPane>
                <children>
-                  <TabPane prefHeight="309.6" prefWidth="200.8" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TabPane fx:id="tripLineTab" prefHeight="309.6" prefWidth="200.8" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <tabs>
                       <Tab text="Train">
                         <content>
@@ -91,7 +91,7 @@
                         </content>
                       </Tab>
                     </tabs>
-                  </TabPane> 
+                  </TabPane>
                </children>
           </AnchorPane>
         </items>

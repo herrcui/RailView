@@ -31,6 +31,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Control;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SplitPane;
+import javafx.scene.control.TabPane;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -47,6 +48,9 @@ import javafx.util.Callback;
 public class TrainRunMonitorPaneController {
 	@FXML
 	private AnchorPane blockingTimePane, snapshotRoot, tripRoot, lineRoot, lineMonitorPane;
+
+	@FXML
+	private TabPane tripLineTab;
 
 	@FXML
 	private SplitPane tripMonitorPane;
@@ -72,9 +76,27 @@ public class TrainRunMonitorPaneController {
 	 * add zoom function, load snapshotPane, add window resize listener, create
 	 * eventTable and trainInfoTable
 	 */
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@FXML
 	public void initialize() {
+		this.initTripMonitor();
+		this.initLineMonitor();
+
+		this.tripLineTab.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+		    @Override
+		    public void changed(ObservableValue<? extends Number> ov, Number oldValue, Number newValue) {
+		    	if (newValue.intValue() == 0) {
+		        	lineRoot.setVisible(false);
+					tripRoot.setVisible(true);
+		        } else if (newValue.intValue() == 1) {
+		        	lineRoot.setVisible(true);
+					tripRoot.setVisible(false);
+		        }
+		    }
+		});
+	}
+
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	private void initTripMonitor() {
 		try {
 			FXMLLoader tripMonitorPaneLoader = new FXMLLoader();
 			URL location = TripMonitorPaneController.class.getResource("TripMonitorPane.fxml");
@@ -132,7 +154,9 @@ public class TrainRunMonitorPaneController {
 		trainInfoTable.getColumns().addAll(trainItemCol, trainValueCol);
 
 		trainValueCol.setCellFactory(createCellFactory());
+	}
 
+	private void initLineMonitor() {
 		try {
 			FXMLLoader lineMonitorPaneLoader = new FXMLLoader();
 			URL location = LineMonitorPaneController.class.getResource("LineMonitorPane.fxml");
@@ -198,24 +222,28 @@ public class TrainRunMonitorPaneController {
 				lineRoot.setVisible(true);
 				tripRoot.setVisible(false);
 
-				String lineString = lineListView.getSelectionModel().getSelectedItem().toString();
-				Line line = lineMap.get(lineString);
-
-				Collection<Station> stations = infraServiceUtility.getLineService().findStationsByLine(line);
-				HashMap<AbstractTrainSimulator, List<BlockingTime>> blockingTimeMap =
-						trainRunDataManager.getBlockingTimeStairwaysInLine(line, trainMap.values());
-				HashMap<AbstractTrainSimulator, List<TimeDistance>> timeDistanceMap =
-						trainRunDataManager.getTimeDistancesInLine(line, trainMap.values());
-
-				ObservableList<String> stationNameList = FXCollections.observableArrayList();
-				for (Station station : stations) {
-					stationNameList.add(station.getName());
-				}
-				stationListView.setItems(stationNameList);
-
-				lineMonitorPaneController.updateUI(line, stations, blockingTimeMap, timeDistanceMap);
+				updateLineUI();
 			}
 		});
+	}
+
+	private void updateLineUI() {
+		String lineString = lineListView.getSelectionModel().getSelectedItem().toString();
+		Line line = lineMap.get(lineString);
+
+		Collection<Station> stations = this.infrastructureServiceUtility.getLineService().findStationsByLine(line);
+		HashMap<AbstractTrainSimulator, List<BlockingTime>> blockingTimeMap =
+				trainRunDataManager.getBlockingTimeStairwaysInLine(line, trainMap.values());
+		HashMap<AbstractTrainSimulator, List<TimeDistance>> timeDistanceMap =
+				trainRunDataManager.getTimeDistancesInLine(line, trainMap.values());
+
+		ObservableList<String> stationNameList = FXCollections.observableArrayList();
+		for (Station station : stations) {
+			stationNameList.add(station.getName());
+		}
+		stationListView.setItems(stationNameList);
+
+		lineMonitorPaneController.updateUI(line, stations, blockingTimeMap, timeDistanceMap);
 	}
 
 	public static ObservableList<TableProperty> generateTrainInfo(

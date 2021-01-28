@@ -24,15 +24,15 @@ import javafx.util.StringConverter;
 public class LineMonitorPaneController {
 	@FXML
 	private AnchorPane lineMonitorPane;
-	
+
 	private double minX = Double.MAX_VALUE;
 	private double maxX = Double.MIN_VALUE;
 	private double maxY = Double.MIN_VALUE;
 	private double minY = Double.MAX_VALUE;
 	private Time startTime = Time.getInstance(1, 23, 59, 59, 0);
-	
+
 	private ChartLineBlockingTime<Number, Number> lineChart;
-	
+
 	@FXML
 	public void initialize() {
 		lineMonitorPane.setPickOnBounds(false);
@@ -41,7 +41,7 @@ public class LineMonitorPaneController {
 		lineMonitorPane.getChildren().add(lineChart);
 		new Zoom(lineChart, lineMonitorPane);
 	}
-	
+
 	@FXML
 	private void resetZoomBlockingTimeStairways(MouseEvent event) {
 		if (event.getButton().equals(MouseButton.SECONDARY)) {
@@ -50,17 +50,17 @@ public class LineMonitorPaneController {
 			}
 		}
 	}
-	
+
 	public void updateUI(Line line,
-			Collection<Station> stations, 
+			Collection<Station> stations,
 			HashMap<AbstractTrainSimulator, List<BlockingTime>> blockingTimeMap,
 			HashMap<AbstractTrainSimulator, List<TimeDistance>> timeDistanceMap) {
-		
+
 		this.setMaxMinXY(stations, blockingTimeMap);
-		
-		
+
+
 		lineChart.setChartBound(minX, maxX, minY, maxY);
-		
+
 		((NumberAxis) lineChart.getYAxis()).setTickLabelFormatter(new StringConverter<Number>() {
 			@Override
 			public String toString(Number t) {
@@ -78,11 +78,11 @@ public class LineMonitorPaneController {
 		lineChart.setBlockingTimeStairwaysMap(blockingTimeMap);
 		lineChart.setTimeDistancesMap(timeDistanceMap);
 	}
-	
+
 	// max and min coordinate for the Mapper
-	private void setMaxMinXY(Collection<Station> stations, 
+	private void setMaxMinXY(Collection<Station> stations,
 		HashMap<AbstractTrainSimulator, List<BlockingTime>> blockingTimeStairways) {
-		
+
 		for (Station station : stations) {
 			if (station.getCoordinate().getX() > maxX)
 				maxX = station.getCoordinate().getX();
@@ -95,11 +95,11 @@ public class LineMonitorPaneController {
 			if (sTime.compareTo(this.startTime) < 0) {
 				this.startTime = sTime;
 			}
-			
+
 			for (BlockingTime blockingTime : entry.getValue()) {
-				double time = blockingTime.getEndTimeInSecond() + 
+				double time = blockingTime.getEndTimeInSecond() +
 						entry.getKey().getActiveTime().getDifference(Time.getInstance(0, 0, 0)).getTotalSeconds();
- 
+
 				if (time > maxY)
 					maxY = time;
 				if (time < minY)
