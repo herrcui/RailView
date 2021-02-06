@@ -1,6 +1,5 @@
 package railview.simulation.ui.components;
 
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -24,6 +23,7 @@ import railapp.infrastructure.dto.Station;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.units.Time;
 import railview.simulation.ui.data.BlockingTime;
+import railview.simulation.ui.data.LineData;
 import railview.simulation.ui.data.TimeDistance;
 import railview.simulation.ui.utilities.DraggableChart;
 
@@ -31,19 +31,19 @@ public class ChartLineBlockingTime<X, Y> extends DraggableChart<X, Y> {
 
 	private HashMap<AbstractTrainSimulator, List<BlockingTime>> blockingTimeStairwaysMap;
 	private HashMap<AbstractTrainSimulator, List<TimeDistance>> timeDistancesMap;
-	private Collection<Station> stations;
+	private LineData lineData;
 	private Rectangle rectangle;
 
 	private double maxY;
-	
+
 	public static ChartLineBlockingTime<Number, Number> createBlockingTimeChartForLine() {
 		NumberAxis xAxis = new NumberAxis();
 		NumberAxis yAxis = new NumberAxis();
 		xAxis.setSide(Side.TOP);
 
-		ChartLineBlockingTime<Number, Number> chart = 
+		ChartLineBlockingTime<Number, Number> chart =
 			new ChartLineBlockingTime<Number, Number>(xAxis, yAxis);
-		
+
 		chart.setMouseFilter(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent mouseEvent) {
@@ -53,32 +53,32 @@ public class ChartLineBlockingTime<X, Y> extends DraggableChart<X, Y> {
 			}
 		});
 		chart.startEventHandlers();
-		
+
 		return chart;
 	}
-	
+
 	private ChartLineBlockingTime(Axis<X> xAxis, Axis<Y> yAxis) {
 		super(xAxis, yAxis);
-		
+
 		AnchorPane.setTopAnchor(this, 0.0);
 		AnchorPane.setLeftAnchor(this, 0.0);
 		AnchorPane.setRightAnchor(this, 0.0);
 		AnchorPane.setBottomAnchor(this, 0.0);
 	}
-	
+
 	public void setChartBound(double minX, double maxX, double minY, double maxY) {
 		NumberAxis xAxis = (NumberAxis) this.getXAxis();
 		NumberAxis yAxis = (NumberAxis) this.getYAxis();
-		
+
 		this.maxY = maxY;
-		
+
 		xAxis.setAutoRanging(false);
 		xAxis.setLowerBound(minX);
 		xAxis.setUpperBound(maxX);
 		yAxis.setAutoRanging(false);
 		yAxis.setLowerBound(0);
 		yAxis.setUpperBound(maxY-minY);
-		
+
 		xAxis.setTickUnit(100);
 		yAxis.setTickUnit(600);
 	}
@@ -97,8 +97,8 @@ public class ChartLineBlockingTime<X, Y> extends DraggableChart<X, Y> {
 		this.timeDistancesMap = timeDistancesMap;
 	}
 
-	public void setStations(Collection<Station> stations) {
-		this.stations = stations;
+	public void setLineData(LineData lineData) {
+		this.lineData = lineData;
 	}
 
 	@Override
@@ -106,28 +106,28 @@ public class ChartLineBlockingTime<X, Y> extends DraggableChart<X, Y> {
 		super.layoutPlotChildren();
 		this.refresh();
 	}
-	
+
 	public void refresh() {
 		this.getPlotChildren().clear();
-		
+
 		if (this.blockingTimeStairwaysMap != null && this.blockingTimeStairwaysMap.size() > 0) {
 			this.drawBlockingTimeStairway();
 		}
-		
+
 		if (this.timeDistancesMap != null && this.timeDistancesMap.size() > 0) {
 			this.drawTimeDistance();
 		}
 
-		if (this.stations != null) {
+		if (this.lineData != null) {
 			this.drawStations();
 		}
 	}
-	
+
 	private void drawTimeDistance() {
 		//lineChart.setAxisSortingPolicy(LineChart.SortingPolicy.NONE);
 		//lineChart.setLegendVisible(false);
 		//lineChart.setCreateSymbols(false);
-		
+
 		for (Entry<AbstractTrainSimulator, List<TimeDistance>> entry : this.timeDistancesMap
 				.entrySet()) {
 			// Iterator to get the current and next distance and time value
@@ -139,49 +139,54 @@ public class ChartLineBlockingTime<X, Y> extends DraggableChart<X, Y> {
 			if (it.hasNext()) {
 				previous = it.next();
 			}
-			
+
 			while (it.hasNext()) {
 				TimeDistance current = it.next();
 				if (current.getDistance() == -1) { // ignore the current point with -1 distance
 					previous = null;
 					continue;
 				}
-				
+
 				if (previous == null) { // ignore previous with -1 distance, save current as previous
 					previous = current;
 					continue;
 				}
-				
+
 				// Process previous and current here.
 				Line polyLine = new Line();
+
+				if (previous.getDistance() > current.getDistance()) {
+					String s = "s";
+				}
+
 				polyLine.setStartX(mapToChart(previous.getDistance(), true));
 				polyLine.setEndX(mapToChart(current.getDistance(), true));
 				polyLine.setStartY(mapToChart(activeTime + previous.getSecond(), false));
 				polyLine.setEndY(mapToChart(activeTime + current.getSecond(), false));
-				
+
 				this.getPlotChildren().add(polyLine);
-				
+
 				previous = current;
 			}
 		}
 	}
-	
+
 	public void drawBlockingTimeStairway() {
 		for (Entry<AbstractTrainSimulator, List<BlockingTime>> entry : this.blockingTimeStairwaysMap.entrySet()) {
 			double activeTime = entry.getKey().getActiveTime().getDifference(Time.getInstance(0, 0, 0)).getTotalSeconds();
-			
+
 			for (BlockingTime blockingTime : entry.getValue()) {
-				double startX = blockingTime.getStartDistance();
-				double endX = blockingTime.getEndDistance();
-				double startY = blockingTime.getStartTimeInSecond();
-				double endY = blockingTime.getEndTimeInSecond();
+				double startX = blockingTime.getRelativeStartDistance();
+				double endX = blockingTime.getRelativeEndDistance();
+				double startY = blockingTime.getRelativeStartTimeInSecond();
+				double endY = blockingTime.getRelativeEndTimeInSecond();
 
 				rectangle = new Rectangle();
-				
+
 				rectangle.setY(mapToChart(activeTime + startY, false));
 				rectangle.setHeight(mapToChart(endY, false) - mapToChart(startY, false));
 
-				
+
 				if (endX > startX) {
 					rectangle.setX(mapToChart(startX, true));
 					rectangle.setWidth(mapToChart(endX, true) - mapToChart(startX, true));
@@ -195,17 +200,17 @@ public class ChartLineBlockingTime<X, Y> extends DraggableChart<X, Y> {
 			}
 		}
 	}
-	
-	private void drawStations() {		
-		for (Station station : this.stations) {
-			double chartX = mapToChart(station.getCoordinate().getX(), true);
+
+	private void drawStations() {
+		for (Station station : this.lineData.getStations()) {
+			double chartX = mapToChart(this.lineData.findStationDistance(station).getMeter(), true);
 			Circle circle = new Circle();
 			circle.setCenterX(chartX);
 			circle.setCenterY(0);
 			circle.setRadius(5);
 			circle.setFill(Color.BLUE.deriveColor(0, 1, 1, 1.0));
 			this.getPlotChildren().add(circle);
-			
+
 			Text dataText = new Text(station.getName());
 			dataText.setLayoutX(chartX);
 			dataText.setLayoutY(30);
@@ -213,7 +218,7 @@ public class ChartLineBlockingTime<X, Y> extends DraggableChart<X, Y> {
 			this.getPlotChildren().add(dataText);
 		}
 	}
-	
+
 	private double mapToChart(double origin, boolean isXAxis) {
 		if (isXAxis) {
 			return this.getXAxis().getDisplayPosition(this.getXAxis().toRealValue(origin));

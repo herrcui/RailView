@@ -203,12 +203,12 @@ public class ChartTripBlockingTime<X, Y> extends DraggableChart<X, Y> {
 				rectangle = new Rectangle();
 				this.getPlotChildren().add(rectangle);
 				
-				rectangle.setX(this.mapToChart(blockingTime.getStartDistance(), true));
-				rectangle.setY(this.mapToChart(blockingTime.getStartTimeInSecond(), false));
-				rectangle.setWidth(this.mapToChart(blockingTime.getEndDistance(), true) -
-						this.mapToChart(blockingTime.getStartDistance(), true));
-				rectangle.setHeight(this.mapToChart(blockingTime.getEndTimeInSecond(), false) -
-						this.mapToChart(blockingTime.getStartTimeInSecond(), false));
+				rectangle.setX(this.mapToChart(blockingTime.getRelativeStartDistance(), true));
+				rectangle.setY(this.mapToChart(blockingTime.getRelativeStartTimeInSecond(), false));
+				rectangle.setWidth(this.mapToChart(blockingTime.getRelativeEndDistance(), true) -
+						this.mapToChart(blockingTime.getRelativeStartDistance(), true));
+				rectangle.setHeight(this.mapToChart(blockingTime.getRelativeEndTimeInSecond(), false) -
+						this.mapToChart(blockingTime.getRelativeStartTimeInSecond(), false));
 				
 				rectangle.setFill(Color.BLUE.deriveColor(0, 1, 1, 0.5));
 			}

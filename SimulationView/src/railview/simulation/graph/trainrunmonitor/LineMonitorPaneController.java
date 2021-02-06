@@ -1,17 +1,15 @@
 package railview.simulation.graph.trainrunmonitor;
 
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
 
-import railapp.infrastructure.dto.Line;
-import railapp.infrastructure.dto.Station;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.units.Duration;
 import railapp.units.Time;
 import railview.simulation.ui.components.ChartLineBlockingTime;
 import railview.simulation.ui.data.BlockingTime;
+import railview.simulation.ui.data.LineData;
 import railview.simulation.ui.data.TimeDistance;
 import railview.simulation.ui.utilities.Zoom;
 import javafx.fxml.FXML;
@@ -51,21 +49,20 @@ public class LineMonitorPaneController {
 		}
 	}
 
-	public void updateUI(Line line,
-			Collection<Station> stations,
+	public void updateUI(LineData lineData,
 			HashMap<AbstractTrainSimulator, List<BlockingTime>> blockingTimeMap,
 			HashMap<AbstractTrainSimulator, List<TimeDistance>> timeDistanceMap) {
 
-		this.setMaxMinXY(stations, blockingTimeMap);
-
+		this.setMaxMinXY(lineData, blockingTimeMap);
 
 		lineChart.setChartBound(minX, maxX, minY, maxY);
 
 		((NumberAxis) lineChart.getYAxis()).setTickLabelFormatter(new StringConverter<Number>() {
 			@Override
 			public String toString(Number t) {
-				Time testTime = startTime.add(Duration.fromTotalSecond(-t.doubleValue()));
-				return testTime.toString();
+				Time yTime = startTime.add(
+						Duration.fromTotalSecond(-t.doubleValue())).add(Duration.fromTotalSecond(maxY-minY));
+				return yTime.toStringInHMS();
 			}
 
 			@Override
@@ -74,21 +71,23 @@ public class LineMonitorPaneController {
 			}
 		});
 
-		lineChart.setStations(stations);
+		lineChart.setLineData(lineData);
 		lineChart.setBlockingTimeStairwaysMap(blockingTimeMap);
 		lineChart.setTimeDistancesMap(timeDistanceMap);
 	}
 
 	// max and min coordinate for the Mapper
-	private void setMaxMinXY(Collection<Station> stations,
-		HashMap<AbstractTrainSimulator, List<BlockingTime>> blockingTimeStairways) {
-
+	private void setMaxMinXY(LineData lineData,
+			HashMap<AbstractTrainSimulator, List<BlockingTime>> blockingTimeStairways) {
+		/*
 		for (Station station : stations) {
 			if (station.getCoordinate().getX() > maxX)
 				maxX = station.getCoordinate().getX();
 			if (station.getCoordinate().getX() < minX)
 				minX = station.getCoordinate().getX();
-		}
+		} */
+		this.maxX = lineData.getTotalDistance().getMeter();
+		this.minX = 0;
 
 		for (Entry<AbstractTrainSimulator, List<BlockingTime>> entry : blockingTimeStairways.entrySet()) {
 			Time sTime = entry.getKey().getTripSection().getStartTime();
@@ -97,13 +96,15 @@ public class LineMonitorPaneController {
 			}
 
 			for (BlockingTime blockingTime : entry.getValue()) {
-				double time = blockingTime.getEndTimeInSecond() +
-						entry.getKey().getActiveTime().getDifference(Time.getInstance(0, 0, 0)).getTotalSeconds();
+				double endTimeSeconds = blockingTime.getRelativeEndTimeInSecond() +
+						sTime.getDifference(Time.getInstance(0, 0, 0)).getTotalSeconds();
+				double startTimeSeconds = blockingTime.getRelativeStartTimeInSecond() +
+						sTime.getDifference(Time.getInstance(0, 0, 0)).getTotalSeconds();
 
-				if (time > maxY)
-					maxY = time;
-				if (time < minY)
-					minY = time;
+				if (endTimeSeconds > maxY)
+					maxY = endTimeSeconds;
+				if (startTimeSeconds < minY)
+					minY = startTimeSeconds;
 			}
 		}
 	}

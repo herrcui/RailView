@@ -2,6 +2,7 @@ package railview.simulation.graph.trainrunmonitor;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -18,6 +19,7 @@ import railapp.timetable.dto.TripElement;
 import railapp.units.Coordinate;
 import railview.simulation.ui.data.BlockingTime;
 import railview.simulation.ui.data.EventData;
+import railview.simulation.ui.data.LineData;
 import railview.simulation.ui.data.TableProperty;
 import railview.simulation.ui.data.TimeDistance;
 import railview.simulation.ui.data.TrainRunDataManager;
@@ -231,11 +233,14 @@ public class TrainRunMonitorPaneController {
 		String lineString = lineListView.getSelectionModel().getSelectedItem().toString();
 		Line line = lineMap.get(lineString);
 
+		AbstractTrainSimulator refTrain = new ArrayList<AbstractTrainSimulator>(trainMap.values()).get(0);
+		LineData lineData = new LineData(refTrain);
+
 		Collection<Station> stations = this.infrastructureServiceUtility.getLineService().findStationsByLine(line);
 		HashMap<AbstractTrainSimulator, List<BlockingTime>> blockingTimeMap =
-				trainRunDataManager.getBlockingTimeStairwaysInLine(line, trainMap.values());
+				trainRunDataManager.getBlockingTimeStairwaysInLine(lineData, trainMap.values());
 		HashMap<AbstractTrainSimulator, List<TimeDistance>> timeDistanceMap =
-				trainRunDataManager.getTimeDistancesInLine(line, trainMap.values());
+				trainRunDataManager.getTimeDistancesInLine(lineData, trainMap.values());
 
 		ObservableList<String> stationNameList = FXCollections.observableArrayList();
 		for (Station station : stations) {
@@ -243,7 +248,7 @@ public class TrainRunMonitorPaneController {
 		}
 		stationListView.setItems(stationNameList);
 
-		lineMonitorPaneController.updateUI(line, stations, blockingTimeMap, timeDistanceMap);
+		lineMonitorPaneController.updateUI(lineData, blockingTimeMap, timeDistanceMap);
 	}
 
 	public static ObservableList<TableProperty> generateTrainInfo(

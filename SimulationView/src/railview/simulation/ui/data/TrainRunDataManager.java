@@ -35,7 +35,7 @@ public class TrainRunDataManager {
 		this.infraServiceUtility = infraServiceUtility;
 	}
 
-	public List<BlockingTime> getBlockingTimeStairway(AbstractTrainSimulator train, Line line) {
+	public List<BlockingTime> getBlockingTimeStairway(AbstractTrainSimulator train, LineData lineData) {
 		List<BlockingTime> blockingTimes = new ArrayList<BlockingTime>();
 		if (train instanceof FDTrainSimulator || train instanceof MBTrainSimulator) {
 			double meter = 0;
@@ -73,12 +73,15 @@ public class TrainRunDataManager {
 					isFirstResource = false;
 				}
 
-				if (line == null) {
+				if (lineData == null) {
 					blockingTimes.add(new BlockingTime(startMeter, endMeter,
 							startTimeInSecond, endTimeInSecond));
 				} else {
-					double startDist = this.getDistanceInLine(startMeter, train, line);
-					double endDist = this.getDistanceInLine(endMeter, train, line);
+					double startDist = this.getDistanceInLine(startMeter, train, lineData);
+					double endDist = this.getDistanceInLine(endMeter, train, lineData);
+
+					endDist = this.getDistanceInLine(endMeter, train, lineData);
+
 					if (startDist != -1 && endDist != -1) {
 						blockingTimes.add(new BlockingTime(startDist, endDist,
 								startTimeInSecond, endTimeInSecond));
@@ -94,7 +97,7 @@ public class TrainRunDataManager {
 	}
 
 	// Map: Meter, TimeInSecond
-	public List<TimeDistance> getTimeInDistance(AbstractTrainSimulator train, Line line) {
+	public List<TimeDistance> getTimeInDistance(AbstractTrainSimulator train, LineData lineData) {
 		List<TimeDistance> pointList = new ArrayList<TimeDistance>();
 		double meter = 0; // x
 		double timeInSecond = 0; // y
@@ -102,10 +105,10 @@ public class TrainRunDataManager {
 		for (DiscretePoint point : train.getWholeCoursePoints()) {
 			timeInSecond += point.getDuration().getTotalSeconds();
 			meter += point.getDistance().getMeter();
-			if (line == null) {
+			if (lineData == null) {
 				pointList.add(new TimeDistance(meter, timeInSecond));
 			} else {
-				double distance = this.getDistanceInLine(meter, train, line);
+				double distance = this.getDistanceInLine(meter, train, lineData);
 				pointList.add(new TimeDistance(distance, timeInSecond));
 			}
 		}
@@ -113,20 +116,20 @@ public class TrainRunDataManager {
 	}
 
 	public HashMap<AbstractTrainSimulator, List<BlockingTime>> getBlockingTimeStairwaysInLine(
-			Line line, Collection<AbstractTrainSimulator> trains) {
+			LineData lineData, Collection<AbstractTrainSimulator> trains) {
 		HashMap<AbstractTrainSimulator, List<BlockingTime>> result = new HashMap<AbstractTrainSimulator, List<BlockingTime>>();
 
 		for (AbstractTrainSimulator train : trains) {
-			result.put(train, this.getBlockingTimeStairway(train, line));
+			result.put(train, this.getBlockingTimeStairway(train, lineData));
 		}
 		return result;
 	}
 
 	public HashMap<AbstractTrainSimulator, List<TimeDistance>> getTimeDistancesInLine(
-			Line line, Collection<AbstractTrainSimulator> trains) {
+			LineData lineData, Collection<AbstractTrainSimulator> trains) {
 		HashMap<AbstractTrainSimulator, List<TimeDistance>> result = new HashMap<AbstractTrainSimulator, List<TimeDistance>>();
 		for (AbstractTrainSimulator train : trains) {
-			result.put(train, this.getTimeInDistance(train, line));
+			result.put(train, this.getTimeInDistance(train, lineData));
 		}
 		return result;
 	}
@@ -152,19 +155,18 @@ public class TrainRunDataManager {
 		return opDistances;
 	}
 
-	private double getDistanceInLine(double meter, AbstractTrainSimulator train, Line line) {
+	private double getDistanceInLine(double meter, AbstractTrainSimulator train, LineData lineData) {
 		int index = 0;
 		List<Length> opDistances = this.getOpDistances(train);
 
 		if (meter >= opDistances.get(opDistances.size() - 1).getMeter()) {
-			return ((InfrastructureObject) train.getTripSection()
-					.getTripElements().get(opDistances.size() - 1)
-					.getOperationalPoint()).getElement().getStation()
-					.getCoordinate().getX();
+			// find the last station of the trip
+			return lineData.findStationDistance(
+					train.getTripSection().getTripElements().get(
+							train.getTripSection().getTripElements().size() - 1).getStation()).getMeter();
 		}
 
-		Collection<Station> stations = new HashSet<Station>();
-		stations.addAll(this.infraServiceUtility.getLineService().findStationsByLine(line));
+		Collection<Station> stations = lineData.getStations();
 
 		for (Length dist : opDistances) {
 			if (index >= opDistances.size() - 1) {
@@ -182,12 +184,10 @@ public class TrainRunDataManager {
 						.getOperationalPoint()).getElement().getStation();
 
 				if (stations.contains(startStation) && stations.contains(endStation)) {
-					return startStation.getCoordinate().getX()
+					return lineData.findStationDistance(startStation).getMeter()
 							+ (meter - dist.getMeter())
-							* (endStation.getCoordinate().getX() - startStation
-									.getCoordinate().getX())
-							/ (opDistances.get(index + 1).getMeter() - opDistances
-									.get(index).getMeter());
+							* (lineData.findStationDistance(endStation).getMeter() - lineData.findStationDistance(startStation).getMeter())
+							/ (opDistances.get(index + 1).getMeter() - opDistances.get(index).getMeter());
 				} else {
 					return -1;
 				}
