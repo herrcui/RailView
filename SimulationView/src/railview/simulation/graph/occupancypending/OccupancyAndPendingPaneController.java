@@ -16,6 +16,7 @@ import railapp.units.Coordinate;
 import railapp.units.Duration;
 import railapp.units.Percentage;
 import railview.simulation.network.InfrastructureElementsPane;
+import railview.simulation.setting.UIInfrastructureSetting;
 import railview.simulation.ui.data.CoordinateMapper;
 import railview.simulation.ui.utilities.NodeGestures;
 import javafx.animation.AnimationTimer;
@@ -33,7 +34,7 @@ import javafx.scene.shape.Rectangle;
 /**
  * The controller class for OccupancyAndPendingPane.fxml. The Pane is used to
  * show the occupancy and pending positions in the simulation
- * 
+ *
  */
 
 public class OccupancyAndPendingPaneController {
@@ -88,6 +89,10 @@ public class OccupancyAndPendingPaneController {
 		timer.start();
 	}
 
+	public void setUIInfraSetting(UIInfrastructureSetting uiInfraSetting) {
+		this.elementPane.setUIInfraSetting(uiInfraSetting);
+	}
+
 	public void setInfrastructureServiceUtility(
 			IInfrastructureServiceUtility infraServiceUtility) {
 		Collection<InfrastructureElement> elements = infraServiceUtility
@@ -114,7 +119,9 @@ public class OccupancyAndPendingPaneController {
 		CoordinateMapper mapper = new CoordinateMapper(maxX, minX, maxY, minY);
 
 		this.elementPane.setCoordinateMapper(mapper);
-		this.elementPane.setElements(elements);
+		this.elementPane.setElements(elements, null);
+
+		this.elementPane.draw();
 
 		this.elements = elements;
 		this.mapper = mapper;
@@ -422,7 +429,7 @@ public class OccupancyAndPendingPaneController {
 					width = this.MIN_WIDTH;
 				}
 			}
-			
+
 			line.setStrokeWidth(width);
 		}
 	}

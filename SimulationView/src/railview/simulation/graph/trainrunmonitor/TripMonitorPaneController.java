@@ -11,6 +11,7 @@ import railapp.units.Coordinate;
 import railapp.units.Duration;
 import railapp.units.Length;
 import railapp.units.Time;
+import railview.simulation.setting.UIInfrastructureSetting;
 import railview.simulation.ui.components.ChartTripBlockingTime;
 import railview.simulation.ui.data.BlockingTime;
 import railview.simulation.ui.data.EventData;
@@ -35,35 +36,35 @@ import javafx.util.StringConverter;
 public class TripMonitorPaneController {
 	@FXML
 	private AnchorPane blockingTimePane, snapshotRoot;
-	
+
 	@FXML
 	private Label eventLabel;
-	
+
 	@FXML
 	private TableView<TableProperty> eventTable;
-	
+
 	private ChartTripBlockingTime<Number, Number> tripChart;
 	private StackPane snapshotPane;
 	private SnapshotPaneController snapshotPaneController;
-	
+
 	private AbstractTrainSimulator train;
-	
+
 	@FXML
 	public void initialize() {
 		this.initializeSnapshot();
-		
-		this.initializeBlockingTime();		
+
+		this.initializeBlockingTime();
 
 		this.initializeEventTable();
 	}
-	
+
 	private void initializeBlockingTime() {
 		tripChart = ChartTripBlockingTime.createBlockingTimeForTripChart(eventLabel, eventTable, this);
 
 		blockingTimePane.getChildren().add(tripChart);
-		
+
 		new Zoom(tripChart, blockingTimePane);
-		
+
 		blockingTimePane.widthProperty().addListener(
 			(obs, oldVal, newVal) -> {
 				tripChart.getData().clear();
@@ -74,14 +75,14 @@ public class TripMonitorPaneController {
 			(obs, oldVal, newVal) -> {
 				blockingTimePane.setLayoutY((newVal.doubleValue() / 2)
 						- (blockingTimePane.prefHeight(-1) / 2));
-				
+
 				tripChart.getData().clear();
 				tripChart.getBlockingTimeChartPlotChildren().clear();
 		});
-		
+
 		eventLabel.toFront();
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	private void initializeEventTable() {
 		TableColumn<TableProperty, String> eventItemCol = new TableColumn<TableProperty, String>("Item");
@@ -95,7 +96,7 @@ public class TripMonitorPaneController {
 		eventTable.getColumns().addAll(eventItemCol, eventValueCol);
 		eventValueCol.setCellFactory(TrainRunMonitorPaneController.createCellFactory());
 	}
-	
+
 	private void initializeSnapshot() {
 		try {
 			FXMLLoader snapshotPaneLoader = new FXMLLoader();
@@ -109,7 +110,7 @@ public class TripMonitorPaneController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		snapshotRoot.widthProperty().addListener(new ChangeListener<Number>() {
 			@Override
 			public void changed(
@@ -120,10 +121,10 @@ public class TripMonitorPaneController {
 			}
 		});
 	}
-	
+
 	/**
 	 * reset the zoom of the blockingTimeChart
-	 * 
+	 *
 	 * @param event
 	 */
 	@FXML
@@ -134,14 +135,18 @@ public class TripMonitorPaneController {
 			}
 		}
 	}
-	
+
 	public void setInfrastructureServiceUtility(IInfrastructureServiceUtility infraServiceUtility) {
 		this.snapshotPaneController.setInfrastructureServiceUtility(infraServiceUtility);
-	}		
+	}
+
+	public void setUIInfraSetting(UIInfrastructureSetting uiInfraSetting) {
+		this.snapshotPaneController.setUIInfraSetting(uiInfraSetting);
+	}
 
 	/**
 	 * draw the event points on the path in the snapshotPane
-	 * 
+	 *
 	 * @param td
 	 */
 	public void drawEventOnSnap(TimeDistance td) {
@@ -150,21 +155,21 @@ public class TripMonitorPaneController {
 		snapshotPaneController.setEventPoint(coordinate);
 		snapshotPaneController.draw();
 	}
-	
+
 	public void updateUI(AbstractTrainSimulator train,
 			List<Coordinate> path,
 			List<BlockingTime> blockingTime,
 			List<TimeDistance> timeDistances,
 			Map<TimeDistance, List<EventData>> events) {
-		
+
 		this.train = train;
-		
+
 		snapshotPaneController.setHighlightedPath(path);
 		snapshotPaneController.setEventPoint(null);
 		snapshotPaneController.draw();
-		
+
 		Time startTime = train.getTripSection().getStartTime();
-		
+
 		((NumberAxis) tripChart.getYAxis()).setTickLabelFormatter(new StringConverter<Number>() {
 			@Override
 			public String toString(Number t) {
@@ -178,7 +183,7 @@ public class TripMonitorPaneController {
 				return 1;
 			}
 		});
-		
+
 		tripChart.getData().clear();
 		tripChart.getBlockingTimeChartPlotChildren().clear();
 

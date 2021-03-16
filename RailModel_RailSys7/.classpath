@@ -10,5 +10,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/RollingstockRepository"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/TimetableDefinition"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/TimetableRepository"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/CoreModelParser"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

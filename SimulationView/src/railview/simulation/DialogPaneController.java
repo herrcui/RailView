@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.DirectoryChooser;
@@ -22,7 +23,7 @@ import java.util.ResourceBundle;
 /**
  * The controller class for Diaglog.fxml. Its used for loading the
  * Infrastructure, Rollingstock and the Timetable from a directory.
- * 
+ *
  */
 public class DialogPaneController extends Stage implements Initializable {
 	@FXML
@@ -34,6 +35,9 @@ public class DialogPaneController extends Stage implements Initializable {
 
 	@FXML
 	private TextField textOne, textTwo, textThree;
+
+	@FXML
+	private CheckBox csvCheckBox;
 
 	private Path infraPath, rollingStockPath, timetablePath;
 
@@ -71,6 +75,10 @@ public class DialogPaneController extends Stage implements Initializable {
 		return this.timetablePath;
 	}
 
+	public boolean isCSVDataFormat() {
+		return this.csvCheckBox.isSelected();
+	}
+
 	@FXML
 	private void onCancelButtonAction(ActionEvent event) {
 		close();
@@ -89,16 +97,25 @@ public class DialogPaneController extends Stage implements Initializable {
 						.getWindow());
 				directoryChooser.setInitialDirectory(file);
 				if (file != null) {
-					String infraPath = file.getParent().toString()
-							+ "\\"
-							+ file.getName().substring(0,
-									file.getName().lastIndexOf('-'));
-					String rollingstockPath = file.getParent().toString()
-							+ "\\global\\dat";
+					if (csvCheckBox.isSelected()) {
+						String infraPath = file.toString() + "\\infrastructure";
+						String rsPath = file.toString() + "\\rollingstock";
+						String ttPath = file.toString() + "\\timetable";
+						openInfra(new File(infraPath));
+						openRolling(new File(rsPath));
+						openTime(new File(ttPath));
+					} else {
+						String infraPath = file.getParent().toString()
+								+ "\\"
+								+ file.getName().substring(0,
+										file.getName().lastIndexOf('-'));
+						String rollingstockPath = file.getParent().toString()
+								+ "\\global\\dat";
 
-					openInfra(new File(infraPath));
-					openRolling(new File(rollingstockPath));
-					openTime(file);
+						openInfra(new File(infraPath));
+						openRolling(new File(rollingstockPath));
+						openTime(file);
+					}
 				}
 			}
 		});

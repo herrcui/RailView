@@ -28,6 +28,7 @@ import railview.simulation.graph.GraphPaneController;
 import railview.simulation.network.NetworkPaneController;
 import railview.simulation.pyui.PythonPaneController;
 import railview.simulation.setting.SettingPaneController;
+import railview.simulation.setting.UIInfrastructureSetting;
 
 /**
  * The controller class for the main user interface (SimulationViewer.fxml)
@@ -331,11 +332,20 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 
 		this.simulationFactory = SimulationFactory.getInstance(pathDialog.getInfrastructurePath(),
 				pathDialog.getRollingStockPath(),
-				pathDialog.getTimeTablePath());
+				pathDialog.getTimeTablePath(),
+				pathDialog.isCSVDataFormat());
 
 		this.simulationFactory.registerUpdateUI(this);
 
 		this.settingPaneController.setSimulator(this.simulationFactory.getSimulator());
+
+		this.uiInfraSetting =  UIInfrastructureSetting.getInstance(pathDialog.getInfrastructurePath().getParent());
+
+		this.networkPaneController.setUIInfraSetting(this.uiInfraSetting);
+
+		this.graphPaneController.setUIInfraSetting(this.uiInfraSetting);
+
+		this.settingPaneController.setUIInfraSetting(this.uiInfraSetting);
 
 		// TODO: check if it is successful
 		this.networkPaneController
@@ -447,6 +457,7 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 	private NetworkPaneController networkPaneController;
 	private GraphPaneController graphPaneController;
 	private SettingPaneController settingPaneController;
+	private UIInfrastructureSetting uiInfraSetting;
 
 	private int UIPause = 100;
 	private int MAXSpeed = 20000; // 1 : 200

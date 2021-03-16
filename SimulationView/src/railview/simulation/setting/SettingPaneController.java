@@ -63,7 +63,7 @@ public class SettingPaneController extends Stage implements Initializable {
 	private Button externalFileButton, applyButton, setCommButton;
 
 	@FXML
-	private TextField fileNameText, urlText, portText;
+	private TextField fileNameText, urlText, portText, elemWidthText;
 
 	@FXML
 	private TableView<TableProperty> ReceivedTable, SentTable;
@@ -180,6 +180,10 @@ public class SettingPaneController extends Stage implements Initializable {
 		return ILInfoList;
 	}
 
+	private void loadUISetting() {
+		this.elemWidthText.setText(String.valueOf(this.uiInfraSetting.getElementWidth()));
+	}
+
 	public SettingPaneController() {
 		setTitle("Configurations");
 
@@ -193,6 +197,11 @@ public class SettingPaneController extends Stage implements Initializable {
 		this.simulator = simulator;
 
 		this.setDispatchingSystem();
+	}
+
+	public void setUIInfraSetting(UIInfrastructureSetting uiInfraSetting) {
+		this.uiInfraSetting = uiInfraSetting;
+		this.loadUISetting();
 	}
 
 	private static StyleSpans<Collection<String>> computeHighlighting(
@@ -333,8 +342,15 @@ public class SettingPaneController extends Stage implements Initializable {
 		}
 	}
 
+	@FXML
+	private void onApplyUISetting(ActionEvent event) {
+		this.uiInfraSetting.setElementWidth(Double.parseDouble(this.elemWidthText.getText()));
+		this.uiInfraSetting.save();
+	}
+
 	private FileChooser fileChooser = new FileChooser();
 	private File file = null;
 
 	private SingleSimulationManager simulator;
+	private UIInfrastructureSetting uiInfraSetting;
 }

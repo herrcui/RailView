@@ -8,6 +8,7 @@ import railapp.infrastructure.element.dto.Port;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.units.Coordinate;
 import railview.simulation.network.InfrastructureElementsPane;
+import railview.simulation.setting.UIInfrastructureSetting;
 import railview.simulation.ui.data.CoordinateMapper;
 import railview.simulation.ui.utilities.NodeGestures;
 import javafx.event.EventHandler;
@@ -71,9 +72,13 @@ public class SnapshotPaneController {
 		CoordinateMapper mapper = new CoordinateMapper(maxX, minX, maxY, minY);
 
 		this.elementPane.setCoordinateMapper(mapper);
-		this.elementPane.setAndDrawElements(elements, Color.WHITE);
+		this.elementPane.setElements(elements, Color.WHITE);
+		this.elementPane.draw();
 	}
 
+	public void setUIInfraSetting(UIInfrastructureSetting uiInfraSetting) {
+		this.elementPane.setUIInfraSetting(uiInfraSetting);
+	}
 	/**
 	 * use the draw method from infrastructureElementPane
 	 */

@@ -13,6 +13,7 @@ import railapp.simulation.train.AbstractTrainSimulator;
 import railview.simulation.graph.occupancypending.OccupancyAndPendingPaneController;
 import railview.simulation.graph.runningdynamics.RunningDynamicsPaneController;
 import railview.simulation.graph.trainrunmonitor.TrainRunMonitorPaneController;
+import railview.simulation.setting.UIInfrastructureSetting;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -27,7 +28,7 @@ import javafx.scene.layout.AnchorPane;
 /**
  * The controller class for GraphPane.fxml. The Pane shows different kind of
  * data for the simulation.
- * 
+ *
  */
 public class GraphPaneController {
 
@@ -143,6 +144,11 @@ public class GraphPaneController {
 								- (occupancyAndPendingRoot.prefHeight(-1) / 2));
 					}
 				});
+	}
+
+	public void setUIInfraSetting(UIInfrastructureSetting uiInfraSetting) {
+		this.trainRunMonitorController.setUIInfraSetting(uiInfraSetting);
+		this.occupancyAndPendingPaneController.setUIInfraSetting(uiInfraSetting);
 	}
 
 	public void setInfrastructureServiceUtility(

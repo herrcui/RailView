@@ -1,40 +1,33 @@
 package railview.railmodel.infrastructure.railsys7;
 
-import java.net.URISyntaxException;
-import java.net.URL;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.infrastructure.service.ServiceUtility;
 import railapp.parser.railsys7.infrastructure.InfrastructureParser;
 
 public class InfrastructureReader {
-	public static InfrastructureReader getRailSys7Instance(Path path) {
+	public static InfrastructureReader getInstance(Path path) {
 		return new InfrastructureReader(path);
-	}
-
-	public static InfrastructureReader getRailSys7Instance(URL url) {
-		Path path;
-		try {
-			path = Paths.get(url.toURI());
-			return new InfrastructureReader(path);
-		} catch (URISyntaxException e) {
-			e.printStackTrace();
-			return null;
-		}
 	}
 
 	private InfrastructureReader(Path path) {
 		this.path = path;
 	}
 
-	public IInfrastructureServiceUtility initialize() {
+	public IInfrastructureServiceUtility initialize(boolean isCSVFormat) {
 		IInfrastructureServiceUtility infraServiceUtility = new ServiceUtility();
 
-		InfrastructureParser parser = InfrastructureParser.getInstance(
-				 this.path, infraServiceUtility);
-		parser.parse();
+		if (isCSVFormat) {
+			railapp.parser.coremodel.infrastructure.InfrastructureParser parser =
+				railapp.parser.coremodel.infrastructure.InfrastructureParser.getInstance(
+					infraServiceUtility, this.path.toString());
+			parser.parse();
+		} else {
+			InfrastructureParser parser = InfrastructureParser.getInstance(
+					 this.path, infraServiceUtility);
+			parser.parse();
+		}
 		return infraServiceUtility;
 	}
 

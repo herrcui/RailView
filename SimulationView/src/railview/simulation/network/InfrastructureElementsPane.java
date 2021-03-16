@@ -4,37 +4,46 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import railapp.infrastructure.dto.Station;
 import railapp.infrastructure.element.dto.InfrastructureElement;
 import railapp.infrastructure.element.dto.RelativePosition;
 import railapp.infrastructure.element.dto.Track;
 import railapp.infrastructure.element.dto.Turnout;
 import railapp.infrastructure.signalling.dto.AbstractSignal;
 import railapp.units.Coordinate;
+import railview.simulation.setting.UIInfrastructureSetting;
 import railview.simulation.ui.data.CoordinateMapper;
 import railview.simulation.ui.utilities.PannablePane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 
 /**
  * The class responsible to draw the InfrastructureElement, the events and the signals.
- * 
+ *
  */
 public class InfrastructureElementsPane extends PannablePane {
 	private Collection<InfrastructureElement> elements;
 	private Collection<AbstractSignal> signals;
+	private Collection<Station> stations;
 	private CoordinateMapper mapper;
 	private Color elementColor;
 	private Color signalColor = Color.RED;
+	private UIInfrastructureSetting uiInfraSetting;
 	private List<Coordinate> path = null;
 	private Coordinate eventPoint = null;
 
-	private double elementWidth = 0.2; // 0.5
 	private double signalWidth = 0.1; // 0.2
 
 	public InfrastructureElementsPane() {
 		this.widthProperty().addListener(observable -> draw());
 		this.heightProperty().addListener(observable -> draw());
+	}
+
+	public void setUIInfraSetting(UIInfrastructureSetting uiInfraSetting) {
+		this.uiInfraSetting = uiInfraSetting;
 	}
 
 	public void setCoordinateMapper(CoordinateMapper mapper) {
@@ -49,20 +58,15 @@ public class InfrastructureElementsPane extends PannablePane {
 		this.eventPoint = coordinate;
 	}
 
-	public void setAndDrawElements(Collection<InfrastructureElement> elements,
+	public void setElements(Collection<InfrastructureElement> elements,
 			Color elementColor) {
 		this.elements = elements;
 		this.elementColor = elementColor;
-		this.draw();
 	}
 
 	public void setSignals(Collection<AbstractSignal> signals, Color signalColor) {
 		this.signals = signals;
 		this.signalColor = signalColor;
-	}
-
-	public void setElements(Collection<InfrastructureElement> elements) {
-		this.elements = elements;
 	}
 
 	public void draw() {
@@ -74,7 +78,7 @@ public class InfrastructureElementsPane extends PannablePane {
 		for (InfrastructureElement element : this.elements) {
 			this.drawInfrastructureElement(element);
 		}
-	
+
 		if (this.signals != null) { // for some panes, it is not necessary to
 									// draw signals.
 			for (AbstractSignal signal : this.signals) {
@@ -82,28 +86,53 @@ public class InfrastructureElementsPane extends PannablePane {
 			}
 		}
 
+		if (this.stations != null) {
+			this.drawStations();
+		}
+
 		this.drawPath();
 		this.drawEventPoint();
+	}
+
+	public void setStations(Collection<Station> allStations) {
+		this.stations = allStations;
+	}
+
+	private void drawStations() {
+		if (!this.uiInfraSetting.isShowStation()) {
+			return;
+		}
+
+		for (Station station : this.stations) {
+			Text dataText = new Text(station.getDescription());
+			dataText.setLayoutX(mapper.mapToPaneX(station.getCoordinate().getX(), this));
+			dataText.setLayoutY(mapper.mapToPaneY(station.getCoordinate().getY(), this));
+			dataText.setFill(this.elementColor);
+			dataText.setFont(new Font(4));
+
+			this.getChildren().add(dataText);
+		}
 	}
 
 	private void drawInfrastructureElement(InfrastructureElement element) {
 		if (element instanceof Track) {
 			List<Coordinate> coordinates = ((Track) element)
 					.getCoordinateAtLink12();
-			this.drawLink(coordinates, this.elementColor, elementWidth);
+
+			this.drawLink(coordinates, this.elementColor, this.uiInfraSetting.getElementWidth());
 		} else {
-			if (element instanceof Turnout) {				
+			if (element instanceof Turnout) {
 				List<Coordinate> coordinates = element.findLink(1, 2).getCoordinates();
-				this.drawLink(coordinates, this.elementColor, elementWidth);
-				
+				this.drawLink(coordinates, this.elementColor, this.uiInfraSetting.getElementWidth());
+
 				coordinates = element.findLink(1, 3).getCoordinates();
-				this.drawLink(coordinates, this.elementColor, elementWidth);
+				this.drawLink(coordinates, this.elementColor, this.uiInfraSetting.getElementWidth());
 			} else {
 				List<Coordinate> coordinates = element.findLink(1, 3).getCoordinates();
-				this.drawLink(coordinates, this.elementColor, elementWidth);
-				
+				this.drawLink(coordinates, this.elementColor, this.uiInfraSetting.getElementWidth());
+
 				coordinates = element.findLink(2, 4).getCoordinates();
-				this.drawLink(coordinates, this.elementColor, elementWidth);
+				this.drawLink(coordinates, this.elementColor, this.uiInfraSetting.getElementWidth());
 			}
 		}
 	}
@@ -133,7 +162,7 @@ public class InfrastructureElementsPane extends PannablePane {
 		List<Coordinate> coordinates = position.getLink().getCoordinates();
 		Coordinate startCoor = coordinates.get(coordinates.size() - 2);
 		Coordinate endCoor = coordinates.get(coordinates.size() - 1);
-		
+
 		List<Double> coorDists = new ArrayList<Double>();
 		double totalCoorDist = 0;
 		for (int i = 0; i < coordinates.size() - 1; i++) {
@@ -152,16 +181,16 @@ public class InfrastructureElementsPane extends PannablePane {
 		}
 
 		Coordinate signalCoordinate = position.getLink().getCoordinate(position.getDistance());
-		
+
 		double signalX = mapper.mapToPaneX(signalCoordinate.getX(), this);
 		double signalY = mapper.mapToPaneY(signalCoordinate.getY(), this);
-				
+
 		double xStart = mapper.mapToPaneX(startCoor.getX(), this);
 		double yStart = mapper.mapToPaneY(startCoor.getY(), this);
 		double xEnd = mapper.mapToPaneX(endCoor.getX(), this);
 		double yEnd = mapper.mapToPaneY(endCoor.getY(), this);
 
-		
+
 		double a = 0.4;
 		double b = 0.4;
 		double c = 0.5 * a; // radius of the circle
@@ -176,11 +205,11 @@ public class InfrastructureElementsPane extends PannablePane {
 		double yCoordinateP3;
 
 		double length = Math.sqrt(Math.pow((yEnd - yStart), 2)+ Math.pow((xEnd - xStart), 2));
-		
+
 		// P0 - P3 parallel to line
 		// P1 - P2 perpendicular to line
 		// Here all the coordinates are screen coordinates, increase to buttom and right
-		
+
 		xCoordinateP0 = signalX - (a * ((yEnd - yStart)/ length));
 		yCoordinateP0 = signalY + (a * ((xEnd - xStart)/ length));
 

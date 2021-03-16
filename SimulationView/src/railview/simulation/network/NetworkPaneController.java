@@ -11,6 +11,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
+import railapp.infrastructure.dto.Station;
 import railapp.infrastructure.element.dto.InfrastructureElement;
 import railapp.infrastructure.element.dto.Port;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
@@ -18,12 +19,13 @@ import railapp.infrastructure.signalling.dto.AbstractSignal;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.units.Coordinate;
 import railapp.units.Time;
+import railview.simulation.setting.UIInfrastructureSetting;
 import railview.simulation.ui.data.CoordinateMapper;
 import railview.simulation.ui.utilities.NodeGestures;
 
 /**
  * The controller class of NetworkPane.fxml. The Pane includes the elementPane and the trainPane.
- * 
+ *
  */
 public class NetworkPaneController {
 	@FXML
@@ -32,7 +34,7 @@ public class NetworkPaneController {
 	private InfrastructureElementsPane elementPane;
 	private TrainPane trainPane;
 	private double pressedX, pressedY;
-	   
+
 	private boolean isActive = true;
 
 	/**
@@ -68,7 +70,7 @@ public class NetworkPaneController {
 				if (port.getCoordinate().getY() < minY)
 					minY = port.getCoordinate().getY();
 			}
-			
+
 			signals.addAll(serviceUtility.getSignallingService().findAbstractSignalsByElement(element));
 		}
 
@@ -77,14 +79,20 @@ public class NetworkPaneController {
 
 		this.elementPane.setCoordinateMapper(mapper);
 		this.elementPane.setSignals(signals, Color.LIGHTGREEN);
-		this.elementPane.setAndDrawElements(elements, Color.WHITE);
-		
+		this.elementPane.setElements(elements, Color.WHITE);
+		this.elementPane.setStations(serviceUtility.getNetworkService().allStations());
+		this.elementPane.draw();
+
 		this.trainPane.setCoordinateMapper(mapper);
+	}
+
+	public void setUIInfraSetting(UIInfrastructureSetting uiInfraSetting) {
+		this.elementPane.setUIInfraSetting(uiInfraSetting);
 	}
 
 	/**
 	 * updates the trainPane
-	 * 
+	 *
 	 * @param map
 	 * @param time
 	 */
@@ -94,11 +102,11 @@ public class NetworkPaneController {
 			this.trainPane.updateTrainLocations(map, time);
 		}
 	}
-	
+
 	public void setActive(boolean active) {
 		this.isActive = active;
 	}
-	
+
 	@FXML
 	private void mouseEnter(){
 		stackPane.setOnMousePressed(new EventHandler<MouseEvent>()
@@ -121,16 +129,15 @@ public class NetworkPaneController {
             }
         });
 	}
-	
+
 	@FXML
 	private void scrollWheel(){
 		NodeGestures elemNodeGestures = new NodeGestures(elementPane);
 		NodeGestures trainNodeGestures = new NodeGestures(trainPane);
-		
+
 		stackPane.addEventFilter( ScrollEvent.ANY, elemNodeGestures.getOnScrollEventHandler());
 		stackPane.addEventFilter( ScrollEvent.ANY, trainNodeGestures.getOnScrollEventHandler());
 	}
-
 }
-	
+
 

@@ -17,6 +17,7 @@ import railapp.rollingstock.dto.SimpleTrain;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.timetable.dto.TripElement;
 import railapp.units.Coordinate;
+import railview.simulation.setting.UIInfrastructureSetting;
 import railview.simulation.ui.data.BlockingTime;
 import railview.simulation.ui.data.EventData;
 import railview.simulation.ui.data.LineData;
@@ -229,6 +230,10 @@ public class TrainRunMonitorPaneController {
 		});
 	}
 
+	public void setUIInfraSetting(UIInfrastructureSetting uiInfraSetting) {
+		this.tripMonitorPaneController.setUIInfraSetting(uiInfraSetting);
+	}
+
 	private void updateLineUI() {
 		String lineString = lineListView.getSelectionModel().getSelectedItem().toString();
 		Line line = lineMap.get(lineString);
@@ -270,5 +275,4 @@ public class TrainRunMonitorPaneController {
 
 		return observableTrainInfoList;
 	}
-
 }
