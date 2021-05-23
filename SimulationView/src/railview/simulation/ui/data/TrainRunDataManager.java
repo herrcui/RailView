@@ -3,15 +3,12 @@ package railview.simulation.ui.data;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
-import railapp.infrastructure.dto.Line;
 import railapp.infrastructure.dto.Station;
 import railapp.infrastructure.object.dto.InfrastructureObject;
 import railapp.infrastructure.path.dto.LinkEdge;
-import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.simulation.events.ScheduledEvent;
 import railapp.simulation.events.totrain.AbstractEventToTrain;
 import railapp.simulation.events.totrain.LeaveResourceEvent;
@@ -29,11 +26,6 @@ import railapp.units.UnitUtility;
 
 public class TrainRunDataManager {
 	private HashMap<AbstractTrainSimulator, List<Length>> opDistMap = new HashMap<AbstractTrainSimulator, List<Length>>();
-	private IInfrastructureServiceUtility infraServiceUtility;
-
-	public void setInfraServiceUtility(IInfrastructureServiceUtility infraServiceUtility) {
-		this.infraServiceUtility = infraServiceUtility;
-	}
 
 	public List<BlockingTime> getBlockingTimeStairway(AbstractTrainSimulator train, LineData lineData) {
 		List<BlockingTime> blockingTimes = new ArrayList<BlockingTime>();
@@ -158,13 +150,6 @@ public class TrainRunDataManager {
 	private double getDistanceInLine(double meter, AbstractTrainSimulator train, LineData lineData) {
 		int index = 0;
 		List<Length> opDistances = this.getOpDistances(train);
-
-		if (meter >= opDistances.get(opDistances.size() - 1).getMeter()) {
-			// find the last station of the trip
-			return lineData.findStationDistance(
-					train.getTripSection().getTripElements().get(
-							train.getTripSection().getTripElements().size() - 1).getStation()).getMeter();
-		}
 
 		Collection<Station> stations = lineData.getStations();
 

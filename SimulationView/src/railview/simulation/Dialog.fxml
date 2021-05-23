@@ -18,6 +18,6 @@
       <Button layoutX="385.0" layoutY="263.0" mnemonicParsing="false" onAction="#onCancelButtonAction" prefWidth="80.0" text="Cancel" />
       <Button fx:id="applyButton" layoutX="280.0" layoutY="263.0" mnemonicParsing="false" onAction="#onApplyButtonAction" prefWidth="80.0" text="Apply" />
       <Button fx:id="rootButton" layoutX="60.0" layoutY="42.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="367.0" text="Load from timetable directory" />
-      <CheckBox fx:id="csvCheckBox" layoutX="60.0" mnemonicParsing="false" text="CSV DataFormat" />
+      <CheckBox fx:id="coremodelCheckBox" layoutX="60.0" mnemonicParsing="false" text="Core Model Format" />
    </children>
 </AnchorPane>

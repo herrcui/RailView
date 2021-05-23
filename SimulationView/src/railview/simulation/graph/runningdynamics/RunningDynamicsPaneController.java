@@ -38,7 +38,7 @@ import javafx.scene.layout.AnchorPane;
  * The controller class for RunningDynamicsPane.fxml. The Pane gives a
  * selectable list of trains from the simulation where you can see their
  * speedProfileChart and energyChart.
- * 
+ *
  */
 
 public class RunningDynamicsPaneController {

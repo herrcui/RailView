@@ -11,7 +11,7 @@ import railapp.rollingstock.dto.TrainClass;
 import railapp.rollingstock.service.IRollingStockServiceUtility;
 import railapp.simulation.MultipleSimulationManager;
 import railapp.simulation.SingleSimulationManager;
-import railapp.simulation.calibration.Calibrator;
+import railapp.simulation.calibration.stochastic.Calibrator;
 import railapp.simulation.disturbances.DisturbanceDefinition;
 import railapp.simulation.disturbances.DisturbanceType;
 import railapp.simulation.train.TrainClassGroup;

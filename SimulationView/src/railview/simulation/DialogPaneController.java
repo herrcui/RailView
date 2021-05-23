@@ -37,7 +37,7 @@ public class DialogPaneController extends Stage implements Initializable {
 	private TextField textOne, textTwo, textThree;
 
 	@FXML
-	private CheckBox csvCheckBox;
+	private CheckBox coremodelCheckBox;
 
 	private Path infraPath, rollingStockPath, timetablePath;
 
@@ -75,8 +75,8 @@ public class DialogPaneController extends Stage implements Initializable {
 		return this.timetablePath;
 	}
 
-	public boolean isCSVDataFormat() {
-		return this.csvCheckBox.isSelected();
+	public boolean isCoreModelFormat() {
+		return this.coremodelCheckBox.isSelected();
 	}
 
 	@FXML
@@ -97,7 +97,7 @@ public class DialogPaneController extends Stage implements Initializable {
 						.getWindow());
 				directoryChooser.setInitialDirectory(file);
 				if (file != null) {
-					if (csvCheckBox.isSelected()) {
+					if (coremodelCheckBox.isSelected()) {
 						String infraPath = file.toString() + "\\infrastructure";
 						String rsPath = file.toString() + "\\rollingstock";
 						String ttPath = file.toString() + "\\timetable";

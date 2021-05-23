@@ -333,7 +333,7 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 		this.simulationFactory = SimulationFactory.getInstance(pathDialog.getInfrastructurePath(),
 				pathDialog.getRollingStockPath(),
 				pathDialog.getTimeTablePath(),
-				pathDialog.isCSVDataFormat());
+				pathDialog.isCoreModelFormat());
 
 		this.simulationFactory.registerUpdateUI(this);
 
@@ -410,9 +410,11 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 			updateStatusBar();
 		}
 
-		this.settingPaneController.updateMessages(
+		if (this.simulationFactory.getSimulator().getDispatchingSystem().isComm()) {
+			this.settingPaneController.updateMessages(
 				this.simulationFactory.getSimulator().getDispatchingSystem().getDispCommunication().getReceivedMessages(),
 				this.simulationFactory.getSimulator().getDispatchingSystem().getDispCommunication().getSentMessages());
+		}
 	}
 
 	@Override

@@ -200,12 +200,11 @@ public class TrainRunMonitorPaneController {
 
 	public void setInfrastructureServiceUtility(IInfrastructureServiceUtility infraServiceUtility) {
 		this.tripMonitorPaneController.setInfrastructureServiceUtility(infraServiceUtility);
-		this.trainRunDataManager.setInfraServiceUtility(infraServiceUtility);
 
 		this.infrastructureServiceUtility = infraServiceUtility;
 
 		for (Line line : this.infrastructureServiceUtility.getNetworkService().allLines()) {
-			lineMap.put(line.getDescription(), line);
+			lineMap.put(line.getName(), line);
 		} // Kai
 
 		ObservableList<String> lineList = FXCollections.observableArrayList();

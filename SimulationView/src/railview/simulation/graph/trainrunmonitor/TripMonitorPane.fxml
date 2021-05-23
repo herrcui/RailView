@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -9,47 +12,38 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<SplitPane dividerPositions="0.5" orientation="VERTICAL"
-	AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-	AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" 
-	xmlns:fx="http://javafx.com/fxml/1" 
-	fx:controller="railview.simulation.graph.trainrunmonitor.TripMonitorPaneController">
+<SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="711.0" prefWidth="1026.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.graph.trainrunmonitor.TripMonitorPaneController">
 	<items>
-		<AnchorPane fx:id="blockingTimePane" onMouseClicked="#resetZoomBlockingTime">
-			<children>
-				<Label fx:id="eventLabel" layoutX="76.0" layoutY="90.0" />
-				<CheckBox fx:id="inEventCheckBox" layoutX="358.0" layoutY="176.0"
-					mnemonicParsing="false" styleClass="label"
-					stylesheets="@../../../../../resources/railview/simulation/resources/CSS/Darktheme.css"
-					text="incoming events" visible="false" AnchorPane.bottomAnchor="5.0"
-					AnchorPane.rightAnchor="240.0" />
-				<CheckBox fx:id="selfEventCheckBox" layoutX="455.0"
-					layoutY="177.0" mnemonicParsing="false" styleClass="label"
-					stylesheets="@../../../../../resources/railview/simulation/resources/CSS/Darktheme.css"
-					text="self events" visible="false" AnchorPane.bottomAnchor="5.0"
-					AnchorPane.rightAnchor="140.0" />
-				<CheckBox fx:id="outEventCheckBox" layoutX="546.0" layoutY="176.0"
-					mnemonicParsing="false" styleClass="label"
-					stylesheets="@../../../../../resources/railview/simulation/resources/CSS/Darktheme.css"
-					text="outgoing events" visible="false" AnchorPane.bottomAnchor="5.0"
-					AnchorPane.rightAnchor="10.0" />
-			</children>
-		</AnchorPane>
+      <TabPane prefHeight="200.0" prefWidth="397.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Blocking Time">
+               <content>
+            		<AnchorPane fx:id="blockingTimePane" onMouseClicked="#resetZoomBlockingTime">
+            			<children>
+            				<Label fx:id="eventLabel" layoutX="76.0" layoutY="90.0" />
+            				<CheckBox fx:id="inEventCheckBox" layoutX="358.0" layoutY="176.0" mnemonicParsing="false" styleClass="label" stylesheets="@../../../../../resources/railview/simulation/resources/CSS/Darktheme.css" text="incoming events" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="240.0" />
+            				<CheckBox fx:id="selfEventCheckBox" layoutX="455.0" layoutY="177.0" mnemonicParsing="false" styleClass="label" stylesheets="@../../../../../resources/railview/simulation/resources/CSS/Darktheme.css" text="self events" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="140.0" />
+            				<CheckBox fx:id="outEventCheckBox" layoutX="546.0" layoutY="176.0" mnemonicParsing="false" styleClass="label" stylesheets="@../../../../../resources/railview/simulation/resources/CSS/Darktheme.css" text="outgoing events" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="10.0" />
+            			</children>
+            		</AnchorPane>
+               </content>
+          </Tab>
+          <Tab text="Occupancy">
+            <content>
+                <AnchorPane fx:id="headwayPane" minHeight="0.0" minWidth="0.0" prefHeight="135.0" prefWidth="481.0">
+                </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
 		<AnchorPane>
 			<children>
-				<SplitPane dividerPositions="0.5836909871244635"
-					prefHeight="198.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0"
-					AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-					AnchorPane.topAnchor="0.0">
+				<SplitPane dividerPositions="0.5836909871244635" prefHeight="198.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 					<items>
-						<AnchorPane fx:id="snapshotRoot" styleClass="background-grey"
-							stylesheets="@../../../../../resources/railview/simulation/resources/CSS/Darktheme.css" />
+						<AnchorPane fx:id="snapshotRoot" styleClass="background-grey" stylesheets="@../../../../../resources/railview/simulation/resources/CSS/Darktheme.css" />
 						<AnchorPane>
 							<children>
-								<TableView fx:id="eventTable" layoutX="-7.0" layoutY="6.0"
-									prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0"
-									AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-8.0"
-									AnchorPane.topAnchor="0.0">
+								<TableView fx:id="eventTable" layoutX="-7.0" layoutY="6.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="0.0">
 									<columnResizePolicy>
 										<TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
 									</columnResizePolicy>

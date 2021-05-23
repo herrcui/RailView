@@ -22,7 +22,7 @@ public class TimetableReader {
 		this.rollingStockServiceUtility = rollingStockServiceUtility;
 	}
 
-	public ITimetableServiceUtility initialize() {
+	public ITimetableServiceUtility initialize(boolean isCoreModel) {
 		ITimetableServiceUtility timeTableServiceUtility =
 			new railapp.timetable.service.ServiceUtility();
 

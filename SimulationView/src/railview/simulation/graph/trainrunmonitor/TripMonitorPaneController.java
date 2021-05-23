@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
+import railapp.rollingstock.dto.SimpleTrain;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.units.Coordinate;
 import railapp.units.Duration;
@@ -17,12 +18,17 @@ import railview.simulation.ui.data.BlockingTime;
 import railview.simulation.ui.data.EventData;
 import railview.simulation.ui.data.TableProperty;
 import railview.simulation.ui.data.TimeDistance;
+import railview.simulation.ui.utilities.DraggableChart;
 import railview.simulation.ui.utilities.Zoom;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+import javafx.scene.chart.XYChart.Data;
+import javafx.scene.chart.XYChart.Series;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -35,7 +41,7 @@ import javafx.util.StringConverter;
 
 public class TripMonitorPaneController {
 	@FXML
-	private AnchorPane blockingTimePane, snapshotRoot;
+	private AnchorPane blockingTimePane, headwayPane, snapshotRoot;
 
 	@FXML
 	private Label eventLabel;
@@ -44,6 +50,8 @@ public class TripMonitorPaneController {
 	private TableView<TableProperty> eventTable;
 
 	private ChartTripBlockingTime<Number, Number> tripChart;
+	private DraggableChart<Number, Number> headwayChart;
+
 	private StackPane snapshotPane;
 	private SnapshotPaneController snapshotPaneController;
 
@@ -62,8 +70,16 @@ public class TripMonitorPaneController {
 		tripChart = ChartTripBlockingTime.createBlockingTimeForTripChart(eventLabel, eventTable, this);
 
 		blockingTimePane.getChildren().add(tripChart);
-
 		new Zoom(tripChart, blockingTimePane);
+
+		this.headwayChart = new DraggableChart<>(new NumberAxis(), new NumberAxis());
+		this.headwayChart.setAnimated(false);
+		this.headwayChart.setCreateSymbols(false);
+		headwayPane.getChildren().add(headwayChart);
+		AnchorPane.setTopAnchor(headwayChart, 0.0);
+		AnchorPane.setLeftAnchor(headwayChart, 0.0);
+		AnchorPane.setRightAnchor(headwayChart, 0.0);
+		AnchorPane.setBottomAnchor(headwayChart, 0.0);
 
 		blockingTimePane.widthProperty().addListener(
 			(obs, oldVal, newVal) -> {
@@ -168,6 +184,11 @@ public class TripMonitorPaneController {
 		snapshotPaneController.setEventPoint(null);
 		snapshotPaneController.draw();
 
+		this.headwayChart.getData().clear();
+		this.headwayChart.getXAxis().setAutoRanging(true);
+		this.headwayChart.getYAxis().setAutoRanging(true);
+		drawHeadway(blockingTime);
+
 		Time startTime = train.getTripSection().getStartTime();
 
 		((NumberAxis) tripChart.getYAxis()).setTickLabelFormatter(new StringConverter<Number>() {
@@ -193,5 +214,24 @@ public class TripMonitorPaneController {
 
 		tripChart.setAnimated(false);
 		tripChart.setCreateSymbols(false);
+	}
+
+	private LineChart<Number, Number> drawHeadway(List<BlockingTime> blockingTime) {
+		XYChart.Series<Number, Number> headwaySeries = new Series<Number, Number>();
+		headwaySeries.setName("Headway (seconds)");
+		if (train.getTrain().getStatus() != SimpleTrain.INACTIVE) {
+			for (BlockingTime entry : blockingTime) {
+				headwaySeries.getData().add(new Data<Number, Number>(
+					entry.getRelativeStartDistance(), entry.getDurationInSecond()));
+				headwaySeries.getData().add(new Data<Number, Number>(
+						entry.getRelativeEndDistance(), entry.getDurationInSecond()));
+			}
+			this.headwayChart.getData().add(headwaySeries);
+
+			this.headwayChart.setLegendVisible(false);
+
+			this.headwayChart.setCreateSymbols(false);
+		}
+		return this.headwayChart;
 	}
 }

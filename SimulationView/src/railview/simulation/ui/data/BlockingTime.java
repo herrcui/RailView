@@ -35,6 +35,10 @@ public class BlockingTime {
 		return relativeEndTimeInSecond;
 	}
 
+	public double getDurationInSecond() {
+		return relativeEndTimeInSecond - relativeStartTimeInSecond;
+	}
+
 	private double relativeStartDistance;
 	private double relativeEndDistance;
 	private double relativeStartTimeInSecond;

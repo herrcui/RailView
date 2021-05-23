@@ -14,14 +14,22 @@ public class RollingStockReader {
 		this.path = path;
 	}
 
-	public IRollingStockServiceUtility initialize() {
+	public IRollingStockServiceUtility initialize(boolean isCoreModel) {
 		IRollingStockServiceUtility rollingStockServiceUtility =
 			new railapp.rollingstock.service.ServiceUtility();
 
-		RollingStockParser rollingStockParser = RollingStockParser.getInstance(
-				this.path, rollingStockServiceUtility);
-		rollingStockParser.parse();
-		return rollingStockServiceUtility;
+		if (isCoreModel) {
+			railapp.parser.coremodel.rollingstock.RollingStockParser rollingStockParser =
+				railapp.parser.coremodel.rollingstock.RollingStockParser.getInstance(
+					rollingStockServiceUtility, this.path.toString());
+			rollingStockParser.parse();
+			return rollingStockServiceUtility;
+		} else {
+			RollingStockParser rollingStockParser = RollingStockParser.getInstance(
+					this.path, rollingStockServiceUtility);
+			rollingStockParser.parse();
+			return rollingStockServiceUtility;
+		}
 	}
 
 	private Path path;

@@ -15,25 +15,19 @@ import railview.railmodel.infrastructure.railsys7.TimetableReader;
 
 public class SimulationFactory {
 	public static SimulationFactory getInstance(
-			Path infraPath,	Path rollingstockPath, Path timetablePath, boolean isCSVFormat) {
+			Path infraPath,	Path rollingstockPath, Path timetablePath, boolean isCoreModelFormat) {
 		IInfrastructureServiceUtility infraServiceUtility =
-			InfrastructureReader.getInstance(infraPath).initialize(isCSVFormat);
+			InfrastructureReader.getInstance(infraPath).initialize(isCoreModelFormat);
 
-		IRollingStockServiceUtility rollingStockServiceUtility = null;
-		ITimetableServiceUtility timeTableServiceUtility = null;
+		IRollingStockServiceUtility rollingStockServiceUtility =
+			RollingStockReader.getRailSys7Instance(rollingstockPath).initialize(isCoreModelFormat);;
 
-		if (!isCSVFormat) {
-			rollingStockServiceUtility =
-			RollingStockReader.getRailSys7Instance(rollingstockPath).initialize();
+		ITimetableServiceUtility timeTableServiceUtility =
+			TimetableReader.getRailSys7Instance(
+			timetablePath, infraServiceUtility, rollingStockServiceUtility).initialize(isCoreModelFormat);
 
-			timeTableServiceUtility =
-				TimetableReader.getRailSys7Instance(
-				timetablePath, infraServiceUtility, rollingStockServiceUtility).initialize();
-		}
 		SingleSimulationManager simulator = SingleSimulationManager.getInstance(infraServiceUtility,
 				rollingStockServiceUtility, timeTableServiceUtility);
-
-		simulator.setIsCommForDisp(false);
 
 		//simulator.setTimePeriod(Time.getInstance(0, 57, 0), Time.getInstance(1, 0, 0));
 		//simulator.getDispatchingSystem().getDispCommunication().start();

@@ -15,10 +15,10 @@ public class InfrastructureReader {
 		this.path = path;
 	}
 
-	public IInfrastructureServiceUtility initialize(boolean isCSVFormat) {
+	public IInfrastructureServiceUtility initialize(boolean isCoreModel) {
 		IInfrastructureServiceUtility infraServiceUtility = new ServiceUtility();
 
-		if (isCSVFormat) {
+		if (isCoreModel) {
 			railapp.parser.coremodel.infrastructure.InfrastructureParser parser =
 				railapp.parser.coremodel.infrastructure.InfrastructureParser.getInstance(
 					infraServiceUtility, this.path.toString());
