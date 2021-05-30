@@ -155,10 +155,6 @@ public class ChartLineBlockingTime<X, Y> extends DraggableChart<X, Y> {
 				// Process previous and current here.
 				Line polyLine = new Line();
 
-				if (previous.getDistance() > current.getDistance()) {
-					String s = "s";
-				}
-
 				polyLine.setStartX(mapToChart(previous.getDistance(), true));
 				polyLine.setEndX(mapToChart(current.getDistance(), true));
 				polyLine.setStartY(mapToChart(activeTime + previous.getSecond(), false));

@@ -114,7 +114,4 @@ public class TrainPane extends PannablePane {
 	}
 
 	private Map<AbstractTrainSimulator, List<Coordinate>> trainCoordinates;
-
-	private Set<Color> usedColors = new HashSet<Color>();
-	private Color COLOR_SINGLETRAIN = Color.WHITESMOKE;
 }

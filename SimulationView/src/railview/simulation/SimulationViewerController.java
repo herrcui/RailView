@@ -87,6 +87,7 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 					.getResource("PythonPane.fxml");
 			pythonpaneloader.setLocation(pythonpanelocation);
 			pythonPane = (AnchorPane) pythonpaneloader.load();
+			this.pythonPaneController = pythonpaneloader.getController();
 
 			this.simulationPane.getChildren().addAll(
 					networkPane,
@@ -355,6 +356,8 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 				.setInfrastructureServiceUtility(this.simulationFactory.getInfraServiceUtility());
 
 		this.graphPaneController.updateTrainMap(this.simulationFactory.getSimulator().getTrainSimulators());
+
+		this.pythonPaneController.setSimulationFactory(this.simulationFactory);
 	}
 
 	/**
@@ -459,6 +462,8 @@ public class SimulationViewerController implements ISimulationUpdateUI {
 	private NetworkPaneController networkPaneController;
 	private GraphPaneController graphPaneController;
 	private SettingPaneController settingPaneController;
+	private PythonPaneController pythonPaneController;
+
 	private UIInfrastructureSetting uiInfraSetting;
 
 	private int UIPause = 100;

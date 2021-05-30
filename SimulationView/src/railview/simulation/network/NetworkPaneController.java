@@ -11,7 +11,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
-import railapp.infrastructure.dto.Station;
 import railapp.infrastructure.element.dto.InfrastructureElement;
 import railapp.infrastructure.element.dto.Port;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;

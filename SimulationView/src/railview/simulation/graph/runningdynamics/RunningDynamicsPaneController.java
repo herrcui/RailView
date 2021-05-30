@@ -221,28 +221,28 @@ public class RunningDynamicsPaneController {
 
 		double maxTrainKmH = train.getTrainDefinition().getMaxVelocity()
 				.getKilometerPerHour();
-		double maxKmH = Math.min(maxTrainKmH, path.getEdges().get(0).getLink()
-				.getGeometry().getMaxVelocity().getKilometerPerHour());
+		double maxKmH = path.getEdges().get(0).splitByGeometry().get(0).getMaxVelocityAtEnd().getKilometerPerHour();
 		double lastMeter = 0;
 		double meter = 0;
 
-		for (LinkEdge edge : path.getEdges()) {
-			if (edge.getLength().getMeter() == 0) {
+		for (LinkEdge originEdge : path.getEdges()) {
+			if (originEdge.getLength().getMeter() == 0) {
 				continue;
 			}
 
-			double linkKmH = edge.getLink().getGeometry().getMaxVelocity()
-					.getKilometerPerHour();
+			for (LinkEdge edge : originEdge.splitByGeometry()) {
+				double edgeKmH = edge.getMaxVelocityAtEnd().getKilometerPerHour();
 
-			if (Math.abs(Math.min(maxTrainKmH, linkKmH) - maxKmH) >= UnitUtility.ERROR) {
-				speedLimitMap.put(lastMeter, maxKmH);
-				speedLimitMap.put(meter, maxKmH);
+				if (Math.abs(Math.min(maxTrainKmH, edgeKmH) - maxKmH) >= UnitUtility.ERROR) {
+					speedLimitMap.put(lastMeter, maxKmH);
+					speedLimitMap.put(meter, maxKmH);
 
-				maxKmH = Math.min(maxTrainKmH, linkKmH);
-				lastMeter = meter;
+					maxKmH = Math.min(maxTrainKmH, edgeKmH);
+					lastMeter = meter;
+				}
+
+				meter += edge.getLength().getMeter();
 			}
-
-			meter += edge.getLength().getMeter();
 		}
 
 		speedLimitMap.put(lastMeter, maxKmH);

@@ -8,13 +8,26 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import py4j.GatewayServer;
+import railapp.infrastructure.element.dto.InfrastructureElement;
+import railapp.infrastructure.element.dto.Link;
+import railapp.infrastructure.element.geometry.dto.IGeometry;
+import railapp.infrastructure.element.geometry.dto.SimpleGeometry;
+import railapp.simulation.SingleSimulationManager;
+import railapp.simulation.calibration.deterministic.Calibrator;
 import railapp.simulation.entries.Py4JGateway;
+import railapp.simulation.infrastructure.ResourceOccupancy;
+import railapp.simulation.train.AbstractTrainSimulator;
+import railapp.units.Length;
+import railapp.units.Velocity;
+import railview.simulation.SimulationFactory;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -22,8 +35,13 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
@@ -38,20 +56,37 @@ import org.fxmisc.richtext.model.StyleSpansBuilder;
 /**
  * The controller class of EditorPane.fxml. In the Pane, you can write and load
  * code on the left side and the outcome is on the right side.
- * 
+ *
  */
 public class PythonPaneController {
 	private GatewayServer gatewayServer = null;
-	
+
+	@FXML
+	private TextField textVStart, textVEnd, textVStep, textLStart, textLEnd, textLStep, textOutputFile, textPath;
+
+	@FXML
+	private Button calculateButton, calibrateButton;
+
+	@FXML
+	private TableView<HeadwayInfo> tableViewResult;
+
+	@FXML
+	private Label labelResult;
+
+	@FXML
+	private TextArea textLog;
+
+	private SimulationFactory simulationFactory;
+
 	@FXML
 	private AnchorPane pythonPane, fixedButtonPane, codePane;
 
 	@FXML
 	private Button playButton, saveButton;
-	
+
 	@FXML
 	private Button pyActiveButton, pyDeactiveButton;
-	
+
 	@FXML
 	private Image pyImgBW;
 
@@ -94,6 +129,7 @@ public class PythonPaneController {
 			+ ")" + "|(?<STRING>" + STRING_PATTERN + ")" + "|(?<COMMENT>"
 			+ COMMENT_PATTERN + ")");
 
+	@SuppressWarnings("unchecked")
 	@FXML
 	public void initialize() {
 		codeArea.setParagraphGraphicFactory(LineNumberFactory.get(codeArea));
@@ -117,10 +153,26 @@ public class PythonPaneController {
 				saveButton.setDisable(false);
 			}
 		});
-		
+
 		SplitPane.setResizableWithParent(fixedButtonPane, Boolean.FALSE);
-		
+
 		pyDeactiveButton.setVisible(false);
+
+		// set tableview
+		TableColumn<HeadwayInfo, Double> velocityColumn = new TableColumn<HeadwayInfo, Double>("Velocity");
+        velocityColumn.setCellValueFactory(new PropertyValueFactory<>("velocity"));
+
+        TableColumn<HeadwayInfo, Double> meterColumn = new TableColumn<HeadwayInfo, Double>("Meter");
+        meterColumn.setCellValueFactory(new PropertyValueFactory<>("meter"));
+
+        TableColumn<HeadwayInfo, Double> headwayColumn = new TableColumn<HeadwayInfo, Double>("Headway");
+        headwayColumn.setCellValueFactory(new PropertyValueFactory<>("headway"));
+
+        this.tableViewResult.getColumns().addAll(velocityColumn, meterColumn, headwayColumn);
+	}
+
+	public void setSimulationFactory(SimulationFactory factory) {
+		this.simulationFactory = factory;
 	}
 
 	private static StyleSpans<Collection<String>> computeHighlighting(
@@ -241,7 +293,7 @@ public class PythonPaneController {
 			}
 		}
 	}
-	
+
 	@FXML
 	protected void onPyAction(ActionEvent event) {
 		try {
@@ -249,10 +301,10 @@ public class PythonPaneController {
 				//gatewayServer = new GatewayServer(
 				//	new TimetableSimulationEntry());
 				gatewayServer = new GatewayServer(new Py4JGateway());
-				
+
 				this.pyActiveButton.setVisible(false);
 				this.pyDeactiveButton.setVisible(true);
-				
+
 				Stage stage = (Stage) this.pythonPane.getScene().getWindow();
 				stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
 				    public void handle(WindowEvent we) {
@@ -262,17 +314,17 @@ public class PythonPaneController {
 				        	gatewayServer.shutdown();
 				        }
 				    }
-				}); 
-				
+				});
+
 				gatewayServer.start();
-				
+
 			} else {
 				gatewayServer.shutdown();
 				gatewayServer = null;
 				this.pyActiveButton.setVisible(true);
 				this.pyDeactiveButton.setVisible(false);
 			}
-			
+
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -283,10 +335,10 @@ public class PythonPaneController {
 		this.infoArea.clear();
 		try {
 			Thread thread = new Thread(() -> {
-				try {							
+				try {
 					ProcessBuilder pb = new ProcessBuilder("python",
 							file.getPath());
-					
+
 					this.infoArea
 							.appendText("Start and run Python script ... \n");
 
@@ -307,6 +359,123 @@ public class PythonPaneController {
 			thread.start();
 		} catch (Exception e) {
 		}
+	}
+
+	@FXML
+	protected void calculateHeadway() {
+		if (this.simulationFactory == null) {
+			return;
+		}
+
+		//this.tableViewResult.getItems().clear();
+
+		double minHeadWay = Double.MAX_VALUE;
+        double minHeadwayAtSpeed = -1;
+        double minHeadwayAtMeter = -1;
+
+        try {
+	        File file = new File(this.textOutputFile.getText());
+	        file.createNewFile();
+			FileWriter writer = new FileWriter(file);
+			writer.write("meter;velocity;headway\n");
+
+	        for (double speed = Integer.parseInt(this.textVStart.getText()); speed <= Integer.parseInt(this.textVEnd.getText());
+	        			speed = speed+Integer.parseInt(this.textVStep.getText())) {
+	        	for (double meter = Integer.parseInt(this.textLStart.getText()); meter <= Integer.parseInt(this.textLEnd.getText());
+	        			meter = meter+Integer.parseInt(this.textLStep.getText())) {
+	        		for (InfrastructureElement element :
+	        			this.simulationFactory.getInfraServiceUtility().getInfrastructureElementService().findElements()) {
+	        			if (element.getDescription().equals("B_Track")) {
+	        				Link link = element.findLink(1, 2);
+	        				List<IGeometry> geometries = new ArrayList<IGeometry>();
+	        				geometries.add(new SimpleGeometry(Length.fromMeter(350-meter), Velocity.fromKilometerPerHour(80)));
+	        				geometries.add(new SimpleGeometry(Length.fromMeter(meter), Velocity.fromKilometerPerHour(speed)));
+	        				geometries.add(new SimpleGeometry(Length.fromMeter(400), Velocity.fromKilometerPerHour(80)));
+	        				link.setGeometries(geometries);
+
+	        				break;
+	        			}
+
+	        			SingleSimulationManager simulator = SingleSimulationManager.getInstance(
+	                            this.simulationFactory.getInfraServiceUtility(),
+	                            this.simulationFactory.getRollingStockServiceUtility(),
+	                            this.simulationFactory.getTimeTableServiceUtility());
+
+	                    simulator.run();
+
+	                    AbstractTrainSimulator train = simulator.getTrainSimulators().get(0);
+	                    List<ResourceOccupancy> resourceOccupancies = train.getBlockingTimeStairWay();
+	                    double headway = 0;
+
+	                    for (int i = 1; i < resourceOccupancies.size() - 1; i++) {
+	                    	ResourceOccupancy occupancy = resourceOccupancies.get(i);
+	                    	if (occupancy.getDuration().getTotalSeconds() > headway) {
+	                    		headway = occupancy.getDuration().getTotalSeconds();
+	                    	}
+	                    }
+
+	                    if (headway < minHeadWay) {
+	                    	minHeadWay = headway;
+	                    	minHeadwayAtSpeed = speed;
+	                    	minHeadwayAtMeter = meter;
+	                    }
+
+	                    this.tableViewResult.getItems().add(new HeadwayInfo(speed, meter, headway));
+
+	                    String line = meter+";"+speed+";"+headway+";\n";
+
+	                    writer.write(line);
+	        		}
+	        	}
+	        }
+
+	        this.labelResult.setText("Result: At Meter: " + minHeadwayAtMeter + " with Speed limit: " + minHeadwayAtSpeed + " min. Headway (sec): " + minHeadWay);
+
+	        writer.flush();
+	        writer.close();
+        } catch (Exception e) {}
+	}
+
+	public class HeadwayInfo {
+		private double velocity;
+		private double meter;
+		private double headway;
+
+		public HeadwayInfo(double velocity, double meter, double headway) {
+			this.meter = meter;
+			this.velocity = velocity;
+			this.headway = headway;
+		}
+
+		public double getMeter() {
+			return meter;
+		}
+
+		public double getVelocity() {
+			return velocity;
+		}
+
+		public double getHeadway() {
+			return headway;
+		}
+	}
+
+	@FXML
+	private void onCalibrate() {
+		List<Double> parameters = new ArrayList<Double>();
+        parameters.add(100.0);
+        parameters.add(100.0);
+        parameters.add(100.0);
+
+
+        Calibrator calibrator = Calibrator.getInstance(
+        		this.simulationFactory.getInfraServiceUtility(),
+        		this.simulationFactory.getRollingStockServiceUtility(),
+        		this.simulationFactory.getTimeTableServiceUtility(),
+        		parameters,
+        		this.textPath.getText(),
+        		this.textLog);
+        calibrator.start();
 	}
 
 	private class StreamGobbler extends Thread {

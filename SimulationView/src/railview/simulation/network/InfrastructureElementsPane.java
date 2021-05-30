@@ -157,7 +157,7 @@ public class InfrastructureElementsPane extends PannablePane {
 	private void drawSignal(AbstractSignal signal) {
 		RelativePosition position = signal.getPositions().get(0);
 		double percentage = position.getDistance().getMeter()
-				/ position.getLink().getGeometry().getLength().getMeter();
+				/ position.getLink().getTotalLength().getMeter();
 
 		List<Coordinate> coordinates = position.getLink().getCoordinates();
 		Coordinate startCoor = coordinates.get(coordinates.size() - 2);
