@@ -24,11 +24,11 @@
                           <items>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                  <children>
-                                    <Label layoutX="16.0" layoutY="14.0" text="Output File" AnchorPane.leftAnchor="12.0">
+                                    <Label layoutX="121.0" layoutY="23.0" text="Output" AnchorPane.leftAnchor="121.0">
                                        <font>
                                           <Font size="12.0" />
                                        </font></Label>
-                                    <TextField fx:id="textOutputFile" layoutX="134.0" layoutY="16.0" prefHeight="30.0" prefWidth="389.0" text="c:\temp\headway.csv">
+                                    <TextField fx:id="textOutputFile" layoutX="186.0" layoutY="16.0" prefHeight="30.0" prefWidth="336.0" text="c:\temp\headway.csv">
                                        <font>
                                           <Font size="12.0" />
                                        </font></TextField>
@@ -93,35 +93,93 @@
                                           <Font size="12.0" />
                                        </font>
                                     </Label>
+                                    <Label layoutX="12.0" layoutY="23.0" text="Index">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font></Label>
+                                    <TextField fx:id="textIndex" layoutX="52.0" layoutY="19.0" prefHeight="25.0" prefWidth="44.0" text="0">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </TextField>
                                  </children>
                               </AnchorPane>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="787.0" prefWidth="458.0">
                                  <children>
-                                    <Label layoutX="14.0" layoutY="10.0" text="Round">
+                                    <Label layoutX="14.0" layoutY="10.0" text="Round" AnchorPane.bottomAnchor="5.0">
                                        <font>
                                           <Font size="12.0" />
                                        </font>
                                     </Label>
-                                    <TextField layoutX="63.0" layoutY="6.0" prefHeight="25.0" prefWidth="42.0" text="100">
+                                    <TextField fx:id="textRound" layoutX="62.0" layoutY="762.0" prefHeight="25.0" prefWidth="42.0" text="100" AnchorPane.bottomAnchor="0.0">
                                        <font>
                                           <Font size="12.0" />
                                        </font>
                                     </TextField>
-                                    <Button fx:id="calibrateButton" layoutX="422.0" layoutY="6.0" mnemonicParsing="false" onAction="#onCalibrate" prefHeight="25.0" prefWidth="75.0" text="Calibrate" AnchorPane.rightAnchor="10.0">
+                                    <Button fx:id="calibrateButton" layoutX="422.0" layoutY="6.0" mnemonicParsing="false" onAction="#onCalibrate" prefHeight="25.0" prefWidth="75.0" text="Calibrate" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="10.0">
                                        <font>
                                           <Font size="12.0" />
                                        </font>
                                     </Button>
-                                    <TextArea fx:id="textLog" layoutY="37.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0" />
-                                    <Label layoutX="114.0" layoutY="10.0" text="Path">
+                                    <TextArea fx:id="textLog" layoutY="37.0" prefHeight="724.0" prefWidth="516.0" AnchorPane.bottomAnchor="63.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
+                                    <Label layoutX="118.0" layoutY="766.0" text="Path" AnchorPane.bottomAnchor="4.0">
                                        <font>
                                           <Font size="12.0" />
                                        </font></Label>
-                                    <TextField fx:id="textPath" layoutX="149.0" layoutY="6.0" prefHeight="25.0" prefWidth="228.0" text="C:\Temp\20210401-20210418_line1">
+                                    <TextField fx:id="textPath" layoutX="149.0" layoutY="6.0" prefHeight="25.0" prefWidth="228.0" text="C:\Temp\20210401-20210418_line1" AnchorPane.bottomAnchor="0.0">
                                        <font>
                                           <Font size="12.0" />
                                        </font>
                                     </TextField>
+                                    <Label layoutX="14.0" layoutY="733.0" text="Const." AnchorPane.bottomAnchor="37.0">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font></Label>
+                                    <TextField fx:id="textA" layoutX="62.0" layoutY="729.0" prefHeight="25.0" prefWidth="42.0" text="5000" AnchorPane.bottomAnchor="33.0">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label layoutX="109.0" layoutY="733.0" text="Linear" AnchorPane.bottomAnchor="37.0">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="textB" layoutX="149.0" layoutY="729.0" prefHeight="25.0" prefWidth="36.0" text="0.0" AnchorPane.bottomAnchor="33.0">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label layoutX="192.0" layoutY="733.0" text="Quad." AnchorPane.bottomAnchor="37.0">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="textC" layoutX="231.0" layoutY="729.0" prefHeight="25.0" prefWidth="38.0" text="0.5" AnchorPane.bottomAnchor="33.0">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label layoutX="328.0" layoutY="733.0" text="Acce." AnchorPane.bottomAnchor="37.0">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="textAcc" layoutX="364.0" layoutY="729.0" prefHeight="25.0" prefWidth="32.0" text="1.0" AnchorPane.bottomAnchor="33.0">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="textBrake" layoutX="461.0" layoutY="729.0" prefHeight="25.0" prefWidth="38.0" text="1.0" AnchorPane.bottomAnchor="33.0">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label layoutX="409.0" layoutY="733.0" text="Braking" AnchorPane.bottomAnchor="37.0">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
                                  </children></AnchorPane>
                           </items>
                         </SplitPane>

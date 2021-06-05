@@ -11,6 +11,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -20,11 +21,14 @@ import railapp.infrastructure.element.dto.InfrastructureElement;
 import railapp.infrastructure.element.dto.Link;
 import railapp.infrastructure.element.geometry.dto.IGeometry;
 import railapp.infrastructure.element.geometry.dto.SimpleGeometry;
+import railapp.infrastructure.path.dto.LinkEdge;
+import railapp.infrastructure.path.dto.LinkPath;
 import railapp.simulation.SingleSimulationManager;
 import railapp.simulation.calibration.deterministic.Calibrator;
 import railapp.simulation.entries.Py4JGateway;
 import railapp.simulation.infrastructure.ResourceOccupancy;
 import railapp.simulation.train.AbstractTrainSimulator;
+import railapp.timetable.dto.Trip;
 import railapp.units.Length;
 import railapp.units.Velocity;
 import railview.simulation.SimulationFactory;
@@ -62,7 +66,10 @@ public class PythonPaneController {
 	private GatewayServer gatewayServer = null;
 
 	@FXML
-	private TextField textVStart, textVEnd, textVStep, textLStart, textLEnd, textLStep, textOutputFile, textPath;
+	private TextField textIndex, textVStart, textVEnd, textVStep, textLStart, textLEnd, textLStep, textOutputFile;
+
+	@FXML
+	private TextField textPath, textRound, textA, textB, textC, textAcc, textBrake;
 
 	@FXML
 	private Button calculateButton, calibrateButton;
@@ -92,6 +99,8 @@ public class PythonPaneController {
 
 	@FXML
 	private TextArea infoArea;
+
+	private Calibrator calibrator;
 
 	private static final String[] KEYWORDS = new String[] { "abstract",
 			"assert", "boolean", "break", "byte", "case", "catch", "char",
@@ -373,67 +382,170 @@ public class PythonPaneController {
         double minHeadwayAtSpeed = -1;
         double minHeadwayAtMeter = -1;
 
+        FileWriter writer = null;
+
         try {
 	        File file = new File(this.textOutputFile.getText());
 	        file.createNewFile();
-			FileWriter writer = new FileWriter(file);
+			writer = new FileWriter(file);
 			writer.write("meter;velocity;headway\n");
+        } catch (Exception e) {}
 
-	        for (double speed = Integer.parseInt(this.textVStart.getText()); speed <= Integer.parseInt(this.textVEnd.getText());
-	        			speed = speed+Integer.parseInt(this.textVStep.getText())) {
-	        	for (double meter = Integer.parseInt(this.textLStart.getText()); meter <= Integer.parseInt(this.textLEnd.getText());
-	        			meter = meter+Integer.parseInt(this.textLStep.getText())) {
-	        		for (InfrastructureElement element :
-	        			this.simulationFactory.getInfraServiceUtility().getInfrastructureElementService().findElements()) {
-	        			if (element.getDescription().equals("B_Track")) {
-	        				Link link = element.findLink(1, 2);
-	        				List<IGeometry> geometries = new ArrayList<IGeometry>();
-	        				geometries.add(new SimpleGeometry(Length.fromMeter(350-meter), Velocity.fromKilometerPerHour(80)));
-	        				geometries.add(new SimpleGeometry(Length.fromMeter(meter), Velocity.fromKilometerPerHour(speed)));
-	        				geometries.add(new SimpleGeometry(Length.fromMeter(400), Velocity.fromKilometerPerHour(80)));
-	        				link.setGeometries(geometries);
+		int indexOfTrip = Integer.parseInt(this.textIndex.getText()) - 1;
 
-	        				break;
-	        			}
+		HashMap<Link, List<IGeometry>> backup = this.backUpGeometries(indexOfTrip);
 
-	        			SingleSimulationManager simulator = SingleSimulationManager.getInstance(
-	                            this.simulationFactory.getInfraServiceUtility(),
-	                            this.simulationFactory.getRollingStockServiceUtility(),
-	                            this.simulationFactory.getTimeTableServiceUtility());
+        for (double speed = Integer.parseInt(this.textVStart.getText()); speed <= Integer.parseInt(this.textVEnd.getText());
+        			speed = speed+Integer.parseInt(this.textVStep.getText())) {
+        	for (double meter = Integer.parseInt(this.textLStart.getText()); meter <= Integer.parseInt(this.textLEnd.getText());
+        			meter = meter+Integer.parseInt(this.textLStep.getText())) {
+        		this.setGeometries(indexOfTrip, meter, speed);
 
-	                    simulator.run();
+        		SingleSimulationManager simulator = SingleSimulationManager.getInstance(
+                        this.simulationFactory.getInfraServiceUtility(),
+                        this.simulationFactory.getRollingStockServiceUtility(),
+                        this.simulationFactory.getTimeTableServiceUtility());
 
-	                    AbstractTrainSimulator train = simulator.getTrainSimulators().get(0);
-	                    List<ResourceOccupancy> resourceOccupancies = train.getBlockingTimeStairWay();
-	                    double headway = 0;
+                simulator.run();
 
-	                    for (int i = 1; i < resourceOccupancies.size() - 1; i++) {
-	                    	ResourceOccupancy occupancy = resourceOccupancies.get(i);
-	                    	if (occupancy.getDuration().getTotalSeconds() > headway) {
-	                    		headway = occupancy.getDuration().getTotalSeconds();
-	                    	}
-	                    }
+                AbstractTrainSimulator train = simulator.getTrainSimulators().get(0);
+                List<ResourceOccupancy> resourceOccupancies = train.getBlockingTimeStairWay();
+                double headway = 0;
 
-	                    if (headway < minHeadWay) {
-	                    	minHeadWay = headway;
-	                    	minHeadwayAtSpeed = speed;
-	                    	minHeadwayAtMeter = meter;
-	                    }
+                for (int i = 1; i < resourceOccupancies.size() - 1; i++) {
+                	ResourceOccupancy occupancy = resourceOccupancies.get(i);
+                	if (occupancy.getDuration().getTotalSeconds() > headway) {
+                		headway = occupancy.getDuration().getTotalSeconds();
+                	}
+                }
 
-	                    this.tableViewResult.getItems().add(new HeadwayInfo(speed, meter, headway));
+                if (headway < minHeadWay) {
+                	minHeadWay = headway;
+                	minHeadwayAtSpeed = speed;
+                	minHeadwayAtMeter = meter;
+                }
 
-	                    String line = meter+";"+speed+";"+headway+";\n";
+                this.tableViewResult.getItems().add(new HeadwayInfo(speed, meter, headway));
 
-	                    writer.write(line);
-	        		}
-	        	}
-	        }
+                String line = meter+";"+speed+";"+headway+";\n";
 
-	        this.labelResult.setText("Result: At Meter: " + minHeadwayAtMeter + " with Speed limit: " + minHeadwayAtSpeed + " min. Headway (sec): " + minHeadWay);
+                try {
+                	writer.write(line);
+                } catch (Exception e) {
+                	System.out.println(e);
+                }
 
+                for (Link link : backup.keySet()) {
+                	link.setGeometries(backup.get(link));
+                }
+        	}
+        }
+
+        this.labelResult.setText("Result: At Meter: " + minHeadwayAtMeter + " with Speed limit: " + minHeadwayAtSpeed + " min. Headway (sec): " + minHeadWay);
+
+	    try {
 	        writer.flush();
 	        writer.close();
         } catch (Exception e) {}
+	}
+
+	private HashMap<Link, List<IGeometry>> backUpGeometries(int indexOfTrip) {
+		HashMap<Link, List<IGeometry>> backup = new HashMap<Link, List<IGeometry>>();
+		for (Trip trip : this.simulationFactory.getTimeTableServiceUtility().getTimetableService().findAllTrips()) {
+			LinkPath path = trip.getTripSections().get(0).getNextPathStartFrom(indexOfTrip);
+			for (LinkEdge edge : path.getEdges()) {
+				backup.put(edge.getLink(), edge.getLink().getGeometries());
+			}
+		}
+		return backup;
+	}
+
+	private void setGeometries(int indexOfTrip, double meter, double speed) {
+		double totalMeter = 0;
+
+		for (Trip trip : this.simulationFactory.getTimeTableServiceUtility().getTimetableService().findAllTrips()) {
+			LinkPath path = trip.getTripSections().get(0).getNextPathStartFrom(indexOfTrip);
+			Link link = null;
+			List<IGeometry> geometries = null;
+			for (int i=path.getEdges().size()-1; i>=0; i--) {
+				LinkEdge edge = path.getEdges().get(i);
+
+				if (link == null) {
+					link = edge.getLink();
+					geometries = new ArrayList<IGeometry>();
+				} else {
+					if (link != edge.getLink()) {
+						link.setGeometries(geometries);
+						link = edge.getLink();
+						geometries = new ArrayList<IGeometry>();
+					}
+				}
+
+				List<LinkEdge> splitEdges = edge.splitByGeometry();
+
+				// reach to the length
+				if (totalMeter + edge.getLength().getMeter() >= meter) {
+					double restMeter = meter - totalMeter;
+					boolean isReached = false;
+
+					for (int j=splitEdges.size()-1; j>=0; j--) {
+						LinkEdge splitEdge = splitEdges.get(j);
+
+						if (isReached) {
+							geometries.add(0, new SimpleGeometry(splitEdge.getLength(), splitEdge.getMaxVelocityAtEnd()));
+							continue;
+						}
+
+						if (splitEdge.getLength().getMeter() <= restMeter) {
+							geometries.add(0, new SimpleGeometry(splitEdge.getLength(),
+								Velocity.fromKilometerPerHour(Double.min(speed, splitEdge.getMaxVelocityAtEnd().getKilometerPerHour()))));
+							restMeter = restMeter - splitEdge.getLength().getMeter();
+							if (restMeter == 0) {
+								isReached = true;
+							}
+						} else {
+							geometries.add(0, new SimpleGeometry(Length.fromMeter(restMeter),
+								Velocity.fromKilometerPerHour(Double.min(speed, splitEdge.getMaxVelocityAtEnd().getKilometerPerHour()))));
+							geometries.add(0, new SimpleGeometry(Length.fromMeter(splitEdge.getLength().getMeter() - restMeter),
+								Velocity.fromKilometerPerHour(splitEdge.getMaxVelocityAtEnd().getKilometerPerHour())));
+							isReached = true;
+						}
+					}
+
+					double processedMeter = 0;
+					for (IGeometry geometry : geometries) {
+						processedMeter += geometry.getLength().getMeter();
+					}
+					// put rest of the geometry of the link
+					totalMeter = 0;
+					isReached = false;
+					for (IGeometry geometry : link.getGeometries()) {
+						if (isReached) {
+							geometries.add(geometry);
+						} else {
+							if (totalMeter + geometry.getLength().getMeter() > processedMeter) {
+								geometries.add(new SimpleGeometry(Length.fromMeter(totalMeter + geometry.getLength().getMeter() - processedMeter),
+										geometry.getMaxVelocity()));
+							}
+						}
+						totalMeter += geometry.getLength().getMeter();
+					}
+					link.setGeometries(geometries);
+					return;
+				}
+
+				for (int j=splitEdges.size()-1; j>=0; j--) {
+					LinkEdge splitEdge = splitEdges.get(j);
+					geometries.add(0, new SimpleGeometry(splitEdge.getLength(), Velocity.fromKilometerPerHour(
+							Double.min(speed, splitEdge.getMaxVelocityAtEnd().getKilometerPerHour()))));
+
+				}
+
+				totalMeter += edge.getLength().getMeter();
+			} // for (int i=path.getEdges().size()-1; i>=0; i--)
+			link.setGeometries(geometries);
+			return;
+		}
 	}
 
 	public class HeadwayInfo {
@@ -462,20 +574,34 @@ public class PythonPaneController {
 
 	@FXML
 	private void onCalibrate() {
+		this.textLog.clear();
+
 		List<Double> parameters = new ArrayList<Double>();
-        parameters.add(100.0);
-        parameters.add(100.0);
-        parameters.add(100.0);
+        parameters.add(this.parseParameter(textA));
+        parameters.add(this.parseParameter(textB));
+        parameters.add(this.parseParameter(textC));
+        parameters.add(this.parseParameter(textAcc));
+        parameters.add(this.parseParameter(textBrake));
 
-
-        Calibrator calibrator = Calibrator.getInstance(
+        this.calibrator = Calibrator.getInstance(
         		this.simulationFactory.getInfraServiceUtility(),
         		this.simulationFactory.getRollingStockServiceUtility(),
         		this.simulationFactory.getTimeTableServiceUtility(),
         		parameters,
         		this.textPath.getText(),
-        		this.textLog);
-        calibrator.start();
+        		this.textLog,
+        		Integer.parseInt(this.textRound.getText()));
+        //this.calibrator.start();
+
+        this.calibrator.run();
+	}
+
+	private double parseParameter(TextField text) {
+		try {
+			return Double.parseDouble(text.getText());
+		} catch (Exception e) {
+			return Double.MAX_VALUE;
+		}
 	}
 
 	private class StreamGobbler extends Thread {
