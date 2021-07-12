@@ -21,6 +21,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import railapp.infrastructure.dto.Station;
 import railapp.simulation.train.AbstractTrainSimulator;
+import railapp.units.Length;
 import railapp.units.Time;
 import railview.simulation.ui.data.BlockingTime;
 import railview.simulation.ui.data.LineData;
@@ -198,8 +199,14 @@ public class ChartLineBlockingTime<X, Y> extends DraggableChart<X, Y> {
 	}
 
 	private void drawStations() {
-		for (Station station : this.lineData.getStations()) {
-			double chartX = mapToChart(this.lineData.findStationDistance(station).getMeter(), true);
+		List<Station> stationList = this.lineData.getStations();
+		List<Length> distanceList = this.lineData.getDistances();
+
+		for (int i = 0; i < stationList.size(); i++) {
+			Station station = stationList.get(i);
+			Length distance = distanceList.get(i);
+
+			double chartX = mapToChart(distance.getMeter(), true);
 			Circle circle = new Circle();
 			circle.setCenterX(chartX);
 			circle.setCenterY(0);

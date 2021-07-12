@@ -31,6 +31,8 @@ public class LineMonitorPaneController {
 
 	private ChartLineBlockingTime<Number, Number> lineChart;
 
+	private HashMap<String, LineData> lineDataMap = new HashMap<String, LineData>();
+
 	@FXML
 	public void initialize() {
 		lineMonitorPane.setPickOnBounds(false);
@@ -49,10 +51,19 @@ public class LineMonitorPaneController {
 		}
 	}
 
-	public void updateUI(LineData lineData,
+	public LineData getLineData(String lineString) {
+		return this.lineDataMap.get(lineString);
+	}
+
+	public void updateUI(String lineString, LineData inputLineData,
 			HashMap<AbstractTrainSimulator, List<BlockingTime>> blockingTimeMap,
 			HashMap<AbstractTrainSimulator, List<TimeDistance>> timeDistanceMap) {
 
+		if (this.lineDataMap.get(lineString) == null) {
+			this.lineDataMap.put(lineString, inputLineData);
+		}
+
+		LineData lineData = this.getLineData(lineString);
 		this.setMaxMinXY(lineData, blockingTimeMap);
 
 		lineChart.setChartBound(minX, maxX, minY, maxY);
@@ -79,13 +90,7 @@ public class LineMonitorPaneController {
 	// max and min coordinate for the Mapper
 	private void setMaxMinXY(LineData lineData,
 			HashMap<AbstractTrainSimulator, List<BlockingTime>> blockingTimeStairways) {
-		/*
-		for (Station station : stations) {
-			if (station.getCoordinate().getX() > maxX)
-				maxX = station.getCoordinate().getX();
-			if (station.getCoordinate().getX() < minX)
-				minX = station.getCoordinate().getX();
-		} */
+
 		this.maxX = lineData.getTotalDistance().getMeter();
 		this.minX = 0;
 

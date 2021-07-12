@@ -236,11 +236,13 @@ public class TrainRunMonitorPaneController {
 	private void updateLineUI() {
 		String lineString = lineListView.getSelectionModel().getSelectedItem().toString();
 		Line line = lineMap.get(lineString);
-
-		AbstractTrainSimulator refTrain = new ArrayList<AbstractTrainSimulator>(trainMap.values()).get(0);
-		LineData lineData = new LineData(refTrain);
-
 		Collection<Station> stations = this.infrastructureServiceUtility.getLineService().findStationsByLine(line);
+
+		LineData lineData = lineMonitorPaneController.getLineData(lineString);
+		if (lineData == null) {
+			lineData = new LineData(stations, new ArrayList<AbstractTrainSimulator>(trainMap.values()));
+		}
+
 		HashMap<AbstractTrainSimulator, List<BlockingTime>> blockingTimeMap =
 				trainRunDataManager.getBlockingTimeStairwaysInLine(lineData, trainMap.values());
 		HashMap<AbstractTrainSimulator, List<TimeDistance>> timeDistanceMap =
@@ -252,7 +254,7 @@ public class TrainRunMonitorPaneController {
 		}
 		stationListView.setItems(stationNameList);
 
-		lineMonitorPaneController.updateUI(lineData, blockingTimeMap, timeDistanceMap);
+		lineMonitorPaneController.updateUI(lineString, lineData, blockingTimeMap, timeDistanceMap);
 	}
 
 	public static ObservableList<TableProperty> generateTrainInfo(

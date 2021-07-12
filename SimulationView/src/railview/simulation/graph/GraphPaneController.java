@@ -184,8 +184,8 @@ public class GraphPaneController {
 			}
 		}
 
-		this.runningDynamicsPaneController.setTrainNumbers(numbers);
 		this.trainRunMonitorController.setTrainNumbers(numbers);
+		this.runningDynamicsPaneController.setTrainNumbers(numbers);
 	}
 
 	public AbstractTrainSimulator getTrain(String trainNumber) {
@@ -250,8 +250,7 @@ public class GraphPaneController {
 
 	private OccupancyAndPendingPaneController occupancyAndPendingPaneController;
 
-	private ObservableList<String> numbers = FXCollections
-			.observableArrayList();
+	private ObservableList<String> numbers = FXCollections.observableArrayList();
 
 	private ConcurrentHashMap<String, AbstractTrainSimulator> trainMap = new ConcurrentHashMap<String, AbstractTrainSimulator>();
 }

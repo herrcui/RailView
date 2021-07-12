@@ -169,9 +169,10 @@ public class TrainRunDataManager {
 						.getOperationalPoint()).getElement().getStation();
 
 				if (stations.contains(startStation) && stations.contains(endStation)) {
-					return lineData.findStationDistance(startStation).getMeter()
+					return lineData.findStartStationDistance(startStation, endStation).getMeter()
 							+ (meter - dist.getMeter())
-							* (lineData.findStationDistance(endStation).getMeter() - lineData.findStationDistance(startStation).getMeter())
+							* (lineData.findEndStationDistance(startStation, endStation).getMeter() -
+									lineData.findStartStationDistance(startStation, endStation).getMeter())
 							/ (opDistances.get(index + 1).getMeter() - opDistances.get(index).getMeter());
 				} else {
 					return -1;

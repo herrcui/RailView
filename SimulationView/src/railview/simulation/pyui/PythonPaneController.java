@@ -25,6 +25,7 @@ import railapp.infrastructure.path.dto.LinkEdge;
 import railapp.infrastructure.path.dto.LinkPath;
 import railapp.simulation.SingleSimulationManager;
 import railapp.simulation.calibration.deterministic.Calibrator;
+import railapp.simulation.capacity.MovingBlockSpeedLimitsOptimizer;
 import railapp.simulation.entries.Py4JGateway;
 import railapp.simulation.infrastructure.ResourceOccupancy;
 import railapp.simulation.train.AbstractTrainSimulator;
@@ -376,6 +377,8 @@ public class PythonPaneController {
 			return;
 		}
 
+		boolean forward = true;
+
 		//this.tableViewResult.getItems().clear();
 
 		double minHeadWay = Double.MAX_VALUE;
@@ -392,6 +395,9 @@ public class PythonPaneController {
         } catch (Exception e) {}
 
 		int indexOfTrip = Integer.parseInt(this.textIndex.getText()) - 1;
+		if (forward) {
+			indexOfTrip ++;
+		}
 
 		HashMap<Link, List<IGeometry>> backup = this.backUpGeometries(indexOfTrip);
 
@@ -399,7 +405,15 @@ public class PythonPaneController {
         			speed = speed+Integer.parseInt(this.textVStep.getText())) {
         	for (double meter = Integer.parseInt(this.textLStart.getText()); meter <= Integer.parseInt(this.textLEnd.getText());
         			meter = meter+Integer.parseInt(this.textLStep.getText())) {
-        		this.setGeometries(indexOfTrip, meter, speed);
+        		if (forward) {
+        			MovingBlockSpeedLimitsOptimizer.setGeometriesForwards(
+        					this.simulationFactory.getTimeTableServiceUtility().getTimetableService(),
+        					indexOfTrip, meter, speed);
+        		} else {
+        			MovingBlockSpeedLimitsOptimizer.setGeometriesBackwards(
+        					this.simulationFactory.getTimeTableServiceUtility().getTimetableService(),
+        					indexOfTrip, meter, speed);
+        		}
 
         		SingleSimulationManager simulator = SingleSimulationManager.getInstance(
                         this.simulationFactory.getInfraServiceUtility(),
@@ -458,94 +472,6 @@ public class PythonPaneController {
 			}
 		}
 		return backup;
-	}
-
-	private void setGeometries(int indexOfTrip, double meter, double speed) {
-		double totalMeter = 0;
-
-		for (Trip trip : this.simulationFactory.getTimeTableServiceUtility().getTimetableService().findAllTrips()) {
-			LinkPath path = trip.getTripSections().get(0).getNextPathStartFrom(indexOfTrip);
-			Link link = null;
-			List<IGeometry> geometries = null;
-			for (int i=path.getEdges().size()-1; i>=0; i--) {
-				LinkEdge edge = path.getEdges().get(i);
-
-				if (link == null) {
-					link = edge.getLink();
-					geometries = new ArrayList<IGeometry>();
-				} else {
-					if (link != edge.getLink()) {
-						link.setGeometries(geometries);
-						link = edge.getLink();
-						geometries = new ArrayList<IGeometry>();
-					}
-				}
-
-				List<LinkEdge> splitEdges = edge.splitByGeometry();
-
-				// reach to the length
-				if (totalMeter + edge.getLength().getMeter() >= meter) {
-					double restMeter = meter - totalMeter;
-					boolean isReached = false;
-
-					for (int j=splitEdges.size()-1; j>=0; j--) {
-						LinkEdge splitEdge = splitEdges.get(j);
-
-						if (isReached) {
-							geometries.add(0, new SimpleGeometry(splitEdge.getLength(), splitEdge.getMaxVelocityAtEnd()));
-							continue;
-						}
-
-						if (splitEdge.getLength().getMeter() <= restMeter) {
-							geometries.add(0, new SimpleGeometry(splitEdge.getLength(),
-								Velocity.fromKilometerPerHour(Double.min(speed, splitEdge.getMaxVelocityAtEnd().getKilometerPerHour()))));
-							restMeter = restMeter - splitEdge.getLength().getMeter();
-							if (restMeter == 0) {
-								isReached = true;
-							}
-						} else {
-							geometries.add(0, new SimpleGeometry(Length.fromMeter(restMeter),
-								Velocity.fromKilometerPerHour(Double.min(speed, splitEdge.getMaxVelocityAtEnd().getKilometerPerHour()))));
-							geometries.add(0, new SimpleGeometry(Length.fromMeter(splitEdge.getLength().getMeter() - restMeter),
-								Velocity.fromKilometerPerHour(splitEdge.getMaxVelocityAtEnd().getKilometerPerHour())));
-							isReached = true;
-						}
-					}
-
-					double processedMeter = 0;
-					for (IGeometry geometry : geometries) {
-						processedMeter += geometry.getLength().getMeter();
-					}
-					// put rest of the geometry of the link
-					totalMeter = 0;
-					isReached = false;
-					for (IGeometry geometry : link.getGeometries()) {
-						if (isReached) {
-							geometries.add(geometry);
-						} else {
-							if (totalMeter + geometry.getLength().getMeter() > processedMeter) {
-								geometries.add(new SimpleGeometry(Length.fromMeter(totalMeter + geometry.getLength().getMeter() - processedMeter),
-										geometry.getMaxVelocity()));
-							}
-						}
-						totalMeter += geometry.getLength().getMeter();
-					}
-					link.setGeometries(geometries);
-					return;
-				}
-
-				for (int j=splitEdges.size()-1; j>=0; j--) {
-					LinkEdge splitEdge = splitEdges.get(j);
-					geometries.add(0, new SimpleGeometry(splitEdge.getLength(), Velocity.fromKilometerPerHour(
-							Double.min(speed, splitEdge.getMaxVelocityAtEnd().getKilometerPerHour()))));
-
-				}
-
-				totalMeter += edge.getLength().getMeter();
-			} // for (int i=path.getEdges().size()-1; i>=0; i--)
-			link.setGeometries(geometries);
-			return;
-		}
 	}
 
 	public class HeadwayInfo {
