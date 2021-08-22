@@ -29,6 +29,10 @@ public class TrainRunDataManager {
 
 	public List<BlockingTime> getBlockingTimeStairway(AbstractTrainSimulator train, LineData lineData) {
 		List<BlockingTime> blockingTimes = new ArrayList<BlockingTime>();
+
+		double maxBlockingInSecond = Double.MIN_VALUE;
+		ResourceOccupancy maxBTOccupancy = null;
+
 		if (train instanceof FDTrainSimulator || train instanceof MBTrainSimulator) {
 			double meter = 0;
 			Length headDistanceInFirstResource = null;
@@ -65,9 +69,9 @@ public class TrainRunDataManager {
 					isFirstResource = false;
 				}
 
+				BlockingTime bt = null;
 				if (lineData == null) {
-					blockingTimes.add(new BlockingTime(startMeter, endMeter,
-							startTimeInSecond, endTimeInSecond));
+					bt = new BlockingTime(startMeter, endMeter, startTimeInSecond, endTimeInSecond);
 				} else {
 					double startDist = this.getDistanceInLine(startMeter, train, lineData);
 					double endDist = this.getDistanceInLine(endMeter, train, lineData);
@@ -75,12 +79,25 @@ public class TrainRunDataManager {
 					endDist = this.getDistanceInLine(endMeter, train, lineData);
 
 					if (startDist != -1 && endDist != -1) {
-						blockingTimes.add(new BlockingTime(startDist, endDist,
-								startTimeInSecond, endTimeInSecond));
+						bt = new BlockingTime(startDist, endDist, startTimeInSecond, endTimeInSecond);
+					}
+				}
+
+				if (bt != null) {
+					blockingTimes.add(bt);
+					if (bt.getDurationInSecond() > maxBlockingInSecond) {
+						maxBlockingInSecond = bt.getDurationInSecond();
+						maxBTOccupancy = resourceOccupancy;
 					}
 				}
 
 				meter = endMeter;
+
+				if (resourceOccupancy.getResource().getPath().getEdges().size() >= 2 &&
+						resourceOccupancy.getResource().getPath().getEdges().get(1).toString().equals(
+						"LinkEdge [startLength=0 m, endLength=212 m, link=SW2001: Switch.Link:1-2]")) {
+					String s = "";
+				}
 			}
 
 		}

@@ -169,11 +169,11 @@ public class RunningDynamicsPaneController {
 								.getValue()));
 			}
 			chart.getData().add(CourseForVelocitySeries);
-			XYChart.Series<Number, Number> speedLimitSeries = new Series<Number, Number>();
 
+			XYChart.Series<Number, Number> speedLimitSeries = new Series<Number, Number>();
 			double y = -1;
 			speedLimitSeries.getData().add(new Data<Number, Number>(0, y));
-			for (Map.Entry<Double, Double> entry : getSpeedLimit(train)
+			for (Map.Entry<Double, Double> entry : Course.getSpeedLimits(train)
 					.entrySet()) {
 				if (y >= 0) {
 					speedLimitSeries.getData().add(
@@ -199,8 +199,7 @@ public class RunningDynamicsPaneController {
 	}
 
 	// Map: Meter, VelocityInKmH
-	private Map<Double, Double> getCourseForVelocity(
-			AbstractTrainSimulator train) {
+	public static Map<Double, Double> getCourseForVelocity(AbstractTrainSimulator train) {
 		Map<Double, Double> velocityMap = new LinkedHashMap<Double, Double>();
 		double meter = 0; // x
 		double velocityInKmH = 0; // y
@@ -212,44 +211,7 @@ public class RunningDynamicsPaneController {
 		return velocityMap;
 	}
 
-	private LinkedHashMap<Double, Double> getSpeedLimit(
-			AbstractTrainSimulator train) {
-		// Velocity
-		LinkedHashMap<Double, Double> speedLimitMap = new LinkedHashMap<Double, Double>();
 
-		LinkPath path = train.getFullPath();
-
-		double maxTrainKmH = train.getTrainDefinition().getMaxVelocity()
-				.getKilometerPerHour();
-		double maxKmH = path.getEdges().get(0).splitByGeometry().get(0).getMaxVelocityAtEnd().getKilometerPerHour();
-		double lastMeter = 0;
-		double meter = 0;
-
-		for (LinkEdge originEdge : path.getEdges()) {
-			if (originEdge.getLength().getMeter() == 0) {
-				continue;
-			}
-
-			for (LinkEdge edge : originEdge.splitByGeometry()) {
-				double edgeKmH = edge.getMaxVelocityAtEnd().getKilometerPerHour();
-
-				if (Math.abs(Math.min(maxTrainKmH, edgeKmH) - maxKmH) >= UnitUtility.ERROR) {
-					speedLimitMap.put(lastMeter, maxKmH);
-					speedLimitMap.put(meter, maxKmH);
-
-					maxKmH = Math.min(maxTrainKmH, edgeKmH);
-					lastMeter = meter;
-				}
-
-				meter += edge.getLength().getMeter();
-			}
-		}
-
-		speedLimitMap.put(lastMeter, maxKmH);
-		speedLimitMap.put(meter, maxKmH);
-
-		return speedLimitMap;
-	}
 
 	private void drawEnergy(AbstractTrainSimulator train) {
 		XYChart.Series<Number, Number> courseForEnergy = new Series<Number, Number>();

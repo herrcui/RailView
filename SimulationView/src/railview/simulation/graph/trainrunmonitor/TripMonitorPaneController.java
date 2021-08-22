@@ -76,6 +76,8 @@ public class TripMonitorPaneController {
 		this.headwayChart.setAnimated(false);
 		this.headwayChart.setCreateSymbols(false);
 		headwayPane.getChildren().add(headwayChart);
+		new Zoom(headwayChart, headwayPane);
+
 		AnchorPane.setTopAnchor(headwayChart, 0.0);
 		AnchorPane.setLeftAnchor(headwayChart, 0.0);
 		AnchorPane.setRightAnchor(headwayChart, 0.0);
@@ -152,6 +154,16 @@ public class TripMonitorPaneController {
 		}
 	}
 
+	@FXML
+	private void resetHeadway(MouseEvent event) {
+		if (event.getButton().equals(MouseButton.SECONDARY)) {
+			if (event.getClickCount() == 2) {
+				headwayChart.getXAxis().setAutoRanging(true);
+				headwayChart.getYAxis().setAutoRanging(true);
+			}
+		}
+	}
+
 	public void setInfrastructureServiceUtility(IInfrastructureServiceUtility infraServiceUtility) {
 		this.snapshotPaneController.setInfrastructureServiceUtility(infraServiceUtility);
 	}
@@ -194,8 +206,7 @@ public class TripMonitorPaneController {
 		((NumberAxis) tripChart.getYAxis()).setTickLabelFormatter(new StringConverter<Number>() {
 			@Override
 			public String toString(Number t) {
-				Time testTime = startTime.add(Duration
-						.fromTotalSecond(-t.doubleValue()));
+				Time testTime = startTime.add(Duration.fromTotalSecond(-t.doubleValue()));
 				return testTime.toString();
 			}
 

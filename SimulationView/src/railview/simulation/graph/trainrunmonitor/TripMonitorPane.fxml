@@ -30,7 +30,7 @@
           </Tab>
           <Tab text="Occupancy">
             <content>
-                <AnchorPane fx:id="headwayPane" minHeight="0.0" minWidth="0.0" prefHeight="135.0" prefWidth="481.0">
+                <AnchorPane fx:id="headwayPane" onMouseClicked="#resetHeadway" minHeight="0.0" minWidth="0.0" prefHeight="135.0" prefWidth="481.0">
                 </AnchorPane>
             </content>
           </Tab>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="847.0" prefWidth="1265.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.applications.CapacityOptimizerController">
+   <children>
+      <AnchorPane layoutX="0.0" minHeight="0.0" minWidth="0.0" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Tabs.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+               <SplitPane dividerPositions="0.6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                 <items>
+                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                        <children>
+                           <SplitPane dividerPositions="0.1, 0.4" orientation="VERTICAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                             <items>
+                               <AnchorPane>
+                                  <children>
+								<Label layoutX="11.0" layoutY="26.0" text="Velocity Step (km/h)" AnchorPane.leftAnchor="11.0" AnchorPane.topAnchor="36.0">
+                                   <font>
+                                      <Font size="12.0" />
+                                   </font>
+                                </Label>
+                                <Label layoutX="252.0" layoutY="26.0" text="Length Step(meter)" AnchorPane.leftAnchor="252.0" AnchorPane.topAnchor="36.0">
+                                   <font>
+                                      <Font size="12.0" />
+                                   </font>
+                                </Label>
+                                <TextField fx:id="textVStep" layoutX="144.0" layoutY="22.0" prefHeight="21.0" prefWidth="99.0" text="10" AnchorPane.topAnchor="32.0">
+                                   <font>
+                                      <Font size="12.0" />
+                                   </font>
+                                       </TextField>
+                                <TextField fx:id="textLStep" layoutX="376.0" layoutY="23.0" prefHeight="25.0" prefWidth="100.0" text="100" AnchorPane.topAnchor="32.0">
+                                   <font>
+                                      <Font size="12.0" />
+                                   </font>
+                                       </TextField>
+                                <Button fx:id="optimizeButton" layoutX="555.0" layoutY="20.0" mnemonicParsing="false" onAction="#optimizeHeadway" prefHeight="30.0" prefWidth="160.0" text="Optimize" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="30.0">
+                                   <font>
+                                      <Font size="12.0" />
+                                   </font>
+                                       </Button>
+                                  </children>
+                               </AnchorPane>
+                               <AnchorPane minHeight="0.0" minWidth="0.0">
+                                    <children>
+                                       <TableView fx:id="tableViewOptimize" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                   <columns>
+                                </columns>
+                               </TableView>
+                                    </children></AnchorPane>
+                               <AnchorPane minHeight="0.0" minWidth="0.0">
+                                  <children>
+                                  <TableView fx:id="tableViewResult" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                   <columns>
+                                </columns>
+                               </TableView>
+                                  </children>
+                               </AnchorPane>
+                             </items>
+                           </SplitPane>
+                        </children>
+                     </AnchorPane>
+                   <AnchorPane minHeight="0.0" minWidth="0.0">
+                     <children>
+                        <SplitPane dividerPositions="0.5" orientation="VERTICAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane fx:id="speedLimitPane" minHeight="0.0" minWidth="0.0" onMouseClicked="#resetSpeedLimitChart" prefHeight="0.0" prefWidth="0.0" />
+                            <AnchorPane fx:id="headwayPane" minHeight="0.0" minWidth="0.0" onMouseClicked="#resetHeadwayChart" prefHeight="100.0" prefWidth="160.0" />
+                          </items>
+                        </SplitPane>
+                     </children></AnchorPane>
+                 </items>
+               </SplitPane>
+            </children>
+         </AnchorPane>
+   </children>
+</AnchorPane>

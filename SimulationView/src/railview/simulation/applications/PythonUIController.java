@@ -1,4 +1,4 @@
-package railview.simulation.pyui;
+package railview.simulation.applications;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -8,31 +8,16 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import py4j.GatewayServer;
-import railapp.infrastructure.element.dto.InfrastructureElement;
-import railapp.infrastructure.element.dto.Link;
-import railapp.infrastructure.element.geometry.dto.IGeometry;
-import railapp.infrastructure.element.geometry.dto.SimpleGeometry;
-import railapp.infrastructure.path.dto.LinkEdge;
-import railapp.infrastructure.path.dto.LinkPath;
-import railapp.simulation.SingleSimulationManager;
-import railapp.simulation.calibration.deterministic.Calibrator;
-import railapp.simulation.capacity.MovingBlockSpeedLimitsOptimizer;
-import railapp.simulation.entries.Py4JGateway;
-import railapp.simulation.infrastructure.ResourceOccupancy;
-import railapp.simulation.train.AbstractTrainSimulator;
-import railapp.timetable.dto.Trip;
-import railapp.units.Length;
-import railapp.units.Velocity;
-import railview.simulation.SimulationFactory;
+import org.fxmisc.richtext.CodeArea;
+import org.fxmisc.richtext.LineNumberFactory;
+import org.fxmisc.richtext.model.StyleSpans;
+import org.fxmisc.richtext.model.StyleSpansBuilder;
+
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -40,51 +25,19 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import py4j.GatewayServer;
+import railapp.simulation.entries.Py4JGateway;
+import railview.simulation.SimulationFactory;
 
-import org.fxmisc.richtext.CodeArea;
-import org.fxmisc.richtext.LineNumberFactory;
-import org.fxmisc.richtext.model.StyleSpans;
-import org.fxmisc.richtext.model.StyleSpansBuilder;
-
-/**
- * The controller class of EditorPane.fxml. In the Pane, you can write and load
- * code on the left side and the outcome is on the right side.
- *
- */
-public class PythonPaneController {
+public class PythonUIController {
 	private GatewayServer gatewayServer = null;
-
-	@FXML
-	private TextField textIndex, textVStart, textVEnd, textVStep, textLStart, textLEnd, textLStep, textOutputFile;
-
-	@FXML
-	private TextField textPath, textRound, textA, textB, textC, textAcc, textBrake;
-
-	@FXML
-	private Button calculateButton, calibrateButton;
-
-	@FXML
-	private TableView<HeadwayInfo> tableViewResult;
-
-	@FXML
-	private Label labelResult;
-
-	@FXML
-	private TextArea textLog;
-
-	private SimulationFactory simulationFactory;
 
 	@FXML
 	private AnchorPane pythonPane, fixedButtonPane, codePane;
@@ -100,8 +53,6 @@ public class PythonPaneController {
 
 	@FXML
 	private TextArea infoArea;
-
-	private Calibrator calibrator;
 
 	private static final String[] KEYWORDS = new String[] { "abstract",
 			"assert", "boolean", "break", "byte", "case", "catch", "char",
@@ -139,7 +90,6 @@ public class PythonPaneController {
 			+ ")" + "|(?<STRING>" + STRING_PATTERN + ")" + "|(?<COMMENT>"
 			+ COMMENT_PATTERN + ")");
 
-	@SuppressWarnings("unchecked")
 	@FXML
 	public void initialize() {
 		codeArea.setParagraphGraphicFactory(LineNumberFactory.get(codeArea));
@@ -167,22 +117,10 @@ public class PythonPaneController {
 		SplitPane.setResizableWithParent(fixedButtonPane, Boolean.FALSE);
 
 		pyDeactiveButton.setVisible(false);
-
-		// set tableview
-		TableColumn<HeadwayInfo, Double> velocityColumn = new TableColumn<HeadwayInfo, Double>("Velocity");
-        velocityColumn.setCellValueFactory(new PropertyValueFactory<>("velocity"));
-
-        TableColumn<HeadwayInfo, Double> meterColumn = new TableColumn<HeadwayInfo, Double>("Meter");
-        meterColumn.setCellValueFactory(new PropertyValueFactory<>("meter"));
-
-        TableColumn<HeadwayInfo, Double> headwayColumn = new TableColumn<HeadwayInfo, Double>("Headway");
-        headwayColumn.setCellValueFactory(new PropertyValueFactory<>("headway"));
-
-        this.tableViewResult.getColumns().addAll(velocityColumn, meterColumn, headwayColumn);
 	}
 
 	public void setSimulationFactory(SimulationFactory factory) {
-		this.simulationFactory = factory;
+
 	}
 
 	private static StyleSpans<Collection<String>> computeHighlighting(
@@ -371,165 +309,6 @@ public class PythonPaneController {
 		}
 	}
 
-	@FXML
-	protected void calculateHeadway() {
-		if (this.simulationFactory == null) {
-			return;
-		}
-
-		boolean forward = true;
-
-		//this.tableViewResult.getItems().clear();
-
-		double minHeadWay = Double.MAX_VALUE;
-        double minHeadwayAtSpeed = -1;
-        double minHeadwayAtMeter = -1;
-
-        FileWriter writer = null;
-
-        try {
-	        File file = new File(this.textOutputFile.getText());
-	        file.createNewFile();
-			writer = new FileWriter(file);
-			writer.write("meter;velocity;headway\n");
-        } catch (Exception e) {}
-
-		int indexOfTrip = Integer.parseInt(this.textIndex.getText()) - 1;
-		if (forward) {
-			indexOfTrip ++;
-		}
-
-		HashMap<Link, List<IGeometry>> backup = this.backUpGeometries(indexOfTrip);
-
-        for (double speed = Integer.parseInt(this.textVStart.getText()); speed <= Integer.parseInt(this.textVEnd.getText());
-        			speed = speed+Integer.parseInt(this.textVStep.getText())) {
-        	for (double meter = Integer.parseInt(this.textLStart.getText()); meter <= Integer.parseInt(this.textLEnd.getText());
-        			meter = meter+Integer.parseInt(this.textLStep.getText())) {
-        		if (forward) {
-        			MovingBlockSpeedLimitsOptimizer.setGeometriesForwards(
-        					this.simulationFactory.getTimeTableServiceUtility().getTimetableService(),
-        					indexOfTrip, meter, speed);
-        		} else {
-        			MovingBlockSpeedLimitsOptimizer.setGeometriesBackwards(
-        					this.simulationFactory.getTimeTableServiceUtility().getTimetableService(),
-        					indexOfTrip, meter, speed);
-        		}
-
-        		SingleSimulationManager simulator = SingleSimulationManager.getInstance(
-                        this.simulationFactory.getInfraServiceUtility(),
-                        this.simulationFactory.getRollingStockServiceUtility(),
-                        this.simulationFactory.getTimeTableServiceUtility());
-
-                simulator.run();
-
-                AbstractTrainSimulator train = simulator.getTrainSimulators().get(0);
-                List<ResourceOccupancy> resourceOccupancies = train.getBlockingTimeStairWay();
-                double headway = 0;
-
-                for (int i = 1; i < resourceOccupancies.size() - 1; i++) {
-                	ResourceOccupancy occupancy = resourceOccupancies.get(i);
-                	if (occupancy.getDuration().getTotalSeconds() > headway) {
-                		headway = occupancy.getDuration().getTotalSeconds();
-                	}
-                }
-
-                if (headway < minHeadWay) {
-                	minHeadWay = headway;
-                	minHeadwayAtSpeed = speed;
-                	minHeadwayAtMeter = meter;
-                }
-
-                this.tableViewResult.getItems().add(new HeadwayInfo(speed, meter, headway));
-
-                String line = meter+";"+speed+";"+headway+";\n";
-
-                try {
-                	writer.write(line);
-                } catch (Exception e) {
-                	System.out.println(e);
-                }
-
-                for (Link link : backup.keySet()) {
-                	link.setGeometries(backup.get(link));
-                }
-        	}
-        }
-
-        this.labelResult.setText("Result: At Meter: " + minHeadwayAtMeter + " with Speed limit: " + minHeadwayAtSpeed + " min. Headway (sec): " + minHeadWay);
-
-	    try {
-	        writer.flush();
-	        writer.close();
-        } catch (Exception e) {}
-	}
-
-	private HashMap<Link, List<IGeometry>> backUpGeometries(int indexOfTrip) {
-		HashMap<Link, List<IGeometry>> backup = new HashMap<Link, List<IGeometry>>();
-		for (Trip trip : this.simulationFactory.getTimeTableServiceUtility().getTimetableService().findAllTrips()) {
-			LinkPath path = trip.getTripSections().get(0).getNextPathStartFrom(indexOfTrip);
-			for (LinkEdge edge : path.getEdges()) {
-				backup.put(edge.getLink(), edge.getLink().getGeometries());
-			}
-		}
-		return backup;
-	}
-
-	public class HeadwayInfo {
-		private double velocity;
-		private double meter;
-		private double headway;
-
-		public HeadwayInfo(double velocity, double meter, double headway) {
-			this.meter = meter;
-			this.velocity = velocity;
-			this.headway = headway;
-		}
-
-		public double getMeter() {
-			return meter;
-		}
-
-		public double getVelocity() {
-			return velocity;
-		}
-
-		public double getHeadway() {
-			return headway;
-		}
-	}
-
-	@FXML
-	private void onCalibrate() {
-		this.textLog.clear();
-
-		List<Double> parameters = new ArrayList<Double>();
-        parameters.add(this.parseParameter(textA));
-        parameters.add(this.parseParameter(textB));
-        parameters.add(this.parseParameter(textC));
-        parameters.add(this.parseParameter(textAcc));
-        parameters.add(this.parseParameter(textBrake));
-
-        this.calibrator = Calibrator.getInstance(
-        		this.simulationFactory.getInfraServiceUtility(),
-        		this.simulationFactory.getRollingStockServiceUtility(),
-        		this.simulationFactory.getTimeTableServiceUtility(),
-        		parameters,
-        		this.textPath.getText(),
-        		this.textLog,
-        		Integer.parseInt(this.textRound.getText()));
-        //this.calibrator.start();
-
-        this.calibrator.run();
-	}
-
-	private double parseParameter(TextField text) {
-		try {
-			return Double.parseDouble(text.getText());
-		} catch (Exception e) {
-			return Double.MAX_VALUE;
-		}
-	}
-
 	private class StreamGobbler extends Thread {
 		InputStream is;
 
@@ -561,5 +340,4 @@ public class PythonPaneController {
 	private CodeArea codeArea = new CodeArea();
 	private FileChooser fileChooser = new FileChooser();
 	private File file;
-
 }
