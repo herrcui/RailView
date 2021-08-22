@@ -31,7 +31,6 @@ public class TrainRunDataManager {
 		List<BlockingTime> blockingTimes = new ArrayList<BlockingTime>();
 
 		double maxBlockingInSecond = Double.MIN_VALUE;
-		ResourceOccupancy maxBTOccupancy = null;
 
 		if (train instanceof FDTrainSimulator || train instanceof MBTrainSimulator) {
 			double meter = 0;
@@ -87,17 +86,10 @@ public class TrainRunDataManager {
 					blockingTimes.add(bt);
 					if (bt.getDurationInSecond() > maxBlockingInSecond) {
 						maxBlockingInSecond = bt.getDurationInSecond();
-						maxBTOccupancy = resourceOccupancy;
 					}
 				}
 
 				meter = endMeter;
-
-				if (resourceOccupancy.getResource().getPath().getEdges().size() >= 2 &&
-						resourceOccupancy.getResource().getPath().getEdges().get(1).toString().equals(
-						"LinkEdge [startLength=0 m, endLength=212 m, link=SW2001: Switch.Link:1-2]")) {
-					String s = "";
-				}
 			}
 
 		}

@@ -21,14 +21,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import railapp.infrastructure.path.dto.LinkEdge;
-import railapp.infrastructure.path.dto.LinkPath;
 import railapp.simulation.capacity.MovingBlockSpeedLimitsOptimizer;
 import railapp.simulation.capacity.MovingBlockSpeedLimitsOptimizer.IUIController;
 import railapp.simulation.capacity.OptimizeHeadwayInfo;
-import railapp.simulation.runingdynamics.Course;
 import railapp.simulation.train.AbstractTrainSimulator;
-import railapp.units.UnitUtility;
 import railview.simulation.SimulationFactory;
 import railview.simulation.graph.runningdynamics.RunningDynamicsPaneController;
 import railview.simulation.ui.data.BlockingTime;
@@ -36,6 +32,7 @@ import railview.simulation.ui.data.TrainRunDataManager;
 import railview.simulation.ui.utilities.DraggableChart;
 import railview.simulation.ui.utilities.Zoom;
 
+@SuppressWarnings("restriction")
 public class CapacityOptimizerController implements IUIController {
 	@FXML
 	private TextField textVStep, textLStep;
@@ -131,7 +128,6 @@ public class CapacityOptimizerController implements IUIController {
 		optimizer.start();
 	}
 
-	@SuppressWarnings("restriction")
 	@Override
 	public void updateOptimizationCharts(
 			AbstractTrainSimulator train, LinkedHashMap<Double, Double> speedLimits, boolean isOrigin) {

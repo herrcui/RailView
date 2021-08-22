@@ -4,14 +4,11 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import railapp.infrastructure.path.dto.LinkEdge;
-import railapp.infrastructure.path.dto.LinkPath;
 import railapp.rollingstock.dto.SimpleTrain;
 import railapp.simulation.runingdynamics.Course;
 import railapp.simulation.runingdynamics.sections.DiscretePoint;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.units.Energy;
-import railapp.units.UnitUtility;
 import railview.simulation.graph.trainrunmonitor.TrainRunMonitorPaneController;
 import railview.simulation.ui.data.TableProperty;
 import railview.simulation.ui.utilities.DraggableChart;
