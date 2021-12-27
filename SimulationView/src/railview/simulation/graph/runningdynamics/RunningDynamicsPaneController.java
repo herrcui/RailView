@@ -54,29 +54,25 @@ public class RunningDynamicsPaneController {
 		speedProfileChart = this.createChart();
 		energyChart = this.createChart();
 
-		trainNumbers.getSelectionModel().selectedItemProperty()
-				.addListener(new ChangeListener<String>() {
-					@Override
-					public void changed(
-							ObservableValue<? extends String> observable,
-							String oldValue, String newValue) {
+		trainNumbers.setOnMouseClicked(new EventHandler<MouseEvent>() {
+	        @Override
+	        public void handle(MouseEvent event) {
+	            String newValue = trainNumbers.getSelectionModel().getSelectedItem();
+	            AbstractTrainSimulator train = trainMap.get(newValue);
 
-						speedProfileChart.getData().clear();
-						speedProfileChart.getXAxis().setAutoRanging(true);
-						speedProfileChart.getYAxis().setAutoRanging(true);
-						drawVelocity(trainMap.get(newValue), speedProfileChart);
+				trainInfoTable.setItems(TrainRunMonitorPaneController.generateTrainInfo(train, newValue));
 
-						energyChart.getData().clear();
-						energyChart.getXAxis().setAutoRanging(true);
-						energyChart.getYAxis().setAutoRanging(true);
-						drawEnergy(trainMap.get(newValue));
+				speedProfileChart.getData().clear();
+				speedProfileChart.getXAxis().setAutoRanging(true);
+				speedProfileChart.getYAxis().setAutoRanging(true);
+				drawVelocity(trainMap.get(newValue), speedProfileChart);
 
-						AbstractTrainSimulator train = trainMap.get(newValue);
-
-						trainInfoTable.setItems(TrainRunMonitorPaneController
-								.generateTrainInfo(train, newValue));
-					}
-				});
+				energyChart.getData().clear();
+				energyChart.getXAxis().setAutoRanging(true);
+				energyChart.getYAxis().setAutoRanging(true);
+				drawEnergy(trainMap.get(newValue));
+	        }
+	    });
 
 		// initialize trainInfoTable
 		TableColumn<TableProperty, String> trainItemCol = new TableColumn<TableProperty, String>(
@@ -170,8 +166,7 @@ public class RunningDynamicsPaneController {
 			XYChart.Series<Number, Number> speedLimitSeries = new Series<Number, Number>();
 			double y = -1;
 			speedLimitSeries.getData().add(new Data<Number, Number>(0, y));
-			for (Map.Entry<Double, Double> entry : Course.getSpeedLimits(train)
-					.entrySet()) {
+			for (Map.Entry<Double, Double> entry : Course.getSpeedLimits(train).entrySet()) {
 				if (y >= 0) {
 					speedLimitSeries.getData().add(
 							new Data<Number, Number>(entry.getKey(), y));

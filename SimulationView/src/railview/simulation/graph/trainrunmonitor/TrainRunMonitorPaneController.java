@@ -17,6 +17,7 @@ import railapp.rollingstock.dto.SimpleTrain;
 import railapp.simulation.train.AbstractTrainSimulator;
 import railapp.timetable.dto.TripElement;
 import railapp.units.Coordinate;
+import railapp.units.Duration;
 import railview.simulation.setting.UIInfrastructureSetting;
 import railview.simulation.ui.data.BlockingTime;
 import railview.simulation.ui.data.EventData;
@@ -28,6 +29,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.CheckBox;
@@ -39,6 +41,7 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
@@ -112,17 +115,11 @@ public class TrainRunMonitorPaneController {
 			e.printStackTrace();
 		}
 
-		trainNumbers.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-			@Override
-			public void changed(
-					ObservableValue<? extends String> observable,
-					String oldValue, String newValue) {
-
-				lineRoot.setVisible(false);
-				tripRoot.setVisible(true);
-
-				AbstractTrainSimulator train = trainMap.get(
-					trainNumbers.getSelectionModel().getSelectedItem().toString());
+		trainNumbers.setOnMouseClicked(new EventHandler<MouseEvent>() {
+	        @Override
+	        public void handle(MouseEvent event) {
+	            String newValue = trainNumbers.getSelectionModel().getSelectedItem();
+	            AbstractTrainSimulator train = trainMap.get(newValue);
 
 				trainInfoTable.setItems(generateTrainInfo(train, newValue));
 
@@ -135,15 +132,8 @@ public class TrainRunMonitorPaneController {
 				List<TimeDistance> timeDistances = trainRunDataManager.getTimeInDistance(train, null);
 
 				tripMonitorPaneController.updateUI(train, path, blockingTime, timeDistances, events);
-				// TODO put the logic in controller
-				/*
-				if (oldValue == null || !oldValue.equals(newValue)) {
-					eventTable.getItems().clear();
-				}
-				*/
-			}
-
-		});
+	        }
+	    });
 
 		// initialize trainInfoTable
 		TableColumn trainItemCol = new TableColumn("Item");
@@ -273,6 +263,13 @@ public class TrainRunMonitorPaneController {
 					getOperationalPoint()).getElement().getStation().getDescription()));
 		observableTrainInfoList.add(new TableProperty("Start time",
 			elements.get(0).getArriveTime().toString()));
+
+		Duration scheduledTime =
+			elements.get(elements.size() - 1).getDepartureTime().getDifference(elements.get(0).getDepartureTime());
+		observableTrainInfoList.add(new TableProperty("Scheduled conveyance time", scheduledTime.toString()));
+
+		observableTrainInfoList.add(new TableProperty("Devations",
+				train.getDelay().toString()));
 
 		return observableTrainInfoList;
 	}
