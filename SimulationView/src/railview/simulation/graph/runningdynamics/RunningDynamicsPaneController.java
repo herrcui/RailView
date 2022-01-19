@@ -13,8 +13,6 @@ import railview.simulation.graph.trainrunmonitor.TrainRunMonitorPaneController;
 import railview.simulation.ui.data.TableProperty;
 import railview.simulation.ui.utilities.DraggableChart;
 import railview.simulation.ui.utilities.ZoomOnlyX;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;

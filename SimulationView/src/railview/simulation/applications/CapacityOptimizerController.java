@@ -7,6 +7,11 @@ import java.util.Map;
 
 import com.sun.javafx.charts.Legend;
 
+import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.chart.NumberAxis;
@@ -14,9 +19,10 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Data;
 import javafx.scene.chart.XYChart.Series;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
@@ -35,10 +41,13 @@ import railview.simulation.ui.utilities.Zoom;
 @SuppressWarnings("restriction")
 public class CapacityOptimizerController implements IUIController {
 	@FXML
-	private TextField textVStep, textLStep;
+	private Label textInfo;
 
 	@FXML
 	private Button optimizeButton;
+
+	@FXML
+	private ComboBox<String> modeCombo;
 
 	@FXML
 	private TableView<OptimizeHeadwayInfo> tableViewResult, tableViewOptimize;
@@ -52,9 +61,35 @@ public class CapacityOptimizerController implements IUIController {
 
 	private TrainRunDataManager trainRunDataManager = new TrainRunDataManager();
 
+	private short mode = -1;
+
 	@SuppressWarnings("unchecked")
 	@FXML
 	public void initialize() {
+		ObservableList<String> options =
+			    FXCollections.observableArrayList(
+			        "Grid Search",
+			        "Monte Carlo",
+			        "Simulated Annealing"
+			    );
+		this.modeCombo.setItems(options);
+		this.modeCombo.valueProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> ov, String t, String t1) {
+                switch(t1) {
+                case "Grid Search":
+                	mode = 0;
+                	break;
+                case "Monte Carlo":
+                	mode = 1;
+                	break;
+                case "Simulated Annealing":
+                	mode = 2;
+                	break;
+                }
+            }
+        });
+
 		// set tableview
 		TableColumn<OptimizeHeadwayInfo, Double> optBottleneckColumn = new TableColumn<OptimizeHeadwayInfo, Double>("To Be Opt.Bottleneck");
 		optBottleneckColumn.setCellValueFactory(new PropertyValueFactory<>("toBeOptimizedBottleneck"));
@@ -123,7 +158,8 @@ public class CapacityOptimizerController implements IUIController {
 				this.simulationFactory.getTimeTableServiceUtility(),
 				this.tableViewResult,
 				this.tableViewOptimize,
-				this);
+				this,
+				this.mode);
 
 		optimizer.start();
 	}
@@ -237,5 +273,14 @@ public class CapacityOptimizerController implements IUIController {
 				headwayChart.getYAxis().setAutoRanging(true);
 			}
 		}
+	}
+
+	@Override
+	public void updateMessage(String message) {
+		Platform.runLater(new Runnable() {
+			@Override public void run() {
+			    textInfo.setText(message);
+			}
+		});
 	}
 }
