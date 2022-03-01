@@ -91,6 +91,9 @@ public class CapacityOptimizerController implements IUIController {
         });
 
 		// set tableview
+		TableColumn<OptimizeHeadwayInfo, Integer> roundColumn = new TableColumn<OptimizeHeadwayInfo, Integer>("Round");
+		roundColumn.setCellValueFactory(new PropertyValueFactory<>("round"));
+
 		TableColumn<OptimizeHeadwayInfo, Double> optBottleneckColumn = new TableColumn<OptimizeHeadwayInfo, Double>("To Be Opt.Bottleneck");
 		optBottleneckColumn.setCellValueFactory(new PropertyValueFactory<>("toBeOptimizedBottleneck"));
 
@@ -109,7 +112,13 @@ public class CapacityOptimizerController implements IUIController {
         TableColumn<OptimizeHeadwayInfo, Double> headwayColumn = new TableColumn<OptimizeHeadwayInfo, Double>("Headway");
         headwayColumn.setCellValueFactory(new PropertyValueFactory<>("headway"));
 
-        this.tableViewResult.getColumns().addAll(optBottleneckColumn, velocityColumn, meterColumn, optHeadwayColumn, bottleneckColumn, headwayColumn);
+        TableColumn<OptimizeHeadwayInfo, Double> transportTimeColumn = new TableColumn<OptimizeHeadwayInfo, Double>("TransportTime");
+        transportTimeColumn.setCellValueFactory(new PropertyValueFactory<>("transportTime"));
+
+        this.tableViewResult.getColumns().addAll(roundColumn, optBottleneckColumn, velocityColumn, meterColumn, optHeadwayColumn, bottleneckColumn, headwayColumn, transportTimeColumn);
+
+        TableColumn<OptimizeHeadwayInfo, Integer> roundLogColumn = new TableColumn<OptimizeHeadwayInfo, Integer>("Round");
+		roundLogColumn.setCellValueFactory(new PropertyValueFactory<>("round"));
 
         TableColumn<OptimizeHeadwayInfo, Double> optBottleneckLogColumn = new TableColumn<OptimizeHeadwayInfo, Double>("To Be Opt.Bottleneck");
 		optBottleneckLogColumn.setCellValueFactory(new PropertyValueFactory<>("toBeOptimizedBottleneck"));
@@ -123,7 +132,10 @@ public class CapacityOptimizerController implements IUIController {
         TableColumn<OptimizeHeadwayInfo, Double> headwayLogColumn = new TableColumn<OptimizeHeadwayInfo, Double>("Headway");
         headwayLogColumn.setCellValueFactory(new PropertyValueFactory<>("headway"));
 
-        this.tableViewOptimize.getColumns().addAll(optBottleneckLogColumn, velocityLogColumn, meterLogColumn, headwayLogColumn);
+        TableColumn<OptimizeHeadwayInfo, Double> transportTimeLogColumn = new TableColumn<OptimizeHeadwayInfo, Double>("TransportTime");
+        transportTimeLogColumn.setCellValueFactory(new PropertyValueFactory<>("transportTime"));
+
+        this.tableViewOptimize.getColumns().addAll(roundLogColumn, optBottleneckLogColumn, velocityLogColumn, meterLogColumn, headwayLogColumn, transportTimeLogColumn);
 
         this.speedChart = new DraggableChart<>(new NumberAxis(), new NumberAxis());
 		this.initiateChart(this.speedChart, this.speedLimitPane);

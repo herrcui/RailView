@@ -14,10 +14,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.control.SplitPane?>
 
-<AnchorPane fx:id="settingPaneRoot" prefHeight="600.0" prefWidth="800.0" styleClass="background-white" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Darktheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.setting.SettingPaneController">
+<AnchorPane fx:id="settingPaneRoot" prefHeight="663.0" prefWidth="964.0" styleClass="background-white" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Darktheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.setting.SettingPaneController">
    <children>
    	<TabPane side="BOTTOM" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Tabs.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
    		<tabs>
+   		     <Tab text="Infrastructure Editor">
+   		     	<content>
+   		     		<AnchorPane fx:id="infraEditorRoot" styleClass="background-grey" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Darktheme.css" />
+				</content>
+   		     </Tab>
              <Tab text="Communication Messages">
                 <content>
                     <TabPane layoutY="14.0" prefHeight="261.0" prefWidth="394.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

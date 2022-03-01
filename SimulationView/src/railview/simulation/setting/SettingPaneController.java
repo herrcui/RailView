@@ -5,6 +5,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
@@ -26,6 +27,7 @@ import railapp.dispatching.NoneDispatchingSystem;
 import railapp.dispatching.services.Py4JDispatchingSystem;
 import railapp.messages.Message;
 import railapp.simulation.SingleSimulationManager;
+import railview.simulation.editor.infrastructure.InfrastructureEditorPaneController;
 import railview.simulation.ui.data.TableProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -33,6 +35,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
@@ -68,7 +71,14 @@ public class SettingPaneController extends Stage implements Initializable {
 	@FXML
 	private TableView<TableProperty> ReceivedTable, SentTable;
 
+	@FXML
+	private AnchorPane infraEditorRoot;
+
+	private AnchorPane infrastructureEditorPane;
+
 	private CodeArea codeArea;
+
+	private InfrastructureEditorPaneController infrastructureEditorPaneController;
 
 	private static final String[] KEYWORDS = new String[] { "abstract",
 			"assert", "boolean", "break", "byte", "case", "catch", "char",
@@ -163,6 +173,21 @@ public class SettingPaneController extends Stage implements Initializable {
 		SMsgContentCol.setCellValueFactory(new PropertyValueFactory<TableProperty, String>("value"));
 
 		SentTable.getColumns().addAll(SMsgTimeCol, SMsgContentCol);
+
+		try {
+			FXMLLoader infrastructureEditorPaneLoader = new FXMLLoader();
+			URL location = InfrastructureEditorPaneController.class.getResource("InfrastructureEditorPane.fxml");
+			infrastructureEditorPaneLoader.setLocation(location);
+			infrastructureEditorPane = (AnchorPane) infrastructureEditorPaneLoader.load();
+			this.infrastructureEditorPaneController = infrastructureEditorPaneLoader.getController();
+
+			this.infraEditorRoot.getChildren().add(infrastructureEditorPane);
+
+			infrastructureEditorPaneController.initialize();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 	private static ObservableList<TableProperty> generateILInfo() {
@@ -314,6 +339,7 @@ public class SettingPaneController extends Stage implements Initializable {
 			this.addMessages(sent, this.SentTable);
 		}
 	}
+
 
 	private void addMessages(List<Message> messages, TableView<TableProperty> tv) {
 		CopyOnWriteArrayList<Message> tempList = new CopyOnWriteArrayList<Message>();
