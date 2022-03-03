@@ -182,8 +182,6 @@ public class SettingPaneController extends Stage implements Initializable {
 			this.infrastructureEditorPaneController = infrastructureEditorPaneLoader.getController();
 
 			this.infraEditorRoot.getChildren().add(infrastructureEditorPane);
-
-			infrastructureEditorPaneController.initialize();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
