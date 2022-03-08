@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="399.0" prefWidth="527.0" styleClass="background-white" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.editor.infrastructure.InfrastructureEditorPaneController">
+	<children>
+		<SplitPane dividerPositions="0.0" orientation="VERTICAL" prefHeight="384.0" prefWidth="453.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<items>
+				<AnchorPane minHeight="35.0" minWidth="0.0" prefHeight="35.0" prefWidth="451.0" SplitPane.resizableWithParent="false">
+               <children>
+                  <Button layoutY="-1.0" mnemonicParsing="false" onAction="#onSetWorkingFolder" prefHeight="31.0" prefWidth="128.0" text="Working Folder">
+                     <font>
+                        <Font size="12.0" />
+                     </font></Button>
+                  <Label fx:id="folderLabel" layoutX="135.0" layoutY="4.0" prefHeight="21.0" prefWidth="382.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="8.0">
+                     <font>
+                        <Font size="12.0" />
+                     </font></Label>
+               </children></AnchorPane>
+				<AnchorPane fx:id="infrastructureEditorPaneRoot" minHeight="0.0" minWidth="0.0" prefHeight="248.0" prefWidth="383.0">
+				</AnchorPane>
+			</items>
+		</SplitPane>
+	</children>
+</AnchorPane>

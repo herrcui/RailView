@@ -14,8 +14,6 @@
     -fx-background-color: transparent;
 }
 
-
-
 .tab{
     -fx-background-insets: 0 1 0 1,0,0;
 }
@@ -30,18 +28,17 @@
     -fx-background-color: #3c3c3c;
 }
 
-.tab .tab-label { 
+.tab .tab-label {
 	-fx-font-family: "Verdana";
     -fx-alignment: CENTER;
     -fx-text-fill: #5E58F5;
     -fx-font-size: 12px;
 }
 
-.tab:selected .tab-label { 
+.tab:selected .tab-label {
     -fx-alignment: CENTER;
     -fx-text-fill: #D6D5F5;
 }
-
 
 .tab-pane:top *.tab-header-area {
     -fx-background-insets: 0, 0 0 1 0;

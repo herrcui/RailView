@@ -17,5 +17,7 @@
 	<classpathentry kind="lib" path="/Library/GUI/richtextfx-fat-0.7-M3.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/MessagingMQ"/>
 	<classpathentry kind="src" path="/CoreModelParser"/>
+	<classpathentry kind="src" path="/RollingstockRepository"/>
+	<classpathentry kind="src" path="/TimetableRepository"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

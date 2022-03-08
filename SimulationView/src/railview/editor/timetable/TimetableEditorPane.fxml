@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="678.0" prefWidth="1004.0" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Darktheme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.editor.timetable.TimetableEditorPaneController">
+	<children>
+		<SplitPane dividerPositions="0.0" orientation="VERTICAL" prefHeight="384.0" prefWidth="453.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<items>
+				<AnchorPane minHeight="35.0" minWidth="0.0" prefHeight="35.0" prefWidth="451.0" SplitPane.resizableWithParent="false">
+               <children>
+                  <Button layoutY="-1.0" mnemonicParsing="false" onAction="#onSetWorkingFolder" prefHeight="31.0" prefWidth="128.0" text="Working Folder">
+                     <font>
+                        <Font size="12.0" />
+                     </font></Button>
+                  <Label fx:id="folderLabel" layoutX="135.0" layoutY="4.0" prefHeight="21.0" prefWidth="382.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="8.0">
+                     <font>
+                        <Font size="12.0" />
+                     </font></Label>
+               </children></AnchorPane>
+				<AnchorPane fx:id="timetableEditorPaneRoot" minHeight="0.0" minWidth="0.0" prefHeight="248.0" prefWidth="383.0">
+               <children>
+                  <SplitPane dividerPositions="0.5" layoutX="99.0" layoutY="76.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane fx:id="schedulingRoot" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <SplitPane dividerPositions="0.5" layoutX="37.0" layoutY="62.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="260.0" prefWidth="469.0">
+                                       <children>
+                                          <Button layoutY="258.0" mnemonicParsing="false" text="New Train Group" AnchorPane.bottomAnchor="8.0">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button layoutX="121.0" layoutY="258.0" mnemonicParsing="false" text="Delete Train Group" AnchorPane.bottomAnchor="8.0">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button layoutX="422.0" layoutY="258.0" mnemonicParsing="false" text="Save" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="6.0">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </Button>
+                                       </children></AnchorPane>
+                                    <SplitPane dividerPositions="0.6" prefHeight="160.0" prefWidth="200.0">
+                                      <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="296.0" prefWidth="327.0">
+                                             <children>
+                                                <Label layoutX="1.0" layoutY="200.0" text="Start:" AnchorPane.leftAnchor="8.0">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField layoutX="209.0" layoutY="196.0" prefHeight="25.0" prefWidth="71.0" promptText="hh:mm:ss" AnchorPane.rightAnchor="6.0">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </TextField>
+                                                <Label layoutX="12.0" layoutY="7.0" text="Name:" AnchorPane.leftAnchor="8.0">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField layoutX="94.0" layoutY="3.0" prefHeight="25.0" prefWidth="128.0" AnchorPane.leftAnchor="94.0">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </TextField>
+                                                <Label layoutX="10.0" layoutY="41.0" text="Description:" AnchorPane.leftAnchor="8.0">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField layoutX="94.0" layoutY="37.0" prefHeight="25.0" prefWidth="128.0" AnchorPane.leftAnchor="94.0">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </TextField>
+                                                <Label layoutX="14.0" layoutY="237.0" text="Number of Trips:" AnchorPane.leftAnchor="8.0">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="148.0" layoutY="200.0" text="Interval:" AnchorPane.leftAnchor="148.0">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField layoutX="58.0" layoutY="196.0" prefHeight="25.0" prefWidth="71.0" promptText="hh:mm:ss">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </TextField>
+                                                <TextField layoutX="116.0" layoutY="233.0" prefHeight="25.0" prefWidth="23.0" text="1">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </TextField>
+                                                <Label layoutX="10.0" layoutY="76.0" text="From:" AnchorPane.leftAnchor="8.0">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <ComboBox fx:id="fromCBBox" layoutX="54.0" layoutY="69.0" prefHeight="31.0" prefWidth="128.0" />
+                                                <Label layoutX="12.0" layoutY="115.0" prefHeight="17.0" prefWidth="23.0" text="To:" AnchorPane.leftAnchor="8.0">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <ComboBox fx:id="toCBBox" layoutX="54.0" layoutY="108.0" prefHeight="31.0" prefWidth="128.0" />
+                                                <Button layoutX="198.0" layoutY="111.0" mnemonicParsing="false" onAction="#onSetTrainPath" text="Train Path ..." AnchorPane.rightAnchor="6.0">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </Button>
+                                                <Label layoutX="11.0" layoutY="158.0" text="Train Type:" AnchorPane.leftAnchor="8.0">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <ComboBox fx:id="trainDefCBBox" layoutX="85.0" layoutY="151.0" prefHeight="31.0" prefWidth="128.0" />
+                                                <Button layoutX="191.0" layoutY="237.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="95.0" text="Create" AnchorPane.rightAnchor="6.0" />
+                                             </children>
+                                          </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="296.0" prefWidth="154.0">
+                                             <children>
+                                                <TableView fx:id="pathTableView" layoutX="-35.0" prefHeight="296.0" prefWidth="138.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                </TableView>
+                                             </children></AnchorPane>
+                                      </items>
+                                    </SplitPane>
+                                </items>
+                              </SplitPane>
+                           </children></AnchorPane>
+                      <AnchorPane fx:id="tripRoot" minHeight="0.0" minWidth="0.0" prefHeight="526.0" prefWidth="472.0" />
+                    </items>
+                  </SplitPane>
+               </children></AnchorPane>
+			</items>
+		</SplitPane>
+	</children>
+</AnchorPane>

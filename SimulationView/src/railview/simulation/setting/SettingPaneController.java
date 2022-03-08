@@ -27,7 +27,8 @@ import railapp.dispatching.NoneDispatchingSystem;
 import railapp.dispatching.services.Py4JDispatchingSystem;
 import railapp.messages.Message;
 import railapp.simulation.SingleSimulationManager;
-import railview.simulation.editor.infrastructure.InfrastructureEditorPaneController;
+import railview.editor.infrastructure.InfrastructureEditorPaneController;
+import railview.editor.timetable.TimetableEditorPaneController;
 import railview.simulation.ui.data.TableProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -72,13 +73,11 @@ public class SettingPaneController extends Stage implements Initializable {
 	private TableView<TableProperty> ReceivedTable, SentTable;
 
 	@FXML
-	private AnchorPane infraEditorRoot;
+	private AnchorPane infraEditorRoot, timetableEditorRoot;
 
-	private AnchorPane infrastructureEditorPane;
+	private AnchorPane infrastructureEditorPane, timetableEditorPane;
 
 	private CodeArea codeArea;
-
-	private InfrastructureEditorPaneController infrastructureEditorPaneController;
 
 	private static final String[] KEYWORDS = new String[] { "abstract",
 			"assert", "boolean", "break", "byte", "case", "catch", "char",
@@ -179,9 +178,15 @@ public class SettingPaneController extends Stage implements Initializable {
 			URL location = InfrastructureEditorPaneController.class.getResource("InfrastructureEditorPane.fxml");
 			infrastructureEditorPaneLoader.setLocation(location);
 			infrastructureEditorPane = (AnchorPane) infrastructureEditorPaneLoader.load();
-			this.infrastructureEditorPaneController = infrastructureEditorPaneLoader.getController();
 
 			this.infraEditorRoot.getChildren().add(infrastructureEditorPane);
+
+			FXMLLoader timetableEditorPaneLoader = new FXMLLoader();
+			location = TimetableEditorPaneController.class.getResource("TimetableEditorPane.fxml");
+			timetableEditorPaneLoader.setLocation(location);
+			timetableEditorPane = (AnchorPane) timetableEditorPaneLoader.load();
+
+			this.timetableEditorRoot.getChildren().add(timetableEditorPane);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

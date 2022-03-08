@@ -23,6 +23,11 @@
    		     		<AnchorPane fx:id="infraEditorRoot" styleClass="background-grey" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Darktheme.css" />
 				</content>
    		     </Tab>
+   		     <Tab text="Timetable Editor">
+   		     	<content>
+   		     		<AnchorPane fx:id="timetableEditorRoot" styleClass="background-grey" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Darktheme.css" />
+				</content>
+   		     </Tab>
              <Tab text="Communication Messages">
                 <content>
                     <TabPane layoutY="14.0" prefHeight="261.0" prefWidth="394.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

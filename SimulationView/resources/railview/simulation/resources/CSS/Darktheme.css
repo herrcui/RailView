@@ -16,7 +16,7 @@
 }
 
 .button-dark-blue {
-    -fx-background-color: 
+    -fx-background-color:
         #090a0c,
         linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
         linear-gradient(#20262b, #191d22),
@@ -26,7 +26,7 @@
 }
 
 .ipad-dark-grey {
-    -fx-background-color: 
+    -fx-background-color:
         linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%),
         linear-gradient(#020b02, #3a3a3a),
         linear-gradient(#9d9e9d 0%, #6b6a6b 20%, #343534 80%, #242424 100%),
@@ -36,10 +36,17 @@
 
 .label {
 	-fx-font-family: "Verdana";
+	-fx-font-size: 12px;
+
 }
 
 .label-bright {
 	-fx-font-family: "Verdana";
+}
+
+.button {
+	-fx-font-family: "Verdana";
+    -fx-font-size: 12px;
 }
 
 .rectangle {
