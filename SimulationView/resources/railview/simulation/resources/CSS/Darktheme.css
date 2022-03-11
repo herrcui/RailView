@@ -45,7 +45,12 @@
 }
 
 .button {
-	-fx-font-family: "Verdana";
+    -fx-font-family: "Verdana";
+    -fx-font-size: 12px;
+}
+
+.textfield {
+    -fx-font-family: "Verdana";
     -fx-font-size: 12px;
 }
 

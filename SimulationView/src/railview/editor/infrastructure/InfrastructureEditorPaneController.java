@@ -9,7 +9,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.DirectoryChooser;
-import railapp.infrastructure.dto.Network;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.infrastructure.service.ServiceUtility;
 import railapp.parser.coremodel.infrastructure.InfrastructureParser;
@@ -63,11 +62,5 @@ public class InfrastructureEditorPaneController {
 			this.path = file.toString() + "\\infrastructure";
 			this.loadData();
 		}
-	}
-
-	private Network parseNetwork(String networkName) {
-		Network network = Network.createNetwork(null, networkName);
-		this.serviceUtility.getNetworkService().storeNetwork(network);
-		return network;
 	}
 }
