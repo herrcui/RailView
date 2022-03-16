@@ -31,21 +31,22 @@
                                 <items>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="260.0" prefWidth="469.0">
                                        <children>
-                                          <Button layoutY="258.0" mnemonicParsing="false" text="New Train Group" AnchorPane.bottomAnchor="8.0">
+                                          <Button layoutY="258.0" mnemonicParsing="false" onAction="#onCreateTrainGroup" text="New Train Group" AnchorPane.bottomAnchor="8.0">
                                              <font>
                                                 <Font size="12.0" />
                                              </font>
                                           </Button>
-                                          <Button layoutX="121.0" layoutY="258.0" mnemonicParsing="false" text="Delete Train Group" AnchorPane.bottomAnchor="8.0">
+                                          <Button layoutX="121.0" layoutY="258.0" mnemonicParsing="false" onAction="#onDeleteTrainGroup" text="Delete Train Group" AnchorPane.bottomAnchor="8.0">
                                              <font>
                                                 <Font size="12.0" />
                                              </font>
                                           </Button>
-                                          <Button layoutX="422.0" layoutY="258.0" mnemonicParsing="false" text="Save" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="6.0">
+                                          <Button layoutX="422.0" layoutY="258.0" mnemonicParsing="false" onAction="#onSaveTimetable" text="Save" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="6.0">
                                              <font>
                                                 <Font size="12.0" />
                                              </font>
                                           </Button>
+                                          <TableView fx:id="trainGroupTableView" layoutX="102.0" layoutY="55.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                        </children></AnchorPane>
                                     <SplitPane dividerPositions="0.45" prefHeight="160.0" prefWidth="200.0">
                                       <items>

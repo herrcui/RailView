@@ -1,10 +1,14 @@
 package railview.editor.timetable;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -34,11 +38,13 @@ import railapp.infrastructure.path.dto.StationRoute;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.parser.coremodel.infrastructure.InfrastructureParser;
 import railapp.parser.coremodel.rollingstock.RollingStockParser;
+import railapp.parser.coremodel.timetable.TimetableWriter;
 import railapp.rollingstock.dto.TrainDefinition;
 import railapp.rollingstock.service.IRollingStockServiceUtility;
 import railapp.simulation.entries.EntryUtilities;
 import railapp.simulation.entries.SchedulingEntry;
 import railapp.timetable.dto.EntryInfo;
+import railapp.timetable.dto.TrainGroup;
 import railapp.timetable.dto.Trip;
 import railapp.timetable.dto.TripElement;
 import railapp.timetable.scheduling.TrainGroupStationSequence;
@@ -71,14 +77,35 @@ public class TimetableEditorPaneController {
     @FXML
     private TableView<TripElement> tripDetailTableView;
 
+    @FXML
+    private TableView<TrainGroup> trainGroupTableView;
+
     private SchedulingEntry schedulingEntry;
 
     private String path;
 
     private StationRoute[] stationRoutesInPath = null;
 
+    private TrainGroup trainGroup = null;
+
     @SuppressWarnings("unchecked")
 	public void initialize() {
+    	TableColumn<TrainGroup, String> nameColumn = new TableColumn<TrainGroup, String>("Group Name");
+    	nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+
+    	this.trainGroupTableView.getColumns().addAll(nameColumn);
+
+    	this.trainGroupTableView.getSelectionModel().getSelectedItems().addListener(new ListChangeListener<TrainGroup>() {
+			@Override
+			public void onChanged(Change<? extends TrainGroup> change) {
+				if (change.getList().size() > 0) {
+					trainGroup = change.getList().get(0);
+					updateTrainGroupUI(trainGroup);
+				}
+			}
+		});
+
+
     	TableColumn<Trip, String> tripNumberColumn = new TableColumn<Trip, String>("Trip Number");
     	tripNumberColumn.setCellValueFactory(new PropertyValueFactory<>("number"));
 
@@ -118,6 +145,38 @@ public class TimetableEditorPaneController {
         this.tripDetailTableView.getColumns().addAll(stationColumn, arriveColumn, dwellColumn, departureColumn, stopColumn);
     }
 
+    private void updateTrainGroupUI(TrainGroup trainGroup) {
+    	if (trainGroup != null) {
+    		this.nameTextField.setText(trainGroup.getName());
+    		this.despTextField.setText(trainGroup.getDescrption());
+    		this.fromCBBox.getSelectionModel().select(trainGroup.getStart());
+    		this.toCBBox.getSelectionModel().select(trainGroup.getEnd());
+    		this.trainDefCBBox.getSelectionModel().select(trainGroup.getTrainDefintion());
+    		this.startTimeTextField.setText(trainGroup.getStartTime().toStringInHMS());
+    		this.intervalTextField.setText(Time.getInstance(0).add(trainGroup.getInterval()).toStringInHMS());
+    		this.numOfTrainsTextField.setText("" + trainGroup.getNumOfTrains());
+    		this.startNumTextField.setText(trainGroup.getTripList().size() > 0 ?
+    				trainGroup.getTripList().get(0).getNumber().replaceAll(trainGroup.getName(), "") : "");
+
+    		ObservableList<Trip> tripsData = FXCollections.observableArrayList();
+    		tripsData.addAll(trainGroup.getTripList());
+    		this.tripsTableView.setItems(tripsData);
+    		this.tripsTableView.getSelectionModel().select(trainGroup.getTripList().size() > 0 ? 0 : -1);
+    	} else {
+    		this.nameTextField.setText("");
+    		this.despTextField.setText("");
+    		this.fromCBBox.getSelectionModel().select(-1);
+    		this.toCBBox.getSelectionModel().select(-1);
+    		this.trainDefCBBox.getSelectionModel().select(-1);
+    		this.startTimeTextField.setText("");
+    		this.intervalTextField.setText("");
+    		this.numOfTrainsTextField.setText("1");
+    		this.startNumTextField.setText("");
+    		this.tripDetailTableView.getItems().clear();
+    		this.tripsTableView.getItems().clear();
+    	}
+    }
+
     private void loadData() {
         IInfrastructureServiceUtility infraServiceUtility = new railapp.infrastructure.service.ServiceUtility();
         IRollingStockServiceUtility rollingStockServiceUtility = new railapp.rollingstock.service.ServiceUtility();
@@ -126,6 +185,15 @@ public class TimetableEditorPaneController {
         RollingStockParser.getInstance(rollingStockServiceUtility, path + "\\rollingstock").parse();
 
         this.schedulingEntry = SchedulingEntry.getInstance(infraServiceUtility, rollingStockServiceUtility);
+
+        ITimetableServiceUtility timeTableServiceUtility = this.schedulingEntry.getUtilities().getTimeTableServiceUtility();
+
+        ObservableList<TrainGroup> trainGroupData = FXCollections.observableArrayList();
+        trainGroupData.addAll(timeTableServiceUtility.getTimetableService().findAllTrainGroups());
+        this.trainGroupTableView.setItems(trainGroupData);
+        if (trainGroupData.size() > 0) {
+        	this.trainGroupTableView.getSelectionModel().select(0);
+        }
 
         ObservableList<TrainDefinition> trainDefData = FXCollections.observableArrayList();
         trainDefData.addAll(rollingStockServiceUtility.getRollingStockService().findTrainDefinitionsByClass(null));
@@ -165,8 +233,8 @@ public class TimetableEditorPaneController {
         List<AggregatedStationRoute> anyPath = anySequence.sampleAlternative();
         this.stationRoutesInPath = new StationRoute[anyPath.size()];
 
-        ObservableList<AggregatedStationRoute> aggregateRouteitems = FXCollections.<AggregatedStationRoute>observableArrayList();
-        aggregateRouteitems.addAll(anyPath);
+        ObservableList<AggregatedStationRoute> aggregateRouteItems = FXCollections.<AggregatedStationRoute>observableArrayList();
+        aggregateRouteItems.addAll(anyPath);
 
         TableColumn<AggregatedStationRoute, String> stationColumn = new TableColumn<AggregatedStationRoute, String>("Station");
         stationColumn.setCellValueFactory(new PropertyValueFactory<>("station"));
@@ -213,7 +281,40 @@ public class TimetableEditorPaneController {
 
         stationRoutesColumn.setCellFactory(cellFactoryRouteCBBoxColumn);
         pathTableView.getColumns().addAll(stationColumn, stationRoutesColumn);
-        pathTableView.setItems(aggregateRouteitems);
+        pathTableView.setItems(aggregateRouteItems);
+    }
+
+    @FXML
+    public void onCreateTrainGroup() {
+    	this.updateTrainGroupUI(null);
+		this.trainGroupTableView.getSelectionModel().select(-1);
+		this.trainGroup = null;
+    }
+
+    @FXML
+    public void onDeleteTrainGroup() {
+    	if (this.trainGroup != null) {
+			this.trainGroupTableView.getItems().remove(this.trainGroup);
+			this.schedulingEntry.getUtilities().getTimeTableServiceUtility().getTimetableService().removeTrainGroup(this.trainGroup);
+			this.trainGroup = null;
+			this.updateTrainGroupUI(null);
+		}
+    }
+
+    @FXML
+    public void onSaveTimetable() {
+    	ObservableList<TrainGroup> trainGroupItems = FXCollections.<TrainGroup>observableArrayList();
+    	trainGroupItems.addAll(this.schedulingEntry.getUtilities().getTimeTableServiceUtility().getTimetableService().findAllTrainGroups());
+    	this.trainGroupTableView.setItems(trainGroupItems);
+
+    	this.updateTrainGroupUI(this.trainGroup);
+    	TimetableWriter writer = TimetableWriter.getInstance(this.schedulingEntry.getUtilities().getTimeTableServiceUtility(),
+    			this.path + "\\timetable\\timetable.railml");
+    	try {
+			writer.saveTimetable(null);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
     }
 
     @FXML
@@ -230,8 +331,8 @@ public class TimetableEditorPaneController {
     		templateEntries.add(timetableEntry);
     	}
 
-    	String trainDefCode = this.trainDefCBBox.getSelectionModel().getSelectedItem().getCode();
-    	int[] min_runing_time_seconds = this.schedulingEntry.getMinRunningTime(templateEntries, trainDefCode);
+    	TrainDefinition trainDef = this.trainDefCBBox.getSelectionModel().getSelectedItem();
+    	int[] min_runing_time_seconds = this.schedulingEntry.getMinRunningTime(templateEntries, trainDef.getCode());
     	String[] strTime = this.startTimeTextField.getText().split(":");
     	Time startTime = Time.getInstance(Integer.parseInt(strTime[0]),
     			Integer.parseInt(strTime[1]), Integer.parseInt(strTime[2]));
@@ -242,6 +343,14 @@ public class TimetableEditorPaneController {
     	int startTrainNum = Integer.parseInt(this.startNumTextField.getText());
     	int numOfTrains = Integer.parseInt(this.numOfTrainsTextField.getText());
     	ObservableList<Trip> tripItems = FXCollections.<Trip>observableArrayList();
+
+    	if (this.trainGroup == null) {
+    		TrainGroup inTrainGroup = TrainGroup.create(this.nameTextField.getText(), this.despTextField.getText(),
+    				this.fromCBBox.getValue(), this.toCBBox.getValue(),
+    				trainDef,
+    				startTime, startTime.add(Duration.fromTotalSecond(interval.getTotalSeconds() * (numOfTrains - 1))), numOfTrains);
+    		this.trainGroup = this.schedulingEntry.getUtilities().getTimeTableServiceUtility().getTimetableService().storeTrainGroup(inTrainGroup);
+    	}
 
     	for (int idx = 0; idx < numOfTrains; idx++) {
     		int trainNum = startTrainNum + idx*2;
@@ -270,9 +379,10 @@ public class TimetableEditorPaneController {
                 tripEntries.add(tripEntry);
             }
 
-            Trip trip = this.schedulingEntry.createTrip(tripEntries, this.nameTextField.getText() + trainNum, trainDefCode);
+            Trip trip = this.schedulingEntry.createTrip(tripEntries, this.nameTextField.getText() + trainNum, trainDef.getCode());
             startTime = startTime.add(interval);
             tripItems.add(trip);
+            this.trainGroup.getTripList().add(trip);
     	}
 
     	this.tripsTableView.setItems(tripItems);
