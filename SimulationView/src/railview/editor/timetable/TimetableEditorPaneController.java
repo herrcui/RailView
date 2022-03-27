@@ -38,6 +38,7 @@ import railapp.infrastructure.path.dto.StationRoute;
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.parser.coremodel.infrastructure.InfrastructureParser;
 import railapp.parser.coremodel.rollingstock.RollingStockParser;
+import railapp.parser.coremodel.timetable.TimetableParser;
 import railapp.parser.coremodel.timetable.TimetableWriter;
 import railapp.rollingstock.dto.TrainDefinition;
 import railapp.rollingstock.service.IRollingStockServiceUtility;
@@ -178,21 +179,25 @@ public class TimetableEditorPaneController {
     }
 
     private void loadData() {
-        IInfrastructureServiceUtility infraServiceUtility = new railapp.infrastructure.service.ServiceUtility();
+    	IInfrastructureServiceUtility infraServiceUtility = new railapp.infrastructure.service.ServiceUtility();
         IRollingStockServiceUtility rollingStockServiceUtility = new railapp.rollingstock.service.ServiceUtility();
+        ITimetableServiceUtility timeTableServiceUtility = new railapp.timetable.service.ServiceUtility();
 
         InfrastructureParser.getInstance(infraServiceUtility, path + "\\infrastructure").parse();
         RollingStockParser.getInstance(rollingStockServiceUtility, path + "\\rollingstock").parse();
+        if (! TimetableParser.getInstance(infraServiceUtility, rollingStockServiceUtility, timeTableServiceUtility,
+        		path + "\\timetable").parse()) {
+        	timeTableServiceUtility = new railapp.timetable.service.ServiceUtility();
+        }
 
-        this.schedulingEntry = SchedulingEntry.getInstance(infraServiceUtility, rollingStockServiceUtility);
-
-        ITimetableServiceUtility timeTableServiceUtility = this.schedulingEntry.getUtilities().getTimeTableServiceUtility();
+        this.schedulingEntry = SchedulingEntry.getInstance(infraServiceUtility, rollingStockServiceUtility, timeTableServiceUtility);
 
         ObservableList<TrainGroup> trainGroupData = FXCollections.observableArrayList();
         trainGroupData.addAll(timeTableServiceUtility.getTimetableService().findAllTrainGroups());
         this.trainGroupTableView.setItems(trainGroupData);
         if (trainGroupData.size() > 0) {
         	this.trainGroupTableView.getSelectionModel().select(0);
+        	this.trainGroup = trainGroupData.get(0);
         }
 
         ObservableList<TrainDefinition> trainDefData = FXCollections.observableArrayList();

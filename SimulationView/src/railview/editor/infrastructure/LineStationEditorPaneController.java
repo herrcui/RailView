@@ -85,7 +85,7 @@ public class LineStationEditorPaneController {
 	@FXML
 	private void onDeleteLine(ActionEvent event) {
 		if (line != null) {
-			this.lineTb.delete(line.getIdInString());
+			this.lineTb.delete(line.getName());
 			this.serviceUtility.getNetworkService().removeLine(line);
 			this.line = null;
 			this.updateLineTableView(null);
@@ -99,16 +99,16 @@ public class LineStationEditorPaneController {
 			this.line.setName(this.lineNameText.getText());
 			this.line.setDescription(this.lineDespText.getText());
 
-			String[] values = {line.getIdInString(), line.getName(), line.getDescription()};
-			this.lineTb.alter(line.getIdInString(), values);
+			String[] values = {line.getName(), line.getDescription()};
+			this.lineTb.alter(line.getName(), values);
 		} else {
 			// save a new line
 			if (this.lineNameText.getText().trim().length() > 0) {
 				Line inLine = this.network.createLine(null, this.lineNameText.getText(), this.lineDespText.getText());
 				this.line = this.serviceUtility.getNetworkService().storeLine(inLine);
 
-				String[] values = {line.getIdInString(), line.getName(), line.getDescription()};
-				this.lineTb.insert(line.getIdInString(), values);
+				String[] values = {line.getName(), line.getName(), line.getDescription()};
+				this.lineTb.insert(line.getName(), values);
 			}
 			else {
 				return;
