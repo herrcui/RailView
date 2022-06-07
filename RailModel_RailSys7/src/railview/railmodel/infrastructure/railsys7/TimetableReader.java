@@ -3,7 +3,6 @@ package railview.railmodel.infrastructure.railsys7;
 import java.nio.file.Path;
 
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
-import railapp.parser.railsys7.timetable.TimetableParser;
 import railapp.rollingstock.service.IRollingStockServiceUtility;
 import railapp.timetable.service.ITimetableServiceUtility;
 
@@ -24,11 +23,19 @@ public class TimetableReader {
 
 	public ITimetableServiceUtility initialize(boolean isCoreModel) {
 		ITimetableServiceUtility timeTableServiceUtility =
-			new railapp.timetable.service.ServiceUtility();
+				new railapp.timetable.service.ServiceUtility();
+		if (isCoreModel) {
+			railapp.parser.coremodel.timetable.TimetableParser railMLParser =
+				railapp.parser.coremodel.timetable.TimetableParser.getInstance(
+					infraServiceUtility, rollingStockServiceUtility, timeTableServiceUtility, path.toString());
+			railMLParser.parse();
+		} else {
+			railapp.parser.railsys7.timetable.TimetableParser railSysParser =
+				railapp.parser.railsys7.timetable.TimetableParser.getInstance(
+						path, timeTableServiceUtility, infraServiceUtility, rollingStockServiceUtility);
+			railSysParser.parse();
+		}
 
-		TimetableParser timeTableParser = TimetableParser.getInstance(
-				path, timeTableServiceUtility, infraServiceUtility, rollingStockServiceUtility);
-		timeTableParser.parse();
 		return timeTableServiceUtility;
 	}
 

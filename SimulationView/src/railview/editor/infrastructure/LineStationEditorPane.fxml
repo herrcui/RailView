@@ -16,7 +16,7 @@
 
 <AnchorPane styleClass="background-white" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.editor.infrastructure.LineStationEditorPaneController">
 	<children>
-		<TabPane layoutX="0" layoutY="0" prefHeight="752.0" prefWidth="1061.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+		<TabPane layoutX="0" layoutY="0" prefHeight="808.0" prefWidth="1197.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0">
 			<tabs>
 				<Tab text="Lines and Stations">
 					<content>
@@ -31,7 +31,7 @@
 
                                           			<TableView fx:id="lineTableView" layoutX="7.0" layoutY="46.0" prefHeight="302.0" prefWidth="517.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
 
-													    <Label layoutX="14.0" layoutY="14.0" text="Name: " AnchorPane.bottomAnchor="6.0">
+													    <Label layoutX="14.0" layoutY="14.0" text="Name: " AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="4.0">
 															<font>
 																<Font size="12.0" />
 															</font>
@@ -46,7 +46,7 @@
 																<Font size="12.0" />
 															</font>
 														</Label>
-														<TextField fx:id="lineDespText" layoutX="263.0" layoutY="8.0" prefHeight="31.0" prefWidth="125.0" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="8.0">
+														<TextField fx:id="lineDespText" layoutX="263.0" layoutY="8.0" prefHeight="31.0" prefWidth="125.0" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="4.0">
 															<font>
 																<Font size="12.0" />
 															</font>
@@ -55,7 +55,7 @@
 												</AnchorPane>
 												<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="43.0" prefWidth="525.0">
 													<children>
-														<Button layoutX="8.0" layoutY="13.0" mnemonicParsing="false" onAction="#onNewLine" text="New Line" AnchorPane.leftAnchor="8.0">
+														<Button layoutX="8.0" layoutY="13.0" mnemonicParsing="false" onAction="#onNewLine" text="New Line" AnchorPane.leftAnchor="4.0">
 															<font>
 																<Font size="12.0" />
 															</font>
@@ -65,12 +65,12 @@
 																<Font size="12.0" />
 															</font>
 														</Button>
-														<Button layoutX="425.0" layoutY="13.0" mnemonicParsing="false" onAction="#onSaveLine" text="Save Line" AnchorPane.rightAnchor="8.0">
+														<Button layoutX="425.0" layoutY="13.0" mnemonicParsing="false" onAction="#onSaveLine" text="Save Line" AnchorPane.rightAnchor="4.0">
 															<font>
 																<Font size="12.0" />
 															</font>
 														</Button>
-														<Label layoutX="14.0" layoutY="9.0" text="Stations of the line:" AnchorPane.topAnchor="48.0">
+														<Label layoutX="14.0" layoutY="9.0" text="Stations of the line:" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="48.0">
                                             			 <font>
                                                 <Font size="12.0" />
                                              </font></Label>
@@ -93,19 +93,66 @@
                                 <items>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                        <children>
-                                          <TableView layoutX="-31.0" layoutY="65.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                            <columns>
-                                              <TableColumn prefWidth="75.0" text="C1" />
-                                              <TableColumn prefWidth="75.0" text="C2" />
-                                            </columns>
-                                          </TableView>
+                                          <TableView fx:id="stationTableView" layoutX="-31.0" layoutY="65.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                        </children>
                                     </AnchorPane>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="711.0" prefWidth="342.0">
                                        <children>
                                           <SplitPane dividerPositions="0.5" layoutX="66.0" layoutY="148.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                             <items>
-                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <Label layoutX="7.0" layoutY="17.0" text="Name:" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="12.0">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font></Label>
+                                                      <TextField fx:id="stationNameText" layoutX="91.0" prefHeight="11.0" prefWidth="159.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="4.0">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font></TextField>
+                                                      <Label layoutX="14.0" layoutY="76.0" text="Description:" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="48.0">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font></Label>
+                                                      <Label layoutX="14.0" layoutY="85.0" text="X:" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="84.0">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font></Label>
+                                                      <Label layoutX="122.0" layoutY="84.0" text="Y:" AnchorPane.leftAnchor="122.0">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font></Label>
+                                                      <TextField fx:id="stationDespText" layoutX="90.0" layoutY="31.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="40.0">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <TextField layoutX="22.0" layoutY="80.0" prefHeight="25.0" prefWidth="80.0" fx:id="xText">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <TextField fx:id="yText" layoutX="146.0" layoutY="80.0" prefHeight="25.0" prefWidth="80.0">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <Button layoutX="4.0" layoutY="288.0" mnemonicParsing="false" onAction="#onNewStation" text="New Station" AnchorPane.bottomAnchor="4.0">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button layoutX="98.0" layoutY="338.0" mnemonicParsing="false" onAction="#onDeleteStation" text="Delete Station" AnchorPane.bottomAnchor="4.0">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button layoutX="191.0" layoutY="288.0" mnemonicParsing="false" onAction="#onSaveStation" text="Save Station" AnchorPane.bottomAnchor="4.0" AnchorPane.rightAnchor="4.0">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children></AnchorPane>
                                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                                    <children>
                                                       <SplitPane dividerPositions="0.5" layoutX="28.0" layoutY="51.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

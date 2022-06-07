@@ -14,7 +14,7 @@
 
 <AnchorPane prefHeight="847.0" prefWidth="1265.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="railview.simulation.applications.PythonUIController">
    <children>
-      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="pythonPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <SplitPane dividerPositions="0.8875502008032129" orientation="VERTICAL" prefHeight="500.0" prefWidth="559.0" styleClass="split-pane-divider_zero" stylesheets="@../../../../resources/railview/simulation/resources/CSS/Tabs.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <items>

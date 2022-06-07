@@ -2,7 +2,6 @@ package railview.railmodel.infrastructure.railsys7;
 
 import java.nio.file.Path;
 
-import railapp.parser.railsys7.rollingstock.RollingStockParser;
 import railapp.rollingstock.service.IRollingStockServiceUtility;
 
 public class RollingStockReader {
@@ -25,7 +24,8 @@ public class RollingStockReader {
 			rollingStockParser.parse();
 			return rollingStockServiceUtility;
 		} else {
-			RollingStockParser rollingStockParser = RollingStockParser.getInstance(
+			railapp.parser.railsys7.rollingstock.RollingStockParser rollingStockParser =
+				railapp.parser.railsys7.rollingstock.RollingStockParser.getInstance(
 					this.path, rollingStockServiceUtility);
 			rollingStockParser.parse();
 			return rollingStockServiceUtility;

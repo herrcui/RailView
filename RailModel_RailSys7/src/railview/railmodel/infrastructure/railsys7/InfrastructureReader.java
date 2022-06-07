@@ -4,7 +4,6 @@ import java.nio.file.Path;
 
 import railapp.infrastructure.service.IInfrastructureServiceUtility;
 import railapp.infrastructure.service.ServiceUtility;
-import railapp.parser.railsys7.infrastructure.InfrastructureParser;
 
 public class InfrastructureReader {
 	public static InfrastructureReader getInstance(Path path) {
@@ -24,7 +23,8 @@ public class InfrastructureReader {
 					infraServiceUtility, this.path.toString());
 			parser.parse();
 		} else {
-			InfrastructureParser parser = InfrastructureParser.getInstance(
+			railapp.parser.railsys7.infrastructure.InfrastructureParser parser =
+				railapp.parser.railsys7.infrastructure.InfrastructureParser.getInstance(
 					 this.path, infraServiceUtility);
 			parser.parse();
 		}
